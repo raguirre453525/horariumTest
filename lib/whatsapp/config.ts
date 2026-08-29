@@ -9,7 +9,7 @@ export function getWhatsappConfig() {
     graphVersion: process.env.WHATSAPP_GRAPH_VERSION ?? "v21.0",
     deepseekApiKey: process.env.DEEPSEEK_API_KEY ?? "",
     deepseekBaseUrl: (process.env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com").replace(/\/$/, ""),
-    deepseekModel: process.env.DEEPSEEK_MODEL ?? "deepseek-chat",
+    deepseekModel: process.env.DEEPSEEK_MODEL ?? "deepseek-v4-flash",
     timezone: process.env.HORARIUM_TIMEZONE ?? "America/Argentina/Buenos_Aires",
   };
 }
