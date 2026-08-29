@@ -39,6 +39,14 @@ export async function POST(req: Request) {
   }
 
   if (!verifyHmacSha256(raw, signature, cfg.appSecret)) {
+    const reason = !cfg.appSecret ? "missing_app_secret" : !signature ? "missing_signature" : "signature_mismatch";
+    console.warn("[whatsapp] webhook unauthorized", {
+      reason,
+      hasAppSecret: Boolean(cfg.appSecret),
+      hasSignature: Boolean(signature),
+      signatureLength: signature?.length ?? 0,
+      bodyLength: raw.length,
+    });
     return new Response("Invalid signature", { status: 401 });
   }
 
@@ -58,9 +66,19 @@ export async function POST(req: Request) {
   if (cfg.phoneNumberId) {
     for (const m of parsed) {
       if (m.phoneNumberId && m.phoneNumberId !== cfg.phoneNumberId) {
+        console.warn("[whatsapp] webhook unauthorized", {
+          reason: "invalid_phone_number_id",
+          hasConfiguredPhoneNumberId: true,
+          hasPhoneNumberId: Boolean(m.phoneNumberId),
+        });
         return new Response("Invalid phone_number_id", { status: 401 });
       }
       if (!m.phoneNumberId) {
+        console.warn("[whatsapp] webhook unauthorized", {
+          reason: "missing_phone_number_id",
+          hasConfiguredPhoneNumberId: true,
+          hasPhoneNumberId: false,
+        });
         return new Response("Missing phone_number_id", { status: 401 });
       }
     }
