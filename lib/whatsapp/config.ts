@@ -6,7 +6,7 @@ export function getWhatsappConfig() {
     appSecret: process.env.WHATSAPP_APP_SECRET ?? "",
     accessToken: process.env.WHATSAPP_ACCESS_TOKEN ?? "",
     phoneNumberId: process.env.WHATSAPP_PHONE_NUMBER_ID ?? "",
-    graphVersion: process.env.WHATSAPP_GRAPH_VERSION ?? "v21.0",
+    graphVersion: process.env.WHATSAPP_GRAPH_VERSION ?? "v23.0",
     deepseekApiKey: process.env.DEEPSEEK_API_KEY ?? "",
     deepseekBaseUrl: (process.env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com").replace(/\/$/, ""),
     deepseekModel: process.env.DEEPSEEK_MODEL ?? "deepseek-v4-flash",
