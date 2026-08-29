@@ -12,6 +12,39 @@ import { supabase, supabaseConfigured } from "@/lib/supabase";
 import { useAuth } from "@/lib/auth-context";
 import { useDialogA11y } from "@/lib/use-dialog-a11y";
 
+function WhatsappLinkInline() {
+  const [code, setCode] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState("");
+  async function gen() {
+    setLoading(true);
+    setErr("");
+    try {
+      const session = supabase ? (await supabase.auth.getSession()).data.session : null;
+      const token = (session as { access_token?: string } | null)?.access_token ?? null;
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      if (token) headers.Authorization = `Bearer ${token}`;
+      const res = await fetch("/api/whatsapp/link-code", { method: "POST", headers });
+      const j = (await res.json().catch(() => ({}))) as { code?: string; error?: string };
+      if (!res.ok) throw new Error(j.error ?? "No se pudo generar el código");
+      setCode(j.code ?? null);
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : String(e));
+    } finally {
+      setLoading(false);
+    }
+  }
+  return (
+    <div className="mt-4 rounded-xl border border-[var(--line)] bg-[var(--soft)] p-3">
+      <p className="text-xs font-semibold text-[var(--ink)]">WhatsApp</p>
+      <p className="text-xs text-[var(--muted)]">Vinculá tu número con un código de 10 minutos.</p>
+      <button type="button" onClick={() => void gen()} disabled={loading} className="mt-2 rounded-lg bg-[var(--accent)] px-3 py-1.5 text-xs font-semibold text-white disabled:opacity-60">{loading ? "Generando..." : code ? "Regenerar código" : "Generar código"}</button>
+      {err ? <p role="alert" className="mt-1 text-xs text-rose-600">{err}</p> : null}
+      {code ? <p className="mt-2 rounded-lg bg-[var(--surface)] px-2 py-1.5 text-center text-lg font-bold tracking-widest text-[var(--ink)]">{code}</p> : null}
+    </div>
+  );
+}
+
 export type AuthState = { userId: string | null; isAdmin: boolean };
 
 const ALIAS_MIN = 2;
@@ -289,7 +322,7 @@ export function AuthPanel({ onAuthChange }: { onAuthChange?: (state: AuthState) 
               {aliasError ? <p role="alert" className="rounded-lg bg-rose-500/10 px-3 py-1.5 text-xs text-rose-600">{aliasError}</p> : null}
               {aliasMessage ? <p role="status" className={`rounded-lg px-3 py-1.5 text-xs ${aliasMessage.includes("Otro miembro") ? "bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-400/30" : "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"}`}>{aliasMessage}</p> : null}
             </div>
-
+            <WhatsappLinkInline />
             <button type="button" onClick={() => { setOpen(false); void signOut(); }} className="mt-4 w-full rounded-lg bg-[var(--secondary)] px-3 py-2 text-xs font-semibold text-[var(--ink)] transition hover:bg-[var(--soft)]">Salir</button>
           </motion.div>
         ) : null}
