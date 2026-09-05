@@ -7,6 +7,11 @@ export async function sendWhatsappText(to: string, body: string): Promise<{ ok: 
     return { ok: false, error: "WhatsApp not configured" };
   }
   const text = body.slice(0, 4096);
+  // ponytail: Meta test-number allowlist matches AR mobiles WITHOUT the 9
+  // (webhook wa_id arrives as 549…, allowlist stores 54…; literal mismatch
+  // → #131030). Production accepts both, so harmless there. Revisit if
+  // non-AR recipients hit 131030 (same quirk class: MX adds 1, BR adds 9).
+  const recipient = to.replace(/^549(\d+)$/, "54$1");
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 8000);
@@ -20,7 +25,7 @@ export async function sendWhatsappText(to: string, body: string): Promise<{ ok: 
         },
         body: JSON.stringify({
           messaging_product: "whatsapp",
-          to,
+          to: recipient,
           type: "text",
           text: { body: text, preview_url: false },
         }),
