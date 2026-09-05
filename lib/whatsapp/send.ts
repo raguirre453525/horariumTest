@@ -7,11 +7,14 @@ export async function sendWhatsappText(to: string, body: string): Promise<{ ok: 
     return { ok: false, error: "WhatsApp not configured" };
   }
   const text = body.slice(0, 4096);
-  // ponytail: Meta test-number allowlist matches AR mobiles WITHOUT the 9
-  // (webhook wa_id arrives as 549…, allowlist stores 54…; literal mismatch
-  // → #131030). Production accepts both, so harmless there. Revisit if
-  // non-AR recipients hit 131030 (same quirk class: MX adds 1, BR adds 9).
-  const recipient = to.replace(/^549(\d+)$/, "54$1");
+  // ponytail: Meta test-number allowlist compares `to` LITERALLY against its
+  // stored form. AR inbound wa_id arrives as 549… but the panel stores the
+  // domestic form (no 9, 15 after area code). Without-9 alone still missed,
+  // so send the exact stored string. DEV-ONLY: production has no allowlist
+  // and accepts plain E.164 — delete this block when graduating to a real
+  // number. Revisit if non-AR recipients hit 131030 (MX adds 1, BR adds 9).
+  const recipient =
+    to === "5493812211115" ? "54381152211115" : to.replace(/^549(\d+)$/, "54$1");
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 8000);
