@@ -115,9 +115,12 @@ export async function POST(req: Request) {
     }
 
     if (reply) {
-      let sent: { ok: boolean; providerId?: string | undefined };
+      let sent: { ok: boolean; providerId?: string | undefined; error?: string };
       try {
         sent = await sendWhatsappText(msg.waId, reply);
+        if (!sent.ok) {
+          console.warn("[whatsapp] send failed", { error: sent.error ?? "unknown" });
+        }
       } catch (e) {
         console.error("[whatsapp] send error", e);
         sent = { ok: false };
