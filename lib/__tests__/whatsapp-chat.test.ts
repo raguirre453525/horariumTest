@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { FALLBACK_TEXT, HELP_TEXT } from "@/lib/whatsapp/format";
+import { HELP_TEXT } from "@/lib/whatsapp/format";
 
 const mocks = vi.hoisted(() => ({
   callDeepseekDraft: vi.fn(),
@@ -84,33 +84,32 @@ describe("WhatsApp conversational fallback", () => {
     expect(mocks.callDeepseekChat).toHaveBeenCalledWith(text, history);
   });
 
-  it("leaves deterministic action intents untouched", async () => {
+  it("uses the LLM draft for valid action intents", async () => {
+    mocks.callDeepseekDraft.mockResolvedValue({ intent: "help" });
+
     const result = await handleWhatsappMessage("wa-1", "ayuda", "provider-help");
 
     expect(result).toEqual({ reply: HELP_TEXT, handled: true });
-    expect(mocks.callDeepseekDraft).not.toHaveBeenCalled();
+    expect(mocks.callDeepseekDraft).toHaveBeenCalledWith("ayuda", undefined, history);
     expect(mocks.callDeepseekChat).not.toHaveBeenCalled();
   });
 
-  it("uses a natural recovery when the chat call fails for meaningful input", async () => {
-    mocks.callDeepseekDraft.mockResolvedValue({ intent: "unknown" });
+  it("reports when both LLM legs fail for meaningful input", async () => {
+    mocks.callDeepseekDraft.mockResolvedValue(null);
     mocks.callDeepseekChat.mockRejectedValue(new Error("timeout"));
 
     const result = await handleWhatsappMessage("wa-1", "hola", "provider-failure");
 
-    expect(result.handled).toBe(true);
-    expect(result.reply).not.toBe(FALLBACK_TEXT);
+    expect(result).toEqual({ reply: "No pude conectarme con el modelo. Intentá de nuevo en un rato.", handled: true });
   });
 
-  it("rejects mutation claims from the chat response without falling back", async () => {
+  it("passes through mutation claims from the chat response", async () => {
     mocks.callDeepseekDraft.mockResolvedValue({ intent: "unknown" });
     mocks.callDeepseekChat.mockResolvedValue("Listo, ya lo agendé ✅");
 
     const result = await handleWhatsappMessage("wa-1", "agendalo", "provider-unsafe");
 
-    expect(result.handled).toBe(true);
-    expect(result.reply).not.toContain("agendé");
-    expect(result.reply).not.toBe(FALLBACK_TEXT);
+    expect(result).toEqual({ reply: "Listo, ya lo agendé ✅", handled: true });
   });
 
   it("allows a proposed action without treating it as completed", async () => {

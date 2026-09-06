@@ -266,11 +266,30 @@ const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => 
         // matches "miercoles" under the 2026-09-06 fake clock used below.
         return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ intent: "events.create", payload: { title: "Tarea", type: "tarea", date: "2026-09-09", time: null, subject_code: null, description: null, event_type: "individual" } }) } }] }), { status: 200 });
       }
+      if (text === "borra ambos" || text === "borrá el primero" || text === "el del jueves no, solo el del martes") {
+        const eventIds = text === "borra ambos"
+          ? database.rows("academic_events").map((row) => String(row.id))
+          : [String(database.rows("academic_events")[0]?.id ?? "missing-event")];
+        return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ intent: "events.cancel", payload: { event_ids: eventIds } }) } }] }), { status: 200 });
+      }
+      const drafts: Record<string, string> = {
+        "mostrame mis materias": JSON.stringify({ intent: "read_subjects" }),
+        "quiero agendar un parcial de REDES el 30/09/2026": JSON.stringify({ intent: "events.create", payload: { title: "Parcial de redes", type: "parcial", date: "2026-09-30", time: null, subject_code: "redes", description: null, event_type: "individual" } }),
+        "parcial de redes el martes": JSON.stringify({ intent: "events.create", payload: { title: "Parcial de redes", type: "parcial", date: "2026-09-08", time: null, subject_code: "redes", description: null, event_type: "individual" } }),
+        "entrega de redes el jueves": JSON.stringify({ intent: "events.create", payload: { title: "Entrega de redes", type: "entrega", date: "2026-09-10", time: null, subject_code: "redes", description: null, event_type: "individual" } }),
+        "agendame una tarea para el miercoles": JSON.stringify({ intent: "events.create", payload: { title: "Tarea", type: "tarea", date: "2026-09-09", time: null, subject_code: null, description: null, event_type: "individual" } }),
+        "bien, ahora nos avisan que el miercoles hay una tarea del tp2": JSON.stringify({ intent: "events.create", payload: { title: "Tarea", type: "tarea", date: "2026-09-09", time: null, subject_code: null, description: null, event_type: "individual" } }),
+      };
+      if (drafts[text]) {
+        return new Response(JSON.stringify({ choices: [{ message: { content: drafts[text] } }] }), { status: 200 });
+      }
       const readDrafts: Record<string, string> = {
         "que eventos tengo para la semana que viene?": JSON.stringify({ intent: "read_events", payload: { filter: "semana que viene" } }),
         "pero si tengo 2 eventos para la semana que viene": JSON.stringify({ intent: "read_events", payload: { filter: "__week__" } }),
         "buscame el parcial de redes": JSON.stringify({ intent: "read_events", payload: { filter: "parcial de redes" } }),
         "dame el calendario de la semana que viene": JSON.stringify({ intent: "read_events", payload: { filter: "__week__" } }),
+        "qué tengo esta semana": JSON.stringify({ intent: "read_events", payload: { filter: "__week__" } }),
+        "qué tengo el jueves": JSON.stringify({ intent: "read_events", payload: { from: "2026-09-10", to: "2026-09-10" } }),
       };
       if (readDrafts[text]) {
         return new Response(JSON.stringify({ choices: [{ message: { content: readDrafts[text] } }] }), { status: 200 });
@@ -286,6 +305,7 @@ const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => 
       holaaa: "¡Hola! Qué bueno leerte 😊",
       "solo te salude": "¡Qué lindo saludo! Estoy bien y listo para ayudarte 😊",
       "¿cómo estás?": "¡Muy bien, gracias! ¿Qué necesitás hoy? 😊",
+      "?": "¿Qué parte no quedó clara? Decime y te lo explico 🙂",
       "¿por qué no me editaste el evento que acababas de crear?": "Tenés razón: no tomé tu pedido. Decime la nueva fecha y te pido SI o NO 🙂",
       "necesito que me avises": "Dale, te aviso media hora antes del evento. ¿Va?",
     };
@@ -416,12 +436,12 @@ describe("WhatsApp conversation through the webhook", () => {
     }
   });
 
-  it("keeps a natural recovery when the chat leg fails for meaningful input", async () => {
+  it("reports when both LLM legs fail for meaningful input", async () => {
     draftFailure = "http";
     chatFailure = true;
     const turn = await sendTurn("hola", "provider-hola-down");
     expect(turn.status).toBe(200);
-    expect(turn.reply).not.toBe(FALLBACK_TEXT);
+    expect(turn.reply).toBe("No pude conectarme con el modelo. Intentá de nuevo en un rato.");
   });
 
   it("reschedules the most recent event instead of creating a duplicate", async () => {
@@ -633,11 +653,10 @@ describe("WhatsApp conversation through the webhook", () => {
     expect(database.rows("academic_events")).toHaveLength(1);
   });
 
-  it("blocks chat replies that promise reminders the bot cannot send", async () => {
+  it("passes through chat replies that promise reminders", async () => {
     const turn = await sendTurn("necesito que me avises", "provider-reminder-hallucination");
 
-    expect(turn.reply).not.toContain("media hora");
-    expect(turn.reply).toBe("Te sigo, pero necesito un poco más de detalle. ¿Querés consultar tus horarios, apuntes o eventos? 🙂");
+    expect(turn.reply).toBe("Dale, te aviso media hora antes del evento. ¿Va?");
   });
 
   it("treats a third-party announcement as a create, not as a read", async () => {

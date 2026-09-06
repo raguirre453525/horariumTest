@@ -4,12 +4,14 @@ import { validateDraft, isDeletionKind, EVENT_TYPES } from "@/lib/whatsapp/valid
 import { callDeepseekChat, callDeepseekDraft, type DeepseekHistoryMessage } from "@/lib/whatsapp/deepseek";
 import { getWhatsappConfig } from "@/lib/whatsapp/config";
 import { describeEventDateRange, resolveEventDateRange, type EventDateRange } from "@/lib/whatsapp/dates";
-import { detectLocalDraft, extractEventSearchQuery, isEventReadRequest, isFallbackText } from "@/lib/whatsapp/intent";
+import { extractEventSearchQuery, isFallbackText } from "@/lib/whatsapp/intent";
 import { LINK_INSTRUCTIONS, HELP_TEXT, FALLBACK_TEXT, formatConfirmSummary, formatEventLabel, formatEventLine, formatNaturalDate, ambiguousChoices } from "@/lib/whatsapp/format";
 import { getIdentityByPhone, upsertIdentity, findValidChallengeByHash, findValidChallengeByUserId, markChallengeUsed, getConversation, getMessageHistory, upsertConversation, setPending, clearPending, isExpired } from "@/lib/whatsapp/store";
 import { scheduleSessions as localScheduleSessions, subjects as localSubjects } from "@/lib/schedule-data";
 
 type EngineResult = { reply: string; handled: boolean };
+
+const MODEL_UNAVAILABLE_TEXT = "No pude conectarme con el modelo. Intentá de nuevo en un rato.";
 
 function normalizeConfirmText(t: string): string {
   return t
@@ -51,31 +53,7 @@ function isNumericChoice(t: string): number | null {
   return n;
 }
 
-function isSafeChatReply(reply: string): boolean {
-  const value = reply.trim();
-  if (!value || /\b(?:pending|completed|cancelled|event_id|subject_code)\b|\b(?:id|uuid)\s*[=:]/i.test(value)) return false;
-  if (/^(?:✅\s*)?(?:agend|anot|guard|registr|crea|creé|cread|edit|mov|cambi|cancel|elimin|borr|archiv|actualiz|marc|complet)[a-záéíóúüñ]*/i.test(value)) return false;
-  if (/\b(?:ya|listo|perfecto|he|hice|acabo de|terminé|termino|quedó|quedaron|fue|fueron)\b.{0,40}\b(?:agend|anot|guard|registr|crea|creé|cread|edit|mov|cambi|cancel|elimin|borr|archiv|actualiz|marc|complet)[a-záéíóúüñ]*/i.test(value)) return false;
-  // Deterministic output guardrail: chat must never promise an action in
-  // future tense ("te lo agendo", "te aviso media hora antes") — reminders
-  // don't exist and chat cannot execute anything. Blocked replies fall back
-  // to the recovery message instead of hallucinating.
-  if (/\bte\s+(?:lo|la|los|las)\s+(?:agend|anot|guard|registr|cre[a-záéíóúüñ]*|edit|muev|cambi|cancel|archiv|actualiz|mar[cq]|complet)[a-záéíóúüñ]*/i.test(value)) return false;
-  if (/\bte\s+aviso\b/i.test(value)) return false;
-  if (/\bya\s+mismo\b/i.test(value)) return false;
-  if (/\bmedia\s+hora\s+antes\b/i.test(value)) return false;
-  if (/\bquer[eé]s\s+que\s+te\s+avis/i.test(value)) return false;
-  if (/\brecordatori[oa]s?\b/i.test(value)) return false;
-  return true;
-}
-
 type EventReference = Record<string, unknown> & { id: string; title: string; date: string };
-
-const WEEKDAYS = "domingo|lunes|martes|miercoles|jueves|viernes|sabado";
-
-function normalizeReference(value: string): string {
-  return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-}
 
 function eventReference(event: Record<string, unknown>): EventReference | null {
   const id = String(event.id ?? "").trim();
@@ -96,52 +74,6 @@ function storedEventContext(value: unknown): EventReference[] {
     .slice(0, 10);
 }
 
-function eventWeekday(event: EventReference): string {
-  return normalizeReference(formatNaturalDate(event.date).split(" ")[0] ?? "");
-}
-
-function isDeleteRequest(text: string): boolean {
-  const normalized = normalizeReference(text);
-  return !/\bno\s+(?:me\s+)?(?:borres?|elimines?)/.test(normalized) && /\b(?:borr\w*|elimin\w*)\b/.test(normalized);
-}
-
-function resolveEventReferences(text: string, events: EventReference[]): EventReference[] | null {
-  if (!isDeleteRequest(text) || events.length === 0) return null;
-  const normalized = normalizeReference(text);
-  let selected: EventReference[] = [];
-
-  const onlyDay = normalized.match(new RegExp(`\\bsolo\\s+(?:(?:el|la|los|las)\\s+)?(?:(?:del|de)\\s+)?(${WEEKDAYS})\\b`));
-  if (onlyDay) {
-    selected = events.filter((event) => eventWeekday(event) === onlyDay[1]);
-  } else if (/\b(?:ambos|ambas)\b|\b(?:los|las)\s+dos\b/.test(normalized)) {
-    if (events.length !== 2) return null;
-    selected = events;
-  } else if (/\b(?:todo|todos|todas|toda)\b/.test(normalized)) {
-    selected = events;
-  } else {
-    const ordinal = normalized.match(/\b(?:el|la)\s+(primero|primera|segundo|segunda|tercero|tercera)\b/);
-    if (ordinal) {
-      const index = { primero: 0, primera: 0, segundo: 1, segunda: 1, tercero: 2, tercera: 2 }[ordinal[1]];
-      if (index !== undefined && events[index]) selected = [events[index]];
-    }
-    if (selected.length === 0) {
-      const day = normalized.match(new RegExp(`\\b(?:el|la)\\s+(?:del\\s+)?(${WEEKDAYS})\\b`));
-      if (day) selected = events.filter((event) => eventWeekday(event) === day[1]);
-    }
-    if (selected.length === 0 && /\b(?:ese|esa|eso|aquel|aquella|lo)\b/.test(normalized)) {
-      const last = events.at(-1);
-      if (last) selected = [last];
-    }
-    if (selected.length === 0) {
-      const matchingTitles = events.filter((event) => normalizeReference(text).includes(normalizeReference(event.title)));
-      if (matchingTitles.length === 1) selected = matchingTitles;
-    }
-  }
-
-  const excludedDays = [...normalized.matchAll(new RegExp(`\\b(?:no|menos|excepto)\\s+(?:(?:el|la)\\s+)?(?:del\\s+)?(${WEEKDAYS})\\b`, "g"))].map((match) => match[1]);
-  if (excludedDays.length > 0) selected = selected.filter((event) => !excludedDays.includes(eventWeekday(event)));
-  return selected.length > 0 && selected.length <= 10 ? selected : null;
-}
 
 function eventContextHint(events: EventReference[]): string | undefined {
   if (events.length === 0) return undefined;
@@ -166,22 +98,14 @@ function lastMutationSummary(history: DeepseekHistoryMessage[]): string | undefi
   return undefined;
 }
 
-function chatRecoveryReply(events: EventReference[]): string {
-  if (events.length > 0) {
-    const shown = events.slice(0, 3).map((event) => `${formatEventLabel(event)} (${formatNaturalDate(event.date)})`).join(", ");
-    return `Te sigo, pero necesito precisar cuál de estos eventos querés cambiar: ${shown}. ¿Cuál elegís? 🙂`;
-  }
-  return "Te sigo, pero necesito un poco más de detalle. ¿Querés consultar tus horarios, apuntes o eventos? 🙂";
-}
-
 async function chatOrFallback(text: string, history: DeepseekHistoryMessage[], events: EventReference[] = [], pendingHint?: string): Promise<EngineResult> {
   const hints = [lastMutationSummary(history), eventContextHint(events), pendingHint].filter((hint): hint is string => Boolean(hint));
   const contextHint = hints.join("\n\n");
   const chatReply = contextHint
     ? await callDeepseekChat(text, history, contextHint).catch(() => null)
     : await callDeepseekChat(text, history).catch(() => null);
-  if (chatReply && isSafeChatReply(chatReply)) return { reply: chatReply, handled: true };
-  return { reply: !text.trim() || isFallbackText(text) ? FALLBACK_TEXT : chatRecoveryReply(events), handled: true };
+  if (chatReply) return { reply: chatReply, handled: true };
+  return { reply: !text.trim() || isFallbackText(text) ? FALLBACK_TEXT : MODEL_UNAVAILABLE_TEXT, handled: true };
 }
 
 // Compact factual description of the pending confirmation for LLM hints.
@@ -388,7 +312,7 @@ async function rememberEventContext(waId: string, events: Array<Record<string, u
 function previousEventScope(history: DeepseekHistoryMessage[], timeZone: string): EventDateRange | undefined {
   for (let index = history.length - 1; index >= 0; index -= 1) {
     const message = history[index];
-    if (message.role !== "user" || !isEventReadRequest(message.content, true)) continue;
+    if (message.role !== "user") continue;
     const eventRange = resolveEventDateRange(message.content, new Date(), timeZone);
     if (eventRange) return eventRange;
   }
@@ -512,7 +436,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     }
     // if message looks like linking attempt, try deepseek draft link
     const history = await getMessageHistory(waId, providerMessageId);
-    const draft = (await callDeepseekDraft(text, undefined, history)) ?? detectLocalDraft(text, getWhatsappConfig().timezone);
+    const draft = await callDeepseekDraft(text, undefined, history);
     if (draft && draft.intent === "link") {
       const code = String((draft.payload as Record<string, unknown>)?.code ?? trimmed).trim();
       const linkRes2 = await tryLink(waId, code);
@@ -526,11 +450,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     await upsertConversation(waId, { user_id: userId });
   }
 
-  if (!text.trim() || isFallbackText(text)) {
-    if (text.trim() === "?") {
-      const history = await getMessageHistory(waId, providerMessageId);
-      if (history.some((message) => message.role === "assistant")) return { reply: "¿Qué parte no quedó clara? Decime y te lo explico 🙂", handled: true };
-    }
+  if (!text.trim() || (isFallbackText(text) && text.trim() !== "?")) {
     return { reply: FALLBACK_TEXT, handled: true };
   }
 
@@ -569,7 +489,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     }
   }
 
-  // 5. normal flow: get draft via DeepSeek or local (with owned candidate hint for edits)
+  // 5. normal flow: get every draft from the LLM (with owned candidate hint for edits)
   // The still-valid pending (if any) is shared with both LLM legs: the draft
   // uses it to resolve re-affirmations to the SAME action, and chat uses it
   // to point at SI/NO instead of inventing outcomes.
@@ -591,25 +511,12 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   const timeZone = getWhatsappConfig().timezone;
   const history = await getMessageHistory(waId, providerMessageId);
   const recentEvents = storedEventContext(convo?.last_ambiguous);
-  const localDelete = resolveEventReferences(text, recentEvents);
   const priorEventScope = previousEventScope(history, timeZone);
-  const local = localDelete
-    ? { intent: "events.cancel", payload: { event_ids: localDelete.map((event) => event.id) } }
-    : detectLocalDraft(text, timeZone, priorEventScope);
-  if (local) rawDraft = local;
-  else {
-    const candidateHint = await buildCandidateHint(svc, userId);
-    const hint = [candidateHint, eventContextHint(recentEvents), pendingDraftHint].filter((part): part is string => Boolean(part)).join("\n");
-    rawDraft = await callDeepseekDraft(text, hint || undefined, history);
-  }
+  const candidateHint = await buildCandidateHint(svc, userId);
+  const hint = [candidateHint, eventContextHint(recentEvents), pendingDraftHint].filter((part): part is string => Boolean(part)).join("\n");
+  rawDraft = await callDeepseekDraft(text, hint || undefined, history);
 
   if (!rawDraft) {
-    // try to answer reads directly without LLM
-    if (text.toLowerCase().includes("materias")) {
-      const subjects = await readSubjects(svc);
-      const lines = subjects.map((s) => `• ${s.name}`).join("\n");
-      return { reply: `📚 Estas son tus materias:\n${lines}`, handled: true };
-    }
     return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined);
   }
 
