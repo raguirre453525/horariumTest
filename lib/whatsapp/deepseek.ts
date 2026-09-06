@@ -106,7 +106,7 @@ async function postChatCompletion(
 }
 
 function historyMessages(history: DeepseekHistoryMessage[]) {
-  return history.slice(-5).map(({ role, content }) => ({ role, content: content.slice(0, 500) }));
+  return history.slice(-5).map(({ role, content }) => ({ role: role === "assistant" ? "assistant" : "user", content: String(content ?? "").slice(0, 500) }));
 }
 
 export async function callDeepseekDraft(
@@ -124,7 +124,7 @@ export async function callDeepseekDraft(
     const body = {
       model: provider.model,
       messages: [
-        { role: "system", content: SYSTEM_PROMPT + (contextHint ? `\nContexto: ${contextHint}` : "") },
+        { role: "system", content: SYSTEM_PROMPT + "\n\nHoy es " + new Date().toLocaleDateString("es-AR", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "America/Argentina/Buenos_Aires" }) + ". Resolvé todas las fechas relativas contra ese día." + (contextHint ? `\nContexto: ${contextHint}` : "") },
         ...historyMessages(history),
         { role: "user", content: userText.slice(0, 2000) },
       ],
@@ -169,7 +169,7 @@ export async function callDeepseekChat(userText: string, history: DeepseekHistor
     const body = {
       model: provider.model,
       messages: [
-        { role: "system", content: CHAT_SYSTEM_PROMPT + (contextHint ? `\n\n${contextHint}` : "") },
+        { role: "system", content: CHAT_SYSTEM_PROMPT + "\n\nHoy es " + new Date().toLocaleDateString("es-AR", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "America/Argentina/Buenos_Aires" }) + "." + (contextHint ? `\n\n${contextHint}` : "") },
         ...historyMessages(history),
         { role: "user", content: userText.slice(0, 2000) },
       ],
