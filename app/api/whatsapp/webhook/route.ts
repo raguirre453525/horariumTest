@@ -110,7 +110,7 @@ export async function POST(req: Request) {
       const res = await handleWhatsappMessage(msg.waId, msg.text, msg.providerMessageId);
       reply = res.reply;
     } catch (e) {
-      reply = "Ocurrió un error procesando tu mensaje. Probá de nuevo en unos minutos.";
+      reply = "Uy, tuve un problema procesando eso 😕. Probá de nuevo en unos minutos.";
       console.error("[whatsapp] engine error", e);
     }
 

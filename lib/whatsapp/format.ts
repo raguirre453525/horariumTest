@@ -1,51 +1,67 @@
-export const LINK_INSTRUCTIONS = `Tu número no está vinculado a Horarium.
+export const LINK_INSTRUCTIONS = `¡Buenas! 👋 Este número todavía no está vinculado a Horarium.
 
-Para vincularlo:
-1. Iniciá sesión en Horarium en tu navegador.
-2. Andá a Configuración o tocá tu avatar arriba a la derecha.
-3. Generá un código de vinculación (válido 10 minutos).
-4. Enviame ese código por aquí.
+Iniciá sesión en Horarium, abrí Configuración y generá tu código de vinculación. Dura 10 minutos: mandámelo por acá y seguimos.
 
-Si ya tenés un código, envialo ahora.`;
+Si ya tenés el código, enviámelo ahora.`;
 
-export const HELP_TEXT = `Puedo ayudarte con:
+export const HELP_TEXT = `¡Dale! Puedo darte una mano con:
 
-• Materias y horarios: "mostrame mis materias", "horario de ASI"
-• Apuntes: "mis apuntes", "crear apunte para RED título ...", "archivar apunte"
-• Eventos: "próximos eventos", "crear evento parcial fecha ...", "cancelar evento"
+📚 materias y horarios · 👨‍🏫 docentes · 📝 apuntes · 📅 eventos
 
-Para acciones que cambian datos te pediré confirmar con SI o NO.
-Los cambios expiran en 10 minutos si no confirmás.`;
+Probá: “mostrame mis materias”, “cuándo curso RED” o “qué tengo esta semana”. Para guardar o cambiar algo, siempre te voy a pedir un SI o NO. La confirmación dura 10 minutos.`;
+
+export const FALLBACK_TEXT = `¡Te leo! 🤔 No terminé de entenderte. Probá con “mostrame mis materias”, “cuándo curso RED” o “qué tengo esta semana”.`;
+
+const FIELD_LABELS: Record<string, string> = {
+  title: "título",
+  content: "contenido",
+  note_date: "fecha",
+  tags: "etiquetas",
+  date: "fecha",
+  time: "hora",
+  subject_code: "materia",
+  description: "detalle",
+  type: "tipo",
+  status: "estado",
+  event_type: "modalidad",
+};
+
+function changes(payload: Record<string, unknown>, ignored: string[]): string {
+  return Object.entries(payload)
+    .filter(([key]) => !ignored.includes(key))
+    .map(([key, value]) => `${FIELD_LABELS[key] ?? key}: ${typeof value === "string" ? value : JSON.stringify(value)}`)
+    .join(" · ");
+}
 
 export function formatConfirmSummary(kind: string, payload: Record<string, unknown>): string {
   switch (kind) {
     case "create_note":
-      return `Vas a crear un apunte para ${String(payload.subject_code)}:\nTítulo: ${String(payload.title)}\nContenido: ${String(payload.content).slice(0, 200)}\n¿Confirmás? Respondé SI para crear o NO para cancelar.`;
+      return `📝 Voy a crear un apunte para ${String(payload.subject_code)}:\nTítulo: ${String(payload.title)}\nContenido: ${String(payload.content).slice(0, 200)}\n\n¿Está bien? Respondé SI para crear o NO para cancelar. Tenés 10 minutos.`;
     case "edit_note":
-      return `Vas a editar el apunte ${String(payload.note_id).slice(0, 8)} con: ${JSON.stringify(payload)}\n¿Confirmás? Respondé SI o NO.`;
+      return `📝 Voy a editar el apunte ${String(payload.note_id).slice(0, 8)}.\nCambios: ${changes(payload, ["note_id"])}\n\nRespondé SI para guardar o NO para cancelar. Tenés 10 minutos.`;
     case "archive_note":
-      return `Vas a archivar el apunte ${String(payload.note_id).slice(0, 8)}. Respondé SI para confirmar o NO para cancelar.`;
+      return `🗂️ Voy a archivar el apunte ${String(payload.note_id).slice(0, 8)}. Respondé SI para confirmar o NO para cancelar. Tenés 10 minutos.`;
     case "unarchive_note":
-      return `Vas a desarchivar el apunte ${String(payload.note_id).slice(0, 8)}. Respondé SI para confirmar o NO para cancelar.`;
+      return `🗂️ Voy a volver a activar el apunte ${String(payload.note_id).slice(0, 8)}. Respondé SI para confirmar o NO para cancelar. Tenés 10 minutos.`;
     case "delete_note":
-      return `Vas a eliminar definitivamente el apunte ${String(payload.note_id).slice(0, 8)}. Esta acción no se puede deshacer. Respondé SI para eliminar o NO para cancelar.`;
+      return `⚠️ Voy a eliminar definitivamente el apunte ${String(payload.note_id).slice(0, 8)}. No se puede deshacer. Respondé SI para eliminar o NO para cancelar. Tenés 10 minutos.`;
     case "create_event":
-      return `Vas a crear un evento "${String(payload.title)}" tipo ${String(payload.type)} el ${String(payload.date)}${payload.time ? ` a las ${String(payload.time)}` : ""} ${payload.subject_code ? `para ${String(payload.subject_code)}` : ""}.\n¿Confirmás? SI/NO`;
+      return `📅 Voy a agendar “${String(payload.title)}”, tipo ${String(payload.type)}, el ${String(payload.date)}${payload.time ? ` a las ${String(payload.time)}` : ""}${payload.subject_code ? `, para ${String(payload.subject_code)}` : ""}.\n\n¿Está bien? Respondé SI para guardar o NO para cancelar. Tenés 10 minutos.`;
     case "edit_event":
-      return `Vas a editar el evento ${String(payload.event_id).slice(0, 8)} con: ${JSON.stringify(payload)}.\n¿Confirmás? SI/NO`;
+      return `📅 Voy a editar el evento ${String(payload.event_id).slice(0, 8)}.\nCambios: ${changes(payload, ["event_id"])}\n\nRespondé SI para guardar o NO para cancelar. Tenés 10 minutos.`;
     case "cancel_event":
-      return `Vas a cancelar el evento ${String(payload.event_id).slice(0, 8)}. El evento quedará como cancelado (no se elimina permanentemente) y se podrá revertir. Respondé SI para cancelar o NO para mantenerlo.`;
+      return `📅 Voy a cancelar el evento ${String(payload.event_id).slice(0, 8)}. Queda como cancelado; no lo borro y después podés revertirlo. Respondé SI para cancelar o NO para dejarlo como está. Tenés 10 minutos.`;
     case "toggle_complete": {
       const isGroup = (payload as { event_type?: string }).event_type === "grupal";
-      if (isGroup) return `Vas a cambiar el estado de completado grupal del evento ${String(payload.event_id).slice(0, 8)}. Atención: esto afecta a todos los participantes. Respondé SI para confirmar o NO para cancelar.`;
-      return `Vas a cambiar tu tilde de completado para el evento ${String(payload.event_id).slice(0, 8)} (solo para vos). Respondé SI o NO.`;
+      if (isGroup) return `✅ Voy a cambiar el estado del evento grupal ${String(payload.event_id).slice(0, 8)}. Ojo: esto afecta a todos los participantes. Respondé SI para confirmar o NO para cancelar. Tenés 10 minutos.`;
+      return `✅ Voy a cambiar tu tilde de completado del evento ${String(payload.event_id).slice(0, 8)} (solo para vos). Respondé SI para confirmar o NO para cancelar. Tenés 10 minutos.`;
     }
     default:
-      return `Vas a ejecutar ${kind} con ${JSON.stringify(payload)}. Respondé SI para confirmar o NO para cancelar.`;
+      return `Voy a ejecutar esa acción con los datos que vimos. Respondé SI para confirmar o NO para cancelar. Tenés 10 minutos.`;
   }
 }
 
 export function ambiguousChoices<T>(items: T[], getLabel: (t: T, i: number) => string): string {
   const lines = items.slice(0, 10).map((it, idx) => `${idx + 1}. ${getLabel(it, idx)}`);
-  return `Encontré varias opciones. Respondé con el número:\n${lines.join("\n")}`;
+  return `🤔 Encontré varias opciones. Respondé con el número que corresponda:\n${lines.join("\n")}`;
 }

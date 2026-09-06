@@ -10,8 +10,8 @@ export function getWhatsappConfig() {
     deepseekApiKey: process.env.DEEPSEEK_API_KEY ?? "",
     deepseekBaseUrl: (process.env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com").replace(/\/$/, ""),
     deepseekModel: process.env.DEEPSEEK_MODEL ?? "deepseek-v4-flash",
-    timezone: process.env.HORARIUM_TIMEZONE ?? "America/Argentina/Buenos_Aires",
+    timezone: process.env.HORARIUM_TIMEZONE ?? "America/Argentina/Tucuman",
   };
 }
 
-export const HORARIUM_TIMEZONE = process.env.HORARIUM_TIMEZONE ?? "America/Argentina/Buenos_Aires";
+export const HORARIUM_TIMEZONE = process.env.HORARIUM_TIMEZONE ?? "America/Argentina/Tucuman";

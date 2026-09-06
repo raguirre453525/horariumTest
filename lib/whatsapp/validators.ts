@@ -11,7 +11,7 @@ export type BotDraft = {
 export type ValidatedDraft =
   | { kind: "read_subjects" }
   | { kind: "read_subject"; subject_code: string }
-  | { kind: "read_schedule"; subject_code?: string }
+  | { kind: "read_schedule"; subject_code?: string; all_subjects?: boolean }
   | { kind: "read_notes"; subject_code?: string; query?: string }
   | { kind: "read_events"; filter?: string }
   | { kind: "create_note"; subject_code: string; title: string; content: string; note_date: string | null; tags: string[] }
@@ -61,7 +61,7 @@ export function validateDraft(raw: BotDraft): ValidatedDraft | null {
   }
   if (intent === "read_schedule") {
     const code = typeof p.subject_code === "string" ? p.subject_code.trim().toUpperCase().slice(0, 20) : undefined;
-    return { kind: "read_schedule", subject_code: code || undefined };
+    return { kind: "read_schedule", subject_code: code || undefined, all_subjects: p.all_subjects === true };
   }
   if (intent === "read_notes") {
     const code = typeof p.subject_code === "string" ? p.subject_code.trim().toUpperCase().slice(0, 20) : undefined;
