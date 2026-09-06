@@ -31,6 +31,12 @@ function isSafeChatReply(reply: string): boolean {
   return Boolean(value) && !/\b(?:ya|listo)\b.{0,30}\b(?:agend|anot|guard|registr|cre|edit|cancel|elimin|archiv|actualiz)[a-záéíóúüñ]*/i.test(value);
 }
 
+async function chatOrFallback(text: string, history: DeepseekHistoryMessage[]): Promise<EngineResult> {
+  const chatReply = await callDeepseekChat(text, history).catch(() => null);
+  if (chatReply && isSafeChatReply(chatReply)) return { reply: chatReply, handled: true };
+  return { reply: FALLBACK_TEXT, handled: true };
+}
+
 async function readSubjects(svc: ReturnType<typeof getServiceClient>) {
   const { data } = await svc.from("subjects").select("id, code, name, accent").order("code");
   if (data && data.length > 0) return data as Array<{ id: string; code: string; name: string; accent: string }>;
@@ -280,12 +286,12 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
       const lines = subjects.map((s) => `• ${s.code} — ${s.name}`).join("\n");
       return { reply: `📚 Estas son tus materias:\n${lines}`, handled: true };
     }
-    return { reply: FALLBACK_TEXT, handled: true };
+    return chatOrFallback(text, history);
   }
 
   const validated = validateDraft(rawDraft as unknown as import("@/lib/whatsapp/validators").BotDraft);
   if (!validated) {
-    return { reply: FALLBACK_TEXT, handled: true };
+    return chatOrFallback(text, history);
   }
 
   // handle link inside authenticated flow
@@ -298,9 +304,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     return { reply: HELP_TEXT, handled: true };
   }
   if (validated.kind === "unknown") {
-    const chatReply = await callDeepseekChat(text, history).catch(() => null);
-    if (chatReply && isSafeChatReply(chatReply)) return { reply: chatReply, handled: true };
-    return { reply: FALLBACK_TEXT, handled: true };
+    return chatOrFallback(text, history);
   }
 
   // read operations: execute directly, no confirmation

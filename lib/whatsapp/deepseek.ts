@@ -40,7 +40,14 @@ export async function callDeepseekDraft(
   history: DeepseekHistoryMessage[] = [],
 ): Promise<BotDraft | null> {
   const cfg = getWhatsappConfig();
-  if (!cfg.deepseekApiKey) return null;
+  if (!cfg.deepseekApiKey) {
+    console.warn("[whatsapp] draft skipped", { stage: "no-key" });
+    return null;
+  }
+  const fail = (stage: string, status?: number) => {
+    console.warn("[whatsapp] draft failed", status === undefined ? { stage } : { stage, status });
+    return null;
+  };
   try {
     const body = {
       model: cfg.deepseekModel,
@@ -69,16 +76,19 @@ export async function callDeepseekDraft(
     } finally {
       clearTimeout(timeout);
     }
-    if (!res.ok) return null;
+    if (!res.ok) return fail("http", res.status);
     const json = (await res.json()) as {
       choices?: Array<{ message?: { content?: string; tool_calls?: Array<{ function?: { arguments?: string } }> } }>;
     };
     const content = json.choices?.[0]?.message?.content ?? json.choices?.[0]?.message?.tool_calls?.[0]?.function?.arguments ?? "";
-    if (!content) return null;
-    const parsed = JSON.parse(content) as BotDraft;
-    return parsed;
+    if (!content) return fail("empty");
+    try {
+      return JSON.parse(content) as BotDraft;
+    } catch {
+      return fail("parse");
+    }
   } catch {
-    return null;
+    return fail("fetch");
   }
 }
 

@@ -206,6 +206,12 @@ vi.mock("@supabase/supabase-js", () => ({
 
 import { POST } from "@/app/api/whatsapp/webhook/route";
 
+// Failure injection for the DeepSeek legs: the production "hola" bug was the
+// draft returning null (http/garbage/throw) and falling back without ever
+// trying chat. These flags reproduce each draft failure mode.
+let draftFailure: null | "http" | "garbage" | "throw" = null;
+let chatFailure = false;
+
 const envKeys = [
   "NEXT_PUBLIC_SUPABASE_URL",
   "SUPABASE_SERVICE_ROLE_KEY",
@@ -222,8 +228,14 @@ const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => 
   if (url.includes("api.deepseek.com")) {
     const body = JSON.parse(String(init?.body)) as { response_format?: unknown; messages: Array<{ content: string }> };
     if (body.response_format) {
+      if (draftFailure === "http") return new Response("Unauthorized", { status: 401 });
+      if (draftFailure === "garbage") {
+        return new Response(JSON.stringify({ choices: [{ message: { content: "hola, ¿qué tal todo por ahí?" } }] }), { status: 200 });
+      }
+      if (draftFailure === "throw") throw new Error("deepseek down");
       return new Response(JSON.stringify({ choices: [{ message: { content: '{"intent":"unknown"}' } }] }), { status: 200 });
     }
+    if (chatFailure) return new Response("Server error", { status: 500 });
     const text = body.messages.at(-1)?.content ?? "";
     const replies: Record<string, string> = {
       hola: "¡Hola! Qué bueno leerte 😊",
@@ -271,6 +283,8 @@ async function sendTurn(text: string, providerMessageId: string) {
 describe("WhatsApp conversation through the webhook", () => {
   beforeEach(() => {
     database.reset();
+    draftFailure = null;
+    chatFailure = false;
     vi.stubGlobal("fetch", fetchMock);
     for (const key of envKeys) process.env[key] = key === "DEEPSEEK_BASE_URL" ? "https://api.deepseek.com" : "test-value";
     process.env.WHATSAPP_APP_SECRET = "app-secret";
@@ -328,5 +342,22 @@ describe("WhatsApp conversation through the webhook", () => {
       ["quiero agendar un parcial de REDES el 30/09/2026", "📅 Voy a agendar “Parcial de redes”, tipo parcial, el 2026-09-30, para RED.\n\n¿Está bien? Respondé SI para guardar o NO para cancelar. Tenés 10 minutos."],
       ["si", "✅ Evento agendado."],
     ]);
+  });
+
+  it("answers hola through chat when the draft leg fails in any mode", async () => {
+    for (const mode of ["http", "garbage", "throw"] as const) {
+      draftFailure = mode;
+      const turn = await sendTurn("hola", `provider-hola-${mode}`);
+      expect(turn.status).toBe(200);
+      expect(turn.reply).toBe("¡Hola! Qué bueno leerte 😊");
+    }
+  });
+
+  it("falls back only when the draft and the chat legs both fail", async () => {
+    draftFailure = "http";
+    chatFailure = true;
+    const turn = await sendTurn("hola", "provider-hola-down");
+    expect(turn.status).toBe(200);
+    expect(turn.reply).toBe(FALLBACK_TEXT);
   });
 });
