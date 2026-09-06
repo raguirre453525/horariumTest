@@ -40,12 +40,12 @@ export type DeepseekHistoryMessage = {
 
 type LlmProviderName = "groq" | "deepseek";
 type LlmFailureStage = "no-key" | "fetch" | "http" | "parse" | "empty";
-type LlmFailure = { provider: LlmProviderName; stage: LlmFailureStage; status?: number };
+type LlmFailure = { provider: LlmProviderName; stage: LlmFailureStage; status?: number; detail?: string };
 type LlmProvider = { name: LlmProviderName; baseUrl: string; apiKey: string; model: string };
 
 function failureCode(failure: LlmFailure): string {
   const status = typeof failure.status === "number" && Number.isFinite(failure.status) ? `:${failure.status}` : "";
-  return `${failure.provider}:${failure.stage}${status}`;
+  return `${failure.provider}:${failure.stage}${status}${failure.detail ? `:${failure.detail}` : ""}`;
 }
 
 function recordFailure(failureCodes: string[] | undefined, failure: LlmFailure): void {
@@ -146,7 +146,7 @@ export async function callDeepseekDraft(
     } | null;
     const content = json?.choices?.[0]?.message?.content ?? json?.choices?.[0]?.message?.tool_calls?.[0]?.function?.arguments ?? "";
     if (!content) {
-      fail({ provider: provider.name, stage: "empty" });
+      fail({ provider: provider.name, stage: "empty", detail: String((json as { choices?: Array<{ finish_reason?: unknown }> } | null)?.choices?.[0]?.finish_reason ?? "none").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 16) + ":" + JSON.stringify(body).length });
       continue;
     }
     try {
@@ -194,7 +194,7 @@ export async function callDeepseekChat(userText: string, history: DeepseekHistor
     else if (json === null) content = res.text;
     const trimmed = content.trim();
     if (!trimmed) {
-      fail({ provider: provider.name, stage: "empty" });
+      fail({ provider: provider.name, stage: "empty", detail: String((json as { choices?: Array<{ finish_reason?: unknown }> } | null)?.choices?.[0]?.finish_reason ?? "none").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 16) + ":" + JSON.stringify(body).length });
       continue;
     }
     return trimmed.split(/\r?\n/).slice(0, 2).join("\n").slice(0, 1000) || null;
