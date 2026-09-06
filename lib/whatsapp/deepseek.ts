@@ -50,6 +50,7 @@ export async function callDeepseekDraft(
         { role: "user", content: userText.slice(0, 2000) },
       ],
       temperature: 0.2,
+      stream: false,
       response_format: { type: "json_object" },
     };
     const controller = new AbortController();
@@ -83,7 +84,11 @@ export async function callDeepseekDraft(
 
 export async function callDeepseekChat(userText: string, history: DeepseekHistoryMessage[] = []): Promise<string | null> {
   const cfg = getWhatsappConfig();
-  if (!cfg.deepseekApiKey) return null;
+  const fail = () => {
+    console.warn("[whatsapp] DeepSeek chat failed", { inputLength: userText.length });
+    return null;
+  };
+  if (!cfg.deepseekApiKey) return fail();
   try {
     const body = {
       model: cfg.deepseekModel,
@@ -93,6 +98,7 @@ export async function callDeepseekChat(userText: string, history: DeepseekHistor
         { role: "user", content: userText.slice(0, 2000) },
       ],
       temperature: 0.7,
+      stream: false,
     };
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 8000);
@@ -110,12 +116,23 @@ export async function callDeepseekChat(userText: string, history: DeepseekHistor
     } finally {
       clearTimeout(timeout);
     }
-    if (!res.ok) return null;
-    const json = (await res.json()) as { choices?: Array<{ message?: { content?: string } }> };
-    const content = json.choices?.[0]?.message?.content?.trim() ?? "";
-    if (!content) return null;
-    return content.split(/\r?\n/).slice(0, 2).join("\n").slice(0, 1000) || null;
+    if (!res.ok) return fail();
+    const raw = typeof res.text === "function" ? await res.text() : JSON.stringify(await res.json()) ?? "";
+    let content = raw;
+    try {
+      const parsed = JSON.parse(raw) as unknown;
+      if (typeof parsed === "string") content = parsed;
+      else if (parsed && typeof parsed === "object") {
+        const candidate = (parsed as { choices?: Array<{ message?: { content?: string } }> }).choices?.[0]?.message?.content;
+        content = typeof candidate === "string" ? candidate : "";
+      } else content = "";
+    } catch {
+      // Some compatible endpoints return the assistant text directly.
+    }
+    const trimmed = content.trim();
+    if (!trimmed) return fail();
+    return trimmed.split(/\r?\n/).slice(0, 2).join("\n").slice(0, 1000) || null;
   } catch {
-    return null;
+    return fail();
   }
 }

@@ -39,12 +39,14 @@ describe("callDeepseekDraft conversation history", () => {
       json: async () => ({ choices: [{ message: { content: "¡Hola! 😊" } }] }),
     });
 
-    await callDeepseekChat("hola", [{ role: "user", content: "buenas" }]);
+    const reply = await callDeepseekChat("hola", [{ role: "user", content: "buenas" }]);
 
     const request = fetchMock.mock.calls[0]?.[1] as RequestInit;
     const body = JSON.parse(String(request.body)) as { messages: Array<{ role: string; content: string }>; response_format?: unknown };
     expect(body.response_format).toBeUndefined();
+    expect((body as { stream?: boolean }).stream).toBe(false);
     expect(body.messages[0]?.content).toContain("compañero de cursada");
     expect(body.messages.at(-1)).toEqual({ role: "user", content: "hola" });
+    expect(reply).toBe("¡Hola! 😊");
   });
 });
