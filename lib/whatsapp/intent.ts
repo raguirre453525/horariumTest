@@ -24,6 +24,10 @@ export function isFallbackText(text: string): boolean {
   return /^(?:[¿?!.…]+)$/.test(text.trim());
 }
 
+function isRescheduleRequest(text: string): boolean {
+  return /\b(?:pasar|pasaron|paso|pasa|pasame|mover|movi|mueve|movelo|cambiar|cambia\w*|adelantar|adelanta\w*|postergar|posterga\w*|reprogramar|reprograma\w*)\b/.test(text);
+}
+
 export function detectLocalDraft(text: string, timeZone = DEFAULT_WHATSAPP_TIME_ZONE): LocalDraft | null {
   const normalized = normalizeText(text);
   if (!normalized) return null;
@@ -51,7 +55,7 @@ export function detectLocalDraft(text: string, timeZone = DEFAULT_WHATSAPP_TIME_
   const type = eventType(normalized);
   const eventRequest = Boolean(type) || /\b(evento|anota|anotalo|agend|apunta|apuntalo|registra|crea|crear|nuevo)\b/.test(normalized);
   const date = resolveNaturalDate(normalized, new Date(), timeZone);
-  if (eventRequest && date) {
+  if (eventRequest && date && !isRescheduleRequest(normalized)) {
     const reference = subjectReference(normalized);
     const label = type ?? "evento";
     return {

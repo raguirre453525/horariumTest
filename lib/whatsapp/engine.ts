@@ -28,13 +28,46 @@ function isNumericChoice(t: string): number | null {
 
 function isSafeChatReply(reply: string): boolean {
   const value = reply.trim();
-  return Boolean(value) && !/\b(?:ya|listo)\b.{0,30}\b(?:agend|anot|guard|registr|cre|edit|cancel|elimin|archiv|actualiz)[a-záéíóúüñ]*/i.test(value);
+  return Boolean(value) && !/\b(?:agend|anot|guard|registr|crea|creé|cread|edit|mov|cambi|cancel|elimin|borr|archiv|actualiz|marc|complet)[a-záéíóúüñ]*/i.test(value);
+}
+
+function lastMutationSummary(history: DeepseekHistoryMessage[]): string | undefined {
+  for (let resultIndex = history.length - 1; resultIndex >= 0; resultIndex -= 1) {
+    const result = history[resultIndex];
+    if (result.role !== "assistant" || !/^✅\s*(?:Apunte|Evento)\b/i.test(result.content.trim())) continue;
+    let confirmation: string | undefined;
+    let request: string | undefined;
+    for (let index = resultIndex - 1; index >= 0; index -= 1) {
+      const message = history[index];
+      if (!confirmation && message.role === "assistant" && /Respondé SI/i.test(message.content)) confirmation = message.content;
+      if (!request && message.role === "user") request = message.content;
+      if (confirmation && request) break;
+    }
+    return `Resumen factual de la última mutación confirmada: ${result.content}${confirmation ? ` Detalle confirmado: ${confirmation}` : request ? ` Pedido asociado: ${request}` : ""}. No inventes una acción distinta a este resumen.`;
+  }
+  return undefined;
 }
 
 async function chatOrFallback(text: string, history: DeepseekHistoryMessage[]): Promise<EngineResult> {
-  const chatReply = await callDeepseekChat(text, history).catch(() => null);
+  const contextHint = lastMutationSummary(history);
+  const chatReply = contextHint
+    ? await callDeepseekChat(text, history, contextHint).catch(() => null)
+    : await callDeepseekChat(text, history).catch(() => null);
   if (chatReply && isSafeChatReply(chatReply)) return { reply: chatReply, handled: true };
   return { reply: FALLBACK_TEXT, handled: true };
+}
+
+async function enrichEventEditConfirmation(payload: Record<string, unknown>, userId: string, svc: ReturnType<typeof getServiceClient>) {
+  if (payload.date === undefined && payload.time === undefined) return payload;
+  const { data } = await svc.from("academic_events").select("id, title, date, time, created_by").eq("id", String(payload.event_id)).maybeSingle();
+  if (!data || String((data as { created_by?: string }).created_by ?? "") !== userId) return payload;
+  const event = data as { title?: string; date?: string; time?: string | null };
+  return {
+    ...payload,
+    ...(typeof event.title === "string" ? { _previous_title: event.title } : {}),
+    ...(typeof event.date === "string" ? { _previous_date: event.date } : {}),
+    ...(event.time !== undefined ? { _previous_time: event.time } : {}),
+  };
 }
 
 async function readSubjects(svc: ReturnType<typeof getServiceClient>) {
@@ -103,7 +136,7 @@ async function buildCandidateHint(svc: ReturnType<typeof getServiceClient>, user
   if (!userId) return undefined;
   try {
     const { data: notes } = await svc.from("notes").select("id, title, subject_id, note_date, subjects(code)").eq("author_id", userId).order("created_at", { ascending: false }).limit(8);
-    const { data: events } = await svc.from("academic_events").select("id, title, date, subject_id, subjects(code)").eq("created_by", userId).order("date").limit(8);
+    const { data: events } = await svc.from("academic_events").select("id, title, date, subject_id, created_at, subjects(code)").eq("created_by", userId).order("created_at", { ascending: false }).limit(8);
     const parts: string[] = [];
     if (notes && notes.length > 0) {
       const lines = (notes as Array<Record<string, unknown>>).map((n) => {
@@ -117,7 +150,7 @@ async function buildCandidateHint(svc: ReturnType<typeof getServiceClient>, user
         const code = (e.subjects as { code?: string } | null)?.code ?? "";
         return `evento id=${String(e.id)} título="${String(e.title).slice(0, 60)}" materia=${code} fecha=${String(e.date ?? "")}`;
       });
-      parts.push(`Candidatos eventos (usa solo estos IDs): ${lines.join(" | ")}`);
+      parts.push(`Candidatos eventos, del más reciente al más antiguo (usa solo estos IDs): ${lines.join(" | ")}`);
     }
     if (parts.length === 0) return undefined;
     return parts.join("\n");
@@ -231,7 +264,13 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     await upsertConversation(waId, { user_id: userId });
   }
 
-  if (isFallbackText(text)) return { reply: FALLBACK_TEXT, handled: true };
+  if (isFallbackText(text)) {
+    if (text.trim() === "?") {
+      const history = await getMessageHistory(waId, providerMessageId);
+      if (history.some((message) => message.role === "assistant")) return { reply: "¿Qué parte no quedó clara? Decime y te lo explico 🙂", handled: true };
+    }
+    return { reply: FALLBACK_TEXT, handled: true };
+  }
 
   // 4. awaiting_relink confirmation for reassociation
   if (convo?.awaiting_relink && convo.relink_target_user_id) {
@@ -321,8 +360,10 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
 
   // For notes mutations, verify at least draft is valid; ambiguous handling may need selection
   // If draft references note_id/event_id that is ambiguous, we need to persist choices
-  const pendingPayload = draftToPayload(validated);
+  let pendingPayload = draftToPayload(validated);
   const pendingKind = validated.kind;
+
+  if (pendingKind === "edit_event") pendingPayload = await enrichEventEditConfirmation(pendingPayload, userId, svc);
 
   // For operations without explicit id but needing selection (e.g., edit without id?), validated already requires id, so ambiguous only for subject_code? We'll handle subject ambiguity via subjects list
   // Example: create_note subject_code must match exactly; otherwise show candidates

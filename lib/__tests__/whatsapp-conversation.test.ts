@@ -211,6 +211,7 @@ import { POST } from "@/app/api/whatsapp/webhook/route";
 // trying chat. These flags reproduce each draft failure mode.
 let draftFailure: null | "http" | "garbage" | "throw" = null;
 let chatFailure = false;
+let lastChatSystemPrompt = "";
 
 const envKeys = [
   "NEXT_PUBLIC_SUPABASE_URL",
@@ -227,21 +228,28 @@ const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => 
   const url = String(input);
   if (url.includes("api.deepseek.com")) {
     const body = JSON.parse(String(init?.body)) as { response_format?: unknown; messages: Array<{ content: string }> };
+    const text = body.messages.at(-1)?.content ?? "";
     if (body.response_format) {
       if (draftFailure === "http") return new Response("Unauthorized", { status: 401 });
       if (draftFailure === "garbage") {
         return new Response(JSON.stringify({ choices: [{ message: { content: "hola, ¿qué tal todo por ahí?" } }] }), { status: 200 });
       }
       if (draftFailure === "throw") throw new Error("deepseek down");
+      if (text === "me pasaron el parcial para el jueves") {
+        const eventId = String(database.rows("academic_events")[0]?.id ?? "missing-event");
+        return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ intent: "update_event", payload: { event_id: eventId, date: "2026-09-10" } }) } }] }), { status: 200 });
+      }
       return new Response(JSON.stringify({ choices: [{ message: { content: '{"intent":"unknown"}' } }] }), { status: 200 });
     }
     if (chatFailure) return new Response("Server error", { status: 500 });
-    const text = body.messages.at(-1)?.content ?? "";
+    lastChatSystemPrompt = body.messages[0]?.content ?? "";
     const replies: Record<string, string> = {
       hola: "¡Hola! Qué bueno leerte 😊",
+      "hola?": "¡Hola! Qué bueno leerte 😊",
       holaaa: "¡Hola! Qué bueno leerte 😊",
       "solo te salude": "¡Qué lindo saludo! Estoy bien y listo para ayudarte 😊",
       "¿cómo estás?": "¡Muy bien, gracias! ¿Qué necesitás hoy? 😊",
+      "¿por qué no me editaste el evento que acababas de crear?": "Tenés razón: no tomé tu pedido. Decime la nueva fecha y te pido SI o NO 🙂",
     };
     return new Response(replies[text] ?? "¡Te escucho! 😊", { status: 200, headers: { "Content-Type": "text/plain" } });
   }
@@ -285,6 +293,7 @@ describe("WhatsApp conversation through the webhook", () => {
     database.reset();
     draftFailure = null;
     chatFailure = false;
+    lastChatSystemPrompt = "";
     vi.stubGlobal("fetch", fetchMock);
     for (const key of envKeys) process.env[key] = key === "DEEPSEEK_BASE_URL" ? "https://api.deepseek.com" : "test-value";
     process.env.WHATSAPP_APP_SECRET = "app-secret";
@@ -292,6 +301,7 @@ describe("WhatsApp conversation through the webhook", () => {
   });
 
   afterEach(() => {
+    vi.useRealTimers();
     vi.unstubAllGlobals();
     vi.clearAllMocks();
     for (const key of envKeys) delete process.env[key];
@@ -359,5 +369,60 @@ describe("WhatsApp conversation through the webhook", () => {
     const turn = await sendTurn("hola", "provider-hola-down");
     expect(turn.status).toBe(200);
     expect(turn.reply).toBe(FALLBACK_TEXT);
+  });
+
+  it("reschedules the most recent event instead of creating a duplicate", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-09-06T15:00:00.000Z"));
+
+    const create = await sendTurn("parcial de redes el martes", "provider-reschedule-create");
+    expect(create.reply).toContain("2026-09-08");
+    expect(create.reply).toContain("Respondé SI");
+
+    const created = await sendTurn("SI", "provider-reschedule-create-confirm");
+    expect(created.reply).toBe("✅ Evento agendado.");
+    expect(database.rows("academic_events")).toHaveLength(1);
+    expect(database.rows("academic_events")[0]).toMatchObject({ date: "2026-09-08", title: "Parcial de redes" });
+
+    const proposal = await sendTurn("me pasaron el parcial para el jueves", "provider-reschedule-edit");
+    expect(proposal.reply).toContain("Fecha: 2026-09-08 → 2026-09-10");
+    expect(proposal.reply).toContain("Respondé SI");
+    expect(proposal.reply).toContain("NO");
+    expect(proposal.reply).not.toContain("Voy a agendar");
+    expect(database.rows("academic_events")).toHaveLength(1);
+
+    const updated = await sendTurn("SI", "provider-reschedule-edit-confirm");
+    expect(updated.reply).toBe("✅ Evento actualizado.");
+    expect(database.rows("academic_events")).toHaveLength(1);
+    expect(database.rows("academic_events")[0]).toMatchObject({ date: "2026-09-10", title: "Parcial de redes" });
+  });
+
+  it("answers a mutation meta-question with the last confirmed mutation in chat context", async () => {
+    const create = await sendTurn("quiero agendar un parcial de REDES el 30/09/2026", "provider-meta-create");
+    expect(create.reply).toContain("Respondé SI");
+    await sendTurn("SI", "provider-meta-create-confirm");
+
+    const meta = await sendTurn("¿por qué no me editaste el evento que acababas de crear?", "provider-meta-question");
+
+    expect(meta.reply).toBe("Tenés razón: no tomé tu pedido. Decime la nueva fecha y te pido SI o NO 🙂");
+    expect(lastChatSystemPrompt).toContain("Resumen factual de la última mutación confirmada");
+    expect(lastChatSystemPrompt).toContain("Evento agendado");
+    expect(lastChatSystemPrompt).toContain("2026-09-30");
+  });
+
+  it("greets hola? instead of dumping capabilities", async () => {
+    const turn = await sendTurn("hola?", "provider-hola-question-mark");
+
+    expect(turn.reply).toBe("¡Hola! Qué bueno leerte 😊");
+    expect(turn.reply).not.toContain("materias y horarios");
+  });
+
+  it("clarifies a lone question mark after a bot message", async () => {
+    await sendTurn("hola", "provider-clarifier-greeting");
+
+    const turn = await sendTurn("?", "provider-clarifier-question");
+
+    expect(turn.reply).toBe("¿Qué parte no quedó clara? Decime y te lo explico 🙂");
+    expect(turn.reply).not.toBe(FALLBACK_TEXT);
   });
 });

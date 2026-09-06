@@ -158,7 +158,7 @@ export function validateDraft(raw: BotDraft): ValidatedDraft | null {
     const event_type = typeof p.event_type === "string" && (EVENT_TYPE_MODE as readonly string[]).includes(p.event_type) ? (p.event_type as (typeof EVENT_TYPE_MODE)[number]) : "individual";
     return { kind: "create_event", title, type: type as (typeof EVENT_TYPES)[number], date, time, subject_code, description, event_type };
   }
-  if (intent === "events.edit" || intent === "edit_event") {
+  if (intent === "events.edit" || intent === "edit_event" || intent === "events.update" || intent === "update_event") {
     const event_id = typeof p.event_id === "string" ? p.event_id.trim() : "";
     if (!event_id) return null;
     const out: Record<string, unknown> = { kind: "edit_event", event_id };

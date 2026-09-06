@@ -48,6 +48,10 @@ export function formatConfirmSummary(kind: string, payload: Record<string, unkno
     case "create_event":
       return `📅 Voy a agendar “${String(payload.title)}”, tipo ${String(payload.type)}, el ${String(payload.date)}${payload.time ? ` a las ${String(payload.time)}` : ""}${payload.subject_code ? `, para ${String(payload.subject_code)}` : ""}.\n\n¿Está bien? Respondé SI para guardar o NO para cancelar. Tenés 10 minutos.`;
     case "edit_event":
+      if (typeof payload._previous_date === "string" && typeof payload.date === "string" && payload._previous_date !== payload.date) {
+        const title = typeof payload._previous_title === "string" ? payload._previous_title : `evento ${String(payload.event_id).slice(0, 8)}`;
+        return `📅 Voy a mover “${title}”.\nFecha: ${payload._previous_date} → ${payload.date}${payload.time ? ` · hora: ${String(payload.time)}` : ""}\n\nRespondé SI para guardar o NO para cancelar. Tenés 10 minutos.`;
+      }
       return `📅 Voy a editar el evento ${String(payload.event_id).slice(0, 8)}.\nCambios: ${changes(payload, ["event_id"])}\n\nRespondé SI para guardar o NO para cancelar. Tenés 10 minutos.`;
     case "cancel_event":
       return `📅 Voy a cancelar el evento ${String(payload.event_id).slice(0, 8)}. Queda como cancelado; no lo borro y después podés revertirlo. Respondé SI para cancelar o NO para dejarlo como está. Tenés 10 minutos.`;

@@ -15,6 +15,8 @@ Tipos de intent válidos:
 - Para "qué tengo esta semana" usa read_events con filter "__week__".
 - "mostrame mis materias" es read_subjects y "cada materia" en una consulta de horarios usa payload {"all_subjects":true}.
 - Las fechas relativas deben resolverse de forma determinista antes de responder; nunca inventes una fecha.
+- Reprogramar no es crear: si el mensaje usa verbos como "pasar", "mover", "cambiar", "adelantar", "postergar" o "reprogramar" y refiere a algo recién mencionado ("el parcial", "ese evento", "lo"), usa events.edit/update_event con el event_id del candidato más reciente que coincida con el contexto o el historial. Cambia solo la fecha u hora nueva y nunca uses events.create en ese caso.
+- Solo usa events.create si es un evento distinto, si cambia la materia/tema, o si la persona dice explícitamente "creá/agendá otro". Si no hay un candidato inequívoco, responde intent "unknown".
 Si no estás seguro, responde intent "unknown".
 Formato JSON requerido:
 {"intent":"...","payload":{...}}
@@ -27,7 +29,11 @@ Responde SOLO JSON válido, sin texto adicional.`;
 const CHAT_SYSTEM_PROMPT = `Eres asistente de Horarium y respondés como un compañero de cursada, en español rioplatense, con calidez y naturalidad.
 Contestá en 1 o 2 líneas breves e incluí algún emoji. No uses JSON.
 Este mensaje es solo conversacional: nunca ejecutes ni prometas mutaciones. No digas que agendaste, creaste, editaste, cancelaste, guardaste o eliminaste algo; esas afirmaciones solo corresponden después de una operación real y confirmada.
-No inventes datos académicos. Si te preguntan qué podés hacer, mencioná brevemente materias, horarios, apuntes y eventos.`;
+No inventes datos académicos.
+Un saludo exacto o una variante breve ("hola", "hola?", "holaa", "buenas") recibe otro saludo cálido, no una lista de capacidades.
+Una pregunta formada solo por "?" después de un mensaje del bot recibe una aclaración breve: preguntá qué parte no quedó clara.
+Solo describí materias, horarios, apuntes y eventos cuando te pregunten explícitamente qué podés hacer, o cuando el mensaje sea realmente indescifrable y no haya contexto.
+Si preguntan por qué no editaste algo, reconocé la confusión, explicala sin jerga y ofrecé el próximo paso concreto: pedir la nueva fecha y luego solicitar SI o NO. No afirmes que la edición ocurrió.`;
 
 export type DeepseekHistoryMessage = {
   role: "user" | "assistant";
@@ -92,7 +98,7 @@ export async function callDeepseekDraft(
   }
 }
 
-export async function callDeepseekChat(userText: string, history: DeepseekHistoryMessage[] = []): Promise<string | null> {
+export async function callDeepseekChat(userText: string, history: DeepseekHistoryMessage[] = [], contextHint?: string): Promise<string | null> {
   const cfg = getWhatsappConfig();
   const fail = () => {
     console.warn("[whatsapp] DeepSeek chat failed", { inputLength: userText.length });
@@ -103,7 +109,7 @@ export async function callDeepseekChat(userText: string, history: DeepseekHistor
     const body = {
       model: cfg.deepseekModel,
       messages: [
-        { role: "system", content: CHAT_SYSTEM_PROMPT },
+        { role: "system", content: CHAT_SYSTEM_PROMPT + (contextHint ? `\n\n${contextHint}` : "") },
         ...history.slice(-5).map(({ role, content }) => ({ role, content: content.slice(0, 500) })),
         { role: "user", content: userText.slice(0, 2000) },
       ],
