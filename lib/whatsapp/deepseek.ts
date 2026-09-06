@@ -11,8 +11,9 @@ Tipos de intent válidos:
 - events.create/edit/cancel/toggle_complete
 - link: vincular cuenta con código
 - help
-- Para "cuándo curso", "en qué horarios", "quién es el profe" o "qué docente" usa read_schedule.
-- Para "qué tengo esta semana" usa read_events con filter "__week__".
+	- Para "cuándo curso", "en qué horarios", "quién es el profe" o "qué docente" usa read_schedule.
+	- Para cualquier consulta de eventos usa read_events. El backend resuelve el alcance temporal; cuando lo conozcas, payload puede incluir from/to como fechas ISO inclusivas y query para texto libre. "qué tengo esta semana" usa filter "__week__".
+	- "la semana que viene", "este mes", "mañana", un día/mes explícito y rangos explícitos deben conservar ese alcance; nunca reemplaces una semana futura por la semana actual.
 - "mostrame mis materias" es read_subjects y "cada materia" en una consulta de horarios usa payload {"all_subjects":true}.
 - Las fechas relativas deben resolverse de forma determinista antes de responder; nunca inventes una fecha.
 - Reprogramar no es crear: si el mensaje usa verbos como "pasar", "mover", "cambiar", "adelantar", "postergar" o "reprogramar" y refiere a algo recién mencionado ("el parcial", "ese evento", "lo"), usa events.edit/update_event con el event_id del candidato más reciente que coincida con el contexto o el historial. Cambia solo la fecha u hora nueva y nunca uses events.create en ese caso.

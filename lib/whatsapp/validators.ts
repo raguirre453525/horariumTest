@@ -13,7 +13,7 @@ export type ValidatedDraft =
   | { kind: "read_subject"; subject_code: string }
   | { kind: "read_schedule"; subject_code?: string; all_subjects?: boolean }
   | { kind: "read_notes"; subject_code?: string; query?: string }
-  | { kind: "read_events"; filter?: string }
+  | { kind: "read_events"; from?: string; to?: string; query?: string; filter?: string }
   | { kind: "create_note"; subject_code: string; title: string; content: string; note_date: string | null; tags: string[] }
   | { kind: "edit_note"; note_id: string; title?: string; content?: string; note_date?: string | null; tags?: string[] }
   | { kind: "archive_note"; note_id: string }
@@ -69,8 +69,14 @@ export function validateDraft(raw: BotDraft): ValidatedDraft | null {
     return { kind: "read_notes", subject_code: code || undefined, query: q || undefined };
   }
   if (intent === "read_events") {
-    const f = typeof p.filter === "string" ? p.filter.trim().slice(0, 100) : undefined;
-    return { kind: "read_events", filter: f || undefined };
+    const from = p.from === undefined ? undefined : typeof p.from === "string" && isValidDate(p.from.trim()) ? p.from.trim() : null;
+    const to = p.to === undefined ? undefined : typeof p.to === "string" && isValidDate(p.to.trim()) ? p.to.trim() : null;
+    if (from === null || to === null || (from && to && from > to)) return null;
+    const rawQuery = typeof p.query === "string" ? p.query.trim().slice(0, 100) : "";
+    const rawFilter = typeof p.filter === "string" ? p.filter.trim().slice(0, 100) : "";
+    if (rawFilter === "__week__") return { kind: "read_events", ...(from ? { from } : {}), ...(to ? { to } : {}), ...(rawQuery ? { query: rawQuery } : {}), filter: rawFilter };
+    const query = rawQuery || rawFilter;
+    return { kind: "read_events", ...(from ? { from } : {}), ...(to ? { to } : {}), ...(query ? { query } : {}) };
   }
   if (intent === "help") return { kind: "help" };
   if (intent === "unknown") return { kind: "unknown" };

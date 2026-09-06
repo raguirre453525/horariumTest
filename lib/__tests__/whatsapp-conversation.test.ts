@@ -5,7 +5,7 @@ import { FALLBACK_TEXT } from "@/lib/whatsapp/format";
 type Row = Record<string, unknown>;
 
 const database = vi.hoisted(() => {
-  type Filter = { column: string; operator: "eq" | "neq" | "is" | "gt" | "lte" | "in"; value: unknown };
+  type Filter = { column: string; operator: "eq" | "neq" | "is" | "gt" | "gte" | "lte" | "in"; value: unknown };
 
   const tables = new Map<string, Row[]>();
   let sequence = 0;
@@ -70,6 +70,11 @@ const database = vi.hoisted(() => {
       return this;
     }
 
+    gte(column: string, value: unknown) {
+      this.filters.push({ column, operator: "gte", value });
+      return this;
+    }
+
     lte(column: string, value: unknown) {
       this.filters.push({ column, operator: "lte", value });
       return this;
@@ -111,6 +116,7 @@ const database = vi.hoisted(() => {
         if (operator === "neq") return actual !== value;
         if (operator === "is") return actual === value;
         if (operator === "gt") return String(actual) > String(value);
+        if (operator === "gte") return String(actual) >= String(value);
         if (operator === "lte") return String(actual) <= String(value);
         return Array.isArray(value) && value.includes(actual);
       });
@@ -238,6 +244,15 @@ const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => 
       if (text === "me pasaron el parcial para el jueves") {
         const eventId = String(database.rows("academic_events")[0]?.id ?? "missing-event");
         return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ intent: "update_event", payload: { event_id: eventId, date: "2026-09-10" } }) } }] }), { status: 200 });
+      }
+      const readDrafts: Record<string, string> = {
+        "que eventos tengo para la semana que viene?": JSON.stringify({ intent: "read_events", payload: { filter: "semana que viene" } }),
+        "pero si tengo 2 eventos para la semana que viene": JSON.stringify({ intent: "read_events", payload: { filter: "__week__" } }),
+        "buscame el parcial de redes": JSON.stringify({ intent: "read_events", payload: { filter: "parcial de redes" } }),
+        "dame el calendario de la semana que viene": JSON.stringify({ intent: "read_events", payload: { filter: "__week__" } }),
+      };
+      if (readDrafts[text]) {
+        return new Response(JSON.stringify({ choices: [{ message: { content: readDrafts[text] } }] }), { status: 200 });
       }
       return new Response(JSON.stringify({ choices: [{ message: { content: '{"intent":"unknown"}' } }] }), { status: 200 });
     }
@@ -395,6 +410,51 @@ describe("WhatsApp conversation through the webhook", () => {
     expect(updated.reply).toBe("✅ Evento actualizado.");
     expect(database.rows("academic_events")).toHaveLength(1);
     expect(database.rows("academic_events")[0]).toMatchObject({ date: "2026-09-10", title: "Parcial de redes" });
+  });
+
+  it("reproduces the reported next-week read and follow-up failures", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-09-06T15:00:00.000Z"));
+    await sendTurn("parcial de redes el martes", "provider-seed-next-tue");
+    await sendTurn("SI", "provider-seed-next-tue-confirm");
+    await sendTurn("entrega de redes el jueves", "provider-seed-next-thu");
+    await sendTurn("SI", "provider-seed-next-thu-confirm");
+    expect(database.rows("academic_events")).toHaveLength(2);
+
+    const nextWeek = await sendTurn("que eventos tengo para la semana que viene?", "provider-next-week");
+    expect(nextWeek.reply).toContain("2026-09-08");
+    expect(nextWeek.reply).toContain("2026-09-10");
+    expect(nextWeek.reply).not.toContain("Respondé SI");
+
+    const llmRange = await sendTurn("dame el calendario de la semana que viene", "provider-next-week-llm-range");
+    expect(llmRange.reply).toContain("2026-09-08");
+    expect(llmRange.reply).toContain("2026-09-10");
+
+    const followUp = await sendTurn("pero si tengo 2 eventos para la semana que viene", "provider-next-week-follow-up");
+    expect(followUp.reply).toContain("2026-09-08");
+    expect(followUp.reply).toContain("2026-09-10");
+    expect(followUp.reply).not.toContain("Esta semana no tenés eventos");
+
+    const thursday = await sendTurn("qué tengo el jueves", "provider-next-week-thursday");
+    expect(thursday.reply).toContain("2026-09-10");
+    expect(thursday.reply).not.toContain("2026-09-08");
+  });
+
+  it("answers event reads for an empty current week and text searches", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-09-06T15:00:00.000Z"));
+
+    const emptyWeek = await sendTurn("qué tengo esta semana", "provider-empty-current-week");
+    expect(emptyWeek.reply).toBe("Esta semana no tenés eventos agendados 📅.");
+
+    database.rows("academic_events").push(
+      { id: "event-search", title: "Parcial 1", type: "parcial", date: "2026-09-08", time: "18:00", subject_id: "subject-red", subjects: { code: "RED" }, description: "Evaluación de redes", status: "pending", created_by: "user-1" },
+      { id: "event-other-user", title: "Parcial ajeno", type: "parcial", date: "2026-09-08", time: "19:00", subject_id: "subject-red", subjects: { code: "RED" }, description: "Evaluación de redes", status: "pending", created_by: "user-2" },
+    );
+    const search = await sendTurn("buscame el parcial de redes", "provider-event-search");
+    expect(search.reply).toContain("Parcial 1");
+    expect(search.reply).toContain("2026-09-08");
+    expect(search.reply).not.toContain("Parcial ajeno");
   });
 
   it("answers a mutation meta-question with the last confirmed mutation in chat context", async () => {

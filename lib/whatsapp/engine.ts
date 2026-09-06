@@ -3,8 +3,8 @@ import { getServiceClient } from "@/lib/supabase-server";
 import { validateDraft, EVENT_TYPES } from "@/lib/whatsapp/validators";
 import { callDeepseekChat, callDeepseekDraft, type DeepseekHistoryMessage } from "@/lib/whatsapp/deepseek";
 import { getWhatsappConfig } from "@/lib/whatsapp/config";
-import { isDateInCurrentWeek } from "@/lib/whatsapp/dates";
-import { detectLocalDraft, isFallbackText } from "@/lib/whatsapp/intent";
+import { describeEventDateRange, resolveEventDateRange, type EventDateRange } from "@/lib/whatsapp/dates";
+import { detectLocalDraft, extractEventSearchQuery, isEventReadRequest, isFallbackText } from "@/lib/whatsapp/intent";
 import { LINK_INSTRUCTIONS, HELP_TEXT, FALLBACK_TEXT, formatConfirmSummary, ambiguousChoices } from "@/lib/whatsapp/format";
 import { getIdentityByPhone, upsertIdentity, findValidChallengeByHash, findValidChallengeByUserId, markChallengeUsed, getConversation, getMessageHistory, upsertConversation, setPending, clearPending, isExpired } from "@/lib/whatsapp/store";
 import { scheduleSessions as localScheduleSessions, subjects as localSubjects } from "@/lib/schedule-data";
@@ -116,9 +116,33 @@ async function readNotes(svc: ReturnType<typeof getServiceClient>, userId: strin
   return rows;
 }
 
-async function readEvents(svc: ReturnType<typeof getServiceClient>) {
-  const { data } = await svc.from("academic_events").select("id, title, type, date, time, subject_id, description, status, created_by, event_type, completed_by, completed_at, subjects(code)").order("date").limit(20);
-  return (data ?? []) as Array<Record<string, unknown>>;
+async function readEvents(svc: ReturnType<typeof getServiceClient>, userId: string | null, options: Partial<EventDateRange> & { query?: string } = {}) {
+  if (!userId) return [] as Array<Record<string, unknown>>;
+  let query = svc
+    .from("academic_events")
+    .select("id, title, type, date, time, subject_id, description, status, created_by, event_type, completed_by, completed_at, subjects(code, name)")
+    .eq("created_by", userId)
+    .order("date")
+    .order("time", { ascending: true, nullsFirst: false })
+    .limit(100);
+  if (options.from) query = query.gte("date", options.from);
+  if (options.to) query = query.lte("date", options.to);
+  const { data } = await query;
+  let rows = (data ?? []) as Array<Record<string, unknown>>;
+  if (options.query) {
+    const terms = options.query
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((term) => term.length > 1 && !["al", "con", "de", "del", "el", "en", "entre", "la", "las", "los", "para", "por", "que", "un", "una", "y"].includes(term));
+    rows = rows.filter((event) => {
+      const subject = relation<{ code?: string; name?: string }>(event.subjects);
+      const haystack = [event.title, event.type, event.description, subject?.code, subject?.name].map((value) => String(value ?? "")).join(" ").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      return terms.every((term) => haystack.includes(term));
+    });
+  }
+  return rows;
 }
 
 function findExactSubject(subjects: Array<{ id: string; code: string; name: string }>, input: string) {
@@ -157,6 +181,39 @@ async function buildCandidateHint(svc: ReturnType<typeof getServiceClient>, user
   } catch {
     return undefined;
   }
+}
+
+function previousEventScope(history: DeepseekHistoryMessage[], timeZone: string): EventDateRange | undefined {
+  for (let index = history.length - 1; index >= 0; index -= 1) {
+    const message = history[index];
+    if (message.role !== "user" || !isEventReadRequest(message.content, true)) continue;
+    const eventRange = resolveEventDateRange(message.content, new Date(), timeZone);
+    if (eventRange) return eventRange;
+  }
+  return undefined;
+}
+
+function normalizeReadDraft(
+  draft: { intent: string; payload?: Record<string, unknown> },
+  text: string,
+  previousRange: EventDateRange | undefined,
+  timeZone: string,
+) {
+  const intent = draft.intent.trim().toLowerCase();
+  if (intent !== "read_events" && intent !== "read.events") return draft;
+  const payload = { ...(draft.payload ?? {}) };
+  const eventRange = resolveEventDateRange(text, new Date(), timeZone, previousRange);
+  const query = extractEventSearchQuery(text);
+  if (eventRange) {
+    payload.from = eventRange.from;
+    payload.to = eventRange.to;
+    delete payload.filter;
+  }
+  if (query) {
+    payload.query = query;
+    delete payload.filter;
+  }
+  return { ...draft, intent: "read_events", payload };
 }
 
 export async function handleWhatsappMessage(waId: string, text: string, providerMessageId: string): Promise<EngineResult> {
@@ -221,7 +278,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
       // generic read selection: perform the requested read instead of raw JSON
       if (amb.kind === "read_subject") {
         const code = String(selected.code ?? "");
-        const readReply = await handleRead({ kind: "read_subject", subject_code: code } as import("@/lib/whatsapp/validators").ValidatedDraft, svc, waId);
+        const readReply = await handleRead({ kind: "read_subject", subject_code: code } as import("@/lib/whatsapp/validators").ValidatedDraft, svc, waId, userId);
         return { reply: readReply, handled: true };
       }
       if (amb.kind === "read_notes") {
@@ -309,12 +366,13 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
 
   // 5. normal flow: get draft via DeepSeek or local (with owned candidate hint for edits)
   let rawDraft: { intent: string; payload?: Record<string, unknown> } | null = null;
-  const local = detectLocalDraft(text, getWhatsappConfig().timezone);
-  let history: DeepseekHistoryMessage[] = [];
+  const timeZone = getWhatsappConfig().timezone;
+  const history = await getMessageHistory(waId, providerMessageId);
+  const priorEventScope = previousEventScope(history, timeZone);
+  const local = detectLocalDraft(text, timeZone, priorEventScope);
   if (local) rawDraft = local;
   else {
     const hint = await buildCandidateHint(svc, userId);
-    history = await getMessageHistory(waId, providerMessageId);
     rawDraft = await callDeepseekDraft(text, hint, history);
   }
 
@@ -328,6 +386,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     return chatOrFallback(text, history);
   }
 
+  rawDraft = normalizeReadDraft(rawDraft, text, priorEventScope, timeZone);
   const validated = validateDraft(rawDraft as unknown as import("@/lib/whatsapp/validators").BotDraft);
   if (!validated) {
     return chatOrFallback(text, history);
@@ -348,7 +407,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
 
   // read operations: execute directly, no confirmation
   if (validated.kind.startsWith("read_")) {
-    const readReply = await handleRead(validated, svc, waId);
+    const readReply = await handleRead(validated, svc, waId, userId);
     return { reply: readReply, handled: true };
   }
 
@@ -453,7 +512,7 @@ function scheduleLine(row: ScheduleRow, includeSubject = false): string {
   return `• ${prefix}${day} ${String(row.start_time).slice(0, 5)}–${String(row.end_time).slice(0, 5)} · ${String(row.section)} · 👨‍🏫 ${professor || "docente sin asignar"} · 🏫 ${room || "aula sin asignar"}`;
 }
 
-async function handleRead(validated: import("@/lib/whatsapp/validators").ValidatedDraft, svc: ReturnType<typeof getServiceClient>, waId: string): Promise<string> {
+async function handleRead(validated: import("@/lib/whatsapp/validators").ValidatedDraft, svc: ReturnType<typeof getServiceClient>, waId: string, userId: string | null): Promise<string> {
   if (validated.kind === "read_subjects") {
     const subjects = await readSubjects(svc);
     if (subjects.length === 0) return "Todavía no tengo materias cargadas 📚.";
@@ -471,7 +530,7 @@ async function handleRead(validated: import("@/lib/whatsapp/validators").Validat
     }
     const schedules = await readSchedulesForSubject(svc, found.id);
     const notes = await readNotes(svc, "", found.id);
-    const events = await readEvents(svc);
+    const events = await readEvents(svc, userId);
     const relatedEvents = events.filter((e) => String(e.subject_id ?? "") === found.id).slice(0, 5);
     let out = `📚 ${found.code} — ${found.name}\n`;
     if (schedules.length > 0) {
@@ -521,18 +580,22 @@ async function handleRead(validated: import("@/lib/whatsapp/validators").Validat
     return `📝 Tus apuntes:\n${lines}`;
   }
   if (validated.kind === "read_events") {
-    const events = await readEvents(svc);
-    let filtered = events.filter((e) => String(e.status) !== "cancelled");
-    if (validated.filter === "__week__") {
-      const timeZone = getWhatsappConfig().timezone;
-      filtered = filtered.filter((event) => isDateInCurrentWeek(String(event.date), new Date(), timeZone));
-    } else if (validated.filter) {
-      const f = validated.filter.toLowerCase();
-      filtered = filtered.filter((e) => String(e.title).toLowerCase().includes(f) || String(e.type).toLowerCase().includes(f));
+    const timeZone = getWhatsappConfig().timezone;
+    const eventRange = validated.from && validated.to
+      ? { from: validated.from, to: validated.to }
+      : validated.filter === "__week__"
+        ? resolveEventDateRange("esta semana", new Date(), timeZone)
+        : undefined;
+    const events = await readEvents(svc, userId, { ...(eventRange ?? {}), query: validated.query });
+    const filtered = events.filter((e) => String(e.status) !== "cancelled");
+    const scopeLabel = eventRange ? describeEventDateRange(eventRange, new Date(), timeZone) : undefined;
+    if (filtered.length === 0) {
+      if (scopeLabel === "esta semana") return "Esta semana no tenés eventos agendados 📅.";
+      if (scopeLabel) return `No tenés eventos para ${scopeLabel} 📅.`;
+      return "No encontré eventos que coincidan 📅.";
     }
-    if (filtered.length === 0) return validated.filter === "__week__" ? "Esta semana no tenés eventos agendados 📅." : "No encontré eventos que coincidan 📅.";
     const lines = filtered.slice(0, 10).map((e) => `• ${String(e.title)} · ${String(e.date)}${e.time ? ` · ${String(e.time)}` : ""} · ${String((relation<{ code?: string }>(e.subjects))?.code ?? "")} · ${String(e.status)}`).join("\n");
-    return `📅 Tus eventos${validated.filter === "__week__" ? " de esta semana" : ""}:\n${lines}`;
+    return `📅 Tus eventos${scopeLabel ? ` de ${scopeLabel}` : ""}:\n${lines}`;
   }
   return HELP_TEXT;
 }
