@@ -43,6 +43,13 @@ describe("validateDraft model output validation", () => {
     expect(v?.kind).toBe("cancel_event");
   });
 
+  it("validates bounded event cancel batches", () => {
+    const v = validateDraft({ intent: "events.cancel", payload: { event_ids: ["evt-1", "evt-2"] } });
+    expect(v).toEqual({ kind: "cancel_events", event_ids: ["evt-1", "evt-2"] });
+    expect(validateDraft({ intent: "events.cancel", payload: { event_ids: ["evt-1", "evt-1"] } })).toBeNull();
+    expect(validateDraft({ intent: "events.cancel", payload: { event_id: "evt-1" } })).toEqual({ kind: "cancel_event", event_id: "evt-1" });
+  });
+
   it("rejects generic SQL or admin intent", () => {
     expect(validateDraft({ intent: "admin", payload: {} })).toBeNull();
     expect(validateDraft({ intent: "sql", payload: { query: "select *" } })).toBeNull();
@@ -62,9 +69,9 @@ describe("validateDraft model output validation", () => {
   });
 
   it("allowlist covers only common-user actions (no admin, no permanent deletion)", () => {
-    const forbidden = ["delete_event", "admin", "sql", "attachment", "comment", "live_note"];
+    const forbidden = ["delete_event", "delete_events", "admin", "sql", "attachment", "comment", "live_note"];
     for (const f of forbidden) expect(ALLOWED_KINDS.has(f)).toBe(false);
-    const allowed = ["create_note", "edit_note", "archive_note", "unarchive_note", "delete_note", "create_event", "edit_event", "cancel_event", "toggle_complete"];
+    const allowed = ["create_note", "edit_note", "archive_note", "unarchive_note", "delete_note", "create_event", "edit_event", "cancel_event", "cancel_events", "toggle_complete"];
     for (const a of allowed) expect(ALLOWED_KINDS.has(a)).toBe(true);
   });
 

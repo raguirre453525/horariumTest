@@ -1,11 +1,11 @@
 import "server-only";
 import { getServiceClient } from "@/lib/supabase-server";
-import { validateDraft, EVENT_TYPES } from "@/lib/whatsapp/validators";
+import { validateDraft, isDeletionKind, EVENT_TYPES } from "@/lib/whatsapp/validators";
 import { callDeepseekChat, callDeepseekDraft, type DeepseekHistoryMessage } from "@/lib/whatsapp/deepseek";
 import { getWhatsappConfig } from "@/lib/whatsapp/config";
 import { describeEventDateRange, resolveEventDateRange, type EventDateRange } from "@/lib/whatsapp/dates";
 import { detectLocalDraft, extractEventSearchQuery, isEventReadRequest, isFallbackText } from "@/lib/whatsapp/intent";
-import { LINK_INSTRUCTIONS, HELP_TEXT, FALLBACK_TEXT, formatConfirmSummary, ambiguousChoices } from "@/lib/whatsapp/format";
+import { LINK_INSTRUCTIONS, HELP_TEXT, FALLBACK_TEXT, formatConfirmSummary, formatEventLabel, formatEventLine, formatNaturalDate, ambiguousChoices } from "@/lib/whatsapp/format";
 import { getIdentityByPhone, upsertIdentity, findValidChallengeByHash, findValidChallengeByUserId, markChallengeUsed, getConversation, getMessageHistory, upsertConversation, setPending, clearPending, isExpired } from "@/lib/whatsapp/store";
 import { scheduleSessions as localScheduleSessions, subjects as localSubjects } from "@/lib/schedule-data";
 
@@ -28,7 +28,89 @@ function isNumericChoice(t: string): number | null {
 
 function isSafeChatReply(reply: string): boolean {
   const value = reply.trim();
-  return Boolean(value) && !/\b(?:agend|anot|guard|registr|crea|creé|cread|edit|mov|cambi|cancel|elimin|borr|archiv|actualiz|marc|complet)[a-záéíóúüñ]*/i.test(value);
+  if (!value || /\b(?:pending|completed|cancelled|event_id|subject_code)\b|\b(?:id|uuid)\s*[=:]/i.test(value)) return false;
+  if (/^(?:✅\s*)?(?:agend|anot|guard|registr|crea|creé|cread|edit|mov|cambi|cancel|elimin|borr|archiv|actualiz|marc|complet)[a-záéíóúüñ]*/i.test(value)) return false;
+  return !/\b(?:ya|listo|perfecto|he|hice|acabo de|terminé|termino|quedó|quedaron|fue|fueron)\b.{0,40}\b(?:agend|anot|guard|registr|crea|creé|cread|edit|mov|cambi|cancel|elimin|borr|archiv|actualiz|marc|complet)[a-záéíóúüñ]*/i.test(value);
+}
+
+type EventReference = Record<string, unknown> & { id: string; title: string; date: string };
+
+const WEEKDAYS = "domingo|lunes|martes|miercoles|jueves|viernes|sabado";
+
+function normalizeReference(value: string): string {
+  return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
+function eventReference(event: Record<string, unknown>): EventReference | null {
+  const id = String(event.id ?? "").trim();
+  const title = String(event.title ?? "").trim();
+  const date = String(event.date ?? "").trim();
+  if (!id || !title || !date) return null;
+  const subject = relation<{ name?: string }>(event.subjects)?.name;
+  return { id, title, date, ...(event.time !== undefined ? { time: event.time } : {}), ...(event.type ? { type: event.type } : {}), ...(subject ? { _subject_name: subject } : {}) };
+}
+
+function storedEventContext(value: unknown): EventReference[] {
+  if (!value || typeof value !== "object") return [];
+  const context = value as { kind?: unknown; items?: unknown };
+  if (context.kind !== "event_context" || !Array.isArray(context.items)) return [];
+  return context.items
+    .map((item) => (item && typeof item === "object" ? eventReference(item as Record<string, unknown>) : null))
+    .filter((item): item is EventReference => item !== null)
+    .slice(0, 10);
+}
+
+function eventWeekday(event: EventReference): string {
+  return normalizeReference(formatNaturalDate(event.date).split(" ")[0] ?? "");
+}
+
+function isDeleteRequest(text: string): boolean {
+  const normalized = normalizeReference(text);
+  return !/\bno\s+(?:me\s+)?(?:borres?|elimines?)/.test(normalized) && /\b(?:borr\w*|elimin\w*)\b/.test(normalized);
+}
+
+function resolveEventReferences(text: string, events: EventReference[]): EventReference[] | null {
+  if (!isDeleteRequest(text) || events.length === 0) return null;
+  const normalized = normalizeReference(text);
+  let selected: EventReference[] = [];
+
+  const onlyDay = normalized.match(new RegExp(`\\bsolo\\s+(?:(?:el|la|los|las)\\s+)?(?:(?:del|de)\\s+)?(${WEEKDAYS})\\b`));
+  if (onlyDay) {
+    selected = events.filter((event) => eventWeekday(event) === onlyDay[1]);
+  } else if (/\b(?:ambos|ambas)\b|\b(?:los|las)\s+dos\b/.test(normalized)) {
+    if (events.length !== 2) return null;
+    selected = events;
+  } else if (/\b(?:todo|todos|todas|toda)\b/.test(normalized)) {
+    selected = events;
+  } else {
+    const ordinal = normalized.match(/\b(?:el|la)\s+(primero|primera|segundo|segunda|tercero|tercera)\b/);
+    if (ordinal) {
+      const index = { primero: 0, primera: 0, segundo: 1, segunda: 1, tercero: 2, tercera: 2 }[ordinal[1]];
+      if (index !== undefined && events[index]) selected = [events[index]];
+    }
+    if (selected.length === 0) {
+      const day = normalized.match(new RegExp(`\\b(?:el|la)\\s+(?:del\\s+)?(${WEEKDAYS})\\b`));
+      if (day) selected = events.filter((event) => eventWeekday(event) === day[1]);
+    }
+    if (selected.length === 0 && /\b(?:ese|esa|eso|aquel|aquella|lo)\b/.test(normalized)) {
+      const last = events.at(-1);
+      if (last) selected = [last];
+    }
+    if (selected.length === 0) {
+      const matchingTitles = events.filter((event) => normalizeReference(text).includes(normalizeReference(event.title)));
+      if (matchingTitles.length === 1) selected = matchingTitles;
+    }
+  }
+
+  const excludedDays = [...normalized.matchAll(new RegExp(`\\b(?:no|menos|excepto)\\s+(?:(?:el|la)\\s+)?(?:del\\s+)?(${WEEKDAYS})\\b`, "g"))].map((match) => match[1]);
+  if (excludedDays.length > 0) selected = selected.filter((event) => !excludedDays.includes(eventWeekday(event)));
+  return selected.length > 0 && selected.length <= 10 ? selected : null;
+}
+
+function eventContextHint(events: EventReference[]): string | undefined {
+  if (events.length === 0) return undefined;
+  const lines = events.map((event, index) => `${index + 1}. ${formatEventLabel(event)} — ${formatNaturalDate(event.date)}${event.time ? ` a las ${String(event.time).slice(0, 5)}` : ""} (event_id=${event.id})`);
+  return `Eventos recién mostrados o mencionados; usá estos datos para resolver referencias y no repitas los identificadores: ${lines.join(" | ")}`;
 }
 
 function lastMutationSummary(history: DeepseekHistoryMessage[]): string | undefined {
@@ -48,13 +130,22 @@ function lastMutationSummary(history: DeepseekHistoryMessage[]): string | undefi
   return undefined;
 }
 
-async function chatOrFallback(text: string, history: DeepseekHistoryMessage[]): Promise<EngineResult> {
-  const contextHint = lastMutationSummary(history);
+function chatRecoveryReply(events: EventReference[]): string {
+  if (events.length > 0) {
+    const shown = events.slice(0, 3).map((event) => `${formatEventLabel(event)} (${formatNaturalDate(event.date)})`).join(", ");
+    return `Te sigo, pero necesito precisar cuál de estos eventos querés cambiar: ${shown}. ¿Cuál elegís? 🙂`;
+  }
+  return "Te sigo, pero necesito un poco más de detalle. ¿Querés consultar tus horarios, apuntes o eventos? 🙂";
+}
+
+async function chatOrFallback(text: string, history: DeepseekHistoryMessage[], events: EventReference[] = []): Promise<EngineResult> {
+  const hints = [lastMutationSummary(history), eventContextHint(events)].filter((hint): hint is string => Boolean(hint));
+  const contextHint = hints.join("\n\n");
   const chatReply = contextHint
     ? await callDeepseekChat(text, history, contextHint).catch(() => null)
     : await callDeepseekChat(text, history).catch(() => null);
   if (chatReply && isSafeChatReply(chatReply)) return { reply: chatReply, handled: true };
-  return { reply: FALLBACK_TEXT, handled: true };
+  return { reply: !text.trim() || isFallbackText(text) ? FALLBACK_TEXT : chatRecoveryReply(events), handled: true };
 }
 
 async function enrichEventEditConfirmation(payload: Record<string, unknown>, userId: string, svc: ReturnType<typeof getServiceClient>) {
@@ -104,7 +195,7 @@ async function readSchedulesForSubject(svc: ReturnType<typeof getServiceClient>,
 }
 
 async function readNotes(svc: ReturnType<typeof getServiceClient>, userId: string, subjectId?: string | null, query?: string) {
-  let q = svc.from("notes").select("id, subject_id, title, content, note_date, tags, status, created_at, author_id, subjects(code)").order("created_at", { ascending: false }).limit(20);
+  let q = svc.from("notes").select("id, subject_id, title, content, note_date, tags, status, created_at, author_id, subjects(code, name)").order("created_at", { ascending: false }).limit(20);
   if (subjectId) q = q.eq("subject_id", subjectId);
   // show shared notes? All notes are readable via RLS true, but we filter to include all? For MVP, show all notes (shared)
   const { data } = await q;
@@ -183,6 +274,25 @@ async function buildCandidateHint(svc: ReturnType<typeof getServiceClient>, user
   }
 }
 
+async function ownedEventReferences(svc: ReturnType<typeof getServiceClient>, userId: string, ids: string[]): Promise<EventReference[] | null> {
+  const uniqueIds = [...new Set(ids.map((id) => id.trim()).filter(Boolean))].slice(0, 10);
+  if (!userId || uniqueIds.length === 0) return null;
+  const { data, error } = await svc
+    .from("academic_events")
+    .select("id, title, type, date, time, subjects(name)")
+    .eq("created_by", userId)
+    .in("id", uniqueIds);
+  if (error || !data) return null;
+  const byId = new Map((data as Array<Record<string, unknown>>).map((event) => [String(event.id), event]));
+  const references = uniqueIds.map((id) => byId.get(id)).map((event) => event ? eventReference(event) : null);
+  return references.every((event): event is EventReference => event !== null) ? references : null;
+}
+
+async function rememberEventContext(waId: string, events: Array<Record<string, unknown>>): Promise<void> {
+  const items = events.map(eventReference).filter((event): event is EventReference => event !== null).slice(0, 10);
+  await upsertConversation(waId, { last_ambiguous: items.length > 0 ? { kind: "event_context", items } : null });
+}
+
 function previousEventScope(history: DeepseekHistoryMessage[], timeZone: string): EventDateRange | undefined {
   for (let index = history.length - 1; index >= 0; index -= 1) {
     const message = history[index];
@@ -234,12 +344,13 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
       // For now, allow once, then clear
       if (confirm === "no") {
         await clearPending(waId);
-        return { reply: "Listo, cancelé la operación. No cambié nada 🙂.", handled: true };
+        return { reply: op.kind === "cancel_events" ? "Listo, no cancelé nada 🙂." : "Listo, cancelé la operación. No cambié nada 🙂.", handled: true };
       }
       // yes -> execute
       // re-read targets before execution and verify ownership/state
       const result = await executePending(op, waId, userId, svc);
       await clearPending(waId);
+      if (op.kind === "cancel_events") await rememberEventContext(waId, []);
       return { reply: result, handled: true };
     }
   }
@@ -249,7 +360,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   if (choice && convo?.last_ambiguous) {
     const amb = convo.last_ambiguous as { kind: string; items: Array<Record<string, unknown>> };
     const idx = choice - 1;
-    if (amb.items[idx]) {
+    if (amb.kind !== "event_context" && Array.isArray(amb.items) && amb.items[idx]) {
       const selected = amb.items[idx];
       // clear ambiguous
       await upsertConversation(waId, { last_ambiguous: null });
@@ -284,16 +395,16 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
       if (amb.kind === "read_notes") {
         const title = String(selected.title ?? "");
         const content = String(selected.content ?? "").slice(0, 120);
-        const subjCode = String((selected.subjects as { code?: string } | null)?.code ?? "");
-        const detail = `📝 Acá tenés el apunte:\nTítulo: ${title}\n${subjCode ? `Materia: ${subjCode}\n` : ""}${content ? `Contenido: ${content}\n` : ""}ID: ${String(selected.id).slice(0, 8)}`;
+        const subjName = String((selected.subjects as { name?: string } | null)?.name ?? "");
+        const detail = `📝 Acá tenés el apunte:\nTítulo: ${title}\n${subjName ? `Materia: ${subjName}\n` : ""}${content ? `Contenido: ${content}` : ""}`;
         return { reply: detail.slice(0, 1500), handled: true };
       }
       if (amb.kind === "create_note_subject") {
-        return { reply: `✅ Elegiste ${String(selected.code ?? "")} — ${String(selected.name ?? "")}. Mandame de nuevo el pedido del apunte con esa materia.`, handled: true };
+        return { reply: `✅ Elegiste ${String(selected.name ?? "la materia")}. Mandame de nuevo el pedido del apunte con esa materia.`, handled: true };
       }
       // fallback for other ambiguous kinds
-      const title = String(selected.title ?? selected.name ?? selected.code ?? "");
-      return { reply: `✅ Elegiste ${title} (${String(selected.id ?? "").slice(0, 8)}). Mandame de nuevo la consulta y te muestro el detalle.`, handled: true };
+      const title = String(selected.title ?? selected.name ?? "");
+      return { reply: `✅ Elegiste ${title}. Mandame de nuevo la consulta y te muestro el detalle.`, handled: true };
     }
   }
 
@@ -321,7 +432,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     await upsertConversation(waId, { user_id: userId });
   }
 
-  if (isFallbackText(text)) {
+  if (!text.trim() || isFallbackText(text)) {
     if (text.trim() === "?") {
       const history = await getMessageHistory(waId, providerMessageId);
       if (history.some((message) => message.role === "assistant")) return { reply: "¿Qué parte no quedó clara? Decime y te lo explico 🙂", handled: true };
@@ -368,28 +479,33 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   let rawDraft: { intent: string; payload?: Record<string, unknown> } | null = null;
   const timeZone = getWhatsappConfig().timezone;
   const history = await getMessageHistory(waId, providerMessageId);
+  const recentEvents = storedEventContext(convo?.last_ambiguous);
+  const localDelete = resolveEventReferences(text, recentEvents);
   const priorEventScope = previousEventScope(history, timeZone);
-  const local = detectLocalDraft(text, timeZone, priorEventScope);
+  const local = localDelete
+    ? { intent: "events.cancel", payload: { event_ids: localDelete.map((event) => event.id) } }
+    : detectLocalDraft(text, timeZone, priorEventScope);
   if (local) rawDraft = local;
   else {
-    const hint = await buildCandidateHint(svc, userId);
-    rawDraft = await callDeepseekDraft(text, hint, history);
+    const candidateHint = await buildCandidateHint(svc, userId);
+    const hint = [candidateHint, eventContextHint(recentEvents)].filter((part): part is string => Boolean(part)).join("\n");
+    rawDraft = await callDeepseekDraft(text, hint || undefined, history);
   }
 
   if (!rawDraft) {
     // try to answer reads directly without LLM
     if (text.toLowerCase().includes("materias")) {
       const subjects = await readSubjects(svc);
-      const lines = subjects.map((s) => `• ${s.code} — ${s.name}`).join("\n");
+      const lines = subjects.map((s) => `• ${s.name}`).join("\n");
       return { reply: `📚 Estas son tus materias:\n${lines}`, handled: true };
     }
-    return chatOrFallback(text, history);
+    return chatOrFallback(text, history, recentEvents);
   }
 
   rawDraft = normalizeReadDraft(rawDraft, text, priorEventScope, timeZone);
   const validated = validateDraft(rawDraft as unknown as import("@/lib/whatsapp/validators").BotDraft);
   if (!validated) {
-    return chatOrFallback(text, history);
+    return chatOrFallback(text, history, recentEvents);
   }
 
   // handle link inside authenticated flow
@@ -402,7 +518,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     return { reply: HELP_TEXT, handled: true };
   }
   if (validated.kind === "unknown") {
-    return chatOrFallback(text, history);
+    return chatOrFallback(text, history, recentEvents);
   }
 
   // read operations: execute directly, no confirmation
@@ -412,15 +528,22 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   }
 
   // mutations: require confirmation
-  // Check allowlist: never allow delete_event (not in validated but double-check)
-  if ((validated as { kind: string }).kind === "delete_event") {
-    return { reply: "No puedo borrar eventos de forma permanente. Si querés, puedo cancelarlo y queda guardado como cancelado.", handled: true };
+  // Policy: permanent deletion is admin-only. The bot only cancels (reversible).
+  if (isDeletionKind((validated as { kind: string }).kind)) {
+    return { reply: "No puedo borrar eventos de forma permanente. Si querés, los cancelo y quedan guardados como cancelados.", handled: true };
   }
 
   // For notes mutations, verify at least draft is valid; ambiguous handling may need selection
   // If draft references note_id/event_id that is ambiguous, we need to persist choices
   let pendingPayload = draftToPayload(validated);
   const pendingKind = validated.kind;
+
+  if (pendingKind === "cancel_events") {
+    const ids = Array.isArray(pendingPayload.event_ids) ? pendingPayload.event_ids.map(String) : [];
+    const references = await ownedEventReferences(svc, userId, ids);
+    if (!references || references.length !== ids.length) return { reply: "No encontré todos esos eventos o no tenés permiso para cancelarlos.", handled: true };
+    pendingPayload = { ...pendingPayload, _events: references };
+  }
 
   if (pendingKind === "edit_event") pendingPayload = await enrichEventEditConfirmation(pendingPayload, userId, svc);
 
@@ -432,13 +555,16 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     const match = findExactSubject(subjects, subjectCode);
     if (subjectCode && !match) {
       const bounded = subjects.slice(0, 10);
-      const choices = ambiguousChoices(bounded, (s) => `${s.code} - ${s.name}`);
+      const choices = ambiguousChoices(bounded, (s) => s.name);
       await upsertConversation(waId, { last_ambiguous: { kind: `${pendingKind}_subject`, items: bounded } as unknown as Record<string, unknown> });
       await setPending(waId, { kind: pendingKind, payload: pendingPayload }, providerMessageId);
       return { reply: `No encontré la materia “${subjectCode}”. ${choices}`, handled: true };
     }
     // keep exact code as stored; mapping to id happens on execute
-    if (match) pendingPayload.subject_code = match.code;
+    if (match) {
+      pendingPayload.subject_code = match.code;
+      pendingPayload._subject_name = match.name;
+    }
   }
 
   // for toggle_complete, enrich payload with actual event mode and completion state before confirmation
@@ -504,11 +630,11 @@ function relation<T extends object>(value: unknown): T | null {
 }
 
 function scheduleLine(row: ScheduleRow, includeSubject = false): string {
-  const subject = relation<{ code?: string }>(row.subjects);
+  const subject = relation<{ name?: string }>(row.subjects);
   const professor = relation<{ display_name?: string }>(row.professors)?.display_name;
   const room = relation<{ name?: string }>(row.rooms)?.name;
   const day = ({ Monday: "Lunes", Tuesday: "Martes", Wednesday: "Miércoles", Thursday: "Jueves", Friday: "Viernes" } as Record<string, string>)[String(row.day)] ?? String(row.day);
-  const prefix = includeSubject && subject?.code ? `${subject.code} · ` : "";
+  const prefix = includeSubject && subject?.name ? `${subject.name} · ` : "";
   return `• ${prefix}${day} ${String(row.start_time).slice(0, 5)}–${String(row.end_time).slice(0, 5)} · ${String(row.section)} · 👨‍🏫 ${professor || "docente sin asignar"} · 🏫 ${room || "aula sin asignar"}`;
 }
 
@@ -516,7 +642,7 @@ async function handleRead(validated: import("@/lib/whatsapp/validators").Validat
   if (validated.kind === "read_subjects") {
     const subjects = await readSubjects(svc);
     if (subjects.length === 0) return "Todavía no tengo materias cargadas 📚.";
-    const lines = subjects.map((s) => `• ${s.code} — ${s.name}`).join("\n");
+    const lines = subjects.map((s) => `• ${s.name}`).join("\n");
     return `📚 Estas son tus materias:\n${lines}`;
   }
   if (validated.kind === "read_subject") {
@@ -524,20 +650,21 @@ async function handleRead(validated: import("@/lib/whatsapp/validators").Validat
     const found = findExactSubject(subjects, validated.subject_code);
     if (!found) {
       const bounded = subjects.slice(0, 10);
-      const choices = ambiguousChoices(bounded, (s) => `${s.code} — ${s.name}`);
+      const choices = ambiguousChoices(bounded, (s) => s.name);
       await upsertConversation(waId, { last_ambiguous: { kind: "read_subject", items: bounded } as unknown as Record<string, unknown> });
-      return `No encontré la materia “${validated.subject_code}”. ${choices}`;
+      return `No encontré esa materia. ${choices}`;
     }
     const schedules = await readSchedulesForSubject(svc, found.id);
     const notes = await readNotes(svc, "", found.id);
     const events = await readEvents(svc, userId);
     const relatedEvents = events.filter((e) => String(e.subject_id ?? "") === found.id).slice(0, 5);
-    let out = `📚 ${found.code} — ${found.name}\n`;
+    let out = `📚 ${found.name}\n`;
     if (schedules.length > 0) {
       out += `\n🕒 Horarios:\n${(schedules as ScheduleRow[]).map((r) => scheduleLine(r)).join("\n")}`;
     } else out += "\n🕒 Todavía no hay horarios cargados para esta materia.";
-    out += `\n\n📝 Apuntes relacionados (${notes.length}):\n${notes.slice(0, 5).map((n) => `• ${String(n.title)} (${String(n.status)})`).join("\n") || "Todavía no hay apuntes."}`;
-    out += `\n\n📅 Eventos relacionados (${relatedEvents.length}):\n${relatedEvents.map((e) => `• ${String(e.title)} · ${String(e.date)} · ${String(e.status)}`).join("\n") || "Todavía no hay eventos."}`;
+    out += `\n\n📝 Apuntes relacionados (${notes.length}):\n${notes.slice(0, 5).map((n) => `• ${String(n.title)}`).join("\n") || "Todavía no hay apuntes."}`;
+    out += `\n\n📅 Eventos relacionados (${relatedEvents.length}):\n${relatedEvents.map(formatEventLine).join("\n") || "Todavía no hay eventos."}`;
+    await rememberEventContext(waId, relatedEvents);
     return out.slice(0, 3000);
   }
   if (validated.kind === "read_schedule") {
@@ -546,20 +673,21 @@ async function handleRead(validated: import("@/lib/whatsapp/validators").Validat
       const rows = await readSchedulesForSubject(svc, null) as ScheduleRow[];
       const sections = subjects.map((subject) => {
         const subjectRows = rows.filter((row) => String(row.subject_id) === subject.id);
-        return `*${subject.code} — ${subject.name}*\n${subjectRows.length > 0 ? subjectRows.map((row) => scheduleLine(row)).join("\n") : "• Todavía no hay horarios cargados para esta materia."}`;
+        return `*${subject.name}*\n${subjectRows.length > 0 ? subjectRows.map((row) => scheduleLine(row)).join("\n") : "• Todavía no hay horarios cargados para esta materia."}`;
       });
       return sections.length > 0 ? `🕒 Horarios de cada materia:\n\n${sections.join("\n\n")}` : "Todavía no tengo materias cargadas para mostrar horarios 📚.";
     }
     let subjectId: string | null = null;
     if (validated.subject_code) {
       const found = findExactSubject(subjects, validated.subject_code);
-      if (!found) return `No encontré la materia “${validated.subject_code}”. Probá con el código, por ejemplo RED.`;
+      if (!found) return "No encontré esa materia. Probá con el nombre completo de la materia.";
       subjectId = found.id;
     }
+    const subjectLabel = validated.subject_code ? findExactSubject(subjects, validated.subject_code)?.name : undefined;
     const rows = await readSchedulesForSubject(svc, subjectId);
-    if (rows.length === 0) return validated.subject_code ? `Para ${validated.subject_code} todavía no hay horarios cargados 🕒.` : "Todavía no hay horarios cargados para mostrar 🕒.";
+    if (rows.length === 0) return subjectLabel ? `Para ${subjectLabel} todavía no hay horarios cargados 🕒.` : "Todavía no hay horarios cargados para mostrar 🕒.";
     const lines = (rows as ScheduleRow[]).slice(0, 100).map((r) => scheduleLine(r, !validated.subject_code)).join("\n");
-    return `🕒 Horarios${validated.subject_code ? ` de ${validated.subject_code}` : ""}:\n${lines}`;
+    return `🕒 Horarios${subjectLabel ? ` de ${subjectLabel}` : ""}:\n${lines}`;
   }
   if (validated.kind === "read_notes") {
     let subjectId: string | null = null;
@@ -572,11 +700,11 @@ async function handleRead(validated: import("@/lib/whatsapp/validators").Validat
     if (notes.length === 0) return "No encontré apuntes con ese criterio 📝.";
     if (notes.length > 5 && !validated.query) {
       // ambiguous: show choices
-      const choices = ambiguousChoices(notes.slice(0,10), (n) => `${String(n.title)} — ${String((n.subjects as {code?:string}|null)?.code ?? "")} (${String(n.status)})`);
+      const choices = ambiguousChoices(notes.slice(0,10), (n) => String(n.title));
       await upsertConversation(waId, { last_ambiguous: { kind: "read_notes", items: notes.slice(0,10) } as unknown as Record<string, unknown> });
       return `📝 Encontré ${notes.length} apuntes. ${choices}`;
     }
-    const lines = notes.slice(0,10).map((n) => `• ${String(n.title)} | ${String(n.content).slice(0,80)} | ${String(n.note_date ?? "")} | tags: ${Array.isArray(n.tags) ? (n.tags as string[]).join(",") : ""}`).join("\n");
+    const lines = notes.slice(0,10).map((n) => `• ${String(n.title)}${n.note_date ? ` — ${formatNaturalDate(n.note_date)}` : ""}${n.content ? `: ${String(n.content).slice(0,80)}` : ""}`).join("\n");
     return `📝 Tus apuntes:\n${lines}`;
   }
   if (validated.kind === "read_events") {
@@ -590,11 +718,14 @@ async function handleRead(validated: import("@/lib/whatsapp/validators").Validat
     const filtered = events.filter((e) => String(e.status) !== "cancelled");
     const scopeLabel = eventRange ? describeEventDateRange(eventRange, new Date(), timeZone) : undefined;
     if (filtered.length === 0) {
+      await rememberEventContext(waId, []);
       if (scopeLabel === "esta semana") return "Esta semana no tenés eventos agendados 📅.";
       if (scopeLabel) return `No tenés eventos para ${scopeLabel} 📅.`;
       return "No encontré eventos que coincidan 📅.";
     }
-    const lines = filtered.slice(0, 10).map((e) => `• ${String(e.title)} · ${String(e.date)}${e.time ? ` · ${String(e.time)}` : ""} · ${String((relation<{ code?: string }>(e.subjects))?.code ?? "")} · ${String(e.status)}`).join("\n");
+    const listed = filtered.slice(0, 10);
+    await rememberEventContext(waId, listed);
+    const lines = listed.map(formatEventLine).join("\n");
     return `📅 Tus eventos${scopeLabel ? ` de ${scopeLabel}` : ""}:\n${lines}`;
   }
   return HELP_TEXT;
@@ -701,6 +832,19 @@ async function executePending(op: { kind: string; payload: Record<string, unknow
     });
     if (error) return "No pude agendar el evento. Probá de nuevo en un ratito.";
     return "✅ Evento agendado.";
+  }
+  if (kind === "cancel_events") {
+    const eventIds = Array.isArray(p.event_ids) ? [...new Set(p.event_ids.map(String).filter(Boolean))].slice(0, 10) : [];
+    if (eventIds.length === 0) return "No pude identificar esos eventos, así que no cancelé nada.";
+    const { data: existing, error: fetchError } = await svc
+      .from("academic_events")
+      .select("id, created_by")
+      .eq("created_by", userId)
+      .in("id", eventIds);
+    if (fetchError || !existing || existing.length !== eventIds.length) return "No encontré todos esos eventos o ya no tenés permiso para cancelarlos.";
+    const { error } = await svc.from("academic_events").update({ status: "cancelled" }).eq("created_by", userId).in("id", eventIds);
+    if (error) return "No pude cancelar esos eventos. Probá de nuevo en un ratito.";
+    return eventIds.length === 1 ? "✅ Evento cancelado. Queda guardado y lo podés revertir." : `✅ Cancelé ${eventIds.length} eventos. Quedan guardados y los podés revertir.`;
   }
   if (kind === "edit_event") {
     const eventId = String(p.event_id);

@@ -22,6 +22,7 @@ export type ValidatedDraft =
   | { kind: "create_event"; title: string; type: (typeof EVENT_TYPES)[number]; date: string; time: string | null; subject_code: string | null; description: string | null; event_type: (typeof EVENT_TYPE_MODE)[number] }
   | { kind: "edit_event"; event_id: string; title?: string; type?: (typeof EVENT_TYPES)[number]; date?: string; time?: string | null; subject_code?: string | null; description?: string | null; status?: (typeof EVENT_STATUS)[number]; event_type?: (typeof EVENT_TYPE_MODE)[number] }
   | { kind: "cancel_event"; event_id: string }
+  | { kind: "cancel_events"; event_ids: string[] }
   | { kind: "toggle_complete"; event_id: string }
   | { kind: "link"; code: string }
   | { kind: "help" }
@@ -215,10 +216,17 @@ export function validateDraft(raw: BotDraft): ValidatedDraft | null {
     if (keys.length === 0) return null;
     return out as unknown as ValidatedDraft;
   }
-  if (intent === "events.cancel" || intent === "cancel_event") {
-    const id = typeof p.event_id === "string" ? p.event_id.trim() : "";
-    if (!id) return null;
-    return { kind: "cancel_event", event_id: id };
+  if (intent === "events.cancel" || intent === "cancel_event" || intent === "cancel_events") {
+    const rawIds = Array.isArray(p.event_ids) ? p.event_ids : typeof p.event_id === "string" ? [p.event_id] : [];
+    const event_ids = rawIds
+      .filter((id): id is string => typeof id === "string")
+      .map((id) => id.trim())
+      .filter(Boolean)
+      .slice(0, 10);
+    if (event_ids.length === 0 || new Set(event_ids).size !== event_ids.length) return null;
+    // Policy: the bot only cancels (reversible). Permanent deletion is admin-only and has no bot path.
+    if (event_ids.length === 1 && !Array.isArray(p.event_ids)) return { kind: "cancel_event", event_id: event_ids[0] };
+    return { kind: "cancel_events", event_ids };
   }
   if (intent === "events.toggle_complete" || intent === "toggle_complete") {
     const id = typeof p.event_id === "string" ? p.event_id.trim() : "";
@@ -244,6 +252,7 @@ export const ALLOWED_KINDS = new Set<string>([
   "create_event",
   "edit_event",
   "cancel_event",
+  "cancel_events",
   "toggle_complete",
   "link",
   "help",
@@ -251,6 +260,6 @@ export const ALLOWED_KINDS = new Set<string>([
 ]);
 
 export function isDeletionKind(kind: string): boolean {
-  // event permanent deletion is never allowed; we only allow cancel
-  return kind === "delete_event";
+  // event permanent deletion is never allowed through the bot; only cancel
+  return kind === "delete_event" || kind === "delete_events";
 }

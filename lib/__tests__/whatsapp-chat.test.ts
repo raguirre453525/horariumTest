@@ -92,21 +92,33 @@ describe("WhatsApp conversational fallback", () => {
     expect(mocks.callDeepseekChat).not.toHaveBeenCalled();
   });
 
-  it("uses the existing fallback when the chat call fails", async () => {
+  it("uses a natural recovery when the chat call fails for meaningful input", async () => {
     mocks.callDeepseekDraft.mockResolvedValue({ intent: "unknown" });
     mocks.callDeepseekChat.mockRejectedValue(new Error("timeout"));
 
     const result = await handleWhatsappMessage("wa-1", "hola", "provider-failure");
 
-    expect(result).toEqual({ reply: FALLBACK_TEXT, handled: true });
+    expect(result.handled).toBe(true);
+    expect(result.reply).not.toBe(FALLBACK_TEXT);
   });
 
-  it("rejects mutation claims from the chat response", async () => {
+  it("rejects mutation claims from the chat response without falling back", async () => {
     mocks.callDeepseekDraft.mockResolvedValue({ intent: "unknown" });
     mocks.callDeepseekChat.mockResolvedValue("Listo, ya lo agendé ✅");
 
     const result = await handleWhatsappMessage("wa-1", "agendalo", "provider-unsafe");
 
-    expect(result).toEqual({ reply: FALLBACK_TEXT, handled: true });
+    expect(result.handled).toBe(true);
+    expect(result.reply).not.toContain("agendé");
+    expect(result.reply).not.toBe(FALLBACK_TEXT);
+  });
+
+  it("allows a proposed action without treating it as completed", async () => {
+    mocks.callDeepseekDraft.mockResolvedValue({ intent: "unknown" });
+    mocks.callDeepseekChat.mockResolvedValue("¿Querés que los borre? Decime SI y lo hago 🙂");
+
+    const result = await handleWhatsappMessage("wa-1", "borra esos eventos", "provider-proposal");
+
+    expect(result).toEqual({ reply: "¿Querés que los borre? Decime SI y lo hago 🙂", handled: true });
   });
 });

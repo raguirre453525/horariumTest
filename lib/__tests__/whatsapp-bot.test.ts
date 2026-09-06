@@ -98,12 +98,12 @@ describe("bot permission allowlist", () => {
     expect(LINK_INSTRUCTIONS.toLowerCase()).not.toContain("link your account");
   });
 
-  it("confirmation summary is spanish and bound to exact payload", () => {
+  it("confirmation summary is Spanish without exposing internal IDs", () => {
     const s = formatConfirmSummary("delete_note", { note_id: "abc-123-def" });
     expect(s).toContain("eliminar");
     expect(s).toContain("SI");
     expect(s).toContain("NO");
-    expect(s).toContain("abc-123");
+    expect(s).not.toContain("abc-123");
   });
 });
 

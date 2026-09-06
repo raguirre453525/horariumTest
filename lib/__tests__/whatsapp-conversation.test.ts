@@ -245,6 +245,10 @@ const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => 
         const eventId = String(database.rows("academic_events")[0]?.id ?? "missing-event");
         return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ intent: "update_event", payload: { event_id: eventId, date: "2026-09-10" } }) } }] }), { status: 200 });
       }
+      if (text === "el del jueves no, solo el del martes") {
+        const eventId = String(database.rows("academic_events")[0]?.id ?? "missing-event");
+        return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ intent: "events.cancel", payload: { event_ids: [eventId] } }) } }] }), { status: 200 });
+      }
       const readDrafts: Record<string, string> = {
         "que eventos tengo para la semana que viene?": JSON.stringify({ intent: "read_events", payload: { filter: "semana que viene" } }),
         "pero si tengo 2 eventos para la semana que viene": JSON.stringify({ intent: "read_events", payload: { filter: "__week__" } }),
@@ -303,6 +307,14 @@ async function sendTurn(text: string, providerMessageId: string) {
   return { status: response.status, reply: String(outbound?.body ?? "") };
 }
 
+async function seedTwoNextWeekEvents() {
+  await sendTurn("parcial de redes el martes", "provider-delete-seed-tue");
+  await sendTurn("SI", "provider-delete-seed-tue-confirm");
+  await sendTurn("entrega de redes el jueves", "provider-delete-seed-thu");
+  await sendTurn("SI", "provider-delete-seed-thu-confirm");
+  await sendTurn("qué eventos tengo para la semana que viene?", "provider-delete-list");
+}
+
 describe("WhatsApp conversation through the webhook", () => {
   beforeEach(() => {
     database.reset();
@@ -344,8 +356,8 @@ describe("WhatsApp conversation through the webhook", () => {
 
     const subjects = await sendTurn("mostrame mis materias", "provider-materias");
     transcript.push(["mostrame mis materias", subjects.reply]);
-    expect(subjects.reply).toContain("ASI — Análisis de Sistemas");
-    expect(subjects.reply).toContain("RED — Redes");
+    expect(subjects.reply).toContain("• Análisis de Sistemas");
+    expect(subjects.reply).toContain("• Redes");
 
     const event = await sendTurn("quiero agendar un parcial de REDES el 30/09/2026", "provider-evento");
     transcript.push(["quiero agendar un parcial de REDES el 30/09/2026", event.reply]);
@@ -363,8 +375,8 @@ describe("WhatsApp conversation through the webhook", () => {
       ["holaaa", "¡Hola! Qué bueno leerte 😊"],
       ["solo te salude", "¡Qué lindo saludo! Estoy bien y listo para ayudarte 😊"],
       ["¿cómo estás?", "¡Muy bien, gracias! ¿Qué necesitás hoy? 😊"],
-      ["mostrame mis materias", "📚 Estas son tus materias:\n• ASI — Análisis de Sistemas\n• RED — Redes"],
-      ["quiero agendar un parcial de REDES el 30/09/2026", "📅 Voy a agendar “Parcial de redes”, tipo parcial, el 2026-09-30, para RED.\n\n¿Está bien? Respondé SI para guardar o NO para cancelar. Tenés 10 minutos."],
+      ["mostrame mis materias", "📚 Estas son tus materias:\n• Análisis de Sistemas\n• Redes"],
+      ["quiero agendar un parcial de REDES el 30/09/2026", "📅 Voy a agendar “Parcial de redes” el miércoles 30 de septiembre, para Redes.\n\n¿Está bien? Respondé SI para guardar o NO para cancelar. Tenés 10 minutos."],
       ["si", "✅ Evento agendado."],
     ]);
   });
@@ -378,12 +390,12 @@ describe("WhatsApp conversation through the webhook", () => {
     }
   });
 
-  it("falls back only when the draft and the chat legs both fail", async () => {
+  it("keeps a natural recovery when the chat leg fails for meaningful input", async () => {
     draftFailure = "http";
     chatFailure = true;
     const turn = await sendTurn("hola", "provider-hola-down");
     expect(turn.status).toBe(200);
-    expect(turn.reply).toBe(FALLBACK_TEXT);
+    expect(turn.reply).not.toBe(FALLBACK_TEXT);
   });
 
   it("reschedules the most recent event instead of creating a duplicate", async () => {
@@ -391,7 +403,7 @@ describe("WhatsApp conversation through the webhook", () => {
     vi.setSystemTime(new Date("2026-09-06T15:00:00.000Z"));
 
     const create = await sendTurn("parcial de redes el martes", "provider-reschedule-create");
-    expect(create.reply).toContain("2026-09-08");
+    expect(create.reply).toContain("martes 8 de septiembre");
     expect(create.reply).toContain("Respondé SI");
 
     const created = await sendTurn("SI", "provider-reschedule-create-confirm");
@@ -400,7 +412,7 @@ describe("WhatsApp conversation through the webhook", () => {
     expect(database.rows("academic_events")[0]).toMatchObject({ date: "2026-09-08", title: "Parcial de redes" });
 
     const proposal = await sendTurn("me pasaron el parcial para el jueves", "provider-reschedule-edit");
-    expect(proposal.reply).toContain("Fecha: 2026-09-08 → 2026-09-10");
+    expect(proposal.reply).toContain("Fecha: martes 8 de septiembre → jueves 10 de septiembre");
     expect(proposal.reply).toContain("Respondé SI");
     expect(proposal.reply).toContain("NO");
     expect(proposal.reply).not.toContain("Voy a agendar");
@@ -422,22 +434,24 @@ describe("WhatsApp conversation through the webhook", () => {
     expect(database.rows("academic_events")).toHaveLength(2);
 
     const nextWeek = await sendTurn("que eventos tengo para la semana que viene?", "provider-next-week");
-    expect(nextWeek.reply).toContain("2026-09-08");
-    expect(nextWeek.reply).toContain("2026-09-10");
+    expect(nextWeek.reply).toContain("martes 8 de septiembre");
+    expect(nextWeek.reply).toContain("jueves 10 de septiembre");
+    expect(nextWeek.reply).not.toMatch(/2026-09-\d{2}/);
+    expect(nextWeek.reply).not.toContain("pending");
     expect(nextWeek.reply).not.toContain("Respondé SI");
 
     const llmRange = await sendTurn("dame el calendario de la semana que viene", "provider-next-week-llm-range");
-    expect(llmRange.reply).toContain("2026-09-08");
-    expect(llmRange.reply).toContain("2026-09-10");
+    expect(llmRange.reply).toContain("martes 8 de septiembre");
+    expect(llmRange.reply).toContain("jueves 10 de septiembre");
 
     const followUp = await sendTurn("pero si tengo 2 eventos para la semana que viene", "provider-next-week-follow-up");
-    expect(followUp.reply).toContain("2026-09-08");
-    expect(followUp.reply).toContain("2026-09-10");
+    expect(followUp.reply).toContain("martes 8 de septiembre");
+    expect(followUp.reply).toContain("jueves 10 de septiembre");
     expect(followUp.reply).not.toContain("Esta semana no tenés eventos");
 
     const thursday = await sendTurn("qué tengo el jueves", "provider-next-week-thursday");
-    expect(thursday.reply).toContain("2026-09-10");
-    expect(thursday.reply).not.toContain("2026-09-08");
+    expect(thursday.reply).toContain("jueves 10 de septiembre");
+    expect(thursday.reply).not.toContain("martes 8 de septiembre");
   });
 
   it("answers event reads for an empty current week and text searches", async () => {
@@ -453,8 +467,63 @@ describe("WhatsApp conversation through the webhook", () => {
     );
     const search = await sendTurn("buscame el parcial de redes", "provider-event-search");
     expect(search.reply).toContain("Parcial 1");
-    expect(search.reply).toContain("2026-09-08");
+    expect(search.reply).toContain("martes 8 de septiembre");
     expect(search.reply).not.toContain("Parcial ajeno");
+  });
+
+  it("resolves ambos from the last listing, confirms once, and cancels both after SI", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-09-06T15:00:00.000Z"));
+    await seedTwoNextWeekEvents();
+
+    const confirmation = await sendTurn("borra ambos", "provider-delete-both");
+    expect(confirmation.reply).toContain("Parcial de redes");
+    expect(confirmation.reply).toContain("Entrega de redes");
+    expect(confirmation.reply).toContain("martes 8 de septiembre");
+    expect(confirmation.reply).toContain("jueves 10 de septiembre");
+    expect(confirmation.reply).toContain("SI");
+    expect(confirmation.reply).toContain("NO");
+    expect(confirmation.reply).not.toBe(FALLBACK_TEXT);
+    expect(database.rows("academic_events")).toHaveLength(2);
+    expect(database.rows("whatsapp_messages").filter((row) => row.direction === "outbound" && String(row.body).includes("¿Cancelo")).length).toBe(1);
+
+    const cancelled = await sendTurn("SI", "provider-delete-both-confirm");
+    expect(cancelled.reply).toBe("✅ Cancelé 2 eventos. Quedan guardados y los podés revertir.");
+    expect(database.rows("academic_events")).toHaveLength(2);
+    expect(database.rows("academic_events").every((row) => row.status === "cancelled")).toBe(true);
+  });
+
+  it("resolves el primero from the last listing without asking which event", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-09-06T15:00:00.000Z"));
+    await seedTwoNextWeekEvents();
+
+    const confirmation = await sendTurn("borrá el primero", "provider-delete-first");
+    expect(confirmation.reply).toContain("Parcial de redes");
+    expect(confirmation.reply).not.toContain("Entrega de redes");
+    expect(confirmation.reply).not.toContain("¿Cuál");
+    expect(confirmation.reply).toContain("Respondeme SI o NO");
+
+    await sendTurn("SI", "provider-delete-first-confirm");
+    expect(database.rows("academic_events")).toHaveLength(2);
+    expect(database.rows("academic_events")[0]).toMatchObject({ title: "Parcial de redes", status: "cancelled" });
+    expect(database.rows("academic_events")[1]).toMatchObject({ title: "Entrega de redes", status: "pending" });
+  });
+
+  it("keeps only the explicitly included event in a partial reference", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-09-06T15:00:00.000Z"));
+    await seedTwoNextWeekEvents();
+
+    const confirmation = await sendTurn("el del jueves no, solo el del martes", "provider-delete-partial");
+    expect(confirmation.reply).toContain("Parcial de redes");
+    expect(confirmation.reply).not.toContain("Entrega de redes");
+    expect(confirmation.reply).not.toContain("jueves 10 de septiembre");
+
+    await sendTurn("SI", "provider-delete-partial-confirm");
+    expect(database.rows("academic_events")).toHaveLength(2);
+    expect(database.rows("academic_events")[0]).toMatchObject({ title: "Parcial de redes", status: "cancelled" });
+    expect(database.rows("academic_events")[1]).toMatchObject({ title: "Entrega de redes", status: "pending" });
   });
 
   it("answers a mutation meta-question with the last confirmed mutation in chat context", async () => {
@@ -467,7 +536,7 @@ describe("WhatsApp conversation through the webhook", () => {
     expect(meta.reply).toBe("Tenés razón: no tomé tu pedido. Decime la nueva fecha y te pido SI o NO 🙂");
     expect(lastChatSystemPrompt).toContain("Resumen factual de la última mutación confirmada");
     expect(lastChatSystemPrompt).toContain("Evento agendado");
-    expect(lastChatSystemPrompt).toContain("2026-09-30");
+    expect(lastChatSystemPrompt).toContain("miércoles 30 de septiembre");
   });
 
   it("greets hola? instead of dumping capabilities", async () => {
@@ -484,5 +553,11 @@ describe("WhatsApp conversation through the webhook", () => {
 
     expect(turn.reply).toBe("¿Qué parte no quedó clara? Decime y te lo explico 🙂");
     expect(turn.reply).not.toBe(FALLBACK_TEXT);
+  });
+
+  it("keeps the generic fallback for genuinely empty or gibberish input", async () => {
+    const turn = await sendTurn("???", "provider-gibberish");
+
+    expect(turn.reply).toBe(FALLBACK_TEXT);
   });
 });

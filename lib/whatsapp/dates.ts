@@ -1,3 +1,5 @@
+import { formatNaturalDate } from "@/lib/whatsapp/format";
+
 const WEEKDAY_INDEX: Record<string, number> = {
   sunday: 0,
   monday: 1,
@@ -293,7 +295,7 @@ export function describeEventDateRange(eventRange: EventDateRange, now = new Dat
   if (sameRange(eventRange, weekRange(today, 1))) return "la semana que viene";
   if (sameRange(eventRange, monthRange(today))) return "este mes";
   if (sameRange(eventRange, monthRange(today, 1))) return "el mes que viene";
-  return eventRange.from === eventRange.to ? eventRange.from : `${eventRange.from} al ${eventRange.to}`;
+  return eventRange.from === eventRange.to ? formatNaturalDate(eventRange.from) : `${formatNaturalDate(eventRange.from)} al ${formatNaturalDate(eventRange.to)}`;
 }
 
 export function isDateInCurrentWeek(value: string, now = new Date(), timeZone = DEFAULT_WHATSAPP_TIME_ZONE): boolean {
