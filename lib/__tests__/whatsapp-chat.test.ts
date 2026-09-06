@@ -81,7 +81,7 @@ describe("WhatsApp conversational fallback", () => {
     const result = await handleWhatsappMessage("wa-1", text, `provider-${text}`);
 
     expect(result).toEqual({ reply: "¡Hola! Qué bueno leerte 😊", handled: true });
-    expect(mocks.callDeepseekChat).toHaveBeenCalledWith(text, history);
+    expect(mocks.callDeepseekChat).toHaveBeenCalledWith(text, history, undefined, expect.any(Array));
   });
 
   it("uses the LLM draft for valid action intents", async () => {
@@ -90,17 +90,39 @@ describe("WhatsApp conversational fallback", () => {
     const result = await handleWhatsappMessage("wa-1", "ayuda", "provider-help");
 
     expect(result).toEqual({ reply: HELP_TEXT, handled: true });
-    expect(mocks.callDeepseekDraft).toHaveBeenCalledWith("ayuda", undefined, history);
+    expect(mocks.callDeepseekDraft).toHaveBeenCalledWith("ayuda", undefined, history, expect.any(Array));
     expect(mocks.callDeepseekChat).not.toHaveBeenCalled();
   });
 
   it("reports when both LLM legs fail for meaningful input", async () => {
-    mocks.callDeepseekDraft.mockResolvedValue(null);
-    mocks.callDeepseekChat.mockRejectedValue(new Error("timeout"));
+    mocks.callDeepseekDraft.mockImplementation((_text, _hint, _history, failureCodes: string[]) => {
+      failureCodes.push("groq:http:401", "deepseek:empty");
+      return null;
+    });
+    mocks.callDeepseekChat.mockImplementation((_text, _history, _hint, failureCodes: string[]) => {
+      failureCodes.push("groq:fetch", "deepseek:http:503");
+      return Promise.reject(new Error("timeout"));
+    });
 
     const result = await handleWhatsappMessage("wa-1", "hola", "provider-failure");
 
-    expect(result).toEqual({ reply: "No pude conectarme con el modelo. Intentá de nuevo en un rato.", handled: true });
+    expect(result).toEqual({ reply: "No pude conectarme con el modelo (groq:http:401, deepseek:empty, groq:fetch, deepseek:http:503). Intentá de nuevo en un rato.", handled: true });
+  });
+
+  it("includes only safe provider failure codes in the model fallback", async () => {
+    mocks.callDeepseekDraft.mockImplementation((_text, _hint, _history, failureCodes: string[]) => {
+      failureCodes.push("groq:http:401", "Authorization: Bearer sk-secret");
+      return null;
+    });
+    mocks.callDeepseekChat.mockImplementation((_text, _history, _hint, failureCodes: string[]) => {
+      failureCodes.push("deepseek:empty", "https://api.example.test", "gsk_secret");
+      return Promise.resolve(null);
+    });
+
+    const result = await handleWhatsappMessage("wa-1", "hola", "provider-safe-failure");
+
+    expect(result.reply).toBe("No pude conectarme con el modelo (groq:http:401, deepseek:empty). Intentá de nuevo en un rato.");
+    expect(result.reply).not.toMatch(/Authorization|Bearer|sk-|gsk_/i);
   });
 
   it("passes through mutation claims from the chat response", async () => {

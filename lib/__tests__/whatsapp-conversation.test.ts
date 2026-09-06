@@ -441,7 +441,7 @@ describe("WhatsApp conversation through the webhook", () => {
     chatFailure = true;
     const turn = await sendTurn("hola", "provider-hola-down");
     expect(turn.status).toBe(200);
-    expect(turn.reply).toBe("No pude conectarme con el modelo. Intentá de nuevo en un rato.");
+    expect(turn.reply).toBe("No pude conectarme con el modelo (groq:no-key, deepseek:http:401, groq:no-key, deepseek:http:500). Intentá de nuevo en un rato.");
   });
 
   it("reschedules the most recent event instead of creating a duplicate", async () => {

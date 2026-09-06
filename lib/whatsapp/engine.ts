@@ -13,6 +13,12 @@ type EngineResult = { reply: string; handled: boolean };
 
 const MODEL_UNAVAILABLE_TEXT = "No pude conectarme con el modelo. Intentá de nuevo en un rato.";
 
+function modelUnavailableText(failureCodes: string[]): string {
+  const safeCodes = failureCodes.filter((code) => /^(?:groq|deepseek):(?:no-key|fetch|http|parse|empty)(?::\d+)?$/.test(code));
+  if (safeCodes.length === 0) return MODEL_UNAVAILABLE_TEXT;
+  return `No pude conectarme con el modelo (${safeCodes.join(", ")}). Intentá de nuevo en un rato.`;
+}
+
 function normalizeConfirmText(t: string): string {
   return t
     .normalize("NFD")
@@ -98,14 +104,14 @@ function lastMutationSummary(history: DeepseekHistoryMessage[]): string | undefi
   return undefined;
 }
 
-async function chatOrFallback(text: string, history: DeepseekHistoryMessage[], events: EventReference[] = [], pendingHint?: string): Promise<EngineResult> {
+async function chatOrFallback(text: string, history: DeepseekHistoryMessage[], events: EventReference[] = [], pendingHint?: string, failureCodes: string[] = []): Promise<EngineResult> {
   const hints = [lastMutationSummary(history), eventContextHint(events), pendingHint].filter((hint): hint is string => Boolean(hint));
   const contextHint = hints.join("\n\n");
   const chatReply = contextHint
-    ? await callDeepseekChat(text, history, contextHint).catch(() => null)
-    : await callDeepseekChat(text, history).catch(() => null);
+    ? await callDeepseekChat(text, history, contextHint, failureCodes).catch(() => null)
+    : await callDeepseekChat(text, history, undefined, failureCodes).catch(() => null);
   if (chatReply) return { reply: chatReply, handled: true };
-  return { reply: !text.trim() || isFallbackText(text) ? FALLBACK_TEXT : MODEL_UNAVAILABLE_TEXT, handled: true };
+  return { reply: !text.trim() || isFallbackText(text) ? FALLBACK_TEXT : modelUnavailableText(failureCodes), handled: true };
 }
 
 // Compact factual description of the pending confirmation for LLM hints.
@@ -514,16 +520,17 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   const priorEventScope = previousEventScope(history, timeZone);
   const candidateHint = await buildCandidateHint(svc, userId);
   const hint = [candidateHint, eventContextHint(recentEvents), pendingDraftHint].filter((part): part is string => Boolean(part)).join("\n");
-  rawDraft = await callDeepseekDraft(text, hint || undefined, history);
+  const failureCodes: string[] = [];
+  rawDraft = await callDeepseekDraft(text, hint || undefined, history, failureCodes);
 
   if (!rawDraft) {
-    return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined);
+    return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined, failureCodes);
   }
 
   rawDraft = normalizeReadDraft(rawDraft, text, priorEventScope, timeZone);
   const validated = validateDraft(rawDraft as unknown as import("@/lib/whatsapp/validators").BotDraft);
   if (!validated) {
-    return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined);
+    return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined, failureCodes);
   }
 
   // handle link inside authenticated flow
@@ -536,7 +543,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     return { reply: HELP_TEXT, handled: true };
   }
   if (validated.kind === "unknown") {
-    return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined);
+    return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined, failureCodes);
   }
 
   // read operations: execute directly, no confirmation

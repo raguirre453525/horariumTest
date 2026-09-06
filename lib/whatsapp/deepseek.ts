@@ -38,7 +38,20 @@ export type DeepseekHistoryMessage = {
   content: string;
 };
 
-type LlmProvider = { name: string; baseUrl: string; apiKey: string; model: string };
+type LlmProviderName = "groq" | "deepseek";
+type LlmFailureStage = "no-key" | "fetch" | "http" | "parse" | "empty";
+type LlmFailure = { provider: LlmProviderName; stage: LlmFailureStage; status?: number };
+type LlmProvider = { name: LlmProviderName; baseUrl: string; apiKey: string; model: string };
+
+function failureCode(failure: LlmFailure): string {
+  const status = typeof failure.status === "number" && Number.isFinite(failure.status) ? `:${failure.status}` : "";
+  return `${failure.provider}:${failure.stage}${status}`;
+}
+
+function recordFailure(failureCodes: string[] | undefined, failure: LlmFailure): void {
+  failureCodes?.push(failureCode(failure));
+  console.warn("[whatsapp] llm failed", failure);
+}
 
 // Provider chain: Groq first (fast, free tier), DeepSeek as fallback.
 // Both expose an OpenAI-compatible /chat/completions endpoint, so the call
@@ -47,17 +60,18 @@ type LlmProvider = { name: string; baseUrl: string; apiKey: string; model: strin
 // if the key is missing or Groq rate-limits.
 function llmProviders(): LlmProvider[] {
   const cfg = getWhatsappConfig();
-  const chain: LlmProvider[] = [];
-  if (cfg.groqApiKey) chain.push({ name: "groq", baseUrl: cfg.groqBaseUrl, apiKey: cfg.groqApiKey, model: cfg.groqModel });
-  if (cfg.deepseekApiKey) chain.push({ name: "deepseek", baseUrl: cfg.deepseekBaseUrl, apiKey: cfg.deepseekApiKey, model: cfg.deepseekModel });
-  return chain;
+  return [
+    { name: "groq", baseUrl: cfg.groqBaseUrl, apiKey: cfg.groqApiKey, model: cfg.groqModel },
+    { name: "deepseek", baseUrl: cfg.deepseekBaseUrl, apiKey: cfg.deepseekApiKey, model: cfg.deepseekModel },
+  ];
 }
 
 async function postChatCompletion(
   provider: LlmProvider,
   body: Record<string, unknown>,
   timeoutMs: number,
-): Promise<{ ok: true; text: string; json: unknown | null } | { ok: false; stage: string; status?: number }> {
+): Promise<{ ok: true; text: string; json: unknown | null } | ({ ok: false } & LlmFailure)> {
+  if (!provider.apiKey) return { ok: false, provider: provider.name, stage: "no-key" };
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
@@ -70,7 +84,7 @@ async function postChatCompletion(
       body: JSON.stringify(body),
       signal: controller.signal,
     });
-    if (!res.ok) return { ok: false, stage: "http", status: res.status };
+    if (!res.ok) return { ok: false, provider: provider.name, stage: "http", status: typeof res.status === "number" ? res.status : undefined };
     // Read text first (single body read), then parse. Minimal test doubles
     // that only expose .json() are supported via the fallback branch.
     const text = typeof res.text === "function" ? await res.text() : "";
@@ -85,7 +99,7 @@ async function postChatCompletion(
     const json = await res.json().catch(() => null);
     return { ok: true, text: typeof json === "string" ? json : "", json };
   } catch {
-    return { ok: false, stage: "fetch" };
+    return { ok: false, provider: provider.name, stage: "fetch" };
   } finally {
     clearTimeout(timeout);
   }
@@ -99,14 +113,11 @@ export async function callDeepseekDraft(
   userText: string,
   contextHint?: string,
   history: DeepseekHistoryMessage[] = [],
+  failureCodes?: string[],
 ): Promise<BotDraft | null> {
   const chain = llmProviders();
-  if (chain.length === 0) {
-    console.warn("[whatsapp] draft skipped", { stage: "no-key" });
-    return null;
-  }
-  const fail = (provider: string, stage: string, status?: number) => {
-    console.warn("[whatsapp] draft failed", status === undefined ? { provider, stage } : { provider, stage, status });
+  const fail = (failure: LlmFailure) => {
+    recordFailure(failureCodes, failure);
     return null;
   };
   for (const provider of chain) {
@@ -127,7 +138,7 @@ export async function callDeepseekDraft(
     };
     const res = await postChatCompletion(provider, body, 8000);
     if (!res.ok) {
-      fail(provider.name, res.stage, res.status);
+      fail(res);
       continue;
     }
     const json = res.json as {
@@ -135,26 +146,25 @@ export async function callDeepseekDraft(
     } | null;
     const content = json?.choices?.[0]?.message?.content ?? json?.choices?.[0]?.message?.tool_calls?.[0]?.function?.arguments ?? "";
     if (!content) {
-      fail(provider.name, "empty");
+      fail({ provider: provider.name, stage: "empty" });
       continue;
     }
     try {
       return JSON.parse(content) as BotDraft;
     } catch {
-      fail(provider.name, "parse");
+      fail({ provider: provider.name, stage: "parse" });
       continue;
     }
   }
   return null;
 }
 
-export async function callDeepseekChat(userText: string, history: DeepseekHistoryMessage[] = [], contextHint?: string): Promise<string | null> {
+export async function callDeepseekChat(userText: string, history: DeepseekHistoryMessage[] = [], contextHint?: string, failureCodes?: string[]): Promise<string | null> {
   const chain = llmProviders();
-  const fail = (provider?: string) => {
-    console.warn("[whatsapp] DeepSeek chat failed", { provider: provider ?? "none", inputLength: userText.length });
+  const fail = (failure: LlmFailure) => {
+    recordFailure(failureCodes, failure);
     return null;
   };
-  if (chain.length === 0) return fail();
   for (const provider of chain) {
     const body = {
       model: provider.model,
@@ -172,7 +182,7 @@ export async function callDeepseekChat(userText: string, history: DeepseekHistor
     };
     const res = await postChatCompletion(provider, body, 8000);
     if (!res.ok) {
-      fail(provider.name);
+      fail(res);
       continue;
     }
     // Prefer the standard choices envelope; use the raw body only when the
@@ -184,7 +194,7 @@ export async function callDeepseekChat(userText: string, history: DeepseekHistor
     else if (json === null) content = res.text;
     const trimmed = content.trim();
     if (!trimmed) {
-      fail(provider.name);
+      fail({ provider: provider.name, stage: "empty" });
       continue;
     }
     return trimmed.split(/\r?\n/).slice(0, 2).join("\n").slice(0, 1000) || null;
