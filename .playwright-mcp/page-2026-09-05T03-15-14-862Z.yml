@@ -1,0 +1,323 @@
+- generic [ref=f91e11]:
+  - navigation "Main" [ref=f91e13]:
+    - generic [ref=f91e20]:
+      - generic [ref=f91e22]:
+        - button "Open mobile navigation menu" [ref=f91e24] [cursor=pointer]
+        - link "Meta home" [ref=f91e29] [cursor=pointer]:
+          - /url: https://developers.facebook.com/
+          - img "Nav Logo" [ref=f91e30]
+      - generic [ref=f91e33]:
+        - link "Login" [ref=f91e34] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fdocumentation%2Fdevelopment%2Frelease%3Flocale%3Den_US
+        - button [ref=f91e35] [cursor=pointer]:
+          - img "Search" [ref=f91e36]
+  - generic [ref=f91e43]:
+    - navigation [ref=f91e44]:
+      - generic [ref=f91e45]:
+        - generic [ref=f91e46]:
+          - generic [ref=f91e47]: Development
+          - textbox "Filter" [ref=f91e50]
+        - generic [ref=f91e52]:
+          - generic "Meta App Development" [ref=f91e53]:
+            - link "Meta App Development" [ref=f91e54] [cursor=pointer]:
+              - /url: /documentation/development
+          - generic "Register" [ref=f91e59]:
+            - link "Register" [ref=f91e60] [cursor=pointer]:
+              - /url: "#"
+          - generic "Features Reference" [ref=f91e68]:
+            - link "Features Reference" [ref=f91e69] [cursor=pointer]:
+              - /url: "#"
+          - generic "Permissions" [ref=f91e76]:
+            - link "Permissions" [ref=f91e77] [cursor=pointer]:
+              - /url: /documentation/development/permissions
+          - generic "Create an App" [ref=f91e82]:
+            - link "Create an App" [ref=f91e83] [cursor=pointer]:
+              - /url: "#"
+          - generic "Use Case Customization" [ref=f91e91]:
+            - link "Use Case Customization" [ref=f91e92] [cursor=pointer]:
+              - /url: "#"
+          - generic "App Dashboard" [ref=f91e100]:
+            - link "App Dashboard" [ref=f91e101] [cursor=pointer]:
+              - /url: "#"
+          - generic "Build and Test" [ref=f91e109]:
+            - link "Build and Test" [ref=f91e110] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f91e117]:
+            - generic "Release" [ref=f91e118]:
+              - link "Release" [ref=f91e119] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f91e127]:
+              - generic "Release" [ref=f91e128]:
+                - link "Release" [ref=f91e129] [cursor=pointer]:
+                  - /url: /documentation/development/release
+              - generic "Access Levels" [ref=f91e133]:
+                - link "Access Levels" [ref=f91e134] [cursor=pointer]:
+                  - /url: /documentation/development/graph-api/overview/access-levels
+              - generic "Access Verification" [ref=f91e138]:
+                - link "Access Verification" [ref=f91e139] [cursor=pointer]:
+                  - /url: /documentation/development/release/access-verification
+              - generic "Business Verification" [ref=f91e143]:
+                - link "Business Verification" [ref=f91e144] [cursor=pointer]:
+                  - /url: /documentation/development/release/business-verification
+          - generic "Transfer Ownership" [ref=f91e148]:
+            - link "Transfer Ownership" [ref=f91e149] [cursor=pointer]:
+              - /url: /documentation/development/create-an-app/transfer-an-app
+          - generic "Maintaining Data Access" [ref=f91e153]:
+            - link "Maintaining Data Access" [ref=f91e154] [cursor=pointer]:
+              - /url: /documentation/development/maintaining-data-access
+          - generic "Terms and Policies" [ref=f91e159]:
+            - link "Terms and Policies" [ref=f91e160] [cursor=pointer]:
+              - /url: "#"
+          - generic "Support" [ref=f91e168]:
+            - link "Support" [ref=f91e169] [cursor=pointer]:
+              - /url: "#"
+          - generic "Trust Center" [ref=f91e177]:
+            - link "Trust Center" [ref=f91e178] [cursor=pointer]:
+              - /url: "#"
+    - generic [ref=f91e186]:
+      - main [ref=f91e187]:
+        - generic [ref=f91e188]:
+          - navigation "Breadcrumbs" [ref=f91e190]:
+            - list [ref=f91e191]:
+              - listitem [ref=f91e192]:
+                - link "Docs" [ref=f91e194] [cursor=pointer]:
+                  - /url: /docs
+              - listitem [ref=f91e199]:
+                - link "Overview" [ref=f91e201] [cursor=pointer]:
+                  - /url: /documentation/development
+              - listitem [ref=f91e206]:
+                - generic [ref=f91e207]: Publish
+          - article [ref=f91e210]:
+            - heading "Publish" [level=1] [ref=f91e211]
+            - generic [ref=f91e212]: "Updated: May 5, 2025"
+            - generic [ref=f91e216]:
+              - button "Copy for LLM" [ref=f91e218] [cursor=pointer]
+              - link "View as Markdown" [ref=f91e225] [cursor=pointer]:
+                - /url: /documentation/development/release.md
+            - generic [ref=f91e231]:
+              - text: Once you have completed app
+              - link "development and testing" [ref=f91e232] [cursor=pointer]:
+                - /url: /documentation/development/build-and-test
+              - text: ", you can publish your app. Publishing means to make your app available to accounts that do not have a"
+              - link "role" [ref=f91e233] [cursor=pointer]:
+                - /url: /documentation/development/build-and-test/app-roles
+              - text: on the app itself. This document lists the processes and app settings that may be required before you can publish your app successfully.
+            - generic [ref=f91e234]: If your app will only be used by people who have a role on the app itself you do not need to complete any of these processes because your app is already available to these users.
+            - generic [ref=f91e235]:
+              - text: If you have already published your app and want to add new functionality that requires App Review, follow the steps in our
+              - link "App Review For Published Apps" [ref=f91e236] [cursor=pointer]:
+                - /url: /docs/app-review/introduction#app-review-for-live-apps
+              - text: instructions.
+            - generic [ref=f91e239]:
+              - heading "App Review" [level=2] [ref=f91e240]
+              - button [ref=f91e241] [cursor=pointer]
+            - generic [ref=f91e245]:
+              - text: If your app will be used by anyone who does not have a role on it, it must undergo
+              - link "App Review" [ref=f91e246] [cursor=pointer]:
+                - /url: /docs/app-review
+              - text: .
+            - generic [ref=f91e247]:
+              - text: App Review is a process that allows you to request approval for specific API
+              - link "permissions" [ref=f91e248] [cursor=pointer]:
+                - /url: /docs/permissions/reference
+              - text: and
+              - link "features" [ref=f91e249] [cursor=pointer]:
+                - /url: /docs/apps/features-reference
+              - text: that your app needs to function properly. Only permissions approved through the App Review process can be granted to your app by app users without a role on the app, and only approved features will be active for those users.
+            - generic [ref=f91e250]: App Review requires you to identify each of the permissions and features your app needs, describe why your app needs them, and show us how your app uses the data returned or accepted by our APIs.
+            - generic [ref=f91e251]:
+              - text: Learn more about the
+              - link "App Review" [ref=f91e252] [cursor=pointer]:
+                - /url: /docs/app-review
+              - text: process.
+            - generic [ref=f91e255]:
+              - heading "Business Verification" [level=2] [ref=f91e256]
+              - button [ref=f91e257] [cursor=pointer]
+            - generic [ref=f91e261]:
+              - text: Business Verification is a process that allows us to verify your identity as a business entity. Apps that request advanced access for permissions and apps that allow other Businesses to access their own data must be connected to a Business that has completed
+              - link "Business Verification" [ref=f91e262] [cursor=pointer]:
+                - /url: /documentation/development/release/business-verification
+              - text: . Until then, app users from other Businesses will be unable to grant these apps permissions and all features will be inactive.
+            - generic [ref=f91e263]:
+              - text: Learn more about
+              - link "Business Verification" [ref=f91e264] [cursor=pointer]:
+                - /url: /documentation/development/release/business-verification
+              - text: .
+            - generic [ref=f91e267]:
+              - heading "Go live" [level=2] [ref=f91e268]
+              - button [ref=f91e269] [cursor=pointer]
+            - generic [ref=f91e273]: To allow people, who do not have a role on your app, to use your app, you need to publish it. If your app requires App Review, App Review must be completed successfully before people can use your app.
+            - generic [ref=f91e276]:
+              - heading "Use Case Apps" [level=3] [ref=f91e277]
+              - button [ref=f91e278] [cursor=pointer]
+            - generic [ref=f91e282]:
+              - text: To publish your use case app go to the app dashboard
+              - strong [ref=f91e283]: Publish > Go live
+              - text: and click the
+              - strong [ref=f91e284]: Go live
+              - text: button in the bottom right corner.
+            - generic [ref=f91e287]:
+              - heading "App Types" [level=3] [ref=f91e288]
+              - button [ref=f91e289] [cursor=pointer]
+            - generic [ref=f91e293]:
+              - text: You must switch your app to
+              - link "Live" [ref=f91e294] [cursor=pointer]:
+                - /url: /documentation/development/build-and-test/app-modes
+              - text: mode before it can request
+              - link "App Review" [ref=f91e295] [cursor=pointer]:
+                - /url: /docs/app-review
+              - text: approved permissions from app users who do not have a role on it, and before approved features will be active for those users. However, you should not switch to Live mode until all of the permissions and features that your app requires have been approved, and not before you have completed
+              - link "Business Verification" [ref=f91e296] [cursor=pointer]:
+                - /url: /documentation/development/release/business-verification
+              - text: if required to do so. If you switch your app to Live mode prematurely, your app will be unable to request unapproved permission from app users, and any unapproved permissions will be inactive.
+            - generic [ref=f91e297]:
+              - link "Consumer" [ref=f91e298] [cursor=pointer]:
+                - /url: /documentation/development/create-an-app/app-dashboard/app-types#consumer
+              - text: apps behave a little differently because they also rely on
+              - link "access levels" [ref=f91e299] [cursor=pointer]:
+                - /url: /docs/graph-api/overview/access-levels
+              - text: . Consumer apps in Live mode cannot request permissions with Standard Access from app users who do not have a
+              - link "role" [ref=f91e300] [cursor=pointer]:
+                - /url: /documentation/development/build-and-test/app-roles
+              - text: on them, and features with Standard Access will be inactive for these users.
+            - generic [ref=f91e301]: Business apps do not have app modes and rely exclusively on access levels.
+            - generic [ref=f91e304]:
+              - heading "Releasing New Versions of Live Apps" [level=3] [ref=f91e305]
+              - button [ref=f91e306] [cursor=pointer]
+            - generic [ref=f91e310]:
+              - text: If your app is already in published and you want to add new functionality that requires App Review, follow the steps in our
+              - link "App Review For Live Apps" [ref=f91e311] [cursor=pointer]:
+                - /url: /docs/app-review/introduction#app-review-for-live-apps
+              - text: instructions.
+            - generic [ref=f91e314]:
+              - heading "Limited Release Using Geo-Restriction" [level=2] [ref=f91e315]
+              - button [ref=f91e316] [cursor=pointer]
+            - generic [ref=f91e320]: If you want to release your app to a small set of users before making it available to everyone, you can configure app restrictions that only make your app available to users in certain age groups and geographic locations.
+            - generic [ref=f91e321]:
+              - text: Learn more about
+              - link "app restrictions" [ref=f91e322] [cursor=pointer]:
+                - /url: /documentation/development/create-an-app/app-dashboard/advanced-settings#app-restrictions-settings
+              - text: .
+            - generic [ref=f91e325]:
+              - heading "Learn More" [level=2] [ref=f91e326]
+              - button [ref=f91e327] [cursor=pointer]
+            - list [ref=f91e331]:
+              - listitem [ref=f91e333]:
+                - link "App Roles" [ref=f91e334] [cursor=pointer]:
+                  - /url: /documentation/development/build-and-test/app-roles
+              - listitem [ref=f91e336]:
+                - link "Claiming an App for your Business" [ref=f91e337] [cursor=pointer]:
+                  - /url: /docs/marketing-api/business-asset-management/guides/apps
+              - listitem [ref=f91e339]:
+                - link "Facebook Products" [ref=f91e340] [cursor=pointer]:
+                  - /url: /products
+              - listitem [ref=f91e342]:
+                - link [ref=f91e343] [cursor=pointer]:
+                  - /url: https://business.facebook.com/business/
+                  - text: Businesses on Facebook
+                  - generic [ref=f91e344]:
+                    - text: ⁠
+                    - img "This link opens in a new tab or window" [ref=f91e345]
+      - complementary [ref=f91e348]
+  - generic [ref=f91e350]:
+    - separator [aria-hidden] [ref=f91e351]
+    - contentinfo [ref=f91e352]:
+      - generic [ref=f91e353]:
+        - separator [aria-hidden] [ref=f91e354]
+        - generic [ref=f91e356]:
+          - generic [ref=f91e358]:
+            - generic [ref=f91e360]:
+              - img "Meta" [ref=f91e362]
+              - list [ref=f91e364]:
+                - listitem:
+                  - link "Facebook":
+                    - /url: https://www.facebook.com/MetaforDevelopers
+                    - img "Facebook"
+                - listitem:
+                  - link "Instagram":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmetafordevelopers%2F&h=AUAZd06OWHyiEZttXGownv8GIibmgwYIKpKsDDd0UK0W1xLWoMEv7ZRLxXTkRzg64Jjsn5xgj8hOkPpyZhRyusn3sLYu0WSyPxOJcfmg9sA_vUEr4QvXBex-XebgH_jGUja6uguqbUGsbUgGuuCzMw
+                    - img "Instagram"
+                - listitem:
+                  - link "X":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2Fmetafordevs&h=AUAZd06OWHyiEZttXGownv8GIibmgwYIKpKsDDd0UK0W1xLWoMEv7ZRLxXTkRzg64Jjsn5xgj8hOkPpyZhRyusn3sLYu0WSyPxOJcfmg9sA_vUEr4QvXBex-XebgH_jGUja6uguqbUGsbUgGuuCzMw
+                    - img "X"
+                - listitem:
+                  - link "LinkedIn":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fshowcase%2Fmeta-for-developers%2F&h=AUAZd06OWHyiEZttXGownv8GIibmgwYIKpKsDDd0UK0W1xLWoMEv7ZRLxXTkRzg64Jjsn5xgj8hOkPpyZhRyusn3sLYu0WSyPxOJcfmg9sA_vUEr4QvXBex-XebgH_jGUja6uguqbUGsbUgGuuCzMw
+                    - img "LinkedIn"
+                - listitem:
+                  - link "YouTube":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2FMetaDevelopers%2F&h=AUAZd06OWHyiEZttXGownv8GIibmgwYIKpKsDDd0UK0W1xLWoMEv7ZRLxXTkRzg64Jjsn5xgj8hOkPpyZhRyusn3sLYu0WSyPxOJcfmg9sA_vUEr4QvXBex-XebgH_jGUja6uguqbUGsbUgGuuCzMw
+                    - img "YouTube"
+            - generic [ref=f91e366]:
+              - generic [ref=f91e369]:
+                - heading "Crear con Meta" [level=2] [ref=f91e370]
+                - list [ref=f91e372]:
+                  - listitem [ref=f91e373]:
+                    - link "Inteligencia artificial" [ref=f91e375] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fai%2F&h=AUAZd06OWHyiEZttXGownv8GIibmgwYIKpKsDDd0UK0W1xLWoMEv7ZRLxXTkRzg64Jjsn5xgj8hOkPpyZhRyusn3sLYu0WSyPxOJcfmg9sA_vUEr4QvXBex-XebgH_jGUja6uguqbUGsbUgGuuCzMw
+                  - listitem [ref=f91e376]:
+                    - link "Meta Horizon" [ref=f91e378] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fhorizon%2F&h=AUAZd06OWHyiEZttXGownv8GIibmgwYIKpKsDDd0UK0W1xLWoMEv7ZRLxXTkRzg64Jjsn5xgj8hOkPpyZhRyusn3sLYu0WSyPxOJcfmg9sA_vUEr4QvXBex-XebgH_jGUja6uguqbUGsbUgGuuCzMw
+                  - listitem [ref=f91e379]:
+                    - link "Tecnologías sociales" [ref=f91e381] [cursor=pointer]:
+                      - /url: /social-technologies/
+              - generic [ref=f91e384]:
+                - heading "Noticias" [level=2] [ref=f91e385]
+                - list [ref=f91e387]:
+                  - listitem [ref=f91e388]:
+                    - link "Meta for Developers" [ref=f91e390] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fblog%2F&h=AUAZd06OWHyiEZttXGownv8GIibmgwYIKpKsDDd0UK0W1xLWoMEv7ZRLxXTkRzg64Jjsn5xgj8hOkPpyZhRyusn3sLYu0WSyPxOJcfmg9sA_vUEr4QvXBex-XebgH_jGUja6uguqbUGsbUgGuuCzMw
+                  - listitem [ref=f91e391]:
+                    - link "Blog" [ref=f91e393] [cursor=pointer]:
+                      - /url: /blog/
+                  - listitem [ref=f91e394]:
+                    - link "Historias de éxito" [ref=f91e396] [cursor=pointer]:
+                      - /url: /success-stories/
+              - generic [ref=f91e399]:
+                - heading "Ayuda" [level=2] [ref=f91e400]
+                - list [ref=f91e402]:
+                  - listitem [ref=f91e403]:
+                    - link "Ayuda para desarrolladores" [ref=f91e405] [cursor=pointer]:
+                      - /url: /support/
+                  - listitem [ref=f91e406]:
+                    - link "Herramienta de errores" [ref=f91e408] [cursor=pointer]:
+                      - /url: /support/bugs/
+                  - listitem [ref=f91e409]:
+                    - link "Estado de la plataforma" [ref=f91e411] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmetastatus.com%2F&h=AUAZd06OWHyiEZttXGownv8GIibmgwYIKpKsDDd0UK0W1xLWoMEv7ZRLxXTkRzg64Jjsn5xgj8hOkPpyZhRyusn3sLYu0WSyPxOJcfmg9sA_vUEr4QvXBex-XebgH_jGUja6uguqbUGsbUgGuuCzMw
+                  - listitem [ref=f91e412]:
+                    - link "Foro de la comunidad de desarrolladores" [ref=f91e414] [cursor=pointer]:
+                      - /url: https://www.facebook.com/groups/fbdevelopers/
+                  - listitem [ref=f91e415]:
+                    - link "Reportar un incidente" [ref=f91e417] [cursor=pointer]:
+                      - /url: /incident/report/
+              - generic [ref=f91e420]:
+                - heading "Acerca de nosotros" [level=2] [ref=f91e421]
+                - list [ref=f91e423]:
+                  - listitem [ref=f91e424]:
+                    - link "Información" [ref=f91e426] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.fb.com%2F&h=AUAZd06OWHyiEZttXGownv8GIibmgwYIKpKsDDd0UK0W1xLWoMEv7ZRLxXTkRzg64Jjsn5xgj8hOkPpyZhRyusn3sLYu0WSyPxOJcfmg9sA_vUEr4QvXBex-XebgH_jGUja6uguqbUGsbUgGuuCzMw
+                  - listitem [ref=f91e427]:
+                    - link "Empleos" [ref=f91e429] [cursor=pointer]:
+                      - /url: https://www.facebook.com/careers
+              - generic [ref=f91e432]:
+                - heading "Condiciones y políticas" [level=2] [ref=f91e433]
+                - list [ref=f91e435]:
+                  - listitem [ref=f91e436]:
+                    - link "Iniciativas de plataforma responsable" [ref=f91e438] [cursor=pointer]:
+                      - /url: /products/responsible-platform-initiatives/
+                  - listitem [ref=f91e439]:
+                    - link "Condiciones de la plataforma" [ref=f91e441] [cursor=pointer]:
+                      - /url: /terms/dfc_platform_terms/
+                  - listitem [ref=f91e442]:
+                    - link "Políticas para desarrolladores" [ref=f91e444] [cursor=pointer]:
+                      - /url: /devpolicy/
+                  - listitem [ref=f91e445]:
+                    - link "Política de privacidad" [ref=f91e447] [cursor=pointer]:
+                      - /url: https://www.facebook.com/about/privacy
+                  - listitem [ref=f91e448]:
+                    - link "Cookies" [ref=f91e450] [cursor=pointer]:
+                      - /url: https://www.facebook.com/help/cookies
+          - button "Change language" [ref=f91e455] [cursor=pointer]:
+            - generic [ref=f91e456]: Español

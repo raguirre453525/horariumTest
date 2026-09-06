@@ -1,0 +1,297 @@
+- generic [active] [ref=f15e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=f15e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=f15e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=f15e8]:
+    - search [ref=f15e9]:
+      - generic [ref=f15e11]:
+        - link "Ir a la Página principal de Google" [ref=f15e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=es-419&sa=X&ved=2ahUKEwi89L-HudaWAxVRGbkGHWuwO3UQPHoECAYQBA
+        - generic [ref=f15e21]:
+          - generic [ref=f15e22]:
+            - combobox "Buscar" [ref=f15e25]: site:facebook.com/business/help "business verification" WhatsApp Cloud API site:facebook.com/business/help "business verification" WhatsApp Cloud API
+            - generic [ref=f15e26]:
+              - button "Borrar" [ref=f15e28] [cursor=pointer]
+              - generic [ref=f15e33]:
+                - button "Búsqueda por voz" [ref=f15e34] [cursor=pointer]
+                - button "Búsqueda por imagen" [ref=f15e37] [cursor=pointer]
+          - button "Buscar" [ref=f15e40] [cursor=pointer]
+    - generic [ref=f15e45]:
+      - button "Configuración" [ref=f15e47] [cursor=pointer]
+      - button "Compartir" [ref=f15e53] [cursor=pointer]
+      - generic [ref=f15e59]:
+        - button "Apps de Google" [ref=f15e61] [cursor=pointer]
+        - link "Acceder" [ref=f15e66] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dsite%253Afacebook.com%252Fbusiness%252Fhelp%2B%2522business%2Bverification%2522%2BWhatsApp%2BCloud%2BAPI&ec=futura_srp_og_si_72236_p
+  - generic [ref=f15e68]:
+    - navigation [ref=f15e74]:
+      - generic [ref=f15e80]:
+        - list [ref=f15e81]:
+          - listitem [ref=f15e82]:
+            - link "Modo IA" [ref=f15e85] [cursor=pointer]:
+              - /url: /search?q=site:facebook.com/business/help+%22business+verification%22+WhatsApp+Cloud+API&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQns-ELbNpyZ_JrZap50NFEvlvITxtA:1788577137561&udm=50&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsH1Gyj7CHnDxGGR5HAGfGVkJIgi1m2WBGMIfANoerVtWhMbRZ0tzZq8g7XrsBJ8ctuWEIHlMWoWmla8gnpvHqJJqxlVmUkgdIX4RSr56f56xqyx9nBzGFiTGc2P8XSmoClAhcXwMERvsDd8Lwvx1unZtcKVZg&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwi89L-HudaWAxVRGbkGHWuwO3UQ2J8OegQICxAD
+          - listitem [ref=f15e89]:
+            - link "Todo" [disabled] [ref=f15e90]
+          - listitem [ref=f15e93]:
+            - link "Imágenes" [ref=f15e94] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQns-ELbNpyZ_JrZap50NFEvlvITxtA:1788577137561&udm=2&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsH1Gyj7CHnDxGGR5HAGfGVkJIgi1m2WBGMIfANoerVtWhMbRZ0tzZq8g7XrsBJ8ctuWEIHlMWoWmla8gnpvHqJJqxlVmUkgdIX4RSr56f56xqyx9nBzGFiTGc2P8XSmoClAhcXwMERvsDd8Lwvx1unZtcKVZg&q=site:facebook.com/business/help+%22business+verification%22+WhatsApp+Cloud+API&sa=X&ved=2ahUKEwi89L-HudaWAxVRGbkGHWuwO3UQtKgLegQIDBAB
+          - listitem [ref=f15e97]:
+            - link "Videos" [ref=f15e98] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQns-ELbNpyZ_JrZap50NFEvlvITxtA:1788577137561&udm=7&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsH1Gyj7CHnDxGGR5HAGfGVkJIgi1m2WBGMIfANoerVtWhMbRZ0tzZq8g7XrsBJ8ctuWEIHlMWoWmla8gnpvHqJJqxlVmUkgdIX4RSr56f56xqyx9nBzGFiTGc2P8XSmoClAhcXwMERvsDd8Lwvx1unZtcKVZg&q=site:facebook.com/business/help+%22business+verification%22+WhatsApp+Cloud+API&sa=X&ved=2ahUKEwi89L-HudaWAxVRGbkGHWuwO3UQtKgLegQIDxAB
+          - listitem [ref=f15e101]:
+            - link "Videos cortos" [ref=f15e102] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQns-ELbNpyZ_JrZap50NFEvlvITxtA:1788577137561&udm=39&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsH1Gyj7CHnDxGGR5HAGfGVkJIgi1m2WBGMIfANoerVtWhMbRZ0tzZq8g7XrsBJ8ctuWEIHlMWoWmla8gnpvHqJJqxlVmUkgdIX4RSr56f56xqyx9nBzGFiTGc2P8XSmoClAhcXwMERvsDd8Lwvx1unZtcKVZg&q=site:facebook.com/business/help+%22business+verification%22+WhatsApp+Cloud+API&sa=X&ved=2ahUKEwi89L-HudaWAxVRGbkGHWuwO3UQs6gLegQIEhAB
+          - listitem [ref=f15e105]:
+            - link "Shopping" [ref=f15e106] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQns-ELbNpyZ_JrZap50NFEvlvITxtA:1788577137561&udm=28&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsH1Gyj7CHnDxGGR5HAGfGVkJIgi1m2WBGMIfANoerVtWhMbRZ0tzZq8g7XrsBJ8ctuWEIHlMWoWmla8gnpvHqJJqxlVmUkgdIX4RSr56f56xqyx9nBzGFiTGc2P8XSmoClAhcXwMERvsDd8Lwvx1unZtcKVZg&q=site:facebook.com/business/help+%22business+verification%22+WhatsApp+Cloud+API&ved=1t:220175&ictx=111
+          - listitem [ref=f15e109]:
+            - link "Noticias" [ref=f15e110] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQns-ELbNpyZ_JrZap50NFEvlvITxtA:1788577137561&q=site:facebook.com/business/help+%22business+verification%22+WhatsApp+Cloud+API&tbm=nws&source=lnms&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsH1Gyj7CHnDxGGR5HAGfGVkJIgi1m2WBGMIfANoerVtWhMbRZ0tzZq8g7XrsBJ8ctuWEIHlMWoWmla8gnpvHqJJqxlVmUkgdIX4RSr56f56xqyx9nBzGFiTGc2P8XSmoClAhcXwMERvsDd8Lwvx1unZtcKVZg&sa=X&ved=2ahUKEwi89L-HudaWAxVRGbkGHWuwO3UQ0pQJegQIDRAB
+          - listitem [ref=f15e113]:
+            - button [ref=f15e114] [cursor=pointer]:
+              - generic "Más filtros" [ref=f15e115]: Más
+        - button "Herramientas" [ref=f15e122] [cursor=pointer]
+    - heading "Resultados de búsqueda" [level=1] [ref=f15e129]
+    - main [ref=f15e135]:
+      - generic [ref=f15e139]:
+        - generic [ref=f15e142]:
+          - heading "Web results" [level=2] [ref=f15e143]
+          - generic [ref=f15e144]:
+            - generic [ref=f15e147]:
+              - link "Submit a business for partner-led business verification on ... Facebook https://www.facebook.com › help" [ref=f15e149] [cursor=pointer]:
+                - /url: /goto?url=CAESbgHrOzAVK39GQieRGyZ4PNaSjx1AQzX0qs3VVpV7rTPN-uTxeA0omz2LyVqYTWNfvUYhwfMaRY4dBhSWw2poJ5NOAVFAKcfqkr01cyYxkbyte1batsnDiDRkFmZEZOfFCWWp76KRynwb0rrxHVl5
+                - heading "Submit a business for partner-led business verification on ..." [level=3] [ref=f15e150]
+                - generic [ref=f15e156]:
+                  - generic [ref=f15e157]: Facebook
+                  - generic [ref=f15e159]: https://www.facebook.com › help
+              - generic [ref=f15e161]:
+                - generic [ref=f15e162]: ·
+                - link "Traducir esta página" [ref=f15e163] [cursor=pointer]:
+                  - /url: /goto?url=CAESwAEB6zswFRvmYPbrxya5AxC-yeAMPxPJpUpXSP2PAX0f7c4iw8mupGiskUF2TKY8DbXjhl67N1GrqGsqZw_ztg8H7BFnHMB_0F6ZXxZmllxpDJJteyeksLdU_OCVu-0_Jnm0e5XBN4vHMmGfysora1_PXqsadpAe5DGwOS87DGsPBP4JsHq3aACPgZwceuqBVOjVW8s78uYy0VqwmFcpuP0LZwWESG5BaODj6Tygh3wUlgfD_o8-oZJ3Zi8XpHZlYuY
+              - button "Acerca de este resultado" [ref=f15e168] [cursor=pointer]
+            - generic [ref=f15e175]:
+              - text: If you are a Solution Partner who uses
+              - emphasis [ref=f15e176]: WhatsApp
+              - text: Business
+              - emphasis [ref=f15e177]: API
+              - text: ", you may be eligible to submit customers for partner-led"
+              - emphasis [ref=f15e178]: business verification
+              - text: .
+            - generic [ref=f15e180]:
+              - text: "Falta(n): Cloud ‎| Realizar una búsqueda con lo siguiente:"
+              - link "Cloud" [ref=f15e181] [cursor=pointer]:
+                - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQns-ELbNpyZ_JrZap50NFEvlvITxtA:1788577137561&q=site:facebook.com/business/help+%22business+verification%22+WhatsApp+%22Cloud%22+API&sa=X&ved=2ahUKEwi89L-HudaWAxVRGbkGHWuwO3UQ5t4CegQIMxAB
+        - generic [ref=f15e185]:
+          - generic [ref=f15e188]:
+            - link "Verify Your Business Phone Number for WhatsApp ... Facebook https://www.facebook.com › help" [ref=f15e190] [cursor=pointer]:
+              - /url: /goto?url=CAESbgHrOzAV8tUVA-FDKOr1ZQTQBEf--1k_bI3v4g_GGo4U6SQ6iFCTPjPaXJcRQyHcD1GCoGsH458IuMzeS5XzlH9Rfd54LlpQZQKBG1y3Kz3iYalSy9jtul-3NGgosYPVQI_EAUqr8ocOCQNedqyV
+              - heading "Verify Your Business Phone Number for WhatsApp ..." [level=3] [ref=f15e191]
+              - generic [ref=f15e197]:
+                - generic [ref=f15e198]: Facebook
+                - generic [ref=f15e200]: https://www.facebook.com › help
+            - generic [ref=f15e202]:
+              - generic [ref=f15e203]: ·
+              - link "Traducir esta página" [ref=f15e204] [cursor=pointer]:
+                - /url: /goto?url=CAESwAEB6zswFTa58FqiZBQ7QusbOr0ZZqkZwzzqq77KfzDfcFSWWpZEK_CasrAUqoV9NkSJF_7STRQ2_00Cl-Vsdda7VkJKqTylySXxg2lrwrRHVDT53TsmKMhbxiEbc7ZLtVUtQcevrc11qq17w3geg1A6O-madPPfOk_d9pkps8ktQDCWhyN-jCM6AXvNms3AHirtWWi-IGXKvp4kRep05Y0STpreQkSDN_Xa3RrhMKoMW9Pep7NrQjX5qpogwpMrLmQ
+            - button "Acerca de este resultado" [ref=f15e209] [cursor=pointer]
+          - generic [ref=f15e216]:
+            - text: "Note: Verifying your business phone number is different from"
+            - emphasis [ref=f15e217]: business verification
+            - text: in Meta Business Suite,
+            - emphasis [ref=f15e218]: WhatsApp
+            - text: official business accounts and Meta Verified ...
+          - generic [ref=f15e220]:
+            - text: "Falta(n): Cloud ‎| Realizar una búsqueda con lo siguiente:"
+            - link "Cloud" [ref=f15e221] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQns-ELbNpyZ_JrZap50NFEvlvITxtA:1788577137561&q=site:facebook.com/business/help+%22business+verification%22+WhatsApp+%22Cloud%22+API&sa=X&ved=2ahUKEwi89L-HudaWAxVRGbkGHWuwO3UQ5t4CegQINBAB
+        - generic [ref=f15e225]:
+          - generic [ref=f15e228]:
+            - link "Create a WhatsApp Business account on the ... Facebook https://www.facebook.com › help" [ref=f15e230] [cursor=pointer]:
+              - /url: /goto?url=CAESbwHrOzAVRQgLWk3qDmheth0919nzoK-a5527BujqGZY0Kh3PicdsH09p3xl55yxkDYLtKTe1drctbNXhRxdRwELfVLYA9Z4EJ9Fn-rOTsxPSLccJ4rmEWo-U436FYCZCjvaW2PHk4RqntCDTY0xw4g
+              - heading "Create a WhatsApp Business account on the ..." [level=3] [ref=f15e231]
+              - generic [ref=f15e237]:
+                - generic [ref=f15e238]: Facebook
+                - generic [ref=f15e240]: https://www.facebook.com › help
+            - generic [ref=f15e242]:
+              - generic [ref=f15e243]: ·
+              - link "Traducir esta página" [ref=f15e244] [cursor=pointer]:
+                - /url: /goto?url=CAESwQEB6zswFV0khWGca3MVO7I_hSEeJbkhvfYyXhQ7gOO3uh0rKdJFZJqq_Ka4vGLzQYWb_cuQoN-r3Kzbfk_UpciuOBdXMkCAwUIo16moKtwHBbxtY9OLfCA9_FMYx9LCxZqKofoTeMruASPeGOMGEFUGSlZFkGuuDh-cBNKsEIpm5XLEn8w7kXkfwH11AaMz3rZCx853svvbLXY7IGABprNZsm1f0QRIhi8N-XbDprPcGf0YuXXwCHuNBL_Oi1U_rexX
+            - button "Acerca de este resultado" [ref=f15e249] [cursor=pointer]
+          - generic [ref=f15e256]:
+            - text: Start messaging customers on
+            - emphasis [ref=f15e257]: WhatsApp
+            - text: Business Platform · About
+            - emphasis [ref=f15e258]: business verification
+            - text: · Create message templates for your
+            - emphasis [ref=f15e259]: WhatsApp
+            - text: Business account · About billing ...
+        - generic [ref=f15e263]:
+          - generic [ref=f15e266]:
+            - link "Create Your WhatsApp Business Account With ... Facebook https://www.facebook.com › help" [ref=f15e268] [cursor=pointer]:
+              - /url: /goto?url=CAESbgHrOzAVBxKMMb5uBAULgzI8nFKUUZolEcjNrhvG43ZuumT9kkIIPr-454KyEUU8lWdjjzIUh_kxg6w7bmBbb7XAGVp_RAcNHW-LM2lxnkWBqTcg_yogfCm29l57_aMhICmQo4Mb0501UVKLsYiv
+              - heading "Create Your WhatsApp Business Account With ..." [level=3] [ref=f15e269]
+              - generic [ref=f15e275]:
+                - generic [ref=f15e276]: Facebook
+                - generic [ref=f15e278]: https://www.facebook.com › help
+            - generic [ref=f15e280]:
+              - generic [ref=f15e281]: ·
+              - link "Traducir esta página" [ref=f15e282] [cursor=pointer]:
+                - /url: /goto?url=CAESwAEB6zswFWJnYpG7Z4vZOVz3fDCecww5mjK_BY4dqWOuj0xPfMqQCxE29QLF0Q7OYVM7TUHfxCEsgnb-kFJn31OrRe2BFxldwFsmn4_SWjWHTJxerx6MxquLepQynsTlZFub71a6KfIEEwXS2QaKg2wE4xF5tMYOPE6noEjPGWERh5A23HJgAmAsF2jPeeK7kJDKB03YTy0PzcHM0cEZAhpDxZAvL_4XNcNXFZ8MD5BbNJDQsj6KSOJ-2ISzfJ6UxJo
+            - button "Acerca de este resultado" [ref=f15e287] [cursor=pointer]
+          - generic [ref=f15e294]:
+            - emphasis [ref=f15e295]: Business verification
+            - text: and display name review will no longer be needed to get started onto the
+            - emphasis [ref=f15e296]: WhatsApp
+            - text: Business Platform. Embedded signup. Create your ...
+        - generic [ref=f15e300]:
+          - generic [ref=f15e303]:
+            - link "Verify Your Business in Meta Business Suite Facebook https://www.facebook.com › help" [ref=f15e305] [cursor=pointer]:
+              - /url: /goto?url=CAESbwHrOzAVR7uHYMn1v4_VYwQw-bm5SjXuuucFmPMR-a2PFHR918K1yijoCTA57R_-2dMiW7d0nZMaZ2TrbtiZQSIXk4lJTBQwyYK232AIaYhan7XvMXIcf-rm-gwFDK8PAIQE3WiA5hk1TzbvfnBn1g
+              - heading "Verify Your Business in Meta Business Suite" [level=3] [ref=f15e306]
+              - generic [ref=f15e312]:
+                - generic [ref=f15e313]: Facebook
+                - generic [ref=f15e315]: https://www.facebook.com › help
+            - generic [ref=f15e317]:
+              - generic [ref=f15e318]: ·
+              - link "Traducir esta página" [ref=f15e319] [cursor=pointer]:
+                - /url: /goto?url=CAESwQEB6zswFSlL3nFe9S2kYz-Ig7eR_n_u-6nlkR0Lq_0drgFLs9wDjvKs9puPiZUMEP7yjjYV_JOHWi5Dade_yv1RK6h5SZCX9L4rGeqSWifuy490RLJyfBZSCUuseydmBGrEJYiMLxjwuyqqvBj6NhgpX0qeZzhCe9hGB1LQg9stMYsYTR70gL5rYVCEloNg2tatvK-Xh3xybO-aIqzILTKAcrULGDw6gCsZxmKpYAKLCCiydoVw8Ab1Ag4TW2HJkCzp
+            - button "Acerca de este resultado" [ref=f15e324] [cursor=pointer]
+          - generic [ref=f15e331]:
+            - text: This article explains how business portfolio owners with full control can verify their business in Meta Business Suite.
+            - emphasis [ref=f15e332]: Business verification
+            - text: is required to ...
+          - generic [ref=f15e334]:
+            - text: "Falta(n): Cloud ‎| Realizar una búsqueda con lo siguiente:"
+            - link "Cloud" [ref=f15e335] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQns-ELbNpyZ_JrZap50NFEvlvITxtA:1788577137561&q=site:facebook.com/business/help+%22business+verification%22+WhatsApp+%22Cloud%22+API&sa=X&ved=2ahUKEwi89L-HudaWAxVRGbkGHWuwO3UQ5t4CegQINRAB
+        - generic [ref=f15e339]:
+          - generic [ref=f15e342]:
+            - link "Request a WhatsApp Official Business Account Facebook https://www.facebook.com › help" [ref=f15e344] [cursor=pointer]:
+              - /url: /goto?url=CAESbgHrOzAVSi7UnqWNBNGtt3N5JFzK64Sk7glJ7awZxtuG4Tk-p5b6uokEr47ItSgbmC1ou_rF8VRIJj42KRoUF9jeCTDE-WrhwQiGN84Loc5MPmNQ-VxBVlnNqD9kBOAt9UZuPlNojLaU6aPn2Mwx
+              - heading "Request a WhatsApp Official Business Account" [level=3] [ref=f15e345]
+              - generic [ref=f15e351]:
+                - generic [ref=f15e352]: Facebook
+                - generic [ref=f15e354]: https://www.facebook.com › help
+            - generic [ref=f15e356]:
+              - generic [ref=f15e357]: ·
+              - link "Traducir esta página" [ref=f15e358] [cursor=pointer]:
+                - /url: /goto?url=CAESwAEB6zswFauJrTi5UBvAiE4a01WOIRBwgUHtv2WnX05hJFTxO0UUvyv0LyJ-mt6gVlPgQ326IAg52scwQvptLBeMSLM6k6-7Omf4WvdykyrQgk4-tUA6LpT67lXbhapT5AEu1oc_ivQmEf3MQRgc-vwf3rBUduWIC3M47I7BZINW_nxkt7idXFoO06e0Nux6AU7tujx6tSwUwPDlRoh3P9krbjZyObz4GNyIP1DVeKpKj8g9WoRzsLIcgvyj-jVfiZU
+            - button "Acerca de este resultado" [ref=f15e363] [cursor=pointer]
+          - generic [ref=f15e370]:
+            - text: You'll either need to complete
+            - emphasis [ref=f15e371]: business verification
+            - text: or demonstrate a record of sending high-quality messages with a minimum of 1,000 conversations over 30 ...
+          - generic [ref=f15e373]:
+            - text: "Falta(n): Cloud ‎| Realizar una búsqueda con lo siguiente:"
+            - link "Cloud" [ref=f15e374] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQns-ELbNpyZ_JrZap50NFEvlvITxtA:1788577137561&q=site:facebook.com/business/help+%22business+verification%22+WhatsApp+%22Cloud%22+API&sa=X&ved=2ahUKEwi89L-HudaWAxVRGbkGHWuwO3UQ5t4CegQIMhAB
+        - generic [ref=f15e378]:
+          - generic [ref=f15e381]:
+            - link "Troubleshoot Connecting Your Client's WhatsApp ... Facebook https://www.facebook.com › help" [ref=f15e383] [cursor=pointer]:
+              - /url: /goto?url=CAESbwHrOzAVQ69iIIY_QnH0y93Nlq9nVTknEROg4aWI9OQWWoYUfvg8DgZTgDzImVHlQRDjO36TXfXi7b501mEObNqtV38rKEnf2yqAQ8Mukh5ZcFnnxPTuIU-X7aCdPiALavUtuxvFqN3ySs72zJfc9Q
+              - heading "Troubleshoot Connecting Your Client's WhatsApp ..." [level=3] [ref=f15e384]
+              - generic [ref=f15e390]:
+                - generic [ref=f15e391]: Facebook
+                - generic [ref=f15e393]: https://www.facebook.com › help
+            - generic [ref=f15e395]:
+              - generic [ref=f15e396]: ·
+              - link "Traducir esta página" [ref=f15e397] [cursor=pointer]:
+                - /url: /goto?url=CAESwQEB6zswFcmWg6FuxMKZbz7kM70lmqJU8WbSB3qUgDd3wy5DzssXhfbD4_5PUkgzffWCBPoksoU1rB6L59e_viPgariiYiybh6va0RXwcVplgzSl0_ZpOzzGSrZdSlIK4B5aqIo22Aqg5Am9gdCWzhyNWmh_IpNf_bxmmLKoRBHEkazwhD9zhTzUR9WfQyDlWq3JJiJKfqch5JT-xMOTKtcQSjJn9Ypwk9Kwy6EejTONbSqdsN1zBchpsigfadsgs9zn
+            - button "Acerca de este resultado" [ref=f15e402] [cursor=pointer]
+          - generic [ref=f15e409]:
+            - text: If you're creating an account on behalf of a client, the client has to complete the
+            - emphasis [ref=f15e410]: business verification
+            - text: before you can send a message from their
+            - emphasis [ref=f15e411]: WhatsApp
+            - text: ...
+        - generic [ref=f15e415]:
+          - generic [ref=f15e418]:
+            - link "Troubleshoot connecting your client's WhatsApp Business ... Facebook https://en-gb.facebook.com › help" [ref=f15e420] [cursor=pointer]:
+              - /url: /goto?url=CAEScQHrOzAVrGTbskQCTHxCpun8e1J7XClcQtDgC0ZOim1PHqpMJ2Upc_0iU1LtazWnJKCdyH8_2vgeXLuZLAhpdRFxwzi1SUDuFXkyqvC6ROsuWOzBbQy11R1WuyY9u9qGx_m3n6UUD5U4eMbBLCT2-qw_
+              - heading "Troubleshoot connecting your client's WhatsApp Business ..." [level=3] [ref=f15e421]
+              - generic [ref=f15e427]:
+                - generic [ref=f15e428]: Facebook
+                - generic [ref=f15e430]: https://en-gb.facebook.com › help
+            - generic [ref=f15e432]:
+              - generic [ref=f15e433]: ·
+              - link "Traducir esta página" [ref=f15e434] [cursor=pointer]:
+                - /url: /goto?url=CAESwwEB6zswFRRYAOPgNVnhiyP2G2MijpiqC0fNuzHtN1OW_Xif5ENjz-Y6x7bitsnaNMncQeZ1Z7a6uE4BoO0P7IMNeFOV7pFKFrDZGKJjLGUO7UN3WlV3e6Y--TApaacUcqXLa2mbylTQg5-vX-YNPk0SnbOyyNPylE57W6s3fXm3ZF3PcR0EF93TZSowsJVEDsv_0Yo1haa4Re2YTFQ8Rzx7fQnVflENB2WdKtQuG-25wmnYhFLc86nTOqtc_RvtckhNWVE
+            - button "Acerca de este resultado" [ref=f15e439] [cursor=pointer]
+          - generic [ref=f15e446]:
+            - text: If you're creating an account on behalf of a client, the client has to complete the
+            - emphasis [ref=f15e447]: business verification
+            - text: before you can send a message from their
+            - emphasis [ref=f15e448]: WhatsApp
+            - text: ...
+        - generic [ref=f15e452]:
+          - generic [ref=f15e455]:
+            - link "About Business Verification in Meta Business Suite Facebook https://www.facebook.com › help" [ref=f15e457] [cursor=pointer]:
+              - /url: /goto?url=CAESbwHrOzAVbpTp__8jwdNXGC6-rVogAr5egnCquRXTToSvahqsikKsruyiQUvr3O3G_R0hKxqLnjvZHJrNf4TNjsO6czzOr7wuqvM8-2gG4Fsw1Dz2XSvRA55h23IM5GBOXt8Q2R8cw4WR-CyOXExE3g
+              - heading "About Business Verification in Meta Business Suite" [level=3] [ref=f15e458]
+              - generic [ref=f15e464]:
+                - generic [ref=f15e465]: Facebook
+                - generic [ref=f15e467]: https://www.facebook.com › help
+            - generic [ref=f15e469]:
+              - generic [ref=f15e470]: ·
+              - link "Traducir esta página" [ref=f15e471] [cursor=pointer]:
+                - /url: /goto?url=CAESwQEB6zswFdSE9IChBM_agojfp2G4HylWYSjDjWdrFm1hAZmitlLw51-GBMPA-8yI8pOVH6PmsFeMktA6Qf0O3kcVwNmnFMvuneHvFBDb2fV1rB24c2rz9k7-3rdf_HI5egsAOAIDaMcqtR4nXQ3iEAN6xb0KERnExxiuihRW5uHWq4D-_-5VJAScqbOXC5N3eeHCIE49zaISxFM5I7Vgyjm6RBpv-PyaTS6htbikSouxeurHNBKUfXw97OwN36me3bFr
+            - button "Acerca de este resultado" [ref=f15e476] [cursor=pointer]
+          - generic [ref=f15e483]:
+            - text: This article explains what
+            - emphasis [ref=f15e484]: business verification
+            - text: is in Meta Business Suite, why you might need it, and which products and features require it.
+          - generic [ref=f15e485]: "Falta(n): Cloud ‎API"
+        - generic [ref=f15e490]:
+          - generic [ref=f15e493]:
+            - link "Connect Your Phone Number to Your WhatsApp Business ... Facebook https://www.facebook.com › help" [ref=f15e495] [cursor=pointer]:
+              - /url: /goto?url=CAESbgHrOzAVl8dBbmCr0dnlzHyfGLLw8I1CcSPt1DkR0seUZYz5fgND_r9lHH_6MzgOYMq29fgkXqdVes1PtXtiv9Wn6EVmXC1mJaZOCOk9cLv1qhTvOx3tx5cb3WIXTn0k6P-dpEIMFFL2TTjrgnRE
+              - heading "Connect Your Phone Number to Your WhatsApp Business ..." [level=3] [ref=f15e496]
+              - generic [ref=f15e502]:
+                - generic [ref=f15e503]: Facebook
+                - generic [ref=f15e505]: https://www.facebook.com › help
+            - generic [ref=f15e507]:
+              - generic [ref=f15e508]: ·
+              - link "Traducir esta página" [ref=f15e509] [cursor=pointer]:
+                - /url: /goto?url=CAESwAEB6zswFWXIXtyIc4JkVH95ldjxgBex1eRwXXSKhsYLQNE79MhmY_I6iFP3j6kL-hTppyMwIRPEVT7wy4yQpBCBv4U62OqHq8JloqytfRjB1hM4WvgsIEVPzz5pWVt7zfXoyqVjcK0UwSaySoE6KV2GTS5Ft0_vUl4clOKg-YuX-iZFX8HO-sdmpiVsqMr0pNzDrB8oX3qOt4euml6D8Ca82Tjo-LgEG4gM4DtGwJ04JCZZcv0ZXG3PX9onxWmDdyw
+            - button "Acerca de este resultado" [ref=f15e514] [cursor=pointer]
+          - generic [ref=f15e521]:
+            - text: However, if you look to increase messaging limits, you have to complete your
+            - emphasis [ref=f15e522]: business verification
+            - text: . Display name review will be initiated after the
+            - emphasis [ref=f15e523]: business
+            - text: ...
+          - generic [ref=f15e524]: "Falta(n): Cloud ‎API"
+      - generic [ref=f15e527]:
+        - generic [ref=f15e528]:
+          - heading "Avisos sobre resultados filtrados" [level=2] [ref=f15e529]
+          - paragraph [ref=f15e531]:
+            - generic [ref=f15e532]:
+              - text: Para que veas los resultados más relevantes, omitimos ciertas entradas muy similares a las 10 que ya te mostramos.Si lo deseas, puedes
+              - link "repetir la búsqueda e incluir los resultados omitidos" [ref=f15e533] [cursor=pointer]:
+                - /url: /search?q=site:facebook.com/business/help+%22business+verification%22+WhatsApp+Cloud+API&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQns-ELbNpyZ_JrZap50NFEvlvITxtA:1788577137561&filter=0
+              - text: .
+        - navigation
+      - navigation
+    - contentinfo [ref=f15e534]:
+      - heading "Vínculos a pie de página" [level=1] [ref=f15e535]
+      - generic [ref=f15e539]:
+        - generic [ref=f15e541]:
+          - text: Argentina
+          - generic [ref=f15e543]:
+            - button "Capital, San Miguel de Tucumán, Tucumán - A través de tu dirección IP" [ref=f15e545] [cursor=pointer]:
+              - generic [ref=f15e546]: Capital, San Miguel de Tucumán, Tucumán
+              - generic [ref=f15e548]:
+                - text: "-"
+                - generic [ref=f15e549]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=f15e551] [cursor=pointer]
+        - generic [ref=f15e554]:
+          - link "Ayuda" [ref=f15e555] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - button "Enviar comentarios" [ref=f15e557] [cursor=pointer]
+          - link "Privacidad" [ref=f15e559] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=f15e560] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

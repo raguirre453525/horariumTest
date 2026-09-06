@@ -1,0 +1,161 @@
+- generic [active] [ref=f29e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=f29e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=f29e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=f29e8]:
+    - search [ref=f29e9]:
+      - generic [ref=f29e11]:
+        - link "Ir a la Página principal de Google" [ref=f29e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=es-419&sa=X&ved=2ahUKEwiYjPDAudaWAxVgE7kGHWH5KnAQPHoECAYQBA
+        - generic [ref=f29e21]:
+          - generic [ref=f29e22]:
+            - combobox "Buscar" [ref=f29e25]: "\"Business verification and display name review will no longer be needed\" \"Business verification and display name review will no longer be needed\""
+            - generic [ref=f29e26]:
+              - button "Borrar" [ref=f29e28] [cursor=pointer]
+              - generic [ref=f29e33]:
+                - button "Búsqueda por voz" [ref=f29e34] [cursor=pointer]
+                - button "Búsqueda por imagen" [ref=f29e37] [cursor=pointer]
+          - button "Buscar" [ref=f29e40] [cursor=pointer]
+    - generic [ref=f29e45]:
+      - button "Configuración" [ref=f29e47] [cursor=pointer]
+      - button "Compartir" [ref=f29e53] [cursor=pointer]
+      - generic [ref=f29e59]:
+        - button "Apps de Google" [ref=f29e61] [cursor=pointer]
+        - link "Acceder" [ref=f29e66] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3D%2522Business%2Bverification%2Band%2Bdisplay%2Bname%2Breview%2Bwill%2Bno%2Blonger%2Bbe%2Bneeded%2522&ec=futura_srp_og_si_72236_p
+  - generic [ref=f29e68]:
+    - navigation [ref=f29e74]:
+      - generic [ref=f29e80]:
+        - list [ref=f29e81]:
+          - listitem [ref=f29e82]:
+            - link "Modo IA" [ref=f29e85] [cursor=pointer]:
+              - /url: /search?q=%22Business+verification+and+display+name+review+will+no+longer+be+needed%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&udm=50&fbs=ABfTbFXgwpud-QYL7HghqC-dsgQzmGvWJmxAuCPx9vynuLeuV7N6qGxV_F0WE7YlJlscOB7coLhJbtWM5HLJyoWo-roQO3ux-7MXlD6Lyf2qpF05UUsFA1a4ADNcnACVfuTv3j5yczFeGnxw3Z5-W6UMyVwFbOpH4NTJrI2Ldaf0eX_YY6HNJePMUPPCH9xOpN-swesezch8y2mu8lTray2VKM2Kjh48Bg&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwiYjPDAudaWAxVgE7kGHWH5KnAQ2J8OegQIFBAD
+          - listitem [ref=f29e89]:
+            - link "Todo" [disabled] [ref=f29e90]
+          - listitem [ref=f29e93]:
+            - link "Videos cortos" [ref=f29e94] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&udm=39&fbs=ABfTbFXgwpud-QYL7HghqC-dsgQzmGvWJmxAuCPx9vynuLeuV7N6qGxV_F0WE7YlJlscOB7coLhJbtWM5HLJyoWo-roQO3ux-7MXlD6Lyf2qpF05UUsFA1a4ADNcnACVfuTv3j5yczFeGnxw3Z5-W6UMyVwFbOpH4NTJrI2Ldaf0eX_YY6HNJePMUPPCH9xOpN-swesezch8y2mu8lTray2VKM2Kjh48Bg&q=%22Business+verification+and+display+name+review+will+no+longer+be+needed%22&sa=X&ved=2ahUKEwiYjPDAudaWAxVgE7kGHWH5KnAQs6gLegQIKhAB
+          - listitem [ref=f29e97]:
+            - link "Videos" [ref=f29e98] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&udm=7&fbs=ABfTbFXgwpud-QYL7HghqC-dsgQzmGvWJmxAuCPx9vynuLeuV7N6qGxV_F0WE7YlJlscOB7coLhJbtWM5HLJyoWo-roQO3ux-7MXlD6Lyf2qpF05UUsFA1a4ADNcnACVfuTv3j5yczFeGnxw3Z5-W6UMyVwFbOpH4NTJrI2Ldaf0eX_YY6HNJePMUPPCH9xOpN-swesezch8y2mu8lTray2VKM2Kjh48Bg&q=%22Business+verification+and+display+name+review+will+no+longer+be+needed%22&sa=X&ved=2ahUKEwiYjPDAudaWAxVgE7kGHWH5KnAQtKgLegQIKxAB
+          - listitem [ref=f29e101]:
+            - link "Shopping" [ref=f29e102] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&udm=28&fbs=ABfTbFXgwpud-QYL7HghqC-dsgQzmGvWJmxAuCPx9vynuLeuV7N6qGxV_F0WE7YlJlscOB7coLhJbtWM5HLJyoWo-roQO3ux-7MXlD6Lyf2qpF05UUsFA1a4ADNcnACVfuTv3j5yczFeGnxw3Z5-W6UMyVwFbOpH4NTJrI2Ldaf0eX_YY6HNJePMUPPCH9xOpN-swesezch8y2mu8lTray2VKM2Kjh48Bg&q=%22Business+verification+and+display+name+review+will+no+longer+be+needed%22&ved=1t:220175&ictx=111
+          - listitem [ref=f29e105]:
+            - link "Imágenes" [ref=f29e106] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&udm=2&fbs=ABfTbFXgwpud-QYL7HghqC-dsgQzmGvWJmxAuCPx9vynuLeuV7N6qGxV_F0WE7YlJlscOB7coLhJbtWM5HLJyoWo-roQO3ux-7MXlD6Lyf2qpF05UUsFA1a4ADNcnACVfuTv3j5yczFeGnxw3Z5-W6UMyVwFbOpH4NTJrI2Ldaf0eX_YY6HNJePMUPPCH9xOpN-swesezch8y2mu8lTray2VKM2Kjh48Bg&q=%22Business+verification+and+display+name+review+will+no+longer+be+needed%22&sa=X&ved=2ahUKEwiYjPDAudaWAxVgE7kGHWH5KnAQtKgLegQIJxAB
+          - listitem [ref=f29e109]:
+            - link "Noticias" [ref=f29e110] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&q=%22Business+verification+and+display+name+review+will+no+longer+be+needed%22&tbm=nws&source=lnms&fbs=ABfTbFXgwpud-QYL7HghqC-dsgQzmGvWJmxAuCPx9vynuLeuV7N6qGxV_F0WE7YlJlscOB7coLhJbtWM5HLJyoWo-roQO3ux-7MXlD6Lyf2qpF05UUsFA1a4ADNcnACVfuTv3j5yczFeGnxw3Z5-W6UMyVwFbOpH4NTJrI2Ldaf0eX_YY6HNJePMUPPCH9xOpN-swesezch8y2mu8lTray2VKM2Kjh48Bg&sa=X&ved=2ahUKEwiYjPDAudaWAxVgE7kGHWH5KnAQ0pQJegQIJhAB
+          - listitem [ref=f29e113]:
+            - button [ref=f29e114] [cursor=pointer]:
+              - generic "Más filtros" [ref=f29e115]: Más
+        - button "Herramientas" [ref=f29e122] [cursor=pointer]
+    - heading "Resultados de búsqueda" [level=1] [ref=f29e129]
+    - generic [ref=f29e134]:
+      - generic [ref=f29e153]:
+        - heading "Buscando Pensando un poco más" [level=2] [ref=f29e157]:
+          - generic [ref=f29e158]:
+            - generic [ref=f29e159]: Buscando
+            - generic [ref=f29e169]: Pensando un poco más
+        - progressbar "Generando" [ref=f29e172]
+      - main [ref=f29e247]:
+        - generic [ref=f29e251]:
+          - generic [ref=f29e254]:
+            - heading "Web results" [level=2] [ref=f29e255]
+            - generic [ref=f29e256]:
+              - generic [ref=f29e259]:
+                - link "Create Your WhatsApp Business Account With ... Facebook https://www.facebook.com › help" [ref=f29e261] [cursor=pointer]:
+                  - /url: /goto?url=CAESbgHrOzAVjOnecUTDMnl7cUj5dRnjJfdnqghFsNhscElHyoYACxbddrgHRPjUKLq6RyoNKbedtf2UBRGG62CL_WjB28nOfV5jO4SC5feRhIoJebK--Vr3OunebkyuBWYHFT1DfIVmaT5DWG9It76L
+                  - heading "Create Your WhatsApp Business Account With ..." [level=3] [ref=f29e262]
+                  - generic [ref=f29e268]:
+                    - generic [ref=f29e269]: Facebook
+                    - generic [ref=f29e271]: https://www.facebook.com › help
+                - generic [ref=f29e273]:
+                  - generic [ref=f29e274]: ·
+                  - link "Traducir esta página" [ref=f29e275] [cursor=pointer]:
+                    - /url: /goto?url=CAESwAEB6zswFVe7xRIgmTY7DwPa-UhnHWhyA-bn--CX3ZLQy7si11GNnQ7tugo_LWw3yH_sf5UD5umuuM7npuOT_v8ztmsez_ssbztLB7r-o1LqF9coLbGZMusHFkjI9iPZ80J6NSvX7ayWx-466NxEzdqDUlq7H_nQWx2f47fnjDHLSlbd0chk7PMMjjPl_WPauLO9kC1N8XAJdH6eTNOjtYmwXm81JvDvhykBfyCv71xa4mYIEqzSIR3Ab480Kk1tiCA
+                - button "Acerca de este resultado" [ref=f29e280] [cursor=pointer]
+              - generic [ref=f29e287]:
+                - emphasis [ref=f29e288]: Business verification and display name review will no longer be needed
+                - text: to get started onto the WhatsApp Business Platform. Embedded signup. Create your ...
+          - generic [ref=f29e293]:
+            - heading "Más preguntas" [level=2] [ref=f29e295]
+            - generic [ref=f29e296]:
+              - button "Why is WhatsApp Business not accepting my business name?" [ref=f29e302] [cursor=pointer]
+              - button "How can you tell a fake WhatsApp Business account?" [ref=f29e316] [cursor=pointer]
+              - button "How to verify business verification?" [ref=f29e330] [cursor=pointer]
+              - button "What is the 24 hour rule for WhatsApp Business?" [ref=f29e344] [cursor=pointer]
+          - generic [ref=f29e354]:
+            - heading "Web results" [level=2] [ref=f29e355]
+            - generic [ref=f29e356]:
+              - generic [ref=f29e359]:
+                - link "Whatsapp Client Notifications WHMCS https://requests.whmcs.com › idea" [ref=f29e361] [cursor=pointer]:
+                  - /url: /goto?url=CAESoQEB6zswFY7ckRbkbMadFav2qOED3s2-s7yigJpigMpHnCoNc9qedex5mJu9dQKxLZ6lzTMIofYHKr4lDFdff4WXlZpNA1epMpsMzV8qpwpyJPkJkDj3bSad06ZqVRgqHe5KWhkzT_9QR5YqpTg8xzYnn3jRu-fV7aE0rMJO6CBFr6XwyFteDd3jRIe1w6gl9exMRRIPtrwVYTD6PJmzmx7_ig
+                  - heading "Whatsapp Client Notifications" [level=3] [ref=f29e362]
+                  - generic [ref=f29e371]:
+                    - generic [ref=f29e372]: WHMCS
+                    - generic [ref=f29e374]: https://requests.whmcs.com › idea
+                - generic [ref=f29e376]:
+                  - generic [ref=f29e377]: ·
+                  - link "Traducir esta página" [ref=f29e378] [cursor=pointer]:
+                    - /url: /goto?url=CAES9QEB6zswFfcz38Co5hLRT7XGwQEg7VyDitdGE5vuOBhRoU85ODUDQgY7VMCERilxjfUOkBL_DVsK9NJI54rte5Y9TWIp55Eucn6saX_OMNfZVSL6ucx3hhRqMk8RBiGCJqmMeFw4ySs_My5lfAR4TNXYE08YACgy5I4FiOsQPqrVbyGHdDvalhHQmIm3SIzmTjj7mRmmsuy8hJx8ptvaFNdhBffgzFK1QKUwP43NwUnXFVTDHHPoit8hGKTL3T8rhYqRNctt1ztz78FLl_TEQUfBLC8BSf65xP8HaYxC2UHyAdIND46N69u5SSlsUt4fo8CBo3CU9g
+                - button "Acerca de este resultado" [ref=f29e383] [cursor=pointer]
+              - generic [ref=f29e390]:
+                - emphasis [ref=f29e391]: Business verification and display name review will no longer be needed
+                - text: to get started onto the WhatsApp Business Platform. The WhatsApp account checks will ...
+        - generic [ref=f29e393]:
+          - generic [ref=f29e398]:
+            - heading "También se buscó" [level=2] [ref=f29e400]
+            - generic [ref=f29e402]:
+              - generic [ref=f29e403]:
+                - link "Cuantos mensajes puedes enviar por WhatsApp Business sin ser bloqueado" [ref=f29e407] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&q=Cuantos+mensajes+puedes+enviar+por+WhatsApp+Business+sin+ser+bloqueado&sa=X&ved=2ahUKEwiYjPDAudaWAxVgE7kGHWH5KnAQ1QJ6BAgYEAE
+                - link "WhatsApp Business support" [ref=f29e421] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&q=WhatsApp+Business+support&sa=X&ved=2ahUKEwiYjPDAudaWAxVgE7kGHWH5KnAQ1QJ6BAgXEAE
+                - link "Https www facebook com business help 2058515294227817" [ref=f29e435] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&q=Https+www+facebook+com+business+help+2058515294227817&sa=X&ved=2ahUKEwiYjPDAudaWAxVgE7kGHWH5KnAQ1QJ6BAgWEAE
+                - link "Meta Business Suite WhatsApp" [ref=f29e449] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&q=Meta+Business+Suite+WhatsApp&sa=X&ved=2ahUKEwiYjPDAudaWAxVgE7kGHWH5KnAQ1QJ6BAgVEAE
+              - generic [ref=f29e460]:
+                - link "Phone number ID" [ref=f29e464] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&q=Phone+number+ID&sa=X&ved=2ahUKEwiYjPDAudaWAxVgE7kGHWH5KnAQ1QJ6BAgkEAE
+                - link "Facebook Business manager WhatsApp" [ref=f29e478] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&q=Facebook+Business+manager+WhatsApp&sa=X&ved=2ahUKEwiYjPDAudaWAxVgE7kGHWH5KnAQ1QJ6BAghEAE
+                - link "WABA" [ref=f29e492] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&q=WABA&sa=X&ved=2ahUKEwiYjPDAudaWAxVgE7kGHWH5KnAQ1QJ6BAgfEAE
+                - link "Soporte de Facebook WhatsApp" [ref=f29e506] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&q=Soporte+de+Facebook+WhatsApp&sa=X&ved=2ahUKEwiYjPDAudaWAxVgE7kGHWH5KnAQ1QJ6BAgaEAE
+          - generic [ref=f29e517]:
+            - heading "Avisos sobre resultados filtrados" [level=2] [ref=f29e518]
+            - paragraph [ref=f29e520]:
+              - generic [ref=f29e521]:
+                - text: Para que veas los resultados más relevantes, omitimos ciertas entradas muy similares a las 2 que ya te mostramos.Si lo deseas, puedes
+                - link "repetir la búsqueda e incluir los resultados omitidos" [ref=f29e522] [cursor=pointer]:
+                  - /url: /search?q=%22Business+verification+and+display+name+review+will+no+longer+be+needed%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnufHsgTqRVLw9g275NR0Pr1aBo9tQ:1788577257889&filter=0
+                - text: .
+          - navigation
+        - navigation
+    - contentinfo [ref=f29e523]:
+      - heading "Vínculos a pie de página" [level=1] [ref=f29e524]
+      - generic [ref=f29e528]:
+        - generic [ref=f29e530]:
+          - text: Argentina
+          - generic [ref=f29e532]:
+            - button "Capital, San Miguel de Tucumán, Tucumán - Según tu actividad anterior" [ref=f29e534] [cursor=pointer]:
+              - generic [ref=f29e535]: Capital, San Miguel de Tucumán, Tucumán
+              - generic [ref=f29e537]:
+                - text: "-"
+                - generic [ref=f29e538]: Según tu actividad anterior
+            - text: "-"
+            - button "Actualizar ubicación" [ref=f29e540] [cursor=pointer]
+        - generic [ref=f29e543]:
+          - link "Ayuda" [ref=f29e544] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - button "Enviar comentarios" [ref=f29e546] [cursor=pointer]
+          - link "Privacidad" [ref=f29e548] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=f29e549] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

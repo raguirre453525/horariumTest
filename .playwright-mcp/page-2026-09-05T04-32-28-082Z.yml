@@ -1,0 +1,672 @@
+- generic [ref=f108e11]:
+  - navigation "Main" [ref=f108e13]:
+    - generic [ref=f108e20]:
+      - generic [ref=f108e22]:
+        - button "Open mobile navigation menu" [ref=f108e24] [cursor=pointer]
+        - link "Meta home" [ref=f108e29] [cursor=pointer]:
+          - /url: https://developers.facebook.com/
+          - img "Nav Logo" [ref=f108e30]
+      - generic [ref=f108e33]:
+        - link "Login" [ref=f108e34] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fdocumentation%2Fbusiness-messaging%2Fwhatsapp%2Fwebhooks%2Foverview%3Flocale%3Den_US
+        - button [ref=f108e35] [cursor=pointer]:
+          - img "Search" [ref=f108e36]
+  - generic [ref=f108e43]:
+    - navigation [ref=f108e44]:
+      - generic [ref=f108e45]:
+        - generic [ref=f108e46]:
+          - generic [ref=f108e47]: WhatsApp Business Platform
+          - generic [ref=f108e48]:
+            - button "Dropdown" [ref=f108e50] [cursor=pointer]:
+              - generic [ref=f108e51]: Business Messaging
+            - button "Dropdown" [ref=f108e57] [cursor=pointer]:
+              - generic [ref=f108e58]: WhatsApp Business Platform
+            - textbox "Filter" [ref=f108e64]
+        - generic [ref=f108e66]:
+          - generic "WhatsApp Business Platform" [ref=f108e67]:
+            - link "WhatsApp Business Platform" [ref=f108e68] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/overview/
+          - generic "Overview" [ref=f108e73]:
+            - link "Overview" [ref=f108e74] [cursor=pointer]:
+              - /url: "#"
+          - generic "Get started" [ref=f108e81]:
+            - link "Get started" [ref=f108e82] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/get-started/
+          - generic "Direct Send messages" [ref=f108e87]:
+            - link "Direct Send messages" [ref=f108e88] [cursor=pointer]:
+              - /url: "#"
+          - generic "Marketing messages" [ref=f108e96]:
+            - link "Marketing messages" [ref=f108e97] [cursor=pointer]:
+              - /url: "#"
+          - generic "In-App Signup" [ref=f108e104]:
+            - link "In-App Signup" [ref=f108e105] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/in-app-signup/
+          - generic "Utility messages" [ref=f108e110]:
+            - link "Utility messages" [ref=f108e111] [cursor=pointer]:
+              - /url: "#"
+          - generic "Authentication messages" [ref=f108e119]:
+            - link "Authentication messages" [ref=f108e120] [cursor=pointer]:
+              - /url: "#"
+          - generic "Service messages" [ref=f108e128]:
+            - link "Service messages" [ref=f108e129] [cursor=pointer]:
+              - /url: "#"
+          - generic "Calling" [ref=f108e137]:
+            - link "Calling" [ref=f108e138] [cursor=pointer]:
+              - /url: "#"
+          - generic "Groups" [ref=f108e146]:
+            - link "Groups" [ref=f108e147] [cursor=pointer]:
+              - /url: "#"
+          - generic "Catalogs" [ref=f108e155]:
+            - link "Catalogs" [ref=f108e156] [cursor=pointer]:
+              - /url: "#"
+          - generic "Partners" [ref=f108e164]:
+            - link "Partners" [ref=f108e165] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f108e172]:
+            - generic "Webhooks" [ref=f108e173]:
+              - link "Webhooks" [ref=f108e174] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f108e182]:
+              - generic "Overview" [ref=f108e183]:
+                - link "Overview" [ref=f108e184] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/webhooks/overview/
+              - generic "Create a webhook endpoint" [ref=f108e188]:
+                - link "Create a webhook endpoint" [ref=f108e189] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/webhooks/create-webhook-endpoint/
+              - generic "Create a test webhook endpoint" [ref=f108e193]:
+                - link "Create a test webhook endpoint" [ref=f108e194] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/webhooks/set-up-whatsapp-echo-bot/
+              - generic "Override the callback URL" [ref=f108e198]:
+                - link "Override the callback URL" [ref=f108e199] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/webhooks/override/
+              - generic "Webhooks reference" [ref=f108e204]:
+                - link "Webhooks reference" [ref=f108e205] [cursor=pointer]:
+                  - /url: "#"
+          - generic "Template fundamentals" [ref=f108e213]:
+            - link "Template fundamentals" [ref=f108e214] [cursor=pointer]:
+              - /url: "#"
+          - generic "Messaging features" [ref=f108e222]:
+            - link "Messaging features" [ref=f108e223] [cursor=pointer]:
+              - /url: "#"
+          - generic "Account assets" [ref=f108e231]:
+            - link "Account assets" [ref=f108e232] [cursor=pointer]:
+              - /url: "#"
+          - generic "Analytics" [ref=f108e239]:
+            - link "Analytics" [ref=f108e240] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/analytics/
+          - generic "Ads that click to WhatsApp" [ref=f108e245]:
+            - link "Ads that click to WhatsApp" [ref=f108e246] [cursor=pointer]:
+              - /url: "#"
+          - generic "Payments" [ref=f108e254]:
+            - link "Payments" [ref=f108e255] [cursor=pointer]:
+              - /url: "#"
+          - generic "Data, Privacy, & Policy" [ref=f108e263]:
+            - link "Data, Privacy, & Policy" [ref=f108e264] [cursor=pointer]:
+              - /url: "#"
+          - generic "Support" [ref=f108e272]:
+            - link "Support" [ref=f108e273] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f108e280]:
+            - separator [aria-hidden] [ref=f108e281]
+            - generic [ref=f108e282]: Resources
+          - generic "API Reference" [ref=f108e284]:
+            - link "API Reference" [ref=f108e285] [cursor=pointer]:
+              - /url: "#"
+          - generic "Changelog" [ref=f108e292]:
+            - link "Changelog" [ref=f108e293] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/changelog/
+          - generic "Error codes" [ref=f108e297]:
+            - link "Error codes" [ref=f108e298] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/support/error-codes
+    - generic [ref=f108e303]:
+      - main [ref=f108e304]:
+        - generic [ref=f108e305]:
+          - navigation "Breadcrumbs" [ref=f108e307]:
+            - list [ref=f108e308]:
+              - listitem [ref=f108e309]:
+                - link "Docs" [ref=f108e311] [cursor=pointer]:
+                  - /url: /docs
+              - listitem [ref=f108e316]:
+                - link "Overview" [ref=f108e318] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/overview
+              - listitem [ref=f108e323]:
+                - generic [ref=f108e324]: WhatsApp webhooks
+          - article [ref=f108e327]:
+            - heading "WhatsApp webhooks" [level=1] [ref=f108e328]
+            - generic [ref=f108e329]: "Updated: Jun 26, 2026"
+            - generic [ref=f108e333]:
+              - button "Copy for LLM" [ref=f108e335] [cursor=pointer]
+              - link "View as Markdown" [ref=f108e342] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/webhooks/overview.md
+            - generic [ref=f108e348]: This document describes webhooks and how the WhatsApp Business Platform uses them.
+            - generic [ref=f108e349]: Webhooks are HTTP requests containing JSON payloads that Meta’s servers send to a server of your designation. The WhatsApp Business Platform uses webhooks to inform you of incoming messages, the status of outgoing messages, call events, and other important information, such as changes to your account status, messaging capability upgrades, and changes to your template quality scores.
+            - generic [ref=f108e350]: "For example, this is a webhook describing a message sent from a WhatsApp user to a business:"
+            - generic [ref=f108e351]:
+              - generic [ref=f108e352]: "{ \"object\": \"whatsapp_business_account\", \"entry\": [ { \"id\": \"102290129340398\", \"changes\": [ { \"value\": { \"messaging_product\": \"whatsapp\", \"metadata\": { \"display_phone_number\": \"15550783881\", \"phone_number_id\": \"106540352242922\" }, \"contacts\": [ { \"profile\": { \"name\": \"Sheena Nelson\" }, \"wa_id\": \"16505551234\" } ], \"messages\": [ { \"from\": \"16505551234\", \"id\": \"wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQTRBNjU5OUFFRTAzODEwMTQ0RgA=\", \"timestamp\": \"1749416383\", \"type\": \"text\", \"text\": { \"body\": \"Does it come in another color?\" } } ] }, \"field\": \"messages\" } ] } ] }"
+              - button [ref=f108e355] [cursor=pointer]
+            - generic [ref=f108e360]:
+              - heading "Create a webhook endpoint" [level=2] [ref=f108e361]
+              - button [ref=f108e362] [cursor=pointer]
+            - generic [ref=f108e366]:
+              - text: To receive webhooks, you must create and configure a webhook endpoint. To create your own endpoint, see the
+              - link "Create a webhook endpoint" [ref=f108e367] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/webhooks/create-webhook-endpoint
+              - text: document.
+            - generic [ref=f108e368]:
+              - text: If you aren’t ready to create your own endpoint yet, you can
+              - link "create a test webhook endpoint" [ref=f108e369] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/webhooks/set-up-whatsapp-echo-bot
+              - text: that logs webhook payloads to the console. Note, however, that before you can use your app in a production capacity, you must create your own endpoint.
+            - generic [ref=f108e372]:
+              - heading "Permissions" [level=2] [ref=f108e373]
+              - button [ref=f108e374] [cursor=pointer]
+            - generic [ref=f108e378]: "You need the following permissions to receive webhooks:"
+            - list [ref=f108e379]:
+              - listitem [ref=f108e381]:
+                - strong [ref=f108e382]: whatsapp_business_messaging
+                - text: — for
+                - strong [ref=f108e383]: messages
+                - text: and
+                - strong [ref=f108e384]: calls
+                - text: webhooks
+              - listitem [ref=f108e386]:
+                - strong [ref=f108e387]: whatsapp_business_management
+                - text: — for all other webhooks
+            - generic [ref=f108e388]:
+              - text: If you are a direct developer, use your system user to grant your app these permissions when generating your
+              - link "system token" [ref=f108e389] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens
+              - text: .
+            - generic [ref=f108e390]:
+              - text: If you are a
+              - link "partner" [ref=f108e391] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/solution-providers/overview
+              - text: and need these permissions to provide appropriate services to your business customers, you must be approved for advanced access for the permissions via
+              - link "App Review" [ref=f108e392] [cursor=pointer]:
+                - /url: /docs/app-review
+              - text: before your business customers will be able to grant your app these permissions during onboarding.
+            - generic [ref=f108e395]:
+              - heading "Fields" [level=2] [ref=f108e396]
+              - button [ref=f108e397] [cursor=pointer]
+            - generic [ref=f108e401]:
+              - text: Once you have
+              - link "created and configured" [ref=f108e402] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/webhooks/create-webhook-endpoint
+              - text: your webhook endpoint (or have set up a
+              - link "test webhook endpoint" [ref=f108e403] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/webhooks/set-up-whatsapp-echo-bot
+              - text: ), use the
+              - strong [ref=f108e404]:
+                - link "App Dashboard" [ref=f108e405] [cursor=pointer]:
+                  - /url: /apps
+              - text: ">"
+              - strong [ref=f108e406]: WhatsApp
+              - text: ">"
+              - strong [ref=f108e407]: Configuration
+              - text: panel to subscribe to individual webhook fields.
+            - generic [ref=f108e408]:
+              - text: Note that if you created your app using the
+              - strong [ref=f108e409]: Connect with customers through WhatsApp
+              - text: use case, navigate to
+              - strong [ref=f108e410]:
+                - link "App Dashboard" [ref=f108e411] [cursor=pointer]:
+                  - /url: /apps
+              - text: ">"
+              - strong [ref=f108e412]: Use cases
+              - text: ">"
+              - strong [ref=f108e413]: Customize
+              - text: ">"
+              - strong [ref=f108e414]: Configuration
+              - text: instead.
+            - table [ref=f108e416]:
+              - rowgroup [ref=f108e417]:
+                - row [ref=f108e418]:
+                  - columnheader "Field name" [ref=f108e419]
+                  - columnheader "Description" [ref=f108e420]
+              - rowgroup [ref=f108e421]:
+                - row [ref=f108e422]:
+                  - cell [ref=f108e423]:
+                    - link "account_alerts" [ref=f108e426] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/account_alerts
+                  - cell [ref=f108e427]:
+                    - generic [ref=f108e429]:
+                      - text: The
+                      - strong [ref=f108e430]: account_alerts
+                      - text: webhook notifies you of changes to a business phone number’s
+                      - link "messaging limit" [ref=f108e431] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/messaging-limits
+                      - text: ","
+                      - link "business profile" [ref=f108e432] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers#business-profiles
+                      - text: ", and"
+                      - link "Official Business Account" [ref=f108e433] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/whatsapp-business-accounts#official-business-account
+                      - text: status.
+                - row [ref=f108e434]:
+                  - cell [ref=f108e435]:
+                    - link "account_review_update" [ref=f108e438] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/account_review_update
+                  - cell [ref=f108e439]:
+                    - generic [ref=f108e441]:
+                      - text: The
+                      - strong [ref=f108e442]: account_review_update
+                      - text: webhook notifies you when a WhatsApp Business Account has been reviewed against our policy guidelines.
+                - row [ref=f108e443]:
+                  - cell [ref=f108e444]:
+                    - link "account_update" [ref=f108e447] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/account_update
+                  - cell [ref=f108e448]:
+                    - generic [ref=f108e450]:
+                      - text: The
+                      - strong [ref=f108e451]: account_update
+                      - text: webhook notifies of changes to a WhatsApp Business Account’s
+                      - link "partner-led business verification" [ref=f108e452] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/solution-providers/partner-led-business-verification
+                      - text: submission, its
+                      - link "authentication-international rate" [ref=f108e453] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/pricing/authentication-international-rates
+                      - text: eligibility, or primary business location, when it is shared with a
+                      - link "Solution Partner" [ref=f108e454] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/solution-providers/overview
+                      - text: ","
+                      - link "policy or terms violations" [ref=f108e455] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/policy-enforcement
+                      - text: ", offboarding, reconnection, or when it is deleted."
+                - row [ref=f108e456]:
+                  - cell [ref=f108e457]:
+                    - link "automatic_events" [ref=f108e460] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/automatic_events
+                  - cell [ref=f108e461]:
+                    - generic [ref=f108e463]:
+                      - text: The
+                      - strong [ref=f108e464]: automatic_events
+                      - text: webhook notifies you when we detect a purchase or lead event in a chat thread between you and a WhatsApp user who has messaged you via your Click to WhatsApp ad, if you have opted-in to
+                      - link "Automatic Events" [ref=f108e465] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/embedded-signup/automatic-events-api
+                      - text: reporting.
+                - row [ref=f108e466]:
+                  - cell [ref=f108e467]:
+                    - link "business_capability_update" [ref=f108e470] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/business_capability_update
+                  - cell [ref=f108e471]:
+                    - generic [ref=f108e473]:
+                      - text: The
+                      - strong [ref=f108e474]: business_capability_update
+                      - text: webhook notifies you of WhatsApp Business Account or business portfolio capability changes (
+                      - link "messaging limits" [ref=f108e475] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/messaging-limits#increasing-your-limit
+                      - text: ","
+                      - link "phone number limits" [ref=f108e476] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers#registered-number-cap
+                      - text: ", etc.)."
+                - row [ref=f108e477]:
+                  - cell [ref=f108e478]:
+                    - link "calls" [ref=f108e481] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/calling/reference#calling-api-webhooks
+                  - cell [ref=f108e482]:
+                    - generic [ref=f108e484]:
+                      - text: The
+                      - strong [ref=f108e485]: calls
+                      - text: webhook notifies you of call events for
+                      - link "user-initiated calls" [ref=f108e486] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/calling/user-initiated-calls#webhooks-for-user-initiated-calling
+                      - text: and
+                      - link "business-initiated calls" [ref=f108e487] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/calling/business-initiated-calls#webhooks-for-business-initiated-calling
+                      - text: ", such as when a call is connected or terminated."
+                - row [ref=f108e488]:
+                  - cell [ref=f108e489]:
+                    - link "history" [ref=f108e492] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/history
+                  - cell [ref=f108e493]:
+                    - generic [ref=f108e495]:
+                      - text: The
+                      - strong [ref=f108e496]: history
+                      - text: webhook is used to synchronize the
+                      - link "WhatsApp Business app chat history" [ref=f108e497] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/embedded-signup/onboarding-business-app-users
+                      - text: of a business customer onboarded by a solution provider.
+                - row [ref=f108e498]:
+                  - cell [ref=f108e499]:
+                    - link "message_template_components_update" [ref=f108e502] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/message_template_components_update
+                  - cell [ref=f108e503]:
+                    - generic [ref=f108e505]:
+                      - text: The
+                      - strong [ref=f108e506]: message_template_components_update
+                      - text: webhook notifies you of changes to a template’s components.
+                - row [ref=f108e507]:
+                  - cell [ref=f108e508]:
+                    - link "message_template_quality_update" [ref=f108e511] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/message_template_quality_update
+                  - cell [ref=f108e512]:
+                    - generic [ref=f108e514]:
+                      - text: The
+                      - strong [ref=f108e515]: message_template_quality_update
+                      - text: webhook notifies you of changes to a template’s
+                      - link "quality score" [ref=f108e516] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/templates/template-quality
+                      - text: .
+                - row [ref=f108e517]:
+                  - cell [ref=f108e518]:
+                    - link "message_template_status_update" [ref=f108e521] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/message_template_status_update
+                  - cell [ref=f108e522]:
+                    - generic [ref=f108e524]:
+                      - text: The
+                      - strong [ref=f108e525]: message_template_status_update
+                      - text: webhook notifies you of changes to the status of an existing template.
+                - row [ref=f108e526]:
+                  - cell [ref=f108e527]:
+                    - link "messages" [ref=f108e530] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/messages
+                  - cell [ref=f108e531]:
+                    - generic [ref=f108e533]:
+                      - text: The
+                      - strong [ref=f108e534]: messages
+                      - text: webhook describes messages sent from a WhatsApp user to a business and the status of messages sent by a business to a WhatsApp user.
+                - row [ref=f108e535]:
+                  - cell [ref=f108e536]:
+                    - link "partner_solutions" [ref=f108e539] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/partner_solutions
+                  - cell [ref=f108e540]:
+                    - generic [ref=f108e542]:
+                      - text: The
+                      - strong [ref=f108e543]: partner_solutions webhook
+                      - text: describes changes to the status of a
+                      - link "Multi-Partner Solution" [ref=f108e544] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/solution-providers/multi-partner-solutions
+                      - text: .
+                - row [ref=f108e545]:
+                  - cell [ref=f108e546]:
+                    - link "payment_configuration_update" [ref=f108e549] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/payment_configuration_update
+                  - cell [ref=f108e550]:
+                    - generic [ref=f108e552]:
+                      - text: The
+                      - strong [ref=f108e553]: payment_configuration_update
+                      - text: webhook notifies you of changes to payment configurations for
+                      - link "Payments API India" [ref=f108e554] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/payments/payments-in/overview
+                      - text: and
+                      - link "Payments API Brazil" [ref=f108e555] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/payments/payments-br/overview
+                      - text: .
+                - row [ref=f108e556]:
+                  - cell [ref=f108e557]:
+                    - link "phone_number_name_update" [ref=f108e560] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/phone_number_name_update
+                  - cell [ref=f108e561]:
+                    - generic [ref=f108e563]:
+                      - text: The
+                      - strong [ref=f108e564]: phone_number_name_update
+                      - text: webhook notifies you of business phone number
+                      - link "display name verification" [ref=f108e565] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/display-names#display-name-verificationn
+                      - text: outcomes.
+                - row [ref=f108e566]:
+                  - cell [ref=f108e567]:
+                    - link "phone_number_quality_update" [ref=f108e570] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/phone_number_quality_update
+                  - cell [ref=f108e571]:
+                    - generic [ref=f108e573]:
+                      - text: The
+                      - strong [ref=f108e574]: phone_number_quality_update
+                      - text: webhook notifies you of changes to a business phone number’s
+                      - link "throughput level" [ref=f108e575] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/throughput
+                      - text: .
+                - row [ref=f108e576]:
+                  - cell [ref=f108e577]:
+                    - link "security" [ref=f108e580] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/security
+                  - cell [ref=f108e581]:
+                    - generic [ref=f108e583]:
+                      - text: The
+                      - strong [ref=f108e584]: security
+                      - text: webhook notifies you of changes to a business phone number’s security settings.
+                - row [ref=f108e585]:
+                  - cell [ref=f108e586]:
+                    - link "smb_app_state_sync" [ref=f108e589] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/smb_app_state_sync
+                  - cell [ref=f108e590]:
+                    - generic [ref=f108e592]:
+                      - text: The
+                      - strong [ref=f108e593]: smb_app_state_sync
+                      - text: webhook is used for synchronizing contacts of
+                      - link "WhatsApp Business app users who have been onboarded" [ref=f108e594] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/embedded-signup/onboarding-business-app-users
+                      - text: via a solution provider.
+                - row [ref=f108e595]:
+                  - cell [ref=f108e596]:
+                    - link "smb_message_echoes" [ref=f108e599] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/smb_message_echoes
+                  - cell [ref=f108e600]:
+                    - generic [ref=f108e602]:
+                      - text: The
+                      - strong [ref=f108e603]: smb_message_echoes
+                      - text: webhook notifies you of messages sent via the WhatsApp Business app or a
+                      - link "companion (“linked”) device" [ref=f108e604] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/embedded-signup/onboarding-business-app-users#linked-devices
+                      - text: by a business customer who has been
+                      - link "onboarded to Cloud API" [ref=f108e605] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/embedded-signup/onboarding-business-app-users
+                      - text: via a solution provider.
+                - row [ref=f108e606]:
+                  - cell [ref=f108e607]:
+                    - link "template_category_update" [ref=f108e610] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/template_category_update
+                  - cell [ref=f108e611]:
+                    - generic [ref=f108e613]:
+                      - text: The
+                      - strong [ref=f108e614]: template_category_update
+                      - text: webhook notifies you of changes to template’s
+                      - link "category" [ref=f108e615] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/templates/template-categorization
+                      - text: .
+                - row [ref=f108e616]:
+                  - cell [ref=f108e617]:
+                    - link "user_preferences" [ref=f108e620] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/reference/user_preferences
+                  - cell [ref=f108e621]:
+                    - generic [ref=f108e623]:
+                      - text: The
+                      - strong [ref=f108e624]: user_preferences
+                      - text: webhook notifies you of changes to a WhatsApp user’s
+                      - link "marketing message preferences" [ref=f108e625] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/templates/marketing-templates#user-preferences-for-marketing-messages
+                      - text: .
+            - generic [ref=f108e628]:
+              - heading "Override webhooks" [level=2] [ref=f108e629]
+              - button [ref=f108e630] [cursor=pointer]
+            - generic [ref=f108e634]:
+              - text: You can use an alternate webhook endpoint for
+              - link "certain webhook fields" [ref=f108e635] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/webhooks/override#supported-webhook-fields
+              - text: for your WhatsApp Business account (WABA) or business phone number. An alternate endpoint can be useful for testing purposes, or if you are a partner and wish to use unique webhook endpoints for each of your onboarded customers.
+            - generic [ref=f108e636]:
+              - text: See the
+              - link "Webhook overrides" [ref=f108e637] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/webhooks/override
+              - text: document to learn how to override webhooks.
+            - generic [ref=f108e640]:
+              - heading "Payload size" [level=2] [ref=f108e641]
+              - button [ref=f108e642] [cursor=pointer]
+            - generic [ref=f108e646]: Webhook payloads can be up to 3 MB.
+            - generic [ref=f108e649]:
+              - heading "Webhook delivery failure" [level=2] [ref=f108e650]
+              - button [ref=f108e651] [cursor=pointer]
+            - generic [ref=f108e655]: If a webhook request to your endpoint receives an HTTP status code other than 200, or if the webhook cannot be delivered for another reason, Meta retries delivery with decreasing frequency until the request succeeds, for up to 7 days.
+            - generic [ref=f108e656]: Note that Meta sends retries to all apps that have subscribed to webhooks (and their appropriate fields) for the WhatsApp Business account. These retries can result in duplicate webhook notifications.
+            - generic [ref=f108e659]:
+              - heading "Mutual TLS" [level=2] [ref=f108e660]
+              - button [ref=f108e661] [cursor=pointer]
+            - generic [ref=f108e665]:
+              - text: Webhooks support mutual TLS (mTLS) for added security. See Graph API’s
+              - link "mTLS for webhooks" [ref=f108e666] [cursor=pointer]:
+                - /url: /docs/graph-api/webhooks/getting-started#mtls-for-webhooks
+              - text: document to learn how to enable and use mTLS.
+            - generic [ref=f108e669]:
+              - heading "IP addresses" [level=2] [ref=f108e670]
+              - button [ref=f108e671] [cursor=pointer]
+            - generic [ref=f108e675]: "You can get the IP addresses of Meta’s webhook servers by running the following command in your terminal:"
+            - generic [ref=f108e676]:
+              - code [ref=f108e678]: "whois -h whois.radb.net — '-i origin AS32934' | grep '^route' | awk '{print $2}' | sort"
+              - button [ref=f108e679] [cursor=pointer]
+            - generic [ref=f108e682]:
+              - text: You can also use the geofeed to
+              - link [ref=f108e683] [cursor=pointer]:
+                - /url: https://facebook.com/peering/geofeed
+                - text: download a CSV
+                - generic [ref=f108e684]:
+                  - text: ⁠
+                  - img "This link opens in a new tab or window" [ref=f108e685]
+              - text: that lists Meta’s IP addresses.
+            - generic [ref=f108e688]:
+              - text: Note, however, that Meta periodically changes its IP addresses, so to avoid having to regenerate your list of allowed IP addresses, consider
+              - link "using mTLS instead" [ref=f108e689] [cursor=pointer]:
+                - /url: /docs/graph-api/webhooks/getting-started#mtls-for-webhooks
+              - text: .
+            - generic [ref=f108e692]:
+              - heading "Troubleshooting" [level=2] [ref=f108e693]
+              - button [ref=f108e694] [cursor=pointer]
+            - generic [ref=f108e698]: "If you are not receiving webhooks:"
+            - list [ref=f108e699]:
+              - listitem [ref=f108e701]: Make sure your endpoint is accepting requests.
+              - listitem [ref=f108e703]:
+                - text: Send a test payload to your endpoint via the
+                - strong [ref=f108e704]:
+                  - link "App Dashboard" [ref=f108e705] [cursor=pointer]:
+                    - /url: /apps
+                - text: ">"
+                - strong [ref=f108e706]: WhatsApp
+                - text: ">"
+                - strong [ref=f108e707]: Configurations
+                - text: panel.
+              - listitem [ref=f108e709]:
+                - text: Make sure your app is in
+                - strong [ref=f108e710]: Live
+                - text: mode; some webhooks will not be sent if your app is in
+                - strong [ref=f108e711]: Dev
+                - text: mode.
+              - listitem [ref=f108e713]:
+                - text: Use the
+                - link "test webhook endpoint" [ref=f108e714] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/webhooks/set-up-whatsapp-echo-bot
+                - text: . If the test endpoint is digesting webhook payloads and displaying them in the console, the issue is likely with your endpoint code.
+            - generic [ref=f108e717]:
+              - heading "Learn more" [level=2] [ref=f108e718]
+              - button [ref=f108e719] [cursor=pointer]
+            - list [ref=f108e723]:
+              - listitem [ref=f108e725]:
+                - text: See the
+                - link [ref=f108e726] [cursor=pointer]:
+                  - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fbusiness.whatsapp.com%2Fblog%2Fhow-to-use-webhooks-from-whatsapp-business-api&h=AUCPzdzOYh45Pol7FqXPBkL7_Yl_Cq4XYwp-uH2ViGsCEscFVl13qb7I3kA6XdW50EO-_I-Lt54FoTfc0ed5dB-3wBm4OvvPNkvTktOKZoPcDjCuV-UJKcLLl20MwrzqNzdTdfu-RF3Tb87rr9R54w
+                  - text: Using Node.js to implement webhooks
+                  - generic [ref=f108e727]:
+                    - text: ⁠
+                    - img "This link opens in a new tab or window" [ref=f108e728]
+                - text: WhatsApp Business blog post.
+      - complementary [ref=f108e731]
+  - generic [ref=f108e733]:
+    - separator [aria-hidden] [ref=f108e734]
+    - contentinfo [ref=f108e735]:
+      - generic [ref=f108e736]:
+        - separator [aria-hidden] [ref=f108e737]
+        - generic [ref=f108e739]:
+          - generic [ref=f108e741]:
+            - generic [ref=f108e743]:
+              - img "Meta" [ref=f108e745]
+              - list [ref=f108e747]:
+                - listitem:
+                  - link "Facebook":
+                    - /url: https://www.facebook.com/MetaforDevelopers
+                    - img "Facebook"
+                - listitem:
+                  - link "Instagram":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmetafordevelopers%2F&h=AUCPzdzOYh45Pol7FqXPBkL7_Yl_Cq4XYwp-uH2ViGsCEscFVl13qb7I3kA6XdW50EO-_I-Lt54FoTfc0ed5dB-3wBm4OvvPNkvTktOKZoPcDjCuV-UJKcLLl20MwrzqNzdTdfu-RF3Tb87rr9R54w
+                    - img "Instagram"
+                - listitem:
+                  - link "X":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2Fmetafordevs&h=AUCPzdzOYh45Pol7FqXPBkL7_Yl_Cq4XYwp-uH2ViGsCEscFVl13qb7I3kA6XdW50EO-_I-Lt54FoTfc0ed5dB-3wBm4OvvPNkvTktOKZoPcDjCuV-UJKcLLl20MwrzqNzdTdfu-RF3Tb87rr9R54w
+                    - img "X"
+                - listitem:
+                  - link "LinkedIn":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fshowcase%2Fmeta-for-developers%2F&h=AUCPzdzOYh45Pol7FqXPBkL7_Yl_Cq4XYwp-uH2ViGsCEscFVl13qb7I3kA6XdW50EO-_I-Lt54FoTfc0ed5dB-3wBm4OvvPNkvTktOKZoPcDjCuV-UJKcLLl20MwrzqNzdTdfu-RF3Tb87rr9R54w
+                    - img "LinkedIn"
+                - listitem:
+                  - link "YouTube":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2FMetaDevelopers%2F&h=AUCPzdzOYh45Pol7FqXPBkL7_Yl_Cq4XYwp-uH2ViGsCEscFVl13qb7I3kA6XdW50EO-_I-Lt54FoTfc0ed5dB-3wBm4OvvPNkvTktOKZoPcDjCuV-UJKcLLl20MwrzqNzdTdfu-RF3Tb87rr9R54w
+                    - img "YouTube"
+            - generic [ref=f108e749]:
+              - generic [ref=f108e752]:
+                - heading "Crear con Meta" [level=2] [ref=f108e753]
+                - list [ref=f108e755]:
+                  - listitem [ref=f108e756]:
+                    - link "Inteligencia artificial" [ref=f108e758] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fai%2F&h=AUCPzdzOYh45Pol7FqXPBkL7_Yl_Cq4XYwp-uH2ViGsCEscFVl13qb7I3kA6XdW50EO-_I-Lt54FoTfc0ed5dB-3wBm4OvvPNkvTktOKZoPcDjCuV-UJKcLLl20MwrzqNzdTdfu-RF3Tb87rr9R54w
+                  - listitem [ref=f108e759]:
+                    - link "Meta Horizon" [ref=f108e761] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fhorizon%2F&h=AUCPzdzOYh45Pol7FqXPBkL7_Yl_Cq4XYwp-uH2ViGsCEscFVl13qb7I3kA6XdW50EO-_I-Lt54FoTfc0ed5dB-3wBm4OvvPNkvTktOKZoPcDjCuV-UJKcLLl20MwrzqNzdTdfu-RF3Tb87rr9R54w
+                  - listitem [ref=f108e762]:
+                    - link "Tecnologías sociales" [ref=f108e764] [cursor=pointer]:
+                      - /url: /social-technologies/
+              - generic [ref=f108e767]:
+                - heading "Noticias" [level=2] [ref=f108e768]
+                - list [ref=f108e770]:
+                  - listitem [ref=f108e771]:
+                    - link "Meta for Developers" [ref=f108e773] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fblog%2F&h=AUCPzdzOYh45Pol7FqXPBkL7_Yl_Cq4XYwp-uH2ViGsCEscFVl13qb7I3kA6XdW50EO-_I-Lt54FoTfc0ed5dB-3wBm4OvvPNkvTktOKZoPcDjCuV-UJKcLLl20MwrzqNzdTdfu-RF3Tb87rr9R54w
+                  - listitem [ref=f108e774]:
+                    - link "Blog" [ref=f108e776] [cursor=pointer]:
+                      - /url: /blog/
+                  - listitem [ref=f108e777]:
+                    - link "Historias de éxito" [ref=f108e779] [cursor=pointer]:
+                      - /url: /success-stories/
+              - generic [ref=f108e782]:
+                - heading "Ayuda" [level=2] [ref=f108e783]
+                - list [ref=f108e785]:
+                  - listitem [ref=f108e786]:
+                    - link "Ayuda para desarrolladores" [ref=f108e788] [cursor=pointer]:
+                      - /url: /support/
+                  - listitem [ref=f108e789]:
+                    - link "Herramienta de errores" [ref=f108e791] [cursor=pointer]:
+                      - /url: /support/bugs/
+                  - listitem [ref=f108e792]:
+                    - link "Estado de la plataforma" [ref=f108e794] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmetastatus.com%2F&h=AUCPzdzOYh45Pol7FqXPBkL7_Yl_Cq4XYwp-uH2ViGsCEscFVl13qb7I3kA6XdW50EO-_I-Lt54FoTfc0ed5dB-3wBm4OvvPNkvTktOKZoPcDjCuV-UJKcLLl20MwrzqNzdTdfu-RF3Tb87rr9R54w
+                  - listitem [ref=f108e795]:
+                    - link "Foro de la comunidad de desarrolladores" [ref=f108e797] [cursor=pointer]:
+                      - /url: https://www.facebook.com/groups/fbdevelopers/
+                  - listitem [ref=f108e798]:
+                    - link "Reportar un incidente" [ref=f108e800] [cursor=pointer]:
+                      - /url: /incident/report/
+              - generic [ref=f108e803]:
+                - heading "Acerca de nosotros" [level=2] [ref=f108e804]
+                - list [ref=f108e806]:
+                  - listitem [ref=f108e807]:
+                    - link "Información" [ref=f108e809] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.fb.com%2F&h=AUCPzdzOYh45Pol7FqXPBkL7_Yl_Cq4XYwp-uH2ViGsCEscFVl13qb7I3kA6XdW50EO-_I-Lt54FoTfc0ed5dB-3wBm4OvvPNkvTktOKZoPcDjCuV-UJKcLLl20MwrzqNzdTdfu-RF3Tb87rr9R54w
+                  - listitem [ref=f108e810]:
+                    - link "Empleos" [ref=f108e812] [cursor=pointer]:
+                      - /url: https://www.facebook.com/careers
+              - generic [ref=f108e815]:
+                - heading "Condiciones y políticas" [level=2] [ref=f108e816]
+                - list [ref=f108e818]:
+                  - listitem [ref=f108e819]:
+                    - link "Iniciativas de plataforma responsable" [ref=f108e821] [cursor=pointer]:
+                      - /url: /products/responsible-platform-initiatives/
+                  - listitem [ref=f108e822]:
+                    - link "Condiciones de la plataforma" [ref=f108e824] [cursor=pointer]:
+                      - /url: /terms/dfc_platform_terms/
+                  - listitem [ref=f108e825]:
+                    - link "Políticas para desarrolladores" [ref=f108e827] [cursor=pointer]:
+                      - /url: /devpolicy/
+                  - listitem [ref=f108e828]:
+                    - link "Política de privacidad" [ref=f108e830] [cursor=pointer]:
+                      - /url: https://www.facebook.com/about/privacy
+                  - listitem [ref=f108e831]:
+                    - link "Cookies" [ref=f108e833] [cursor=pointer]:
+                      - /url: https://www.facebook.com/help/cookies
+          - button "Change language" [ref=f108e838] [cursor=pointer]:
+            - generic [ref=f108e839]: Español

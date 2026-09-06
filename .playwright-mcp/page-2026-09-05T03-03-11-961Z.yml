@@ -1,0 +1,254 @@
+- generic [active] [ref=f21e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=f21e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=f21e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=f21e8]:
+    - search [ref=f21e9]:
+      - generic [ref=f21e11]:
+        - link "Ir a la Página principal de Google" [ref=f21e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=es-419&sa=X&ved=2ahUKEwiykN6gudaWAxU-HrkGHTmDCXUQPHoECAYQBA
+        - generic [ref=f21e21]:
+          - generic [ref=f21e22]:
+            - combobox "Buscar" [ref=f21e25]: site:facebook.com/business/help "Start messaging customers on WhatsApp Business Platform" site:facebook.com/business/help "Start messaging customers on WhatsApp Business Platform"
+            - generic [ref=f21e26]:
+              - button "Borrar" [ref=f21e28] [cursor=pointer]
+              - generic [ref=f21e33]:
+                - button "Búsqueda por voz" [ref=f21e34] [cursor=pointer]
+                - button "Búsqueda por imagen" [ref=f21e37] [cursor=pointer]
+          - button "Buscar" [ref=f21e40] [cursor=pointer]
+    - generic [ref=f21e45]:
+      - button "Configuración" [ref=f21e47] [cursor=pointer]
+      - button "Compartir" [ref=f21e53] [cursor=pointer]
+      - generic [ref=f21e59]:
+        - button "Apps de Google" [ref=f21e61] [cursor=pointer]
+        - link "Acceder" [ref=f21e66] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dsite%253Afacebook.com%252Fbusiness%252Fhelp%2B%2522Start%2Bmessaging%2Bcustomers%2Bon%2BWhatsApp%2BBusiness%2BPlatform%2522&ec=futura_srp_og_si_72236_p
+  - generic [ref=f21e68]:
+    - navigation [ref=f21e74]:
+      - generic [ref=f21e80]:
+        - list [ref=f21e81]:
+          - listitem [ref=f21e82]:
+            - link "Modo IA" [ref=f21e85] [cursor=pointer]:
+              - /url: /search?q=site:facebook.com/business/help+%22Start+messaging+customers+on+WhatsApp+Business+Platform%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvebeKMOq-dmsG6S9rvp_OQRRKjuQ:1788577190487&udm=50&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsER2313fZUe9w2i3XMEAHT9FJPhN8_IRZCTtV1qqAbrKlLyFn7A3ktOjNTvFfoR6WB_65Vwy2oT8V_R_nR3gmnIV26ZKnymA7f15hhR_hLZPNHonJvGYbJBCz-BYgYuyTM_RrPS-ODheVu-pCMjaw9RweGYlQ&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwiykN6gudaWAxU-HrkGHTmDCXUQ2J8OegQICxAD
+          - listitem [ref=f21e89]:
+            - link "Todo" [disabled] [ref=f21e90]
+          - listitem [ref=f21e93]:
+            - link "Imágenes" [ref=f21e94] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvebeKMOq-dmsG6S9rvp_OQRRKjuQ:1788577190487&udm=2&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsER2313fZUe9w2i3XMEAHT9FJPhN8_IRZCTtV1qqAbrKlLyFn7A3ktOjNTvFfoR6WB_65Vwy2oT8V_R_nR3gmnIV26ZKnymA7f15hhR_hLZPNHonJvGYbJBCz-BYgYuyTM_RrPS-ODheVu-pCMjaw9RweGYlQ&q=site:facebook.com/business/help+%22Start+messaging+customers+on+WhatsApp+Business+Platform%22&sa=X&ved=2ahUKEwiykN6gudaWAxU-HrkGHTmDCXUQtKgLegQIDxAB
+          - listitem [ref=f21e97]:
+            - link "Videos" [ref=f21e98] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvebeKMOq-dmsG6S9rvp_OQRRKjuQ:1788577190487&udm=7&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsER2313fZUe9w2i3XMEAHT9FJPhN8_IRZCTtV1qqAbrKlLyFn7A3ktOjNTvFfoR6WB_65Vwy2oT8V_R_nR3gmnIV26ZKnymA7f15hhR_hLZPNHonJvGYbJBCz-BYgYuyTM_RrPS-ODheVu-pCMjaw9RweGYlQ&q=site:facebook.com/business/help+%22Start+messaging+customers+on+WhatsApp+Business+Platform%22&sa=X&ved=2ahUKEwiykN6gudaWAxU-HrkGHTmDCXUQtKgLegQIEBAB
+          - listitem [ref=f21e101]:
+            - link "Noticias" [ref=f21e102] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvebeKMOq-dmsG6S9rvp_OQRRKjuQ:1788577190487&q=site:facebook.com/business/help+%22Start+messaging+customers+on+WhatsApp+Business+Platform%22&tbm=nws&source=lnms&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsER2313fZUe9w2i3XMEAHT9FJPhN8_IRZCTtV1qqAbrKlLyFn7A3ktOjNTvFfoR6WB_65Vwy2oT8V_R_nR3gmnIV26ZKnymA7f15hhR_hLZPNHonJvGYbJBCz-BYgYuyTM_RrPS-ODheVu-pCMjaw9RweGYlQ&sa=X&ved=2ahUKEwiykN6gudaWAxU-HrkGHTmDCXUQ0pQJegQIERAB
+          - listitem [ref=f21e105]:
+            - link "Videos cortos" [ref=f21e106] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvebeKMOq-dmsG6S9rvp_OQRRKjuQ:1788577190487&udm=39&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsER2313fZUe9w2i3XMEAHT9FJPhN8_IRZCTtV1qqAbrKlLyFn7A3ktOjNTvFfoR6WB_65Vwy2oT8V_R_nR3gmnIV26ZKnymA7f15hhR_hLZPNHonJvGYbJBCz-BYgYuyTM_RrPS-ODheVu-pCMjaw9RweGYlQ&q=site:facebook.com/business/help+%22Start+messaging+customers+on+WhatsApp+Business+Platform%22&sa=X&ved=2ahUKEwiykN6gudaWAxU-HrkGHTmDCXUQs6gLegQIEhAB
+          - listitem [ref=f21e109]:
+            - link "Shopping" [ref=f21e110] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvebeKMOq-dmsG6S9rvp_OQRRKjuQ:1788577190487&udm=28&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsER2313fZUe9w2i3XMEAHT9FJPhN8_IRZCTtV1qqAbrKlLyFn7A3ktOjNTvFfoR6WB_65Vwy2oT8V_R_nR3gmnIV26ZKnymA7f15hhR_hLZPNHonJvGYbJBCz-BYgYuyTM_RrPS-ODheVu-pCMjaw9RweGYlQ&q=site:facebook.com/business/help+%22Start+messaging+customers+on+WhatsApp+Business+Platform%22&ved=1t:220175&ictx=111
+          - listitem [ref=f21e113]:
+            - button [ref=f21e114] [cursor=pointer]:
+              - generic "Más filtros" [ref=f21e115]: Más
+        - button "Herramientas" [ref=f21e122] [cursor=pointer]
+    - heading "Resultados de búsqueda" [level=1] [ref=f21e129]
+    - main [ref=f21e135]:
+      - generic [ref=f21e139]:
+        - generic [ref=f21e142]:
+          - heading "Web results" [level=2] [ref=f21e143]
+          - generic [ref=f21e144]:
+            - generic [ref=f21e147]:
+              - link "Start Messaging Customers on WhatsApp Business Platform Facebook https://www.facebook.com › help" [ref=f21e149] [cursor=pointer]:
+                - /url: /goto?url=CAESbwHrOzAVssl9hVlXSUFEegMhuKjiR6djcM9Zi5o4_z4ZbFRB5Uv8ZFgMKbetzKgsX4L_nX79jXkvqRbUp0wOr2WLYElMSoqG2knr0X8VJcF2UjyAdq_NVVpi9lNm6WQdd7-oW7zSsvfUGryWsQThXQ
+                - heading "Start Messaging Customers on WhatsApp Business Platform" [level=3] [ref=f21e150]
+                - generic [ref=f21e156]:
+                  - generic [ref=f21e157]: Facebook
+                  - generic [ref=f21e159]: https://www.facebook.com › help
+              - generic [ref=f21e161]:
+                - generic [ref=f21e162]: ·
+                - link "Traducir esta página" [ref=f21e163] [cursor=pointer]:
+                  - /url: /goto?url=CAESwQEB6zswFdyfg4AAGYt-bD4DT5eXgfHgtBzHFYIbYz06BC7Lr47SJLdF5yn3hn1keJG3hrQrm-RQoRE1B5i6bdfsapmj9ZePfFGiCzGkkRrU3cQDEE8YIOYQUCGtFLUpo2taXa8LOLbOPBQznnwthDooKj_tSk7VZItHz--mUn2ZdkWYIf5hLL2Z85gKtgdqBzPZHjDCbs4Bw7zLZPuxUWP1lV8TWZzdg55pJ01U4spbczP5snOx-DOybYFpTieFr0e0
+              - button "Acerca de este resultado" [ref=f21e168] [cursor=pointer]
+            - generic [ref=f21e175]:
+              - text: Your businesses can
+              - emphasis [ref=f21e176]: start messaging customers on WhatsApp Business Platform
+              - text: . Business verification and display name review will no longer be needed to get ...
+        - generic [ref=f21e180]:
+          - generic [ref=f21e183]:
+            - link "Create a WhatsApp Business account on the ... Facebook https://www.facebook.com › help" [ref=f21e185] [cursor=pointer]:
+              - /url: /goto?url=CAESbwHrOzAVpU3ArAp7ApgkrWNBCwLbURtpGNGF26w3XIDIkXtde5u7FwqJX3P-w3wvOLo3hg-dlNXivaaq-iBpkPWnLaUdoxPaXS--MO1-onlnoRQUxtkQ4n5Wv3Ppg0dqCr_yzDhMs5Ayo33zBJIkwQ
+              - heading "Create a WhatsApp Business account on the ..." [level=3] [ref=f21e186]
+              - generic [ref=f21e192]:
+                - generic [ref=f21e193]: Facebook
+                - generic [ref=f21e195]: https://www.facebook.com › help
+            - generic [ref=f21e197]:
+              - generic [ref=f21e198]: ·
+              - link "Traducir esta página" [ref=f21e199] [cursor=pointer]:
+                - /url: /goto?url=CAESwQEB6zswFVCAyK8aojDoQmsNGjFvk2re-o-4C-HLgDULIKM4YgRbwjisXuEzkrZj7aLORLUO7TFG2YWDdTUZPckWRIHJsdhRqS6Ndf61r9vCyyVajqQkV8P7BH6sV1uJ8Rd9WqH9XKcDyvgDWlhNQLemDqcIlqA46lpT6TlG7qygWmi_6IpcN1Mct4pgKREs8r0EGCuYPo1gO9NlxhlL1F-N_co7TaPhl9XFrrdLze6T-V3xG0ytxvcYbul_vO3BAFJ2
+            - button "Acerca de este resultado" [ref=f21e204] [cursor=pointer]
+          - generic [ref=f21e211]:
+            - emphasis [ref=f21e212]: Start messaging customers on WhatsApp Business Platform
+            - text: · About business verification · Create message templates for your WhatsApp Business account · About billing ...
+        - generic [ref=f21e216]:
+          - generic [ref=f21e219]:
+            - link "Create Your WhatsApp Business Account With ... Facebook https://www.facebook.com › help" [ref=f21e221] [cursor=pointer]:
+              - /url: /goto?url=CAESbgHrOzAV5gkLi9bZwt02Wl9ZdF8pz4NFmKd7OSugHDW7gm3vZ3KmLcVtUBnWJCTIpcMksMYzD2avxTn8sebAXOcT-JZlzlfNn-ocGsvLKrMmR91ksUS6S_PHE_hQdtbE4Q11fsBjtc3T4vnPh6Yo
+              - heading "Create Your WhatsApp Business Account With ..." [level=3] [ref=f21e222]
+              - generic [ref=f21e228]:
+                - generic [ref=f21e229]: Facebook
+                - generic [ref=f21e231]: https://www.facebook.com › help
+            - generic [ref=f21e233]:
+              - generic [ref=f21e234]: ·
+              - link "Traducir esta página" [ref=f21e235] [cursor=pointer]:
+                - /url: /goto?url=CAESwAEB6zswFRfJOUuBwQcDT-D2SC7V77iRxa4wXfrA9cVVnag9D5rl451rdxv_ibDueqpZr9Kr4Afb6Z3QHs9i5yaDrEzb9MUPCm58KJwujpK_YECISee9LGh0DbSQuc1YOYqJ3d_OY8eavTZ3GgJoy0RGhZpPQ_imbTlqczTfr7n_3TElem63tV_PN5d6zc4ho7O7-sTPskCI6S34eK3-PkermI5WQRXpML5H9ZVYbTZSH9js_xqbobmvPhDyTrtDOqI
+            - button "Acerca de este resultado" [ref=f21e240] [cursor=pointer]
+          - generic [ref=f21e247]:
+            - text: ...
+            - emphasis [ref=f21e248]: start messaging customers on WhatsApp Business Platform
+            - text: as soon as your partner completes your business verification. After completing the embedded signup ...
+        - generic [ref=f21e252]:
+          - generic [ref=f21e255]:
+            - link "Create your WhatsApp business account with Partner- ... Facebook https://www.facebook.com › help" [ref=f21e257] [cursor=pointer]:
+              - /url: /goto?url=CAESbwHrOzAVr68x8quyjNem6cvgJhwcqYNFm1kxGXoA8fHDnqJBR9JZxlZrEPxlXqnyFODKiLcEMxffroK1pN4W_pAdP7f8KblTACidBVrb_H_m_ZxpYE5wgaP11UbS4ZyH98uUbMmaRtQVq5M_rO3cHQ
+              - heading "Create your WhatsApp business account with Partner- ..." [level=3] [ref=f21e258]
+              - generic [ref=f21e264]:
+                - generic [ref=f21e265]: Facebook
+                - generic [ref=f21e267]: https://www.facebook.com › help
+            - generic [ref=f21e269]:
+              - generic [ref=f21e270]: ·
+              - link "Traducir esta página" [ref=f21e271] [cursor=pointer]:
+                - /url: /goto?url=CAESwQEB6zswFXjBkhkPt_QSFFAXu5XEorHuZ4uCOBw6_UVzcKEi6JhNKGw8QePHed_tsk2q48HjavaLKU3bpU30a1ZXFExV8rirDSPefI53mRkc7G3twBpwjdQaRUsa3YEOwbc8Hk0eYXbRTxGaG5P-u0yd6om-p4_ee5V_4_R2fWz7n_ionU4pqS3QHgLracztC0KcZ92UAoVZ22SSmgRNN8B2Xbzdw9lz8Rm1NYlXsVzEZt1nZQU66PFGUDZ4-TwiPa2b
+            - button "Acerca de este resultado" [ref=f21e276] [cursor=pointer]
+          - generic [ref=f21e283]:
+            - emphasis [ref=f21e284]: Start messaging customers on WhatsApp Business Platform
+            - text: · About business verification · Create message templates for your WhatsApp Business account · About billing ...
+        - generic [ref=f21e288]:
+          - generic [ref=f21e291]:
+            - link "Create a WhatsApp Business account using embedded ... Facebook https://business.facebook.com › ..." [ref=f21e293] [cursor=pointer]:
+              - /url: /goto?url=CAESiAEB6zswFQPAVDPC3Yk18uc4nJkCLDEd3sosfmxtk4Nnq_7y9mp4Z8gGKCod9aGw6KL9rUwJn1XYuU979dzePh0lB9ipXR7umXUnJW6zqZcBz5Z6E5nB4zdLKv8xjG_vjJVuh58jHjz4RZ9lDPfyVhB3uDG0ID9FJIPCm0WCFKYZrsbco_C89DTb
+              - heading "Create a WhatsApp Business account using embedded ..." [level=3] [ref=f21e294]
+              - generic [ref=f21e300]:
+                - generic [ref=f21e301]: Facebook
+                - generic [ref=f21e303]: https://business.facebook.com › ...
+            - generic [ref=f21e305]:
+              - generic [ref=f21e306]: ·
+              - link "Traducir esta página" [ref=f21e307] [cursor=pointer]:
+                - /url: /goto?url=CAES3AEB6zswFZSe763c73nfbszSbXcP83ZOtSJMqFMFUxUfeykjJV4QgYLI2Fn9HSNKosFNP_yyBTVefjAWZF6jXvUfBJItMdJcyHhOKOJrsQy-xczHBvaek9iTaYqVwlzTxgM9un7FWdOCXo-Rj5YXfyf25CHyjD8h6LLoCTuiJivnixqiR5X8faO4pWrMxnyRXpfg7iyI0nAZbFJqtkgrn65yEVebQiN2SPBSY69XwRqlPfiMATCcyisUQ8km3OvXl3pONlIY0NnMY-Rjcvm3ninp7v6J1bgoeADOKvnB
+            - button "Acerca de este resultado" [ref=f21e312] [cursor=pointer]
+          - generic [ref=f21e319]:
+            - text: ...
+            - emphasis [ref=f21e320]: start messaging customers on WhatsApp Business Platform
+            - text: as soon as your partner completes your business verification. After completing the embedded signup ...
+        - generic [ref=f21e324]:
+          - generic [ref=f21e327]:
+            - link "About WhatsApp Business Display Name Facebook https://www.facebook.com › help" [ref=f21e329] [cursor=pointer]:
+              - /url: /goto?url=CAESbgHrOzAVNEmQPeXQ8L-btoCKi4UzPVD9N0594nJ_bVShs1QU8_-Ns814EDHE-I_Hp6BsaOi_jVTKhQLAO37iYgnCPhTnZbNnS5VEo1fl9hHmXp-NWIAl_zcPLx90JSbEpj_jirVZ8Ze5PPqw9eS7
+              - heading "About WhatsApp Business Display Name" [level=3] [ref=f21e330]
+              - generic [ref=f21e336]:
+                - generic [ref=f21e337]: Facebook
+                - generic [ref=f21e339]: https://www.facebook.com › help
+            - generic [ref=f21e341]:
+              - generic [ref=f21e342]: ·
+              - link "Traducir esta página" [ref=f21e343] [cursor=pointer]:
+                - /url: /goto?url=CAESwAEB6zswFYFVdINlGUP_6lSRerH6T854gzIBfCadp8-xK6Q6uw1DePqk2eZNk4Qo-vPBZlGzUUGI37F3b4BmzaE-OuG7dyjHCul6xR9PoZom545pspSBPD6AI69c7UawuDcrxJMcjeI3dHZ6aUEVhIHs0UOuSdoJzA5A50Uaial7tYp-vjctBS6HBiqUzm1AXGN-0mtJ8WbChJ4TYDlYxxvOjRL_5ef8VxIhAnawN9KRnjwQ4JsjRxFAiBCcGxTdstE
+            - button "Acerca de este resultado" [ref=f21e348] [cursor=pointer]
+          - generic [ref=f21e355]:
+            - emphasis [ref=f21e356]: Start messaging customers on WhatsApp Business Platform
+            - text: · About your WhatsApp Business phone number's quality rating · Capacity, quality rating, and messaging ...
+        - generic [ref=f21e360]:
+          - generic [ref=f21e363]:
+            - link "Tips for Driving High-quality Conversations and Improving ... Facebook https://www.facebook.com › help" [ref=f21e365] [cursor=pointer]:
+              - /url: /goto?url=CAESbgHrOzAVKr9w8IkFwgcTrJ7fIv3L4WMPJHaTIsfmbxgxbExG8ai4_wkj_hEAQZcK1ezkjXElYMPxovNKzfJ5HOLJ9uZbQoaDiy96wv9lTMyTuZNmFr5DsJPVYS7gjOPpYZd-iITLQYbK8YTZGMZi
+              - heading "Tips for Driving High-quality Conversations and Improving ..." [level=3] [ref=f21e366]
+              - generic [ref=f21e372]:
+                - generic [ref=f21e373]: Facebook
+                - generic [ref=f21e375]: https://www.facebook.com › help
+            - generic [ref=f21e377]:
+              - generic [ref=f21e378]: ·
+              - link "Traducir esta página" [ref=f21e379] [cursor=pointer]:
+                - /url: /goto?url=CAESwAEB6zswFSyXw_F0tv0ctxsRA81NN_T2SO9UgPAPWv2KiykwG4JSTvKNR4vCk8MVh3l7gElzJNrs2HsubozZiGCE6AepnZaHxWZxfyjyYve4FyekvF7EoIidOZjixfs3N_IFBpwwhbb_FfR-VcfzgEUmDVVlb3CaV0guGSk3zMdeZL8zCFgcOVrIGogqUgGEnt_H5BjGPp7QUbxKF5D1Ugp56JoFhY5ObuAi5NE3Xcz-j6BpqU0H-7wjg68Brxa_Fqg
+            - button "Acerca de este resultado" [ref=f21e384] [cursor=pointer]
+          - generic [ref=f21e391]:
+            - emphasis [ref=f21e392]: Start messaging customers on WhatsApp Business Platform
+            - text: "· Permalink · Share. More in this section: CREATE & MANAGE ACCOUNTS. Basics. About WhatsApp business ..."
+        - generic [ref=f21e396]:
+          - generic [ref=f21e399]:
+            - link "Display name guidelines for the WhatsApp Business platform Facebook https://en-gb.facebook.com › help" [ref=f21e401] [cursor=pointer]:
+              - /url: /goto?url=CAEScAHrOzAVaRJWIQ9oULV09xRJsxqYjGJI9gsG6x64yFh79YwifkZIdOByU8KsVeU6a8nf665CDd9hiAMYpdvi_mWMccZkWpFQp-f1ZFqB1joztz5SsF00pSCJrYU1ZObHntX33lPRTTunVqDeS6D0g6A
+              - heading "Display name guidelines for the WhatsApp Business platform" [level=3] [ref=f21e402]
+              - generic [ref=f21e408]:
+                - generic [ref=f21e409]: Facebook
+                - generic [ref=f21e411]: https://en-gb.facebook.com › help
+            - generic [ref=f21e413]:
+              - generic [ref=f21e414]: ·
+              - link "Traducir esta página" [ref=f21e415] [cursor=pointer]:
+                - /url: /goto?url=CAESwgEB6zswFedawyJkA5_xVLrwYm8gb59PxJ11gs2qp6KDoVLxL2IlnR3qrbV-nGhznLAOqgncbj7WA5-htidDtGSPgzZtzEwzg_THaS_VBDUKAbOWTW_mIO-6em-g5vgjJtR1yvvjOx39gome74IskPOkoBSJqGksbCAqr-oV3vyNeYDCjkXRC78A3DpGWbHGh791OekQwRDi6o4udGCsRIf4Ycs_j-YfVIXs8KYTf2M0YxWbqr0yORXl_AEW_66xFrHDGQ
+            - button "Acerca de este resultado" [ref=f21e420] [cursor=pointer]
+          - generic [ref=f21e427]:
+            - emphasis [ref=f21e428]: Start messaging customers on WhatsApp Business platform
+            - text: · About your WhatsApp Business phone number's quality rating · Capacity, quality rating and messaging ...
+        - generic [ref=f21e432]:
+          - generic [ref=f21e435]:
+            - link "About Different Types of WhatsApp Business Account Facebook https://www.facebook.com › help" [ref=f21e437] [cursor=pointer]:
+              - /url: /goto?url=CAESbwHrOzAV-rTW7Pun70FGuDZN7Iu9sNeZRidynLn7cO4regACIAbMLmK3cTbwAnNT_MOc7FNxz3MJhO2eW2GWlkZkTs5P6SpYOvVIopFr8nUhV1v8f1sKQZw3pCMLajpl7NAhL8dV_YQOaTMeuj6N3A
+              - heading "About Different Types of WhatsApp Business Account" [level=3] [ref=f21e438]
+              - generic [ref=f21e444]:
+                - generic [ref=f21e445]: Facebook
+                - generic [ref=f21e447]: https://www.facebook.com › help
+            - generic [ref=f21e449]:
+              - generic [ref=f21e450]: ·
+              - link "Traducir esta página" [ref=f21e451] [cursor=pointer]:
+                - /url: /goto?url=CAESwQEB6zswFZuCD79rLCBXkFVKj1lVSFPmPus1guI82TtWR5bm5-HB3jFhJvIwCO5OjBEcLt00WEOfRtoS9etVX1-7if8agc6_tAgdwv0XTnTMS1fLu1rFYHh31LNaSLzt8_j0B2Zeqjf3DNuQ6v7kaUAXIKU0zzbm45zhpHgyaq2DhVpS43KTcwVv9WDDRGnE5Jbfj3Gz5_ZhMiESayegjCbvgwh4a8Upge3G28ODd337ZC4BmuD7YPgh0nN_H2EMeVJh
+            - button "Acerca de este resultado" [ref=f21e456] [cursor=pointer]
+          - generic [ref=f21e463]:
+            - emphasis [ref=f21e464]: Start messaging customers on WhatsApp Business Platform
+            - text: · Create message templates for your WhatsApp Business account · Permalink · Share. More in this section ...
+        - generic [ref=f21e468]:
+          - generic [ref=f21e471]:
+            - link "Delete message templates for your WhatsApp Business ... Facebook https://www.facebook.com › help" [ref=f21e473] [cursor=pointer]:
+              - /url: /goto?url=CAESfAHrOzAVtOWqSKXRNgGKzrIRYPDlPqZNPgS5SGEsxvBUN4AMNVj_oUFlM8vt7ZoYL6XI3zA2i6hr1_2ACmrIJzTzLECs5J1Y2FjlbnWcbGyX6pUjA7FpSRXeiI5qZaMjq1_5NeUoFzGIK_ZqlaTNwjAQt3pXJ7By3Qrulvo
+              - heading "Delete message templates for your WhatsApp Business ..." [level=3] [ref=f21e474]
+              - generic [ref=f21e480]:
+                - generic [ref=f21e481]: Facebook
+                - generic [ref=f21e483]: https://www.facebook.com › help
+            - generic [ref=f21e485]:
+              - generic [ref=f21e486]: ·
+              - link "Traducir esta página" [ref=f21e487] [cursor=pointer]:
+                - /url: /goto?url=CAES0AEB6zswFQSghurQxDBqA0LcegmeolHzz8LJF4IOaDV3rF6ykVzogQ-JyZmnVsP70O439dZhm8r98qMpswClqu0rPqMlaTV3tuzeAzZwQKGcyUg3psoWL8S8mtJIF95nn2S0MUKyy-9onV5pR9IlvgU5cY2dcftcroNO6tW_YaYRm_f6JC9jjc3blxcQz2TFT3YWzca6TzL-WJihWtFxl2fhQxIYorSaoGh-cA4LwvUC7X6uKOB9bL-59amzpsIkuNjImtz1J4GDbhXdJJusqyeL
+            - button "Acerca de este resultado" [ref=f21e492] [cursor=pointer]
+          - generic [ref=f21e499]:
+            - emphasis [ref=f21e500]: Start messaging customers on WhatsApp Business platform
+            - text: "· Permalink · Share. More in this section: CREATE AND MANAGE ACCOUNTS. Basics. About WhatsApp business ..."
+      - navigation [ref=f21e503]:
+        - heading "Navegación de páginas" [level=1] [ref=f21e504]
+        - text: "1"
+        - link "Page 2" [ref=f21e507] [cursor=pointer]:
+          - /url: /search?q=site:facebook.com/business/help+%22Start+messaging+customers+on+WhatsApp+Business+Platform%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvebeKMOq-dmsG6S9rvp_OQRRKjuQ:1788577190487&ei=poWbarKlHb685OUPuYamqAc&start=10&sa=N&sstk=AS6-VmKbySZRmaqpetdud_8CgYZMTjZvNLydepCBtJ1kunOebTXGMe_1jU4J3Wqdr20ebCP3GNffa-7uDThofrTX4M5Rt-O8h-D6yg&ved=2ahUKEwiykN6gudaWAxU-HrkGHTmDCXUQ8tMDegQIMxAE
+          - text: "2"
+        - heading [level=2] [ref=f21e509]:
+          - link "Siguiente" [ref=f21e510] [cursor=pointer]:
+            - /url: /search?q=site:facebook.com/business/help+%22Start+messaging+customers+on+WhatsApp+Business+Platform%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvebeKMOq-dmsG6S9rvp_OQRRKjuQ:1788577190487&ei=poWbarKlHb685OUPuYamqAc&start=10&sa=N&sstk=AS6-VmKbySZRmaqpetdud_8CgYZMTjZvNLydepCBtJ1kunOebTXGMe_1jU4J3Wqdr20ebCP3GNffa-7uDThofrTX4M5Rt-O8h-D6yg&ved=2ahUKEwiykN6gudaWAxU-HrkGHTmDCXUQ8NMDegQIMxAG
+      - navigation
+    - contentinfo [ref=f21e513]:
+      - heading "Vínculos a pie de página" [level=1] [ref=f21e514]
+      - generic [ref=f21e518]:
+        - generic [ref=f21e520]:
+          - text: Argentina
+          - generic [ref=f21e522]:
+            - button "Capital, San Miguel de Tucumán, Tucumán - A través de tu dirección IP" [ref=f21e524] [cursor=pointer]:
+              - generic [ref=f21e525]: Capital, San Miguel de Tucumán, Tucumán
+              - generic [ref=f21e527]:
+                - text: "-"
+                - generic [ref=f21e528]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=f21e530] [cursor=pointer]
+        - generic [ref=f21e533]:
+          - link "Ayuda" [ref=f21e534] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - button "Enviar comentarios" [ref=f21e536] [cursor=pointer]
+          - link "Privacidad" [ref=f21e538] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=f21e539] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

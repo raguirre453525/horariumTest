@@ -1,0 +1,93 @@
+- generic [active] [ref=f38e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=f38e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=f38e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=f38e8]:
+    - search [ref=f38e9]:
+      - generic [ref=f38e11]:
+        - link "Ir a la Página principal de Google" [ref=f38e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=es-419&sa=X&ved=2ahUKEwiLmLfPudaWAxUvErkGHX7VA5MQPHoECAYQBA
+        - generic [ref=f38e21]:
+          - generic [ref=f38e22]:
+            - combobox "Buscar" [ref=f38e25]: site:developers.facebook.com/docs/development/app mode development live publish app site:developers.facebook.com/docs/development/app mode development live publish app
+            - generic [ref=f38e26]:
+              - button "Borrar" [ref=f38e28] [cursor=pointer]
+              - generic [ref=f38e33]:
+                - button "Búsqueda por voz" [ref=f38e34] [cursor=pointer]
+                - button "Búsqueda por imagen" [ref=f38e37] [cursor=pointer]
+          - button "Buscar" [ref=f38e40] [cursor=pointer]
+    - generic [ref=f38e45]:
+      - button "Configuración" [ref=f38e47] [cursor=pointer]
+      - button "Compartir" [ref=f38e53] [cursor=pointer]
+      - generic [ref=f38e59]:
+        - button "Apps de Google" [ref=f38e61] [cursor=pointer]
+        - link "Acceder" [ref=f38e66] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dsite%253Adevelopers.facebook.com%252Fdocs%252Fdevelopment%252Fapp%2Bmode%2Bdevelopment%2Blive%2Bpublish%2Bapp&ec=futura_srp_og_si_72236_p
+  - generic [ref=f38e68]:
+    - navigation [ref=f38e74]:
+      - generic [ref=f38e80]:
+        - list [ref=f38e81]:
+          - listitem [ref=f38e82]:
+            - link "Modo IA" [ref=f38e85] [cursor=pointer]:
+              - /url: /search?q=site:developers.facebook.com/docs/development/app+mode+development+live+publish+app&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnuI3gVWijjh_kxKu6d0m_fIhBXnJw:1788577288413&udm=50&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agY6fR1i4bQQrbMOkkz-SiaJ6F1EgkdpbdrPGt4zaE6lWbKDKK-xv9BUfgnzXAsz5efZBXuRG9S3u4yGUpm2nPaeiPkubnGuivpeFQZq68zQzBLO9Y5iKuue2iNKGxFWqXLRenS0g&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwiLmLfPudaWAxUvErkGHX7VA5MQ2J8OegQIEBAD
+          - listitem [ref=f38e89]:
+            - link "Todo" [disabled] [ref=f38e90]
+          - listitem [ref=f38e93]:
+            - link "Videos" [ref=f38e94] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnuI3gVWijjh_kxKu6d0m_fIhBXnJw:1788577288413&udm=7&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agY6fR1i4bQQrbMOkkz-SiaJ6F1EgkdpbdrPGt4zaE6lWbKDKK-xv9BUfgnzXAsz5efZBXuRG9S3u4yGUpm2nPaeiPkubnGuivpeFQZq68zQzBLO9Y5iKuue2iNKGxFWqXLRenS0g&q=site:developers.facebook.com/docs/development/app+mode+development+live+publish+app&sa=X&ved=2ahUKEwiLmLfPudaWAxUvErkGHX7VA5MQtKgLegQIFBAB
+          - listitem [ref=f38e97]:
+            - link "Imágenes" [ref=f38e98] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnuI3gVWijjh_kxKu6d0m_fIhBXnJw:1788577288413&udm=2&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agY6fR1i4bQQrbMOkkz-SiaJ6F1EgkdpbdrPGt4zaE6lWbKDKK-xv9BUfgnzXAsz5efZBXuRG9S3u4yGUpm2nPaeiPkubnGuivpeFQZq68zQzBLO9Y5iKuue2iNKGxFWqXLRenS0g&q=site:developers.facebook.com/docs/development/app+mode+development+live+publish+app&sa=X&ved=2ahUKEwiLmLfPudaWAxUvErkGHX7VA5MQtKgLegQIFhAB
+          - listitem [ref=f38e101]:
+            - link "Shopping" [ref=f38e102] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnuI3gVWijjh_kxKu6d0m_fIhBXnJw:1788577288413&udm=28&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agY6fR1i4bQQrbMOkkz-SiaJ6F1EgkdpbdrPGt4zaE6lWbKDKK-xv9BUfgnzXAsz5efZBXuRG9S3u4yGUpm2nPaeiPkubnGuivpeFQZq68zQzBLO9Y5iKuue2iNKGxFWqXLRenS0g&q=site:developers.facebook.com/docs/development/app+mode+development+live+publish+app&ved=1t:220175&ictx=111
+          - listitem [ref=f38e105]:
+            - link "Videos cortos" [ref=f38e106] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnuI3gVWijjh_kxKu6d0m_fIhBXnJw:1788577288413&udm=39&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agY6fR1i4bQQrbMOkkz-SiaJ6F1EgkdpbdrPGt4zaE6lWbKDKK-xv9BUfgnzXAsz5efZBXuRG9S3u4yGUpm2nPaeiPkubnGuivpeFQZq68zQzBLO9Y5iKuue2iNKGxFWqXLRenS0g&q=site:developers.facebook.com/docs/development/app+mode+development+live+publish+app&sa=X&ved=2ahUKEwiLmLfPudaWAxUvErkGHX7VA5MQs6gLegQIEhAB
+          - listitem [ref=f38e109]:
+            - link "Noticias" [ref=f38e110] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnuI3gVWijjh_kxKu6d0m_fIhBXnJw:1788577288413&q=site:developers.facebook.com/docs/development/app+mode+development+live+publish+app&tbm=nws&source=lnms&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agY6fR1i4bQQrbMOkkz-SiaJ6F1EgkdpbdrPGt4zaE6lWbKDKK-xv9BUfgnzXAsz5efZBXuRG9S3u4yGUpm2nPaeiPkubnGuivpeFQZq68zQzBLO9Y5iKuue2iNKGxFWqXLRenS0g&sa=X&ved=2ahUKEwiLmLfPudaWAxUvErkGHX7VA5MQ0pQJegQIFRAB
+          - listitem [ref=f38e113]:
+            - button [ref=f38e114] [cursor=pointer]:
+              - generic "Más filtros" [ref=f38e115]: Más
+        - button "Herramientas" [ref=f38e122] [cursor=pointer]
+    - heading "Resultados de búsqueda" [level=1] [ref=f38e129]
+    - main [ref=f38e135]:
+      - generic [ref=f38e137]:
+        - generic [ref=f38e139]:
+          - heading [level=3] [ref=f38e140]:
+            - text: No se han encontrado resultados para tu búsqueda (
+            - emphasis [ref=f38e142]: site:developers.facebook.com/docs/development/app mode development live publish app
+            - text: ).
+          - paragraph [ref=f38e143]: "Sugerencias:"
+          - list [ref=f38e144]:
+            - listitem [ref=f38e145]: Asegúrate de que todas las palabras estén escritas correctamente.
+            - listitem [ref=f38e146]: Prueba diferentes palabras clave.
+            - listitem [ref=f38e147]: Prueba palabras clave más generales.
+            - listitem [ref=f38e148]: Prueba menos palabras clave.
+          - img "Imagen de un yeti pescando en el hielo" [ref=f38e152]
+        - navigation
+      - navigation
+    - contentinfo [ref=f38e444]:
+      - heading "Vínculos a pie de página" [level=1] [ref=f38e445]
+      - generic [ref=f38e449]:
+        - generic [ref=f38e451]:
+          - text: Argentina
+          - generic [ref=f38e453]:
+            - button "Capital, San Miguel de Tucumán, Tucumán - Según tu actividad anterior" [ref=f38e455] [cursor=pointer]:
+              - generic [ref=f38e456]: Capital, San Miguel de Tucumán, Tucumán
+              - generic [ref=f38e458]:
+                - text: "-"
+                - generic [ref=f38e459]: Según tu actividad anterior
+            - text: "-"
+            - button "Actualizar ubicación" [ref=f38e461] [cursor=pointer]
+        - generic [ref=f38e464]:
+          - link "Ayuda" [ref=f38e465] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - button "Enviar comentarios" [ref=f38e467] [cursor=pointer]
+          - link "Privacidad" [ref=f38e469] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=f38e470] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

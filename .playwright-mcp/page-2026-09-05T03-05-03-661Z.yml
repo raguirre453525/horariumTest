@@ -1,0 +1,339 @@
+- generic [active] [ref=f42e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=f42e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=f42e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=f42e8]:
+    - search [ref=f42e9]:
+      - generic [ref=f42e11]:
+        - link "Ir a la Página principal de Google" [ref=f42e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=es-419&sa=X&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQPHoECAYQBA
+        - generic [ref=f42e21]:
+          - generic [ref=f42e22]:
+            - combobox "Buscar" [ref=f42e25]: Meta for Developers "Switch to Live" app mode WhatsApp Meta for Developers "Switch to Live" app mode WhatsApp
+            - generic [ref=f42e26]:
+              - button "Borrar" [ref=f42e28] [cursor=pointer]
+              - generic [ref=f42e33]:
+                - button "Búsqueda por voz" [ref=f42e34] [cursor=pointer]
+                - button "Búsqueda por imagen" [ref=f42e37] [cursor=pointer]
+          - button "Buscar" [ref=f42e40] [cursor=pointer]
+    - generic [ref=f42e45]:
+      - button "Configuración" [ref=f42e47] [cursor=pointer]
+      - button "Compartir" [ref=f42e53] [cursor=pointer]
+      - generic [ref=f42e59]:
+        - button "Apps de Google" [ref=f42e61] [cursor=pointer]
+        - link "Acceder" [ref=f42e66] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DMeta%2Bfor%2BDevelopers%2B%2522Switch%2Bto%2BLive%2522%2Bapp%2Bmode%2BWhatsApp&ec=futura_srp_og_si_72236_p
+  - generic [ref=f42e68]:
+    - navigation [ref=f42e74]:
+      - generic [ref=f42e80]:
+        - list [ref=f42e81]:
+          - listitem [ref=f42e82]:
+            - link "Modo IA" [ref=f42e85] [cursor=pointer]:
+              - /url: /search?q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&udm=50&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeQJlIvRtBNPtwlTlFTA6J7NaWKGBWfpKnYyY_9supU6ai_AposGmKhqzeeTcv1eWlTenNASJYFLWGY9sM8nlNQVP7Tc1_FmJYxcqdksWzgejzBRZssvOI0C7WXG_bRH2_ta_sAU_k1fPHLIKrkLaofT0-_5A&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ2J8OegQIEhAD
+          - listitem [ref=f42e89]:
+            - link "Todo" [disabled] [ref=f42e90]
+          - listitem [ref=f42e93]:
+            - link "Videos" [ref=f42e94] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&udm=7&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeQJlIvRtBNPtwlTlFTA6J7NaWKGBWfpKnYyY_9supU6ai_AposGmKhqzeeTcv1eWlTenNASJYFLWGY9sM8nlNQVP7Tc1_FmJYxcqdksWzgejzBRZssvOI0C7WXG_bRH2_ta_sAU_k1fPHLIKrkLaofT0-_5A&q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&sa=X&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQtKgLegQIFBAB
+          - listitem [ref=f42e97]:
+            - link "Imágenes" [ref=f42e98] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&udm=2&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeQJlIvRtBNPtwlTlFTA6J7NaWKGBWfpKnYyY_9supU6ai_AposGmKhqzeeTcv1eWlTenNASJYFLWGY9sM8nlNQVP7Tc1_FmJYxcqdksWzgejzBRZssvOI0C7WXG_bRH2_ta_sAU_k1fPHLIKrkLaofT0-_5A&q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&sa=X&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQtKgLegQIFRAB
+          - listitem [ref=f42e101]:
+            - link "Noticias" [ref=f42e102] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&tbm=nws&source=lnms&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeQJlIvRtBNPtwlTlFTA6J7NaWKGBWfpKnYyY_9supU6ai_AposGmKhqzeeTcv1eWlTenNASJYFLWGY9sM8nlNQVP7Tc1_FmJYxcqdksWzgejzBRZssvOI0C7WXG_bRH2_ta_sAU_k1fPHLIKrkLaofT0-_5A&sa=X&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ0pQJegQIFhAB
+          - listitem [ref=f42e105]:
+            - link "Shopping" [ref=f42e106] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&udm=28&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeQJlIvRtBNPtwlTlFTA6J7NaWKGBWfpKnYyY_9supU6ai_AposGmKhqzeeTcv1eWlTenNASJYFLWGY9sM8nlNQVP7Tc1_FmJYxcqdksWzgejzBRZssvOI0C7WXG_bRH2_ta_sAU_k1fPHLIKrkLaofT0-_5A&q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&ved=1t:220175&ictx=111
+          - listitem [ref=f42e109]:
+            - link "Videos cortos" [ref=f42e110] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&udm=39&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeQJlIvRtBNPtwlTlFTA6J7NaWKGBWfpKnYyY_9supU6ai_AposGmKhqzeeTcv1eWlTenNASJYFLWGY9sM8nlNQVP7Tc1_FmJYxcqdksWzgejzBRZssvOI0C7WXG_bRH2_ta_sAU_k1fPHLIKrkLaofT0-_5A&q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&sa=X&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQs6gLegQIGBAB
+          - listitem [ref=f42e113]:
+            - button [ref=f42e114] [cursor=pointer]:
+              - generic "Más filtros" [ref=f42e115]: Más
+        - button "Herramientas" [ref=f42e122] [cursor=pointer]
+    - heading "Resultados de búsqueda" [level=1] [ref=f42e129]
+    - generic [ref=f42e134]:
+      - generic [ref=f42e153]:
+        - heading "Pensando" [level=2] [ref=f42e157]
+        - progressbar "Generando" [ref=f42e160]
+      - main [ref=f42e162]:
+        - generic [ref=f42e166]:
+          - generic [ref=f42e169]:
+            - heading "Web results" [level=2] [ref=f42e170]
+            - generic [ref=f42e171]:
+              - generic [ref=f42e174]:
+                - link "All apps must be set to Live Mode for production use Meta for Developers https://developers.facebook.com › ..." [ref=f42e176] [cursor=pointer]:
+                  - /url: /goto?url=CAESigEB6zswFUhHETTkRFK48orxpYCUJ6dHVk1Pl9AFMIQhxMEyeH8isHngI2P-mYXXzggxEMa9DJnQrTbTamnkHTCmf2GZeqoGwUh7beZ6_9h_7eSkM2UsngsulAGbujj4FfXcGMPcSS0Mtxrg-Fg-tcGv5_Vn-K7ZFNPHHVyH3D2wb_GsBEO-xlEB0uE
+                  - heading "All apps must be set to Live Mode for production use" [level=3] [ref=f42e177]
+                  - generic [ref=f42e183]:
+                    - generic [ref=f42e184]: Meta for Developers
+                    - generic [ref=f42e186]: https://developers.facebook.com › ...
+                - generic [ref=f42e188]:
+                  - generic [ref=f42e189]: ·
+                  - link "Traducir esta página" [ref=f42e190] [cursor=pointer]:
+                    - /url: /goto?url=CAES3AEB6zswFX_HmeaNwE6esiHsu5Ukjn5Z6Pip587c-TvHpaqa06bXEwH1GgJ7E-HiU9dJN_mAvrbnR5UGZX0CEht0JMw3roxDdRS7OTkCZkljsQ05Nbde-ZSDbMp4oVThPcUp8XnASpXGS_J3dgatsen3eAAqK_WeRN_345LgIUMTSb8nQMCLOk1tofuPBeLKEBvg-K52qCB7v4A6vjr7I_EYATHk0ta6uaPNaYPGWlgV318v1ZIfIhEc6FNxrAoGgLZnUa-YKJ0K18m_fzFLdcO-CxBzM8AIesxSqhCU
+                - button "Acerca de este resultado" [ref=f42e195] [cursor=pointer]
+              - generic [ref=f42e202]:
+                - text: After completing
+                - emphasis [ref=f42e203]: App
+                - text: Review, switch your
+                - emphasis [ref=f42e204]: app
+                - text: to “Live”. Switching to Live
+                - emphasis [ref=f42e205]: Mode
+                - text: . To
+                - emphasis [ref=f42e206]: switch to Live Mode
+                - text: ", go to your"
+                - emphasis [ref=f42e207]: App
+                - text: Dashboard and find the toggle at the top ...
+          - generic [ref=f42e211]:
+            - generic [ref=f42e214]:
+              - link "Error when generating access token for WhatsApp Business API Meta for Developers https://developers.facebook.com › ..." [ref=f42e216] [cursor=pointer]:
+                - /url: /goto?url=CAESiAEB6zswFTMyXZvYW9CZPsC1hoQVKp5itO-Y07Ef5cHjl9hnB-__WW_vGSUDm7Ry97KQ2ZOzeL0BAMmWI1ClrV2mF86Pfmy3lCLjHmKKDBFXRVc6bWUHhj8OsjKZL1DhSxW5e6UdyXg8W8hkno_gnEQqok1CtCXLGrau3vvRKUM2t2pLMbbXdlU-
+                - heading "Error when generating access token for WhatsApp Business API" [level=3] [ref=f42e217]
+                - generic [ref=f42e223]:
+                  - generic [ref=f42e224]: Meta for Developers
+                  - generic [ref=f42e226]: https://developers.facebook.com › ...
+              - generic [ref=f42e228]:
+                - generic [ref=f42e229]: ·
+                - link "Traducir esta página" [ref=f42e230] [cursor=pointer]:
+                  - /url: /goto?url=CAES3wEB6zswFek30687v5Rl2yixduQlLFTJ7u7rF06QPZGAOv6ja64L5n1psZC4TXT1N37-1LiVBZ3u_6kAPyCxQVPoXm5bIOy0PdMdfbpnljUNuTIcJOQY96NLkZ6rltFXv7BNpZMMyWjMEbUEXXEEMJnwo2U96LTId5wuO84dUr_POC1OU9r2EIHgRPVCEh5tg90RH9PkVxUEthvgq6NbgDh1H9yIrLzlond_oLS8n_kKLBDoF877Ua0O3x-7UycKytYuOLVfcHntNrBTulkVtzgfEoBG7nw9hxPne66ckhCY
+              - button "Acerca de este resultado" [ref=f42e235] [cursor=pointer]
+            - generic [ref=f42e242]:
+              - text: Select the
+              - emphasis [ref=f42e243]: app
+              - text: (api oficial madi) in development
+              - emphasis [ref=f42e244]: mode
+              - text: . Navigate to
+              - emphasis [ref=f42e245]: WhatsApp
+              - text: ...
+              - emphasis [ref=f42e246]: switch to live mode
+              - text: . I'd really appreciate any help or guidance you can ...
+          - generic [ref=f42e250]:
+            - generic [ref=f42e253]:
+              - link "🤖💬 WhatsApp Cloud API Integration in 2026 | by Akash Tyagi Medium · Akash Tyagi hace 6 meses" [ref=f42e255] [cursor=pointer]:
+                - /url: /goto?url=CAESiQEB6zswFdMe-2myo1Xg_R_mRxXOEiFc96cfH-nuVQHyTQjMGMKmnBXWkOMj7wniDRMtYtVKUqg_utvr6mB1aQ0Oc7fBsVlA0BoJTYGW-w6s766Um1DZPx5BkbyPxqxOLoc5k4hC7b9dwPTihkfTbd1AQVRRKhkuTKAea19vGApz9E-yO0kpjZXBWw
+                - heading "🤖💬 WhatsApp Cloud API Integration in 2026 | by Akash Tyagi" [level=3] [ref=f42e256]
+                - generic [ref=f42e262]:
+                  - generic [ref=f42e263]: Medium · Akash Tyagi
+                  - generic [ref=f42e265]: hace 6 meses
+              - button "Acerca de este resultado" [ref=f42e271] [cursor=pointer]
+            - generic [ref=f42e278]:
+              - text: Go to
+              - emphasis [ref=f42e279]: Meta for Developers
+              - text: and create a Business-type
+              - emphasis [ref=f42e280]: app
+              - text: . Add ...
+              - emphasis [ref=f42e281]: Switch to Live Mode
+              - text: Provision real customer numbers. 8. Production ...
+          - generic [ref=f42e285]:
+            - generic [ref=f42e288]:
+              - link "How to Connecting WhatsApp Business Cloud with Make Make Community https://community.make.com › h..." [ref=f42e290] [cursor=pointer]:
+                - /url: /goto?url=CAESjwEB6zswFfkUowE4PVjtsMdBpl9hOS97UTSNRxtM18kqQ0NB-XGbU3nN2BfuuOvrTNFevqJWddeel7DQa25mJnrYUyzqjAd2KQH_X0WrZjPeAC4ao7NeHIAWlzrQJ1djbvEBMGnra7AFgus1tpVROkBchZrV07-os8MZQDvzNESQEpmx-70c9RLbPuIh_u8GFw
+                - heading "How to Connecting WhatsApp Business Cloud with Make" [level=3] [ref=f42e291]
+                - generic [ref=f42e297]:
+                  - generic [ref=f42e298]: Make Community
+                  - generic [ref=f42e300]: https://community.make.com › h...
+              - generic [ref=f42e302]:
+                - generic [ref=f42e303]: ·
+                - link "Traducir esta página" [ref=f42e304] [cursor=pointer]:
+                  - /url: /goto?url=CAES4QEB6zswFZXHOr71875q4RZYDtWWYxdr_ViL-gZVfb1JWnV7RT62gp5EMTFhP--PrwmQhFsqH20Fx4iaAhzQQrfzysM_D_ZVJnJxdOajqtvIjV1QEg4LRbTbwVyM2s5ksW6d2Tu5ua1JHyt3KBDlsKrwJECzJ6wb_6RtiYwjlUqX_ghENr5cx43mY_ES3OJRImYYSpN_SsUpJPs4dlcbpVje_VTKwHRR8Qberr1uwTwOiChND1nMv_mBLMW2ae6zTL-8bkcWBllPW4GAnf67siFJUmf1wvXUmzTsgzU5IywAMPE
+              - button "Acerca de este resultado" [ref=f42e309] [cursor=pointer]
+            - generic [ref=f42e315]:
+              - generic [ref=f42e316]: 26 mar 2026 —
+              - generic [ref=f42e317]:
+                - emphasis [ref=f42e318]: App Mode
+                - text: ": Development (cannot"
+                - emphasis [ref=f42e319]: switch to Live
+                - text: "- says Advanced Access needed) ... Make doesnt recognize my"
+                - emphasis [ref=f42e320]: app
+                - text: of
+                - emphasis [ref=f42e321]: Meta developers
+                - text: for
+                - emphasis [ref=f42e322]: whatsapp
+                - text: ...
+          - generic [ref=f42e326]:
+            - generic [ref=f42e329]:
+              - link "WhatsApp Business API Setup - Wappa Documentation Mimeia https://wappa.mimeia.com › docs" [ref=f42e331] [cursor=pointer]:
+                - /url: /goto?url=CAESawHrOzAVCXPNxmMvnCerbld5dBqLDmVaZ9NM9y2OXAH-0qxYNjKmbq1KttLEARPsxJvRpgIDTFRHvEgu_HSw_LaRH4AwEavtI9eBFGxd27z0woBpDFoBAao_i3J5yCSL9BpI74CMyxubGHTR
+                - heading "WhatsApp Business API Setup - Wappa Documentation" [level=3] [ref=f42e332]
+                - generic [ref=f42e338]:
+                  - generic [ref=f42e339]: Mimeia
+                  - generic [ref=f42e341]: https://wappa.mimeia.com › docs
+              - generic [ref=f42e343]:
+                - generic [ref=f42e344]: ·
+                - link "Traducir esta página" [ref=f42e345] [cursor=pointer]:
+                  - /url: /goto?url=CAESvQEB6zswFT36OXSkCFBpk4ijitqUMxdiGyabRDhITmsoaq4eHuXvArev2rYQkrTLYxeq2dAhYWrZ1ng5lkTa_AJxzt2UF-YDE3esEkV7yLyPoAzv3yx-PJKRmAXPDHiuKAJTUuZSFbLmcM6HfHncRi9D8JFvpTs51set3ez8ijNj80EBn6Cp7o1MhCe3qE69tYCL8kErRPMeNo1DA3snx6cADlVpmWSVxCM9sVZtjDWNB00HrzztqhoU4m2g3zg
+              - button "Acerca de este resultado" [ref=f42e350] [cursor=pointer]
+            - generic [ref=f42e357]:
+              - text: "Step 2: Create a Business"
+              - emphasis [ref=f42e358]: App
+              - text: ¶. In
+              - emphasis [ref=f42e359]: Meta for Developers
+              - text: dashboard, click "Create
+              - emphasis [ref=f42e360]: App
+              - text: "\" ... Solution:"
+              - emphasis [ref=f42e361]: Switch to Live mode
+              - text: in
+              - emphasis [ref=f42e362]: App
+              - text: Settings → Basic →
+              - emphasis [ref=f42e363]: App Mode
+              - text: . 7 ...
+          - generic [ref=f42e367]:
+            - generic [ref=f42e370]:
+              - link "Publish - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f42e372] [cursor=pointer]:
+                - /url: /goto?url=CAESeQHrOzAVtkzvhhxUW1b7wQPO4jqQt0MaWAkU2DK1Me8wxkdN79N8Rij1aoPxCckruOwFp1goR2qtzXt6Gbz-4SXmtTgmP2WkH9UZwBVY1l878hjbeYwxxEB2ka-CBGgj-1ynAU3BG03wIxdxKa4av85yCXniLCnrwqk
+                - heading "Publish - Meta for Developers" [level=3] [ref=f42e373]
+                - generic [ref=f42e379]:
+                  - generic [ref=f42e380]: Meta for Developers
+                  - generic [ref=f42e382]: https://developers.facebook.com › ...
+              - generic [ref=f42e384]:
+                - generic [ref=f42e385]: ·
+                - link "Traducir esta página" [ref=f42e386] [cursor=pointer]:
+                  - /url: /goto?url=CAESywEB6zswFVCTnmicmJ6HEHT67ysS4GKpMkIxwYKpCS40QYlPnSqTqwUNKhAXgQFZzIwm3hEjuADMYVl5FUDl3yKHJn4aZ2mKObmbMI-u6jGCb_GdUNZgebJ2amaSdjJlRSaZOG0OhAkoQxd6cVWrFxO7iRAdNcTZxWsbbvN0oVrhuCxcfGTLjkb0xS-YsqpFUWfnH0EF-f28i2SAM8RmxL1gVXbqM3pWBl6kJE_nH5x7LRCidKcc_ubPwDTXeLGQRYF1quJ3Q5KUR3OzXQ
+              - button "Acerca de este resultado" [ref=f42e391] [cursor=pointer]
+            - generic [ref=f42e398]:
+              - text: However, you should not
+              - emphasis [ref=f42e399]: switch to Live mode
+              - text: until all of the permissions and ... If you switch your
+              - emphasis [ref=f42e400]: app
+              - text: to Live
+              - emphasis [ref=f42e401]: mode
+              - text: prematurely, your
+              - emphasis [ref=f42e402]: app
+              - text: will be ...
+          - generic [ref=f42e406]:
+            - generic [ref=f42e409]:
+              - link "Need help with n8n and WhatsApp · AI Automation Society Skool https://www.skool.com › need-h..." [ref=f42e411] [cursor=pointer]:
+                - /url: /goto?url=CAESjgEB6zswFfMJ22DYyl13bpNuBHna6JLDOenI6kaTmKaPFSxUuW9HTMLAWs_V6B3ENsR_mP7bmxjsYnp2AMOV-CWpJKKL4NSx09p6_dirqxUIocRHBGQn7MtQDFYX57B_zY4MLIbdB6ZJZ5t4idW-2wJfB1x0oj78hcbBPtMKSBxGOQyyVovB2w50KfaUL9DU
+                - heading "Need help with n8n and WhatsApp · AI Automation Society" [level=3] [ref=f42e412]
+                - generic [ref=f42e418]:
+                  - generic [ref=f42e419]: Skool
+                  - generic [ref=f42e421]: https://www.skool.com › need-h...
+              - generic [ref=f42e423]:
+                - generic [ref=f42e424]: ·
+                - link "Traducir esta página" [ref=f42e425] [cursor=pointer]:
+                  - /url: /goto?url=CAES4gEB6zswFZdWULbHIkbIxHQKg49AVzF0paaT1dLPrCqx6T6YLjHK6AFpqvCgDGemGt_Oo1QDjjLgtUwaEgh7-WIXUAmYtu5zNsCBAXB2DBcZbwXKT6BT3Hs11TJBJOvCr-pjEffidbbL0nArcSg6yaqL0ckEGJ4Aile3YIjPpnzWPUUYE5ufbou_yYnV-8uO3D6eTVKj69fNwtU0E_4VvHscAEzW15Wbn1zSgpQDzkiN1O7pIZD_-niHfovBxdZwshsh__JH5J-xkSYjrSMB4yyGgl9lwk1QCr3Rwc3h9S1Dv4Rz
+              - button "Acerca de este resultado" [ref=f42e430] [cursor=pointer]
+            - generic [ref=f42e437]:
+              - text: Yes you need to
+              - emphasis [ref=f42e438]: switch to Live mode
+              - text: . Dev
+              - emphasis [ref=f42e439]: mode
+              - text: only lets you message numbers you manually add as testers. 2. That token from the API Setup page is temporary ...
+          - generic [ref=f42e443]:
+            - generic [ref=f42e446]:
+              - link "WhatsApp Trigger not receiving real messages - Questions n8n Community https://community.n8n.io › what..." [ref=f42e448] [cursor=pointer]:
+                - /url: /goto?url=CAESjAEB6zswFVRcWvZfl1AsS4GbhjalfW5fQ70YL7yl8pULTPfTZT9UXmYdNnUiOKrlZbEUYHW1u0Y2uMNEznvgLhosk99j3pmgh1t1tlFvGI--5lRZRxXKwJmsitSErKtev6VEVa374E6ZdNnYRL7mIU3NqVdD0qp7FI4UhWR7t8WORzmWyfw44n-TrFnnCg
+                - heading "WhatsApp Trigger not receiving real messages - Questions" [level=3] [ref=f42e449]
+                - generic [ref=f42e455]:
+                  - generic [ref=f42e456]: n8n Community
+                  - generic [ref=f42e458]: https://community.n8n.io › what...
+              - generic [ref=f42e460]:
+                - generic [ref=f42e461]: ·
+                - link "Traducir esta página" [ref=f42e462] [cursor=pointer]:
+                  - /url: /goto?url=CAES4AEB6zswFXKxGwJQb3nKkQnqwawXzmPw4ISMvaaMnfMpE7CQeERN4N8jeSGQ5YAvwo1xkWCdAtU7R0aOgy776pEMn7OulIvKtUafxmVlKectA_H3qHYNmKC_OPlpdSBkTKzOGBi-8vKiOFw_-mm6RMZ2fac9SU1syLJsJ7DS2U9KEWJEaHQDcegPJxEQFPLmGIgfNMTP4j7hcAQDrzXsPiINNGvg50L8E21_tERb-GGVEjuHGcIFnWnwniD4OFrkpa5HksLZIQAUh9arCM3iBpPctU1FIO_IZUvfzijG4iGTAA
+              - button "Acerca de este resultado" [ref=f42e467] [cursor=pointer]
+            - generic [ref=f42e473]:
+              - generic [ref=f42e474]: 22 dic 2025 —
+              - generic [ref=f42e475]:
+                - text: "Quick fix: add your personal number as a test “To” number, or"
+                - emphasis [ref=f42e476]: switch to Live mode
+                - text: ". Note: Going Live does NOT require documentation or"
+                - emphasis [ref=f42e477]: Meta
+                - text: ...
+          - generic [ref=f42e481]:
+            - generic [ref=f42e484]:
+              - 'link "How to Set Up OpenClaw on WhatsApp: Complete Guide ... ClawTrust https://clawtrust.ai › Blog" [ref=f42e486] [cursor=pointer]':
+                - /url: /goto?url=CAESaQHrOzAVbXgPaQGMFlhyozS0d9J_n238rYtDEtmpnF4cjC57npG3GfapuVHdu3Eg3esUsnKUgdPhRTHhG5-MgMDLgRT48pFnqa_eQc9cZtkBi8xCmZnJzzjHYu5oygxcPKP7ZZlQiAaJPA
+                - 'heading "How to Set Up OpenClaw on WhatsApp: Complete Guide ..." [level=3] [ref=f42e487]'
+                - generic [ref=f42e493]:
+                  - generic [ref=f42e494]: ClawTrust
+                  - generic [ref=f42e496]: https://clawtrust.ai › Blog
+              - generic [ref=f42e498]:
+                - generic [ref=f42e499]: ·
+                - link "Traducir esta página" [ref=f42e500] [cursor=pointer]:
+                  - /url: /goto?url=CAESuwEB6zswFdhn5hn1rHgM4toabzNCPV6Z30CDmS1PvORsrFbm2JcT7bwa8YGB36sQY9F_BgIBOPj6h9sx6jFz8qRJmDul7QencbdbV0NrIjaCzcqW7g-QIvlRGYwNz1nUM8P8OBs-HmRTlKdBSS0pdT44cnWvu2AkT4XUqatAzeGBCDifJGgEHH-GHseRKsygLyLpHfsJM7PsXHNsLmQ9M4ZFHzZkG714JJ0JPTd5Np5yXh8xgUuT7Ft4L52X
+              - button "Acerca de este resultado" [ref=f42e505] [cursor=pointer]
+            - generic [ref=f42e511]:
+              - generic [ref=f42e512]: 27 may 2026 —
+              - generic [ref=f42e513]:
+                - text: Check your
+                - emphasis [ref=f42e514]: app's
+                - text: status in the
+                - emphasis [ref=f42e515]: Meta Developer
+                - text: dashboard and
+                - emphasis [ref=f42e516]: switch to live mode
+                - text: ". DM pairing blocking unknown users. If dmPolicy: \"pairing ..."
+        - generic [ref=f42e518]:
+          - generic [ref=f42e523]:
+            - heading "También se buscó" [level=2] [ref=f42e525]
+            - generic [ref=f42e527]:
+              - generic [ref=f42e528]:
+                - link "Master post open app mode development master post" [ref=f42e532] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&q=Master+post+open+app+mode+development+master+post&sa=X&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ1QJ6BAgwEAE
+                - link "Facebook Developer Mode" [ref=f42e546] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&q=Facebook+Developer+Mode&sa=X&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ1QJ6BAgyEAE
+                - link "Facebook app approval process" [ref=f42e560] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&q=Facebook+app+approval+process&sa=X&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ1QJ6BAgvEAE
+              - generic [ref=f42e571]:
+                - link "How to publish Facebook app" [ref=f42e575] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&q=How+to+publish+Facebook+app&sa=X&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ1QJ6BAguEAE
+                - link "Facebook create app" [ref=f42e589] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&q=Facebook+create+app&sa=X&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ1QJ6BAgxEAE
+          - navigation [ref=f42e600]:
+            - heading "Navegación de páginas" [level=1] [ref=f42e601]
+            - text: "1"
+            - link "Page 2" [ref=f42e604] [cursor=pointer]:
+              - /url: /search?q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&ei=FYabauDnO53A5OUP4KrnsQE&start=10&sa=N&sstk=AS6-VmJXgM7vZ77e7-UyJ5eaXqCjP5QPhYsNBUWYuJ1Vb0l3BRWtpUaMQqi-Mbz5nT-6dTqe5j1odwx1b7UMD57au2ucW9VnzGyLKA&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ8tMDegQILBAE
+              - text: "2"
+            - link "Page 3" [ref=f42e606] [cursor=pointer]:
+              - /url: /search?q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&ei=FYabauDnO53A5OUP4KrnsQE&start=20&sa=N&sstk=AS6-VmJXgM7vZ77e7-UyJ5eaXqCjP5QPhYsNBUWYuJ1Vb0l3BRWtpUaMQqi-Mbz5nT-6dTqe5j1odwx1b7UMD57au2ucW9VnzGyLKA&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ8tMDegQILBAG
+              - text: "3"
+            - link "Page 4" [ref=f42e608] [cursor=pointer]:
+              - /url: /search?q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&ei=FYabauDnO53A5OUP4KrnsQE&start=30&sa=N&sstk=AS6-VmJXgM7vZ77e7-UyJ5eaXqCjP5QPhYsNBUWYuJ1Vb0l3BRWtpUaMQqi-Mbz5nT-6dTqe5j1odwx1b7UMD57au2ucW9VnzGyLKA&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ8tMDegQILBAI
+              - text: "4"
+            - link "Page 5" [ref=f42e610] [cursor=pointer]:
+              - /url: /search?q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&ei=FYabauDnO53A5OUP4KrnsQE&start=40&sa=N&sstk=AS6-VmJXgM7vZ77e7-UyJ5eaXqCjP5QPhYsNBUWYuJ1Vb0l3BRWtpUaMQqi-Mbz5nT-6dTqe5j1odwx1b7UMD57au2ucW9VnzGyLKA&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ8tMDegQILBAK
+              - text: "5"
+            - link "Page 6" [ref=f42e612] [cursor=pointer]:
+              - /url: /search?q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&ei=FYabauDnO53A5OUP4KrnsQE&start=50&sa=N&sstk=AS6-VmJXgM7vZ77e7-UyJ5eaXqCjP5QPhYsNBUWYuJ1Vb0l3BRWtpUaMQqi-Mbz5nT-6dTqe5j1odwx1b7UMD57au2ucW9VnzGyLKA&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ8tMDegQILBAM
+              - text: "6"
+            - link "Page 7" [ref=f42e614] [cursor=pointer]:
+              - /url: /search?q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&ei=FYabauDnO53A5OUP4KrnsQE&start=60&sa=N&sstk=AS6-VmJXgM7vZ77e7-UyJ5eaXqCjP5QPhYsNBUWYuJ1Vb0l3BRWtpUaMQqi-Mbz5nT-6dTqe5j1odwx1b7UMD57au2ucW9VnzGyLKA&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ8tMDegQILBAO
+              - text: "7"
+            - link "Page 8" [ref=f42e616] [cursor=pointer]:
+              - /url: /search?q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&ei=FYabauDnO53A5OUP4KrnsQE&start=70&sa=N&sstk=AS6-VmJXgM7vZ77e7-UyJ5eaXqCjP5QPhYsNBUWYuJ1Vb0l3BRWtpUaMQqi-Mbz5nT-6dTqe5j1odwx1b7UMD57au2ucW9VnzGyLKA&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ8tMDegQILBAQ
+              - text: "8"
+            - link "Page 9" [ref=f42e618] [cursor=pointer]:
+              - /url: /search?q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&ei=FYabauDnO53A5OUP4KrnsQE&start=80&sa=N&sstk=AS6-VmJXgM7vZ77e7-UyJ5eaXqCjP5QPhYsNBUWYuJ1Vb0l3BRWtpUaMQqi-Mbz5nT-6dTqe5j1odwx1b7UMD57au2ucW9VnzGyLKA&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ8tMDegQILBAS
+              - text: "9"
+            - link "Page 10" [ref=f42e620] [cursor=pointer]:
+              - /url: /search?q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&ei=FYabauDnO53A5OUP4KrnsQE&start=90&sa=N&sstk=AS6-VmJXgM7vZ77e7-UyJ5eaXqCjP5QPhYsNBUWYuJ1Vb0l3BRWtpUaMQqi-Mbz5nT-6dTqe5j1odwx1b7UMD57au2ucW9VnzGyLKA&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ8tMDegQILBAU
+              - text: "10"
+            - heading [level=2] [ref=f42e622]:
+              - link "Siguiente" [ref=f42e623] [cursor=pointer]:
+                - /url: /search?q=Meta+for+Developers+%22Switch+to+Live%22+app+mode+WhatsApp&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnu0sdjaPeKSPaLwbnBvhun3rveaIw:1788577301986&ei=FYabauDnO53A5OUP4KrnsQE&start=10&sa=N&sstk=AS6-VmJXgM7vZ77e7-UyJ5eaXqCjP5QPhYsNBUWYuJ1Vb0l3BRWtpUaMQqi-Mbz5nT-6dTqe5j1odwx1b7UMD57au2ucW9VnzGyLKA&ved=2ahUKEwigxvPVudaWAxUdILkGHWDVORYQ8NMDegQILBAW
+        - navigation
+    - contentinfo [ref=f42e626]:
+      - heading "Vínculos a pie de página" [level=1] [ref=f42e627]
+      - generic [ref=f42e631]:
+        - generic [ref=f42e633]:
+          - text: Argentina
+          - generic [ref=f42e635]:
+            - button "Capital, San Miguel de Tucumán, Tucumán - Según tu actividad anterior" [ref=f42e637] [cursor=pointer]:
+              - generic [ref=f42e638]: Capital, San Miguel de Tucumán, Tucumán
+              - generic [ref=f42e640]:
+                - text: "-"
+                - generic [ref=f42e641]: Según tu actividad anterior
+            - text: "-"
+            - button "Actualizar ubicación" [ref=f42e643] [cursor=pointer]
+        - generic [ref=f42e646]:
+          - link "Ayuda" [ref=f42e647] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - button "Enviar comentarios" [ref=f42e649] [cursor=pointer]
+          - link "Privacidad" [ref=f42e651] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=f42e652] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

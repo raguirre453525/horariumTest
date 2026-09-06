@@ -1,0 +1,107 @@
+- generic [active] [ref=f34e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=f34e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=f34e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=f34e8]:
+    - search [ref=f34e9]:
+      - generic [ref=f34e11]:
+        - link "Ir a la Página principal de Google" [ref=f34e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=es-419&sa=X&ved=2ahUKEwjN9KvIudaWAxWMKLkGHeYRL30QPHoECAYQBA
+        - generic [ref=f34e21]:
+          - generic [ref=f34e22]:
+            - combobox "Buscar" [ref=f34e25]: site:developers.facebook.com/docs/apps/review "Live" app publish business verification site:developers.facebook.com/docs/apps/review "Live" app publish business verification
+            - generic [ref=f34e26]:
+              - button "Borrar" [ref=f34e28] [cursor=pointer]
+              - generic [ref=f34e33]:
+                - button "Búsqueda por voz" [ref=f34e34] [cursor=pointer]
+                - button "Búsqueda por imagen" [ref=f34e37] [cursor=pointer]
+          - button "Buscar" [ref=f34e40] [cursor=pointer]
+    - generic [ref=f34e45]:
+      - button "Configuración" [ref=f34e47] [cursor=pointer]
+      - button "Compartir" [ref=f34e53] [cursor=pointer]
+      - generic [ref=f34e59]:
+        - button "Apps de Google" [ref=f34e61] [cursor=pointer]
+        - link "Acceder" [ref=f34e66] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dsite%253Adevelopers.facebook.com%252Fdocs%252Fapps%252Freview%2B%2522Live%2522%2Bapp%2Bpublish%2Bbusiness%2Bverification&ec=futura_srp_og_si_72236_p
+  - generic [ref=f34e68]:
+    - navigation [ref=f34e74]:
+      - generic [ref=f34e80]:
+        - list [ref=f34e81]:
+          - listitem [ref=f34e82]:
+            - link "Modo IA" [ref=f34e85] [cursor=pointer]:
+              - /url: /search?q=site:developers.facebook.com/docs/apps/review+%22Live%22+app+publish+business+verification&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnudcdS0a8sgYlDEvEGwUkr-vnEUYw:1788577273549&udm=50&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agYFkhi1FyCEYaMbQnQ-xgLwl9f4KkiG48SK3gJuyKhKUS635lgRnloNbgMkKMycNhGDzLZkiKZudaRwMjWFJ1FMzO1nTMFAVIz-q5zPw7XYfG-sKeICqDE1w1znlG2GJp7g9ZbYg&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwjN9KvIudaWAxWMKLkGHeYRL30Q2J8OegQIERAD
+          - listitem [ref=f34e89]:
+            - link "Todo" [disabled] [ref=f34e90]
+          - listitem [ref=f34e93]:
+            - link "Videos" [ref=f34e94] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnudcdS0a8sgYlDEvEGwUkr-vnEUYw:1788577273549&udm=7&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agYFkhi1FyCEYaMbQnQ-xgLwl9f4KkiG48SK3gJuyKhKUS635lgRnloNbgMkKMycNhGDzLZkiKZudaRwMjWFJ1FMzO1nTMFAVIz-q5zPw7XYfG-sKeICqDE1w1znlG2GJp7g9ZbYg&q=site:developers.facebook.com/docs/apps/review+%22Live%22+app+publish+business+verification&sa=X&ved=2ahUKEwjN9KvIudaWAxWMKLkGHeYRL30QtKgLegQIFxAB
+          - listitem [ref=f34e97]:
+            - link "Imágenes" [ref=f34e98] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnudcdS0a8sgYlDEvEGwUkr-vnEUYw:1788577273549&udm=2&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agYFkhi1FyCEYaMbQnQ-xgLwl9f4KkiG48SK3gJuyKhKUS635lgRnloNbgMkKMycNhGDzLZkiKZudaRwMjWFJ1FMzO1nTMFAVIz-q5zPw7XYfG-sKeICqDE1w1znlG2GJp7g9ZbYg&q=site:developers.facebook.com/docs/apps/review+%22Live%22+app+publish+business+verification&sa=X&ved=2ahUKEwjN9KvIudaWAxWMKLkGHeYRL30QtKgLegQIFhAB
+          - listitem [ref=f34e101]:
+            - link "Shopping" [ref=f34e102] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnudcdS0a8sgYlDEvEGwUkr-vnEUYw:1788577273549&udm=28&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agYFkhi1FyCEYaMbQnQ-xgLwl9f4KkiG48SK3gJuyKhKUS635lgRnloNbgMkKMycNhGDzLZkiKZudaRwMjWFJ1FMzO1nTMFAVIz-q5zPw7XYfG-sKeICqDE1w1znlG2GJp7g9ZbYg&q=site:developers.facebook.com/docs/apps/review+%22Live%22+app+publish+business+verification&ved=1t:220175&ictx=111
+          - listitem [ref=f34e105]:
+            - link "Noticias" [ref=f34e106] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnudcdS0a8sgYlDEvEGwUkr-vnEUYw:1788577273549&q=site:developers.facebook.com/docs/apps/review+%22Live%22+app+publish+business+verification&tbm=nws&source=lnms&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agYFkhi1FyCEYaMbQnQ-xgLwl9f4KkiG48SK3gJuyKhKUS635lgRnloNbgMkKMycNhGDzLZkiKZudaRwMjWFJ1FMzO1nTMFAVIz-q5zPw7XYfG-sKeICqDE1w1znlG2GJp7g9ZbYg&sa=X&ved=2ahUKEwjN9KvIudaWAxWMKLkGHeYRL30Q0pQJegQIFRAB
+          - listitem [ref=f34e109]:
+            - link "Videos cortos" [ref=f34e110] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnudcdS0a8sgYlDEvEGwUkr-vnEUYw:1788577273549&udm=39&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agYFkhi1FyCEYaMbQnQ-xgLwl9f4KkiG48SK3gJuyKhKUS635lgRnloNbgMkKMycNhGDzLZkiKZudaRwMjWFJ1FMzO1nTMFAVIz-q5zPw7XYfG-sKeICqDE1w1znlG2GJp7g9ZbYg&q=site:developers.facebook.com/docs/apps/review+%22Live%22+app+publish+business+verification&sa=X&ved=2ahUKEwjN9KvIudaWAxWMKLkGHeYRL30Qs6gLegQIExAB
+          - listitem [ref=f34e113]:
+            - button [ref=f34e114] [cursor=pointer]:
+              - generic "Más filtros" [ref=f34e115]: Más
+        - button "Herramientas" [ref=f34e122] [cursor=pointer]
+    - heading "Resultados de búsqueda" [level=1] [ref=f34e129]
+    - main [ref=f34e135]:
+      - generic [ref=f34e142]:
+        - heading "Web results" [level=2] [ref=f34e143]
+        - generic [ref=f34e144]:
+          - generic [ref=f34e147]:
+            - link "Facebook App Review FAQ - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f34e149] [cursor=pointer]:
+              - /url: /goto?url=CAESfwHrOzAVQLafizY2nVkWhvqp94JfdXFXo2OZfGlswTLJ1SyWT78FMqV9K716K6pGXawGY2tRhWluUjuTQiMA9AA8ugvXLz_t1z9XLa2O80Fm0iibzibabBnyQpZ9b6PBnA8Bl_1Wc-dsP1QHYPodVB6xWq8b3nKiIc69QChsxhg
+              - heading "Facebook App Review FAQ - Meta for Developers" [level=3] [ref=f34e150]
+              - generic [ref=f34e156]:
+                - generic [ref=f34e157]: Meta for Developers
+                - generic [ref=f34e159]: https://developers.facebook.com › ...
+            - generic [ref=f34e161]:
+              - generic [ref=f34e162]: ·
+              - link "Traducir esta página" [ref=f34e163] [cursor=pointer]:
+                - /url: /goto?url=CAES0wEB6zswFbWRy9O9hqjvLwezWdEbFsT0cvpJBxkfk9HU_nowbrou17o9rbGUMagP5qO0HGhR7lsZo0DyWVXa_g18n_-F3S9ENgf-3uKA5ipKiDmupRcdUq_IbPE2NvjsFILQ5dMhy6OG0qEy54gkdvu60P-0YxP0V2wpDh2b6_EcHLt5TZRy5_T45t67I8IK2c3iFL9FbOI795MKOUoZcyKQ_YejqrtyZaLiFLPNLlYKOi6fzYZFIHm-Nw0zLQAYKMMq7EwkUaTPcjvnBNMIGkFNVMax
+            - button "Acerca de este resultado" [ref=f34e168] [cursor=pointer]
+          - generic [ref=f34e175]:
+            - text: No, you don't need to submit for review to run mobile
+            - emphasis [ref=f34e176]: app
+            - text: install ads. You just need an
+            - emphasis [ref=f34e177]: app
+            - text: that is
+            - emphasis [ref=f34e178]: live
+            - text: in the iTunes
+            - emphasis [ref=f34e179]: App
+            - text: Store or Google Play Store. The ...
+      - generic:
+        - generic:
+          - navigation
+      - navigation
+    - contentinfo [ref=f34e180]:
+      - heading "Vínculos a pie de página" [level=1] [ref=f34e181]
+      - generic [ref=f34e185]:
+        - generic [ref=f34e187]:
+          - text: Argentina
+          - generic [ref=f34e189]:
+            - button "Capital, San Miguel de Tucumán, Tucumán - A través de tu dirección IP" [ref=f34e191] [cursor=pointer]:
+              - generic [ref=f34e192]: Capital, San Miguel de Tucumán, Tucumán
+              - generic [ref=f34e194]:
+                - text: "-"
+                - generic [ref=f34e195]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=f34e197] [cursor=pointer]
+        - generic [ref=f34e200]:
+          - link "Ayuda" [ref=f34e201] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - button "Enviar comentarios" [ref=f34e203] [cursor=pointer]
+          - link "Privacidad" [ref=f34e205] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=f34e206] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

@@ -1,0 +1,277 @@
+- generic [ref=f84e11]:
+  - navigation "Main" [ref=f84e13]:
+    - generic [ref=f84e20]:
+      - generic [ref=f84e22]:
+        - button "Open mobile navigation menu" [ref=f84e24] [cursor=pointer]
+        - link "Meta home" [ref=f84e29] [cursor=pointer]:
+          - /url: https://developers.facebook.com/
+          - img "Nav Logo" [ref=f84e30]
+      - generic [ref=f84e33]:
+        - link "Login" [ref=f84e34] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fdocumentation%2Fdevelopment%2Frelease%2Fbusiness-verification%3Flocale%3Den_US
+        - button [ref=f84e35] [cursor=pointer]:
+          - img "Search" [ref=f84e36]
+  - generic [ref=f84e43]:
+    - navigation [ref=f84e44]:
+      - generic [ref=f84e45]:
+        - generic [ref=f84e46]:
+          - generic [ref=f84e47]: Development
+          - textbox "Filter" [ref=f84e50]
+        - generic [ref=f84e52]:
+          - generic "Meta App Development" [ref=f84e53]:
+            - link "Meta App Development" [ref=f84e54] [cursor=pointer]:
+              - /url: /documentation/development
+          - generic "Register" [ref=f84e59]:
+            - link "Register" [ref=f84e60] [cursor=pointer]:
+              - /url: "#"
+          - generic "Features Reference" [ref=f84e68]:
+            - link "Features Reference" [ref=f84e69] [cursor=pointer]:
+              - /url: "#"
+          - generic "Permissions" [ref=f84e76]:
+            - link "Permissions" [ref=f84e77] [cursor=pointer]:
+              - /url: /documentation/development/permissions
+          - generic "Create an App" [ref=f84e82]:
+            - link "Create an App" [ref=f84e83] [cursor=pointer]:
+              - /url: "#"
+          - generic "Use Case Customization" [ref=f84e91]:
+            - link "Use Case Customization" [ref=f84e92] [cursor=pointer]:
+              - /url: "#"
+          - generic "App Dashboard" [ref=f84e100]:
+            - link "App Dashboard" [ref=f84e101] [cursor=pointer]:
+              - /url: "#"
+          - generic "Build and Test" [ref=f84e109]:
+            - link "Build and Test" [ref=f84e110] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f84e117]:
+            - generic "Release" [ref=f84e118]:
+              - link "Release" [ref=f84e119] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f84e127]:
+              - generic "Release" [ref=f84e128]:
+                - link "Release" [ref=f84e129] [cursor=pointer]:
+                  - /url: /documentation/development/release
+              - generic "Access Levels" [ref=f84e133]:
+                - link "Access Levels" [ref=f84e134] [cursor=pointer]:
+                  - /url: /documentation/development/graph-api/overview/access-levels
+              - generic "Access Verification" [ref=f84e138]:
+                - link "Access Verification" [ref=f84e139] [cursor=pointer]:
+                  - /url: /documentation/development/release/access-verification
+              - generic "Business Verification" [ref=f84e143]:
+                - link "Business Verification" [ref=f84e144] [cursor=pointer]:
+                  - /url: /documentation/development/release/business-verification
+          - generic "Transfer Ownership" [ref=f84e148]:
+            - link "Transfer Ownership" [ref=f84e149] [cursor=pointer]:
+              - /url: /documentation/development/create-an-app/transfer-an-app
+          - generic "Maintaining Data Access" [ref=f84e153]:
+            - link "Maintaining Data Access" [ref=f84e154] [cursor=pointer]:
+              - /url: /documentation/development/maintaining-data-access
+          - generic "Terms and Policies" [ref=f84e159]:
+            - link "Terms and Policies" [ref=f84e160] [cursor=pointer]:
+              - /url: "#"
+          - generic "Support" [ref=f84e168]:
+            - link "Support" [ref=f84e169] [cursor=pointer]:
+              - /url: "#"
+          - generic "Trust Center" [ref=f84e177]:
+            - link "Trust Center" [ref=f84e178] [cursor=pointer]:
+              - /url: "#"
+    - generic [ref=f84e186]:
+      - main [ref=f84e187]:
+        - generic [ref=f84e188]:
+          - navigation "Breadcrumbs" [ref=f84e190]:
+            - list [ref=f84e191]:
+              - listitem [ref=f84e192]:
+                - link "Docs" [ref=f84e194] [cursor=pointer]:
+                  - /url: /docs
+              - listitem [ref=f84e199]:
+                - link "Overview" [ref=f84e201] [cursor=pointer]:
+                  - /url: /documentation/development
+              - listitem [ref=f84e206]:
+                - generic [ref=f84e207]: Business Verification
+          - article [ref=f84e210]:
+            - heading "Business Verification" [level=1] [ref=f84e211]
+            - generic [ref=f84e212]: "Updated: Jul 7, 2023"
+            - generic [ref=f84e216]:
+              - button "Copy for LLM" [ref=f84e218] [cursor=pointer]
+              - link "View as Markdown" [ref=f84e225] [cursor=pointer]:
+                - /url: /documentation/development/release/business-verification.md
+            - generic [ref=f84e232]:
+              - strong [ref=f84e234]:
+                - link "Advanced Access" [ref=f84e235] [cursor=pointer]:
+                  - /url: /docs/graph-api/overview/access-levels#advanced-access
+                - text: now requires Business Verification.
+              - generic [ref=f84e236]:
+                - text: As of February 1, 2023, if your app requires advanced level access to permissions, you might need to complete
+                - link "Business Verification" [ref=f84e237] [cursor=pointer]:
+                  - /url: /documentation/development/release/business-verification
+                - text: .
+                - link "See this blog post for more information." [ref=f84e238] [cursor=pointer]:
+                  - /url: https://developers.facebook.com/blog/post/2023/02/01/developer-platform-requiring-business-verification-for-advanced-access/
+            - generic [ref=f84e239]: Business Verification is a process that allows us to gather information about you and your Business so we can verify your identity as a business entity.
+            - generic [ref=f84e240]:
+              - text: Apps that request
+              - link "advanced access" [ref=f84e241] [cursor=pointer]:
+                - /url: /docs/graph-api/overview/access-levels#advanced-access
+              - text: for permissions and apps that allow other
+              - link [ref=f84e242] [cursor=pointer]:
+                - /url: https://business.facebook.com/
+                - text: Businesses
+                - generic [ref=f84e243]:
+                  - text: ⁠
+                  - img "This link opens in a new tab or window" [ref=f84e244]
+              - text: to access their own data must be connected to a Business that has completed Business Verification. Until then, app users from other Businesses will be unable to grant these apps
+              - link "permissions" [ref=f84e247] [cursor=pointer]:
+                - /url: /docs/permissions/reference
+              - text: and all
+              - link "features" [ref=f84e248] [cursor=pointer]:
+                - /url: /docs/apps/features-reference
+              - text: will be inactive.
+            - generic [ref=f84e249]:
+              - text: If your app will only be used by app users who have a
+              - link "role" [ref=f84e250] [cursor=pointer]:
+                - /url: /documentation/development/build-and-test/app-roles
+              - text: on the app itself you do not need to complete verification; these users can grant your app any permissions at any time and all features are always active.
+            - generic [ref=f84e251]: You can use the App Dashboard to connect your app to a Business that you’re an Admin of, regardless of whether or not the Business has been verified, but the verification process itself must be completed in the Facebook Business Manager. If you do not have a Business, you will be given the option to create one.
+            - generic [ref=f84e252]: Note that anyone with an Administrator role on your app can connect it to a Business, but only someone with an Admin role in the Business will be able to complete the verification process.
+            - generic [ref=f84e255]:
+              - 'heading "Step 1: Connect your app to a Business" [level=2] [ref=f84e256]'
+              - button [ref=f84e257] [cursor=pointer]
+            - generic [ref=f84e261]:
+              - text: Load your app in the App Dashboard and go to
+              - strong [ref=f84e262]: Settings
+              - text: ">"
+              - strong [ref=f84e263]: Basic
+              - text: ">"
+              - strong [ref=f84e264]: Verification
+              - text: and click the Start Verification button or the
+              - strong [ref=f84e265]: + Business Verification
+              - text: link if you have previously completed Individual Verification.
+            - img "Verification section in the Basic Settings panel." [ref=f84e267] [cursor=pointer]
+            - generic [ref=f84e268]: "If your Facebook developer account is already associated with a Facebook Business account, you will be given the option to select a Business within it:"
+            - img "Business selection modal with a verified Business selected." [ref=f84e270] [cursor=pointer]
+            - generic [ref=f84e271]: If you don’t have a Facebook Business account, or if your account contains no Businesses, you will be prompted to create one.
+            - generic [ref=f84e272]:
+              - text: Connecting your app to a verified Business completes the connection process and there’s nothing else you have to do. The
+              - strong [ref=f84e273]: Verification
+              - text: "section should show that your app is now connected to a verified Business:"
+            - img "Verification section showing 'Verified' alongside the name of the Business that has been connected to the app." [ref=f84e275] [cursor=pointer]
+            - generic [ref=f84e276]: If, however, you connected your app to an unverified Business, you must complete the verification process in the Business Manager.
+            - generic [ref=f84e279]:
+              - 'heading "Step 2: Verify your Business" [level=2] [ref=f84e280]'
+              - button [ref=f84e281] [cursor=pointer]
+            - generic [ref=f84e285]: If you connected your app to an unverified Business, you or Admin of the Business must complete the verification process within the Business Manager.
+            - img "Business selection modal with an unverified Business selected." [ref=f84e287] [cursor=pointer]
+            - generic [ref=f84e288]: Click Start Business Verification to load the unverified Business in the Business Manager and complete the verification process.
+            - generic [ref=f84e289]:
+              - text: Refer to our Business Manager Help Center’s
+              - link [ref=f84e290] [cursor=pointer]:
+                - /url: https://www.facebook.com/business/help/1095661473946872
+                - text: About Business Verification
+                - generic [ref=f84e291]:
+                  - text: ⁠
+                  - img "This link opens in a new tab or window" [ref=f84e292]
+              - text: topic for an explanation of the process and a list of documents you will need.
+            - generic [ref=f84e295]: "Once you have completed verification, return to the Basic Settings panel. You should see that your app is now connected to a verified Business:"
+            - img "Verification section showing 'Verified' alongside the name of the Business that has been connected to the app." [ref=f84e297] [cursor=pointer]
+      - complementary [ref=f84e298]
+  - generic [ref=f84e300]:
+    - separator [aria-hidden] [ref=f84e301]
+    - contentinfo [ref=f84e302]:
+      - generic [ref=f84e303]:
+        - separator [aria-hidden] [ref=f84e304]
+        - generic [ref=f84e306]:
+          - generic [ref=f84e308]:
+            - generic [ref=f84e310]:
+              - img "Meta" [ref=f84e312]
+              - list [ref=f84e314]:
+                - listitem:
+                  - link "Facebook":
+                    - /url: https://www.facebook.com/MetaforDevelopers
+                    - img "Facebook"
+                - listitem:
+                  - link "Instagram":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmetafordevelopers%2F&h=AUDufPSoramWV0MtlpEAugvDDas-ODNBTOd6YoYO7lrfmPGRwf1aVlLAQrH3V4Y7el81t1mQJYb-HMzCyHv1WMdkwcmR4vYcNnjUGr9Yyp_H2m8yCLPYNFng17f8E2v-Y8a3bTmig0YQJz3ethi8lA
+                    - img "Instagram"
+                - listitem:
+                  - link "X":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2Fmetafordevs&h=AUDufPSoramWV0MtlpEAugvDDas-ODNBTOd6YoYO7lrfmPGRwf1aVlLAQrH3V4Y7el81t1mQJYb-HMzCyHv1WMdkwcmR4vYcNnjUGr9Yyp_H2m8yCLPYNFng17f8E2v-Y8a3bTmig0YQJz3ethi8lA
+                    - img "X"
+                - listitem:
+                  - link "LinkedIn":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fshowcase%2Fmeta-for-developers%2F&h=AUDufPSoramWV0MtlpEAugvDDas-ODNBTOd6YoYO7lrfmPGRwf1aVlLAQrH3V4Y7el81t1mQJYb-HMzCyHv1WMdkwcmR4vYcNnjUGr9Yyp_H2m8yCLPYNFng17f8E2v-Y8a3bTmig0YQJz3ethi8lA
+                    - img "LinkedIn"
+                - listitem:
+                  - link "YouTube":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2FMetaDevelopers%2F&h=AUDufPSoramWV0MtlpEAugvDDas-ODNBTOd6YoYO7lrfmPGRwf1aVlLAQrH3V4Y7el81t1mQJYb-HMzCyHv1WMdkwcmR4vYcNnjUGr9Yyp_H2m8yCLPYNFng17f8E2v-Y8a3bTmig0YQJz3ethi8lA
+                    - img "YouTube"
+            - generic [ref=f84e316]:
+              - generic [ref=f84e319]:
+                - heading "Crear con Meta" [level=2] [ref=f84e320]
+                - list [ref=f84e322]:
+                  - listitem [ref=f84e323]:
+                    - link "Inteligencia artificial" [ref=f84e325] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fai%2F&h=AUDufPSoramWV0MtlpEAugvDDas-ODNBTOd6YoYO7lrfmPGRwf1aVlLAQrH3V4Y7el81t1mQJYb-HMzCyHv1WMdkwcmR4vYcNnjUGr9Yyp_H2m8yCLPYNFng17f8E2v-Y8a3bTmig0YQJz3ethi8lA
+                  - listitem [ref=f84e326]:
+                    - link "Meta Horizon" [ref=f84e328] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fhorizon%2F&h=AUDufPSoramWV0MtlpEAugvDDas-ODNBTOd6YoYO7lrfmPGRwf1aVlLAQrH3V4Y7el81t1mQJYb-HMzCyHv1WMdkwcmR4vYcNnjUGr9Yyp_H2m8yCLPYNFng17f8E2v-Y8a3bTmig0YQJz3ethi8lA
+                  - listitem [ref=f84e329]:
+                    - link "Tecnologías sociales" [ref=f84e331] [cursor=pointer]:
+                      - /url: /social-technologies/
+              - generic [ref=f84e334]:
+                - heading "Noticias" [level=2] [ref=f84e335]
+                - list [ref=f84e337]:
+                  - listitem [ref=f84e338]:
+                    - link "Meta for Developers" [ref=f84e340] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fblog%2F&h=AUDufPSoramWV0MtlpEAugvDDas-ODNBTOd6YoYO7lrfmPGRwf1aVlLAQrH3V4Y7el81t1mQJYb-HMzCyHv1WMdkwcmR4vYcNnjUGr9Yyp_H2m8yCLPYNFng17f8E2v-Y8a3bTmig0YQJz3ethi8lA
+                  - listitem [ref=f84e341]:
+                    - link "Blog" [ref=f84e343] [cursor=pointer]:
+                      - /url: /blog/
+                  - listitem [ref=f84e344]:
+                    - link "Historias de éxito" [ref=f84e346] [cursor=pointer]:
+                      - /url: /success-stories/
+              - generic [ref=f84e349]:
+                - heading "Ayuda" [level=2] [ref=f84e350]
+                - list [ref=f84e352]:
+                  - listitem [ref=f84e353]:
+                    - link "Ayuda para desarrolladores" [ref=f84e355] [cursor=pointer]:
+                      - /url: /support/
+                  - listitem [ref=f84e356]:
+                    - link "Herramienta de errores" [ref=f84e358] [cursor=pointer]:
+                      - /url: /support/bugs/
+                  - listitem [ref=f84e359]:
+                    - link "Estado de la plataforma" [ref=f84e361] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmetastatus.com%2F&h=AUDufPSoramWV0MtlpEAugvDDas-ODNBTOd6YoYO7lrfmPGRwf1aVlLAQrH3V4Y7el81t1mQJYb-HMzCyHv1WMdkwcmR4vYcNnjUGr9Yyp_H2m8yCLPYNFng17f8E2v-Y8a3bTmig0YQJz3ethi8lA
+                  - listitem [ref=f84e362]:
+                    - link "Foro de la comunidad de desarrolladores" [ref=f84e364] [cursor=pointer]:
+                      - /url: https://www.facebook.com/groups/fbdevelopers/
+                  - listitem [ref=f84e365]:
+                    - link "Reportar un incidente" [ref=f84e367] [cursor=pointer]:
+                      - /url: /incident/report/
+              - generic [ref=f84e370]:
+                - heading "Acerca de nosotros" [level=2] [ref=f84e371]
+                - list [ref=f84e373]:
+                  - listitem [ref=f84e374]:
+                    - link "Información" [ref=f84e376] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.fb.com%2F&h=AUDufPSoramWV0MtlpEAugvDDas-ODNBTOd6YoYO7lrfmPGRwf1aVlLAQrH3V4Y7el81t1mQJYb-HMzCyHv1WMdkwcmR4vYcNnjUGr9Yyp_H2m8yCLPYNFng17f8E2v-Y8a3bTmig0YQJz3ethi8lA
+                  - listitem [ref=f84e377]:
+                    - link "Empleos" [ref=f84e379] [cursor=pointer]:
+                      - /url: https://www.facebook.com/careers
+              - generic [ref=f84e382]:
+                - heading "Condiciones y políticas" [level=2] [ref=f84e383]
+                - list [ref=f84e385]:
+                  - listitem [ref=f84e386]:
+                    - link "Iniciativas de plataforma responsable" [ref=f84e388] [cursor=pointer]:
+                      - /url: /products/responsible-platform-initiatives/
+                  - listitem [ref=f84e389]:
+                    - link "Condiciones de la plataforma" [ref=f84e391] [cursor=pointer]:
+                      - /url: /terms/dfc_platform_terms/
+                  - listitem [ref=f84e392]:
+                    - link "Políticas para desarrolladores" [ref=f84e394] [cursor=pointer]:
+                      - /url: /devpolicy/
+                  - listitem [ref=f84e395]:
+                    - link "Política de privacidad" [ref=f84e397] [cursor=pointer]:
+                      - /url: https://www.facebook.com/about/privacy
+                  - listitem [ref=f84e398]:
+                    - link "Cookies" [ref=f84e400] [cursor=pointer]:
+                      - /url: https://www.facebook.com/help/cookies
+          - button "Change language" [ref=f84e405] [cursor=pointer]:
+            - generic [ref=f84e406]: Español

@@ -1,0 +1,108 @@
+- generic [active] [ref=f52e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=f52e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=f52e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=f52e8]:
+    - search [ref=f52e9]:
+      - generic [ref=f52e11]:
+        - link "Ir a la Página principal de Google" [ref=f52e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=es-419&sa=X&ved=2ahUKEwiItbu_utaWAxUtGbkGHcKjEOkQPHoECAYQBA
+        - generic [ref=f52e21]:
+          - generic [ref=f52e22]:
+            - combobox "Buscar" [ref=f52e25]: site:developers.facebook.com/documentation/business-messaging/whatsapp "Using a test webhook app" site:developers.facebook.com/documentation/business-messaging/whatsapp "Using a test webhook app"
+            - generic [ref=f52e26]:
+              - button "Borrar" [ref=f52e28] [cursor=pointer]
+              - generic [ref=f52e33]:
+                - button "Búsqueda por voz" [ref=f52e34] [cursor=pointer]
+                - button "Búsqueda por imagen" [ref=f52e37] [cursor=pointer]
+          - button "Buscar" [ref=f52e40] [cursor=pointer]
+    - generic [ref=f52e45]:
+      - button "Configuración" [ref=f52e47] [cursor=pointer]
+      - button "Compartir" [ref=f52e53] [cursor=pointer]
+      - generic [ref=f52e59]:
+        - button "Apps de Google" [ref=f52e61] [cursor=pointer]
+        - link "Acceder" [ref=f52e66] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dsite%253Adevelopers.facebook.com%252Fdocumentation%252Fbusiness-messaging%252Fwhatsapp%2B%2522Using%2Ba%2Btest%2Bwebhook%2Bapp%2522&ec=futura_srp_og_si_72236_p
+  - generic [ref=f52e68]:
+    - navigation [ref=f52e74]:
+      - generic [ref=f52e80]:
+        - list [ref=f52e81]:
+          - listitem [ref=f52e82]:
+            - link "Modo IA" [ref=f52e85] [cursor=pointer]:
+              - /url: /search?q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22Using+a+test+webhook+app%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvDwJYkJW3kaOfml_0Tq-biJVs_7Q:1788577523365&udm=50&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeBm8AbACNE44ZJ1mgwyJ4koVZm_kGHqMljfZuXv7c6qr5kIyts-u4JY5V0nIxCjmk_bzIqCaYNr6ZsbAvVzSduUx6N4L3jiHdlfHCP7g8lGmH0k-XrGv0V5_BVx5fApIac-b-3D9Bmg8fmr6fCU2KJF-RHBg&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwiItbu_utaWAxUtGbkGHcKjEOkQ2J8OegQIERAD
+          - listitem [ref=f52e89]:
+            - link "Todo" [disabled] [ref=f52e90]
+          - listitem [ref=f52e93]:
+            - link "Videos" [ref=f52e94] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvDwJYkJW3kaOfml_0Tq-biJVs_7Q:1788577523365&udm=7&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeBm8AbACNE44ZJ1mgwyJ4koVZm_kGHqMljfZuXv7c6qr5kIyts-u4JY5V0nIxCjmk_bzIqCaYNr6ZsbAvVzSduUx6N4L3jiHdlfHCP7g8lGmH0k-XrGv0V5_BVx5fApIac-b-3D9Bmg8fmr6fCU2KJF-RHBg&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22Using+a+test+webhook+app%22&sa=X&ved=2ahUKEwiItbu_utaWAxUtGbkGHcKjEOkQtKgLegQIFBAB
+          - listitem [ref=f52e97]:
+            - link "Imágenes" [ref=f52e98] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvDwJYkJW3kaOfml_0Tq-biJVs_7Q:1788577523365&udm=2&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeBm8AbACNE44ZJ1mgwyJ4koVZm_kGHqMljfZuXv7c6qr5kIyts-u4JY5V0nIxCjmk_bzIqCaYNr6ZsbAvVzSduUx6N4L3jiHdlfHCP7g8lGmH0k-XrGv0V5_BVx5fApIac-b-3D9Bmg8fmr6fCU2KJF-RHBg&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22Using+a+test+webhook+app%22&sa=X&ved=2ahUKEwiItbu_utaWAxUtGbkGHcKjEOkQtKgLegQIExAB
+          - listitem [ref=f52e101]:
+            - link "Videos cortos" [ref=f52e102] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvDwJYkJW3kaOfml_0Tq-biJVs_7Q:1788577523365&udm=39&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeBm8AbACNE44ZJ1mgwyJ4koVZm_kGHqMljfZuXv7c6qr5kIyts-u4JY5V0nIxCjmk_bzIqCaYNr6ZsbAvVzSduUx6N4L3jiHdlfHCP7g8lGmH0k-XrGv0V5_BVx5fApIac-b-3D9Bmg8fmr6fCU2KJF-RHBg&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22Using+a+test+webhook+app%22&sa=X&ved=2ahUKEwiItbu_utaWAxUtGbkGHcKjEOkQs6gLegQIFRAB
+          - listitem [ref=f52e105]:
+            - link "Shopping" [ref=f52e106] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvDwJYkJW3kaOfml_0Tq-biJVs_7Q:1788577523365&udm=28&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeBm8AbACNE44ZJ1mgwyJ4koVZm_kGHqMljfZuXv7c6qr5kIyts-u4JY5V0nIxCjmk_bzIqCaYNr6ZsbAvVzSduUx6N4L3jiHdlfHCP7g8lGmH0k-XrGv0V5_BVx5fApIac-b-3D9Bmg8fmr6fCU2KJF-RHBg&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22Using+a+test+webhook+app%22&ved=1t:220175&ictx=111
+          - listitem [ref=f52e109]:
+            - link "Noticias" [ref=f52e110] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvDwJYkJW3kaOfml_0Tq-biJVs_7Q:1788577523365&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22Using+a+test+webhook+app%22&tbm=nws&source=lnms&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeBm8AbACNE44ZJ1mgwyJ4koVZm_kGHqMljfZuXv7c6qr5kIyts-u4JY5V0nIxCjmk_bzIqCaYNr6ZsbAvVzSduUx6N4L3jiHdlfHCP7g8lGmH0k-XrGv0V5_BVx5fApIac-b-3D9Bmg8fmr6fCU2KJF-RHBg&sa=X&ved=2ahUKEwiItbu_utaWAxUtGbkGHcKjEOkQ0pQJegQIFhAB
+          - listitem [ref=f52e113]:
+            - button [ref=f52e114] [cursor=pointer]:
+              - generic "Más filtros" [ref=f52e115]: Más
+        - button "Herramientas" [ref=f52e122] [cursor=pointer]
+    - heading "Resultados de búsqueda" [level=1] [ref=f52e129]
+    - main [ref=f52e135]:
+      - generic [ref=f52e142]:
+        - heading "Web results" [level=2] [ref=f52e143]
+        - generic [ref=f52e144]:
+          - generic [ref=f52e147]:
+            - link "WhatsApp Cloud API Get Started - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f52e149] [cursor=pointer]:
+              - /url: /goto?url=CAESjQEB6zswFd2ZbIMNyYGsN5XCS-YX9NpkXSwWzmVY1zm0jR0pQz_96x0fFdNXb4UJ6gaASe3aseoP8ZHsYvQi2QmWbeA_qP9DEKuM0Xj9Dv04nsvTV6VM6qylPdIa5uYW-7d5mzIE3uvn6fOZxDVGcbPVGWULsR3PzNMetYopnRSQlNhUeJ4ta6dh6R_MjOs
+              - heading "WhatsApp Cloud API Get Started - Meta for Developers" [level=3] [ref=f52e150]
+              - generic [ref=f52e156]:
+                - generic [ref=f52e157]: Meta for Developers
+                - generic [ref=f52e159]: https://developers.facebook.com › ...
+            - generic [ref=f52e161]:
+              - generic [ref=f52e162]: ·
+              - link "Traducir esta página" [ref=f52e163] [cursor=pointer]:
+                - /url: /goto?url=CAES3wEB6zswFfTJT3HQ6b0pVuuTTwZrDsyVgmphySh_fWW6WlJaY5YtQ-yV5ni2inrio2OjlGs1nBlE4RPva56bZ0uge-EKBp7cvzfOQJBNaRfec3JzfFO_U6qLXlpU6EgMSMfnfJ6ql2P9Tew4xwAffEd-f-rvoqIajta_R6momHTiRvaAEQcbPiF6DI3Ufp2QpM42_Y_CuuqpDKeZgMbnG0WI5PXy5QmYAiWqTL-Nq_Hyl0cYH7L-5nhiy5o8cUe6nWjdeNIL9DEVgmOGrxokL_pq7h9s1wxCZDZOw8t2TVyj
+            - button "Acerca de este resultado" [ref=f52e168] [cursor=pointer]
+          - generic [ref=f52e175]:
+            - text: Use the sample webhook server for testing purposes by following the
+            - emphasis [ref=f52e176]: Using a test webhook app
+            - text: guide. Once your test webhook application is established ...
+      - generic [ref=f52e178]:
+        - generic [ref=f52e179]:
+          - heading "Avisos sobre resultados filtrados" [level=2] [ref=f52e180]
+          - paragraph [ref=f52e182]:
+            - generic [ref=f52e183]:
+              - text: Para que veas los resultados más relevantes, omitimos ciertas entradas muy similares a las 1 que ya te mostramos.Si lo deseas, puedes
+              - link "repetir la búsqueda e incluir los resultados omitidos" [ref=f52e184] [cursor=pointer]:
+                - /url: /search?q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22Using+a+test+webhook+app%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnvDwJYkJW3kaOfml_0Tq-biJVs_7Q:1788577523365&filter=0
+              - text: .
+        - navigation
+      - navigation
+    - contentinfo [ref=f52e185]:
+      - heading "Vínculos a pie de página" [level=1] [ref=f52e186]
+      - generic [ref=f52e190]:
+        - generic [ref=f52e192]:
+          - text: Argentina
+          - generic [ref=f52e194]:
+            - button "Capital, San Miguel de Tucumán, Tucumán - A través de tu dirección IP" [ref=f52e196] [cursor=pointer]:
+              - generic [ref=f52e197]: Capital, San Miguel de Tucumán, Tucumán
+              - generic [ref=f52e199]:
+                - text: "-"
+                - generic [ref=f52e200]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=f52e202] [cursor=pointer]
+        - generic [ref=f52e205]:
+          - link "Ayuda" [ref=f52e206] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - button "Enviar comentarios" [ref=f52e208] [cursor=pointer]
+          - link "Privacidad" [ref=f52e210] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=f52e211] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

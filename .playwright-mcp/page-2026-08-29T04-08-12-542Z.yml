@@ -1,0 +1,539 @@
+- generic [ref=e2]:
+  - generic:
+    - iframe
+  - generic:
+    - iframe
+  - generic:
+    - iframe
+  - generic:
+    - iframe
+  - generic [ref=e3]:
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - link [ref=e12] [cursor=pointer]:
+          - /url: /?no_redirect=true
+          - img "Logotipo de Meta" [ref=e14]
+        - tablist [ref=e23]:
+          - tab "Documentos" [selected] [ref=e24] [cursor=pointer]
+          - tab "Herramientas" [ref=e29] [cursor=pointer]
+          - tab "Ayuda" [ref=e34] [cursor=pointer]
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: Términos de búsqueda
+          - textbox "Términos de búsqueda" [ref=e57]:
+            - /placeholder: Buscar...
+        - link "Iniciar sesión" [ref=e58] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?is_work_accounts=true&login_options[0]=FB&login_options[1]=SSO&config_ref=biz_login_tool_flavor_dfc&app=436761779744620&next=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fgraph-api%2Fwebhooks%2Fgetting-started%3Fnav_ref%3Dbiz_unified_f3_login_page_to_dfc
+    - generic [ref=e64]:
+      - navigation "Ruta de navegación" [ref=e68]:
+        - generic [ref=e69]:
+          - link [ref=e70] [cursor=pointer]:
+            - /url: /docs/
+            - heading "Documentos" [level=3] [ref=e71]
+          - link [ref=e73] [cursor=pointer]:
+            - /url: /docs/graph-api/webhooks
+            - heading "Webhooks de Meta" [level=3] [ref=e74]
+          - link [ref=e76] [cursor=pointer]:
+            - /url: /docs/graph-api/webhooks/getting-started
+            - heading "Primeros pasos" [level=3] [ref=e77]
+      - generic [ref=e78]:
+        - generic [ref=e82]:
+          - link "Webhooks de Meta" [ref=e84] [cursor=pointer]:
+            - /url: /docs/graph-api/webhooks
+          - list [ref=e85]:
+            - listitem [ref=e86]:
+              - link "Primeros pasos" [ref=e87] [cursor=pointer]:
+                - /url: /docs/graph-api/webhooks/getting-started
+              - list [ref=e89]:
+                - listitem [ref=e90]:
+                  - link "Cuentas publicitarias" [ref=e91] [cursor=pointer]:
+                    - /url: /docs/graph-api/webhooks/getting-started/webhooks-for-ad-accounts
+                - listitem [ref=e92]:
+                  - link "Instagram" [ref=e93] [cursor=pointer]:
+                    - /url: /docs/graph-api/webhooks/getting-started/webhooks-for-instagram
+                - listitem [ref=e94]:
+                  - link "Leads" [ref=e95] [cursor=pointer]:
+                    - /url: /docs/graph-api/webhooks/getting-started/webhooks-for-leadgen
+                - listitem [ref=e96]:
+                  - link "Catalogs" [ref=e97] [cursor=pointer]:
+                    - /url: /docs/graph-api/webhooks/getting-started/webhooks-for-catalogs
+                - listitem [ref=e98]:
+                  - link "Messenger" [ref=e99] [cursor=pointer]:
+                    - /url: /docs/graph-api/webhooks/getting-started/webhooks-for-messenger
+                - listitem [ref=e100]:
+                  - link "Páginas" [ref=e101] [cursor=pointer]:
+                    - /url: /docs/graph-api/webhooks/getting-started/webhooks-for-pages
+                - listitem [ref=e102]:
+                  - link "Pagos" [ref=e103] [cursor=pointer]:
+                    - /url: /docs/graph-api/webhooks/getting-started/webhooks-for-payments
+                - listitem [ref=e104]:
+                  - link "WhatsApp Business Accounts" [ref=e105] [cursor=pointer]:
+                    - /url: /docs/graph-api/webhooks/getting-started/webhooks-for-whatsapp
+            - listitem [ref=e106]:
+              - link "Apps de ejemplo" [ref=e107] [cursor=pointer]:
+                - /url: /docs/graph-api/webhooks/sample-apps
+            - listitem [ref=e108]:
+              - link "Perímetro de suscripciones" [ref=e109] [cursor=pointer]:
+                - /url: /docs/graph-api/webhooks/subscriptions-edge
+            - listitem [ref=e110]:
+              - link "Reference" [ref=e111] [cursor=pointer]:
+                - /url: /docs/graph-api/webhooks/reference
+        - generic [ref=e112]:
+          - button [ref=e115]
+          - generic [ref=e120]:
+            - generic [ref=e122]:
+              - generic [ref=e124]:
+                - heading "Primeros pasos con los webhooks" [level=1] [ref=e125]
+                - paragraph [ref=e126]: En este documento, se explica cómo configurar un webhook que te notificará cuando los usuarios de tu app publiquen un cambio en sus fotos de usuario. Cuando entiendas cómo configurar este webhook, sabrás cómo configurar los demás.
+                - paragraph [ref=e127]: "Para configurar cualquier webhook, debes hacer lo siguiente:"
+                - list [ref=e128]:
+                  - listitem [ref=e129]:
+                    - link "Crear un punto de conexión" [ref=e130] [cursor=pointer]:
+                      - /url: "#create-an-endpoint"
+                    - text: en un servidor seguro que pueda procesar solicitudes HTTPS.
+                  - listitem [ref=e131]:
+                    - link "Configurar el producto Webhooks" [ref=e132] [cursor=pointer]:
+                      - /url: "#configure-webhooks"
+                    - text: en el panel de apps de tu app.
+                - paragraph [ref=e133]: Estos pasos se explican de manera detallada a continuación.
+              - generic [ref=e135]:
+                - heading "Crear un punto de conexión" [level=2] [ref=e136]
+                - generic [ref=e138]:
+                  - paragraph [ref=e139]: This step must be completed before you can subscribe to any webhook fields in the App Dashboard.
+                  - paragraph [ref=e140]:
+                    - text: "Your endpoint must be able to process two types of HTTPS requests:"
+                    - link "Verification Requests" [ref=e141] [cursor=pointer]:
+                      - /url: "#verification-requests"
+                    - text: and
+                    - link "Event Notifications" [ref=e142] [cursor=pointer]:
+                      - /url: "#event-notifications"
+                    - text: . Since both requests use HTTPs, your server must have a valid TLS or SSL certificate correctly configured and installed. Self-signed certificates are not supported.
+                  - paragraph [ref=e143]:
+                    - text: The sections below explain what will be in each type of request and how to respond to them. Alternatively, you can use our
+                    - link "sample app" [ref=e144] [cursor=pointer]:
+                      - /url: /docs/graph-api/webhooks/sample-apps
+                    - text: which is already configured to process these requests.
+                - heading "Solicitudes de verificación" [level=3] [ref=e145]
+                - generic [ref=e147]:
+                  - paragraph [ref=e148]:
+                    - text: Anytime you configure the Webhooks product in your App Dashboard, we'll send a
+                    - code [ref=e149]: GET
+                    - text: "request to your endpoint URL. Verification requests include the following query string parameters, appended to the end of your endpoint URL. They will look something like this:"
+                  - heading "Sample Verification Request" [level=4] [ref=e150]
+                  - generic [ref=e151]: GET https://www.your-clever-domain-name.com/webhooks? hub.mode=subscribe& hub.challenge=1158201444& hub.verify_token=meatyhamhock
+                  - table [ref=e153]:
+                    - rowgroup [ref=e154]:
+                      - row [ref=e155]:
+                        - columnheader "Parameter" [ref=e156]
+                        - columnheader "Sample Value" [ref=e157]
+                        - columnheader "Description" [ref=e158]
+                    - rowgroup [ref=e159]:
+                      - row [ref=e160]:
+                        - cell [ref=e161]:
+                          - paragraph [ref=e162]:
+                            - code [ref=e163]: hub.mode
+                        - cell [ref=e164]:
+                          - paragraph [ref=e165]:
+                            - code [ref=e166]: subscribe
+                        - cell [ref=e167]:
+                          - paragraph [ref=e168]:
+                            - text: This value will always be set to
+                            - code [ref=e169]: subscribe
+                            - text: .
+                      - row [ref=e170]:
+                        - cell [ref=e171]:
+                          - paragraph [ref=e172]:
+                            - code [ref=e173]: hub.challenge
+                        - cell [ref=e174]:
+                          - paragraph [ref=e175]:
+                            - code [ref=e176]: "1158201444"
+                        - cell [ref=e177]:
+                          - paragraph [ref=e178]:
+                            - text: An
+                            - code [ref=e179]: int
+                            - text: you must pass back to us.
+                      - row [ref=e180]:
+                        - cell [ref=e181]:
+                          - paragraph [ref=e182]:
+                            - code [ref=e183]: hub.verify_token
+                        - cell [ref=e184]:
+                          - paragraph [ref=e185]:
+                            - code [ref=e186]: meatyhamhock
+                        - cell [ref=e187]:
+                          - paragraph [ref=e188]:
+                            - text: A string that we grab from the
+                            - strong [ref=e189]: Verify Token
+                            - text: field in your app's App Dashboard. You will set this string when you complete the
+                            - link "Webhooks configuration settings" [ref=e190] [cursor=pointer]:
+                              - /url: "#the-steps"
+                            - text: steps.
+                  - paragraph [ref=e191]:
+                    - strong [ref=e192]: "Note:"
+                    - link "PHP converts periods (.) to underscores (_) in parameter names" [ref=e193] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Flanguage.variables.external.php&h=AUD6TCW7GYlLO5DgNxIuazgwPxgrsyTsO6m3_pFyQD5BasXNX0cBQZSJPHOqW_wl7JfNvUIptDXxoDpJy7uEksA2uinCy3j4IT6rAo17-52D7JzJpSZq1Ddo3XAVohwnrDMRaBqbkL5aXJS7ZAQ3Xg
+                    - text: .
+                  - heading "Validating Verification Requests" [level=4] [ref=e194]
+                  - paragraph [ref=e196]: "Whenever your endpoint receives a verification request, it must:"
+                  - list [ref=e197]:
+                    - listitem [ref=e198]:
+                      - text: Verify that the
+                      - code [ref=e199]: hub.verify_token
+                      - text: value matches the string you set in the
+                      - strong [ref=e200]: Verify Token
+                      - text: field when you
+                      - link "configure the Webhooks product" [ref=e201] [cursor=pointer]:
+                        - /url: "#the-steps"
+                      - text: in your App Dashboard (you haven't set up this token string yet).
+                    - listitem [ref=e202]:
+                      - text: Respond with the
+                      - code [ref=e203]: hub.challenge
+                      - text: value.
+                  - paragraph [ref=e204]:
+                    - text: If you are in your App Dashboard and configuring your Webhooks product (and thus, triggering a Verification Request), the dashboard will indicate if your endpoint validated the request correctly. If you are using the Graph API's
+                    - link "/app/subscriptions endpoint" [ref=e205] [cursor=pointer]:
+                      - /url: /docs/graph-api/reference/app/subscriptions
+                    - text: to configure the Webhooks product, the API will indicate success or failure with a response.
+                - heading "Notificaciones de eventos" [level=3] [ref=e206]
+                - generic [ref=e208]:
+                  - paragraph [ref=e209]:
+                    - text: When you configure your Webhooks product, you will subscribe to specific
+                    - code [ref=e210]: fields
+                    - text: on an
+                    - code [ref=e211]: object
+                    - text: type (e.g., the
+                    - code [ref=e212]: photos
+                    - text: field on the
+                    - code [ref=e213]: user
+                    - text: object). Whenever there's a change to one of these fields, we will send your endpoint a
+                    - code [ref=e214]: POST
+                    - text: request with a JSON payload describing the change.
+                  - paragraph [ref=e215]:
+                    - text: For example, if you subscribed to the
+                    - code [ref=e216]: user
+                    - text: object's
+                    - code [ref=e217]: photos
+                    - text: field and one of your app's Users posted a Photo, we would send you a
+                    - code [ref=e218]: POST
+                    - text: "request that would look something like this:"
+                  - generic [ref=e219]: "POST / HTTPS/1.1 Host: your-clever-domain-name.com/webhooks Content-Type: application/json X-Hub-Signature-256: sha256={super-long-SHA256-signature} Content-Length: 311 { \"entry\": [ { \"time\": 1520383571, \"changes\": [ { \"field\": \"photos\", \"value\": { \"verb\": \"update\", \"object_id\": \"10211885744794461\" } } ], \"id\": \"10210299214172187\", \"uid\": \"10210299214172187\" } ], \"object\": \"user\" }"
+                  - heading "Payload Contents" [level=4] [ref=e220]
+                  - paragraph [ref=e222]:
+                    - text: Payloads will contain an object describing the change. When you
+                    - link "configure the webhooks product" [ref=e223] [cursor=pointer]:
+                      - /url: "#the-steps"
+                    - text: ", you can indicate if payloads should only contain the names of changed fields, or if payloads should include the new values as well."
+                  - paragraph [ref=e224]: We format all payloads with JSON, so you can parse the payload using common JSON parsing methods or packages.
+                  - paragraph [ref=e227]: You will not be able to query historical webhook event notification data, so be sure to capture and store any webhook payload content that you want to keep.
+                  - paragraph [ref=e228]:
+                    - text: Most payloads will contain the following common properties, but the contents and structure of each payload varies depending on the object fields you are subscribed to. Refer to each object's
+                    - link "reference" [ref=e229] [cursor=pointer]:
+                      - /url: /docs/graph-api/webhooks/reference
+                    - text: document to see which fields will be included.
+                  - table [ref=e231]:
+                    - rowgroup [ref=e232]:
+                      - row [ref=e233]:
+                        - columnheader "Property" [ref=e234]
+                        - columnheader "Description" [ref=e235]
+                        - columnheader "Type" [ref=e236]
+                    - rowgroup [ref=e237]:
+                      - row [ref=e238]:
+                        - cell [ref=e239]:
+                          - paragraph [ref=e240]:
+                            - code [ref=e241]: object
+                        - cell [ref=e242]:
+                          - paragraph [ref=e243]:
+                            - text: The object's type (e.g.,
+                            - code [ref=e244]: user
+                            - text: ","
+                            - code [ref=e245]: page
+                            - text: ", etc.)"
+                        - cell [ref=e246]:
+                          - paragraph [ref=e247]:
+                            - code [ref=e248]: string
+                      - row [ref=e249]:
+                        - cell [ref=e250]:
+                          - paragraph [ref=e251]:
+                            - code [ref=e252]: entry
+                        - cell [ref=e253]:
+                          - paragraph [ref=e254]: An array containing an object describing the changes. Multiple changes from different objects that are of the same type may be batched together.
+                        - cell [ref=e255]:
+                          - paragraph [ref=e256]:
+                            - code [ref=e257]: array
+                      - row [ref=e258]:
+                        - cell [ref=e259]:
+                          - paragraph [ref=e260]:
+                            - code [ref=e261]: id
+                        - cell [ref=e262]:
+                          - paragraph [ref=e263]: The object's ID
+                        - cell [ref=e264]:
+                          - paragraph [ref=e265]:
+                            - code [ref=e266]: string
+                      - row [ref=e267]:
+                        - cell [ref=e268]:
+                          - paragraph [ref=e269]:
+                            - code [ref=e270]: changed_fields
+                        - cell [ref=e271]:
+                          - paragraph [ref=e272]:
+                            - text: An array of strings indicating the names of the fields that have been changed. Only included if you
+                            - emphasis [ref=e273]: disable
+                            - text: the
+                            - strong [ref=e274]: Include Values
+                            - text: setting when configuring the Webhooks product in your app's App Dashboard.
+                        - cell [ref=e275]:
+                          - paragraph [ref=e276]:
+                            - code [ref=e277]: array
+                      - row [ref=e278]:
+                        - cell [ref=e279]:
+                          - paragraph [ref=e280]:
+                            - code [ref=e281]: changes
+                        - cell [ref=e282]:
+                          - paragraph [ref=e283]:
+                            - text: An array containing an object describing the changed fields and their new values. Only included if you
+                            - emphasis [ref=e284]: enable
+                            - text: the
+                            - strong [ref=e285]: Include Values
+                            - text: setting when configuring the Webhooks product in your app's App Dashboard.
+                        - cell [ref=e286]:
+                          - paragraph [ref=e287]:
+                            - code [ref=e288]: array
+                      - row [ref=e289]:
+                        - cell [ref=e290]:
+                          - paragraph [ref=e291]:
+                            - code [ref=e292]: time
+                        - cell [ref=e293]:
+                          - paragraph [ref=e294]: A UNIX timestamp indicating when the Event Notification was sent (not when the change that triggered the notification occurred).
+                        - cell [ref=e295]:
+                          - paragraph [ref=e296]:
+                            - code [ref=e297]: int
+                  - heading "Validating Payloads" [level=4] [ref=e298]
+                  - paragraph [ref=e300]:
+                    - text: We sign all Event Notification payloads with a
+                    - strong [ref=e301]: SHA256
+                    - text: signature and include the signature in the request's
+                    - code [ref=e302]: X-Hub-Signature-256
+                    - text: header, preceded with
+                    - code [ref=e303]: sha256=
+                    - text: . You don't have to validate the payload, but you should.
+                  - paragraph [ref=e304]: "To validate the payload:"
+                  - list [ref=e305]:
+                    - listitem [ref=e306]:
+                      - text: Generate a
+                      - strong [ref=e307]: SHA256
+                      - text: signature using the payload and your app's
+                      - strong [ref=e308]: App Secret
+                      - text: .
+                    - listitem [ref=e309]:
+                      - text: Compare your signature to the signature in the
+                      - code [ref=e310]: X-Hub-Signature-256
+                      - text: header (everything after
+                      - code [ref=e311]: sha256=
+                      - text: ). If the signatures match, the payload is genuine.
+                  - heading "Responding to Event Notifications" [level=4] [ref=e313]
+                  - paragraph [ref=e315]:
+                    - text: Your endpoint should respond to all Event Notifications with
+                    - code [ref=e316]: 200 OK HTTPS
+                    - text: .
+                  - heading "Frequency" [level=4] [ref=e317]
+                  - paragraph [ref=e319]:
+                    - text: Event Notifications are aggregated and sent in a batch with a
+                    - strong [ref=e320]: maximum
+                    - text: of 1000 updates. However batching cannot be guaranteed so be sure to adjust your servers to handle each Webhook individually.
+                  - paragraph [ref=e321]: If any update sent to your server fails, we will retry immediately, then try a few more times with decreasing frequency over the next 36 hours. Your server should handle deduplication in these cases. Unacknowledged responses will be dropped after 36 hours.
+                  - paragraph [ref=e322]:
+                    - text: "Note: The frequency with which Messenger event notifications are sent is different. Please refer to the"
+                    - link "Messenger Platform Webhooks documentation" [ref=e323] [cursor=pointer]:
+                      - /url: https://developers.facebook.com/docs/messenger-platform/webhook/
+                    - text: for more information.
+                - link [ref=e324] [cursor=pointer]:
+                  - /url: "#"
+              - generic [ref=e327]:
+                - heading "Configurar webhooks" [level=2] [ref=e328]
+                - paragraph [ref=e329]:
+                  - text: Para obtener información sobre cómo configurar webhooks en tu app, visita la
+                  - link "página de personalización de casos de uso" [ref=e330] [cursor=pointer]:
+                    - /url: /docs/development/app-customization
+                  - text: correspondiente a tu caso de uso.
+                - link [ref=e331] [cursor=pointer]:
+                  - /url: "#"
+              - generic [ref=e335]:
+                - heading "mTLS for Webhooks" [level=2] [ref=e336]
+                - paragraph [ref=e337]: Mutual TLS (mTLS) is a method for mutual authentication.
+                - paragraph [ref=e338]: mTLS ensures that the parties at each end of a network connection are who they claim to be by verifying that they both have the correct private key. The information within their respective TLS certificates provides additional verification.
+                - heading "How to configure mTLS" [level=3] [ref=e339]
+                - paragraph [ref=e340]: Once you enable mTLS on your subscription to WhatsApp Business Account, Meta will present a client certificate together with its signing intermediate certificate. Both certificates are used to create a TLS handshake of Webhook requests to your server. Your server then can verify the sender’s identity of these requests by the trust chain and the common name (CN).
+                - paragraph [ref=e341]: The client certificate is signed by a Meta-owned Certificate Authority (CA). Configure your server or load balancer to trust the Meta outbound API CA certificate (meta-outbound-api-ca-2025-12.pem). This certificate replaces the previous DigiCert-signed certificate, which expired on April 15, 2026.
+                - heading "Client Certificate Verification" [level=3] [ref=e342]
+                - paragraph [ref=e343]:
+                  - text: After setting up HTTPS for receiving Webhook requests, complete the following steps to verify the client certificate and its common name
+                  - code [ref=e344]: client.webhooks.fbclientcerts.com
+                  - text: ":"
+                - list [ref=e345]:
+                  - listitem [ref=e346]: Install the Meta outbound API CA certificate
+                  - listitem [ref=e347]: Verify the client certificate against the CA certificate
+                  - listitem [ref=e348]: Verify the common name (client.webhooks.fbclientcerts.com) of the client certificate
+                - paragraph [ref=e349]: "Note: Servers receiving Webhooks must be using HTTPS; and we are always verifying the certificate from your HTTPS server for security."
+                - heading "Example" [level=3] [ref=e350]
+                - paragraph [ref=e351]: Depending on your server’s setup, the above steps vary in details. We illustrate by two examples, one for Nginx and one for AWS Application Load Balancer (ALB).
+                - heading "Nginx" [level=3] [ref=e352]
+                - list [ref=e353]:
+                  - listitem [ref=e354]:
+                    - paragraph [ref=e355]:
+                      - text: Download the Meta outbound API CA certificate (meta-outbound-api-ca-2025-12.pem) to your server, for example to
+                      - code [ref=e356]: /etc/ssl/certs/meta-outbound-api-ca-2025-12.pem
+                  - listitem [ref=e357]:
+                    - paragraph [ref=e358]: Turn on mTLS by Nginx directives
+                    - code [ref=e360]: ssl_verify_client on; ssl_client_certificate /etc/ssl/certs/meta-outbound-api-ca-2025-12.pem; ssl_verify_depth 3;
+                  - listitem [ref=e361]:
+                    - paragraph [ref=e362]:
+                      - text: Verify the CN from Nginx embedded variable
+                      - code [ref=e363]: $ssl_client_s_dn
+                      - text: equals
+                      - code [ref=e364]: "\"client.webhooks.fbclientcerts.com\""
+                      - text: (
+                    - code [ref=e366]: "if ($ssl_client_s_dn ~ \"CN=client.webhooks.fbclientcerts.com\") { return 200 \"$ssl_client_s_dn\"; }"
+                - heading "AWS Application Load Balancer (ALB)" [level=3] [ref=e367]
+                - list [ref=e368]:
+                  - listitem [ref=e369]: Download the Meta outbound API CA certificate (meta-outbound-api-ca-2025-12.pem) to an S3 bucket.
+                  - listitem [ref=e370]: Configure the HTTPS listener on the ALB to enable mTLS with the trust store containing the Meta CA certificate in the S3 bucket.
+                  - listitem [ref=e371]:
+                    - text: In your application code, extract the CN from the HTTP header
+                    - link "\"X-Amzn-Mtls-Clientcert-Subject\"" [ref=e372] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdocs.aws.amazon.com%2Felasticloadbalancing%2Flatest%2Fapplication%2Fmutual-authentication.html&h=AUB0sPMPuFLiJks2l2PxtAYxDeddkzV1RPqREQzwDQHdVjiCdh8G8FwFtBME5fMbIs37DfiksoiEXshUnXiKD-KLGbLP5gK0aPurNoRJ9kEMwBgOomX-oAFwokJ6xOfws0p2QKlLkgfhuuCDA3CpJA
+                    - text: ", and verify it equals"
+                    - code [ref=e373]: "\"client.webhooks.fbclientcerts.com\""
+                    - text: .
+                - heading "Downloadable CA certificate" [level=3] [ref=e374]
+                - link "meta-outbound-api-ca-2025-12.pem" [ref=e375] [cursor=pointer]:
+                  - /url: https://scontent.ftuc4-2.fna.fbcdn.net/v/t39.2365-6/616047706_1570847757511995_2892285379725429023_n.zip?_nc_cat=107&ccb=1-7&_nc_sid=e280be&_nc_ohc=3XmwAweuwJUQ7kNvwHtzuuO&_nc_oc=Adre01XQevdcIKNP6PMcwCSqX7sdg_CG8UvoiLhWuci3VTKPJ5RjdIopNh6KY1r76Hg&_nc_zt=14&_nc_ht=scontent.ftuc4-2.fna&_nc_gid=ayZ93MD2a3zGOZTgnBr0jw&_nc_ss=7a289&oh=00_AQLjUnVECDoUqrLXTWznRTnDbd_lSihVD4tcr1BWA7nmjw&oe=6AACA465
+                - link [ref=e376] [cursor=pointer]:
+                  - /url: "#"
+              - generic [ref=e379]:
+                - heading "Próximos pasos" [level=2] [ref=e380]
+                - paragraph [ref=e381]: "Ahora que sabes cómo configurar webhooks, quizás te resulte conveniente consultar nuestros documentos complementarios, donde se describen los pasos adicionales necesarios para configurar webhooks para productos específicos:"
+                - list [ref=e382]:
+                  - listitem [ref=e383]:
+                    - link "Webhooks para cuentas publicitarias" [ref=e385] [cursor=pointer]:
+                      - /url: /docs/development/create-an-app/marketing-api-use-cases#webhooks--optional-
+                  - listitem [ref=e386]:
+                    - link "Webhooks para Instagram" [ref=e388] [cursor=pointer]:
+                      - /url: /docs/development/create-an-app/instagram-use-case#ig-login
+                  - listitem [ref=e389]:
+                    - link "Webhooks para clientes potenciales" [ref=e391] [cursor=pointer]:
+                      - /url: /docs/development/create-an-app/marketing-api-use-cases#webhooks--optional-
+                  - listitem [ref=e392]:
+                    - link "Webhooks para Messenger" [ref=e394] [cursor=pointer]:
+                      - /url: docs/development/create-an-app/messenger-use-case#messenger-api-setup
+                  - listitem [ref=e395]:
+                    - link "Webhooks para páginas" [ref=e397] [cursor=pointer]:
+                      - /url: /docs/graph-api/webhooks/getting-started/webhooks-for-pages
+                  - listitem [ref=e398]:
+                    - link "Webhooks para pagos" [ref=e400] [cursor=pointer]:
+                      - /url: /docs/graph-api/webhooks/getting-started/webhooks-for-payments
+                  - listitem [ref=e401]:
+                    - link "Webhooks para WhatsApp" [ref=e403] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/webhooks/overview
+                - link [ref=e404] [cursor=pointer]:
+                  - /url: "#"
+            - link [ref=e408] [cursor=pointer]:
+              - /url: "#"
+    - contentinfo [ref=e413]:
+      - generic [ref=e414]:
+        - separator [ref=e415]
+        - generic [ref=e417]:
+          - generic [ref=e419]:
+            - generic [ref=e421]:
+              - generic [ref=e422]:
+                - img "Meta"
+              - list [ref=e424]:
+                - listitem:
+                  - link "Facebook":
+                    - /url: https://www.facebook.com/MetaforDevelopers
+                    - img "Facebook"
+                - listitem:
+                  - link "Instagram":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmetafordevelopers%2F&h=AUAwwZCeRlged_-sTsPtkqR3sEzez-HcUrex86kBYeljxO1FyIKIMRMM1BD7y1Yl8wqDbzKu7bin7XkkSn7ByU4b99FhGmKk1G1ZZ6LWVlXxMr9_5Gq5pik4ZUKgVY7y1oTUr0807G_nAM4tpL6O5Q
+                    - img "Instagram"
+                - listitem:
+                  - link "X":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2Fmetafordevs&h=AUAwwZCeRlged_-sTsPtkqR3sEzez-HcUrex86kBYeljxO1FyIKIMRMM1BD7y1Yl8wqDbzKu7bin7XkkSn7ByU4b99FhGmKk1G1ZZ6LWVlXxMr9_5Gq5pik4ZUKgVY7y1oTUr0807G_nAM4tpL6O5Q
+                    - img "X"
+                - listitem:
+                  - link "LinkedIn":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fshowcase%2Fmeta-for-developers%2F&h=AUAwwZCeRlged_-sTsPtkqR3sEzez-HcUrex86kBYeljxO1FyIKIMRMM1BD7y1Yl8wqDbzKu7bin7XkkSn7ByU4b99FhGmKk1G1ZZ6LWVlXxMr9_5Gq5pik4ZUKgVY7y1oTUr0807G_nAM4tpL6O5Q
+                    - img "LinkedIn"
+                - listitem:
+                  - link "YouTube":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2FMetaDevelopers%2F&h=AUAwwZCeRlged_-sTsPtkqR3sEzez-HcUrex86kBYeljxO1FyIKIMRMM1BD7y1Yl8wqDbzKu7bin7XkkSn7ByU4b99FhGmKk1G1ZZ6LWVlXxMr9_5Gq5pik4ZUKgVY7y1oTUr0807G_nAM4tpL6O5Q
+                    - img "YouTube"
+            - generic [ref=e426]:
+              - generic [ref=e429]:
+                - heading "Crear con Meta" [level=2] [ref=e430]
+                - list [ref=e432]:
+                  - listitem [ref=e433]:
+                    - link "Inteligencia artificial" [ref=e435] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fai%2F&h=AUAwwZCeRlged_-sTsPtkqR3sEzez-HcUrex86kBYeljxO1FyIKIMRMM1BD7y1Yl8wqDbzKu7bin7XkkSn7ByU4b99FhGmKk1G1ZZ6LWVlXxMr9_5Gq5pik4ZUKgVY7y1oTUr0807G_nAM4tpL6O5Q
+                  - listitem [ref=e436]:
+                    - link "Meta Horizon" [ref=e438] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fhorizon%2F&h=AUAwwZCeRlged_-sTsPtkqR3sEzez-HcUrex86kBYeljxO1FyIKIMRMM1BD7y1Yl8wqDbzKu7bin7XkkSn7ByU4b99FhGmKk1G1ZZ6LWVlXxMr9_5Gq5pik4ZUKgVY7y1oTUr0807G_nAM4tpL6O5Q
+                  - listitem [ref=e439]:
+                    - link "Tecnologías sociales" [ref=e441] [cursor=pointer]:
+                      - /url: /social-technologies/
+              - generic [ref=e444]:
+                - heading "Noticias" [level=2] [ref=e445]
+                - list [ref=e447]:
+                  - listitem [ref=e448]:
+                    - link "Meta for Developers" [ref=e450] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fblog%2F&h=AUAwwZCeRlged_-sTsPtkqR3sEzez-HcUrex86kBYeljxO1FyIKIMRMM1BD7y1Yl8wqDbzKu7bin7XkkSn7ByU4b99FhGmKk1G1ZZ6LWVlXxMr9_5Gq5pik4ZUKgVY7y1oTUr0807G_nAM4tpL6O5Q
+                  - listitem [ref=e451]:
+                    - link "Blog" [ref=e453] [cursor=pointer]:
+                      - /url: /blog/
+                  - listitem [ref=e454]:
+                    - link "Historias de éxito" [ref=e456] [cursor=pointer]:
+                      - /url: /success-stories/
+              - generic [ref=e459]:
+                - heading "Ayuda" [level=2] [ref=e460]
+                - list [ref=e462]:
+                  - listitem [ref=e463]:
+                    - link "Ayuda para desarrolladores" [ref=e465] [cursor=pointer]:
+                      - /url: /support/
+                  - listitem [ref=e466]:
+                    - link "Herramienta de errores" [ref=e468] [cursor=pointer]:
+                      - /url: /support/bugs/
+                  - listitem [ref=e469]:
+                    - link "Estado de la plataforma" [ref=e471] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmetastatus.com%2F&h=AUAwwZCeRlged_-sTsPtkqR3sEzez-HcUrex86kBYeljxO1FyIKIMRMM1BD7y1Yl8wqDbzKu7bin7XkkSn7ByU4b99FhGmKk1G1ZZ6LWVlXxMr9_5Gq5pik4ZUKgVY7y1oTUr0807G_nAM4tpL6O5Q
+                  - listitem [ref=e472]:
+                    - link "Foro de la comunidad de desarrolladores" [ref=e474] [cursor=pointer]:
+                      - /url: https://www.facebook.com/groups/fbdevelopers/
+                  - listitem [ref=e475]:
+                    - link "Reportar un incidente" [ref=e477] [cursor=pointer]:
+                      - /url: /incident/report/
+              - generic [ref=e480]:
+                - heading "Acerca de nosotros" [level=2] [ref=e481]
+                - list [ref=e483]:
+                  - listitem [ref=e484]:
+                    - link "Información" [ref=e486] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.fb.com%2F&h=AUAwwZCeRlged_-sTsPtkqR3sEzez-HcUrex86kBYeljxO1FyIKIMRMM1BD7y1Yl8wqDbzKu7bin7XkkSn7ByU4b99FhGmKk1G1ZZ6LWVlXxMr9_5Gq5pik4ZUKgVY7y1oTUr0807G_nAM4tpL6O5Q
+                  - listitem [ref=e487]:
+                    - link "Empleos" [ref=e489] [cursor=pointer]:
+                      - /url: https://www.facebook.com/careers
+              - generic [ref=e492]:
+                - heading "Condiciones y políticas" [level=2] [ref=e493]
+                - list [ref=e495]:
+                  - listitem [ref=e496]:
+                    - link "Iniciativas de plataforma responsable" [ref=e498] [cursor=pointer]:
+                      - /url: /products/responsible-platform-initiatives/
+                  - listitem [ref=e499]:
+                    - link "Condiciones de la plataforma" [ref=e501] [cursor=pointer]:
+                      - /url: /terms/dfc_platform_terms/
+                  - listitem [ref=e502]:
+                    - link "Políticas para desarrolladores" [ref=e504] [cursor=pointer]:
+                      - /url: /devpolicy/
+                  - listitem [ref=e505]:
+                    - link "Política de privacidad" [ref=e507] [cursor=pointer]:
+                      - /url: https://www.facebook.com/about/privacy
+                  - listitem [ref=e508]:
+                    - link "Cookies" [ref=e510] [cursor=pointer]:
+                      - /url: https://www.facebook.com/help/cookies
+          - button "Cambiar idioma" [ref=e515] [cursor=pointer]:
+            - generic [ref=e516]: Español

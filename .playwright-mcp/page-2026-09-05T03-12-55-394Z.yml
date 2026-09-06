@@ -1,0 +1,306 @@
+- generic [active] [ref=f72e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=f72e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=f72e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=f72e8]:
+    - search [ref=f72e9]:
+      - generic [ref=f72e11]:
+        - link "Ir a la Página principal de Google" [ref=f72e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=es-419&sa=X&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQPHoECAYQBA
+        - generic [ref=f72e21]:
+          - generic [ref=f72e22]:
+            - combobox "Buscar" [ref=f72e25]: site:developers.facebook.com WhatsApp "Business Verification" "Advanced Access" site:developers.facebook.com WhatsApp "Business Verification" "Advanced Access"
+            - generic [ref=f72e26]:
+              - button "Borrar" [ref=f72e28] [cursor=pointer]
+              - generic [ref=f72e33]:
+                - button "Búsqueda por voz" [ref=f72e34] [cursor=pointer]
+                - button "Búsqueda por imagen" [ref=f72e37] [cursor=pointer]
+          - button "Buscar" [ref=f72e40] [cursor=pointer]
+    - generic [ref=f72e45]:
+      - button "Configuración" [ref=f72e47] [cursor=pointer]
+      - button "Compartir" [ref=f72e53] [cursor=pointer]
+      - generic [ref=f72e59]:
+        - button "Apps de Google" [ref=f72e61] [cursor=pointer]
+        - link "Acceder" [ref=f72e66] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dsite%253Adevelopers.facebook.com%2BWhatsApp%2B%2522Business%2BVerification%2522%2B%2522Advanced%2BAccess%2522&ec=futura_srp_og_si_72236_p
+  - generic [ref=f72e68]:
+    - navigation [ref=f72e74]:
+      - generic [ref=f72e80]:
+        - list [ref=f72e81]:
+          - listitem [ref=f72e82]:
+            - link "Modo IA" [ref=f72e85] [cursor=pointer]:
+              - /url: /search?q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&udm=50&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeQJlIvRtBNPtwlTlFTA6J7NaWKGBWfpKnYyY_9supU6ai_AposGmKhqzeeTcv1eWnqt9TOnf2P1TZavmCxmfEiskEEYkkYui-HxyY46jkNm2bB6l31IDrGUNjtpGeXV7KMScFtQ5IvpxgBL6EpYuXV3UGCfw&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQ2J8OegQICxAD
+          - listitem [ref=f72e89]:
+            - link "Todo" [disabled] [ref=f72e90]
+          - listitem [ref=f72e93]:
+            - link "Videos" [ref=f72e94] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&udm=7&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeQJlIvRtBNPtwlTlFTA6J7NaWKGBWfpKnYyY_9supU6ai_AposGmKhqzeeTcv1eWnqt9TOnf2P1TZavmCxmfEiskEEYkkYui-HxyY46jkNm2bB6l31IDrGUNjtpGeXV7KMScFtQ5IvpxgBL6EpYuXV3UGCfw&q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&sa=X&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQtKgLegQIERAB
+          - listitem [ref=f72e97]:
+            - link "Imágenes" [ref=f72e98] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&udm=2&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeQJlIvRtBNPtwlTlFTA6J7NaWKGBWfpKnYyY_9supU6ai_AposGmKhqzeeTcv1eWnqt9TOnf2P1TZavmCxmfEiskEEYkkYui-HxyY46jkNm2bB6l31IDrGUNjtpGeXV7KMScFtQ5IvpxgBL6EpYuXV3UGCfw&q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&sa=X&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQtKgLegQIExAB
+          - listitem [ref=f72e101]:
+            - link "Noticias" [ref=f72e102] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&tbm=nws&source=lnms&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeQJlIvRtBNPtwlTlFTA6J7NaWKGBWfpKnYyY_9supU6ai_AposGmKhqzeeTcv1eWnqt9TOnf2P1TZavmCxmfEiskEEYkkYui-HxyY46jkNm2bB6l31IDrGUNjtpGeXV7KMScFtQ5IvpxgBL6EpYuXV3UGCfw&sa=X&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQ0pQJegQIFBAB
+          - listitem [ref=f72e105]:
+            - link "Shopping" [ref=f72e106] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&udm=28&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeQJlIvRtBNPtwlTlFTA6J7NaWKGBWfpKnYyY_9supU6ai_AposGmKhqzeeTcv1eWnqt9TOnf2P1TZavmCxmfEiskEEYkkYui-HxyY46jkNm2bB6l31IDrGUNjtpGeXV7KMScFtQ5IvpxgBL6EpYuXV3UGCfw&q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&ved=1t:220175&ictx=111
+          - listitem [ref=f72e109]:
+            - link "Videos cortos" [ref=f72e110] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&udm=39&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YeQJlIvRtBNPtwlTlFTA6J7NaWKGBWfpKnYyY_9supU6ai_AposGmKhqzeeTcv1eWnqt9TOnf2P1TZavmCxmfEiskEEYkkYui-HxyY46jkNm2bB6l31IDrGUNjtpGeXV7KMScFtQ5IvpxgBL6EpYuXV3UGCfw&q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&sa=X&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQs6gLegQIDRAB
+          - listitem [ref=f72e113]:
+            - button [ref=f72e114] [cursor=pointer]:
+              - generic "Más filtros" [ref=f72e115]: Más
+        - button "Herramientas" [ref=f72e122] [cursor=pointer]
+    - heading "Resultados de búsqueda" [level=1] [ref=f72e129]
+    - main [ref=f72e135]:
+      - generic [ref=f72e139]:
+        - generic [ref=f72e142]:
+          - heading "Web results" [level=2] [ref=f72e143]
+          - generic [ref=f72e144]:
+            - generic [ref=f72e147]:
+              - link "WhatsApp app review - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f72e149] [cursor=pointer]:
+                - /url: /goto?url=CAESnwEB6zswFYBaWqFkmCZ-j4Xqt598Uq6R67JN1WDTIsZ6_1UeupzMHYcHiMTFiI87jswvlvB-iGuOy9ltv1NSYIMcCzNAyUutCjeoJmje4VpI7vvvvbcMjWOzTOmDq0QCsD-XqcOUPFsUmz5bpTUyLhsUiOd4vqNZA9MtcBu1djoAkIWHBz0vRxVRzGRMZkRVCjf2ntiubfceqjmeAu9Cn2U
+                - heading "WhatsApp app review - Meta for Developers" [level=3] [ref=f72e150]
+                - generic [ref=f72e156]:
+                  - generic [ref=f72e157]: Meta for Developers
+                  - generic [ref=f72e159]: https://developers.facebook.com › ...
+              - generic [ref=f72e161]:
+                - generic [ref=f72e162]: ·
+                - link "Traducir esta página" [ref=f72e163] [cursor=pointer]:
+                  - /url: /goto?url=CAES8QEB6zswFZahqaBMGHTN5PKErhVtYH0D7_M_Fiv5JwK_JMhY6_tb2mmpA2E5X2QBrzkiRAud21q_LN-p3x-p8p9YID6SF6RuIfoO050t08ygKwaBVVo43QATZgZBxdTsJnsPzGqIONIGcJoDB00ZPedDarOhz_-p9ZISnWc03CUUwTeJ90pfEqzK2NX6NViaZZmWCWbsg_CIEDBGC43kw55HZwR-ae3RLUriT528L3mhXnthR5Ce74642GVQ0dIlaAlbIZwGKJpCXaEw4YBR558qx2ypTGCsVZU8QsmAG5Yk20CSp8AP-Psko-sy1IiBuzl9
+              - button "Acerca de este resultado" [ref=f72e168] [cursor=pointer]
+            - generic [ref=f72e175]:
+              - text: Partner-led
+              - emphasis [ref=f72e176]: business verification
+              - text: ... If you are building an app that other businesses will be using, you must request
+              - emphasis [ref=f72e177]: Advanced access
+              - text: for any permissions your ...
+        - generic [ref=f72e181]:
+          - generic [ref=f72e184]:
+            - link "Solution Partner - Meta for Developers - Facebook Meta for Developers https://developers.facebook.com › ..." [ref=f72e186] [cursor=pointer]:
+              - /url: /goto?url=CAESnQEB6zswFXniI_qC5XRcUD_ybf9Li3eNQAN5ZUe6oc3GmMoce9qx-xiEN3zMU6JJJk5nA_AvcrcqVJcU6UECWR0GFenInbdP9uwuZJZm7cn1AIBGCTK3vOa5ENG3h5Na6V3JrLII4GSt1rqqZz3XNEJtRWVZYBVG0Pyxp3nKLrc_d8Qdh7SDJ9LyAd-_HmVv2bioG81sJBUQCBA3UZZT
+              - heading "Solution Partner - Meta for Developers - Facebook" [level=3] [ref=f72e187]
+              - generic [ref=f72e193]:
+                - generic [ref=f72e194]: Meta for Developers
+                - generic [ref=f72e196]: https://developers.facebook.com › ...
+            - generic [ref=f72e198]:
+              - generic [ref=f72e199]: ·
+              - link "Traducir esta página" [ref=f72e200] [cursor=pointer]:
+                - /url: /goto?url=CAES7wEB6zswFXbjP9_6FB-xfCcR44Wp9ugL0TcXeMGKwL_mjByX1U6izVqKj70kvXsWhf3bpU620pgzfAOJeFQHOuhuLCirUMLdG6b3Xr4KBFkX2fBVNN6D_-_FEjBZXn48EnVfLmJ_J4ayK4ahyYiIy3ojfVtH-Ec5X707iu6WQ8-EGnxMxnAs33HrOghe0zVd4I740ITuVd_ULxolIFUXIz0pXDJhHvSJvzcmkJnbygpotULFXEUbeRNc4Uc5kNsViMHj31lYje9RX_t7kNkV41ihVdLqassuTheW5owh7AxnZJArT2RrfV0MWm9VOBw2RA
+            - button "Acerca de este resultado" [ref=f72e205] [cursor=pointer]
+          - generic [ref=f72e212]:
+            - text: Before you can officially begin onboarding clients, submit your app for App Review and request
+            - emphasis [ref=f72e213]: Advanced access
+            - text: approval for any permissions your app requires.
+        - generic [ref=f72e217]:
+          - generic [ref=f72e220]:
+            - link "Embedded Signup - Meta for Developers - Facebook Meta for Developers https://developers.facebook.com › ..." [ref=f72e222] [cursor=pointer]:
+              - /url: /goto?url=CAESmgEB6zswFTlnmGNokv86xYT6yr5ktDw_GiaKvoz58l8KelpIo1zSlVX6MBpGzJRvO5vp6pzsHwfQCJJgJV5ZSZ4tdF7DofYDy1POxX_OgMRgIcamwpsi1rjjEC_voVd8tsCB-myStTnYPKcpjqnhj4RqG0vei81B-lUN8iOU5Fw5r2Uvefwu32y49GtqPQe0dYFSpoVfrOoKmxUi
+              - heading "Embedded Signup - Meta for Developers - Facebook" [level=3] [ref=f72e223]
+              - generic [ref=f72e229]:
+                - generic [ref=f72e230]: Meta for Developers
+                - generic [ref=f72e232]: https://developers.facebook.com › ...
+            - generic [ref=f72e234]:
+              - generic [ref=f72e235]: ·
+              - link "Traducir esta página" [ref=f72e236] [cursor=pointer]:
+                - /url: /goto?url=CAES7AEB6zswFdd0-XR4LmFuwpHyY-VA7iZ76iXuhlx7t2Oupb8t_YFNlozTaoc2td2JT8dB3IxGy4Hu0A7gnONlSz3H105TTtLbPP3IIqvFVQfnTDLbebQ2TT73l9_KWVYeDxIQQz7FsX_srA_A-hXxdDL2ET7Gs9ddkPkC6IdGNKCv_A3Pv-piBKjj5mBU0tonGg9rt4WJjaK2yh6FvAzXJaiIxjOd-T5Zn273sFQoWD_fqVisZFYBfdopdKhUO0rWy7GSeFGEuRlK3hamOipKXck25oJLK8VRDNIKhRWnGAsvdUJFg9a7wqcp6Knxqw
+            - button "Acerca de este resultado" [ref=f72e241] [cursor=pointer]
+          - generic [ref=f72e248]:
+            - text: If you complete
+            - emphasis [ref=f72e249]: Business Verification
+            - text: ... However, once you switch your app to live mode, only permissions that have been approved for
+            - emphasis [ref=f72e250]: advanced access
+            - text: through the ...
+        - generic [ref=f72e254]:
+          - generic [ref=f72e257]:
+            - link "Business Verification stuck \"In review\" since July 17 (14 ... Meta for Developers https://developers.facebook.com › ..." [ref=f72e259] [cursor=pointer]:
+              - /url: /goto?url=CAESewHrOzAVrXXS5oMu1u_uihG2EMxCqwFiEfa7Yue7TgsztylWwk5tHmhjnMMX0sg79ru6fSXsqXCTZ4fO8OY53YMnZsJefAKwga9Nt11gDaW8RqFEpK_3b7C5mFwb3BRyxKeB8hKWPbcYQNN4QFeNL1DQE4ntcn3Mk6c9Ag
+              - heading "Business Verification stuck \"In review\" since July 17 (14 ..." [level=3] [ref=f72e260]
+              - generic [ref=f72e266]:
+                - generic [ref=f72e267]: Meta for Developers
+                - generic [ref=f72e269]: https://developers.facebook.com › ...
+            - generic [ref=f72e271]:
+              - generic [ref=f72e272]: ·
+              - link "Traducir esta página" [ref=f72e273] [cursor=pointer]:
+                - /url: /goto?url=CAESzQEB6zswFVFlbW3DFhZrlaNmyBFcIXv9oJYctFnHxU3QUWCjuy1DRhDLE-uobtGg1NOvZalV-Mamw6p53b7dG9dHYMpiU3AHzsnXs57aoyJlOrHk7JZZEqfUPCl8_yMAk039-9KIx0UqmrWfkAiNxgs51AxW8IB_0T5ktkezo_z5K59FA_0lrC_0SatZptLG1LkbMyJ07Il7j0C58fu7QNdrsO22QXVsjpJN1r9VuFWqLTAt_ln28s4rqsMkrea2qIItg6AJmO1CsJ00L60P
+            - button "Acerca de este resultado" [ref=f72e278] [cursor=pointer]
+          - generic [ref=f72e285]:
+            - text: ...
+            - emphasis [ref=f72e286]: WhatsApp Advanced Access
+            - text: . 1. Hello Meta team,. Our
+            - emphasis [ref=f72e287]: Business Verification
+            - text: ...
+            - emphasis [ref=f72e288]: Business Verification
+            - text: completes, which blocks
+            - emphasis [ref=f72e289]: WhatsApp Advanced Access
+            - text: . Our ...
+        - generic [ref=f72e293]:
+          - generic [ref=f72e296]:
+            - link "Sample Submission - WhatsApp Business Platform Meta for Developers https://developers.facebook.com › ..." [ref=f72e298] [cursor=pointer]:
+              - /url: /goto?url=CAESlgEB6zswFaKS3eXWl_Gf75lDKKrWM5EEWIPlQRyoq0gJF-sG4zl5YMVcNOtXD3VPJgcYVnaQVTOFIcQ0MlhX1ofakShTp_smqve28n9SE8r1grT1F8-X3gTYo4S4LguoBWsJjlsrQERLqCv3WnmauyGtT5U5Bwbdp9U2VQEiSIsRpK3E-TYjrfT8KPPXmiMT-8jYNPrNCxo
+              - heading "Sample Submission - WhatsApp Business Platform" [level=3] [ref=f72e299]
+              - generic [ref=f72e305]:
+                - generic [ref=f72e306]: Meta for Developers
+                - generic [ref=f72e308]: https://developers.facebook.com › ...
+            - generic [ref=f72e310]:
+              - generic [ref=f72e311]: ·
+              - link "Traducir esta página" [ref=f72e312] [cursor=pointer]:
+                - /url: /goto?url=CAES6AEB6zswFabltuT-E9Ej4-5oX3SyB_4YA4wwk88AjR8ayj6sq3ylwGFKWOMC_zLzum3oaOdyH9nAjq5OSmV8_et03hTAxBQUmAc7QHOw4KRvF5mDlatgsStcx5yKieY-dnnVb8UU8yKUUvBbaD9vU79fV2EwNyB0O1eF7R-d7SEbRKF1FcHRamohAPh_WpH1OiG-nWkob69NnwjdOyGrdLulI_d_jplvsLVScBWhR-em1XarU6NuoQaTniBh8_aX9HAGDZcVKtzocN3fG85gqAHSrkhpzcHxjAO3Fa0FI9345wHjJM-Cd-Xn
+            - button "Acerca de este resultado" [ref=f72e317] [cursor=pointer]
+          - generic [ref=f72e324]:
+            - text: MPS Embedded Creation · Partner-led
+            - emphasis [ref=f72e325]: Business Verification
+            - text: · Partner ... Click Request
+            - emphasis [ref=f72e326]: Advanced Access
+            - text: for each permission, then click Continue the Request.
+        - generic [ref=f72e330]:
+          - generic [ref=f72e333]:
+            - link "Become a Tech Provider - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f72e335] [cursor=pointer]:
+              - /url: /goto?url=CAESswEB6zswFRktqbs_lw644E-6oNB9JGlotk8Z9XxM-PtK_LJ9VG92BZkKMEwI6LBpDDhQA0s0_9CyaryLhbm_EyqK1A3esg-yfLjhvvlB3CIojZP-h6JZLT_kXHr25mqS8c-_9B9Aj23-bZCTY7GxEdFtzIVYLSKDSdaPsbCfVk1DL1oGZ0q4zh04vafwXZLOSBspUFmqDbUP5DMc5nEYV67TWBDOEiCODWc7FUVUZKHmGRmt3Q
+              - heading "Become a Tech Provider - Meta for Developers" [level=3] [ref=f72e336]
+              - generic [ref=f72e342]:
+                - generic [ref=f72e343]: Meta for Developers
+                - generic [ref=f72e345]: https://developers.facebook.com › ...
+            - generic [ref=f72e347]:
+              - generic [ref=f72e348]: ·
+              - link "Traducir esta página" [ref=f72e349] [cursor=pointer]:
+                - /url: /goto?url=CAEShQIB6zswFVdlD9r09COMiWsoIF2Ho6dhIE9MRz99bblReT-5prK24yQqaENk6oUgPcZU_gBrRFAtocoeQSnb3Ob6xBDVxzWdNH5FBjbo7N99OCfBx-biF4XCa_7B8QKbQv0CGTvdd5s-1KXzUxnSim-vqUkBiyKus2Jf5DmJ_B6kDl91R9nVKRCZIqv6rKZm7xk2LJhAfp4IXuMOVBIxZyF2NiDuV0cgCsiIDRfBD5O9v-XWxtfRxM9hD8Z3E800eWItd8UmO31wn5aMeA5opbBr6DrXVjNP2Xk6FiSTHK_BisB_iITwK5g7F4F7ETR5UI7U7LU3ISQYWe0yKIx1nP9u5CTZb00
+            - button "Acerca de este resultado" [ref=f72e354] [cursor=pointer]
+          - generic [ref=f72e361]:
+            - text: Once you have completed
+            - emphasis [ref=f72e362]: business verification
+            - text: ", you can submit your app for App Review. ... App Review grants you"
+            - emphasis [ref=f72e363]: Advanced access
+            - text: to the following ...
+        - generic [ref=f72e367]:
+          - generic [ref=f72e370]:
+            - link "WhatsApp webhooks - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f72e372] [cursor=pointer]:
+              - /url: /goto?url=CAESkwEB6zswFePHp7Zuep-4EGYunI6FBa0UrcWVZ6bTcPZOIxugr6t5W6hXI4S46C0wGTyU7m0k69sPQaF-3jHWHJYc34Fd5K5POShFN21JpGVL6mel_kQfNLPEriIc0oMffRw2f_0fQJ0zXdCUz97LJq9u3Yazp1pow0zsUjAAW1bHA6X5F_xGhMJOtCAbVQP_8vBIRTM
+              - heading "WhatsApp webhooks - Meta for Developers" [level=3] [ref=f72e373]
+              - generic [ref=f72e379]:
+                - generic [ref=f72e380]: Meta for Developers
+                - generic [ref=f72e382]: https://developers.facebook.com › ...
+            - generic [ref=f72e384]:
+              - generic [ref=f72e385]: ·
+              - link "Traducir esta página" [ref=f72e386] [cursor=pointer]:
+                - /url: /goto?url=CAES5QEB6zswFbMMLg96FvRZtwis-H2hygceKEJhrF-L1lc7itrEUrFTl5_3cG6h1NaSvA7Hq_00fB4TUmiioJlvoeIA4TPxhtQD0aoX-phFQ8KR4-j9sh2B3l5ezJThqvCKmZHizz7-IY4CRABJO3-xQco2TV9vt9CPk2eGOl7AVGuY_9QNPFyreV6i2AAkVCoCzd9_2jEXEF983DjJUzUBekiAF6u24kWiQoMw_7cD0KF2O36xBXybdxFhFgvenij68D5CrzDK6gSjxXmXpDhdu_Cz3tFhiqXwagXd6RrIqDwNSpwfbWRF
+            - button "Acerca de este resultado" [ref=f72e391] [cursor=pointer]
+          - generic [ref=f72e398]:
+            - text: If you are a partner and need these permissions to provide appropriate services to your business customers, you must be approved for
+            - emphasis [ref=f72e399]: advanced access
+            - text: for the ...
+        - generic [ref=f72e403]:
+          - generic [ref=f72e406]:
+            - link "Verified Tech Provider app is missing WhatsApp Business API ... Meta for Developers https://developers.facebook.com › ..." [ref=f72e408] [cursor=pointer]:
+              - /url: /goto?url=CAESewHrOzAV1ZppoH8aAll1P38jg35uiTwilXJFLZgHHOvVQyAj_o9un_6IF74ouMS7hZN37FxYYmHTMkJzTCXuppp9EZ2Kcus0YbotCIwYfgqUqjLFN5NVu12fpa01dMJj6BGD1ruqyIdGVGAEZx2rbh-XzY6JYfj-a6SSCA
+              - heading "Verified Tech Provider app is missing WhatsApp Business API ..." [level=3] [ref=f72e409]
+              - generic [ref=f72e415]:
+                - generic [ref=f72e416]: Meta for Developers
+                - generic [ref=f72e418]: https://developers.facebook.com › ...
+            - generic [ref=f72e420]:
+              - generic [ref=f72e421]: ·
+              - link "Traducir esta página" [ref=f72e422] [cursor=pointer]:
+                - /url: /goto?url=CAESzQEB6zswFfxurcEPlT7moeGnX3AFnOIFB4wydL04l3g80Hxc42-g3gnQE4KtDA8YbNrCE9zLfdn_olT1OHE6xGlFHKFnqSgD2PPJoTHrkql-Kwc5c1VQtW3d62j-GMEo_i9W2RuHQwpijYbe3MSqEwLti8oqsd-pcLCkFW2s7EFbVb6fOlHkmCZ1VyKpzkCBrx0Kob0L0obEG5MpDGFDV1Sni3AFjxmIELJux980XvT0QdTL7TQul6MlLYeZixQaArBGRX2abXlnuqgWf0ZS
+            - button "Acerca de este resultado" [ref=f72e427] [cursor=pointer]
+          - generic [ref=f72e434]:
+            - text: ...
+            - emphasis [ref=f72e435]: Advanced Access
+            - text: for whatsapp_business_management and whatsapp_business_messaging.
+            - emphasis [ref=f72e436]: Business Verification
+            - text: ...
+            - emphasis [ref=f72e437]: WhatsApp
+            - text: Business API is not listed among the ...
+        - generic [ref=f72e441]:
+          - generic [ref=f72e444]:
+            - link "Manage WhatsApp Business accounts - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f72e446] [cursor=pointer]:
+              - /url: /goto?url=CAESpQEB6zswFaZoRpdpuw6VtBO4TCiccWp2O8gisX51dSCkBwWKzYhbPitiTQLtBnGhHe58b3UJuOcLWnVzTA4Qe0qQvhsPvlpV2T4rqPxIg-jzO0dhR2xfOOTwi3M6PaEDepsiRNgGnQNxJ0_vMKVL-_a9Kd1xnrOOY3JCdtoMyOsX_SqeOvQleeByZEl08aUQYcIQpMU7oAVlsQqXVpM18_1i1zw35KA
+              - heading "Manage WhatsApp Business accounts - Meta for Developers" [level=3] [ref=f72e447]
+              - generic [ref=f72e453]:
+                - generic [ref=f72e454]: Meta for Developers
+                - generic [ref=f72e456]: https://developers.facebook.com › ...
+            - generic [ref=f72e458]:
+              - generic [ref=f72e459]: ·
+              - link "Traducir esta página" [ref=f72e460] [cursor=pointer]:
+                - /url: /goto?url=CAES9wEB6zswFU5xT-qr90EmTF6zS0sSY9WfgYi_PKOA8MMXvSmZfh4LLNRNVX9VSh-tyAauQN-W-qLZrfUZeFNHnJKsLQBNR18UCPEKVnihbWj_FZYa0-4NcE1UqqC0q2TDkwEt6_ynV1h57pWEfPHTct7v4QPiukpwAfML-QkzhwMtxPUwzOMiwYGdn0IrmUbT01pCUs7ihjMSEzlUHQbuqRJfwyAQbgJUeFgIME4eq2w6N2-MuiuLcWIVm5lSlXxneC7b1JwYSQDeOAtMQMUrLFFPUx5v_kjoz6J7cOnY_LkFiidnu8vEtn4l8eZHyRqwfEakXe7LoVLl
+            - button "Acerca de este resultado" [ref=f72e465] [cursor=pointer]
+          - generic [ref=f72e472]:
+            - text: Partner-led
+            - emphasis [ref=f72e473]: business verification
+            - text: · Pixel tracking. Manage ... If your app lacks
+            - emphasis [ref=f72e474]: Advanced access
+            - text: for this permission, these calls return error code 200 .
+        - generic [ref=f72e478]:
+          - generic [ref=f72e481]:
+            - link "Business Verification - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f72e483] [cursor=pointer]:
+              - /url: /goto?url=CAESjwEB6zswFXr6RSIvgISJBgpma937KuHz-v-JvFP2_PvKF0R3mMBvW6OcpuEWDxgZ3mW0AQMdBYNowga-SISfgmdE-d_55NfuWQoJia5-svzIbQn_SxscQhnul-qEJwqQogI5C_7Zd5Sl-xYiF6PDwUsqQtz3Drv2opcrIxbbuOQA-V-W-viu4P7J6_JoV5rGGw
+              - heading "Business Verification - Meta for Developers" [level=3] [ref=f72e484]
+              - generic [ref=f72e490]:
+                - generic [ref=f72e491]: Meta for Developers
+                - generic [ref=f72e493]: https://developers.facebook.com › ...
+            - generic [ref=f72e495]:
+              - generic [ref=f72e496]: ·
+              - link "Traducir esta página" [ref=f72e497] [cursor=pointer]:
+                - /url: /goto?url=CAES4QEB6zswFTMhM2Y2WzSVzLcyM_xabp4qztvGGi_ZWPQ3VqkSMgPqoGpSbUsOt_Q5gFxfObsb4CY3SszqeqMSZl8q3JsidZYn7lAX0u0efFwODB0iEDDKqLy6b3fe-6hL4P7rUh9L9rM1czQHVXZ4V0KucVx8A-Wfqa2c3EhhzzJMAB1YkkWQYHC4omcNXRJtAjZI9NiZooqbOgPFqCQydPsx5ZCb0-7JGlj0ouaV_8M_Of3OEFUqpV1xSAIvTc4QOEoqhMCMrns3eUH7W60I5iKeYIlllD6LbssrkiOzvGLs2GM
+            - button "Acerca de este resultado" [ref=f72e502] [cursor=pointer]
+          - generic [ref=f72e509]:
+            - emphasis [ref=f72e510]: Advanced Access
+            - text: now requires
+            - emphasis [ref=f72e511]: Business Verification
+            - text: . As of February 1, 2023, if your app requires advanced level access to permissions, you might need to ...
+      - navigation [ref=f72e514]:
+        - heading "Navegación de páginas" [level=1] [ref=f72e515]
+        - text: "1"
+        - link "Page 2" [ref=f72e518] [cursor=pointer]:
+          - /url: /search?q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&ei=7YebasbZO4C75OUPguy0sAs&start=10&sa=N&sstk=AS6-VmKYOOGdPINEWYuLb-KpnyGhFBuZ2iwavRAv9g90PHKKuei9BdbSL6n-09JPI60o0M44BZLoAm00cNwRj_CNU7AH4DzZTvNIsw&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQ8tMDegQIMxAE
+          - text: "2"
+        - link "Page 3" [ref=f72e520] [cursor=pointer]:
+          - /url: /search?q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&ei=7YebasbZO4C75OUPguy0sAs&start=20&sa=N&sstk=AS6-VmKYOOGdPINEWYuLb-KpnyGhFBuZ2iwavRAv9g90PHKKuei9BdbSL6n-09JPI60o0M44BZLoAm00cNwRj_CNU7AH4DzZTvNIsw&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQ8tMDegQIMxAG
+          - text: "3"
+        - link "Page 4" [ref=f72e522] [cursor=pointer]:
+          - /url: /search?q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&ei=7YebasbZO4C75OUPguy0sAs&start=30&sa=N&sstk=AS6-VmKYOOGdPINEWYuLb-KpnyGhFBuZ2iwavRAv9g90PHKKuei9BdbSL6n-09JPI60o0M44BZLoAm00cNwRj_CNU7AH4DzZTvNIsw&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQ8tMDegQIMxAI
+          - text: "4"
+        - link "Page 5" [ref=f72e524] [cursor=pointer]:
+          - /url: /search?q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&ei=7YebasbZO4C75OUPguy0sAs&start=40&sa=N&sstk=AS6-VmKYOOGdPINEWYuLb-KpnyGhFBuZ2iwavRAv9g90PHKKuei9BdbSL6n-09JPI60o0M44BZLoAm00cNwRj_CNU7AH4DzZTvNIsw&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQ8tMDegQIMxAK
+          - text: "5"
+        - link "Page 6" [ref=f72e526] [cursor=pointer]:
+          - /url: /search?q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&ei=7YebasbZO4C75OUPguy0sAs&start=50&sa=N&sstk=AS6-VmKYOOGdPINEWYuLb-KpnyGhFBuZ2iwavRAv9g90PHKKuei9BdbSL6n-09JPI60o0M44BZLoAm00cNwRj_CNU7AH4DzZTvNIsw&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQ8tMDegQIMxAM
+          - text: "6"
+        - link "Page 7" [ref=f72e528] [cursor=pointer]:
+          - /url: /search?q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&ei=7YebasbZO4C75OUPguy0sAs&start=60&sa=N&sstk=AS6-VmKYOOGdPINEWYuLb-KpnyGhFBuZ2iwavRAv9g90PHKKuei9BdbSL6n-09JPI60o0M44BZLoAm00cNwRj_CNU7AH4DzZTvNIsw&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQ8tMDegQIMxAO
+          - text: "7"
+        - link "Page 8" [ref=f72e530] [cursor=pointer]:
+          - /url: /search?q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&ei=7YebasbZO4C75OUPguy0sAs&start=70&sa=N&sstk=AS6-VmKYOOGdPINEWYuLb-KpnyGhFBuZ2iwavRAv9g90PHKKuei9BdbSL6n-09JPI60o0M44BZLoAm00cNwRj_CNU7AH4DzZTvNIsw&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQ8tMDegQIMxAQ
+          - text: "8"
+        - link "Page 9" [ref=f72e532] [cursor=pointer]:
+          - /url: /search?q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&ei=7YebasbZO4C75OUPguy0sAs&start=80&sa=N&sstk=AS6-VmKYOOGdPINEWYuLb-KpnyGhFBuZ2iwavRAv9g90PHKKuei9BdbSL6n-09JPI60o0M44BZLoAm00cNwRj_CNU7AH4DzZTvNIsw&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQ8tMDegQIMxAS
+          - text: "9"
+        - link "Page 10" [ref=f72e534] [cursor=pointer]:
+          - /url: /search?q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&ei=7YebasbZO4C75OUPguy0sAs&start=90&sa=N&sstk=AS6-VmKYOOGdPINEWYuLb-KpnyGhFBuZ2iwavRAv9g90PHKKuei9BdbSL6n-09JPI60o0M44BZLoAm00cNwRj_CNU7AH4DzZTvNIsw&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQ8tMDegQIMxAU
+          - text: "10"
+        - heading [level=2] [ref=f72e536]:
+          - link "Siguiente" [ref=f72e537] [cursor=pointer]:
+            - /url: /search?q=site:developers.facebook.com+WhatsApp+%22Business+Verification%22+%22Advanced+Access%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQntlQaFgKKZtk_Uenhq3YgmIos2CIg:1788577773983&ei=7YebasbZO4C75OUPguy0sAs&start=10&sa=N&sstk=AS6-VmKYOOGdPINEWYuLb-KpnyGhFBuZ2iwavRAv9g90PHKKuei9BdbSL6n-09JPI60o0M44BZLoAm00cNwRj_CNU7AH4DzZTvNIsw&ved=2ahUKEwiGhPy2u9aWAxWAHbkGHQI2DbYQ8NMDegQIMxAW
+      - navigation
+    - contentinfo [ref=f72e540]:
+      - heading "Vínculos a pie de página" [level=1] [ref=f72e541]
+      - generic [ref=f72e545]:
+        - generic [ref=f72e547]:
+          - text: Argentina
+          - generic [ref=f72e549]:
+            - button "Capital, San Miguel de Tucumán, Tucumán - A través de tu dirección IP" [ref=f72e551] [cursor=pointer]:
+              - generic [ref=f72e552]: Capital, San Miguel de Tucumán, Tucumán
+              - generic [ref=f72e554]:
+                - text: "-"
+                - generic [ref=f72e555]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=f72e557] [cursor=pointer]
+        - generic [ref=f72e560]:
+          - link "Ayuda" [ref=f72e561] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - button "Enviar comentarios" [ref=f72e563] [cursor=pointer]
+          - link "Privacidad" [ref=f72e565] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=f72e566] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

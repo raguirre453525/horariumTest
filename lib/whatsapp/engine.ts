@@ -14,7 +14,7 @@ type EngineResult = { reply: string; handled: boolean };
 const MODEL_UNAVAILABLE_TEXT = "No pude conectarme con el modelo. Intentá de nuevo en un rato.";
 
 function modelUnavailableText(failureCodes: string[]): string {
-  const safeCodes = failureCodes.filter((code) => /^(?:groq|deepseek):(?:no-key|fetch|http|parse|empty)(?::\d+)?$/.test(code));
+  const safeCodes = failureCodes.filter((code) => /^(?:groq|deepseek):(?:no-key|fetch|http|parse|empty)(?::[a-z0-9_-]+(?::\d+)?)?$/.test(code));
   if (safeCodes.length === 0) return MODEL_UNAVAILABLE_TEXT;
   return `No pude conectarme con el modelo (${safeCodes.join(", ")}). Intentá de nuevo en un rato.`;
 }

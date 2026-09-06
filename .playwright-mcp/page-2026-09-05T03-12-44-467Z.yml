@@ -1,0 +1,126 @@
+- generic [active] [ref=f68e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=f68e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=f68e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=f68e8]:
+    - search [ref=f68e9]:
+      - generic [ref=f68e11]:
+        - link "Ir a la Página principal de Google" [ref=f68e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=es-419&sa=X&ved=2ahUKEwjXg-Cxu9aWAxWjALkGHQLKEzoQPHoECAYQBA
+        - generic [ref=f68e21]:
+          - generic [ref=f68e22]:
+            - combobox "Buscar" [ref=f68e25]: site:developers.facebook.com/documentation/business-messaging/whatsapp "add a business phone number" site:developers.facebook.com/documentation/business-messaging/whatsapp "add a business phone number"
+            - generic [ref=f68e26]:
+              - button "Borrar" [ref=f68e28] [cursor=pointer]
+              - generic [ref=f68e33]:
+                - button "Búsqueda por voz" [ref=f68e34] [cursor=pointer]
+                - button "Búsqueda por imagen" [ref=f68e37] [cursor=pointer]
+          - button "Buscar" [ref=f68e40] [cursor=pointer]
+    - generic [ref=f68e45]:
+      - button "Configuración" [ref=f68e47] [cursor=pointer]
+      - button "Compartir" [ref=f68e53] [cursor=pointer]
+      - generic [ref=f68e59]:
+        - button "Apps de Google" [ref=f68e61] [cursor=pointer]
+        - link "Acceder" [ref=f68e66] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dsite%253Adevelopers.facebook.com%252Fdocumentation%252Fbusiness-messaging%252Fwhatsapp%2B%2522add%2Ba%2Bbusiness%2Bphone%2Bnumber%2522&ec=futura_srp_og_si_72236_p
+  - generic [ref=f68e68]:
+    - navigation [ref=f68e74]:
+      - generic [ref=f68e80]:
+        - list [ref=f68e81]:
+          - listitem [ref=f68e82]:
+            - link "Modo IA" [ref=f68e85] [cursor=pointer]:
+              - /url: /search?q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22add+a+business+phone+number%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnugyUENFJcSxtKM8c66iLpeaePVew:1788577763039&udm=50&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agY6fR1i4bQQrbMOkkz-SiaJ6F1EgkdpbdrPGt4zaE6lWbKDKK-xv9BUfgnzXAsz5efZBXuRG9S3u4yGUpm2nPaeiPkubnGuivpeFQZq68zQzBLO9Y5iKuue2iNKGxFWqXLRenS0g&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwjXg-Cxu9aWAxWjALkGHQLKEzoQ2J8OegQIERAD
+          - listitem [ref=f68e89]:
+            - link "Todo" [disabled] [ref=f68e90]
+          - listitem [ref=f68e93]:
+            - link "Videos" [ref=f68e94] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnugyUENFJcSxtKM8c66iLpeaePVew:1788577763039&udm=7&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agY6fR1i4bQQrbMOkkz-SiaJ6F1EgkdpbdrPGt4zaE6lWbKDKK-xv9BUfgnzXAsz5efZBXuRG9S3u4yGUpm2nPaeiPkubnGuivpeFQZq68zQzBLO9Y5iKuue2iNKGxFWqXLRenS0g&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22add+a+business+phone+number%22&sa=X&ved=2ahUKEwjXg-Cxu9aWAxWjALkGHQLKEzoQtKgLegQIFhAB
+          - listitem [ref=f68e97]:
+            - link "Imágenes" [ref=f68e98] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnugyUENFJcSxtKM8c66iLpeaePVew:1788577763039&udm=2&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agY6fR1i4bQQrbMOkkz-SiaJ6F1EgkdpbdrPGt4zaE6lWbKDKK-xv9BUfgnzXAsz5efZBXuRG9S3u4yGUpm2nPaeiPkubnGuivpeFQZq68zQzBLO9Y5iKuue2iNKGxFWqXLRenS0g&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22add+a+business+phone+number%22&sa=X&ved=2ahUKEwjXg-Cxu9aWAxWjALkGHQLKEzoQtKgLegQIFxAB
+          - listitem [ref=f68e101]:
+            - link "Shopping" [ref=f68e102] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnugyUENFJcSxtKM8c66iLpeaePVew:1788577763039&udm=28&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agY6fR1i4bQQrbMOkkz-SiaJ6F1EgkdpbdrPGt4zaE6lWbKDKK-xv9BUfgnzXAsz5efZBXuRG9S3u4yGUpm2nPaeiPkubnGuivpeFQZq68zQzBLO9Y5iKuue2iNKGxFWqXLRenS0g&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22add+a+business+phone+number%22&ved=1t:220175&ictx=111
+          - listitem [ref=f68e105]:
+            - link "Videos cortos" [ref=f68e106] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnugyUENFJcSxtKM8c66iLpeaePVew:1788577763039&udm=39&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agY6fR1i4bQQrbMOkkz-SiaJ6F1EgkdpbdrPGt4zaE6lWbKDKK-xv9BUfgnzXAsz5efZBXuRG9S3u4yGUpm2nPaeiPkubnGuivpeFQZq68zQzBLO9Y5iKuue2iNKGxFWqXLRenS0g&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22add+a+business+phone+number%22&sa=X&ved=2ahUKEwjXg-Cxu9aWAxWjALkGHQLKEzoQs6gLegQIFBAB
+          - listitem [ref=f68e109]:
+            - link "Noticias" [ref=f68e110] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnugyUENFJcSxtKM8c66iLpeaePVew:1788577763039&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22add+a+business+phone+number%22&tbm=nws&source=lnms&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDrOGzSW7azs6JL7KFDj_g_SV16q0gyzKCL8oNqeOV_YePwK4NlKXFx0Yy4TL_6agY6fR1i4bQQrbMOkkz-SiaJ6F1EgkdpbdrPGt4zaE6lWbKDKK-xv9BUfgnzXAsz5efZBXuRG9S3u4yGUpm2nPaeiPkubnGuivpeFQZq68zQzBLO9Y5iKuue2iNKGxFWqXLRenS0g&sa=X&ved=2ahUKEwjXg-Cxu9aWAxWjALkGHQLKEzoQ0pQJegQIFRAB
+          - listitem [ref=f68e113]:
+            - button [ref=f68e114] [cursor=pointer]:
+              - generic "Más filtros" [ref=f68e115]: Más
+        - button "Herramientas" [ref=f68e122] [cursor=pointer]
+    - heading "Resultados de búsqueda" [level=1] [ref=f68e129]
+    - main [ref=f68e135]:
+      - generic [ref=f68e139]:
+        - generic [ref=f68e142]:
+          - heading "Web results" [level=2] [ref=f68e143]
+          - generic [ref=f68e144]:
+            - generic [ref=f68e147]:
+              - link "WhatsApp Cloud API Get Started - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f68e149] [cursor=pointer]:
+                - /url: /goto?url=CAESjQEB6zswFYWmP6B5dfN66qrlQwcuJ4Kt8xL8vx-T8byxF9SefrlIBRih5zaD04EjTEKCmKttFQiwMdDgFWH9yt-bK-evS0bsD5LIvdU5e6BYTSzoOvLIz1md-6JW3K1Wsf5hZLMf4dY5y5HjOxvXMRzS-URONopCV2P8-Q0uzdbprCC4w_T97704D4pAo88
+                - heading "WhatsApp Cloud API Get Started - Meta for Developers" [level=3] [ref=f68e150]
+                - generic [ref=f68e156]:
+                  - generic [ref=f68e157]: Meta for Developers
+                  - generic [ref=f68e159]: https://developers.facebook.com › ...
+              - generic [ref=f68e161]:
+                - generic [ref=f68e162]: ·
+                - link "Traducir esta página" [ref=f68e163] [cursor=pointer]:
+                  - /url: /goto?url=CAES3wEB6zswFVSeZb6mDeJRtti0lEUp4-3Uq5NKVg88Qiz10RYz16USj7HFC1f1zgMtpQTaaR2sXwBlR828C_lkzaW9NphOgAMN4hrJiB8F8ChbTTtXYnI4jajr3ENOgzoqPaD8pwaejtfUukZT7d4zS-oBsdvZDfRX0CGmIuq-Oi0MfwWC2oSziLNKBHS094_hMKaeXTLV1dQJWPXC508hu16zYLKj4zIIEEbD8VV3zY2h3mOBhg-e2G6Ft3XVy3ksdIxwxYBFIISdidKGmz0uCxwT3UlzIIkMqbzWeHXNYVCZ
+              - button "Acerca de este resultado" [ref=f68e168] [cursor=pointer]
+            - generic [ref=f68e175]:
+              - text: Learn how to
+              - emphasis [ref=f68e176]: add a business phone number
+              - text: · Learn how to set up your own webhook server · Onboard WhatsApp Business app users — allow businesses already using ...
+        - generic [ref=f68e180]:
+          - generic [ref=f68e183]:
+            - link "Partner-initiated WABA creation - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f68e185] [cursor=pointer]:
+              - /url: /goto?url=CAEStQEB6zswFeCslk9v5k9PZnuU39cZ6qifwkIoTHV_bEXuNj7KhZBoHJbASqxn_MAZZODfxxp_ZEwJbiBjqa-KfvkxR7f1LzeReKPjByIkJ6wWvPihgb6kZLSHwWZu3jP6jDXz_J3C96VTrMhJy20bkCR4_omlulnyEAhgrUGvgmjGBr_lcb0Us5MVEhvxUoB7-nAoUyTZtjPUu1ReiR2rH-9xGmxJxYbwAKoIdlCInUKIv-QP2Cnk
+              - heading "Partner-initiated WABA creation - Meta for Developers" [level=3] [ref=f68e186]
+              - generic [ref=f68e192]:
+                - generic [ref=f68e193]: Meta for Developers
+                - generic [ref=f68e195]: https://developers.facebook.com › ...
+            - generic [ref=f68e197]:
+              - generic [ref=f68e198]: ·
+              - link "Traducir esta página" [ref=f68e199] [cursor=pointer]:
+                - /url: /goto?url=CAEShwIB6zswFRkn7hYtLZiUAw5dhCOUHbUPeQl-hrA6kWmN0ADBEvZnnjKCltLpar9woSVXOQmH62tO4IPuYf-9kGeoQj8nvfkHnqFNnxCt6YrIkTSP06OFE_-lP5cZK32K_JCJapQp6po0uND-6K9LfAHAw33xks0Mt6mB2gXoWAjPOEif9eRGLvRP9-WHZpkth4hpkWGU94Yj5xUtHZPCxyMU9ZeuRB8noO5YR9AwIzmCRnrBvqE3V5vMCqrOl70_mOcmvtT-SNu2wyrXIMCxKZol29zl0OeUTHFIPLbBC8koN6IR0Pk4vNtUY5a-tiYOgAtkj0mBLgKvL1acKPAV6USdcqplT28O0g
+            - button "Acerca de este resultado" [ref=f68e204] [cursor=pointer]
+          - generic [ref=f68e211]:
+            - text: You can then use your system token to
+            - emphasis [ref=f68e212]: add a business phone number
+            - text: to the client's WABA (if they opted not to create one) and share your credit line with the ...
+      - generic [ref=f68e214]:
+        - generic [ref=f68e215]:
+          - heading "Avisos sobre resultados filtrados" [level=2] [ref=f68e216]
+          - paragraph [ref=f68e218]:
+            - generic [ref=f68e219]:
+              - text: Para que veas los resultados más relevantes, omitimos ciertas entradas muy similares a las 2 que ya te mostramos.Si lo deseas, puedes
+              - link "repetir la búsqueda e incluir los resultados omitidos" [ref=f68e220] [cursor=pointer]:
+                - /url: /search?q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22add+a+business+phone+number%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnugyUENFJcSxtKM8c66iLpeaePVew:1788577763039&filter=0
+              - text: .
+        - navigation
+      - navigation
+    - contentinfo [ref=f68e221]:
+      - heading "Vínculos a pie de página" [level=1] [ref=f68e222]
+      - generic [ref=f68e226]:
+        - generic [ref=f68e228]:
+          - text: Argentina
+          - generic [ref=f68e230]:
+            - button "Capital, San Miguel de Tucumán, Tucumán - A través de tu dirección IP" [ref=f68e232] [cursor=pointer]:
+              - generic [ref=f68e233]: Capital, San Miguel de Tucumán, Tucumán
+              - generic [ref=f68e235]:
+                - text: "-"
+                - generic [ref=f68e236]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=f68e238] [cursor=pointer]
+        - generic [ref=f68e241]:
+          - link "Ayuda" [ref=f68e242] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - button "Enviar comentarios" [ref=f68e244] [cursor=pointer]
+          - link "Privacidad" [ref=f68e246] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=f68e247] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

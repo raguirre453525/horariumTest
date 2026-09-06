@@ -1,0 +1,198 @@
+- generic [active] [ref=f41e1]:
+  - generic [ref=f41e2]:
+    - generic:
+      - iframe
+    - generic:
+      - iframe
+    - generic:
+      - iframe
+    - generic:
+      - iframe
+    - generic [ref=f41e3]:
+      - generic [ref=f41e9]:
+        - generic [ref=f41e10]:
+          - link [ref=f41e12] [cursor=pointer]:
+            - /url: /?no_redirect=true
+            - img "Logotipo de Meta" [ref=f41e14]
+          - tablist [ref=f41e23]:
+            - link "Mis apps" [ref=f41e24] [cursor=pointer]:
+              - /url: /apps/
+            - link "Acciones requeridas" [ref=f41e28] [cursor=pointer]:
+              - /url: /required-actions/
+            - tab "Documentos" [ref=f41e32] [cursor=pointer]
+            - tab "Herramientas" [selected] [ref=f41e37] [cursor=pointer]
+            - tab "Ayuda" [ref=f41e42] [cursor=pointer]
+        - generic [ref=f41e47]:
+          - generic [ref=f41e48]:
+            - generic [ref=f41e49]: Términos de búsqueda
+            - textbox "Términos de búsqueda" [ref=f41e65]:
+              - /placeholder: Buscar...
+          - link [ref=f41e68] [cursor=pointer]:
+            - /url: "#"
+          - link "Facebook" [ref=f41e73] [cursor=pointer]:
+            - /url: "#"
+            - img "Facebook" [ref=f41e78]
+      - generic [ref=f41e80]:
+        - generic [ref=f41e81]: Explorador de la API Graph
+        - generic [ref=f41e87]:
+          - generic [ref=f41e88]:
+            - generic [ref=f41e89]:
+              - button "Favorites" [ref=f41e91] [cursor=pointer]
+              - generic [ref=f41e95]:
+                - button "GET" [ref=f41e97] [cursor=pointer]
+                - generic [ref=f41e104]:
+                  - link "← graph." [ref=f41e105] [cursor=pointer]:
+                    - /url: "#"
+                  - button ".facebook.com/" [ref=f41e107] [cursor=pointer]
+                - button "v26.0" [ref=f41e114] [cursor=pointer]
+                - generic [ref=f41e120]: /
+                - generic [ref=f41e121]:
+                  - combobox [ref=f41e124]: me?fields=id,name
+                  - button "Eliminar" [ref=f41e125] [cursor=pointer]
+                - generic [ref=f41e127] [cursor=pointer]
+            - button "Enviar" [ref=f41e129] [cursor=pointer]
+          - generic [ref=f41e133]:
+            - generic [ref=f41e137]:
+              - generic:
+                - generic:
+                  - list
+            - generic [ref=f41e138]:
+              - generic [ref=f41e143]:
+                - generic:
+                  - generic:
+                    - button "Más información sobre esta nueva función" [ref=f41e144] [cursor=pointer]
+                    - button "Cierre ventanas emergentes y vuelva" [ref=f41e146] [cursor=pointer]
+                - generic [ref=f41e153]:
+                  - button [ref=f41e154]:
+                    - button "Copiar información de depuración" [disabled] [ref=f41e156]
+                  - button "Obtener código" [disabled] [ref=f41e159]
+                  - button "Guardar sesión" [disabled] [ref=f41e163]
+              - generic [ref=f41e171]:
+                - heading "Token de acceso" [level=4] [ref=f41e172]
+                - generic [ref=f41e174]:
+                  - generic [ref=f41e175]:
+                    - textbox [ref=f41e178]:
+                      - /placeholder: Token de acceso
+                      - text: EAAPE5c7RkoMBSRSWsbC4qh3Hs5DOL8NkmtnpnbjXoLSn02XdTarJ3mRA75uKLdOoJZCZBxtKJjY6HpZAdKsqFWTSkQxRZBrkrdXty7UCmXHcgy1mPKe5SKKXQALl1ysxN1ZAEqnEaSZAIAQm8MZB693AHGKq82HTaGZCaGV95Hgib3sZAZB6q0KsmMMJXqk4bIBtSuQQ6ioeAxn0Ik8oXx2Lgbc08Aq1Lo4jfyVQZDZD
+                    - button "Copy Token" [ref=f41e181] [cursor=pointer]
+                    - progressbar [ref=f41e186]
+                  - button "Generate Access Token" [ref=f41e187] [cursor=pointer]
+                - generic [ref=f41e190]: App de Meta
+                - generic:
+                  - generic:
+                    - button "Más información sobre esta nueva función" [ref=f41e191] [cursor=pointer]
+                    - button "Cierre ventanas emergentes y vuelva" [ref=f41e193] [cursor=pointer]
+                - button "horarium" [ref=f41e196] [cursor=pointer]
+                - generic [ref=f41e204]: Usuario o página
+                - generic [ref=f41e205]:
+                  - generic:
+                    - generic:
+                      - button "Más información sobre esta nueva función" [ref=f41e206] [cursor=pointer]
+                      - button "Cierre ventanas emergentes y vuelva" [ref=f41e208] [cursor=pointer]
+                  - button "Cargando token" [ref=f41e210] [cursor=pointer]
+      - contentinfo [ref=f41e219]:
+        - generic [ref=f41e220]:
+          - separator [aria-hidden] [ref=f41e221]
+          - generic [ref=f41e223]:
+            - generic [ref=f41e225]:
+              - generic [ref=f41e227]:
+                - img "Meta" [ref=f41e229]
+                - list [ref=f41e231]:
+                  - listitem [ref=f41e232]:
+                    - link [ref=f41e233] [cursor=pointer]:
+                      - /url: https://www.facebook.com/MetaforDevelopers
+                      - img "Facebook" [ref=f41e234]
+                  - listitem [ref=f41e235]:
+                    - link [ref=f41e236] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmetafordevelopers%2F%3Ffbclid%3DIwcGRvZgNleHRuA2FlbQIxMABicmlkETF0eE42em5aRVZlUkkwbVVHc3J0YwZhcHBfaWQBMAABHlPmpHEjFh4TQngKmkRlC_te19yb4pjIDCbQfHB6f0DWL4aeq6d2WEJ4uWOk_aem_PUZlnFFZ572U23GHxF3v5A&h=AUA-LqjP_KOo4iOLeluKiixiCiG1LXmjLP17xg_HK-no0kiYGs4kGOSCCxriwXElfI2IB4dzKx2KjwFiIm8za9RNnfGRi7F20PkwM93XykuFXViMAvXa7ZxZTh-AwwOu6yNNaw
+                      - img "Instagram" [ref=f41e237]
+                  - listitem [ref=f41e238]:
+                    - link [ref=f41e239] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2Fmetafordevs%3Ffbclid%3DIwcGRvZgNleHRuA2FlbQIxMABicmlkETF0eE42em5aRVZlUkkwbVVHc3J0YwZhcHBfaWQBMAABHpFK2YmROfPKENuoZcY24c1NnuzPRWF77iD8ZogbO1icaNHfev8cYfHboip9_aem_jPJotFzzTxvZmxIpgnHeJQ&h=AUA-LqjP_KOo4iOLeluKiixiCiG1LXmjLP17xg_HK-no0kiYGs4kGOSCCxriwXElfI2IB4dzKx2KjwFiIm8za9RNnfGRi7F20PkwM93XykuFXViMAvXa7ZxZTh-AwwOu6yNNaw
+                      - img "X" [ref=f41e240]
+                  - listitem [ref=f41e241]:
+                    - link [ref=f41e242] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fshowcase%2Fmeta-for-developers%2F%3Ffbclid%3DIwcGRvZgNleHRuA2FlbQIxMABicmlkETF0eE42em5aRVZlUkkwbVVHc3J0YwZhcHBfaWQBMAABHp9Zn3qqYtl_WVW9PuP3wLeNJYGfaN9JKFv1GdaOk1vlu-MgaaDfV8SoeTyh_aem_5xNcTyI4EhE4qdkRlxVLXA&h=AUA-LqjP_KOo4iOLeluKiixiCiG1LXmjLP17xg_HK-no0kiYGs4kGOSCCxriwXElfI2IB4dzKx2KjwFiIm8za9RNnfGRi7F20PkwM93XykuFXViMAvXa7ZxZTh-AwwOu6yNNaw
+                      - img "LinkedIn" [ref=f41e243]
+                  - listitem [ref=f41e244]:
+                    - link [ref=f41e245] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2FMetaDevelopers%2F%3Ffbclid%3DIwcGRvZgNleHRuA2FlbQIxMABicmlkETF0eE42em5aRVZlUkkwbVVHc3J0YwZhcHBfaWQBMAABHplp3PxOMNL1Vyoi4kSjg5ccR6w3D5Q7nlwvWF7_Jp6vMVuaSmFabNdUHaDA_aem_Ec7P6Q3MqHXiK3zU88zhdQ&h=AUA-LqjP_KOo4iOLeluKiixiCiG1LXmjLP17xg_HK-no0kiYGs4kGOSCCxriwXElfI2IB4dzKx2KjwFiIm8za9RNnfGRi7F20PkwM93XykuFXViMAvXa7ZxZTh-AwwOu6yNNaw
+                      - img "YouTube" [ref=f41e246]
+              - generic [ref=f41e248]:
+                - generic [ref=f41e251]:
+                  - heading "Crear con Meta" [level=2] [ref=f41e252]
+                  - list [ref=f41e254]:
+                    - listitem [ref=f41e255]:
+                      - link "Inteligencia artificial" [ref=f41e257] [cursor=pointer]:
+                        - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fai%2F%3Ffbclid%3DIwcGRvZgNleHRuA2FlbQIxMABicmlkETF0eE42em5aRVZlUkkwbVVHc3J0YwZhcHBfaWQBMAABHqH6c8r5m-Bp2BZzzQE-15bGINXZrILbT0-RprH8ITxLWKwR7AdcKrrH8XtK_aem_9ekJWRygiBB8F54Kb1vmOg&h=AUA-LqjP_KOo4iOLeluKiixiCiG1LXmjLP17xg_HK-no0kiYGs4kGOSCCxriwXElfI2IB4dzKx2KjwFiIm8za9RNnfGRi7F20PkwM93XykuFXViMAvXa7ZxZTh-AwwOu6yNNaw
+                    - listitem [ref=f41e258]:
+                      - link "Meta Horizon" [ref=f41e260] [cursor=pointer]:
+                        - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fhorizon%2F%3Ffbclid%3DIwcGRvZgNleHRuA2FlbQIxMABicmlkETF0eE42em5aRVZlUkkwbVVHc3J0YwZhcHBfaWQBMAABHpFK2YmROfPKENuoZcY24c1NnuzPRWF77iD8ZogbO1icaNHfev8cYfHboip9_aem_jPJotFzzTxvZmxIpgnHeJQ&h=AUA-LqjP_KOo4iOLeluKiixiCiG1LXmjLP17xg_HK-no0kiYGs4kGOSCCxriwXElfI2IB4dzKx2KjwFiIm8za9RNnfGRi7F20PkwM93XykuFXViMAvXa7ZxZTh-AwwOu6yNNaw
+                    - listitem [ref=f41e261]:
+                      - link "Tecnologías sociales" [ref=f41e263] [cursor=pointer]:
+                        - /url: /social-technologies/
+                - generic [ref=f41e266]:
+                  - heading "Noticias" [level=2] [ref=f41e267]
+                  - list [ref=f41e269]:
+                    - listitem [ref=f41e270]:
+                      - link "Meta for Developers" [ref=f41e272] [cursor=pointer]:
+                        - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fblog%2F%3Ffbclid%3DIwcGRvZgNleHRuA2FlbQIxMABicmlkETF0eE42em5aRVZlUkkwbVVHc3J0YwZhcHBfaWQBMAABHpFK2YmROfPKENuoZcY24c1NnuzPRWF77iD8ZogbO1icaNHfev8cYfHboip9_aem_jPJotFzzTxvZmxIpgnHeJQ&h=AUA-LqjP_KOo4iOLeluKiixiCiG1LXmjLP17xg_HK-no0kiYGs4kGOSCCxriwXElfI2IB4dzKx2KjwFiIm8za9RNnfGRi7F20PkwM93XykuFXViMAvXa7ZxZTh-AwwOu6yNNaw
+                    - listitem [ref=f41e273]:
+                      - link "Blog" [ref=f41e275] [cursor=pointer]:
+                        - /url: /blog/
+                    - listitem [ref=f41e276]:
+                      - link "Historias de éxito" [ref=f41e278] [cursor=pointer]:
+                        - /url: /success-stories/
+                - generic [ref=f41e281]:
+                  - heading "Ayuda" [level=2] [ref=f41e282]
+                  - list [ref=f41e284]:
+                    - listitem [ref=f41e285]:
+                      - link "Ayuda para desarrolladores" [ref=f41e287] [cursor=pointer]:
+                        - /url: /support/
+                    - listitem [ref=f41e288]:
+                      - link "Herramienta de errores" [ref=f41e290] [cursor=pointer]:
+                        - /url: /support/bugs/
+                    - listitem [ref=f41e291]:
+                      - link "Estado de la plataforma" [ref=f41e293] [cursor=pointer]:
+                        - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmetastatus.com%2F%3Ffbclid%3DIwcGRvZgNleHRuA2FlbQIxMABicmlkETF0eE42em5aRVZlUkkwbVVHc3J0YwZhcHBfaWQBMAABHr1X59K8fQyZrEN44bS2GH4CLQUxCiX1Hany8H8Uwn11afUND1mhSDtx9vXl_aem_QZmC9kR8WCpogPpRnpFd_g&h=AUA-LqjP_KOo4iOLeluKiixiCiG1LXmjLP17xg_HK-no0kiYGs4kGOSCCxriwXElfI2IB4dzKx2KjwFiIm8za9RNnfGRi7F20PkwM93XykuFXViMAvXa7ZxZTh-AwwOu6yNNaw
+                    - listitem [ref=f41e294]:
+                      - link "Foro de la comunidad de desarrolladores" [ref=f41e296] [cursor=pointer]:
+                        - /url: https://www.facebook.com/groups/fbdevelopers/
+                    - listitem [ref=f41e297]:
+                      - link "Reportar un incidente" [ref=f41e299] [cursor=pointer]:
+                        - /url: /incident/report/
+                - generic [ref=f41e302]:
+                  - heading "Acerca de nosotros" [level=2] [ref=f41e303]
+                  - list [ref=f41e305]:
+                    - listitem [ref=f41e306]:
+                      - link "Información" [ref=f41e308] [cursor=pointer]:
+                        - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.fb.com%2F&h=AUA-LqjP_KOo4iOLeluKiixiCiG1LXmjLP17xg_HK-no0kiYGs4kGOSCCxriwXElfI2IB4dzKx2KjwFiIm8za9RNnfGRi7F20PkwM93XykuFXViMAvXa7ZxZTh-AwwOu6yNNaw
+                    - listitem [ref=f41e309]:
+                      - link "Empleos" [ref=f41e311] [cursor=pointer]:
+                        - /url: https://www.facebook.com/careers
+                - generic [ref=f41e314]:
+                  - heading "Condiciones y políticas" [level=2] [ref=f41e315]
+                  - list [ref=f41e317]:
+                    - listitem [ref=f41e318]:
+                      - link "Iniciativas de plataforma responsable" [ref=f41e320] [cursor=pointer]:
+                        - /url: /products/responsible-platform-initiatives/
+                    - listitem [ref=f41e321]:
+                      - link "Condiciones de la plataforma" [ref=f41e323] [cursor=pointer]:
+                        - /url: /terms/dfc_platform_terms/
+                    - listitem [ref=f41e324]:
+                      - link "Políticas para desarrolladores" [ref=f41e326] [cursor=pointer]:
+                        - /url: /devpolicy/
+                    - listitem [ref=f41e327]:
+                      - link "Política de privacidad" [ref=f41e329] [cursor=pointer]:
+                        - /url: https://www.facebook.com/about/privacy
+                    - listitem [ref=f41e330]:
+                      - link "Cookies" [ref=f41e332] [cursor=pointer]:
+                        - /url: https://www.facebook.com/help/cookies
+            - button "Cambiar idioma" [ref=f41e337] [cursor=pointer]:
+              - generic [ref=f41e338]: Español
+  - generic:
+    - region "Más información sobre esta nueva función"
+  - generic:
+    - region "Más información sobre esta nueva función"
+  - generic:
+    - region "Más información sobre esta nueva función"

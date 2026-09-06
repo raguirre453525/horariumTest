@@ -1,0 +1,297 @@
+- generic [ref=f109e11]:
+  - navigation "Main" [ref=f109e13]:
+    - generic [ref=f109e20]:
+      - generic [ref=f109e22]:
+        - button "Open mobile navigation menu" [ref=f109e24] [cursor=pointer]
+        - link "Meta home" [ref=f109e29] [cursor=pointer]:
+          - /url: https://developers.facebook.com/
+          - img "Nav Logo" [ref=f109e30]
+      - generic [ref=f109e33]:
+        - link "Login" [ref=f109e34] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fdocumentation%2Fbusiness-messaging%2Fwhatsapp%2Freference%2Fwhatsapp-business-account%2Fsubscribed-apps-api%3Flocale%3Den_US
+        - button [ref=f109e35] [cursor=pointer]:
+          - img "Search" [ref=f109e36]
+  - generic [ref=f109e43]:
+    - navigation [ref=f109e44]:
+      - generic [ref=f109e45]:
+        - generic [ref=f109e46]:
+          - generic [ref=f109e47]: WhatsApp Business Platform
+          - generic [ref=f109e48]:
+            - button "Dropdown" [ref=f109e50] [cursor=pointer]:
+              - generic [ref=f109e51]: Business Messaging
+            - button "Dropdown" [ref=f109e57] [cursor=pointer]:
+              - generic [ref=f109e58]: WhatsApp Business Platform
+            - textbox "Filter" [ref=f109e64]
+        - generic [ref=f109e66]:
+          - generic "WhatsApp Business Platform" [ref=f109e67]:
+            - link "WhatsApp Business Platform" [ref=f109e68] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/overview/
+          - generic "Overview" [ref=f109e73]:
+            - link "Overview" [ref=f109e74] [cursor=pointer]:
+              - /url: "#"
+          - generic "Get started" [ref=f109e81]:
+            - link "Get started" [ref=f109e82] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/get-started/
+          - generic "Direct Send messages" [ref=f109e87]:
+            - link "Direct Send messages" [ref=f109e88] [cursor=pointer]:
+              - /url: "#"
+          - generic "Marketing messages" [ref=f109e96]:
+            - link "Marketing messages" [ref=f109e97] [cursor=pointer]:
+              - /url: "#"
+          - generic "In-App Signup" [ref=f109e104]:
+            - link "In-App Signup" [ref=f109e105] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/in-app-signup/
+          - generic "Utility messages" [ref=f109e110]:
+            - link "Utility messages" [ref=f109e111] [cursor=pointer]:
+              - /url: "#"
+          - generic "Authentication messages" [ref=f109e119]:
+            - link "Authentication messages" [ref=f109e120] [cursor=pointer]:
+              - /url: "#"
+          - generic "Service messages" [ref=f109e128]:
+            - link "Service messages" [ref=f109e129] [cursor=pointer]:
+              - /url: "#"
+          - generic "Calling" [ref=f109e137]:
+            - link "Calling" [ref=f109e138] [cursor=pointer]:
+              - /url: "#"
+          - generic "Groups" [ref=f109e146]:
+            - link "Groups" [ref=f109e147] [cursor=pointer]:
+              - /url: "#"
+          - generic "Catalogs" [ref=f109e155]:
+            - link "Catalogs" [ref=f109e156] [cursor=pointer]:
+              - /url: "#"
+          - generic "Partners" [ref=f109e164]:
+            - link "Partners" [ref=f109e165] [cursor=pointer]:
+              - /url: "#"
+          - generic "Webhooks" [ref=f109e173]:
+            - link "Webhooks" [ref=f109e174] [cursor=pointer]:
+              - /url: "#"
+          - generic "Template fundamentals" [ref=f109e182]:
+            - link "Template fundamentals" [ref=f109e183] [cursor=pointer]:
+              - /url: "#"
+          - generic "Messaging features" [ref=f109e191]:
+            - link "Messaging features" [ref=f109e192] [cursor=pointer]:
+              - /url: "#"
+          - generic "Account assets" [ref=f109e200]:
+            - link "Account assets" [ref=f109e201] [cursor=pointer]:
+              - /url: "#"
+          - generic "Analytics" [ref=f109e208]:
+            - link "Analytics" [ref=f109e209] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/analytics/
+          - generic "Ads that click to WhatsApp" [ref=f109e214]:
+            - link "Ads that click to WhatsApp" [ref=f109e215] [cursor=pointer]:
+              - /url: "#"
+          - generic "Payments" [ref=f109e223]:
+            - link "Payments" [ref=f109e224] [cursor=pointer]:
+              - /url: "#"
+          - generic "Data, Privacy, & Policy" [ref=f109e232]:
+            - link "Data, Privacy, & Policy" [ref=f109e233] [cursor=pointer]:
+              - /url: "#"
+          - generic "Support" [ref=f109e241]:
+            - link "Support" [ref=f109e242] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f109e249]:
+            - separator [aria-hidden] [ref=f109e250]
+            - generic [ref=f109e251]: Resources
+          - generic [ref=f109e252]:
+            - generic "API Reference" [ref=f109e253]:
+              - link "API Reference" [ref=f109e254] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f109e262]:
+              - generic "Application" [ref=f109e264]:
+                - link "Application" [ref=f109e265] [cursor=pointer]:
+                  - /url: "#"
+              - generic "Business" [ref=f109e273]:
+                - link "Business" [ref=f109e274] [cursor=pointer]:
+                  - /url: "#"
+              - generic "Groups" [ref=f109e282]:
+                - link "Groups" [ref=f109e283] [cursor=pointer]:
+                  - /url: "#"
+              - generic "Media" [ref=f109e291]:
+                - link "Media" [ref=f109e292] [cursor=pointer]:
+                  - /url: "#"
+              - generic "Message History" [ref=f109e300]:
+                - link "Message History" [ref=f109e301] [cursor=pointer]:
+                  - /url: "#"
+              - generic "User" [ref=f109e309]:
+                - link "User" [ref=f109e310] [cursor=pointer]:
+                  - /url: "#"
+              - generic "Webhooks" [ref=f109e318]:
+                - link "Webhooks" [ref=f109e319] [cursor=pointer]:
+                  - /url: "#"
+              - generic "WhatsApp Account Number" [ref=f109e327]:
+                - link "WhatsApp Account Number" [ref=f109e328] [cursor=pointer]:
+                  - /url: "#"
+              - generic [ref=f109e335]:
+                - generic "WhatsApp Business Account" [ref=f109e336]:
+                  - link "WhatsApp Business Account" [ref=f109e337] [cursor=pointer]:
+                    - /url: "#"
+                - generic [ref=f109e345]:
+                  - generic "Assigned Users Management API" [ref=f109e346]:
+                    - link "Assigned Users Management API" [ref=f109e347] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/reference/whatsapp-business-account/assigned-users-management-api
+                  - generic "Conversational Automation API" [ref=f109e351]:
+                    - link "Conversational Automation API" [ref=f109e352] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/reference/whatsapp-business-account/conversational-automation-api
+                  - generic "Extended Credits API" [ref=f109e356]:
+                    - link "Extended Credits API" [ref=f109e357] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/reference/whatsapp-business-account/extended-credits-api
+                  - generic "Message Template API" [ref=f109e361]:
+                    - link "Message Template API" [ref=f109e362] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/reference/whatsapp-business-account/message-template-api
+                  - generic "Phone Number Management API" [ref=f109e366]:
+                    - link "Phone Number Management API" [ref=f109e367] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/reference/whatsapp-business-account/phone-number-management-api
+                  - generic "Schedules API" [ref=f109e371]:
+                    - link "Schedules API" [ref=f109e372] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/reference/whatsapp-business-account/schedules-api
+                  - generic "Subscribed Apps API" [ref=f109e376]:
+                    - link "Subscribed Apps API" [ref=f109e377] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/reference/whatsapp-business-account/subscribed-apps-api
+                  - generic "WhatsApp Business Account API" [ref=f109e381]:
+                    - link "WhatsApp Business Account API" [ref=f109e382] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api
+                  - generic "WhatsApp Business Account Activities API" [ref=f109e386]:
+                    - link "WhatsApp Business Account Activities API" [ref=f109e387] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-activities-api
+                  - generic "WhatsApp Business Account Solutions List API" [ref=f109e391]:
+                    - link "WhatsApp Business Account Solutions List API" [ref=f109e392] [cursor=pointer]:
+                      - /url: /documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-solutions-list-api
+              - generic "WhatsApp Business Account Migration Intent" [ref=f109e397]:
+                - link "WhatsApp Business Account Migration Intent" [ref=f109e398] [cursor=pointer]:
+                  - /url: "#"
+              - generic "WhatsApp Business Bot" [ref=f109e406]:
+                - link "WhatsApp Business Bot" [ref=f109e407] [cursor=pointer]:
+                  - /url: "#"
+              - generic "WhatsApp Business Phone Number" [ref=f109e415]:
+                - link "WhatsApp Business Phone Number" [ref=f109e416] [cursor=pointer]:
+                  - /url: "#"
+              - generic "WhatsApp Business Pre Verified Phone Number" [ref=f109e424]:
+                - link "WhatsApp Business Pre Verified Phone Number" [ref=f109e425] [cursor=pointer]:
+                  - /url: "#"
+              - generic "WhatsApp Business Profile" [ref=f109e433]:
+                - link "WhatsApp Business Profile" [ref=f109e434] [cursor=pointer]:
+                  - /url: "#"
+              - generic "WhatsApp Business Solution" [ref=f109e442]:
+                - link "WhatsApp Business Solution" [ref=f109e443] [cursor=pointer]:
+                  - /url: "#"
+          - generic "Changelog" [ref=f109e450]:
+            - link "Changelog" [ref=f109e451] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/changelog/
+          - generic "Error codes" [ref=f109e455]:
+            - link "Error codes" [ref=f109e456] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/support/error-codes
+    - main [ref=f109e462]:
+      - generic [ref=f109e463]:
+        - navigation "Breadcrumbs" [ref=f109e465]:
+          - list [ref=f109e466]:
+            - listitem [ref=f109e467]:
+              - link "Docs" [ref=f109e469] [cursor=pointer]:
+                - /url: /docs
+            - listitem [ref=f109e474]:
+              - link "Overview" [ref=f109e476] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/overview
+            - listitem [ref=f109e481]:
+              - generic [ref=f109e482]: WhatsApp Business Account - Subscribed Apps API
+        - article
+  - generic [ref=f109e485]:
+    - separator [aria-hidden] [ref=f109e486]
+    - contentinfo [ref=f109e487]:
+      - generic [ref=f109e488]:
+        - separator [aria-hidden] [ref=f109e489]
+        - generic [ref=f109e491]:
+          - generic [ref=f109e493]:
+            - generic [ref=f109e495]:
+              - img "Meta" [ref=f109e497]
+              - list [ref=f109e499]:
+                - listitem [ref=f109e500]:
+                  - link [ref=f109e501] [cursor=pointer]:
+                    - /url: https://www.facebook.com/MetaforDevelopers
+                    - img "Facebook" [ref=f109e502]
+                - listitem [ref=f109e503]:
+                  - link [ref=f109e504] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmetafordevelopers%2F&h=AUDklH5LxsA2gu1uOX58cFeR1Iy9fthp9Lvt1LVQJtlkNvZtScLbKx7D8tfKUYd08US7aO_UYQD4WvIyIC2Gnn6iaiNdLJOdlR0nQvhQhuYylGIrIPSit2MTttdpWRQ59tarwlNqV-yG8aZrFSFM4A
+                    - img "Instagram" [ref=f109e505]
+                - listitem [ref=f109e506]:
+                  - link [ref=f109e507] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2Fmetafordevs&h=AUDklH5LxsA2gu1uOX58cFeR1Iy9fthp9Lvt1LVQJtlkNvZtScLbKx7D8tfKUYd08US7aO_UYQD4WvIyIC2Gnn6iaiNdLJOdlR0nQvhQhuYylGIrIPSit2MTttdpWRQ59tarwlNqV-yG8aZrFSFM4A
+                    - img "X" [ref=f109e508]
+                - listitem [ref=f109e509]:
+                  - link [ref=f109e510] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fshowcase%2Fmeta-for-developers%2F&h=AUDklH5LxsA2gu1uOX58cFeR1Iy9fthp9Lvt1LVQJtlkNvZtScLbKx7D8tfKUYd08US7aO_UYQD4WvIyIC2Gnn6iaiNdLJOdlR0nQvhQhuYylGIrIPSit2MTttdpWRQ59tarwlNqV-yG8aZrFSFM4A
+                    - img "LinkedIn" [ref=f109e511]
+                - listitem [ref=f109e512]:
+                  - link [ref=f109e513] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2FMetaDevelopers%2F&h=AUDklH5LxsA2gu1uOX58cFeR1Iy9fthp9Lvt1LVQJtlkNvZtScLbKx7D8tfKUYd08US7aO_UYQD4WvIyIC2Gnn6iaiNdLJOdlR0nQvhQhuYylGIrIPSit2MTttdpWRQ59tarwlNqV-yG8aZrFSFM4A
+                    - img "YouTube" [ref=f109e514]
+            - generic [ref=f109e516]:
+              - generic [ref=f109e519]:
+                - heading "Crear con Meta" [level=2] [ref=f109e520]
+                - list [ref=f109e522]:
+                  - listitem [ref=f109e523]:
+                    - link "Inteligencia artificial" [ref=f109e525] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fai%2F&h=AUDklH5LxsA2gu1uOX58cFeR1Iy9fthp9Lvt1LVQJtlkNvZtScLbKx7D8tfKUYd08US7aO_UYQD4WvIyIC2Gnn6iaiNdLJOdlR0nQvhQhuYylGIrIPSit2MTttdpWRQ59tarwlNqV-yG8aZrFSFM4A
+                  - listitem [ref=f109e526]:
+                    - link "Meta Horizon" [ref=f109e528] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fhorizon%2F&h=AUDklH5LxsA2gu1uOX58cFeR1Iy9fthp9Lvt1LVQJtlkNvZtScLbKx7D8tfKUYd08US7aO_UYQD4WvIyIC2Gnn6iaiNdLJOdlR0nQvhQhuYylGIrIPSit2MTttdpWRQ59tarwlNqV-yG8aZrFSFM4A
+                  - listitem [ref=f109e529]:
+                    - link "Tecnologías sociales" [ref=f109e531] [cursor=pointer]:
+                      - /url: /social-technologies/
+              - generic [ref=f109e534]:
+                - heading "Noticias" [level=2] [ref=f109e535]
+                - list [ref=f109e537]:
+                  - listitem [ref=f109e538]:
+                    - link "Meta for Developers" [ref=f109e540] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fblog%2F&h=AUDklH5LxsA2gu1uOX58cFeR1Iy9fthp9Lvt1LVQJtlkNvZtScLbKx7D8tfKUYd08US7aO_UYQD4WvIyIC2Gnn6iaiNdLJOdlR0nQvhQhuYylGIrIPSit2MTttdpWRQ59tarwlNqV-yG8aZrFSFM4A
+                  - listitem [ref=f109e541]:
+                    - link "Blog" [ref=f109e543] [cursor=pointer]:
+                      - /url: /blog/
+                  - listitem [ref=f109e544]:
+                    - link "Historias de éxito" [ref=f109e546] [cursor=pointer]:
+                      - /url: /success-stories/
+              - generic [ref=f109e549]:
+                - heading "Ayuda" [level=2] [ref=f109e550]
+                - list [ref=f109e552]:
+                  - listitem [ref=f109e553]:
+                    - link "Ayuda para desarrolladores" [ref=f109e555] [cursor=pointer]:
+                      - /url: /support/
+                  - listitem [ref=f109e556]:
+                    - link "Herramienta de errores" [ref=f109e558] [cursor=pointer]:
+                      - /url: /support/bugs/
+                  - listitem [ref=f109e559]:
+                    - link "Estado de la plataforma" [ref=f109e561] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmetastatus.com%2F&h=AUDklH5LxsA2gu1uOX58cFeR1Iy9fthp9Lvt1LVQJtlkNvZtScLbKx7D8tfKUYd08US7aO_UYQD4WvIyIC2Gnn6iaiNdLJOdlR0nQvhQhuYylGIrIPSit2MTttdpWRQ59tarwlNqV-yG8aZrFSFM4A
+                  - listitem [ref=f109e562]:
+                    - link "Foro de la comunidad de desarrolladores" [ref=f109e564] [cursor=pointer]:
+                      - /url: https://www.facebook.com/groups/fbdevelopers/
+                  - listitem [ref=f109e565]:
+                    - link "Reportar un incidente" [ref=f109e567] [cursor=pointer]:
+                      - /url: /incident/report/
+              - generic [ref=f109e570]:
+                - heading "Acerca de nosotros" [level=2] [ref=f109e571]
+                - list [ref=f109e573]:
+                  - listitem [ref=f109e574]:
+                    - link "Información" [ref=f109e576] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.fb.com%2F&h=AUDklH5LxsA2gu1uOX58cFeR1Iy9fthp9Lvt1LVQJtlkNvZtScLbKx7D8tfKUYd08US7aO_UYQD4WvIyIC2Gnn6iaiNdLJOdlR0nQvhQhuYylGIrIPSit2MTttdpWRQ59tarwlNqV-yG8aZrFSFM4A
+                  - listitem [ref=f109e577]:
+                    - link "Empleos" [ref=f109e579] [cursor=pointer]:
+                      - /url: https://www.facebook.com/careers
+              - generic [ref=f109e582]:
+                - heading "Condiciones y políticas" [level=2] [ref=f109e583]
+                - list [ref=f109e585]:
+                  - listitem [ref=f109e586]:
+                    - link "Iniciativas de plataforma responsable" [ref=f109e588] [cursor=pointer]:
+                      - /url: /products/responsible-platform-initiatives/
+                  - listitem [ref=f109e589]:
+                    - link "Condiciones de la plataforma" [ref=f109e591] [cursor=pointer]:
+                      - /url: /terms/dfc_platform_terms/
+                  - listitem [ref=f109e592]:
+                    - link "Políticas para desarrolladores" [ref=f109e594] [cursor=pointer]:
+                      - /url: /devpolicy/
+                  - listitem [ref=f109e595]:
+                    - link "Política de privacidad" [ref=f109e597] [cursor=pointer]:
+                      - /url: https://www.facebook.com/about/privacy
+                  - listitem [ref=f109e598]:
+                    - link "Cookies" [ref=f109e600] [cursor=pointer]:
+                      - /url: https://www.facebook.com/help/cookies
+          - button "Change language" [ref=f109e605] [cursor=pointer]:
+            - generic [ref=f109e606]: Español

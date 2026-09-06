@@ -1,0 +1,369 @@
+- generic [active] [ref=f7e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=f7e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=f7e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=f7e8]:
+    - search [ref=f7e9]:
+      - generic [ref=f7e11]:
+        - link "Ir a la Página principal de Google" [ref=f7e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=es-419&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQPHoECAYQBA
+        - generic [ref=f7e21]:
+          - generic [ref=f7e22]:
+            - combobox "Buscar" [ref=f7e25]: Meta developers publish WhatsApp Cloud API app business verification Meta developers publish WhatsApp Cloud API app business verification
+            - generic [ref=f7e26]:
+              - button "Borrar" [ref=f7e28] [cursor=pointer]
+              - generic [ref=f7e33]:
+                - button "Búsqueda por voz" [ref=f7e34] [cursor=pointer]
+                - button "Búsqueda por imagen" [ref=f7e37] [cursor=pointer]
+          - button "Buscar" [ref=f7e40] [cursor=pointer]
+    - generic [ref=f7e45]:
+      - button "Configuración" [ref=f7e47] [cursor=pointer]
+      - button "Compartir" [ref=f7e53] [cursor=pointer]
+      - generic [ref=f7e59]:
+        - button "Apps de Google" [ref=f7e61] [cursor=pointer]
+        - link "Acceder" [ref=f7e66] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DMeta%2Bdevelopers%2Bpublish%2BWhatsApp%2BCloud%2BAPI%2Bapp%2Bbusiness%2Bverification%26sei%3DRYWbarDxBf3Z5OUPgtLp8AQ&ec=futura_srp_og_si_72236_p
+  - generic [ref=f7e68]:
+    - navigation [ref=f7e74]:
+      - generic [ref=f7e80]:
+        - list [ref=f7e81]:
+          - listitem [ref=f7e82]:
+            - link "Modo IA" [ref=f7e85] [cursor=pointer]:
+              - /url: /search?q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&udm=50&fbs=ABfTbFWsR7-ZRs5vUuQH4L5RZoH46ADIuRwxlzzJHbXGiOWNWXh1aHmWqbLZyY397TJquZMuDagnaTZJhzCmmHob7lEOAVHgdrXf2FhydDhrO2501-QTzTspSshKMQ91kitlTOP7-1dHbvjIpxZfgVh_9SsgFWk1eUaApWItX7IHaqaaxAnmnMWTcSDtaIN2wzEuCVE6Ao7B6TUlX6ABLu9E_mly3ONndA&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ2J8OegQIExAD
+          - listitem [ref=f7e89]:
+            - link "Todo" [disabled] [ref=f7e90]
+          - listitem [ref=f7e93]:
+            - link "Videos cortos" [ref=f7e94] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&udm=39&fbs=ABfTbFWsR7-ZRs5vUuQH4L5RZoH46ADIuRwxlzzJHbXGiOWNWXh1aHmWqbLZyY397TJquZMuDagnaTZJhzCmmHob7lEOAVHgdrXf2FhydDhrO2501-QTzTspSshKMQ91kitlTOP7-1dHbvjIpxZfgVh_9SsgFWk1eUaApWItX7IHaqaaxAnmnMWTcSDtaIN2wzEuCVE6Ao7B6TUlX6ABLu9E_mly3ONndA&q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQs6gLegQIGBAB
+          - listitem [ref=f7e97]:
+            - link "Videos" [ref=f7e98] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&udm=7&fbs=ABfTbFWsR7-ZRs5vUuQH4L5RZoH46ADIuRwxlzzJHbXGiOWNWXh1aHmWqbLZyY397TJquZMuDagnaTZJhzCmmHob7lEOAVHgdrXf2FhydDhrO2501-QTzTspSshKMQ91kitlTOP7-1dHbvjIpxZfgVh_9SsgFWk1eUaApWItX7IHaqaaxAnmnMWTcSDtaIN2wzEuCVE6Ao7B6TUlX6ABLu9E_mly3ONndA&q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQtKgLegQIGRAB
+          - listitem [ref=f7e101]:
+            - link "Imágenes" [ref=f7e102] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&udm=2&fbs=ABfTbFWsR7-ZRs5vUuQH4L5RZoH46ADIuRwxlzzJHbXGiOWNWXh1aHmWqbLZyY397TJquZMuDagnaTZJhzCmmHob7lEOAVHgdrXf2FhydDhrO2501-QTzTspSshKMQ91kitlTOP7-1dHbvjIpxZfgVh_9SsgFWk1eUaApWItX7IHaqaaxAnmnMWTcSDtaIN2wzEuCVE6Ao7B6TUlX6ABLu9E_mly3ONndA&q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQtKgLegQIFRAB
+          - listitem [ref=f7e105]:
+            - link "Shopping" [ref=f7e106] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&udm=28&fbs=ABfTbFWsR7-ZRs5vUuQH4L5RZoH46ADIuRwxlzzJHbXGiOWNWXh1aHmWqbLZyY397TJquZMuDagnaTZJhzCmmHob7lEOAVHgdrXf2FhydDhrO2501-QTzTspSshKMQ91kitlTOP7-1dHbvjIpxZfgVh_9SsgFWk1eUaApWItX7IHaqaaxAnmnMWTcSDtaIN2wzEuCVE6Ao7B6TUlX6ABLu9E_mly3ONndA&q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&ved=1t:220175&ictx=111
+          - listitem [ref=f7e109]:
+            - link "Noticias" [ref=f7e110] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&tbm=nws&source=lnms&fbs=ABfTbFWsR7-ZRs5vUuQH4L5RZoH46ADIuRwxlzzJHbXGiOWNWXh1aHmWqbLZyY397TJquZMuDagnaTZJhzCmmHob7lEOAVHgdrXf2FhydDhrO2501-QTzTspSshKMQ91kitlTOP7-1dHbvjIpxZfgVh_9SsgFWk1eUaApWItX7IHaqaaxAnmnMWTcSDtaIN2wzEuCVE6Ao7B6TUlX6ABLu9E_mly3ONndA&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ0pQJegQIFxAB
+          - listitem [ref=f7e113]:
+            - button [ref=f7e114] [cursor=pointer]:
+              - generic "Más filtros" [ref=f7e115]: Más
+        - button "Herramientas" [ref=f7e122] [cursor=pointer]
+    - heading "Resultados de búsqueda" [level=1] [ref=f7e129]
+    - generic [ref=f7e134]:
+      - generic [ref=f7e153]:
+        - heading "Buscando Pensando un poco más" [level=2] [ref=f7e157]:
+          - generic [ref=f7e158]:
+            - generic [ref=f7e159]: Buscando
+            - generic [ref=f7e169]: Pensando un poco más
+        - progressbar "Generando" [ref=f7e172]
+      - main [ref=f7e247]:
+        - generic [ref=f7e251]:
+          - generic [ref=f7e254]:
+            - heading "Web results" [level=2] [ref=f7e255]
+            - generic [ref=f7e256]:
+              - generic [ref=f7e259]:
+                - link "WhatsApp Cloud API Get Started - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f7e261] [cursor=pointer]:
+                  - /url: /goto?url=CAESjQEB6zswFcpLLcpoHiyFCq32cLYj1FRYl8byvC0TEW7zEfq4RDcFDBYgYrcoD9skPdUJJzvEQF2rj3ET3SO-xroPMD9ScvMgRDZcUU1sfgVwFlqCHhVg5Vlu-KnMHAx1wBbC0jeD52sEuYVtByZK175HwwzQaVKctLV-L1iklnQNxu_rYXSR4F5Coaa7Om4
+                  - heading "WhatsApp Cloud API Get Started - Meta for Developers" [level=3] [ref=f7e262]
+                  - generic [ref=f7e268]:
+                    - generic [ref=f7e269]: Meta for Developers
+                    - generic [ref=f7e271]: https://developers.facebook.com › ...
+                - generic [ref=f7e273]:
+                  - generic [ref=f7e274]: ·
+                  - link "Traducir esta página" [ref=f7e275] [cursor=pointer]:
+                    - /url: /goto?url=CAES3wEB6zswFY9Ioapv-gK3LsoGUxVhYtHlY8SaELq3-CplHEiHu0UD1wnaKgJbETrgZ1K-McH3XQTwRqcr6kFKA7qk9DOAwlqd_hUWW8xwz3Ty2nM6TivPCYkXbbYTYUkKhMa8FZQXwceaIhGT2L0NRLBkNDQVAkvGe2RjiRsUkbPI0Ks8YiVZXWjX4CV-nYl0KCA5cr77ORLYhzieJ8ij2iwnE8q42BfeSH47ZnOt4FxPP6ShmYEE_GZfVmNa9cJKxizP9JxkrzBPDniQZwlZEXcZ27uJNtexUJqAQiEyEwzO
+                - button "Acerca de este resultado" [ref=f7e280] [cursor=pointer]
+              - generic [ref=f7e287]:
+                - text: Step 1. Create a new
+                - emphasis [ref=f7e288]: Meta app
+                - text: with
+                - emphasis [ref=f7e289]: WhatsApp
+                - text: · Step 2. Start using the
+                - emphasis [ref=f7e290]: API
+                - text: · Step 3. Send and receive messages · Step 4. Set up the test webhook
+                - emphasis [ref=f7e291]: app
+                - text: · Step 5. Create ...
+          - generic [ref=f7e295]:
+            - generic [ref=f7e298]:
+              - link "About the WhatsApp Business Platform - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f7e300] [cursor=pointer]:
+                - /url: /goto?url=CAESlAEB6zswFa9MfSpwvyqI6QmSD-J9NfwFHf8ZOU5jytE5D53ZM8ZRp2S4MCxOr6bBtfKAiKPllliD8epNPyN2Y-xm_Lq-QTHkwS2mQcJ2ZPANY-k5RA02Va5EteUSjqzRgpXLZnVQ8XAlR6gadyk0VXXGAdL9UEvXjJ76IjWlDKh-zOeLBTJmhoHIWQODV1Qr9USYlTni
+                - heading "About the WhatsApp Business Platform - Meta for Developers" [level=3] [ref=f7e301]
+                - generic [ref=f7e307]:
+                  - generic [ref=f7e308]: Meta for Developers
+                  - generic [ref=f7e310]: https://developers.facebook.com › ...
+              - generic [ref=f7e312]:
+                - generic [ref=f7e313]: ·
+                - link "Traducir esta página" [ref=f7e314] [cursor=pointer]:
+                  - /url: /goto?url=CAES5gEB6zswFYKOVnfRp7vGQjbtOHJRfNUMUdo7Jj0k8GwNfixMCWrPeUpIshFV2hcEcZbeFK2No_hApeDfKNu5QL1L3seY5cG1p8dxBO-HRyYFP3jC8_s1xcu9BcLCZVKrKkbCu1bMDg3PN7jMgqYjkGLHllaRE6VXRltWg8lH737Eg7K4mYSYZi05SZzdxgQJSB3Cge1OOrxb6l8mv7L82NFl5xqP0_gL83VigkVOx3dHqHX4oOKSZaWBhGzXFYoVUt-70_e0QFKxoy-gHppoM4nGH9MU0aQyLMK5MTEWLSXPT0X7d4HPBw
+              - button "Acerca de este resultado" [ref=f7e319] [cursor=pointer]
+            - generic [ref=f7e326]:
+              - text: The
+              - emphasis [ref=f7e327]: WhatsApp Business
+              - text: Platform
+              - emphasis [ref=f7e328]: Cloud API
+              - text: enables you to programmatically message and call on
+              - emphasis [ref=f7e329]: WhatsApp
+              - text: . You can use
+              - emphasis [ref=f7e330]: Cloud API
+              - text: to send users a variety of ...
+          - generic [ref=f7e334]:
+            - generic [ref=f7e337]:
+              - link "Partner-led Business Verification - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f7e339] [cursor=pointer]:
+                - /url: /goto?url=CAEStgEB6zswFaRe58GbkNOrf74Jc14Tki00fybtnRJTXbq5EnCc2Ux3PNDaNxbkHx1h815hEKAxyG8CXGG1EkEEkVUtnj5pEhcF2VCJ-eCQrmYXbX1d5ehorarB0IOlZey84hhCBzxKRs0ZWQurHQF_TiUPw7HjHduRXJxmJHK0X-X4ytGVf31qpVWj8AbZB4fo2_87Bx52kMKwyRS28z18gvpeY2ReZEbendwAOp7vqKNamshKOmgm4w
+                - heading "Partner-led Business Verification - Meta for Developers" [level=3] [ref=f7e340]
+                - generic [ref=f7e346]:
+                  - generic [ref=f7e347]: Meta for Developers
+                  - generic [ref=f7e349]: https://developers.facebook.com › ...
+              - generic [ref=f7e351]:
+                - generic [ref=f7e352]: ·
+                - link "Traducir esta página" [ref=f7e353] [cursor=pointer]:
+                  - /url: /goto?url=CAESiAIB6zswFeBNbnmalrCV_1uncS6sR9ogXorw9cAgeMnp0HaLKbuzZkG9CCdHDkabqjPMnXNaqD3MENcaaK6FlUYwwFlYJhJcIn3jAiCehl8jek5jSRoaKkgbSN6p2sCEXg8acfifxxFnawKLAttOWSmTGuqvjtSj7APrAqRoP-er0gDmI2jInOuBiw4PUkFEWNCWqa6Lk3SGyewNkK77iwRzsuR_VLE5WKCQQUH6XpziDnk7q4cVNbzipTn4fMItoMXi2l5UZtxLn6jc3E8vk_jUddA-07aY01GiKXdIkJ070kUxXHDNcW-iZMxJ7wLeo5oRIj9uSPY1SmqGknIXEw_rChJ2Plpm2ms
+              - button "Acerca de este resultado" [ref=f7e358] [cursor=pointer]
+            - generic [ref=f7e365]:
+              - emphasis [ref=f7e366]: Use the POST /<BUSINESS_PORTFOLIO_ID>/self_certify_whatsapp_business endpoint
+              - text: to initiate business verification for a client who has onboarded via your ...
+          - generic [ref=f7e370]:
+            - generic [ref=f7e373]:
+              - 'link "Registrar número en WhatsApp Cloud API: guía práctica 2026 donweb.news https://donweb.news › DonWeb News › Desarrollo" [ref=f7e375] [cursor=pointer]':
+                - /url: /goto?url=CAESdQHrOzAVi__e4bm3icuAxbsfmzDdnSsBC5ZdoTfT_c_q3EjQxatBamas9ExZy5zJBoWsQP91_vaYN0v_O0zLlo9umtU9kV57X00UqSCH4KtzrXHNqbrbM4FK5obQdMDIwBtonIsr-8ZIppdsHbBhIc0ZAsGBcA
+                - 'heading "Registrar número en WhatsApp Cloud API: guía práctica 2026" [level=3] [ref=f7e376]'
+                - generic [ref=f7e382]:
+                  - generic [ref=f7e383]: donweb.news
+                  - generic [ref=f7e385]: https://donweb.news › DonWeb News › Desarrollo
+              - button "Acerca de este resultado" [ref=f7e391] [cursor=pointer]
+            - generic [ref=f7e398]:
+              - text: Registra y verifica tu número en
+              - emphasis [ref=f7e399]: WhatsApp Cloud API
+              - text: desde
+              - emphasis [ref=f7e400]: Meta Business
+              - text: Manager. Soluciona errores de autenticación paso a paso.
+          - generic [ref=f7e404]:
+            - generic [ref=f7e407]:
+              - link "Onboard WhatsApp Business app users - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f7e409] [cursor=pointer]:
+                - /url: /goto?url=CAESrwEB6zswFXpvf43GtimV8ZrncpLKoe3NRBX3BrIp6eHLi_KYea_9wrekyUfdHnGDQZ7k6J0RRnHiH2HtLhFMdjS06l2WI65y9LhcJkiJfj8ndiSTx5JMP0hD9OzPR5y_F1uecJv8Dqb5ema3GTl8iJma9zXV14weYH0qy4GXpTvtynX8NzwiAPxrTtGM-ElsB7t6YFN9G-a-O_P2GshZYGENUEwjmx1uNJBBLLlB3MZs
+                - heading "Onboard WhatsApp Business app users - Meta for Developers" [level=3] [ref=f7e410]
+                - generic [ref=f7e416]:
+                  - generic [ref=f7e417]: Meta for Developers
+                  - generic [ref=f7e419]: https://developers.facebook.com › ...
+              - generic [ref=f7e421]:
+                - generic [ref=f7e422]: ·
+                - link "Traducir esta página" [ref=f7e423] [cursor=pointer]:
+                  - /url: /goto?url=CAESgQIB6zswFXq5v8nX-OIbT6oZlXokPpUYAP31KLS7exsrvRUJ3PYsUmjSz01Iwjp83imFleAgOyHHCTyM0H8jGAk0ukmPrYZgo6bvdLS9M_xRD1CjhufW-asWXZuEpQgzs5kAdIZP9oz9dn6miL3Gr0reS6jTcVqkq4zwJ65gMgngiNnxx6xmLUv7MHBfYHDSA9tjDu3tRWjGUnxM1DGJzi70xhxiaTDtaNA0qZBVEgiao7bIUD7FtpCjpkwCCtd7p07K2BoHTqq6cdiENQjIj2Y-hUzaFqx51nXaXo8XF1LqjGutcZPWXuuU6l949JowwfPgyII0MhpGQ1QlWtyg0HloxA
+              - button "Acerca de este resultado" [ref=f7e428] [cursor=pointer]
+            - generic [ref=f7e435]:
+              - text: You can configure Embedded Signup to allow
+              - emphasis [ref=f7e436]: business
+              - text: customers to onboard using their existing
+              - emphasis [ref=f7e437]: WhatsApp Business app
+              - text: ⁠ account and phone number.
+          - generic [ref=f7e444]:
+            - generic [ref=f7e447]:
+              - link "WhatsApp Business API Setup 2026 (Step-by- ... YouTube · Abhay Kulkarni Más de 68.6 k vistas · hace 5 meses" [ref=f7e449] [cursor=pointer]:
+                - /url: /goto?url=CAESYwHrOzAVO8vcGZNNh13K0L5ijC60myXoAHVR3eC4m6P0GkozgzQ0NdHYdSQr0BOb36RkXtN_ypShIrx-s_s4xfLBdb9AOPNucKCub1IwH-Hc7piicO5K_HtgW7ruSGWgoGi0Yg
+                - heading "WhatsApp Business API Setup 2026 (Step-by- ..." [level=3] [ref=f7e450]
+                - generic [ref=f7e456]:
+                  - generic [ref=f7e457]: YouTube · Abhay Kulkarni
+                  - generic [ref=f7e459]: Más de 68.6 k vistas · hace 5 meses
+              - button "Acerca de este resultado" [ref=f7e465] [cursor=pointer]
+            - generic [ref=f7e470]:
+              - button "WhatsApp Business API Setup 2026 (Step-by- ... de Abhay Kulkarni en YouTube. Reproducir en Google. 18:03" [ref=f7e471] [cursor=pointer]:
+                - generic [ref=f7e472]: 18:03
+              - generic [ref=f7e488]: Learn how to set up the official WhatsApp Business API (Cloud API) in 2026 with Meta, including business verification, permanent access ...
+          - generic [ref=f7e493]:
+            - generic [ref=f7e496]:
+              - link "WhatsApp Business Platform - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f7e498] [cursor=pointer]:
+                - /url: /goto?url=CAESigEB6zswFRfhU33fC4cTiRBU1-I2CK_H1_7XJDBJL4bU7Pww-G4pKyS_mzTsGGB6PcSL7ap4PfTIfk0X2IqKAkRUjiN3ed-LrwcrF5nowapneoiX2JTjBe9Jzc7DNn4gHLJ1Q8TD0Nlu2UyYqsmKDHHAx0-98vYSAVeHrWLpWmmJwTs0BeW8_YBeoLU
+                - heading "WhatsApp Business Platform - Meta for Developers" [level=3] [ref=f7e499]
+                - generic [ref=f7e505]:
+                  - generic [ref=f7e506]: Meta for Developers
+                  - generic [ref=f7e508]: https://developers.facebook.com › ...
+              - generic [ref=f7e510]:
+                - generic [ref=f7e511]: ·
+                - link "Traducir esta página" [ref=f7e512] [cursor=pointer]:
+                  - /url: /goto?url=CAES3AEB6zswFeaQf5Ea1HvCnbb4ky4b6RVvYQleDhKuEpfTorHIs7XpX4JKeO-seSLDBDg8GNlRL_02U0p4GHclCMct19mbVH5LlqwTDsAMcKQ20PtXGYcU1d78R_kXNqJo6BwZQrkP1qaJGD_0cmgG1LNq20MCiL-qSq1kPBZmhwaT9oPsA72NutTSQHstwfqqRj1DOr9iwmHAC_Ipprq9NJ8BqoFLyeEN7tzs1Qb91prLoKO0xr9a6cZ9_3n5rtVmRtxI9-CcY8VhcwNkFsbKA7s_Cy9pADGNcQZ2Zk93
+              - button "Acerca de este resultado" [ref=f7e517] [cursor=pointer]
+            - generic [ref=f7e524]:
+              - emphasis [ref=f7e525]: API solutions for WhatsApp Business app users
+              - text: . Use both the WhatsApp Business app and API with the same phone number to simplify onboarding and unlock new ...
+          - generic [ref=f7e529]:
+            - generic [ref=f7e532]:
+              - 'link "Whatsapp Business Api verification : r/WhatsappBusinessAPI Reddit · r/WhatsappBusinessAPI Más de 10 comentarios · hace 5 meses" [ref=f7e534] [cursor=pointer]':
+                - /url: /goto?url=CAESmQEB6zswFTAaI3DqQZI0YX-8s4QTPrL3bmzu8fky75d_ZZYePueWlPu2tQIEskFmXcGl_x-_Gs3xj6iLrUzQriQtibjMJ0BIDXr1aRLBs4-0CvnW7MzrI7kDMc6dL8vTQ7loXYuJx0FY1WfSvbR1PUqLvLZDDqYHbvSti0Hv1-BJ3ypCh1lTuIRogkchcDWnIotaOh6VVHZcwBk
+                - 'heading "Whatsapp Business Api verification : r/WhatsappBusinessAPI" [level=3] [ref=f7e535]'
+                - generic [ref=f7e541]:
+                  - generic [ref=f7e542]: Reddit · r/WhatsappBusinessAPI
+                  - generic [ref=f7e544]: Más de 10 comentarios · hace 5 meses
+              - button "Acerca de este resultado" [ref=f7e550] [cursor=pointer]
+            - generic [ref=f7e557]:
+              - text: Im trying to verify my
+              - emphasis [ref=f7e558]: meta
+              - text: account so i can start using the
+              - emphasis [ref=f7e559]: Meta Cloud API
+              - text: ", im creating an"
+              - emphasis [ref=f7e560]: app
+              - text: that needs to send a OTP via
+              - emphasis [ref=f7e561]: whatsapp
+              - text: so the ...
+            - generic [ref=f7e563]:
+              - text: "Falta(n): publish ‎| Realizar una búsqueda con lo siguiente:"
+              - link "publish" [ref=f7e564] [cursor=pointer]:
+                - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&q=Meta+developers+%22publish%22+WhatsApp+Cloud+API+app+business+verification&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ5t4CegQIPRAB
+          - generic [ref=f7e568]:
+            - generic [ref=f7e571]:
+              - link "Detailed Process for Obtaining WhatsApp Business API ... منجز شات https://mnjz.net › detailed-process..." [ref=f7e573] [cursor=pointer]:
+                - /url: /goto?url=CAESiwEB6zswFQWvwMJf4XwbhYibIbStw6WxrwYyT79sVocJkPKgNaqNJraMsaUxaSvyn1IF4mbv8siE53cHh3hOQ9aaM8D4YNrwxpfUJITzQMiEXEHbhDo4YFcjSHwFMSJOQOmNFRh6VT2C1g1Asy45LwBpKYhySaTYJYiEsmuNM1ahNfcPtsSM8VwYd5DH
+                - heading "Detailed Process for Obtaining WhatsApp Business API ..." [level=3] [ref=f7e574]
+                - generic [ref=f7e580]:
+                  - generic [ref=f7e581]: منجز شات
+                  - generic [ref=f7e583]: https://mnjz.net › detailed-process...
+              - generic [ref=f7e585]:
+                - generic [ref=f7e586]: ·
+                - link "Traducir esta página" [ref=f7e587] [cursor=pointer]:
+                  - /url: /goto?url=CAES3QEB6zswFanAFm9_B-icirJoIu13l4TSsy3spp_8_9fQgekeRKQnjo1tU7xZuiwLEj4a1g9OjWnzT5NumTaVvRDA81dEazDgAEytqh54zajLAMM4quVZufi21d6Uh260dj0SkfjeUvGQX3aAavkxnfcB2eC5DSUgbs9xZWh9BJAjZY34ehLa_NGaLqwlfTqEvIVy7SEK2Y8HC0eY7gWZZgWvxgTtG0tV6MSn4Xq90X3eXKqlCiL0gjn6qNdNqXRAh4wU8Hq6xCVP4RF1rD76MsdcWDR53VF4fpZcqBnHiA
+              - button "Acerca de este resultado" [ref=f7e592] [cursor=pointer]
+            - generic [ref=f7e598]:
+              - generic [ref=f7e599]: 5 jul 2025 —
+              - generic [ref=f7e600]:
+                - text: Obtaining
+                - emphasis [ref=f7e601]: WhatsApp Business API
+                - text: requires official and well-documented steps with
+                - emphasis [ref=f7e602]: Meta
+                - text: ", starting from company"
+                - emphasis [ref=f7e603]: verification
+                - text: ", moving through ..."
+          - region "Anuncios" [ref=f7e607]:
+            - generic [ref=f7e608]:
+              - heading "Resultados patrocinados" [level=2] [ref=f7e615]
+              - generic [ref=f7e616]:
+                - generic [ref=f7e623]:
+                  - generic [ref=f7e628]:
+                    - generic [ref=f7e629]:
+                      - link "API Whatsapp Business | API Oficial de Whatsapp Wati.io https://www.wati.io" [ref=f7e630] [cursor=pointer]:
+                        - /url: /goto?url=CAESZQHrOzAVKs-zalBXdJx3kevRm3n91K2_sJbSpjDWHtfmio0p4_NOpPf-eERuVrO-SfZwm_GmZkwH4gHSHfjjsU4V1c6GLIjIko1P17tLHUoKEMpThWPNcG19ujzL9Tit0IGnfd80
+                        - heading "API Whatsapp Business | API Oficial de Whatsapp" [level=3] [ref=f7e631]
+                        - generic [ref=f7e637]:
+                          - generic [ref=f7e638]: Wati.io
+                          - generic [ref=f7e640]: https://www.wati.io
+                      - button "¿Por qué este anuncio?" [ref=f7e643] [cursor=pointer]
+                    - generic [ref=f7e647]: La API oficial de WhatsApp para tu negocio. ¡Integración rápida y sencilla! Transforma tu proceso...
+                    - generic [ref=f7e651]:
+                      - text: ‎
+                      - link "Prueba Gratis 7 Dias" [ref=f7e652] [cursor=pointer]:
+                        - /url: /goto?url=CAESYQHrOzAVtecKXKu3AfYdHjDuITGx_eAU894ExP4EkfEbjDS5eoBzoKaexzAe5QHwgzmn_uKR7BAS033WwaD-9uz1MyylfuQXDEwZHo17Iplmbo6sm2Co0J2DKMv36zCaomI
+                      - text: · ‎
+                      - link "Vende más por WhatsApp" [ref=f7e653] [cursor=pointer]:
+                        - /url: /aclk?sa=L&ai=DChsSEwjF3LbyuNaWAxUXaUgAHYW-Du0YACICCAIQCBoCY2U&co=1&ase=2&gclid=EAIaIQobChMIxdy28rjWlgMVF2lIAB2Fvg7tEAMYASADEgLaP_D_BwE&cid=CAASugHkaEtiMIIr7NUvkA6SnahOZk_CO4ietv1ljSlLaSKDXDtvkWTsUKTAAu-vCHBTXWwgm4BijeQZkmmZPDXheTcuQ8SoU0AbqnFgP1WXFB97Y3LpaZp_SQEK1IZ2HHWPJipfTlAxNK2BjbQytHxGSC2xOmyRqowxfDIPpd_Zx8aDHPLd627woIYouB5P8JuatJqgPvtMNLZi4Y307mR2nbn16qMR5Q0I_RhMp_qhLmc1kr0mFOEWzVrSTII&cce=2&category=acrcp_v1_32&sig=AOD64_0FW8cFvTryQX4V_WlXlHOBZw-4xw&adurl=&q=
+                      - text: · ‎
+                      - link "Tu negocio en WhatsApp" [ref=f7e654] [cursor=pointer]:
+                        - /url: /aclk?sa=L&ai=DChsSEwjF3LbyuNaWAxUXaUgAHYW-Du0YACICCAIQCRoCY2U&co=1&ase=2&gclid=EAIaIQobChMIxdy28rjWlgMVF2lIAB2Fvg7tEAMYASAEEgIHq_D_BwE&cid=CAASugHkaEtiMIIr7NUvkA6SnahOZk_CO4ietv1ljSlLaSKDXDtvkWTsUKTAAu-vCHBTXWwgm4BijeQZkmmZPDXheTcuQ8SoU0AbqnFgP1WXFB97Y3LpaZp_SQEK1IZ2HHWPJipfTlAxNK2BjbQytHxGSC2xOmyRqowxfDIPpd_Zx8aDHPLd627woIYouB5P8JuatJqgPvtMNLZi4Y307mR2nbn16qMR5Q0I_RhMp_qhLmc1kr0mFOEWzVrSTII&cce=2&category=acrcp_v1_32&sig=AOD64_2xNgK3X9kX8cMXi6DztdiiyMt12w&adurl=&q=
+                      - text: · ‎
+                      - link "Socio Oficial de Meta" [ref=f7e655] [cursor=pointer]:
+                        - /url: /goto?url=CAESYgHrOzAVeI2_Z1WOafz9yshFG0I_sjV6zVuowfJWdewOwPkPk_QBqSeWAwcQCs421qIK9CDK5ZRLNy64pPIWwLBrLb5eS4XGOGi4cJJWl3og8LoOAFCXxFBc2oO_3wMvobHw
+                    - generic [ref=f7e656]: Más de 1 millón de visitas en el último mes
+                  - generic [ref=f7e665]:
+                    - generic [ref=f7e666]:
+                      - link "Cómo acceder al WhatsApp Cloud API de Meta y activar tu... whapify.ai https://www.whapify.ai" [ref=f7e667] [cursor=pointer]:
+                        - /url: /goto?url=CAESdQHrOzAVX_QcBdjsuQnUR8ZkIBAI_s6Z5vXKrpXKBVaMKeL284TEdvvF04tQMr3x5NyWdl9_PGTiFOukx6ikmCGyE1TVBWeyvRJOBZRVWnzU3xJAeQrKyaacKL633bXU4lrMH7AXyML3evdyLTOqz6MF5WfdBg
+                        - heading "Cómo acceder al WhatsApp Cloud API de Meta y activar tu..." [level=3] [ref=f7e668]
+                        - generic [ref=f7e674]:
+                          - generic [ref=f7e675]: whapify.ai
+                          - generic [ref=f7e677]: https://www.whapify.ai
+                      - button "¿Por qué este anuncio?" [ref=f7e680] [cursor=pointer]
+                    - generic [ref=f7e684]: Accede al WhatsApp Cloud API en Facebook Developer de Meta y activa tu Chatbot de Whapify de manera efectiva y rápida.
+                    - generic [ref=f7e688]:
+                      - text: ‎
+                      - link "Canales De Soporte" [ref=f7e689] [cursor=pointer]:
+                        - /url: /goto?url=CAESUwHrOzAVFDco2kbdlOezeCR6WctXkzLGT4gflW1HHXeOMYbSU0DddmT_Wcg9jQJRURbY3Yzi2olCkDl4bOEmcCHymtv3P8VhVjTqPNbXHdnydTsL
+                      - text: · ‎
+                      - link "Integra Con IA" [ref=f7e690] [cursor=pointer]:
+                        - /url: /goto?url=CAESWQHrOzAVnJt42NEcdjxvQih5y5tdelqfdIcd0u0ndTsD1j8t6exhVT5rXObmJMm5nHOmlCvdB_8aNPMUnpMKuoEb3h6OQ_aiT8WuOFm1OcQmgFfG0gxRPcSl
+                      - text: · ‎
+                      - link "Sobre Nosotros" [ref=f7e691] [cursor=pointer]:
+                        - /url: /goto?url=CAESVAHrOzAVBQPMDZJB5TcNjm1h63779hwVC-jCxO72cTJqb4kVySijLYBquMepmx8PbkCruPSccrPGAnVad29tiDzIAxOC79yGHnuLpZEHjpdrj7Ofog
+                      - text: · ‎
+                      - link "Nuestros Precios" [ref=f7e692] [cursor=pointer]:
+                        - /url: /goto?url=CAESUwHrOzAVeByIIvlSAUOT960IcgIsPZ89VvQTatXglQbA-rnQKa5CqoN_wigf_P0AiFzA7eDOlrVwAAi-OiKzOQKOX3fVw2-MMBSzcKQ9B4w4XzJT
+                - button "Ocultar resultados patrocinados" [ref=f7e694] [cursor=pointer]:
+                  - separator [aria-hidden] [ref=f7e695]
+        - generic [ref=f7e702]:
+          - generic [ref=f7e707]:
+            - heading "También se buscó" [level=2] [ref=f7e709]
+            - generic [ref=f7e711]:
+              - generic [ref=f7e712]:
+                - link "WhatsApp Cloud API gratis" [ref=f7e716] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&q=WhatsApp+Cloud+API+gratis&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ1QJ6BAgsEAE
+                - link "Meta WhatsApp Cloud API" [ref=f7e730] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&q=Meta+WhatsApp+Cloud+API&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ1QJ6BAgyEAE
+                - link "Meta WhatsApp Business API" [ref=f7e744] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&q=Meta+WhatsApp+Business+API&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ1QJ6BAgxEAE
+                - link "WhatsApp Cloud API precios" [ref=f7e758] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&q=WhatsApp+Cloud+API+precios&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ1QJ6BAgwEAE
+              - generic [ref=f7e769]:
+                - link "Developers facebook WhatsApp" [ref=f7e773] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&q=Developers+facebook+WhatsApp&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ1QJ6BAgvEAE
+                - link "WhatsApp Business developer" [ref=f7e787] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&q=WhatsApp+Business+developer&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ1QJ6BAgtEAE
+                - link "WhatsApp API Business" [ref=f7e801] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&q=WhatsApp+API+Business&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ1QJ6BAguEAE
+                - link "Whatsapp app cloud api" [ref=f7e815] [cursor=pointer]:
+                  - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&q=Whatsapp+app+cloud+api&sa=X&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ1QJ6BAgrEAE
+          - navigation [ref=f7e826]:
+            - heading "Navegación de páginas" [level=1] [ref=f7e827]
+            - text: "1"
+            - link "Page 2" [ref=f7e830] [cursor=pointer]:
+              - /url: /search?q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&ei=RYWbasG-D8m45OUPtvbVmQo&start=10&sa=N&sstk=AS6-VmLoc6s3PgpVG_ZmYkZ8ywHKLViDSBjI-OCm6LP3d32Qrb8xsm3ev8fy0A8AoMkJI-ttlVEUTO30cSOns3Bl8fEBwU3XP5clWQ&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ8tMDegQIKRAE
+              - text: "2"
+            - link "Page 3" [ref=f7e832] [cursor=pointer]:
+              - /url: /search?q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&ei=RYWbasG-D8m45OUPtvbVmQo&start=20&sa=N&sstk=AS6-VmLoc6s3PgpVG_ZmYkZ8ywHKLViDSBjI-OCm6LP3d32Qrb8xsm3ev8fy0A8AoMkJI-ttlVEUTO30cSOns3Bl8fEBwU3XP5clWQ&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ8tMDegQIKRAG
+              - text: "3"
+            - link "Page 4" [ref=f7e834] [cursor=pointer]:
+              - /url: /search?q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&ei=RYWbasG-D8m45OUPtvbVmQo&start=30&sa=N&sstk=AS6-VmLoc6s3PgpVG_ZmYkZ8ywHKLViDSBjI-OCm6LP3d32Qrb8xsm3ev8fy0A8AoMkJI-ttlVEUTO30cSOns3Bl8fEBwU3XP5clWQ&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ8tMDegQIKRAI
+              - text: "4"
+            - link "Page 5" [ref=f7e836] [cursor=pointer]:
+              - /url: /search?q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&ei=RYWbasG-D8m45OUPtvbVmQo&start=40&sa=N&sstk=AS6-VmLoc6s3PgpVG_ZmYkZ8ywHKLViDSBjI-OCm6LP3d32Qrb8xsm3ev8fy0A8AoMkJI-ttlVEUTO30cSOns3Bl8fEBwU3XP5clWQ&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ8tMDegQIKRAK
+              - text: "5"
+            - link "Page 6" [ref=f7e838] [cursor=pointer]:
+              - /url: /search?q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&ei=RYWbasG-D8m45OUPtvbVmQo&start=50&sa=N&sstk=AS6-VmLoc6s3PgpVG_ZmYkZ8ywHKLViDSBjI-OCm6LP3d32Qrb8xsm3ev8fy0A8AoMkJI-ttlVEUTO30cSOns3Bl8fEBwU3XP5clWQ&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ8tMDegQIKRAM
+              - text: "6"
+            - link "Page 7" [ref=f7e840] [cursor=pointer]:
+              - /url: /search?q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&ei=RYWbasG-D8m45OUPtvbVmQo&start=60&sa=N&sstk=AS6-VmLoc6s3PgpVG_ZmYkZ8ywHKLViDSBjI-OCm6LP3d32Qrb8xsm3ev8fy0A8AoMkJI-ttlVEUTO30cSOns3Bl8fEBwU3XP5clWQ&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ8tMDegQIKRAO
+              - text: "7"
+            - link "Page 8" [ref=f7e842] [cursor=pointer]:
+              - /url: /search?q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&ei=RYWbasG-D8m45OUPtvbVmQo&start=70&sa=N&sstk=AS6-VmLoc6s3PgpVG_ZmYkZ8ywHKLViDSBjI-OCm6LP3d32Qrb8xsm3ev8fy0A8AoMkJI-ttlVEUTO30cSOns3Bl8fEBwU3XP5clWQ&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ8tMDegQIKRAQ
+              - text: "8"
+            - link "Page 9" [ref=f7e844] [cursor=pointer]:
+              - /url: /search?q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&ei=RYWbasG-D8m45OUPtvbVmQo&start=80&sa=N&sstk=AS6-VmLoc6s3PgpVG_ZmYkZ8ywHKLViDSBjI-OCm6LP3d32Qrb8xsm3ev8fy0A8AoMkJI-ttlVEUTO30cSOns3Bl8fEBwU3XP5clWQ&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ8tMDegQIKRAS
+              - text: "9"
+            - link "Page 10" [ref=f7e846] [cursor=pointer]:
+              - /url: /search?q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&ei=RYWbasG-D8m45OUPtvbVmQo&start=90&sa=N&sstk=AS6-VmLoc6s3PgpVG_ZmYkZ8ywHKLViDSBjI-OCm6LP3d32Qrb8xsm3ev8fy0A8AoMkJI-ttlVEUTO30cSOns3Bl8fEBwU3XP5clWQ&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ8tMDegQIKRAU
+              - text: "10"
+            - heading [level=2] [ref=f7e848]:
+              - link "Siguiente" [ref=f7e849] [cursor=pointer]:
+                - /url: /search?q=Meta+developers+publish+WhatsApp+Cloud+API+app+business+verification&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnt8DzsZwg623OCQWNp44c8i7hsfRQ:1788577093270&ei=RYWbasG-D8m45OUPtvbVmQo&start=10&sa=N&sstk=AS6-VmLoc6s3PgpVG_ZmYkZ8ywHKLViDSBjI-OCm6LP3d32Qrb8xsm3ev8fy0A8AoMkJI-ttlVEUTO30cSOns3Bl8fEBwU3XP5clWQ&ved=2ahUKEwiB9a_yuNaWAxVJHLkGHTZ7NaMQ8NMDegQIKRAW
+        - navigation
+    - contentinfo [ref=f7e852]:
+      - heading "Vínculos a pie de página" [level=1] [ref=f7e853]
+      - generic [ref=f7e857]:
+        - generic [ref=f7e859]:
+          - text: Argentina
+          - generic [ref=f7e861]:
+            - button "Capital, San Miguel de Tucumán, Tucumán - A través de tu dirección IP" [ref=f7e863] [cursor=pointer]:
+              - generic [ref=f7e864]: Capital, San Miguel de Tucumán, Tucumán
+              - generic [ref=f7e866]:
+                - text: "-"
+                - generic [ref=f7e867]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=f7e869] [cursor=pointer]
+        - generic [ref=f7e872]:
+          - link "Ayuda" [ref=f7e873] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - button "Enviar comentarios" [ref=f7e875] [cursor=pointer]
+          - link "Privacidad" [ref=f7e877] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=f7e878] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

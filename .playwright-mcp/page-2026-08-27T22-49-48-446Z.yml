@@ -1,0 +1,136 @@
+- generic [ref=f3e1]:
+  - main [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - generic [ref=f3e4]:
+        - button "Ocultar navegación" [expanded] [ref=f3e5] [cursor=pointer]
+        - generic [ref=f3e13]:
+          - paragraph [ref=f3e14]: Horarium
+          - paragraph [ref=f3e15]: Horario universitario
+      - generic [ref=f3e16]:
+        - button "Cambiar a tema oscuro" [ref=f3e17] [cursor=pointer]
+        - button "Notificaciones" [ref=f3e21] [cursor=pointer]
+        - generic [ref=f3e25]: Modo local
+    - generic [ref=f3e26]:
+      - complementary [ref=f3e28]:
+        - paragraph [ref=f3e30]: Navegación
+        - navigation "Navegación principal" [ref=f3e31]:
+          - button "Inicio" [ref=f3e32] [cursor=pointer]
+          - button "Horario" [active] [ref=f3e38] [cursor=pointer]
+          - button "Notas" [ref=f3e43] [cursor=pointer]
+          - button "Eventos" [ref=f3e50] [cursor=pointer]
+          - button "Materias" [ref=f3e58] [cursor=pointer]
+          - button "Profesores" [ref=f3e63] [cursor=pointer]
+          - button "Aulas" [ref=f3e69] [cursor=pointer]
+          - button "Configuración" [ref=f3e75] [cursor=pointer]
+      - generic [ref=f3e173]:
+        - generic "Próximos eventos del calendario" [ref=f3e174]:
+          - generic [ref=f3e175]: "Eventos:"
+          - generic [ref=f3e176]: No hay eventos cargados
+        - region "Horario semanal" [ref=f3e177]:
+          - generic [ref=f3e178]:
+            - generic [ref=f3e179]:
+              - heading "Agosto · Semana 35" [level=1] [ref=f3e180]
+              - paragraph [ref=f3e181]: Horario semanal de clases
+            - generic [ref=f3e182]:
+              - generic [ref=f3e183]:
+                - button "Semana anterior" [ref=f3e184] [cursor=pointer]: ‹
+                - generic [ref=f3e185]: 24 ago–28 ago
+                - button "Semana siguiente" [ref=f3e186] [cursor=pointer]: ›
+              - button "Hoy" [ref=f3e187] [cursor=pointer]
+              - generic [ref=f3e188]:
+                - generic [ref=f3e189]: Ir a una fecha
+                - textbox "Seleccionar fecha" [ref=f3e190]: 2026-08-27
+          - generic [ref=f3e192]:
+            - generic [ref=f3e193]:
+              - generic "Lun 24" [ref=f3e195]:
+                - paragraph [ref=f3e196]: Lun
+                - paragraph [ref=f3e197]: "24"
+              - generic "Mar 25" [ref=f3e198]:
+                - paragraph [ref=f3e199]: Mar
+                - paragraph [ref=f3e200]: "25"
+              - generic "Mié 26" [ref=f3e201]:
+                - paragraph [ref=f3e202]: Mié
+                - paragraph [ref=f3e203]: "26"
+              - generic "Jue 27" [ref=f3e204]:
+                - paragraph [ref=f3e205]: Jue
+                - paragraph [ref=f3e206]: "27"
+              - generic "Vie 28" [ref=f3e207]:
+                - paragraph [ref=f3e208]: Vie
+                - paragraph [ref=f3e209]: "28"
+            - generic [ref=f3e210]:
+              - generic [ref=f3e211]:
+                - generic [ref=f3e212]: 13:15
+                - generic [ref=f3e213]: 14:00
+                - generic [ref=f3e214]: 14:45
+                - generic [ref=f3e215]: 15:30
+                - generic [ref=f3e216]: 16:15
+                - generic [ref=f3e217]: 17:00
+                - generic [ref=f3e218]: 17:45
+                - generic [ref=f3e219]: 18:15
+                - generic [ref=f3e220]: 19:00
+                - generic [ref=f3e221]: 19:45
+                - generic [ref=f3e222]: 20:30
+                - generic [ref=f3e223]: 21:15
+                - generic [ref=f3e224]: 22:00
+              - generic [ref=f3e225]:
+                - button "Teoría Administración de Sistemas de Información Cordero Sin asignar" [ref=f3e239] [cursor=pointer]:
+                  - generic [ref=f3e240]: Teoría
+                  - strong [ref=f3e241]: Administración de Sistemas de Información
+                  - generic [ref=f3e242]: Cordero
+                  - generic [ref=f3e243]: Sin asignar
+                - button "Práctica Redes de Datos Ibarra Sin asignar" [ref=f3e244] [cursor=pointer]:
+                  - generic [ref=f3e245]: Práctica
+                  - strong [ref=f3e246]: Redes de Datos
+                  - generic [ref=f3e247]: Ibarra
+                  - generic [ref=f3e248]: Sin asignar
+              - generic [ref=f3e249]:
+                - button "Práctica Ingeniería y Calidad de Software Chibilisco Sin asignar" [ref=f3e263] [cursor=pointer]:
+                  - generic [ref=f3e264]: Práctica
+                  - strong [ref=f3e265]: Ingeniería y Calidad de Software
+                  - generic [ref=f3e266]: Chibilisco
+                  - generic [ref=f3e267]: Sin asignar
+                - button "Teoría Redes de Datos Nazar Patricia Sin asignar" [ref=f3e268] [cursor=pointer]:
+                  - generic [ref=f3e269]: Teoría
+                  - strong [ref=f3e270]: Redes de Datos
+                  - generic [ref=f3e271]: Nazar Patricia
+                  - generic [ref=f3e272]: Sin asignar
+              - generic [ref=f3e273]:
+                - button "Teoría Tecnología para la Automatización Vega Caro Sin asignar" [ref=f3e287] [cursor=pointer]:
+                  - generic [ref=f3e288]: Teoría
+                  - strong [ref=f3e289]: Tecnología para la Automatización
+                  - generic [ref=f3e290]: Vega Caro
+                  - generic [ref=f3e291]: Sin asignar
+                - button "Electivas Programación de Aplicaciones Distribuidas De la Cruz Sin asignar" [ref=f3e292] [cursor=pointer]:
+                  - generic [ref=f3e293]: Electivas
+                  - strong [ref=f3e294]: Programación de Aplicaciones Distribuidas
+                  - generic [ref=f3e295]: De la Cruz
+                  - generic [ref=f3e296]: Sin asignar
+              - generic [ref=f3e297]:
+                - button "Electivas Algoritmos Genéticos de Optimización Heurística Willy y Lizondo Sin asignar" [ref=f3e311] [cursor=pointer]:
+                  - generic [ref=f3e312]: Electivas
+                  - strong [ref=f3e313]: Algoritmos Genéticos de Optimización Heurística
+                  - generic [ref=f3e314]: Willy y Lizondo
+                  - generic [ref=f3e315]: Sin asignar
+                - button "Teoría Ingeniería y Calidad de Software Vicente Sin asignar" [ref=f3e316] [cursor=pointer]:
+                  - generic [ref=f3e317]: Teoría
+                  - strong [ref=f3e318]: Ingeniería y Calidad de Software
+                  - generic [ref=f3e319]: Vicente
+                  - generic [ref=f3e320]: Sin asignar
+                - button "Práctica Redes de Datos Ibarra Sin asignar" [ref=f3e321] [cursor=pointer]:
+                  - generic [ref=f3e322]: Práctica
+                  - strong [ref=f3e323]: Redes de Datos
+                  - generic [ref=f3e324]: Ibarra
+                  - generic [ref=f3e325]: Sin asignar
+              - generic [ref=f3e326]:
+                - button "Práctica Tecnología para la Automatización Canto Sin asignar" [ref=f3e340] [cursor=pointer]:
+                  - generic [ref=f3e341]: Práctica
+                  - strong [ref=f3e342]: Tecnología para la Automatización
+                  - generic [ref=f3e343]: Canto
+                  - generic [ref=f3e344]: Sin asignar
+                - button "Práctica Administración de Sistemas de Información Cele Sin asignar" [ref=f3e345] [cursor=pointer]:
+                  - generic [ref=f3e346]: Práctica
+                  - strong [ref=f3e347]: Administración de Sistemas de Información
+                  - generic [ref=f3e348]: Cele
+                  - generic [ref=f3e349]: Sin asignar
+  - button "Open Next.js Dev Tools" [ref=f3e167] [cursor=pointer]
+  - alert [ref=f3e171]

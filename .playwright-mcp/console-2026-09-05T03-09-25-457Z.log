@@ -1,0 +1,14 @@
+[     427ms] [WARNING] Error with Permissions-Policy header: Unrecognized feature: 'attribution-reporting'. @ :0
+[    2339ms] [ERROR] ErrorUtils caught an error:
+
+<Surface> is used without AutoLogging initialization
+
+Subsequent non-fatal errors won't be logged; see https://fburl.com/debugjs. {column: 17878, clientTime: 1788577767, extra: Object, guardList: Array(2), hash: l2uqog} @ https://static.xx.fbcdn.net/rsrc.php/v4/yN/r/_2Sbe8vUrUC.js:83
+[    2392ms] [LOG] 
+%cStop! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.xx.fbcdn.net/rsrc.php/v4i7du4/yD/l/en_US-j/b334qaznsSXfp4xAP6WgHKX0RxNyWFTOW0PkE9gypsYj1jnmJlNJwKvnxxr3mjBvzFRwrUCOM5oAkbZOAAVt9fa5-fAJOu0lKOkv1j2GrxMA0z4KEbwIFvL2erOXAlb1ioTG7jmK8ER9gfs2O7hmlOBoaLlpFBZRhx_2fKhVOi0JYvM6ZtbqaVfrUetttpD_-7rxcM2O7fIyYCh_QbnqdQhz1BtNgRu4ATL8bXLOpQBk8VMwW9gCfOmdCcN_KyoWRl2DuBXevMQ3iWnhb5a75HrpdSQyoEJIhP4ummRLWWEHDZkgBbbbdFl3K-frDM5_MsxHZHgGFw.js:2612
+[    2392ms] [LOG] 
+%cThis is a browser feature intended for developers. If someone told you to copy-paste something here to enable a Facebook feature or "hack" someone's account, it's a scam and will give them access to your Facebook account. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4i7du4/yD/l/en_US-j/b334qaznsSXfp4xAP6WgHKX0RxNyWFTOW0PkE9gypsYj1jnmJlNJwKvnxxr3mjBvzFRwrUCOM5oAkbZOAAVt9fa5-fAJOu0lKOkv1j2GrxMA0z4KEbwIFvL2erOXAlb1ioTG7jmK8ER9gfs2O7hmlOBoaLlpFBZRhx_2fKhVOi0JYvM6ZtbqaVfrUetttpD_-7rxcM2O7fIyYCh_QbnqdQhz1BtNgRu4ATL8bXLOpQBk8VMwW9gCfOmdCcN_KyoWRl2DuBXevMQ3iWnhb5a75HrpdSQyoEJIhP4ummRLWWEHDZkgBbbbdFl3K-frDM5_MsxHZHgGFw.js:2612
+[    2392ms] [LOG] 
+%cSee https://www.facebook.com/selfxss for more information. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4i7du4/yD/l/en_US-j/b334qaznsSXfp4xAP6WgHKX0RxNyWFTOW0PkE9gypsYj1jnmJlNJwKvnxxr3mjBvzFRwrUCOM5oAkbZOAAVt9fa5-fAJOu0lKOkv1j2GrxMA0z4KEbwIFvL2erOXAlb1ioTG7jmK8ER9gfs2O7hmlOBoaLlpFBZRhx_2fKhVOi0JYvM6ZtbqaVfrUetttpD_-7rxcM2O7fIyYCh_QbnqdQhz1BtNgRu4ATL8bXLOpQBk8VMwW9gCfOmdCcN_KyoWRl2DuBXevMQ3iWnhb5a75HrpdSQyoEJIhP4ummRLWWEHDZkgBbbbdFl3K-frDM5_MsxHZHgGFw.js:2612
+[    2392ms] [LOG] 
+%c  @ https://static.xx.fbcdn.net/rsrc.php/v4i7du4/yD/l/en_US-j/b334qaznsSXfp4xAP6WgHKX0RxNyWFTOW0PkE9gypsYj1jnmJlNJwKvnxxr3mjBvzFRwrUCOM5oAkbZOAAVt9fa5-fAJOu0lKOkv1j2GrxMA0z4KEbwIFvL2erOXAlb1ioTG7jmK8ER9gfs2O7hmlOBoaLlpFBZRhx_2fKhVOi0JYvM6ZtbqaVfrUetttpD_-7rxcM2O7fIyYCh_QbnqdQhz1BtNgRu4ATL8bXLOpQBk8VMwW9gCfOmdCcN_KyoWRl2DuBXevMQ3iWnhb5a75HrpdSQyoEJIhP4ummRLWWEHDZkgBbbbdFl3K-frDM5_MsxHZHgGFw.js:2612

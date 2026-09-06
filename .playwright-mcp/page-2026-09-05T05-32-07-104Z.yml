@@ -1,0 +1,88 @@
+- generic [active] [ref=f57e1]:
+  - generic [ref=f57e2]:
+    - generic:
+      - iframe
+    - generic:
+      - iframe
+    - generic:
+      - iframe
+    - generic:
+      - iframe
+    - generic [ref=f57e3]:
+      - generic [ref=f57e9]:
+        - generic [ref=f57e10]:
+          - progressbar [ref=f57e12]
+          - generic [ref=f57e13]:
+            - progressbar [ref=f57e14]
+            - progressbar [ref=f57e15]
+            - progressbar [ref=f57e16]
+            - progressbar [ref=f57e17]
+            - progressbar [ref=f57e18]
+        - generic [ref=f57e19]:
+          - progressbar [ref=f57e20]
+          - progressbar [ref=f57e21]
+          - progressbar [ref=f57e22]
+      - generic [ref=f57e24]:
+        - generic [ref=f57e25]: Explorador de la API Graph
+        - generic [ref=f57e31]:
+          - generic [ref=f57e32]:
+            - generic [ref=f57e33]:
+              - button "Favorites" [ref=f57e35] [cursor=pointer]
+              - generic [ref=f57e39]:
+                - button "GET" [ref=f57e41] [cursor=pointer]
+                - generic [ref=f57e48]:
+                  - link "← graph." [ref=f57e49] [cursor=pointer]:
+                    - /url: "#"
+                  - button ".facebook.com/" [ref=f57e51] [cursor=pointer]
+                - button "v26.0" [ref=f57e58] [cursor=pointer]
+                - generic [ref=f57e64]: /
+                - generic [ref=f57e65]:
+                  - combobox [ref=f57e68]: me?fields=id,name
+                  - button "Eliminar" [ref=f57e69] [cursor=pointer]
+                - generic [ref=f57e71] [cursor=pointer]
+            - button "Enviar" [ref=f57e73] [cursor=pointer]
+          - generic [ref=f57e77]:
+            - generic [ref=f57e81]:
+              - generic:
+                - generic:
+                  - list
+            - generic [ref=f57e82]:
+              - generic [ref=f57e87]:
+                - generic:
+                  - generic:
+                    - button "Más información sobre esta nueva función" [ref=f57e88] [cursor=pointer]
+                    - button "Cierre ventanas emergentes y vuelva" [ref=f57e90] [cursor=pointer]
+                - generic [ref=f57e97]:
+                  - button [ref=f57e98]:
+                    - button "Copiar información de depuración" [disabled] [ref=f57e100]
+                  - button "Obtener código" [disabled] [ref=f57e103]
+                  - button "Guardar sesión" [disabled] [ref=f57e107]
+              - generic [ref=f57e115]:
+                - heading "Token de acceso" [level=4] [ref=f57e116]
+                - generic [ref=f57e118]:
+                  - generic [ref=f57e119]:
+                    - textbox [ref=f57e122]:
+                      - /placeholder: Token de acceso
+                      - text: EAAPE5c7RkoMBSdRfIhlBXUjiZASoM4ffPMX5ybZC46ebrO1yLCwaSiS86galkGgNwfclv4U66dSZC8436UvZAhimx9vcKJ6j0cFxOSG7juRq9YIKjLFURme7n7rwn9p6ZCT9SvmJpSZB2fuVp9QNTnIAu5uTKEo6hWOJZBEovHDnooMReoIwZA6InssRKYzMt1ZBDQCCADUDM6QHvtLHpHDrQIjQSLzVwxir6
+                    - button "Copy Token" [ref=f57e125] [cursor=pointer]
+                    - progressbar [ref=f57e130]
+                  - button "Generate Access Token" [ref=f57e131] [cursor=pointer]
+                - generic [ref=f57e134]: App de Meta
+                - generic:
+                  - generic:
+                    - button "Más información sobre esta nueva función" [ref=f57e135] [cursor=pointer]
+                    - button "Cierre ventanas emergentes y vuelva" [ref=f57e137] [cursor=pointer]
+                - button "horarium" [ref=f57e140] [cursor=pointer]
+                - generic [ref=f57e148]: Usuario o página
+                - generic [ref=f57e149]:
+                  - generic:
+                    - generic:
+                      - button "Más información sobre esta nueva función" [ref=f57e150] [cursor=pointer]
+                      - button "Cierre ventanas emergentes y vuelva" [ref=f57e152] [cursor=pointer]
+                  - button "Cargando token" [ref=f57e154] [cursor=pointer]
+  - generic:
+    - region "Más información sobre esta nueva función"
+  - generic:
+    - region "Más información sobre esta nueva función"
+  - generic:
+    - region "Más información sobre esta nueva función"

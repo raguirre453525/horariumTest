@@ -1,0 +1,392 @@
+- generic [ref=f1e11]:
+  - navigation "Main" [ref=f1e13]:
+    - generic [ref=f1e20]:
+      - generic [ref=f1e22]:
+        - button "Open mobile navigation menu" [ref=f1e24] [cursor=pointer]
+        - link "Meta home" [ref=f1e29] [cursor=pointer]:
+          - /url: https://developers.facebook.com/
+          - img "Nav Logo" [ref=f1e30]
+      - generic [ref=f1e33]:
+        - link "Login" [ref=f1e34] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fdocumentation%2Fbusiness-messaging%2Fwhatsapp%2Fwebhooks%2Fset-up-whatsapp-echo-bot%3Flocale%3Den_US
+        - button [ref=f1e35] [cursor=pointer]:
+          - img "Search" [ref=f1e36]
+  - generic [ref=f1e43]:
+    - navigation [ref=f1e44]:
+      - generic [ref=f1e45]:
+        - generic [ref=f1e46]:
+          - generic [ref=f1e47]: WhatsApp Business Platform
+          - generic [ref=f1e48]:
+            - button "Dropdown" [ref=f1e50] [cursor=pointer]:
+              - generic [ref=f1e51]: Business Messaging
+            - button "Dropdown" [ref=f1e57] [cursor=pointer]:
+              - generic [ref=f1e58]: WhatsApp Business Platform
+            - textbox "Filter" [ref=f1e64]
+        - generic [ref=f1e66]:
+          - generic "WhatsApp Business Platform" [ref=f1e67]:
+            - link "WhatsApp Business Platform" [ref=f1e68] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/overview/
+          - generic "Overview" [ref=f1e73]:
+            - link "Overview" [ref=f1e74] [cursor=pointer]:
+              - /url: "#"
+          - generic "Get started" [ref=f1e81]:
+            - link "Get started" [ref=f1e82] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/get-started/
+          - generic "Direct Send messages" [ref=f1e87]:
+            - link "Direct Send messages" [ref=f1e88] [cursor=pointer]:
+              - /url: "#"
+          - generic "Marketing messages" [ref=f1e96]:
+            - link "Marketing messages" [ref=f1e97] [cursor=pointer]:
+              - /url: "#"
+          - generic "In-App Signup" [ref=f1e104]:
+            - link "In-App Signup" [ref=f1e105] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/in-app-signup/
+          - generic "Utility messages" [ref=f1e110]:
+            - link "Utility messages" [ref=f1e111] [cursor=pointer]:
+              - /url: "#"
+          - generic "Authentication messages" [ref=f1e119]:
+            - link "Authentication messages" [ref=f1e120] [cursor=pointer]:
+              - /url: "#"
+          - generic "Service messages" [ref=f1e128]:
+            - link "Service messages" [ref=f1e129] [cursor=pointer]:
+              - /url: "#"
+          - generic "Calling" [ref=f1e137]:
+            - link "Calling" [ref=f1e138] [cursor=pointer]:
+              - /url: "#"
+          - generic "Groups" [ref=f1e146]:
+            - link "Groups" [ref=f1e147] [cursor=pointer]:
+              - /url: "#"
+          - generic "Catalogs" [ref=f1e155]:
+            - link "Catalogs" [ref=f1e156] [cursor=pointer]:
+              - /url: "#"
+          - generic "Partners" [ref=f1e164]:
+            - link "Partners" [ref=f1e165] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f1e172]:
+            - generic "Webhooks" [ref=f1e173]:
+              - link "Webhooks" [ref=f1e174] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f1e182]:
+              - generic "Overview" [ref=f1e183]:
+                - link "Overview" [ref=f1e184] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/webhooks/overview/
+              - generic "Create a webhook endpoint" [ref=f1e188]:
+                - link "Create a webhook endpoint" [ref=f1e189] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/webhooks/create-webhook-endpoint/
+              - generic "Create a test webhook endpoint" [ref=f1e193]:
+                - link "Create a test webhook endpoint" [ref=f1e194] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/webhooks/set-up-whatsapp-echo-bot/
+              - generic "Override the callback URL" [ref=f1e198]:
+                - link "Override the callback URL" [ref=f1e199] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/webhooks/override/
+              - generic "Webhooks reference" [ref=f1e204]:
+                - link "Webhooks reference" [ref=f1e205] [cursor=pointer]:
+                  - /url: "#"
+          - generic "Template fundamentals" [ref=f1e213]:
+            - link "Template fundamentals" [ref=f1e214] [cursor=pointer]:
+              - /url: "#"
+          - generic "Messaging features" [ref=f1e222]:
+            - link "Messaging features" [ref=f1e223] [cursor=pointer]:
+              - /url: "#"
+          - generic "Account assets" [ref=f1e231]:
+            - link "Account assets" [ref=f1e232] [cursor=pointer]:
+              - /url: "#"
+          - generic "Analytics" [ref=f1e239]:
+            - link "Analytics" [ref=f1e240] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/analytics/
+          - generic "Ads that click to WhatsApp" [ref=f1e245]:
+            - link "Ads that click to WhatsApp" [ref=f1e246] [cursor=pointer]:
+              - /url: "#"
+          - generic "Payments" [ref=f1e254]:
+            - link "Payments" [ref=f1e255] [cursor=pointer]:
+              - /url: "#"
+          - generic "Data, Privacy, & Policy" [ref=f1e263]:
+            - link "Data, Privacy, & Policy" [ref=f1e264] [cursor=pointer]:
+              - /url: "#"
+          - generic "Support" [ref=f1e272]:
+            - link "Support" [ref=f1e273] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f1e280]:
+            - separator [aria-hidden] [ref=f1e281]
+            - generic [ref=f1e282]: Resources
+          - generic "API Reference" [ref=f1e284]:
+            - link "API Reference" [ref=f1e285] [cursor=pointer]:
+              - /url: "#"
+          - generic "Changelog" [ref=f1e292]:
+            - link "Changelog" [ref=f1e293] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/changelog/
+          - generic "Error codes" [ref=f1e297]:
+            - link "Error codes" [ref=f1e298] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/support/error-codes
+    - generic [ref=f1e303]:
+      - main [ref=f1e304]:
+        - generic [ref=f1e305]:
+          - navigation "Breadcrumbs" [ref=f1e307]:
+            - list [ref=f1e308]:
+              - listitem [ref=f1e309]:
+                - link "Docs" [ref=f1e311] [cursor=pointer]:
+                  - /url: /docs
+              - listitem [ref=f1e316]:
+                - link "Overview" [ref=f1e318] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/overview
+              - listitem [ref=f1e323]:
+                - generic [ref=f1e324]: Create a test webhook endpoint
+          - article [ref=f1e327]:
+            - heading "Create a test webhook endpoint" [level=1] [ref=f1e328]
+            - generic [ref=f1e329]: "Updated: May 21, 2026"
+            - generic [ref=f1e333]:
+              - button "Copy for LLM" [ref=f1e335] [cursor=pointer]
+              - link "View as Markdown" [ref=f1e342] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/webhooks/set-up-whatsapp-echo-bot.md
+            - generic [ref=f1e348]:
+              - text: If you aren’t ready to create your own webhook endpoint yet, you can deploy a test webhook app on
+              - link [ref=f1e349] [cursor=pointer]:
+                - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.render.com%2F&h=AUDbefhH627UCMo-lCQ3-N_P7D0FakWVvogu49Ti7V1mFWLsc7oYaJl_9sxj3iBFK5F0Mo_Uysk9AZycZ8ipLwzlTcHPqvIFJkE7WRdHGjpWuActXLrOPLOzpDJivF1eDO6lkQB2E3kYYkI8nY2jxw
+                - text: Render.com
+                - generic [ref=f1e350]:
+                  - text: ⁠
+                  - img "This link opens in a new tab or window" [ref=f1e351]
+              - text: that accepts webhook requests and dumps their contents to Render’s console.
+            - emphasis [ref=f1e355]: Only use this app for testing purposes.
+            - generic [ref=f1e358]:
+              - heading "Requirements" [level=2] [ref=f1e359]
+              - button [ref=f1e360] [cursor=pointer]
+            - list [ref=f1e364]:
+              - listitem [ref=f1e366]:
+                - text: A
+                - link [ref=f1e367] [cursor=pointer]:
+                  - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.render.com%2F&h=AUDbefhH627UCMo-lCQ3-N_P7D0FakWVvogu49Ti7V1mFWLsc7oYaJl_9sxj3iBFK5F0Mo_Uysk9AZycZ8ipLwzlTcHPqvIFJkE7WRdHGjpWuActXLrOPLOzpDJivF1eDO6lkQB2E3kYYkI8nY2jxw
+                  - text: Render
+                  - generic [ref=f1e368]:
+                    - text: ⁠
+                    - img "This link opens in a new tab or window" [ref=f1e369]
+                - text: account.
+              - listitem [ref=f1e373]:
+                - text: A
+                - link [ref=f1e374] [cursor=pointer]:
+                  - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.github.com%2F&h=AUDbefhH627UCMo-lCQ3-N_P7D0FakWVvogu49Ti7V1mFWLsc7oYaJl_9sxj3iBFK5F0Mo_Uysk9AZycZ8ipLwzlTcHPqvIFJkE7WRdHGjpWuActXLrOPLOzpDJivF1eDO6lkQB2E3kYYkI8nY2jxw
+                  - text: GitHub
+                  - generic [ref=f1e375]:
+                    - text: ⁠
+                    - img "This link opens in a new tab or window" [ref=f1e376]
+                - text: account.
+            - generic [ref=f1e381]:
+              - 'heading "Step 1: Create a GitHub repository" [level=2] [ref=f1e382]'
+              - button [ref=f1e383] [cursor=pointer]
+            - generic [ref=f1e387]:
+              - text: Sign into your GitHub account and create a new repo (public or private) with a name of your choice. Within the repo, create an
+              - code [ref=f1e388]: app.js
+              - text: "file and paste this code into it:"
+            - generic [ref=f1e389]:
+              - code [ref=f1e391]: "// Import Express.js const express = require('express'); // Create an Express app const app = express(); // Middleware to parse JSON bodies app.use(express.json()); // Set port and verify_token const port = process.env.PORT || 3000; const verifyToken = process.env.VERIFY_TOKEN; // Route for GET requests app.get('/', (req, res) => { const { 'hub.mode': mode, 'hub.challenge': challenge, 'hub.verify_token': token } = req.query; if (mode === 'subscribe' && token === verifyToken) { console.log('WEBHOOK VERIFIED'); res.status(200).send(challenge); } else { res.status(403).end(); } }); // Route for POST requests app.post('/', (req, res) => { const timestamp = new Date().toISOString().replace('T', ' ').slice(0, 19); console.log(`\\n\\nWebhook received ${timestamp}\\n`); console.log(JSON.stringify(req.body, null, 2)); res.status(200).end(); }); // Start the server app.listen(port, () => { console.log(`\\nListening on port ${port}\\n`); });"
+              - button [ref=f1e392] [cursor=pointer]
+            - generic [ref=f1e397]:
+              - 'heading "Step 2: Deploy a Node Express app on Render" [level=2] [ref=f1e398]'
+              - button [ref=f1e399] [cursor=pointer]
+            - generic [ref=f1e403]:
+              - text: Follow Render’s instructions for
+              - link [ref=f1e404] [cursor=pointer]:
+                - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Frender.com%2Fdocs%2Fdeploy-node-express-app&h=AUDbefhH627UCMo-lCQ3-N_P7D0FakWVvogu49Ti7V1mFWLsc7oYaJl_9sxj3iBFK5F0Mo_Uysk9AZycZ8ipLwzlTcHPqvIFJkE7WRdHGjpWuActXLrOPLOzpDJivF1eDO6lkQB2E3kYYkI8nY2jxw
+                - text: deploying a Node Express app
+                - generic [ref=f1e405]:
+                  - text: ⁠
+                  - img "This link opens in a new tab or window" [ref=f1e406]
+              - text: ", with these differences:"
+            - list [ref=f1e409]:
+              - listitem [ref=f1e411]: Skip step 1.
+              - listitem [ref=f1e413]:
+                - text: "Use these settings for step 3:"
+                - list [ref=f1e414]:
+                  - listitem [ref=f1e416]:
+                    - text: "Build command:"
+                    - code [ref=f1e417]: npm install express
+                  - listitem [ref=f1e419]:
+                    - text: "Start command:"
+                    - code [ref=f1e420]: node app.js
+                  - listitem [ref=f1e422]:
+                    - text: In the
+                    - strong [ref=f1e423]: Environment Variables
+                    - text: section, add the variable
+                    - code [ref=f1e424]: VERIFY_TOKEN
+                    - text: and set it to a string of your choice (for example,
+                    - code [ref=f1e425]: vibecode
+                    - text: ).
+            - generic [ref=f1e426]:
+              - text: When you’re done, click the
+              - strong [ref=f1e427]: Deploy your web service
+              - text: button. Clicking
+              - strong [ref=f1e428]: Deploy your web service
+              - text: takes you to the app log where you will see your app being built, which can take a few minutes. You’ll know it’s done when you see “Your service is live” in the log.
+            - img "Render test webhook app Events page with app log highlighting the Your service is live message" [ref=f1e430] [cursor=pointer]
+            - generic [ref=f1e431]: Copy your deployed test webhook app URL, which appears at the top of the page under your GitHub repo name. (If you view the URL, you’ll get a 403 error, which is expected).
+            - generic [ref=f1e434]:
+              - 'heading "Step 3: Add your test webhook app URL to your Meta app" [level=2] [ref=f1e435]'
+              - button [ref=f1e436] [cursor=pointer]
+            - generic [ref=f1e440]:
+              - text: Open a new window/tab, and navigate to the (Meta)
+              - link "App Dashboard" [ref=f1e441] [cursor=pointer]:
+                - /url: /apps
+              - text: ">"
+              - strong [ref=f1e442]: WhatsApp
+              - text: ">"
+              - strong [ref=f1e443]: Webhooks
+              - text: ">"
+              - strong [ref=f1e444]: Configuration
+              - text: panel.
+            - generic [ref=f1e445]:
+              - text: Paste your test webhook app URL in the
+              - strong [ref=f1e446]: Callback URL
+              - text: field, and add the
+              - code [ref=f1e447]: VERIFY_TOKEN
+              - text: environment variable string you set earlier to the
+              - strong [ref=f1e448]: Verify token
+              - text: field, then click
+              - strong [ref=f1e449]: Verify and save
+              - text: .
+            - img "App Dashboard WhatsApp Configuration panel highlighting the Callback URL and Verify token fields" [ref=f1e451] [cursor=pointer]
+            - generic [ref=f1e452]: If verification is successful, the Meta app dashboard should refresh and you should see a list of webhook fields you can subscribe to.
+            - emphasis [ref=f1e454]:
+              - text: Subscribe to the
+              - strong [ref=f1e455]: messages
+              - text: webhook field if you haven’t already.
+            - generic [ref=f1e456]: Also, in Render’s app log, if you see “WEBHOOK VERIFIED”, your test webhook app URL has been successfully verified.
+            - img "Render test webhook app log highlighting the WEBHOOK VERIFIED message confirming successful verification" [ref=f1e458] [cursor=pointer]
+            - generic [ref=f1e461]:
+              - 'heading "Step 4: Send a test message" [level=2] [ref=f1e462]'
+              - button [ref=f1e463] [cursor=pointer]
+            - generic [ref=f1e467]:
+              - text: Back in the Meta app dashboard
+              - strong [ref=f1e468]: Configuration
+              - text: panel, scroll down to the
+              - strong [ref=f1e469]: messages
+              - text: webhook field, subscribe to the field if you haven’t already, then click the
+              - strong [ref=f1e470]: Test
+              - text: link.
+            - img "App Dashboard Configuration webhook fields list highlighting the messages field set to Subscribed with a Test link" [ref=f1e472] [cursor=pointer]
+            - generic [ref=f1e473]:
+              - text: Clicking the
+              - strong [ref=f1e474]: Test
+              - text: "link sends a test message to your test webhook app. Confirm that it appears in Render app log with “Webhook received” followed by a test JSON payload:"
+            - img "Render test webhook app log highlighting a Webhook received entry followed by a test JSON payload" [ref=f1e476] [cursor=pointer]
+            - generic [ref=f1e479]:
+              - heading "Troubleshooting" [level=2] [ref=f1e480]
+              - button [ref=f1e481] [cursor=pointer]
+            - generic [ref=f1e485]:
+              - text: If the test
+              - strong [ref=f1e486]: messages
+              - text: "webhook doesn’t appear in the Render app dashboard log:"
+            - list [ref=f1e487]:
+              - listitem [ref=f1e489]: Confirm that you successfully added your test webhook app URL to your Meta app (Step 3).
+              - listitem [ref=f1e491]:
+                - text: Confirm that your app is subscribed to the
+                - strong [ref=f1e492]: messages
+                - text: webhook field.
+              - listitem [ref=f1e494]:
+                - text: Make sure you are sending a
+                - strong [ref=f1e495]: messages
+                - text: test webhook; some test webhooks only work when your app is in Live mode, while others only work in Development mode (
+                - strong [ref=f1e496]: messages
+                - text: test webhooks work in both modes).
+      - complementary [ref=f1e497]
+  - generic [ref=f1e499]:
+    - separator [aria-hidden] [ref=f1e500]
+    - contentinfo [ref=f1e501]:
+      - generic [ref=f1e502]:
+        - separator [aria-hidden] [ref=f1e503]
+        - generic [ref=f1e505]:
+          - generic [ref=f1e507]:
+            - generic [ref=f1e509]:
+              - img "Meta" [ref=f1e511]
+              - list [ref=f1e513]:
+                - listitem:
+                  - link "Facebook":
+                    - /url: https://www.facebook.com/MetaforDevelopers
+                    - img "Facebook"
+                - listitem:
+                  - link "Instagram":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmetafordevelopers%2F&h=AUDbefhH627UCMo-lCQ3-N_P7D0FakWVvogu49Ti7V1mFWLsc7oYaJl_9sxj3iBFK5F0Mo_Uysk9AZycZ8ipLwzlTcHPqvIFJkE7WRdHGjpWuActXLrOPLOzpDJivF1eDO6lkQB2E3kYYkI8nY2jxw
+                    - img "Instagram"
+                - listitem:
+                  - link "X":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2Fmetafordevs&h=AUDbefhH627UCMo-lCQ3-N_P7D0FakWVvogu49Ti7V1mFWLsc7oYaJl_9sxj3iBFK5F0Mo_Uysk9AZycZ8ipLwzlTcHPqvIFJkE7WRdHGjpWuActXLrOPLOzpDJivF1eDO6lkQB2E3kYYkI8nY2jxw
+                    - img "X"
+                - listitem:
+                  - link "LinkedIn":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fshowcase%2Fmeta-for-developers%2F&h=AUDbefhH627UCMo-lCQ3-N_P7D0FakWVvogu49Ti7V1mFWLsc7oYaJl_9sxj3iBFK5F0Mo_Uysk9AZycZ8ipLwzlTcHPqvIFJkE7WRdHGjpWuActXLrOPLOzpDJivF1eDO6lkQB2E3kYYkI8nY2jxw
+                    - img "LinkedIn"
+                - listitem:
+                  - link "YouTube":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2FMetaDevelopers%2F&h=AUDbefhH627UCMo-lCQ3-N_P7D0FakWVvogu49Ti7V1mFWLsc7oYaJl_9sxj3iBFK5F0Mo_Uysk9AZycZ8ipLwzlTcHPqvIFJkE7WRdHGjpWuActXLrOPLOzpDJivF1eDO6lkQB2E3kYYkI8nY2jxw
+                    - img "YouTube"
+            - generic [ref=f1e515]:
+              - generic [ref=f1e518]:
+                - heading "Crear con Meta" [level=2] [ref=f1e519]
+                - list [ref=f1e521]:
+                  - listitem [ref=f1e522]:
+                    - link "Inteligencia artificial" [ref=f1e524] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fai%2F&h=AUDbefhH627UCMo-lCQ3-N_P7D0FakWVvogu49Ti7V1mFWLsc7oYaJl_9sxj3iBFK5F0Mo_Uysk9AZycZ8ipLwzlTcHPqvIFJkE7WRdHGjpWuActXLrOPLOzpDJivF1eDO6lkQB2E3kYYkI8nY2jxw
+                  - listitem [ref=f1e525]:
+                    - link "Meta Horizon" [ref=f1e527] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fhorizon%2F&h=AUDbefhH627UCMo-lCQ3-N_P7D0FakWVvogu49Ti7V1mFWLsc7oYaJl_9sxj3iBFK5F0Mo_Uysk9AZycZ8ipLwzlTcHPqvIFJkE7WRdHGjpWuActXLrOPLOzpDJivF1eDO6lkQB2E3kYYkI8nY2jxw
+                  - listitem [ref=f1e528]:
+                    - link "Tecnologías sociales" [ref=f1e530] [cursor=pointer]:
+                      - /url: /social-technologies/
+              - generic [ref=f1e533]:
+                - heading "Noticias" [level=2] [ref=f1e534]
+                - list [ref=f1e536]:
+                  - listitem [ref=f1e537]:
+                    - link "Meta for Developers" [ref=f1e539] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fblog%2F&h=AUDbefhH627UCMo-lCQ3-N_P7D0FakWVvogu49Ti7V1mFWLsc7oYaJl_9sxj3iBFK5F0Mo_Uysk9AZycZ8ipLwzlTcHPqvIFJkE7WRdHGjpWuActXLrOPLOzpDJivF1eDO6lkQB2E3kYYkI8nY2jxw
+                  - listitem [ref=f1e540]:
+                    - link "Blog" [ref=f1e542] [cursor=pointer]:
+                      - /url: /blog/
+                  - listitem [ref=f1e543]:
+                    - link "Historias de éxito" [ref=f1e545] [cursor=pointer]:
+                      - /url: /success-stories/
+              - generic [ref=f1e548]:
+                - heading "Ayuda" [level=2] [ref=f1e549]
+                - list [ref=f1e551]:
+                  - listitem [ref=f1e552]:
+                    - link "Ayuda para desarrolladores" [ref=f1e554] [cursor=pointer]:
+                      - /url: /support/
+                  - listitem [ref=f1e555]:
+                    - link "Herramienta de errores" [ref=f1e557] [cursor=pointer]:
+                      - /url: /support/bugs/
+                  - listitem [ref=f1e558]:
+                    - link "Estado de la plataforma" [ref=f1e560] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmetastatus.com%2F&h=AUDbefhH627UCMo-lCQ3-N_P7D0FakWVvogu49Ti7V1mFWLsc7oYaJl_9sxj3iBFK5F0Mo_Uysk9AZycZ8ipLwzlTcHPqvIFJkE7WRdHGjpWuActXLrOPLOzpDJivF1eDO6lkQB2E3kYYkI8nY2jxw
+                  - listitem [ref=f1e561]:
+                    - link "Foro de la comunidad de desarrolladores" [ref=f1e563] [cursor=pointer]:
+                      - /url: https://www.facebook.com/groups/fbdevelopers/
+                  - listitem [ref=f1e564]:
+                    - link "Reportar un incidente" [ref=f1e566] [cursor=pointer]:
+                      - /url: /incident/report/
+              - generic [ref=f1e569]:
+                - heading "Acerca de nosotros" [level=2] [ref=f1e570]
+                - list [ref=f1e572]:
+                  - listitem [ref=f1e573]:
+                    - link "Información" [ref=f1e575] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.fb.com%2F&h=AUDbefhH627UCMo-lCQ3-N_P7D0FakWVvogu49Ti7V1mFWLsc7oYaJl_9sxj3iBFK5F0Mo_Uysk9AZycZ8ipLwzlTcHPqvIFJkE7WRdHGjpWuActXLrOPLOzpDJivF1eDO6lkQB2E3kYYkI8nY2jxw
+                  - listitem [ref=f1e576]:
+                    - link "Empleos" [ref=f1e578] [cursor=pointer]:
+                      - /url: https://www.facebook.com/careers
+              - generic [ref=f1e581]:
+                - heading "Condiciones y políticas" [level=2] [ref=f1e582]
+                - list [ref=f1e584]:
+                  - listitem [ref=f1e585]:
+                    - link "Iniciativas de plataforma responsable" [ref=f1e587] [cursor=pointer]:
+                      - /url: /products/responsible-platform-initiatives/
+                  - listitem [ref=f1e588]:
+                    - link "Condiciones de la plataforma" [ref=f1e590] [cursor=pointer]:
+                      - /url: /terms/dfc_platform_terms/
+                  - listitem [ref=f1e591]:
+                    - link "Políticas para desarrolladores" [ref=f1e593] [cursor=pointer]:
+                      - /url: /devpolicy/
+                  - listitem [ref=f1e594]:
+                    - link "Política de privacidad" [ref=f1e596] [cursor=pointer]:
+                      - /url: https://www.facebook.com/about/privacy
+                  - listitem [ref=f1e597]:
+                    - link "Cookies" [ref=f1e599] [cursor=pointer]:
+                      - /url: https://www.facebook.com/help/cookies
+          - button "Change language" [ref=f1e604] [cursor=pointer]:
+            - generic [ref=f1e605]: Español

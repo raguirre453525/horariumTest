@@ -1,0 +1,237 @@
+- generic [active] [ref=f77e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=f77e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=f77e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=f77e8]:
+    - search [ref=f77e9]:
+      - generic [ref=f77e11]:
+        - link "Ir a la Página principal de Google" [ref=f77e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=es-419&sa=X&ved=2ahUKEwiGtMzFu9aWAxVdHLkGHZYLMfAQPHoECAYQBA
+        - generic [ref=f77e21]:
+          - generic [ref=f77e22]:
+            - combobox "Buscar" [ref=f77e25]: site:developers.facebook.com/documentation/business-messaging/whatsapp "Business Verification" "your own" site:developers.facebook.com/documentation/business-messaging/whatsapp "Business Verification" "your own"
+            - generic [ref=f77e26]:
+              - button "Borrar" [ref=f77e28] [cursor=pointer]
+              - generic [ref=f77e33]:
+                - button "Búsqueda por voz" [ref=f77e34] [cursor=pointer]
+                - button "Búsqueda por imagen" [ref=f77e37] [cursor=pointer]
+          - button "Buscar" [ref=f77e40] [cursor=pointer]
+    - generic [ref=f77e45]:
+      - button "Configuración" [ref=f77e47] [cursor=pointer]
+      - button "Compartir" [ref=f77e53] [cursor=pointer]
+      - generic [ref=f77e59]:
+        - button "Apps de Google" [ref=f77e61] [cursor=pointer]
+        - link "Acceder" [ref=f77e66] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dsite%253Adevelopers.facebook.com%252Fdocumentation%252Fbusiness-messaging%252Fwhatsapp%2B%2522Business%2BVerification%2522%2B%2522your%2Bown%2522&ec=futura_srp_og_si_72236_p
+  - generic [ref=f77e68]:
+    - navigation [ref=f77e74]:
+      - generic [ref=f77e80]:
+        - list [ref=f77e81]:
+          - listitem [ref=f77e82]:
+            - link "Modo IA" [ref=f77e85] [cursor=pointer]:
+              - /url: /search?q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22Business+Verification%22+%22your+own%22&sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnuHl74vJ1OO3w6bYWaEdBuzeL6uXQ:1788577804660&udm=50&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsGD3WYkjpd1kQvRnhWpFJrtgY0k5GY6IkuMyvMrVyK-pvBN-hfFhXbhv7ECfhl5wusHM5W95YpnD9W0xoTIIRjsHLyujiYgJ0GLGjvqOcq_FoTvm4XbmGOut6YmjaaBd_24mWFWdcjQBPzMaLwP73-3tTA2aA&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwiGtMzFu9aWAxVdHLkGHZYLMfAQ2J8OegQIDhAD
+          - listitem [ref=f77e89]:
+            - link "Todo" [disabled] [ref=f77e90]
+          - listitem [ref=f77e93]:
+            - link "Imágenes" [ref=f77e94] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnuHl74vJ1OO3w6bYWaEdBuzeL6uXQ:1788577804660&udm=2&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsGD3WYkjpd1kQvRnhWpFJrtgY0k5GY6IkuMyvMrVyK-pvBN-hfFhXbhv7ECfhl5wusHM5W95YpnD9W0xoTIIRjsHLyujiYgJ0GLGjvqOcq_FoTvm4XbmGOut6YmjaaBd_24mWFWdcjQBPzMaLwP73-3tTA2aA&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22Business+Verification%22+%22your+own%22&sa=X&ved=2ahUKEwiGtMzFu9aWAxVdHLkGHZYLMfAQtKgLegQIEBAB
+          - listitem [ref=f77e97]:
+            - link "Videos" [ref=f77e98] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnuHl74vJ1OO3w6bYWaEdBuzeL6uXQ:1788577804660&udm=7&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsGD3WYkjpd1kQvRnhWpFJrtgY0k5GY6IkuMyvMrVyK-pvBN-hfFhXbhv7ECfhl5wusHM5W95YpnD9W0xoTIIRjsHLyujiYgJ0GLGjvqOcq_FoTvm4XbmGOut6YmjaaBd_24mWFWdcjQBPzMaLwP73-3tTA2aA&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22Business+Verification%22+%22your+own%22&sa=X&ved=2ahUKEwiGtMzFu9aWAxVdHLkGHZYLMfAQtKgLegQIEhAB
+          - listitem [ref=f77e101]:
+            - link "Shopping" [ref=f77e102] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnuHl74vJ1OO3w6bYWaEdBuzeL6uXQ:1788577804660&udm=28&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsGD3WYkjpd1kQvRnhWpFJrtgY0k5GY6IkuMyvMrVyK-pvBN-hfFhXbhv7ECfhl5wusHM5W95YpnD9W0xoTIIRjsHLyujiYgJ0GLGjvqOcq_FoTvm4XbmGOut6YmjaaBd_24mWFWdcjQBPzMaLwP73-3tTA2aA&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22Business+Verification%22+%22your+own%22&ved=1t:220175&ictx=111
+          - listitem [ref=f77e105]:
+            - link "Videos cortos" [ref=f77e106] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnuHl74vJ1OO3w6bYWaEdBuzeL6uXQ:1788577804660&udm=39&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsGD3WYkjpd1kQvRnhWpFJrtgY0k5GY6IkuMyvMrVyK-pvBN-hfFhXbhv7ECfhl5wusHM5W95YpnD9W0xoTIIRjsHLyujiYgJ0GLGjvqOcq_FoTvm4XbmGOut6YmjaaBd_24mWFWdcjQBPzMaLwP73-3tTA2aA&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22Business+Verification%22+%22your+own%22&sa=X&ved=2ahUKEwiGtMzFu9aWAxVdHLkGHZYLMfAQs6gLegQIFBAB
+          - listitem [ref=f77e109]:
+            - link "Noticias" [ref=f77e110] [cursor=pointer]:
+              - /url: /search?sca_esv=9b2b1a7a0f170ea8&sxsrf=APpeQnuHl74vJ1OO3w6bYWaEdBuzeL6uXQ:1788577804660&q=site:developers.facebook.com/documentation/business-messaging/whatsapp+%22Business+Verification%22+%22your+own%22&tbm=nws&source=lnms&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDd8ABuXxNzQEi57SWOuuPdfVFhgBbO079P_7XyIRUXsGD3WYkjpd1kQvRnhWpFJrtgY0k5GY6IkuMyvMrVyK-pvBN-hfFhXbhv7ECfhl5wusHM5W95YpnD9W0xoTIIRjsHLyujiYgJ0GLGjvqOcq_FoTvm4XbmGOut6YmjaaBd_24mWFWdcjQBPzMaLwP73-3tTA2aA&sa=X&ved=2ahUKEwiGtMzFu9aWAxVdHLkGHZYLMfAQ0pQJegQIERAB
+          - listitem [ref=f77e113]:
+            - button [ref=f77e114] [cursor=pointer]:
+              - generic "Más filtros" [ref=f77e115]: Más
+        - button "Herramientas" [ref=f77e122] [cursor=pointer]
+    - heading "Resultados de búsqueda" [level=1] [ref=f77e129]
+    - main [ref=f77e135]:
+      - generic [ref=f77e139]:
+        - generic [ref=f77e142]:
+          - heading "Web results" [level=2] [ref=f77e143]
+          - generic [ref=f77e144]:
+            - generic [ref=f77e147]:
+              - link "Embedded Signup - Meta for Developers - Facebook Meta for Developers https://developers.facebook.com › ..." [ref=f77e149] [cursor=pointer]:
+                - /url: /goto?url=CAESmgEB6zswFVF5tb1sKinyERvhuZQnW9dBtLXpyorUY8gclqDz8MnVL-Rf5axp1bd8yR_X3NuCJKmrQT31_-Wgbvsxgy78-yW8WLcRA_AgFNPAZgXQ1Nba3-zbGdw0yPShu0TR_jgzWLe0MbKjZqyHZY-hfp2ashAg9SbKTVd9sWi4zwF8J8EBHZjoDoGNTccYA1fkuoMqm5S-UUZU
+                - heading "Embedded Signup - Meta for Developers - Facebook" [level=3] [ref=f77e150]
+                - generic [ref=f77e156]:
+                  - generic [ref=f77e157]: Meta for Developers
+                  - generic [ref=f77e159]: https://developers.facebook.com › ...
+              - generic [ref=f77e161]:
+                - generic [ref=f77e162]: ·
+                - link "Traducir esta página" [ref=f77e163] [cursor=pointer]:
+                  - /url: /goto?url=CAES7AEB6zswFRmQmdIA6-Ir8DvzxcSlSST-SEF8IIDiBdPQ_O_tHq6XdME_PXKY8FgHPfYI5RKOhxxQ2t8BfyGIT-UBxjpNXof0dTXSRX3W6yoUmGqYA5jZx98dEm4RGEMnO17gzepZFvPwHalfj268agb2NNiYhvVYN-jYKh7Pj_mTmK3BsljaLh1NilbCg5mN1bzQm7kBUGztGibZQXAEozMGK6tU5Q4NK2sZIZ8vOrAd0Yg00VmYobVPdui4T9mVkx_nviwM3BYYPau5XiR7e57fDZAhhKFm9EhTiPY7Q_t-K7BrLLURBrlFcXbeVw
+              - button "Acerca de este resultado" [ref=f77e168] [cursor=pointer]
+            - generic [ref=f77e175]:
+              - text: If you complete
+              - emphasis [ref=f77e176]: Business Verification
+              - text: ", App Review, and Access Verification ... You can test the Embedded Signup flow using"
+              - emphasis [ref=f77e177]: your own
+              - text: Facebook account ...
+        - generic [ref=f77e181]:
+          - generic [ref=f77e184]:
+            - link "Onboarding business customers as a Solution Partner Meta for Developers https://developers.facebook.com › ..." [ref=f77e186] [cursor=pointer]:
+              - /url: /goto?url=CAESvQEB6zswFcsnjvmPZr-q-Gu10DcFDILENjeclcLp0IreNuvUOAsf_QTtq1y0yni_Jge0YSBYDxu7HKXhmiGxcTyPScwC65Udr-ZHeJE7KkE8pNlkEjYOTIJw21u3LDHaAXpDjLS7ncFVlhRbXS20iKvWtSB1w234oqW6w-OtX66tV6UtnKpcIVVdnkkEJbx9sqBh1HsxA5iXpm9hUNlEWCAkdGn4mOWXCpefD5wWyN5haO0-6fMub1Qj7FFtf0U
+              - heading "Onboarding business customers as a Solution Partner" [level=3] [ref=f77e187]
+              - generic [ref=f77e193]:
+                - generic [ref=f77e194]: Meta for Developers
+                - generic [ref=f77e196]: https://developers.facebook.com › ...
+            - generic [ref=f77e198]:
+              - generic [ref=f77e199]: ·
+              - link "Traducir esta página" [ref=f77e200] [cursor=pointer]:
+                - /url: /goto?url=CAESjgIB6zswFc-z57miNKAjbi5iHUi2NSDjjsqdSIxjyFagqtWSl7Tdg3Y2xYUsBLemMEx9ALwjSJ3RI4lZH3AovL_yCnj_p15CELwTmN3C1jfjWWsavYD5dbjqOrkY2jhwlIhHoH_T8Biyv8HAtVQSH9uLgQ1Jf5RZRJs6pzL_rienFDHGDSQDPQB1dWIJtAa_5Ejjbl5dcrqxuFYDNQuMfzP8oUdSOAg_PdhHpJd5CrTszH4KbdItYhtcifOHMFoJ5Uf8fiNMp2vJkS_4UujaOrlyl-FuwMzyzBEe521_f2D8STIiwt0LOZ6JAVCm0piEiYZhRelLgN_64tVvb-0pGqYQjF28RqLHkUUeKZn9oOI
+            - button "Acerca de este resultado" [ref=f77e205] [cursor=pointer]
+          - generic [ref=f77e212]:
+            - text: Partner-led
+            - emphasis [ref=f77e213]: business verification
+            - text: · Pixel tracking. Manage customer ...
+            - emphasis [ref=f77e214]: your own
+            - text: WhatsApp number (this will open a customer service window, allowing ...
+        - generic [ref=f77e218]:
+          - generic [ref=f77e221]:
+            - link "Implementation - Meta for Developers - Facebook Meta for Developers https://developers.facebook.com › ..." [ref=f77e223] [cursor=pointer]:
+              - /url: /goto?url=CAESoAEB6zswFVX7p_RXJvdmflc4SsCaKZ1ON0hasi1MHOMCfx6KpMu37rTcOkqphtPAXEOiHrDGd_qsS7UzTA_7xnZeMNp-W94GXgMWsmvSWigOksitJ4p9AcFRdJzS7Idl6taIqPuJvXpqyLSMIpzOSBTsrvIrpjNF_1DzLPGLtC7J4sl4D7q6FKSNi6F99wCy2AaRqNMYc0ytHNgyAYmAkLQV
+              - heading "Implementation - Meta for Developers - Facebook" [level=3] [ref=f77e224]
+              - generic [ref=f77e230]:
+                - generic [ref=f77e231]: Meta for Developers
+                - generic [ref=f77e233]: https://developers.facebook.com › ...
+            - generic [ref=f77e235]:
+              - generic [ref=f77e236]: ·
+              - link "Traducir esta página" [ref=f77e237] [cursor=pointer]:
+                - /url: /goto?url=CAES8gEB6zswFVSTyE4YmzUB-Rs5wpRGBdpglxGl-f6J4ykEpqQZgh-SClvrEo2CH5vVbh--P0iF0Zdwbj9tJ9-lxpfP9mtQ0qXKi5dYd53Zcs_A91byqZ7uerWsEy_N6Bfjv2pkmrkixDg8V6Jr64dpFT9ovExHRuYYVo2rmYNtnnRA_M3QGzJDTlzmDvhVGP2EzlqtaXp52MKkLvaMRl-W3GmY24kBS6kESPjFnZ8XvlihoBcNQNTLVV6XsHDM4y53JkLuRZFf-t4ox0v1uVFg4XeAdRJzvjjZ1hbSx2LhfRRVulFShQt8Lj71aQG_w-K6sK4A1Q
+            - button "Acerca de este resultado" [ref=f77e242] [cursor=pointer]
+          - generic [ref=f77e249]:
+            - text: Partner-led
+            - emphasis [ref=f77e250]: business verification
+            - text: · Pixel tracking. Manage customer assets ...
+            - emphasis [ref=f77e251]: your own
+            - text: WhatsApp Business account and business phone numbers. You should ...
+        - generic [ref=f77e255]:
+          - generic [ref=f77e258]:
+            - link "WhatsApp webhooks - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f77e260] [cursor=pointer]:
+              - /url: /goto?url=CAESkwEB6zswFdyHiL_3sUR3YdvJEqpw8g9pJC8H8-d6gRnGdSbAzrraBe-wAM435EVQmfzohL5arrvuDJ9EnnNz0S35bBuAhBJMh_57VmElVkjZP99_cZ2oN2JftpCg5nXKZQCPlF-7tyfU5XThNt521JX7ouTY581jJnJ45p2lTYLhUXJC8gUbUQ-8-qPN6YAAYoOyPJw
+              - heading "WhatsApp webhooks - Meta for Developers" [level=3] [ref=f77e261]
+              - generic [ref=f77e267]:
+                - generic [ref=f77e268]: Meta for Developers
+                - generic [ref=f77e270]: https://developers.facebook.com › ...
+            - generic [ref=f77e272]:
+              - generic [ref=f77e273]: ·
+              - link "Traducir esta página" [ref=f77e274] [cursor=pointer]:
+                - /url: /goto?url=CAES5QEB6zswFYVogQKLZXLlHG8mk68rPZ-y1ZP3WzMPKO4OiXJ96QA2z3aVUOXZwzG_Y6fFkXdgklnjdT_gd0tqpZiM8k_duPLeW-Ylk31CP2UdQ24dwotnJKnSHxtAiUPZI0fTnpO3DPPLPl0nKkX7jz9aGUXSFv4AsvYF70rOJ7g7eipfsW0z1nvBp6wHbwdhlIfCMhY2k5RS1vh7OK-7tMb_7iSPKH9xjqRQj0p3AuBEiEuP453XxymmEo_hbAUIhmAXrVL08wKnFQrdxffGBlEvhlwd9_OaMYKnnGfQ1Op0ODmZ5Z6S
+            - button "Acerca de este resultado" [ref=f77e279] [cursor=pointer]
+          - generic [ref=f77e286]:
+            - text: Note, however, that before you can use your app in a production capacity, you must create
+            - emphasis [ref=f77e287]: your own
+            - text: endpoint. ...
+            - emphasis [ref=f77e288]: business verification
+            - text: submission, its ...
+        - generic [ref=f77e292]:
+          - generic [ref=f77e295]:
+            - link "Migrate a phone number via Embedded Signup - WhatsApp Meta for Developers https://developers.facebook.com › ..." [ref=f77e297] [cursor=pointer]:
+              - /url: /goto?url=CAES4QEB6zswFUlPHFAf0PMyWnY85PmVjpoPsEmj6mfD5vNfWiBQOIkRaGo0LoZXDqaydfA3qoVnIpg1FY_RNFw_3ZRV9A4YMWEikmsB70Q2IaPcWOsqYhDC1uxdFL2Hx1xBIlpbhdykhZoNjdmgIuKXWUl--fh09KI4KwzAA4BDP5t-UQq2q2nxNsWOMrO5wcs4uj17wg9MS0hA-LyhhMpKLqFWz0Yq-MlP-5f_GSlA3-9b8VUhsil1q-GGSehc-klB4mf7w7h07JyN3FeidDllDjrNwhyVM3grw1siyqBF1HfKX2E
+              - heading "Migrate a phone number via Embedded Signup - WhatsApp" [level=3] [ref=f77e298]
+              - generic [ref=f77e304]:
+                - generic [ref=f77e305]: Meta for Developers
+                - generic [ref=f77e307]: https://developers.facebook.com › ...
+            - generic [ref=f77e309]:
+              - generic [ref=f77e310]: ·
+              - link "Traducir esta página" [ref=f77e311] [cursor=pointer]:
+                - /url: /goto?url=CAESsgIB6zswFVqJA8A2TK3PiONVy3iiNTM4y-onFRuJ0c5AWIgnKlaC_a-xA6apdRmtcygu7vWfko_TludInkMjgQrYDeLJQnQvbYI__bazqN9Mty-2gS9CNrflW0ZVWaDWH_AC-0TOSWnLQr35eAmUVo_5Klu6hjDtHtHMVGrJYAxOTPK08bz351I5Z63AQgcSHb_Hz7E2UYgRK_Xh2dEQyV72S1J4mT_zJNi8C-53cQbzpwPCKRJQjEaHZ3J8Wli0hnS3vZCvQmvXnG1wIcyc9NkDMf5DjqNQUsAbzq1nMsnBOoIJI-oolfkxIgZHSUkZf_iEQaL7MctatopiyATRhnvYxujxakAq_honDGeg9XiR6uHaFOwt1jfAGGHZyJhCo29w0BY_hm-60jRAIyEZxdOfZqM
+            - button "Acerca de este resultado" [ref=f77e316] [cursor=pointer]
+          - generic [ref=f77e323]:
+            - text: Partner-led
+            - emphasis [ref=f77e324]: business verification
+            - text: · Pixel tracking. Manage customer assets ...
+            - emphasis [ref=f77e325]: your own
+            - text: ", and must associate them with other assets. For this reason ..."
+        - generic [ref=f77e329]:
+          - generic [ref=f77e332]:
+            - link "Get started as a Solution Partner - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f77e334] [cursor=pointer]:
+              - /url: /goto?url=CAEStwEB6zswFdBCpRL7zpARgYU4MwyiXRpmjKZTlJeIogYQTsAQSdFEB2lH0E03EZXMUB2WXDd65iL3b8ZL4pjD3RWGo0TM8mKvVe3FKK52CMBfnsygBQfizCv97bID0YbScyyJtezhdP08YcFGL7hnn7HuEpeXoEPbMMYJo2ZLFD3L0zyxK31S7ef8zQiSCgWp8zM1MMreoMmeV7zSJXgR7zuAt68dnKUMTPHluyyb0GVVF9DqA4ymUMs
+              - heading "Get started as a Solution Partner - Meta for Developers" [level=3] [ref=f77e335]
+              - generic [ref=f77e341]:
+                - generic [ref=f77e342]: Meta for Developers
+                - generic [ref=f77e344]: https://developers.facebook.com › ...
+            - generic [ref=f77e346]:
+              - generic [ref=f77e347]: ·
+              - link "Traducir esta página" [ref=f77e348] [cursor=pointer]:
+                - /url: /goto?url=CAESiQIB6zswFYaPRUXznkZX94mZ6wAiR-Nw013atHgyjQvToSN8-2qOqxZHi2x9U3aIjcs3hZx_sByyhGqHg49_sqP0zbXHl2l9ALmHv9vwutR5QzB8ErgsgPxmsdYHN9Bn2sXPPcZCXzrXzm2tHWdQsu5fTilfxVif3H4xjs3yCBGodA10Wop3bt4xW7BYi99zv_9ylaTb-a2Ak9DLsa36ENS0JfAqELZRzhu9d_N1toWY38bcacu0XWm44RMfOepgaKA2EAnKXOzV7Xs7BqNiyh61w9azKv9OX2P7tHjvXQxaRi5YsMpWChVTKZzFs5scRYzVd64a52-zmpjdNMMEmVHrsG3s-3xO-Q5v
+            - button "Acerca de este resultado" [ref=f77e353] [cursor=pointer]
+          - generic [ref=f77e360]:
+            - text: Partner-led
+            - emphasis [ref=f77e361]: business verification
+            - text: · Pixel tracking. Manage customer assets ... If you wish to use
+            - emphasis [ref=f77e362]: your own
+            - text: number, add a phone number⁠ in WhatsApp Manager ...
+        - generic [ref=f77e366]:
+          - generic [ref=f77e369]:
+            - link "Onboarding business customers as a Tech Provider or Tech ... Meta for Developers https://developers.facebook.com › ..." [ref=f77e371] [cursor=pointer]:
+              - /url: /goto?url=CAESugEB6zswFSgnZkCX2mIt-2bs-Fg6Ab-K8EhQV4XB4vfEf15TyPYP7xkbcu-wYNd9DNNjrvVFwJLT_s9GMdX0pcoW_fO1vMdgIksYsZFKPS9gPBywU9V2mdsz4Psv3xZb_1dKc8-INW1D6rdtHCOIezXylt0h27Xih4csK81wTEvqqUQs0kDiS1iqMFEHDUMuKa26Da3_N_vm-qe7YHSLz8SAxkRybUAoiO-v2WjFe4Gsb02hKKSi8yFhANA
+              - heading "Onboarding business customers as a Tech Provider or Tech ..." [level=3] [ref=f77e372]
+              - generic [ref=f77e378]:
+                - generic [ref=f77e379]: Meta for Developers
+                - generic [ref=f77e381]: https://developers.facebook.com › ...
+            - generic [ref=f77e383]:
+              - generic [ref=f77e384]: ·
+              - link "Traducir esta página" [ref=f77e385] [cursor=pointer]:
+                - /url: /goto?url=CAESiwIB6zswFadWXRD09XnHYvkv1bJf6uQCq48Co0NUPNSNCNWnQIauO94IjpiNwXtHBDIBnitScKCobeNc64Ev3IRCQ__Qq2oqMV6aT2F10_J2JQ-R2_8mR0mYl-Uz5eeODR_P2wr4Rzm_PhdsaknUriEteOnHBYPQU3iJLFn9kySL0G5JKYWLCIBdSBHF-7QuFSNnI362QUL6erRjQM7Gh7RSkR5CyHcuDpOfwHuTVj0bcm66TPMTvP6uuU98-syo1qY7X5r2RMtyPeYehMk3rLD_6IuLe2gS1CC5INzFmGSy0p64VdMRjAHINUT_yPMCYp_Z8QAtatMYtzLc8_to5IAgfKxbpUXDom-v8m0
+            - button "Acerca de este resultado" [ref=f77e390] [cursor=pointer]
+          - generic [ref=f77e397]:
+            - text: Partner-led
+            - emphasis [ref=f77e398]: business verification
+            - text: · Pixel tracking. Manage customer ...
+            - emphasis [ref=f77e399]: your own
+            - text: WhatsApp number (this will open a customer service window, allowing ...
+        - generic [ref=f77e403]:
+          - generic [ref=f77e406]:
+            - link "Automatic Events API - Meta for Developers Meta for Developers https://developers.facebook.com › ..." [ref=f77e408] [cursor=pointer]:
+              - /url: /goto?url=CAESpgEB6zswFYk1szPAVOsU3GVUF3BzSwlHcegh81Dhrjcsjc2EB17EIZWnP68_HKoF7hxsTcqJA6R48qw7DvUEesYjToP0DEZXoQlIJn4JJ22cZ08xxXTnjuFx1ZegY4C8b8pC0fytYZcErUaAZCZAWFgAGfVZziiApfncC2FaNHK8UEQbumN_tQYT0HxEdLR1m5iccmGE08qRCIvAtfMTYWHASxEDcivu
+              - heading "Automatic Events API - Meta for Developers" [level=3] [ref=f77e409]
+              - generic [ref=f77e415]:
+                - generic [ref=f77e416]: Meta for Developers
+                - generic [ref=f77e418]: https://developers.facebook.com › ...
+            - generic [ref=f77e420]:
+              - generic [ref=f77e421]: ·
+              - link "Traducir esta página" [ref=f77e422] [cursor=pointer]:
+                - /url: /goto?url=CAES-AEB6zswFSYa2tcJNQunzfnKNaDlJPwEiMXZ3juXusvLwl3cH4Fd8F8feE2ESkT17aHoCo6TqtQilMqIBaljeniwajVK2CNFGlRvf1JSyA0CADo8L-ZpD_7G4RZSyH-3o7IxnysfNHi0_jjawYzvV7rGqOliy5mx_RgEnchYCGvlaP-_ZyJK1niHNH3OUqkhkJFbaEIGnP8FNKlPzsTZX0pYsWWiYrtggKFZPwHbtwNPdK39TUfXr3HAMaDSi0wKSkyn8TJlC4d81nLmqdPVLcnZO1DdDAxbSFY_y22uApoDPSvmaTEgij4Yksa6vOmLS7UdWjpFKoGkmg
+            - button "Acerca de este resultado" [ref=f77e427] [cursor=pointer]
+          - generic [ref=f77e434]:
+            - text: Partner-led
+            - emphasis [ref=f77e435]: business verification
+            - text: · Pixel tracking ... However, you can surface this information to your customers using
+            - emphasis [ref=f77e436]: your own
+            - text: solution before then.
+      - generic:
+        - generic:
+          - navigation
+      - navigation
+    - contentinfo [ref=f77e437]:
+      - heading "Vínculos a pie de página" [level=1] [ref=f77e438]
+      - generic [ref=f77e442]:
+        - generic [ref=f77e444]:
+          - text: Argentina
+          - generic [ref=f77e446]:
+            - button "Capital, San Miguel de Tucumán, Tucumán - A través de tu dirección IP" [ref=f77e448] [cursor=pointer]:
+              - generic [ref=f77e449]: Capital, San Miguel de Tucumán, Tucumán
+              - generic [ref=f77e451]:
+                - text: "-"
+                - generic [ref=f77e452]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=f77e454] [cursor=pointer]
+        - generic [ref=f77e457]:
+          - link "Ayuda" [ref=f77e458] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - button "Enviar comentarios" [ref=f77e460] [cursor=pointer]
+          - link "Privacidad" [ref=f77e462] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=f77e463] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

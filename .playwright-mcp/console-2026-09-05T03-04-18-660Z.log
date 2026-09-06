@@ -1,0 +1,2 @@
+[    1552ms] [WARNING] A speculation rule set was inserted into the document but will be ignored. This might happen, for example, if it was previously inserted into another document, or if it was created using the innerHTML setter. @ https://www.google.com/search?q=%22Business+verification+and+display+name+review+will+no+longer+be+needed%22:36
+[    1974ms] [WARNING] The powerPreference option is currently ignored when calling requestAdapter() on Windows. See https://crbug.com/369219127 @ :0

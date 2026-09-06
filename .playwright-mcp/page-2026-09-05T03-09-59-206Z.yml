@@ -1,0 +1,479 @@
+- generic [ref=f59e11]:
+  - navigation "Main" [ref=f59e13]:
+    - generic [ref=f59e20]:
+      - generic [ref=f59e22]:
+        - button "Open mobile navigation menu" [ref=f59e24] [cursor=pointer]
+        - link "Meta home" [ref=f59e29] [cursor=pointer]:
+          - /url: https://developers.facebook.com/
+          - img "Nav Logo" [ref=f59e30]
+      - generic [ref=f59e33]:
+        - link "Login" [ref=f59e34] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fdocumentation%2Fbusiness-messaging%2Fwhatsapp%2Fwebhooks%2Fcreate-webhook-endpoint%2F%3Flocale%3Den_US
+        - button [ref=f59e35] [cursor=pointer]:
+          - img "Search" [ref=f59e36]
+  - generic [ref=f59e43]:
+    - navigation [ref=f59e44]:
+      - generic [ref=f59e45]:
+        - generic [ref=f59e46]:
+          - generic [ref=f59e47]: WhatsApp Business Platform
+          - generic [ref=f59e48]:
+            - button "Dropdown" [ref=f59e50] [cursor=pointer]:
+              - generic [ref=f59e51]: Business Messaging
+            - button "Dropdown" [ref=f59e57] [cursor=pointer]:
+              - generic [ref=f59e58]: WhatsApp Business Platform
+            - textbox "Filter" [ref=f59e64]
+        - generic [ref=f59e66]:
+          - generic "WhatsApp Business Platform" [ref=f59e67]:
+            - link "WhatsApp Business Platform" [ref=f59e68] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/overview/
+          - generic "Overview" [ref=f59e73]:
+            - link "Overview" [ref=f59e74] [cursor=pointer]:
+              - /url: "#"
+          - generic "Get started" [ref=f59e81]:
+            - link "Get started" [ref=f59e82] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/get-started/
+          - generic "Direct Send messages" [ref=f59e87]:
+            - link "Direct Send messages" [ref=f59e88] [cursor=pointer]:
+              - /url: "#"
+          - generic "Marketing messages" [ref=f59e96]:
+            - link "Marketing messages" [ref=f59e97] [cursor=pointer]:
+              - /url: "#"
+          - generic "In-App Signup" [ref=f59e104]:
+            - link "In-App Signup" [ref=f59e105] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/in-app-signup/
+          - generic "Utility messages" [ref=f59e110]:
+            - link "Utility messages" [ref=f59e111] [cursor=pointer]:
+              - /url: "#"
+          - generic "Authentication messages" [ref=f59e119]:
+            - link "Authentication messages" [ref=f59e120] [cursor=pointer]:
+              - /url: "#"
+          - generic "Service messages" [ref=f59e128]:
+            - link "Service messages" [ref=f59e129] [cursor=pointer]:
+              - /url: "#"
+          - generic "Calling" [ref=f59e137]:
+            - link "Calling" [ref=f59e138] [cursor=pointer]:
+              - /url: "#"
+          - generic "Groups" [ref=f59e146]:
+            - link "Groups" [ref=f59e147] [cursor=pointer]:
+              - /url: "#"
+          - generic "Catalogs" [ref=f59e155]:
+            - link "Catalogs" [ref=f59e156] [cursor=pointer]:
+              - /url: "#"
+          - generic "Partners" [ref=f59e164]:
+            - link "Partners" [ref=f59e165] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f59e172]:
+            - generic "Webhooks" [ref=f59e173]:
+              - link "Webhooks" [ref=f59e174] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f59e182]:
+              - generic "Overview" [ref=f59e183]:
+                - link "Overview" [ref=f59e184] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/webhooks/overview/
+              - generic "Create a webhook endpoint" [ref=f59e188]:
+                - link "Create a webhook endpoint" [ref=f59e189] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/webhooks/create-webhook-endpoint/
+              - generic "Create a test webhook endpoint" [ref=f59e193]:
+                - link "Create a test webhook endpoint" [ref=f59e194] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/webhooks/set-up-whatsapp-echo-bot/
+              - generic "Override the callback URL" [ref=f59e198]:
+                - link "Override the callback URL" [ref=f59e199] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/webhooks/override/
+              - generic "Webhooks reference" [ref=f59e204]:
+                - link "Webhooks reference" [ref=f59e205] [cursor=pointer]:
+                  - /url: "#"
+          - generic "Template fundamentals" [ref=f59e213]:
+            - link "Template fundamentals" [ref=f59e214] [cursor=pointer]:
+              - /url: "#"
+          - generic "Messaging features" [ref=f59e222]:
+            - link "Messaging features" [ref=f59e223] [cursor=pointer]:
+              - /url: "#"
+          - generic "Account assets" [ref=f59e231]:
+            - link "Account assets" [ref=f59e232] [cursor=pointer]:
+              - /url: "#"
+          - generic "Analytics" [ref=f59e239]:
+            - link "Analytics" [ref=f59e240] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/analytics/
+          - generic "Ads that click to WhatsApp" [ref=f59e245]:
+            - link "Ads that click to WhatsApp" [ref=f59e246] [cursor=pointer]:
+              - /url: "#"
+          - generic "Payments" [ref=f59e254]:
+            - link "Payments" [ref=f59e255] [cursor=pointer]:
+              - /url: "#"
+          - generic "Data, Privacy, & Policy" [ref=f59e263]:
+            - link "Data, Privacy, & Policy" [ref=f59e264] [cursor=pointer]:
+              - /url: "#"
+          - generic "Support" [ref=f59e272]:
+            - link "Support" [ref=f59e273] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f59e280]:
+            - separator [aria-hidden] [ref=f59e281]
+            - generic [ref=f59e282]: Resources
+          - generic "API Reference" [ref=f59e284]:
+            - link "API Reference" [ref=f59e285] [cursor=pointer]:
+              - /url: "#"
+          - generic "Changelog" [ref=f59e292]:
+            - link "Changelog" [ref=f59e293] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/changelog/
+          - generic "Error codes" [ref=f59e297]:
+            - link "Error codes" [ref=f59e298] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/support/error-codes
+    - generic [ref=f59e303]:
+      - main [ref=f59e304]:
+        - generic [ref=f59e305]:
+          - navigation "Breadcrumbs" [ref=f59e307]:
+            - list [ref=f59e308]:
+              - listitem [ref=f59e309]:
+                - link "Docs" [ref=f59e311] [cursor=pointer]:
+                  - /url: /docs
+              - listitem [ref=f59e316]:
+                - link "Overview" [ref=f59e318] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/overview
+              - listitem [ref=f59e323]:
+                - generic [ref=f59e324]: Create a webhook endpoint
+          - article [ref=f59e327]:
+            - heading "Create a webhook endpoint" [level=1] [ref=f59e328]
+            - generic [ref=f59e329]: "Updated: Jun 17, 2026"
+            - generic [ref=f59e333]:
+              - button "Copy for LLM" [ref=f59e335] [cursor=pointer]
+              - link "View as Markdown" [ref=f59e342] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/webhooks/create-webhook-endpoint.md
+            - generic [ref=f59e348]: Learn about webhook requests and responses so you can set up and configure your own webhook endpoint on a public server.
+            - generic [ref=f59e349]: Before you can use your app in a production capacity, you must create and configure your own webhook endpoint on a public server that can accept and respond to GET and POST requests, and that can validate and capture webhook payloads.
+            - generic [ref=f59e352]:
+              - heading "TLS/SSL" [level=2] [ref=f59e353]
+              - button [ref=f59e354] [cursor=pointer]
+            - generic [ref=f59e358]: Your webhook endpoint server must have a valid TLS or SSL digital security certificate, correctly configured and installed. Self-signed certificates are not supported.
+            - generic [ref=f59e361]:
+              - heading "mTLS" [level=2] [ref=f59e362]
+              - button [ref=f59e363] [cursor=pointer]
+            - generic [ref=f59e367]:
+              - text: Webhooks support mutual TLS (mTLS) for added security. See Graph API’s
+              - link "mTLS for webhooks" [ref=f59e368] [cursor=pointer]:
+                - /url: /docs/graph-api/webhooks/getting-started#mtls-for-webhooks
+              - text: document to learn how to enable and use mTLS.
+            - generic [ref=f59e369]: Note that enabling and disabling mTLS is not supported at the WABA or business phone number level. If you have more than one application accessing the platform, enable mTLS for each application.
+            - generic [ref=f59e372]:
+              - heading "GET requests" [level=2] [ref=f59e373]
+              - button [ref=f59e374] [cursor=pointer]
+            - generic [ref=f59e378]:
+              - text: GET requests are used to verify your webhook endpoint. Anytime you
+              - link [ref=f59e379] [cursor=pointer]:
+                - /url: "#configure-webhooks"
+                - text: set or edit the
+                - strong [ref=f59e380]: Callback URL
+                - text: field or the
+                - strong [ref=f59e381]: Verify token
+                - text: field
+              - text: in the App Dashboard, Meta sends a GET request to your webhook endpoint. You must validate and respond to this request.
+            - generic [ref=f59e384]:
+              - heading "Request syntax" [level=3] [ref=f59e385]
+              - button [ref=f59e386] [cursor=pointer]
+            - generic [ref=f59e390]:
+              - generic [ref=f59e391]: GET <CALLBACK_URL> ?hub.mode=subscribe &hub.challenge=<HUB.CHALLENGE> &hub.verify_token=<HUB.VERIFY_TOKEN>
+              - button [ref=f59e394] [cursor=pointer]
+            - generic [ref=f59e399]:
+              - heading "Request parameters" [level=3] [ref=f59e400]
+              - button [ref=f59e401] [cursor=pointer]
+            - table [ref=f59e406]:
+              - rowgroup [ref=f59e407]:
+                - row [ref=f59e408]:
+                  - columnheader "Placeholder" [ref=f59e409]
+                  - columnheader "Description" [ref=f59e410]
+                  - columnheader "Example value" [ref=f59e411]
+              - rowgroup [ref=f59e412]:
+                - row [ref=f59e413]:
+                  - cell [ref=f59e414]:
+                    - code [ref=f59e417]: <CALLBACK_URL>
+                  - cell "Your webhook endpoint URL. Add this URL to the Callback URL field in the App Dashboard when you configure webhooks later." [ref=f59e418]:
+                    - generic [ref=f59e419]:
+                      - generic [ref=f59e420]: Your webhook endpoint URL.
+                      - generic [ref=f59e421]:
+                        - text: Add this URL to the
+                        - strong [ref=f59e422]: Callback URL
+                        - text: field in the App Dashboard when you
+                        - link "configure webhooks" [ref=f59e423] [cursor=pointer]:
+                          - /url: "#configure-webhooks"
+                        - text: later.
+                  - cell [ref=f59e424]:
+                    - code [ref=f59e427]: https://www.luckyshrub.com/webhooks
+                - row [ref=f59e428]:
+                  - cell [ref=f59e429]:
+                    - code [ref=f59e432]: <HUB.CHALLENGE>
+                  - cell "A random string that Meta will generate." [ref=f59e433]
+                  - cell [ref=f59e436]:
+                    - code [ref=f59e439]: "1158201444"
+                - row [ref=f59e440]:
+                  - cell [ref=f59e441]:
+                    - code [ref=f59e444]: <HUB.VERIFY_TOKEN>
+                  - cell "A verification string of your own choosing. Store this string on your server. Add this string to the Verify token field in the App Dashboard when you configure webhooks later." [ref=f59e445]:
+                    - generic [ref=f59e446]:
+                      - generic [ref=f59e447]: A verification string of your own choosing. Store this string on your server.
+                      - generic [ref=f59e448]:
+                        - text: Add this string to the
+                        - strong [ref=f59e449]: Verify token
+                        - text: field in the App Dashboard when you
+                        - link "configure webhooks" [ref=f59e450] [cursor=pointer]:
+                          - /url: "#configure-webhooks"
+                        - text: later.
+                  - cell [ref=f59e451]:
+                    - code [ref=f59e454]: vibecoding
+            - generic [ref=f59e457]:
+              - heading "Validation" [level=3] [ref=f59e458]
+              - button [ref=f59e459] [cursor=pointer]
+            - generic [ref=f59e463]:
+              - text: To validate GET requests, compare the
+              - code [ref=f59e464]: hub.verify_token
+              - text: value in the request to the verification string you have stored on your server. If the values match, the request is valid. Otherwise, the request is invalid.
+            - generic [ref=f59e467]:
+              - heading "Response" [level=3] [ref=f59e468]
+              - button [ref=f59e469] [cursor=pointer]
+            - generic [ref=f59e473]:
+              - text: If the request is valid, respond with HTTP status
+              - code [ref=f59e474]: "200"
+              - text: and the
+              - code [ref=f59e475]: hub.challenge
+              - text: value. If the request is invalid, respond with a 400-level HTTP status code, or anything other than status
+              - code [ref=f59e476]: "200"
+              - text: .
+            - generic [ref=f59e477]:
+              - text: When you
+              - link "configure webhooks" [ref=f59e478] [cursor=pointer]:
+                - /url: "#configure-webhooks"
+              - text: ", Meta sends a GET request to your webhook endpoint. If it returns status"
+              - code [ref=f59e479]: "200"
+              - text: and the
+              - code [ref=f59e480]: hub.challenge
+              - text: value included in the request, Meta considers your webhook endpoint verified, and begins sending you webhooks. If your webhook endpoint responds with anything else, however, Meta will consider your webhook endpoint unverified, and webhooks will not be sent to your endpoint.
+            - generic [ref=f59e483]:
+              - heading "POST requests" [level=2] [ref=f59e484]
+              - button [ref=f59e485] [cursor=pointer]
+            - generic [ref=f59e489]: Anytime a webhook event is triggered for any webhook fields you are subscribed to, Meta sends a POST request to your webhook endpoint, containing a JSON payload describing the event.
+            - generic [ref=f59e492]:
+              - heading "Request syntax" [level=3] [ref=f59e493]
+              - button [ref=f59e494] [cursor=pointer]
+            - generic [ref=f59e498]:
+              - generic [ref=f59e499]: "POST <CALLBACK_URL> Content-Type: application/json X-Hub-Signature-256: sha256=<SHA256_PAYLOAD_HASH> Content-Length: <CONTENT_LENGTH> <JSON_PAYLOAD>"
+              - button [ref=f59e502] [cursor=pointer]
+            - generic [ref=f59e507]:
+              - heading "Request parameters" [level=3] [ref=f59e508]
+              - button [ref=f59e509] [cursor=pointer]
+            - table [ref=f59e514]:
+              - rowgroup [ref=f59e515]:
+                - row [ref=f59e516]:
+                  - columnheader "Placeholder" [ref=f59e517]
+                  - columnheader "Description" [ref=f59e518]
+                  - columnheader "Example value" [ref=f59e519]
+              - rowgroup [ref=f59e520]:
+                - row [ref=f59e521]:
+                  - cell [ref=f59e522]:
+                    - code [ref=f59e525]: <CALLBACK_URL>
+                  - cell "Your webhook endpoint URL." [ref=f59e526]
+                  - cell [ref=f59e529]:
+                    - code [ref=f59e532]: https://www.luckyshrub.com/webhooks
+                - row [ref=f59e533]:
+                  - cell [ref=f59e534]:
+                    - code [ref=f59e537]: <CONTENT_LENGTH>
+                  - cell "Content length in bytes." [ref=f59e538]
+                  - cell [ref=f59e541]:
+                    - code [ref=f59e544]: "492"
+                - row [ref=f59e545]:
+                  - cell [ref=f59e546]:
+                    - code [ref=f59e549]: <JSON_PAYLOAD>
+                  - cell "Post body payload, formatted using JSON." [ref=f59e550]
+                  - cell [ref=f59e553]:
+                    - generic [ref=f59e555]:
+                      - text: See
+                      - link "Fields" [ref=f59e556] [cursor=pointer]:
+                        - /url: /documentation/business-messaging/whatsapp/webhooks/overview#fields
+                      - text: references for example payloads.
+                - row [ref=f59e557]:
+                  - cell [ref=f59e558]:
+                    - code [ref=f59e561]: <SHA256_PAYLOAD_HASH>
+                  - cell [ref=f59e562]:
+                    - generic [ref=f59e564]:
+                      - text: HMAC-SHA256 hash, calculated using the post body payload and your
+                      - link "app secret" [ref=f59e565] [cursor=pointer]:
+                        - /url: /docs/development/create-an-app/app-dashboard/basic-settings#app-secret
+                      - text: as the secret key.
+                  - cell [ref=f59e566]:
+                    - code [ref=f59e569]: b63bb356dff0f1c24379efea2d6ef0b2e2040853339d1bcf13f9018790b1f7d2
+            - generic [ref=f59e572]:
+              - heading "Validation" [level=3] [ref=f59e573]
+              - button [ref=f59e574] [cursor=pointer]
+            - generic [ref=f59e578]: "To validate the request:"
+            - list [ref=f59e579]:
+              - listitem [ref=f59e581]:
+                - text: Generate an HMAC-SHA256 hash using the JSON payload as the message input and your
+                - link "app secret" [ref=f59e582] [cursor=pointer]:
+                  - /url: /docs/development/create-an-app/app-dashboard/basic-settings#app-secret
+                - text: as the secret key.
+              - listitem [ref=f59e584]:
+                - text: Compare your generated hash to the hash assigned to the
+                - code [ref=f59e585]: X-Hub-Signature-256
+                - text: header (everything after
+                - code [ref=f59e586]: sha256=
+                - text: ).
+            - generic [ref=f59e587]: If the hashes match, the payload is valid. Capture the payload and digest the payload contents according to business needs. If they do not match, consider the payload invalid.
+            - generic [ref=f59e588]: There are no APIs for fetching historical webhook data, so capture and store webhook payloads accordingly.
+            - generic [ref=f59e591]:
+              - heading "Response" [level=3] [ref=f59e592]
+              - button [ref=f59e593] [cursor=pointer]
+            - generic [ref=f59e597]: If the request is valid, respond with HTTP status 200. Otherwise, respond with a 400-level HTTP status, or anything other than status 200.
+            - generic [ref=f59e600]:
+              - heading "Batching" [level=3] [ref=f59e601]
+              - button [ref=f59e602] [cursor=pointer]
+            - generic [ref=f59e606]: POST requests are aggregated and sent in a batch with a maximum of 1000 updates. However, batching cannot be guaranteed so be sure to adjust your servers to handle each POST request individually.
+            - generic [ref=f59e607]: If any POST request sent to your server fails, delivery is retried immediately, then a few more times with decreasing frequency over the next 7 days. Your server should handle deduplication in these cases.
+            - generic [ref=f59e608]: Unacknowledged responses will be dropped after 7 days.
+            - generic [ref=f59e611]:
+              - heading "Configure webhooks" [level=2] [ref=f59e612]
+              - button [ref=f59e613] [cursor=pointer]
+            - generic [ref=f59e617]:
+              - text: Once you have created your webhook endpoint, navigate to the
+              - strong [ref=f59e618]:
+                - link "App Dashboard" [ref=f59e619] [cursor=pointer]:
+                  - /url: /apps
+              - text: ">"
+              - strong [ref=f59e620]: WhatsApp
+              - text: ">"
+              - strong [ref=f59e621]: Configuration
+              - text: panel, and add your webhook endpoint URL to the
+              - strong [ref=f59e622]: Callback URL
+              - text: field, and your verification string to
+              - strong [ref=f59e623]: Verify token
+              - text: field.
+            - generic [ref=f59e624]:
+              - text: Note that if you created your app using the
+              - strong [ref=f59e625]: Connect with customers through WhatsApp
+              - text: use case, navigate to
+              - strong [ref=f59e626]:
+                - link "App Dashboard" [ref=f59e627] [cursor=pointer]:
+                  - /url: /apps
+              - text: ">"
+              - strong [ref=f59e628]: Use cases
+              - text: ">"
+              - strong [ref=f59e629]: Customize
+              - text: ">"
+              - strong [ref=f59e630]: Configuration
+              - text: instead.
+            - img "App Dashboard WhatsApp Configuration panel with the Callback URL and Verify token fields highlighted" [ref=f59e632] [cursor=pointer]
+            - generic [ref=f59e633]:
+              - text: If your webhook endpoint is responding to webhook verification GET requests properly, the panel will save your changes, and a list of fields you can subscribe to will appear. You can then
+              - link "subscribe to any fields" [ref=f59e634] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/webhooks/overview#fields
+              - text: that fulfill your business needs.
+            - generic [ref=f59e635]:
+              - text: Note that you can use the
+              - link "Application Subscriptions API" [ref=f59e636] [cursor=pointer]:
+                - /url: /docs/graph-api/reference/v24.0/app/subscriptions#creating
+              - text: to configure webhooks as an alternative method, but it requires the use of an
+              - link "app token" [ref=f59e637] [cursor=pointer]:
+                - /url: /documentation/facebook-login/guides/access-tokens#apptokens
+              - text: . See Graph API’s
+              - link "Subscriptions edge" [ref=f59e638] [cursor=pointer]:
+                - /url: /docs/graph-api/webhooks/subscriptions-edge
+              - text: document to learn how to do this, and use whatsapp_business_account as the object value.
+      - complementary [ref=f59e639]
+  - generic [ref=f59e641]:
+    - separator [aria-hidden] [ref=f59e642]
+    - contentinfo [ref=f59e643]:
+      - generic [ref=f59e644]:
+        - separator [aria-hidden] [ref=f59e645]
+        - generic [ref=f59e647]:
+          - generic [ref=f59e649]:
+            - generic [ref=f59e651]:
+              - img "Meta" [ref=f59e653]
+              - list [ref=f59e655]:
+                - listitem:
+                  - link "Facebook":
+                    - /url: https://www.facebook.com/MetaforDevelopers
+                    - img "Facebook"
+                - listitem:
+                  - link "Instagram":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmetafordevelopers%2F&h=AUCjyl6XSCVvhTjA9VRvM6Xm4ivc3aNevvj678h9zD-RV2MKAKHUAcHHuTSw_Dw8Pt34sTpZrc0wVLXDwalHNOcWQ0bzS8Wqvl_vnWbdrpbZ02iaPw6EXJoRkj_r6B_DHe6qvQOJV-_xspkEfM05PQ
+                    - img "Instagram"
+                - listitem:
+                  - link "X":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2Fmetafordevs&h=AUCjyl6XSCVvhTjA9VRvM6Xm4ivc3aNevvj678h9zD-RV2MKAKHUAcHHuTSw_Dw8Pt34sTpZrc0wVLXDwalHNOcWQ0bzS8Wqvl_vnWbdrpbZ02iaPw6EXJoRkj_r6B_DHe6qvQOJV-_xspkEfM05PQ
+                    - img "X"
+                - listitem:
+                  - link "LinkedIn":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fshowcase%2Fmeta-for-developers%2F&h=AUCjyl6XSCVvhTjA9VRvM6Xm4ivc3aNevvj678h9zD-RV2MKAKHUAcHHuTSw_Dw8Pt34sTpZrc0wVLXDwalHNOcWQ0bzS8Wqvl_vnWbdrpbZ02iaPw6EXJoRkj_r6B_DHe6qvQOJV-_xspkEfM05PQ
+                    - img "LinkedIn"
+                - listitem:
+                  - link "YouTube":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2FMetaDevelopers%2F&h=AUCjyl6XSCVvhTjA9VRvM6Xm4ivc3aNevvj678h9zD-RV2MKAKHUAcHHuTSw_Dw8Pt34sTpZrc0wVLXDwalHNOcWQ0bzS8Wqvl_vnWbdrpbZ02iaPw6EXJoRkj_r6B_DHe6qvQOJV-_xspkEfM05PQ
+                    - img "YouTube"
+            - generic [ref=f59e657]:
+              - generic [ref=f59e660]:
+                - heading "Crear con Meta" [level=2] [ref=f59e661]
+                - list [ref=f59e663]:
+                  - listitem [ref=f59e664]:
+                    - link "Inteligencia artificial" [ref=f59e666] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fai%2F&h=AUCjyl6XSCVvhTjA9VRvM6Xm4ivc3aNevvj678h9zD-RV2MKAKHUAcHHuTSw_Dw8Pt34sTpZrc0wVLXDwalHNOcWQ0bzS8Wqvl_vnWbdrpbZ02iaPw6EXJoRkj_r6B_DHe6qvQOJV-_xspkEfM05PQ
+                  - listitem [ref=f59e667]:
+                    - link "Meta Horizon" [ref=f59e669] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fhorizon%2F&h=AUCjyl6XSCVvhTjA9VRvM6Xm4ivc3aNevvj678h9zD-RV2MKAKHUAcHHuTSw_Dw8Pt34sTpZrc0wVLXDwalHNOcWQ0bzS8Wqvl_vnWbdrpbZ02iaPw6EXJoRkj_r6B_DHe6qvQOJV-_xspkEfM05PQ
+                  - listitem [ref=f59e670]:
+                    - link "Tecnologías sociales" [ref=f59e672] [cursor=pointer]:
+                      - /url: /social-technologies/
+              - generic [ref=f59e675]:
+                - heading "Noticias" [level=2] [ref=f59e676]
+                - list [ref=f59e678]:
+                  - listitem [ref=f59e679]:
+                    - link "Meta for Developers" [ref=f59e681] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fblog%2F&h=AUCjyl6XSCVvhTjA9VRvM6Xm4ivc3aNevvj678h9zD-RV2MKAKHUAcHHuTSw_Dw8Pt34sTpZrc0wVLXDwalHNOcWQ0bzS8Wqvl_vnWbdrpbZ02iaPw6EXJoRkj_r6B_DHe6qvQOJV-_xspkEfM05PQ
+                  - listitem [ref=f59e682]:
+                    - link "Blog" [ref=f59e684] [cursor=pointer]:
+                      - /url: /blog/
+                  - listitem [ref=f59e685]:
+                    - link "Historias de éxito" [ref=f59e687] [cursor=pointer]:
+                      - /url: /success-stories/
+              - generic [ref=f59e690]:
+                - heading "Ayuda" [level=2] [ref=f59e691]
+                - list [ref=f59e693]:
+                  - listitem [ref=f59e694]:
+                    - link "Ayuda para desarrolladores" [ref=f59e696] [cursor=pointer]:
+                      - /url: /support/
+                  - listitem [ref=f59e697]:
+                    - link "Herramienta de errores" [ref=f59e699] [cursor=pointer]:
+                      - /url: /support/bugs/
+                  - listitem [ref=f59e700]:
+                    - link "Estado de la plataforma" [ref=f59e702] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmetastatus.com%2F&h=AUCjyl6XSCVvhTjA9VRvM6Xm4ivc3aNevvj678h9zD-RV2MKAKHUAcHHuTSw_Dw8Pt34sTpZrc0wVLXDwalHNOcWQ0bzS8Wqvl_vnWbdrpbZ02iaPw6EXJoRkj_r6B_DHe6qvQOJV-_xspkEfM05PQ
+                  - listitem [ref=f59e703]:
+                    - link "Foro de la comunidad de desarrolladores" [ref=f59e705] [cursor=pointer]:
+                      - /url: https://www.facebook.com/groups/fbdevelopers/
+                  - listitem [ref=f59e706]:
+                    - link "Reportar un incidente" [ref=f59e708] [cursor=pointer]:
+                      - /url: /incident/report/
+              - generic [ref=f59e711]:
+                - heading "Acerca de nosotros" [level=2] [ref=f59e712]
+                - list [ref=f59e714]:
+                  - listitem [ref=f59e715]:
+                    - link "Información" [ref=f59e717] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.fb.com%2F&h=AUCjyl6XSCVvhTjA9VRvM6Xm4ivc3aNevvj678h9zD-RV2MKAKHUAcHHuTSw_Dw8Pt34sTpZrc0wVLXDwalHNOcWQ0bzS8Wqvl_vnWbdrpbZ02iaPw6EXJoRkj_r6B_DHe6qvQOJV-_xspkEfM05PQ
+                  - listitem [ref=f59e718]:
+                    - link "Empleos" [ref=f59e720] [cursor=pointer]:
+                      - /url: https://www.facebook.com/careers
+              - generic [ref=f59e723]:
+                - heading "Condiciones y políticas" [level=2] [ref=f59e724]
+                - list [ref=f59e726]:
+                  - listitem [ref=f59e727]:
+                    - link "Iniciativas de plataforma responsable" [ref=f59e729] [cursor=pointer]:
+                      - /url: /products/responsible-platform-initiatives/
+                  - listitem [ref=f59e730]:
+                    - link "Condiciones de la plataforma" [ref=f59e732] [cursor=pointer]:
+                      - /url: /terms/dfc_platform_terms/
+                  - listitem [ref=f59e733]:
+                    - link "Políticas para desarrolladores" [ref=f59e735] [cursor=pointer]:
+                      - /url: /devpolicy/
+                  - listitem [ref=f59e736]:
+                    - link "Política de privacidad" [ref=f59e738] [cursor=pointer]:
+                      - /url: https://www.facebook.com/about/privacy
+                  - listitem [ref=f59e739]:
+                    - link "Cookies" [ref=f59e741] [cursor=pointer]:
+                      - /url: https://www.facebook.com/help/cookies
+          - button "Change language" [ref=f59e746] [cursor=pointer]:
+            - generic [ref=f59e747]: Español

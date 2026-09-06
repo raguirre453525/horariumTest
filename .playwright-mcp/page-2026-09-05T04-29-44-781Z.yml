@@ -1,0 +1,65 @@
+- generic [ref=f103e4]:
+  - generic [ref=f103e10]:
+    - generic [ref=f103e16]:
+      - img "Símbolo de Meta" [ref=f103e21]
+      - generic [ref=f103e31]:
+        - generic [ref=f103e36]:
+          - text: Empieza a usar
+          - generic [ref=f103e37]: Meta for Developers
+        - generic [ref=f103e38]: "Administra todo lo relacionado con las apps que creaste para ti o tu negocio, por ejemplo:"
+        - list [ref=f103e47]:
+          - listitem [ref=f103e48]:
+            - generic [aria-hidden] [ref=f103e49]: •
+            - generic [ref=f103e50]: Crea apps con casos de uso que puedan conectar tu app con Facebook, Instagram, WhatsApp, Threads y más.
+          - listitem [ref=f103e51]:
+            - generic [aria-hidden] [ref=f103e52]: •
+            - generic [ref=f103e53]: Solicita acceso a permisos y funciones en el proceso de revisión de apps.
+          - listitem [ref=f103e54]:
+            - generic [aria-hidden] [ref=f103e55]: •
+            - generic [ref=f103e56]: Administra las apps y haz un seguimiento de las estadísticas, como las llamadas a la API y los límites de frecuencia del usuario.
+          - listitem [ref=f103e57]:
+            - generic [aria-hidden] [ref=f103e58]: •
+            - generic [ref=f103e59]: Descubre nuevas formas de llegar a los usuarios.
+          - listitem [ref=f103e60]:
+            - generic [aria-hidden] [ref=f103e61]: •
+            - generic [ref=f103e62]: Completa los requisitos de la verificación y el acceso a los datos para que tus apps sigan siendo seguras y confiables
+    - generic [ref=f103e68]:
+      - generic [ref=f103e70]: Iniciar sesión en Meta for Developers
+      - button "Continuar con Facebook" [ref=f103e74] [cursor=pointer]
+      - button "Crear cuenta nueva" [ref=f103e83] [cursor=pointer]
+      - separator [ref=f103e88]
+      - button "Iniciar sesión con cuenta de Meta administrada" [ref=f103e91] [cursor=pointer]
+      - img "Logotipo de Meta" [ref=f103e96]
+  - generic [ref=f103e108]:
+    - link "© 2026 Meta" [ref=f103e110] [cursor=pointer]:
+      - /url: https://www.facebook.com/
+    - generic [ref=f103e116]:
+      - generic [ref=f103e117]:
+        - link "Información" [ref=f103e118] [cursor=pointer]:
+          - /url: https://www.meta.com/about/
+        - link "Desarrolladores" [ref=f103e119] [cursor=pointer]:
+          - /url: https://developers.meta.com/
+        - link "Empleo" [ref=f103e120] [cursor=pointer]:
+          - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.metacareers.com%2F&h=AUCCa1YIkHWq1_vnhakayfw1R2RcDh8gE5EQ_ju35_ZYdSq83rGlddfI5XKOR8bsK8UlraEmVkHpLFmkZ9sIp9QsJacLwAZGW10pviNkVfW4I4ZnD9Bq2RheK8RN2mU4PGO2d7tIHQ4of0tmqFrlsg
+        - link "Privacidad" [ref=f103e121] [cursor=pointer]:
+          - /url: https://www.facebook.com/privacy/explanation
+        - link "Cookies" [ref=f103e122] [cursor=pointer]:
+          - /url: https://www.facebook.com/help/cookies
+        - link "Condiciones" [ref=f103e123] [cursor=pointer]:
+          - /url: https://www.facebook.com/policies/
+        - link "Servicio de ayuda" [ref=f103e124] [cursor=pointer]:
+          - /url: https://www.facebook.com/business/help/
+      - generic [ref=f103e125]:
+        - link "Español" [ref=f103e126] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F1060916226527875%2Fwhatsapp-business%2Foverview%2F
+        - link "English (US)" [ref=f103e127] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F1060916226527875%2Fwhatsapp-business%2Foverview%2F
+        - link "English (UK)" [ref=f103e128] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F1060916226527875%2Fwhatsapp-business%2Foverview%2F
+        - link "Português (Brasil)" [ref=f103e129] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F1060916226527875%2Fwhatsapp-business%2Foverview%2F
+        - link "Français (France)" [ref=f103e130] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F1060916226527875%2Fwhatsapp-business%2Foverview%2F
+        - link "Español (España)" [ref=f103e131] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F1060916226527875%2Fwhatsapp-business%2Foverview%2F
+        - button "Más idiomas" [ref=f103e132] [cursor=pointer]

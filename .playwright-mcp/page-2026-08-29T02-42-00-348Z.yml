@@ -1,0 +1,65 @@
+- generic [ref=f13e4]:
+  - generic [ref=f13e10]:
+    - generic [ref=f13e16]:
+      - img "Símbolo de Meta" [ref=f13e21]
+      - generic [ref=f13e31]:
+        - generic [ref=f13e36]:
+          - text: Empieza a usar
+          - generic [ref=f13e37]: Meta for Developers
+        - generic [ref=f13e38]: "Administra todo lo relacionado con las apps que creaste para ti o tu negocio, por ejemplo:"
+        - list [ref=f13e47]:
+          - listitem [ref=f13e48]:
+            - generic [ref=f13e49]: •
+            - generic [ref=f13e50]: Crea apps con casos de uso que puedan conectar tu app con Facebook, Instagram, WhatsApp, Threads y más.
+          - listitem [ref=f13e51]:
+            - generic [ref=f13e52]: •
+            - generic [ref=f13e53]: Solicita acceso a permisos y funciones en el proceso de revisión de apps.
+          - listitem [ref=f13e54]:
+            - generic [ref=f13e55]: •
+            - generic [ref=f13e56]: Administra las apps y haz un seguimiento de las estadísticas, como las llamadas a la API y los límites de frecuencia del usuario.
+          - listitem [ref=f13e57]:
+            - generic [ref=f13e58]: •
+            - generic [ref=f13e59]: Descubre nuevas formas de llegar a los usuarios.
+          - listitem [ref=f13e60]:
+            - generic [ref=f13e61]: •
+            - generic [ref=f13e62]: Completa los requisitos de la verificación y el acceso a los datos para que tus apps sigan siendo seguras y confiables
+    - generic [ref=f13e68]:
+      - generic [ref=f13e70]: Iniciar sesión en Meta for Developers
+      - button "Continuar con Facebook" [ref=f13e74] [cursor=pointer]
+      - button "Crear cuenta nueva" [ref=f13e83] [cursor=pointer]
+      - separator [ref=f13e88]
+      - button "Iniciar sesión con cuenta de Meta administrada" [ref=f13e91] [cursor=pointer]
+      - img "Logotipo de Meta" [ref=f13e96]
+  - generic [ref=f13e108]:
+    - link "© 2026 Meta" [ref=f13e110] [cursor=pointer]:
+      - /url: https://www.facebook.com/
+    - generic [ref=f13e116]:
+      - generic [ref=f13e117]:
+        - link "Información" [ref=f13e118] [cursor=pointer]:
+          - /url: https://www.meta.com/about/
+        - link "Desarrolladores" [ref=f13e119] [cursor=pointer]:
+          - /url: https://developers.meta.com/
+        - link "Empleo" [ref=f13e120] [cursor=pointer]:
+          - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.metacareers.com%2F&h=AUBluQGL4esu-olwdoZntq3JnaIx8agigCU7a0s7R4ajqZN6rNkYMVvxYMI7g4Ehn0cgD6ZFmMmaYfT1IMQ1Wtzv-lTu2xGEGHip51z0AYx4Kdi_LDGaQBEdL2XBFScGzGSNCkAXhWr-miTCqw2fSA
+        - link "Privacidad" [ref=f13e121] [cursor=pointer]:
+          - /url: https://www.facebook.com/privacy/explanation
+        - link "Cookies" [ref=f13e122] [cursor=pointer]:
+          - /url: https://www.facebook.com/help/cookies
+        - link "Condiciones" [ref=f13e123] [cursor=pointer]:
+          - /url: https://www.facebook.com/policies/
+        - link "Servicio de ayuda" [ref=f13e124] [cursor=pointer]:
+          - /url: https://www.facebook.com/business/help/
+      - generic [ref=f13e125]:
+        - link "Español" [ref=f13e126] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F
+        - link "English (US)" [ref=f13e127] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F
+        - link "English (UK)" [ref=f13e128] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F
+        - link "Português (Brasil)" [ref=f13e129] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F
+        - link "Français (France)" [ref=f13e130] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F
+        - link "Español (España)" [ref=f13e131] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F
+        - button "Más idiomas" [ref=f13e132] [cursor=pointer]

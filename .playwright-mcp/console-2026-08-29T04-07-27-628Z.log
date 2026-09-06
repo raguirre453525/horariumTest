@@ -1,0 +1,34 @@
+[    1640ms] [LOG] %c
+▲
+
+    ____                               _ __
+   / __ \________  ____ _____ ___     (_) /_
+  / / / / ___/ _ \/ __ `/ __ `__ \   / / __/
+ / /_/ / /  /  __/ /_/ / / / / / /  / / /__
+/_____/_/   \___/\__,_/_/ /_/ /_/  /_/\__( )
+   _____ __    _          _ __           |/
+  / ___// /_  (_)___     (_) /_
+  \__ \/ __ \/ / __ \   / / __/
+ ___/ / / / / / /_/ /  / / /_
+/____/_/ /_/_/ .___/  /_/\__/
+            /_/
+  
+
+Hello!
+
+- Open Source https://vercel.com/oss
+- Careers https://vercel.com/careers
+- Status https://vercel-status.com
+
+ font-family: "Geist Mono", monospace; white-space: pre; line-height: 1; @ https://vercel.com/_next/static/immutable/chunks/40h7538n34lvo.js:78
+[    2215ms] [WARNING] Deprecated API for given entry type. @ https://vercel.com/_next/static/immutable/chunks/1vjo9hfr9y_g3.js:18
+[    2382ms] [WARNING] [GSI_LOGGER]: Your client application uses one of the Google One Tap prompt UI status methods that may stop functioning when FedCM becomes mandatory. Refer to the migration guide to update your code accordingly and opt-in to FedCM to test your changes. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#display_moment and https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#skipped_moment @ https://vercel.com/_next/static/immutable/chunks/1vjo9hfr9y_g3.js:16
+[    2384ms] [ERROR] Not signed in with the identity provider. @ https://vercel.com/login?next=%2Fmtc-argentina%2Fhorarium-test%2Fsettings%2Fenvironment-variables:0
+[    2431ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/jwt:0
+[    5771ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3flhcz7cw314y.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmtc-argentina%2Fhorarium-test%2Fsettings%2Fenvironment-variables:0
+[    5772ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/2vdvqdeoiym0c.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmtc-argentina%2Fhorarium-test%2Fsettings%2Fenvironment-variables:0
+[    5772ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/1ykoqb4wnzf5k.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmtc-argentina%2Fhorarium-test%2Fsettings%2Fenvironment-variables:0
+[   15582ms] [ERROR] [GSI_LOGGER]: FedCM get() rejects with NetworkError: Error retrieving a token. @ https://vercel.com/_next/static/immutable/chunks/2_e-pssl2km-n.js:8
+[   18734ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3flhcz7cw314y.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmtc-argentina%2Fhorarium-test%2Fsettings%2Fenvironment-variables:0
+[   18734ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/2vdvqdeoiym0c.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmtc-argentina%2Fhorarium-test%2Fsettings%2Fenvironment-variables:0
+[   18734ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/1ykoqb4wnzf5k.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fmtc-argentina%2Fhorarium-test%2Fsettings%2Fenvironment-variables:0

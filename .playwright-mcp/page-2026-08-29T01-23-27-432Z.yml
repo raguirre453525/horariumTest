@@ -1,0 +1,120 @@
+- generic [ref=f1e10]:
+  - navigation "Principal" [ref=f1e12]:
+    - generic [ref=f1e19]:
+      - generic [ref=f1e21]:
+        - button "Abrir menú de navegación para celulares" [ref=f1e23] [cursor=pointer]
+        - link "Inicio de Meta" [ref=f1e28] [cursor=pointer]:
+          - /url: https://developers.facebook.com/
+          - img "Logotipo de navegación" [ref=f1e29]
+      - generic [ref=f1e32]:
+        - link "Login" [ref=f1e33] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fdocumentation%2Fbusiness-messaging%2Fwhatsapp%2Fwebhooks
+        - button [ref=f1e34] [cursor=pointer]:
+          - img "Buscar" [ref=f1e35]
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - main
+  - generic [ref=f1e37]:
+    - separator [ref=f1e38]
+    - contentinfo [ref=f1e39]:
+      - generic [ref=f1e40]:
+        - separator [ref=f1e41]
+        - generic [ref=f1e43]:
+          - generic [ref=f1e45]:
+            - generic [ref=f1e47]:
+              - img "Meta" [ref=f1e49]
+              - list [ref=f1e51]:
+                - listitem:
+                  - link "Facebook":
+                    - /url: https://www.facebook.com/MetaforDevelopers
+                    - img "Facebook"
+                - listitem:
+                  - link "Instagram":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmetafordevelopers%2F&h=AUCIB6MxfPvqB-kvk7BfNYEir2JyUZ5-p88QSM6ppfut-ph878cXWqCGloc2JayRYbtlHw_TvKpAUcYFJuusYD0KHV4D9cW0L3_iWmMTVwc8Y7ixHEJoChG7GKjIdyjwMjnsjKyQi1zP0BJH40evTQ
+                    - img "Instagram"
+                - listitem:
+                  - link "X":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2Fmetafordevs&h=AUCIB6MxfPvqB-kvk7BfNYEir2JyUZ5-p88QSM6ppfut-ph878cXWqCGloc2JayRYbtlHw_TvKpAUcYFJuusYD0KHV4D9cW0L3_iWmMTVwc8Y7ixHEJoChG7GKjIdyjwMjnsjKyQi1zP0BJH40evTQ
+                    - img "X"
+                - listitem:
+                  - link "LinkedIn":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fshowcase%2Fmeta-for-developers%2F&h=AUCIB6MxfPvqB-kvk7BfNYEir2JyUZ5-p88QSM6ppfut-ph878cXWqCGloc2JayRYbtlHw_TvKpAUcYFJuusYD0KHV4D9cW0L3_iWmMTVwc8Y7ixHEJoChG7GKjIdyjwMjnsjKyQi1zP0BJH40evTQ
+                    - img "LinkedIn"
+                - listitem:
+                  - link "YouTube":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2FMetaDevelopers%2F&h=AUCIB6MxfPvqB-kvk7BfNYEir2JyUZ5-p88QSM6ppfut-ph878cXWqCGloc2JayRYbtlHw_TvKpAUcYFJuusYD0KHV4D9cW0L3_iWmMTVwc8Y7ixHEJoChG7GKjIdyjwMjnsjKyQi1zP0BJH40evTQ
+                    - img "YouTube"
+            - generic [ref=f1e53]:
+              - generic [ref=f1e56]:
+                - heading "Crear con Meta" [level=2] [ref=f1e57]
+                - list [ref=f1e59]:
+                  - listitem [ref=f1e60]:
+                    - link "Inteligencia artificial" [ref=f1e62] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fai%2F&h=AUCIB6MxfPvqB-kvk7BfNYEir2JyUZ5-p88QSM6ppfut-ph878cXWqCGloc2JayRYbtlHw_TvKpAUcYFJuusYD0KHV4D9cW0L3_iWmMTVwc8Y7ixHEJoChG7GKjIdyjwMjnsjKyQi1zP0BJH40evTQ
+                  - listitem [ref=f1e63]:
+                    - link "Meta Horizon" [ref=f1e65] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fhorizon%2F&h=AUCIB6MxfPvqB-kvk7BfNYEir2JyUZ5-p88QSM6ppfut-ph878cXWqCGloc2JayRYbtlHw_TvKpAUcYFJuusYD0KHV4D9cW0L3_iWmMTVwc8Y7ixHEJoChG7GKjIdyjwMjnsjKyQi1zP0BJH40evTQ
+                  - listitem [ref=f1e66]:
+                    - link "Tecnologías sociales" [ref=f1e68] [cursor=pointer]:
+                      - /url: /social-technologies/
+              - generic [ref=f1e71]:
+                - heading "Noticias" [level=2] [ref=f1e72]
+                - list [ref=f1e74]:
+                  - listitem [ref=f1e75]:
+                    - link "Meta for Developers" [ref=f1e77] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fblog%2F&h=AUCIB6MxfPvqB-kvk7BfNYEir2JyUZ5-p88QSM6ppfut-ph878cXWqCGloc2JayRYbtlHw_TvKpAUcYFJuusYD0KHV4D9cW0L3_iWmMTVwc8Y7ixHEJoChG7GKjIdyjwMjnsjKyQi1zP0BJH40evTQ
+                  - listitem [ref=f1e78]:
+                    - link "Blog" [ref=f1e80] [cursor=pointer]:
+                      - /url: /blog/
+                  - listitem [ref=f1e81]:
+                    - link "Historias de éxito" [ref=f1e83] [cursor=pointer]:
+                      - /url: /success-stories/
+              - generic [ref=f1e86]:
+                - heading "Ayuda" [level=2] [ref=f1e87]
+                - list [ref=f1e89]:
+                  - listitem [ref=f1e90]:
+                    - link "Ayuda para desarrolladores" [ref=f1e92] [cursor=pointer]:
+                      - /url: /support/
+                  - listitem [ref=f1e93]:
+                    - link "Herramienta de errores" [ref=f1e95] [cursor=pointer]:
+                      - /url: /support/bugs/
+                  - listitem [ref=f1e96]:
+                    - link "Estado de la plataforma" [ref=f1e98] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmetastatus.com%2F&h=AUCIB6MxfPvqB-kvk7BfNYEir2JyUZ5-p88QSM6ppfut-ph878cXWqCGloc2JayRYbtlHw_TvKpAUcYFJuusYD0KHV4D9cW0L3_iWmMTVwc8Y7ixHEJoChG7GKjIdyjwMjnsjKyQi1zP0BJH40evTQ
+                  - listitem [ref=f1e99]:
+                    - link "Foro de la comunidad de desarrolladores" [ref=f1e101] [cursor=pointer]:
+                      - /url: https://www.facebook.com/groups/fbdevelopers/
+                  - listitem [ref=f1e102]:
+                    - link "Reportar un incidente" [ref=f1e104] [cursor=pointer]:
+                      - /url: /incident/report/
+              - generic [ref=f1e107]:
+                - heading "Acerca de nosotros" [level=2] [ref=f1e108]
+                - list [ref=f1e110]:
+                  - listitem [ref=f1e111]:
+                    - link "Información" [ref=f1e113] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.fb.com%2F&h=AUCIB6MxfPvqB-kvk7BfNYEir2JyUZ5-p88QSM6ppfut-ph878cXWqCGloc2JayRYbtlHw_TvKpAUcYFJuusYD0KHV4D9cW0L3_iWmMTVwc8Y7ixHEJoChG7GKjIdyjwMjnsjKyQi1zP0BJH40evTQ
+                  - listitem [ref=f1e114]:
+                    - link "Empleos" [ref=f1e116] [cursor=pointer]:
+                      - /url: https://www.facebook.com/careers
+              - generic [ref=f1e119]:
+                - heading "Condiciones y políticas" [level=2] [ref=f1e120]
+                - list [ref=f1e122]:
+                  - listitem [ref=f1e123]:
+                    - link "Iniciativas de plataforma responsable" [ref=f1e125] [cursor=pointer]:
+                      - /url: /products/responsible-platform-initiatives/
+                  - listitem [ref=f1e126]:
+                    - link "Condiciones de la plataforma" [ref=f1e128] [cursor=pointer]:
+                      - /url: /terms/dfc_platform_terms/
+                  - listitem [ref=f1e129]:
+                    - link "Políticas para desarrolladores" [ref=f1e131] [cursor=pointer]:
+                      - /url: /devpolicy/
+                  - listitem [ref=f1e132]:
+                    - link "Política de privacidad" [ref=f1e134] [cursor=pointer]:
+                      - /url: https://www.facebook.com/about/privacy
+                  - listitem [ref=f1e135]:
+                    - link "Cookies" [ref=f1e137] [cursor=pointer]:
+                      - /url: https://www.facebook.com/help/cookies
+          - button "Cambiar idioma" [ref=f1e142] [cursor=pointer]:
+            - generic [ref=f1e143]: Español

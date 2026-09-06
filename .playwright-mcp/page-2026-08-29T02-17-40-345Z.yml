@@ -1,0 +1,61 @@
+- generic [ref=f6e4]:
+  - generic [ref=f6e10]:
+    - generic [ref=f6e16]:
+      - img "Símbolo de Meta" [ref=f6e21]
+      - generic [ref=f6e31]:
+        - generic [ref=f6e36]:
+          - text: Empieza a usar las
+          - generic [ref=f6e37]: herramientas empresariales de Meta
+        - generic [ref=f6e38]: Al iniciar sesión, puedes acceder a todas las herramientas empresariales, como Meta Business Suite, el administrador de anuncios y otras, para conectarte con tus clientes y obtener mejores resultados comerciales.
+        - generic [ref=f6e42]: "Nuestras herramientas empresariales te ayudarán a:"
+        - list [ref=f6e51]:
+          - listitem [ref=f6e52]:
+            - generic [ref=f6e53]: •
+            - generic [ref=f6e54]: Ahorrar tiempo y acceder a todo lo que necesitas para administrar tu negocio en Facebook, Instagram y Messenger desde un solo lugar
+          - listitem [ref=f6e55]:
+            - generic [ref=f6e56]: •
+            - generic [ref=f6e57]: Usar una sola bandeja de entrada para conectarte con las personas más importantes para tu negocio
+          - listitem [ref=f6e58]:
+            - generic [ref=f6e59]: •
+            - generic [ref=f6e60]: Realizar un seguimiento de lo que funciona mejor con estadísticas de rendimiento en las tecnologías de Meta
+    - generic [ref=f6e66]:
+      - generic [ref=f6e68]: Inicia sesión en las herramientas empresariales de Meta
+      - button "Continuar con Facebook" [ref=f6e72] [cursor=pointer]
+      - button "Continuar con Instagram" [ref=f6e81] [cursor=pointer]
+      - button "Crear cuenta nueva" [ref=f6e90] [cursor=pointer]
+      - separator [ref=f6e95]
+      - button "Iniciar sesión con cuenta de Meta administrada" [ref=f6e98] [cursor=pointer]
+      - img "Logotipo de Meta" [ref=f6e103]
+  - generic [ref=f6e115]:
+    - link "© 2026 Meta" [ref=f6e117] [cursor=pointer]:
+      - /url: https://www.facebook.com/
+    - generic [ref=f6e123]:
+      - generic [ref=f6e124]:
+        - link "Información" [ref=f6e125] [cursor=pointer]:
+          - /url: https://www.meta.com/about/
+        - link "Desarrolladores" [ref=f6e126] [cursor=pointer]:
+          - /url: https://developers.meta.com/
+        - link "Empleo" [ref=f6e127] [cursor=pointer]:
+          - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.metacareers.com%2F&h=AUAn_JfQCzeyZl5Duv0_cKIo-N5NfTUiezMsGxgv-iIUA9p0Pkrit6fwvyo9Yt4YrylvrH7_IPHQGz0KNbrpUKJS9ctVum55Pkm7xkG32Kbiv22H1KoUbaGIz396DueXkWhiXAD9d_PZRqV3UXdZQg
+        - link "Privacidad" [ref=f6e128] [cursor=pointer]:
+          - /url: https://www.facebook.com/privacy/explanation
+        - link "Cookies" [ref=f6e129] [cursor=pointer]:
+          - /url: https://www.facebook.com/help/cookies
+        - link "Condiciones" [ref=f6e130] [cursor=pointer]:
+          - /url: https://www.facebook.com/policies/
+        - link "Servicio de ayuda" [ref=f6e131] [cursor=pointer]:
+          - /url: https://www.facebook.com/business/help/
+      - generic [ref=f6e132]:
+        - link "Español" [ref=f6e133] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fbusiness.facebook.com%2Flatest%2Fsettings%3Fnav_ref%3Dbiz_unified_f3_login_page_to_mbs&login_options%5B0%5D=FB&login_options%5B1%5D=IG&login_options%5B2%5D=SSO&config_ref=biz_login_tool_flavor_mbs
+        - link "English (US)" [ref=f6e134] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fbusiness.facebook.com%2Flatest%2Fsettings%3Fnav_ref%3Dbiz_unified_f3_login_page_to_mbs&login_options%5B0%5D=FB&login_options%5B1%5D=IG&login_options%5B2%5D=SSO&config_ref=biz_login_tool_flavor_mbs
+        - link "English (UK)" [ref=f6e135] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fbusiness.facebook.com%2Flatest%2Fsettings%3Fnav_ref%3Dbiz_unified_f3_login_page_to_mbs&login_options%5B0%5D=FB&login_options%5B1%5D=IG&login_options%5B2%5D=SSO&config_ref=biz_login_tool_flavor_mbs
+        - link "Português (Brasil)" [ref=f6e136] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fbusiness.facebook.com%2Flatest%2Fsettings%3Fnav_ref%3Dbiz_unified_f3_login_page_to_mbs&login_options%5B0%5D=FB&login_options%5B1%5D=IG&login_options%5B2%5D=SSO&config_ref=biz_login_tool_flavor_mbs
+        - link "Français (France)" [ref=f6e137] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fbusiness.facebook.com%2Flatest%2Fsettings%3Fnav_ref%3Dbiz_unified_f3_login_page_to_mbs&login_options%5B0%5D=FB&login_options%5B1%5D=IG&login_options%5B2%5D=SSO&config_ref=biz_login_tool_flavor_mbs
+        - link "Español (España)" [ref=f6e138] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fbusiness.facebook.com%2Flatest%2Fsettings%3Fnav_ref%3Dbiz_unified_f3_login_page_to_mbs&login_options%5B0%5D=FB&login_options%5B1%5D=IG&login_options%5B2%5D=SSO&config_ref=biz_login_tool_flavor_mbs
+        - button "Más idiomas" [ref=f6e139] [cursor=pointer]

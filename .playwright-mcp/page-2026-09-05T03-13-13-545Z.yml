@@ -1,0 +1,411 @@
+- generic [ref=f76e11]:
+  - navigation "Principal" [ref=f76e13]:
+    - generic [ref=f76e20]:
+      - generic [ref=f76e22]:
+        - button "Abrir menú de navegación para celulares" [ref=f76e24] [cursor=pointer]
+        - link "Inicio de Meta" [ref=f76e29] [cursor=pointer]:
+          - /url: https://developers.facebook.com/
+          - img "Logotipo de navegación" [ref=f76e30]
+      - generic [ref=f76e33]:
+        - link "Login" [ref=f76e34] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fdocumentation%2Fbusiness-messaging%2Fwhatsapp%2Fsolution-providers%2Fapp-review
+        - button [ref=f76e35] [cursor=pointer]:
+          - img "Buscar" [ref=f76e36]
+  - generic [ref=f76e43]:
+    - navigation [ref=f76e44]:
+      - generic [ref=f76e45]:
+        - generic [ref=f76e46]:
+          - generic [ref=f76e47]: Plataforma de WhatsApp Business
+          - generic [ref=f76e48]:
+            - button "Dropdown" [ref=f76e50] [cursor=pointer]:
+              - generic [ref=f76e51]: Business Messaging
+            - button "Dropdown" [ref=f76e57] [cursor=pointer]:
+              - generic [ref=f76e58]: WhatsApp Business Platform
+            - textbox "Filtrar" [ref=f76e64]
+        - generic [ref=f76e66]:
+          - generic "Plataforma de WhatsApp Business" [ref=f76e67]:
+            - link "Plataforma de WhatsApp Business" [ref=f76e68] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/overview/
+          - generic "Información general" [ref=f76e73]:
+            - link "Información general" [ref=f76e74] [cursor=pointer]:
+              - /url: "#"
+          - generic "Primeros pasos" [ref=f76e81]:
+            - link "Primeros pasos" [ref=f76e82] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/get-started/
+          - generic "Mensajes de marketing" [ref=f76e87]:
+            - link "Mensajes de marketing" [ref=f76e88] [cursor=pointer]:
+              - /url: "#"
+          - generic "Registro en la app" [ref=f76e95]:
+            - link "Registro en la app" [ref=f76e96] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/in-app-signup/
+          - generic "Mensajes de utilidad" [ref=f76e101]:
+            - link "Mensajes de utilidad" [ref=f76e102] [cursor=pointer]:
+              - /url: "#"
+          - generic "Mensajes de autenticación" [ref=f76e110]:
+            - link "Mensajes de autenticación" [ref=f76e111] [cursor=pointer]:
+              - /url: "#"
+          - generic "Mensajes de servicio" [ref=f76e119]:
+            - link "Mensajes de servicio" [ref=f76e120] [cursor=pointer]:
+              - /url: "#"
+          - generic "Llamadas" [ref=f76e128]:
+            - link "Llamadas" [ref=f76e129] [cursor=pointer]:
+              - /url: "#"
+          - generic "Grupos" [ref=f76e137]:
+            - link "Grupos" [ref=f76e138] [cursor=pointer]:
+              - /url: "#"
+          - generic "Catálogos" [ref=f76e146]:
+            - link "Catálogos" [ref=f76e147] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f76e154]:
+            - generic "Socios" [ref=f76e155]:
+              - link "Socios" [ref=f76e156] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f76e164]:
+              - generic "Información general" [ref=f76e165]:
+                - link "Información general" [ref=f76e166] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/solution-providers/overview/
+              - generic "Convertirte en socio" [ref=f76e171]:
+                - link "Convertirte en socio" [ref=f76e172] [cursor=pointer]:
+                  - /url: "#"
+              - generic "Revisión de apps" [ref=f76e179]:
+                - link "Revisión de apps" [ref=f76e180] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/solution-providers/app-review/
+              - generic "Registro insertado" [ref=f76e185]:
+                - link "Registro insertado" [ref=f76e186] [cursor=pointer]:
+                  - /url: "#"
+              - generic "Registrar usuarios de la app de negocios (Coexistence)" [ref=f76e193]:
+                - link "Registrar usuarios de la app de negocios (Coexistence)" [ref=f76e194] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/embedded-signup/onboarding-business-app-users/
+              - generic "Volver a conectar clientes existentes desvinculados" [ref=f76e198]:
+                - link "Volver a conectar clientes existentes desvinculados" [ref=f76e199] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients/
+              - generic "Creación de WABA iniciada por el socio" [ref=f76e203]:
+                - link "Creación de WABA iniciada por el socio" [ref=f76e204] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/solution-providers/partner-initiated-waba-creation/
+              - generic "Soluciones de varios socios" [ref=f76e209]:
+                - link "Soluciones de varios socios" [ref=f76e210] [cursor=pointer]:
+                  - /url: "#"
+              - generic "conversaciones multisolución" [ref=f76e217]:
+                - link "conversaciones multisolución" [ref=f76e218] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/solution-providers/multi-solution-conversations/
+              - generic "Verificación de negocios dirigidos por socios" [ref=f76e222]:
+                - link "Verificación de negocios dirigidos por socios" [ref=f76e223] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/solution-providers/partner-led-business-verification/
+              - generic "Seguimiento del píxel" [ref=f76e227]:
+                - link "Seguimiento del píxel" [ref=f76e228] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/solution-providers/pixel-tracking/
+              - generic "Administrar activos de clientes" [ref=f76e233]:
+                - link "Administrar activos de clientes" [ref=f76e234] [cursor=pointer]:
+                  - /url: "#"
+              - generic "Ayuda para socios" [ref=f76e242]:
+                - link "Ayuda para socios" [ref=f76e243] [cursor=pointer]:
+                  - /url: "#"
+          - generic "Webhooks" [ref=f76e251]:
+            - link "Webhooks" [ref=f76e252] [cursor=pointer]:
+              - /url: "#"
+          - generic "Aspectos básicos de las plantillas" [ref=f76e260]:
+            - link "Aspectos básicos de las plantillas" [ref=f76e261] [cursor=pointer]:
+              - /url: "#"
+          - generic "Características de mensajes" [ref=f76e269]:
+            - link "Características de mensajes" [ref=f76e270] [cursor=pointer]:
+              - /url: "#"
+          - generic "Activos de la cuenta" [ref=f76e278]:
+            - link "Activos de la cuenta" [ref=f76e279] [cursor=pointer]:
+              - /url: "#"
+          - generic "Análisis" [ref=f76e286]:
+            - link "Análisis" [ref=f76e287] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/analytics/
+          - generic "Anuncios de clic a WhatsApp" [ref=f76e292]:
+            - link "Anuncios de clic a WhatsApp" [ref=f76e293] [cursor=pointer]:
+              - /url: "#"
+          - generic "Pagos" [ref=f76e301]:
+            - link "Pagos" [ref=f76e302] [cursor=pointer]:
+              - /url: "#"
+          - generic "Política de datos, privacidad y &amp;" [ref=f76e310]:
+            - link "Política de datos, privacidad y &amp;" [ref=f76e311] [cursor=pointer]:
+              - /url: "#"
+          - generic "Ayuda" [ref=f76e319]:
+            - link "Ayuda" [ref=f76e320] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f76e327]:
+            - separator [aria-hidden] [ref=f76e328]
+            - generic [ref=f76e329]: Recursos
+          - generic "Referencia de la API" [ref=f76e331]:
+            - link "Referencia de la API" [ref=f76e332] [cursor=pointer]:
+              - /url: "#"
+          - generic "Registro de cambios" [ref=f76e339]:
+            - link "Registro de cambios" [ref=f76e340] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/changelog/
+          - generic "Códigos de error" [ref=f76e344]:
+            - link "Códigos de error" [ref=f76e345] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/support/error-codes
+    - generic [ref=f76e350]:
+      - main [ref=f76e351]:
+        - generic [ref=f76e352]:
+          - navigation "Breadcrumbs" [ref=f76e354]:
+            - list [ref=f76e355]:
+              - listitem [ref=f76e356]:
+                - link "Documentos" [ref=f76e358] [cursor=pointer]:
+                  - /url: /docs
+              - listitem [ref=f76e363]:
+                - link "Información general" [ref=f76e365] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/overview
+              - listitem [ref=f76e370]:
+                - generic [ref=f76e371]: Revisión de la aplicación de WhatsApp
+          - article [ref=f76e374]:
+            - heading "Revisión de la aplicación de WhatsApp" [level=1] [ref=f76e375]
+            - generic [ref=f76e376]: "Updated: 16 jun 2026"
+            - generic [ref=f76e380]:
+              - button "Copiar para LLM" [ref=f76e382] [cursor=pointer]
+              - link "Ver como Markdown" [ref=f76e389] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/solution-providers/app-review.md
+            - generic [ref=f76e395]:
+              - text: La revisión de apps es la parte del
+              - link "desarrollo de la app" [ref=f76e396] [cursor=pointer]:
+                - /url: /docs/development
+              - text: que nos permite verificar que esta usa los productos y las API de modo autorizado. Meta necesita validar la forma en la que piensas usar los permisos solicitados para asegurarse de que cumplan nuestros requisitos y políticas.
+            - generic [ref=f76e397]:
+              - text: Los negocios deben desarrollar primero un prototipo de producto para poder demostrar su caso de uso con una grabación de video que enviarán para la revisión de apps. Para aprobar la revisión de apps, es importante que pidas solo los permisos que necesita tu app.
+              - strong [ref=f76e398]: Solicitar permisos innecesarios es un motivo habitual del rechazo
+              - text: durante la revisión de apps.
+            - generic [ref=f76e399]: "En el siguiente video, se muestra un breve resumen del proceso de revisión de apps:"
+            - group "Video player" [ref=f76e408]:
+              - button "Reproducir video" [ref=f76e412] [cursor=pointer]
+            - generic [ref=f76e419]:
+              - text: A las apps de negocios se les otorga de forma automática
+              - link "acceso estándar" [ref=f76e420] [cursor=pointer]:
+                - /url: /docs/graph-api/overview/access-levels#standard-access
+              - text: a todos los permisos y todas las funciones disponibles en el tipo de app de negocios, por lo que podrás probar la app mientras te encuentres en este nivel de acceso. Asegúrate de que tus usuarios de prueba tengan un rol
+              - code [ref=f76e421]: developer
+              - text: o
+              - code [ref=f76e422]: admin
+              - text: en la app de Meta que se use para implementar el registro insertado. Esto significa que si estás usando la API para ti como desarrollador directo, no necesitas acceso avanzado ni revisión de la aplicación.
+            - generic [ref=f76e424]:
+              - text: Si desarrollas una app que usarán otros negocios, debes solicitar acceso avanzado para los permisos que necesita tu app. Puedes solicitar
+              - link "Acceso avanzado" [ref=f76e425] [cursor=pointer]:
+                - /url: /docs/graph-api/overview/access-levels#advanced-access
+              - text: enviando tu aplicación a la revisión de la aplicación.
+            - generic [ref=f76e428]:
+              - heading "Permisos" [level=2] [ref=f76e429]
+              - button [ref=f76e430] [cursor=pointer]
+            - generic [ref=f76e434]:
+              - text: Permisos solicitados comúnmente y qué incluir para obtener la aprobación para
+              - strong [ref=f76e435]: Acceso avanzado
+              - text: ":"
+            - table [ref=f76e437]:
+              - rowgroup [ref=f76e438]:
+                - row [ref=f76e439]:
+                  - columnheader "Permiso" [ref=f76e440]
+                  - columnheader "Descripción" [ref=f76e441]
+                  - columnheader "Qué incluir en la solicitud" [ref=f76e442]
+              - rowgroup [ref=f76e443]:
+                - row [ref=f76e444]:
+                  - cell [ref=f76e445]:
+                    - link "whatsapp_business_management" [ref=f76e448] [cursor=pointer]:
+                      - /url: /docs/permissions#w
+                  - cell "El permiso whatsapp_business_management permite que tu app lea o administre los activos comerciales de WhatsApp que te pertenecen o aquellos a los que otros negocios te concedieron acceso. Estos activos comerciales incluyen cuentas de WhatsApp Business, números de teléfono de empresa, plantillas de mensajes, códigos QR y sus mensajes asociados, y suscripciones a webhooks. Si tu app usa este permiso para acceder a WABA que no son propiedad de tu empresa, debes tener acceso avanzado. Sin el token, las llamadas a la API devuelven el código de error 200." [ref=f76e449]:
+                    - generic [ref=f76e450]:
+                      - generic [ref=f76e451]: El permiso whatsapp_business_management permite que tu app lea o administre los activos comerciales de WhatsApp que te pertenecen o aquellos a los que otros negocios te concedieron acceso. Estos activos comerciales incluyen cuentas de WhatsApp Business, números de teléfono de empresa, plantillas de mensajes, códigos QR y sus mensajes asociados, y suscripciones a webhooks.
+                      - generic [ref=f76e452]:
+                        - text: Si tu app usa este permiso para acceder a WABA que no son propiedad de tu empresa, debes tener
+                        - strong [ref=f76e453]: acceso avanzado
+                        - text: . Sin el token, las llamadas a la API devuelven el código de error
+                        - code [ref=f76e454]: "200"
+                        - text: .
+                  - cell [ref=f76e455]:
+                    - generic [ref=f76e456]:
+                      - generic [ref=f76e457]:
+                        - strong [ref=f76e458]: "Por escrito:"
+                        - text: Explica cómo usarás este permiso para acceder a los activos comerciales de los clientes que registraste en la plataforma.
+                      - generic [ref=f76e459]:
+                        - strong [ref=f76e460]: "En video:"
+                        - text: Graba un video de tu app, o administrador de WhatsApp, mientras se usa para crear una plantilla de mensaje.
+                - row [ref=f76e461]:
+                  - cell [ref=f76e462]:
+                    - link "whatsapp_business_messaging" [ref=f76e465] [cursor=pointer]:
+                      - /url: /docs/permissions#w
+                  - cell "El permiso whatsapp_business_messaging permite a una app enviar mensajes de WhatsApp y realizar llamadas a un número de teléfono específico, subir contenido multimedia y recuperarlo desde mensajes, administrar el perfil de empresa de WhatsApp y obtener información de este, y registrar esos números de teléfono con Meta." [ref=f76e466]
+                  - 'cell "Por escrito: explica la funcionalidad de mensajes que ofrece tu app a los clientes que registraste en la plataforma y cómo se llevan a cabo estas funciones. En video: Graba un video en el que se use tu app para enviar un mensaje a un número de WhatsApp, y el cliente de WhatsApp (ya sea la versión web o la app para celulares) reciba y muestre el mensaje enviado. Si lo deseas, puedes ir a Panel de apps > WhatsApp > Configuración de la API para generar una solicitud cURL que puedes integrar en tu app para enviar el mensaje. Si te asociaste con un socio de soluciones y planeas usar su API, pídele al socio de soluciones que comparta un video contigo que puedas enviar como parte de tu presentación." [ref=f76e469]':
+                    - generic [ref=f76e470]:
+                      - generic [ref=f76e471]:
+                        - strong [ref=f76e472]: "Por escrito:"
+                        - text: explica la funcionalidad de mensajes que ofrece tu app a los clientes que registraste en la plataforma y cómo se llevan a cabo estas funciones.
+                      - generic [ref=f76e473]:
+                        - strong [ref=f76e474]: "En video:"
+                        - text: Graba un video en el que se use tu app para enviar un mensaje a un número de WhatsApp, y el cliente de WhatsApp (ya sea la versión web o la app para celulares) reciba y muestre el mensaje enviado. Si lo deseas, puedes ir a
+                        - strong [ref=f76e475]: Panel de apps
+                        - text: ">"
+                        - strong [ref=f76e476]: WhatsApp
+                        - text: ">"
+                        - strong [ref=f76e477]: Configuración de la API
+                        - text: para generar una solicitud cURL que puedes integrar en tu app para enviar el mensaje.
+                      - generic [ref=f76e478]: Si te asociaste con un socio de soluciones y planeas usar su API, pídele al socio de soluciones que comparta un video contigo que puedas enviar como parte de tu presentación.
+                - row [ref=f76e479]:
+                  - cell [ref=f76e480]:
+                    - generic [ref=f76e481]:
+                      - link "whatsapp_business_manage_events" [ref=f76e483] [cursor=pointer]:
+                        - /url: /docs/permissions#w
+                      - generic [ref=f76e484]:
+                        - text: Solicita este permiso únicamente si usas la
+                        - link "API de mensajes de marketing para WhatsApp" [ref=f76e485] [cursor=pointer]:
+                          - /url: /documentation/business-messaging/whatsapp/marketing-messages/overview
+                        - text: con la
+                        - link "API de conversiones" [ref=f76e486] [cursor=pointer]:
+                          - /url: /documentation/ads-commerce/conversions-api
+                        - text: .
+                  - cell [ref=f76e487]:
+                    - generic [ref=f76e489]:
+                      - text: El permiso
+                      - strong [ref=f76e490]: whatsapp_business_manage_events
+                      - text: permite a una aplicación registrar eventos, como comprar, añadir al carrito, clientes potenciales, y más, en nombre de una cuenta de WhatsApp Business administrada por un usuario de la aplicación. El uso permitido de este permiso es registrar eventos en las cuentas de WhatsApp Business y enviar estos datos de actividad a Meta para la segmentación de anuncios, optimización y presentación de informes.
+                  - cell [ref=f76e491]:
+                    - generic [ref=f76e493]:
+                      - text: Este permiso se aprueba automáticamente si ya tienes
+                      - strong [ref=f76e494]: acceso avanzado
+                      - text: para el permiso
+                      - code [ref=f76e495]: whatsapp_business_messaging
+                      - text: .
+            - generic [ref=f76e496]: El tiempo promedio para la revisión de la aplicación es de unas 24 horas. Comience el proceso de revisión de la aplicación lo antes posible. No es necesario que esperes a que el registro insertado se implemente totalmente para iniciar este proceso.
+            - generic [ref=f76e499]:
+              - heading "Reducir las posibilidades de rechazo de la revisión de apps" [level=2] [ref=f76e500]
+              - button [ref=f76e501] [cursor=pointer]
+            - generic [ref=f76e505]:
+              - text: Debes solicitar
+              - strong [ref=f76e506]: Acceso avanzado
+              - text: para los permisos anteriores.
+            - generic [ref=f76e507]: Puedes solicitar todos estos permisos en un solo envío masivo, o bien en envíos separados. Se requiere una explicación y una grabación de pantalla específica para cada permiso solicitado.
+            - generic [ref=f76e508]: Como parte de la solicitud, debes incluir grabaciones de pantalla individuales que muestren cómo tu app usa cada permiso. El video puede ser una grabación de pantalla directamente desde tu computadora o una grabación usando una cámara digital o un teléfono con cámara. Deberás adjuntar este archivo a la presentación de la revisión de apps.
+            - generic [ref=f76e509]: No envíes un video que incluya varios permisos para diferentes casos de uso. Debes enviar un clip de video diferente para cada permiso. Es posible que tu solicitud se rechace si muestras varios permisos en el mismo video.
+            - generic [ref=f76e510]: Se necesitan tanto descripciones escritas como grabaciones de pantalla para cada permiso. Si incluyes una grabación de pantalla que muestra cómo tu app usa un permiso, pero no incluye una descripción de cómo lo usa, la solicitud se rechazará.
+            - img "App Review submission form for whatsapp_business_management with a written description text area and a screen recording upload section" [ref=f76e512] [cursor=pointer]
+            - generic [ref=f76e513]:
+              - text: No se revisarán las solicitudes en borradores, así que no te olvides de
+              - strong [ref=f76e514]: enviar tu solicitud de revisión de apps
+              - text: .
+            - img "App Review Requests panel listing a current request with Status set to Draft and pending whatsapp_business_messaging and whatsapp_business_management permissions" [ref=f76e516] [cursor=pointer]
+            - generic [ref=f76e519]:
+              - heading "Ejemplos" [level=2] [ref=f76e520]
+              - button [ref=f76e521] [cursor=pointer]
+            - generic [ref=f76e525]:
+              - text: Este es un ejemplo de una grabación de pantalla que muestra que tu aplicación se está usando para enviar una plantilla para su aprobación. Esto demuestra tu aplicación usando el permiso
+              - strong [ref=f76e526]: whatsapp_business_management
+              - text: ", que solicitaste en tu presentación de revisión de la aplicación."
+            - group "Video player" [ref=f76e535]:
+              - button "Reproducir video" [ref=f76e539] [cursor=pointer]
+            - generic [ref=f76e544]:
+              - text: Esta es una captura de pantalla de un ejemplo de grabación de pantalla que muestra tu aplicación siendo usada para enviar y recibir un mensaje a y desde un número de usuario de WhatsApp (haz clic derecho y abre en una nueva pestaña para ver una versión más grande). Esto demuestra tu aplicación usando el permiso
+              - strong [ref=f76e545]: whatsapp_business_messaging
+              - text: ", que solicitaste en tu presentación de revisión de la aplicación."
+            - generic [ref=f76e546]:
+              - text: Ten en cuenta que
+              - strong [ref=f76e547]: no puedes enviar una captura de pantalla
+              - text: ", sino que debes enviar una grabación de pantalla."
+            - img "Screen recording example showing a message sent from the app desktop interface and delivered in the WhatsApp mobile client" [ref=f76e549] [cursor=pointer]
+      - complementary [ref=f76e550]:
+        - generic [ref=f76e552]:
+          - generic [ref=f76e553]: EN ESTA PÁGINA
+          - button "Permisos" [ref=f76e555] [cursor=pointer]
+          - button "Reducir las posibilidades de rechazo de la revisión de apps" [ref=f76e558] [cursor=pointer]
+          - button "Ejemplos" [ref=f76e561] [cursor=pointer]
+  - generic [ref=f76e563]:
+    - separator [aria-hidden] [ref=f76e564]
+    - contentinfo [ref=f76e565]:
+      - generic [ref=f76e566]:
+        - separator [aria-hidden] [ref=f76e567]
+        - generic [ref=f76e569]:
+          - generic [ref=f76e571]:
+            - generic [ref=f76e573]:
+              - img "Meta" [ref=f76e575]
+              - list [ref=f76e577]:
+                - listitem:
+                  - link "Facebook":
+                    - /url: https://www.facebook.com/MetaforDevelopers
+                    - img "Facebook"
+                - listitem:
+                  - link "Instagram":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmetafordevelopers%2F&h=AUC0sV47nhEiY55c_DNCQPzhh5YQSnsk0rUS9I0F3WEJjhd4QLtBE0iqlrjSK5q1tp2gDMp9a9TEWW8hN29zxDBn-Mt06tilWQuguHUdMe2WjpLG-MZaE85ECF9lrZppuK0TOv8IvnPuwTORmUwh6Q
+                    - img "Instagram"
+                - listitem:
+                  - link "X":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2Fmetafordevs&h=AUC0sV47nhEiY55c_DNCQPzhh5YQSnsk0rUS9I0F3WEJjhd4QLtBE0iqlrjSK5q1tp2gDMp9a9TEWW8hN29zxDBn-Mt06tilWQuguHUdMe2WjpLG-MZaE85ECF9lrZppuK0TOv8IvnPuwTORmUwh6Q
+                    - img "X"
+                - listitem:
+                  - link "LinkedIn":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fshowcase%2Fmeta-for-developers%2F&h=AUC0sV47nhEiY55c_DNCQPzhh5YQSnsk0rUS9I0F3WEJjhd4QLtBE0iqlrjSK5q1tp2gDMp9a9TEWW8hN29zxDBn-Mt06tilWQuguHUdMe2WjpLG-MZaE85ECF9lrZppuK0TOv8IvnPuwTORmUwh6Q
+                    - img "LinkedIn"
+                - listitem:
+                  - link "YouTube":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2FMetaDevelopers%2F&h=AUC0sV47nhEiY55c_DNCQPzhh5YQSnsk0rUS9I0F3WEJjhd4QLtBE0iqlrjSK5q1tp2gDMp9a9TEWW8hN29zxDBn-Mt06tilWQuguHUdMe2WjpLG-MZaE85ECF9lrZppuK0TOv8IvnPuwTORmUwh6Q
+                    - img "YouTube"
+            - generic [ref=f76e579]:
+              - generic [ref=f76e582]:
+                - heading "Crear con Meta" [level=2] [ref=f76e583]
+                - list [ref=f76e585]:
+                  - listitem [ref=f76e586]:
+                    - link "Inteligencia artificial" [ref=f76e588] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fai%2F&h=AUC0sV47nhEiY55c_DNCQPzhh5YQSnsk0rUS9I0F3WEJjhd4QLtBE0iqlrjSK5q1tp2gDMp9a9TEWW8hN29zxDBn-Mt06tilWQuguHUdMe2WjpLG-MZaE85ECF9lrZppuK0TOv8IvnPuwTORmUwh6Q
+                  - listitem [ref=f76e589]:
+                    - link "Meta Horizon" [ref=f76e591] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fhorizon%2F&h=AUC0sV47nhEiY55c_DNCQPzhh5YQSnsk0rUS9I0F3WEJjhd4QLtBE0iqlrjSK5q1tp2gDMp9a9TEWW8hN29zxDBn-Mt06tilWQuguHUdMe2WjpLG-MZaE85ECF9lrZppuK0TOv8IvnPuwTORmUwh6Q
+                  - listitem [ref=f76e592]:
+                    - link "Tecnologías sociales" [ref=f76e594] [cursor=pointer]:
+                      - /url: /social-technologies/
+              - generic [ref=f76e597]:
+                - heading "Noticias" [level=2] [ref=f76e598]
+                - list [ref=f76e600]:
+                  - listitem [ref=f76e601]:
+                    - link "Meta for Developers" [ref=f76e603] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fblog%2F&h=AUC0sV47nhEiY55c_DNCQPzhh5YQSnsk0rUS9I0F3WEJjhd4QLtBE0iqlrjSK5q1tp2gDMp9a9TEWW8hN29zxDBn-Mt06tilWQuguHUdMe2WjpLG-MZaE85ECF9lrZppuK0TOv8IvnPuwTORmUwh6Q
+                  - listitem [ref=f76e604]:
+                    - link "Blog" [ref=f76e606] [cursor=pointer]:
+                      - /url: /blog/
+                  - listitem [ref=f76e607]:
+                    - link "Historias de éxito" [ref=f76e609] [cursor=pointer]:
+                      - /url: /success-stories/
+              - generic [ref=f76e612]:
+                - heading "Ayuda" [level=2] [ref=f76e613]
+                - list [ref=f76e615]:
+                  - listitem [ref=f76e616]:
+                    - link "Ayuda para desarrolladores" [ref=f76e618] [cursor=pointer]:
+                      - /url: /support/
+                  - listitem [ref=f76e619]:
+                    - link "Herramienta de errores" [ref=f76e621] [cursor=pointer]:
+                      - /url: /support/bugs/
+                  - listitem [ref=f76e622]:
+                    - link "Estado de la plataforma" [ref=f76e624] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmetastatus.com%2F&h=AUC0sV47nhEiY55c_DNCQPzhh5YQSnsk0rUS9I0F3WEJjhd4QLtBE0iqlrjSK5q1tp2gDMp9a9TEWW8hN29zxDBn-Mt06tilWQuguHUdMe2WjpLG-MZaE85ECF9lrZppuK0TOv8IvnPuwTORmUwh6Q
+                  - listitem [ref=f76e625]:
+                    - link "Foro de la comunidad de desarrolladores" [ref=f76e627] [cursor=pointer]:
+                      - /url: https://www.facebook.com/groups/fbdevelopers/
+                  - listitem [ref=f76e628]:
+                    - link "Reportar un incidente" [ref=f76e630] [cursor=pointer]:
+                      - /url: /incident/report/
+              - generic [ref=f76e633]:
+                - heading "Acerca de nosotros" [level=2] [ref=f76e634]
+                - list [ref=f76e636]:
+                  - listitem [ref=f76e637]:
+                    - link "Información" [ref=f76e639] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.fb.com%2F&h=AUC0sV47nhEiY55c_DNCQPzhh5YQSnsk0rUS9I0F3WEJjhd4QLtBE0iqlrjSK5q1tp2gDMp9a9TEWW8hN29zxDBn-Mt06tilWQuguHUdMe2WjpLG-MZaE85ECF9lrZppuK0TOv8IvnPuwTORmUwh6Q
+                  - listitem [ref=f76e640]:
+                    - link "Empleos" [ref=f76e642] [cursor=pointer]:
+                      - /url: https://www.facebook.com/careers
+              - generic [ref=f76e645]:
+                - heading "Condiciones y políticas" [level=2] [ref=f76e646]
+                - list [ref=f76e648]:
+                  - listitem [ref=f76e649]:
+                    - link "Iniciativas de plataforma responsable" [ref=f76e651] [cursor=pointer]:
+                      - /url: /products/responsible-platform-initiatives/
+                  - listitem [ref=f76e652]:
+                    - link "Condiciones de la plataforma" [ref=f76e654] [cursor=pointer]:
+                      - /url: /terms/dfc_platform_terms/
+                  - listitem [ref=f76e655]:
+                    - link "Políticas para desarrolladores" [ref=f76e657] [cursor=pointer]:
+                      - /url: /devpolicy/
+                  - listitem [ref=f76e658]:
+                    - link "Política de privacidad" [ref=f76e660] [cursor=pointer]:
+                      - /url: https://www.facebook.com/about/privacy
+                  - listitem [ref=f76e661]:
+                    - link "Cookies" [ref=f76e663] [cursor=pointer]:
+                      - /url: https://www.facebook.com/help/cookies
+          - button "Cambiar idioma" [ref=f76e668] [cursor=pointer]:
+            - generic [ref=f76e669]: Español

@@ -1,0 +1,26 @@
+[    3753ms] [ERROR] ErrorUtils caught an error:
+
+<Surface> is used without AutoLogging initialization
+
+Subsequent non-fatal errors won't be logged; see https://fburl.com/debugjs. {column: 17878, clientTime: 1787977805, extra: Object, guardList: Array(2), hash: vhmce4} @ https://static.xx.fbcdn.net/rsrc.php/v4/yo/r/XrOVaBLe-P9.js:83
+[    3841ms] [LOG] 
+%c¡Detente! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.xx.fbcdn.net/rsrc.php/v4iR6P4/yQ/l/es_LA-j/9Kzl5amLhmJ4pnqJ3LfWEPBC50HIE-A-l0_EQJ4Q45UikuJYQGA9oD7KDoHjR_-KAzdnkngahSNAEBHK-UotRXZXWuNoF-odKHpp6l24cWz2y5IwnKYvL8KHPD9ZBAdpr1h4XQjTV4jGGbH46rjhQ6D-QPDtDFyt9FWE8RORh8QAsJDAsSStHXMe2At9XnGTa4-ZiJWxK7rQ-05nlGamOjNvwe7CAB3UstSLWQ5vMQ3iWnhb5aoRUIv0g-MShqmAvcu0rHGnHCYQ-aipaRZYDMiqyfqX1vKCImPpltosZRTm40BwjcnG7h7XwnDJNLZDz5Tav2Xa-L.js:726
+[    3841ms] [LOG] 
+%cEsta función del navegador está pensada para desarrolladores. Si alguien te indicó que copiaras y pegaras algo aquí para habilitar una función de Facebook o para "hackear" la cuenta de alguien, se trata de un fraude. Si lo haces, esta persona podrá acceder a tu cuenta. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4iR6P4/yQ/l/es_LA-j/9Kzl5amLhmJ4pnqJ3LfWEPBC50HIE-A-l0_EQJ4Q45UikuJYQGA9oD7KDoHjR_-KAzdnkngahSNAEBHK-UotRXZXWuNoF-odKHpp6l24cWz2y5IwnKYvL8KHPD9ZBAdpr1h4XQjTV4jGGbH46rjhQ6D-QPDtDFyt9FWE8RORh8QAsJDAsSStHXMe2At9XnGTa4-ZiJWxK7rQ-05nlGamOjNvwe7CAB3UstSLWQ5vMQ3iWnhb5aoRUIv0g-MShqmAvcu0rHGnHCYQ-aipaRZYDMiqyfqX1vKCImPpltosZRTm40BwjcnG7h7XwnDJNLZDz5Tav2Xa-L.js:726
+[    3841ms] [LOG] 
+%cVisita https://www.facebook.com/selfxss para obtener más información. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4iR6P4/yQ/l/es_LA-j/9Kzl5amLhmJ4pnqJ3LfWEPBC50HIE-A-l0_EQJ4Q45UikuJYQGA9oD7KDoHjR_-KAzdnkngahSNAEBHK-UotRXZXWuNoF-odKHpp6l24cWz2y5IwnKYvL8KHPD9ZBAdpr1h4XQjTV4jGGbH46rjhQ6D-QPDtDFyt9FWE8RORh8QAsJDAsSStHXMe2At9XnGTa4-ZiJWxK7rQ-05nlGamOjNvwe7CAB3UstSLWQ5vMQ3iWnhb5aoRUIv0g-MShqmAvcu0rHGnHCYQ-aipaRZYDMiqyfqX1vKCImPpltosZRTm40BwjcnG7h7XwnDJNLZDz5Tav2Xa-L.js:726
+[    3841ms] [LOG] 
+%c  @ https://static.xx.fbcdn.net/rsrc.php/v4iR6P4/yQ/l/es_LA-j/9Kzl5amLhmJ4pnqJ3LfWEPBC50HIE-A-l0_EQJ4Q45UikuJYQGA9oD7KDoHjR_-KAzdnkngahSNAEBHK-UotRXZXWuNoF-odKHpp6l24cWz2y5IwnKYvL8KHPD9ZBAdpr1h4XQjTV4jGGbH46rjhQ6D-QPDtDFyt9FWE8RORh8QAsJDAsSStHXMe2At9XnGTa4-ZiJWxK7rQ-05nlGamOjNvwe7CAB3UstSLWQ5vMQ3iWnhb5aoRUIv0g-MShqmAvcu0rHGnHCYQ-aipaRZYDMiqyfqX1vKCImPpltosZRTm40BwjcnG7h7XwnDJNLZDz5Tav2Xa-L.js:726
+[   22518ms] [LOG] 
+%c¡Detente! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.xx.fbcdn.net/rsrc.php/v4/yo/r/XrOVaBLe-P9.js:250
+[   22518ms] [LOG] 
+%cEsta función del navegador está pensada para desarrolladores. Si alguien te indicó que copiaras y pegaras algo aquí para habilitar una función de Facebook o para "hackear" la cuenta de alguien, se trata de un fraude. Si lo haces, esta persona podrá acceder a tu cuenta. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4/yo/r/XrOVaBLe-P9.js:250
+[   22519ms] [LOG] 
+%cVisita https://www.facebook.com/selfxss para obtener más información. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4/yo/r/XrOVaBLe-P9.js:250
+[   22519ms] [LOG] 
+%c  @ https://static.xx.fbcdn.net/rsrc.php/v4/yo/r/XrOVaBLe-P9.js:250
+[   22648ms] [ERROR] ErrorUtils caught an error:
+
+<Surface> is used without AutoLogging initialization
+
+Subsequent non-fatal errors won't be logged; see https://fburl.com/debugjs. {column: 17878, clientTime: 1787977824, extra: Object, guardList: Array(2), hash: vhmce4} @ https://static.xx.fbcdn.net/rsrc.php/v4/yo/r/XrOVaBLe-P9.js:83

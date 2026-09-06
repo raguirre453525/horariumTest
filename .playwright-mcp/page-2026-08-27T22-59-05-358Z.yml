@@ -1,0 +1,97 @@
+- generic [ref=f4e1]:
+  - main [ref=f4e2]:
+    - generic [ref=f4e3]:
+      - generic [ref=f4e4]:
+        - button "Ocultar navegación" [expanded] [ref=f4e5] [cursor=pointer]
+        - generic [ref=f4e13]:
+          - paragraph [ref=f4e14]: Horarium
+          - paragraph [ref=f4e15]: Horario universitario
+      - generic [ref=f4e16]:
+        - button "Cambiar a tema oscuro" [ref=f4e17] [cursor=pointer]
+        - button "Notificaciones" [ref=f4e21] [cursor=pointer]
+        - generic [ref=f4e25]: Modo local
+    - generic [ref=f4e26]:
+      - complementary [ref=f4e28]:
+        - paragraph [ref=f4e30]: Navegación
+        - navigation "Navegación principal" [ref=f4e31]:
+          - button "Inicio" [ref=f4e32] [cursor=pointer]
+          - button "Horario" [active] [ref=f4e38] [cursor=pointer]
+          - button "Notas" [ref=f4e43] [cursor=pointer]
+          - button "Eventos" [ref=f4e50] [cursor=pointer]
+          - button "Materias" [ref=f4e58] [cursor=pointer]
+          - button "Profesores" [ref=f4e63] [cursor=pointer]
+          - button "Aulas" [ref=f4e69] [cursor=pointer]
+          - button "Configuración" [ref=f4e75] [cursor=pointer]
+      - region "Notas" [ref=f4e83]:
+        - generic [ref=f4e84]:
+          - generic [ref=f4e85]:
+            - paragraph [ref=f4e86]: Espacio de estudio
+            - heading "Notas elaboradas" [level=1] [ref=f4e87]
+            - paragraph [ref=f4e88]: Organizá documentos con bloques, fechas, etiquetas y adjuntos. Las notas rápidas siguen disponibles desde Horario.
+          - generic [ref=f4e90]:
+            - generic [ref=f4e91]: Buscar materias
+            - searchbox "Buscar materias" [ref=f4e92]
+        - generic [ref=f4e93]:
+          - generic [ref=f4e94]:
+            - paragraph [ref=f4e95]: Materias
+            - navigation "Materias con notas" [ref=f4e96]:
+              - button "ASI Administración de Sistemas de Información Teoría · Práctica 0" [ref=f4e97] [cursor=pointer]:
+                - generic [ref=f4e98]:
+                  - generic [ref=f4e99]: ASI
+                  - strong [ref=f4e100]: Administración de Sistemas de Información
+                  - generic [ref=f4e101]: Teoría · Práctica
+                - generic [ref=f4e102]: "0"
+              - button "RED Redes de Datos Práctica · Teoría 0" [ref=f4e103] [cursor=pointer]:
+                - generic [ref=f4e104]:
+                  - generic [ref=f4e105]: RED
+                  - strong [ref=f4e106]: Redes de Datos
+                  - generic [ref=f4e107]: Práctica · Teoría
+                - generic [ref=f4e108]: "0"
+              - button "ICS Ingeniería y Calidad de Software Práctica · Teoría 0" [ref=f4e109] [cursor=pointer]:
+                - generic [ref=f4e110]:
+                  - generic [ref=f4e111]: ICS
+                  - strong [ref=f4e112]: Ingeniería y Calidad de Software
+                  - generic [ref=f4e113]: Práctica · Teoría
+                - generic [ref=f4e114]: "0"
+              - button "TA Tecnología para la Automatización Teoría · Práctica 0" [ref=f4e115] [cursor=pointer]:
+                - generic [ref=f4e116]:
+                  - generic [ref=f4e117]: TA
+                  - strong [ref=f4e118]: Tecnología para la Automatización
+                  - generic [ref=f4e119]: Teoría · Práctica
+                - generic [ref=f4e120]: "0"
+              - button "PAD Programación de Aplicaciones Distribuidas Electivas 0" [ref=f4e121] [cursor=pointer]:
+                - generic [ref=f4e122]:
+                  - generic [ref=f4e123]: PAD
+                  - strong [ref=f4e124]: Programación de Aplicaciones Distribuidas
+                  - generic [ref=f4e125]: Electivas
+                - generic [ref=f4e126]: "0"
+              - button "AGO Algoritmos Genéticos de Optimización Heurística Electivas 0" [ref=f4e127] [cursor=pointer]:
+                - generic [ref=f4e128]:
+                  - generic [ref=f4e129]: AGO
+                  - strong [ref=f4e130]: Algoritmos Genéticos de Optimización Heurística
+                  - generic [ref=f4e131]: Electivas
+                - generic [ref=f4e132]: "0"
+          - dialog [ref=f4e135]:
+            - generic [ref=f4e136]:
+              - generic [ref=f4e137]:
+                - generic [ref=f4e138]:
+                  - generic [ref=f4e139]: ASI
+                  - generic [ref=f4e140]: Notas elaboradas
+                - generic [ref=f4e141]: 0 notas
+              - heading "Administración de Sistemas de Información" [level=2] [ref=f4e142]
+              - paragraph [ref=f4e143]: Contexto por materia
+            - generic [ref=f4e144]:
+              - generic [ref=f4e145]:
+                - group "Filtros de notas" [ref=f4e146]:
+                  - button "Todas (0)" [pressed] [ref=f4e147] [cursor=pointer]
+                  - button "Mías (0)" [ref=f4e148] [cursor=pointer]
+                  - button "De compañeros (0)" [ref=f4e149] [cursor=pointer]
+                  - button "Archivadas (0)" [ref=f4e150] [cursor=pointer]
+                - button "Nueva nota" [ref=f4e151] [cursor=pointer]
+              - generic [ref=f4e153]:
+                - button "Apuntes en vivo — Google Doc colaborativo (4h)" [disabled] [ref=f4e154]: Iniciá sesión — Apuntes en vivo
+                - generic [ref=f4e158]: Iniciá sesión para crear el Doc.
+              - paragraph [ref=f4e159]: Las notas se guardan en este navegador. Configurá Supabase para compartirlas.
+            - generic [ref=f4e160]: Todavía no hay notas. Agregá la primera arriba.
+  - button "Open Next.js Dev Tools" [ref=f4e167] [cursor=pointer]
+  - alert [ref=f4e171]

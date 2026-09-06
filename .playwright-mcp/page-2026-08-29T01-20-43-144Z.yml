@@ -1,0 +1,523 @@
+- generic [ref=e10]:
+  - navigation "Principal" [ref=e12]:
+    - generic [ref=e19]:
+      - generic [ref=e21]:
+        - button "Abrir menú de navegación para celulares" [ref=e23] [cursor=pointer]
+        - link "Inicio de Meta" [ref=e28] [cursor=pointer]:
+          - /url: https://developers.facebook.com/
+          - img "Logotipo de navegación" [ref=e29]
+      - generic [ref=e32]:
+        - link "Login" [ref=e33] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fdocumentation%2Fbusiness-messaging%2Fwhatsapp%2Fget-started
+        - button [ref=e34] [cursor=pointer]:
+          - img "Buscar" [ref=e35]
+  - generic [ref=e42]:
+    - navigation [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]: Plataforma de WhatsApp Business
+          - generic [ref=e47]:
+            - button "Dropdown" [ref=e49] [cursor=pointer]:
+              - generic [ref=e50]: Business Messaging
+            - button "Dropdown" [ref=e56] [cursor=pointer]:
+              - generic [ref=e57]: WhatsApp Business Platform
+            - textbox "Filtrar" [ref=e63]
+        - generic [ref=e65]:
+          - generic "Plataforma de WhatsApp Business" [ref=e66]:
+            - link "Plataforma de WhatsApp Business" [ref=e67] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/overview/
+          - generic "Información general" [ref=e72]:
+            - link "Información general" [ref=e73] [cursor=pointer]:
+              - /url: "#"
+          - generic "Primeros pasos" [ref=e80]:
+            - link "Primeros pasos" [ref=e81] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/get-started/
+          - generic "Mensajes de marketing" [ref=e86]:
+            - link "Mensajes de marketing" [ref=e87] [cursor=pointer]:
+              - /url: "#"
+          - generic "Registro en la app" [ref=e94]:
+            - link "Registro en la app" [ref=e95] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/in-app-signup/
+          - generic "Mensajes de utilidad" [ref=e100]:
+            - link "Mensajes de utilidad" [ref=e101] [cursor=pointer]:
+              - /url: "#"
+          - generic "Mensajes de autenticación" [ref=e109]:
+            - link "Mensajes de autenticación" [ref=e110] [cursor=pointer]:
+              - /url: "#"
+          - generic "Mensajes de servicio" [ref=e118]:
+            - link "Mensajes de servicio" [ref=e119] [cursor=pointer]:
+              - /url: "#"
+          - generic "Llamadas" [ref=e127]:
+            - link "Llamadas" [ref=e128] [cursor=pointer]:
+              - /url: "#"
+          - generic "Grupos" [ref=e136]:
+            - link "Grupos" [ref=e137] [cursor=pointer]:
+              - /url: "#"
+          - generic "Catálogos" [ref=e145]:
+            - link "Catálogos" [ref=e146] [cursor=pointer]:
+              - /url: "#"
+          - generic "Socios" [ref=e154]:
+            - link "Socios" [ref=e155] [cursor=pointer]:
+              - /url: "#"
+          - generic "Webhooks" [ref=e163]:
+            - link "Webhooks" [ref=e164] [cursor=pointer]:
+              - /url: "#"
+          - generic "Aspectos básicos de las plantillas" [ref=e172]:
+            - link "Aspectos básicos de las plantillas" [ref=e173] [cursor=pointer]:
+              - /url: "#"
+          - generic "Características de mensajes" [ref=e181]:
+            - link "Características de mensajes" [ref=e182] [cursor=pointer]:
+              - /url: "#"
+          - generic "Activos de la cuenta" [ref=e190]:
+            - link "Activos de la cuenta" [ref=e191] [cursor=pointer]:
+              - /url: "#"
+          - generic "Análisis" [ref=e198]:
+            - link "Análisis" [ref=e199] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/analytics/
+          - generic "Anuncios de clic a WhatsApp" [ref=e204]:
+            - link "Anuncios de clic a WhatsApp" [ref=e205] [cursor=pointer]:
+              - /url: "#"
+          - generic "Pagos" [ref=e213]:
+            - link "Pagos" [ref=e214] [cursor=pointer]:
+              - /url: "#"
+          - generic "Política de datos, privacidad y &amp;" [ref=e222]:
+            - link "Política de datos, privacidad y &amp;" [ref=e223] [cursor=pointer]:
+              - /url: "#"
+          - generic "Ayuda" [ref=e231]:
+            - link "Ayuda" [ref=e232] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=e239]:
+            - separator [ref=e240]
+            - generic [ref=e241]: Recursos
+          - generic "Referencia de la API" [ref=e243]:
+            - link "Referencia de la API" [ref=e244] [cursor=pointer]:
+              - /url: "#"
+          - generic "Registro de cambios" [ref=e251]:
+            - link "Registro de cambios" [ref=e252] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/changelog/
+          - generic "Códigos de error" [ref=e256]:
+            - link "Códigos de error" [ref=e257] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/support/error-codes
+    - generic [ref=e262]:
+      - main [ref=e263]:
+        - generic [ref=e264]:
+          - navigation "Breadcrumbs" [ref=e266]:
+            - list [ref=e267]:
+              - listitem [ref=e268]:
+                - link "Documentos" [ref=e270] [cursor=pointer]:
+                  - /url: /docs
+              - listitem [ref=e275]:
+                - link "Información general" [ref=e277] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/overview
+              - listitem [ref=e282]:
+                - generic [ref=e283]: Primeros pasos con la API de la nube de WhatsApp
+          - article [ref=e286]:
+            - heading "Primeros pasos con la API de la nube de WhatsApp" [level=1] [ref=e287]
+            - generic [ref=e288]: "Updated: 16 jun 2026"
+            - generic [ref=e292]:
+              - button "Copiar para LLM" [ref=e294] [cursor=pointer]
+              - link "Ver como Markdown" [ref=e301] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/get-started.md
+            - generic [ref=e309]:
+              - text: Esta documentación es para desarrolladores que crean apps en la plataforma de WhatsApp Business. Si eres usuario de WhatsApp y tienes problemas con tu cuenta personal, visita el
+              - link [ref=e310] [cursor=pointer]:
+                - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Ffaq.whatsapp.com%2F&h=AUCsIGdoRIq3ykOK-YPaeeM5JvU0zISWhTgy8FxbSKIl1Ktttd-qNhaN9udDaevckZGXRlIttDshdGdRlr2Iqm8wOuVxRv9tYg0qbsMAN68PAOucmSVAake7P_KG8ZYWSegPkF8NLI3-J84ZLGDyNQ
+                - text: Centro de ayuda de WhatsApp
+                - generic [ref=e311]:
+                  - text: ⁠
+                  - img "El enlace se abre en una pestaña o ventana nueva" [ref=e312]
+              - text: para obtener ayuda.
+            - generic [ref=e315]: Esta guía ayuda a los desarrolladores a dar sus primeros pasos rápidamente con la API de la nube de WhatsApp. Abarca los pasos básicos de configuración, por ejemplo, el registro como desarrollador, la creación de una app de Meta, el envío de tu primer mensaje y la configuración de un punto de conexión de webhook de prueba. También aprenderás a generar tokens de acceso seguros y a enviar mensajes tanto con plantillas como sin ellas. Se presentan funciones avanzadas y más recursos para un mayor análisis.
+            - separator [ref=e316]
+            - generic [ref=e319]:
+              - heading "Descarga la app de ejemplo" [level=2] [ref=e320]
+              - button [ref=e321] [cursor=pointer]
+            - generic [ref=e325]: La app de ejemplo Jasper's Market contiene todos los mensajes y el código usados en la demo de Jasper's Market. Puedes usar este ejemplo de app para aprender a crear una app que envíe y administre datos de la API de la nube de WhatsApp.
+            - link "Descarga la app de ejemplo Jasper's Market" [ref=e327] [cursor=pointer]:
+              - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fgithub.com%2Ffbsamples%2Fwhatsapp-business-jaspers-market&h=AUCsIGdoRIq3ykOK-YPaeeM5JvU0zISWhTgy8FxbSKIl1Ktttd-qNhaN9udDaevckZGXRlIttDshdGdRlr2Iqm8wOuVxRv9tYg0qbsMAN68PAOucmSVAake7P_KG8ZYWSegPkF8NLI3-J84ZLGDyNQ
+            - separator [ref=e331]
+            - generic [ref=e334]:
+              - heading "Requisitos previos" [level=2] [ref=e335]
+              - button [ref=e336] [cursor=pointer]
+            - list [ref=e340]:
+              - listitem [ref=e342]: Cuenta de Facebook o cuenta de Meta administrada
+              - listitem [ref=e344]:
+                - text: Registro de desarrolladores
+                - list [ref=e345]:
+                  - listitem [ref=e347]:
+                    - text: Si aún no te registraste, visita la
+                    - link "página de registro de desarrolladores" [ref=e348] [cursor=pointer]:
+                      - /url: https://developers.facebook.com/async/registration/
+                    - text: y sigue las indicaciones.
+              - listitem [ref=e350]: Dispositivo con WhatsApp para enviar y recibir mensajes de prueba
+            - separator [ref=e351]
+            - generic [ref=e354]:
+              - heading "Paso 1. Crear una nueva app de Meta con WhatsApp" [level=2] [ref=e355]
+              - button [ref=e356] [cursor=pointer]
+            - list [ref=e360]:
+              - listitem [ref=e362]:
+                - text: Abre el
+                - link "panel de apps de Meta" [ref=e363] [cursor=pointer]:
+                  - /url: https://developers.facebook.com/apps
+                - text: para crear una nueva app de Meta con el caso de uso de WhatsApp.
+              - listitem [ref=e365]:
+                - text: Haz clic en
+                - strong [ref=e366]: Crear app
+                - text: .
+              - listitem [ref=e368]: Agrega el nombre de la app y tu correo electrónico.
+              - listitem [ref=e370]:
+                - text: Selecciona el caso de uso
+                - strong [ref=e371]: Conectarse con los clientes a través de WhatsApp
+                - text: y haz clic en
+                - strong [ref=e372]: Siguiente
+                - text: .
+              - listitem [ref=e374]: Selecciona un portfolio comercial o crea uno.
+              - listitem [ref=e376]:
+                - text: Allí, se muestra una lista de requisitos de publicación. Es posible que no tengas ninguno en este momento. Haz clic en
+                - strong [ref=e377]: Siguiente
+                - text: .
+              - listitem [ref=e379]:
+                - text: Confirma tus detalles, caso de uso y portfolio comercial. Haz clic en
+                - strong [ref=e380]: Anterior
+                - text: para hacer cambios o en
+                - strong [ref=e381]: Crear app
+                - text: para completar el proceso de creación de apps.
+            - generic [ref=e382]:
+              - text: Después de crear la app con el caso de uso de WhatsApp, se te redirigirá a la página
+              - strong [ref=e383]: Personalizar caso de uso > Conectar en WhatsApp > Inicio rápido
+              - text: en el panel.
+            - generic [ref=e386]:
+              - heading "Paso 2. Comenzar a usar la API" [level=2] [ref=e387]
+              - button [ref=e388] [cursor=pointer]
+            - list [ref=e392]:
+              - listitem [ref=e394]:
+                - text: Haz clic en el botón
+                - strong [ref=e395]: Comenzar a usar la API
+                - text: para configurar la API. Para hacerlo, agrega un número de teléfono y envía tu primer mensaje. Se te redirige a la página
+                - strong [ref=e396]: Configuración de la API
+                - text: .
+              - listitem [ref=e398]:
+                - text: En la sección
+                - strong [ref=e399]: Configuración de la API
+                - text: ", conecta tu app a una cuenta de WhatsApp Business. Esta conexión permite a tu app acceder a la API de la nube de WhatsApp y enviar mensajes en nombre de tu negocio. Selecciona una cuenta de WhatsApp Business existente o crea una nueva:"
+                - list [ref=e400]:
+                  - listitem [ref=e402]:
+                    - strong [ref=e403]: "Para usar una cuenta preexistente:"
+                    - text: selecciona la cuenta de WhatsApp Business en el menú desplegable.
+                  - listitem [ref=e405]:
+                    - strong [ref=e406]: "Para crear una nueva cuenta:"
+                    - text: haz clic en
+                    - strong [ref=e407]: Crear una cuenta de WhatsApp Business
+                    - text: y sigue las instrucciones para configurar tu perfil de empresa.
+              - listitem [ref=e409]:
+                - text: Una vez conectada, verás el identificador de tu cuenta de WhatsApp Business en el panel de configuración de la API.
+                - list [ref=e410]:
+                  - listitem [ref=e412]: Guarda el identificador para usarlo en las llamadas a la API.
+            - blockquote [ref=e413]:
+              - generic [ref=e414]:
+                - strong [ref=e415]: "Nota:"
+                - text: Si creaste un nuevo portfolio comercial de Meta durante la creación de la app, es posible que se haya creado automáticamente una cuenta de WhatsApp Business para ti. Verifica la conexión en la sección de configuración de la API antes de continuar.
+            - separator [ref=e416]
+            - generic [ref=e419]:
+              - heading "Paso 3. Enviar y recibir mensajes" [level=2] [ref=e420]
+              - button [ref=e421] [cursor=pointer]
+            - list [ref=e425]:
+              - listitem [ref=e427]:
+                - text: Haz clic en
+                - strong [ref=e428]: Generar token de acceso
+                - text: para generar un token de acceso temporal y enviar un mensaje de prueba.
+              - listitem [ref=e430]:
+                - text: Selecciona un número de teléfono
+                - strong [ref=e431]: De
+                - text: o agrega uno nuevo desde el menú desplegable.
+              - listitem [ref=e433]:
+                - text: Agrega un número de teléfono
+                - strong [ref=e434]: Para
+                - text: que recibirá el mensaje de prueba.
+              - listitem [ref=e436]:
+                - text: Haz clic en el botón
+                - strong [ref=e437]: Enviar mensaje
+                - text: para enviar tu primer mensaje.
+                - list [ref=e438]:
+                  - listitem [ref=e440]: Asegúrate de conservar tanto el identificador de tu número de teléfono de prueba como el identificador de la cuenta de WhatsApp Business para usarlos más tarde.
+              - listitem [ref=e442]: Cuando recibas el mensaje que enviaste, asegúrate de responder para continuar la conversación.
+            - generic [ref=e443]: En el menú de la izquierda, se muestran las formas en las que puedes personalizar la configuración y los permisos de los casos de uso para que la app funcione de la manera que desees. Puedes actualizar esta configuración en cualquier momento.
+            - list [ref=e444]:
+              - listitem [ref=e446]:
+                - link [ref=e447] [cursor=pointer]:
+                  - /url: /documentation/development/create-an-app/whatsapp-use-case#permissions-and-features
+                  - strong [ref=e448]: Permisos y funciones
+                - text: ": consulta los permisos obligatorios y opcionales para este caso de uso y agrégalos a una solicitud de revisión de apps, si corresponde."
+              - listitem [ref=e450]:
+                - link [ref=e451] [cursor=pointer]:
+                  - /url: /documentation/development/create-an-app/whatsapp-use-case#quickstart
+                  - strong [ref=e452]: Inicio rápido
+                - text: ": empieza a usar la API y descubre cómo hacer crecer tu empresa, mejorar el ROI y administrar tu cuenta de WhatsApp Business."
+              - listitem [ref=e454]:
+                - link [ref=e455] [cursor=pointer]:
+                  - /url: /documentation/development/create-an-app/whatsapp-use-case#api-setup
+                  - strong [ref=e456]: Configuración de la API
+                - text: "- Genera tokens de acceso, envía y recibe mensajes, y configura webhooks y el SDK de WhatsApp."
+              - listitem [ref=e458]:
+                - link [ref=e459] [cursor=pointer]:
+                  - /url: /documentation/development/create-an-app/whatsapp-use-case#configuration
+                  - strong [ref=e460]: Configuración
+                - text: ": configura webhooks y el SDK de WhatsApp."
+              - listitem [ref=e462]:
+                - link [ref=e463] [cursor=pointer]:
+                  - /url: /documentation/development/create-an-app/whatsapp-use-case#resources
+                  - strong [ref=e464]: Recursos
+                - text: ": consulta la documentación para desarrolladores de WhatsApp, los cursos de Meta Blueprint y los recursos de asistencia."
+              - listitem [ref=e466]:
+                - link [ref=e467] [cursor=pointer]:
+                  - /url: /documentation/development/create-an-app/whatsapp-use-case#tech-provider-onboarding
+                  - strong [ref=e468]: Registro de proveedores de tecnología
+                - text: ": comienza a ampliar la plataforma de WhatsApp Business para tu empresa."
+              - listitem [ref=e470]:
+                - link [ref=e471] [cursor=pointer]:
+                  - /url: /documentation/development/create-an-app/whatsapp-use-case#partner-solutions
+                  - strong [ref=e472]: Soluciones para socios
+                - text: – Crea una solución para socios.
+              - listitem [ref=e474]:
+                - link [ref=e475] [cursor=pointer]:
+                  - /url: /documentation/development/create-an-app/whatsapp-use-case#embedded-signup-builder
+                  - strong [ref=e476]: Administrador de registro insertado
+                - text: ": integra el proceso de registro insertado en tu sitio web o portal del cliente."
+            - separator [ref=e477]
+            - generic [ref=e480]:
+              - heading "Paso 4. Configurar la app de prueba de webhooks" [level=2] [ref=e481]
+              - button [ref=e482] [cursor=pointer]
+            - generic [ref=e486]: Tendrás que configurar un punto de conexión de webhook para recibir notificaciones sobre el estado de los mensajes, como "leído" o "entregado".
+            - generic [ref=e487]:
+              - text: Usa el servidor de webhook de ejemplo para realizar pruebas. Para ello, sigue la guía
+              - link "Usar una app de webhook de prueba" [ref=e488] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/webhooks/set-up-whatsapp-echo-bot
+              - text: .
+            - generic [ref=e489]: "Una vez que se haya establecido la app de webhook de prueba, responde en la conversación de chat de WhatsApp que creaste contigo. Verás la carga del webhook en la app de prueba de la siguiente manera:"
+            - generic [ref=e490]:
+              - generic [ref=e491]: "{ \"object\": \"whatsapp_business_account\", \"entry\": [ { \"id\": \"215589313241560883\", \"changes\": [ { \"value\": { \"messaging_product\": \"whatsapp\", \"metadata\": { \"display_phone_number\": \"15551797781\", \"phone_number_id\": \"7794189252778687\" }, \"contacts\": [ { \"profile\": { \"name\": \"Jessica Laverdetman\" }, \"wa_id\": \"13557825698\" } ], \"messages\": [ { \"from\": \"17863559966\", \"id\": \"wamid.HBgLMTc4NjM1NTk5NjYVAGHAYWYET688aASGNTI1QzZFQjhEMDk2QQA=\", \"timestamp\": \"1758254144\", \"text\": { \"body\": \"Hi!\" }, \"type\": \"text\" } ] }, \"field\": \"messages\" } ] } ] }"
+              - button [ref=e494] [cursor=pointer]
+            - separator [ref=e497]
+            - generic [ref=e500]:
+              - heading "Paso 5. Crea un usuario del sistema y genera un token de acceso permanente" [level=2] [ref=e501]
+              - button [ref=e502] [cursor=pointer]
+            - generic [ref=e506]:
+              - text: El token de acceso temporal que creaste para enviar el mensaje de la plantilla
+              - code [ref=e507]: hello_world
+              - text: caduca rápidamente y no es adecuado para fines de desarrollo. Por este motivo, deberás crear un token permanente para usarlo en la plataforma de WhatsApp Business.
+            - list [ref=e508]:
+              - listitem [ref=e510]:
+                - text: Ve a
+                - link [ref=e511] [cursor=pointer]:
+                  - /url: https://business.facebook.com/latest/settings
+                  - text: Configuración del negocio
+                  - generic [ref=e512]:
+                    - text: ⁠
+                    - img "El enlace se abre en una pestaña o ventana nueva" [ref=e513]
+                - text: y haz clic en
+                - strong [ref=e516]: Usuarios del sistema
+                - text: en la barra lateral.
+              - listitem [ref=e518]:
+                - text: Haz clic en el botón
+                - strong [ref=e519]: Agregar+
+                - text: en la esquina superior derecha y sigue las indicaciones para crear un nuevo usuario del sistema.
+              - listitem [ref=e521]:
+                - text: Selecciona el nuevo usuario del sistema que creaste y haz clic en
+                - strong [ref=e522]: Asignar activos
+                - text: .
+                - list [ref=e523]:
+                  - listitem [ref=e525]:
+                    - text: Selecciona tu app y activa
+                    - strong [ref=e526]: Administrar app
+                    - text: en
+                    - strong [ref=e527]: Control total
+                    - text: .
+                  - listitem [ref=e529]:
+                    - text: Selecciona tu cuenta de WhatsApp y activa
+                    - strong [ref=e530]: Administrar cuentas de WhatsApp Business
+                    - text: en
+                    - strong [ref=e531]: Control total.
+                  - listitem [ref=e533]:
+                    - text: Haz clic en el botón
+                    - strong [ref=e534]: Asignar activos
+                    - text: .
+              - listitem [ref=e536]:
+                - text: Haz clic en
+                - strong [ref=e537]: Generar token
+                - text: .
+                - list [ref=e538]:
+                  - listitem [ref=e540]: Sigue las indicaciones para generar tu token.
+                  - listitem [ref=e542]:
+                    - text: "Agrega los siguientes permisos al token:"
+                    - list [ref=e543]:
+                      - listitem [ref=e545]:
+                        - link "business_management" [ref=e546] [cursor=pointer]:
+                          - /url: https://developers.facebook.com/docs/permissions#b
+                      - listitem [ref=e548]:
+                        - link "whatsapp_business_messaging" [ref=e549] [cursor=pointer]:
+                          - /url: https://developers.facebook.com/docs/permissions#w
+                      - listitem [ref=e551]:
+                        - link "whatsapp_business_management" [ref=e552] [cursor=pointer]:
+                          - /url: https://developers.facebook.com/docs/permissions#w
+                  - listitem [ref=e554]: Copia el token y guárdalo en un lugar seguro para usarlo en los próximos pasos.
+            - separator [ref=e555]
+            - generic [ref=e558]:
+              - heading "Paso 6. Envía un mensaje sin plantilla" [level=2] [ref=e559]
+              - button [ref=e560] [cursor=pointer]
+            - generic [ref=e564]:
+              - text: Cuando respondiste al mensaje de prueba que enviaste, se abrió lo que se conoce como un
+              - link "intervalo de servicio de atención al cliente" [ref=e565] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/messages/send-messages#customer-service-windows
+              - text: . Este intervalo de 24 horas te permite enviar
+              - link "mensajes sin plantilla" [ref=e566] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/messages/send-messages#message-types
+              - text: a los usuarios en WhatsApp. Con el intervalo del servicio de atención al cliente abierto, puedes enviarte un mensaje sin plantilla. Para hacerlo, ingresa el identificador de tu número de teléfono de prueba, el token de acceso de usuario del sistema y tu número de teléfono en el siguiente ejemplo de código. Luego, pega el código en tu terminal y ejecútalo.
+            - generic [ref=e567]:
+              - code [ref=e569]: "curl 'https://graph.facebook.com/v23.0/<TEST_BUSINESS_PHONE_NUMBER_ID>/messages' \\ -H 'Content-Type: application/json' \\ -H 'Authorization: Bearer <SYSTEM_USER_ACCESS_TOKEN>' \\ -d ' { \"messaging_product\": \"whatsapp\", \"recipient_type\": \"individual\", \"to\": \"<WHATSAPP_USER_PHONE_NUMBER>\", \"type\": \"text\", \"text\": { \"body\": \"Hello!\" } }'"
+              - button [ref=e570] [cursor=pointer]
+            - generic [ref=e573]: Después de enviar correctamente el mensaje, revisa la app de webhook de prueba para ver el evento de webhook que confirma la recepción del mensaje.
+            - separator [ref=e574]
+            - generic [ref=e577]:
+              - heading "Paso 7. Finalizar" [level=2] [ref=e578]
+              - button [ref=e579] [cursor=pointer]
+            - generic [ref=e583]: La API de la nube de WhatsApp te permite enviar mensajes y recibir webhooks, que son los bloques fundamentales para la integración de mensajes. Además de estas funciones básicas, la API ofrece funciones adicionales, como la creación y administración de grupos, y la compatibilidad con las llamadas. Para explorar estas funciones avanzadas, consulta la sección "Más información" a continuación.
+            - separator [ref=e584]
+            - generic [ref=e587]:
+              - heading "Más información" [level=2] [ref=e588]
+              - button [ref=e589] [cursor=pointer]
+            - list [ref=e593]:
+              - listitem [ref=e595]:
+                - link "Obtén información sobre los diferentes tipos de mensajes sin plantilla" [ref=e596] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/messages/send-messages
+              - listitem [ref=e598]:
+                - link "Aprende a crear y enviar mensajes de plantilla" [ref=e599] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/templates/overview
+              - listitem [ref=e601]:
+                - link "Aprende a crear y administrar grupos de WhatsApp a través de la API" [ref=e602] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/groups
+              - listitem [ref=e604]:
+                - link "Aprende a enviar y recibir llamadas en WhatsApp a través de la API" [ref=e605] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/calling
+              - listitem [ref=e607]:
+                - link "Aprende a agregar un número de teléfono del negocio" [ref=e608] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers
+              - listitem [ref=e610]:
+                - link "Aprende a configurar tu propio servidor de webhook" [ref=e611] [cursor=pointer]:
+                  - /url: https://developers.facebook.com/docs/graph-api/webhooks/getting-started
+              - listitem [ref=e613]:
+                - link "Registrar usuarios de la app de WhatsApp Business" [ref=e614] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/embedded-signup/onboarding-business-app-users
+                - text: (permite que las empresas que ya utilizan la app de WhatsApp Business conecten la cuenta y su número de teléfono existentes a la API de la nube a través del registro insertado)
+              - listitem [ref=e616]:
+                - link "Conviértete en socio" [ref=e617] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/solution-providers/overview
+              - listitem [ref=e619]:
+                - link [ref=e620] [cursor=pointer]:
+                  - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fgithub.com%2Ffacebook%2Fopenapi&h=AUCsIGdoRIq3ykOK-YPaeeM5JvU0zISWhTgy8FxbSKIl1Ktttd-qNhaN9udDaevckZGXRlIttDshdGdRlr2Iqm8wOuVxRv9tYg0qbsMAN68PAOucmSVAake7P_KG8ZYWSegPkF8NLI3-J84ZLGDyNQ
+                  - text: Consultar la especificación OpenAPI de la API de WhatsApp
+                  - generic [ref=e621]:
+                    - text: ⁠
+                    - img "El enlace se abre en una pestaña o ventana nueva" [ref=e622]
+      - complementary [ref=e625]
+  - generic [ref=e627]:
+    - separator [ref=e628]
+    - contentinfo [ref=e629]:
+      - generic [ref=e630]:
+        - separator [ref=e631]
+        - generic [ref=e633]:
+          - generic [ref=e635]:
+            - generic [ref=e637]:
+              - img "Meta" [ref=e639]
+              - list [ref=e641]:
+                - listitem:
+                  - link "Facebook":
+                    - /url: https://www.facebook.com/MetaforDevelopers
+                    - img "Facebook"
+                - listitem:
+                  - link "Instagram":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmetafordevelopers%2F&h=AUCsIGdoRIq3ykOK-YPaeeM5JvU0zISWhTgy8FxbSKIl1Ktttd-qNhaN9udDaevckZGXRlIttDshdGdRlr2Iqm8wOuVxRv9tYg0qbsMAN68PAOucmSVAake7P_KG8ZYWSegPkF8NLI3-J84ZLGDyNQ
+                    - img "Instagram"
+                - listitem:
+                  - link "X":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2Fmetafordevs&h=AUCsIGdoRIq3ykOK-YPaeeM5JvU0zISWhTgy8FxbSKIl1Ktttd-qNhaN9udDaevckZGXRlIttDshdGdRlr2Iqm8wOuVxRv9tYg0qbsMAN68PAOucmSVAake7P_KG8ZYWSegPkF8NLI3-J84ZLGDyNQ
+                    - img "X"
+                - listitem:
+                  - link "LinkedIn":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fshowcase%2Fmeta-for-developers%2F&h=AUCsIGdoRIq3ykOK-YPaeeM5JvU0zISWhTgy8FxbSKIl1Ktttd-qNhaN9udDaevckZGXRlIttDshdGdRlr2Iqm8wOuVxRv9tYg0qbsMAN68PAOucmSVAake7P_KG8ZYWSegPkF8NLI3-J84ZLGDyNQ
+                    - img "LinkedIn"
+                - listitem:
+                  - link "YouTube":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2FMetaDevelopers%2F&h=AUCsIGdoRIq3ykOK-YPaeeM5JvU0zISWhTgy8FxbSKIl1Ktttd-qNhaN9udDaevckZGXRlIttDshdGdRlr2Iqm8wOuVxRv9tYg0qbsMAN68PAOucmSVAake7P_KG8ZYWSegPkF8NLI3-J84ZLGDyNQ
+                    - img "YouTube"
+            - generic [ref=e643]:
+              - generic [ref=e646]:
+                - heading "Crear con Meta" [level=2] [ref=e647]
+                - list [ref=e649]:
+                  - listitem [ref=e650]:
+                    - link "Inteligencia artificial" [ref=e652] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fai%2F&h=AUCsIGdoRIq3ykOK-YPaeeM5JvU0zISWhTgy8FxbSKIl1Ktttd-qNhaN9udDaevckZGXRlIttDshdGdRlr2Iqm8wOuVxRv9tYg0qbsMAN68PAOucmSVAake7P_KG8ZYWSegPkF8NLI3-J84ZLGDyNQ
+                  - listitem [ref=e653]:
+                    - link "Meta Horizon" [ref=e655] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fhorizon%2F&h=AUCsIGdoRIq3ykOK-YPaeeM5JvU0zISWhTgy8FxbSKIl1Ktttd-qNhaN9udDaevckZGXRlIttDshdGdRlr2Iqm8wOuVxRv9tYg0qbsMAN68PAOucmSVAake7P_KG8ZYWSegPkF8NLI3-J84ZLGDyNQ
+                  - listitem [ref=e656]:
+                    - link "Tecnologías sociales" [ref=e658] [cursor=pointer]:
+                      - /url: /social-technologies/
+              - generic [ref=e661]:
+                - heading "Noticias" [level=2] [ref=e662]
+                - list [ref=e664]:
+                  - listitem [ref=e665]:
+                    - link "Meta for Developers" [ref=e667] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fblog%2F&h=AUCsIGdoRIq3ykOK-YPaeeM5JvU0zISWhTgy8FxbSKIl1Ktttd-qNhaN9udDaevckZGXRlIttDshdGdRlr2Iqm8wOuVxRv9tYg0qbsMAN68PAOucmSVAake7P_KG8ZYWSegPkF8NLI3-J84ZLGDyNQ
+                  - listitem [ref=e668]:
+                    - link "Blog" [ref=e670] [cursor=pointer]:
+                      - /url: /blog/
+                  - listitem [ref=e671]:
+                    - link "Historias de éxito" [ref=e673] [cursor=pointer]:
+                      - /url: /success-stories/
+              - generic [ref=e676]:
+                - heading "Ayuda" [level=2] [ref=e677]
+                - list [ref=e679]:
+                  - listitem [ref=e680]:
+                    - link "Ayuda para desarrolladores" [ref=e682] [cursor=pointer]:
+                      - /url: /support/
+                  - listitem [ref=e683]:
+                    - link "Herramienta de errores" [ref=e685] [cursor=pointer]:
+                      - /url: /support/bugs/
+                  - listitem [ref=e686]:
+                    - link "Estado de la plataforma" [ref=e688] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmetastatus.com%2F&h=AUCsIGdoRIq3ykOK-YPaeeM5JvU0zISWhTgy8FxbSKIl1Ktttd-qNhaN9udDaevckZGXRlIttDshdGdRlr2Iqm8wOuVxRv9tYg0qbsMAN68PAOucmSVAake7P_KG8ZYWSegPkF8NLI3-J84ZLGDyNQ
+                  - listitem [ref=e689]:
+                    - link "Foro de la comunidad de desarrolladores" [ref=e691] [cursor=pointer]:
+                      - /url: https://www.facebook.com/groups/fbdevelopers/
+                  - listitem [ref=e692]:
+                    - link "Reportar un incidente" [ref=e694] [cursor=pointer]:
+                      - /url: /incident/report/
+              - generic [ref=e697]:
+                - heading "Acerca de nosotros" [level=2] [ref=e698]
+                - list [ref=e700]:
+                  - listitem [ref=e701]:
+                    - link "Información" [ref=e703] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.fb.com%2F&h=AUCsIGdoRIq3ykOK-YPaeeM5JvU0zISWhTgy8FxbSKIl1Ktttd-qNhaN9udDaevckZGXRlIttDshdGdRlr2Iqm8wOuVxRv9tYg0qbsMAN68PAOucmSVAake7P_KG8ZYWSegPkF8NLI3-J84ZLGDyNQ
+                  - listitem [ref=e704]:
+                    - link "Empleos" [ref=e706] [cursor=pointer]:
+                      - /url: https://www.facebook.com/careers
+              - generic [ref=e709]:
+                - heading "Condiciones y políticas" [level=2] [ref=e710]
+                - list [ref=e712]:
+                  - listitem [ref=e713]:
+                    - link "Iniciativas de plataforma responsable" [ref=e715] [cursor=pointer]:
+                      - /url: /products/responsible-platform-initiatives/
+                  - listitem [ref=e716]:
+                    - link "Condiciones de la plataforma" [ref=e718] [cursor=pointer]:
+                      - /url: /terms/dfc_platform_terms/
+                  - listitem [ref=e719]:
+                    - link "Políticas para desarrolladores" [ref=e721] [cursor=pointer]:
+                      - /url: /devpolicy/
+                  - listitem [ref=e722]:
+                    - link "Política de privacidad" [ref=e724] [cursor=pointer]:
+                      - /url: https://www.facebook.com/about/privacy
+                  - listitem [ref=e725]:
+                    - link "Cookies" [ref=e727] [cursor=pointer]:
+                      - /url: https://www.facebook.com/help/cookies
+          - button "Cambiar idioma" [ref=e732] [cursor=pointer]:
+            - generic [ref=e733]: Español

@@ -1,0 +1,507 @@
+- generic:
+  - generic:
+    - generic:
+      - iframe
+    - generic:
+      - iframe
+    - generic:
+      - iframe
+    - generic:
+      - iframe
+    - generic [ref=f68e10]:
+      - generic [ref=f68e13]:
+        - generic [ref=f68e14]:
+          - link [ref=f68e16] [cursor=pointer]:
+            - /url: /?no_redirect=true
+            - img "Logotipo de Meta" [ref=f68e18]
+          - tablist [ref=f68e27]:
+            - link "Mis apps" [ref=f68e28] [cursor=pointer]:
+              - /url: /apps/
+            - link "Acciones requeridas" [ref=f68e32] [cursor=pointer]:
+              - /url: /required-actions/
+            - tab "Documentos" [ref=f68e36] [cursor=pointer]
+            - tab "Herramientas" [ref=f68e41] [cursor=pointer]
+            - tab "Ayuda" [ref=f68e46] [cursor=pointer]
+        - generic [ref=f68e51]:
+          - generic [ref=f68e52]:
+            - generic [ref=f68e53]: Términos de búsqueda
+            - textbox "Términos de búsqueda" [ref=f68e69]:
+              - /placeholder: Buscar...
+          - link [ref=f68e72] [cursor=pointer]:
+            - /url: "#"
+          - link "Facebook" [ref=f68e77] [cursor=pointer]:
+            - /url: "#"
+            - img "Facebook" [ref=f68e82]
+      - generic [ref=f68e83]:
+        - generic [ref=f68e85]:
+          - generic [ref=f68e88]:
+            - generic [ref=f68e91]:
+              - generic [ref=f68e92]: Searchable selector for all apps
+              - combobox "Searchable selector for all apps horarium" [ref=f68e102] [cursor=pointer]:
+                - generic [ref=f68e103]: horarium
+            - navigation [ref=f68e111]:
+              - list [ref=f68e112]:
+                - listitem [ref=f68e113]:
+                  - button "Panel" [ref=f68e115] [cursor=pointer]
+                  - generic:
+                    - listitem:
+                      - generic: Panel
+                - listitem [ref=f68e121]:
+                  - button "Acciones requeridas" [ref=f68e123] [cursor=pointer]
+                  - generic:
+                    - listitem:
+                      - generic: Acciones requeridas
+                - listitem [ref=f68e129]:
+                  - button "Casos de uso" [ref=f68e131] [cursor=pointer]
+                  - generic:
+                    - listitem:
+                      - generic: Casos de uso
+                - listitem [ref=f68e137]:
+                  - generic [ref=f68e138]:
+                    - button "Inicio de sesión con Facebook para empresas" [ref=f68e140] [cursor=pointer]
+                    - generic:
+                      - listitem:
+                        - generic:
+                          - generic: Inicio de sesión con Facebook para empresas
+                          - button "Activar o desactivar grupo" [disabled] [ref=f68e146]
+                  - list [ref=f68e152]:
+                    - generic [ref=f68e153]:
+                      - button "Configurar" [ref=f68e155] [cursor=pointer]
+                      - generic:
+                        - listitem:
+                          - generic: Configurar
+                    - generic [ref=f68e160]:
+                      - button "Inicio rápido" [ref=f68e162] [cursor=pointer]
+                      - generic:
+                        - listitem:
+                          - generic: Inicio rápido
+                    - generic [ref=f68e167]:
+                      - button "Configuraciones" [ref=f68e169] [cursor=pointer]
+                      - generic:
+                        - listitem:
+                          - generic: Configuraciones
+                    - generic [ref=f68e174]:
+                      - button "Plantillas" [ref=f68e176] [cursor=pointer]
+                      - generic:
+                        - listitem:
+                          - generic: Plantillas
+                - listitem [ref=f68e181]:
+                  - button "Pruebas" [ref=f68e183] [cursor=pointer]
+                  - generic:
+                    - listitem:
+                      - generic: Pruebas
+                - listitem [ref=f68e189]:
+                  - button "Publicar" [ref=f68e191] [cursor=pointer]
+                  - generic:
+                    - listitem:
+                      - generic: Publicar
+          - generic [ref=f68e197]:
+            - navigation [ref=f68e198]:
+              - list [ref=f68e199]:
+                - listitem [ref=f68e200]:
+                  - generic [ref=f68e201]:
+                    - button "Configuración de la app" [ref=f68e203] [cursor=pointer]
+                    - generic:
+                      - listitem:
+                        - generic:
+                          - generic: Configuración de la app
+                          - button "Activar o desactivar grupo" [disabled] [ref=f68e209]
+                  - list [ref=f68e215]:
+                    - generic [ref=f68e216]:
+                      - button "Básica" [ref=f68e218] [cursor=pointer]
+                      - generic:
+                        - listitem:
+                          - generic: Básica
+                    - generic [ref=f68e223]:
+                      - button "Avanzada" [ref=f68e225] [cursor=pointer]
+                      - generic:
+                        - listitem:
+                          - generic: Avanzada
+                - listitem [ref=f68e230]:
+                  - generic [ref=f68e231]:
+                    - button "Roles de la app" [ref=f68e233] [cursor=pointer]
+                    - generic:
+                      - listitem:
+                        - generic:
+                          - generic: Roles de la app
+                          - button "Activar o desactivar grupo" [disabled] [ref=f68e239]
+                  - list [ref=f68e245]:
+                    - generic [ref=f68e246]:
+                      - button "Roles" [ref=f68e248] [cursor=pointer]
+                      - generic:
+                        - listitem:
+                          - generic: Roles
+                    - generic [ref=f68e253]:
+                      - button "Usuarios de prueba" [ref=f68e255] [cursor=pointer]
+                      - generic:
+                        - listitem:
+                          - generic: Usuarios de prueba
+                - listitem [ref=f68e260]:
+                  - button "Bandeja de entrada de alertas" [ref=f68e262] [cursor=pointer]:
+                    - generic [ref=f68e269]:
+                      - generic [ref=f68e270]: "1"
+                      - status [ref=f68e272]: 1 alertas no leídas
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic: Bandeja de entrada de alertas
+                        - generic:
+                          - generic:
+                            - generic: "1"
+                            - status: 1 alertas no leídas
+            - separator [ref=f68e273]
+            - generic [ref=f68e274]:
+              - button "Registro de actividad" [ref=f68e275] [cursor=pointer]
+              - button "Ayuda" [ref=f68e282] [cursor=pointer]
+              - button "Abrir/cerrar navegación lateral" [ref=f68e290] [cursor=pointer]
+        - generic [ref=f68e301]:
+          - navigation "Ruta de navegación" [ref=f68e303]:
+            - generic [ref=f68e304]:
+              - link [ref=f68e305] [cursor=pointer]:
+                - /url: /apps/1060916226527875/use_cases/
+                - heading "Casos de uso" [level=4] [ref=f68e306]
+              - heading "Personalizar" [level=4] [ref=f68e308]
+          - generic [ref=f68e312]:
+            - heading "Personalizar caso de uso" [level=2] [ref=f68e313]
+            - generic [ref=f68e314]: Personaliza las opciones de configuración y los permisos de los casos de uso para que la app funcione como quieres.
+          - generic [ref=f68e315]:
+            - generic [ref=f68e321]:
+              - generic [ref=f68e323]:
+                - generic [ref=f68e324]: Selector de caso de uso
+                - combobox "Selector de caso de uso Conectar en WhatsApp" [ref=f68e334] [cursor=pointer]:
+                  - generic [ref=f68e335]: Conectar en WhatsApp
+              - navigation "Principales casos de uso" [ref=f68e350]:
+                - list [ref=f68e351]:
+                  - generic [ref=f68e352]:
+                    - listitem [ref=f68e354]:
+                      - button "Resumen" [ref=f68e356] [cursor=pointer]
+                      - generic:
+                        - listitem:
+                          - generic: Resumen
+                    - listitem [ref=f68e360]:
+                      - generic [ref=f68e361]:
+                        - button "Configuración básica" [expanded] [ref=f68e363] [cursor=pointer]
+                        - generic:
+                          - listitem:
+                            - generic:
+                              - generic: Configuración básica
+                              - button "Activar o desactivar grupo" [ref=f68e366] [cursor=pointer]
+                      - list [ref=f68e373]:
+                        - generic [ref=f68e374]:
+                          - button "Paso 1. Pruébalo" [active] [ref=f68e376] [cursor=pointer]
+                          - generic:
+                            - listitem:
+                              - generic: Paso 1. Pruébalo
+                        - generic [ref=f68e381]:
+                          - 'button "Paso 2: Configuración de producción" [ref=f68e383] [cursor=pointer]'
+                          - generic:
+                            - listitem:
+                              - generic: "Paso 2: Configuración de producción"
+                        - generic [ref=f68e388]:
+                          - 'button "Paso 3: Verificación del negocio" [ref=f68e390] [cursor=pointer]'
+                          - generic:
+                            - listitem:
+                              - generic: "Paso 3: Verificación del negocio"
+                        - generic [ref=f68e395]:
+                          - button "Próximos pasos" [ref=f68e397] [cursor=pointer]
+                          - generic:
+                            - listitem:
+                              - generic: Próximos pasos
+                    - listitem [ref=f68e403]:
+                      - generic [ref=f68e404]:
+                        - button "Conviértete en socio" [expanded] [ref=f68e406] [cursor=pointer]
+                        - generic:
+                          - listitem:
+                            - generic:
+                              - generic: Conviértete en socio
+                              - button "Activar o desactivar grupo" [ref=f68e409] [cursor=pointer]
+                      - list [ref=f68e416]:
+                        - generic [ref=f68e417]:
+                          - button "Conviértete en proveedor de tecnología" [ref=f68e419] [cursor=pointer]
+                          - generic:
+                            - listitem:
+                              - generic: Conviértete en proveedor de tecnología
+                    - listitem [ref=f68e425]:
+                      - generic [ref=f68e426]:
+                        - button "Otras herramientas" [expanded] [ref=f68e428] [cursor=pointer]
+                        - generic:
+                          - listitem:
+                            - generic:
+                              - generic: Otras herramientas
+                              - button "Activar o desactivar grupo" [ref=f68e431] [cursor=pointer]
+                      - list [ref=f68e438]:
+                        - generic [ref=f68e439]:
+                          - button "Herramientas" [ref=f68e441] [cursor=pointer]
+                          - generic:
+                            - listitem:
+                              - generic: Herramientas
+                        - generic [ref=f68e446]:
+                          - button "Permisos y funciones" [ref=f68e448] [cursor=pointer]
+                          - generic:
+                            - listitem:
+                              - generic: Permisos y funciones
+                        - generic [ref=f68e453]:
+                          - button "Recursos" [ref=f68e455] [cursor=pointer]
+                          - generic:
+                            - listitem:
+                              - generic: Recursos
+            - generic [ref=f68e771]:
+              - generic [ref=f68e776]:
+                - generic [ref=f68e777]:
+                  - generic [ref=f68e778]:
+                    - heading "Paso 1. Pruébalo" [level=2] [ref=f68e779]
+                    - button "Preguntar a la IA" [ref=f68e780] [cursor=pointer]
+                  - generic [ref=f68e784]: 5 min • Envía un mensaje desde tu número de prueba para entender cómo funciona la API de WhatsApp.
+                - list [ref=f68e787]:
+                  - listitem [ref=f68e788]:
+                    - button "Solicita un número de prueba de WhatsApp Completado" [expanded] [ref=f68e789] [cursor=pointer]:
+                      - listitem [ref=f68e793]:
+                        - generic [ref=f68e800]:
+                          - heading "Solicita un número de prueba de WhatsApp" [level=4] [ref=f68e801]
+                          - generic [ref=f68e802]: Completado
+                    - region [ref=f68e805]:
+                      - generic [ref=f68e814]:
+                        - heading "Número de prueba" [level=4] [ref=f68e816]
+                        - generic [ref=f68e817]:
+                          - generic [ref=f68e818]: +1 (555) 674-5476
+                          - generic [ref=f68e821]:
+                            - generic [ref=f68e822]:
+                              - generic [ref=f68e823]: "Phone Number ID:"
+                              - generic [ref=f68e824]: "1311430818719322"
+                              - button "1311430818719322" [ref=f68e825] [cursor=pointer]
+                            - generic [ref=f68e831]:
+                              - generic [ref=f68e832]: "WhatsApp Business account ID:"
+                              - generic [ref=f68e833]: "1093680006598302"
+                              - button "1093680006598302" [ref=f68e834] [cursor=pointer]
+                        - heading "Token de acceso" [level=4] [ref=f68e843]
+                        - generic [ref=f68e844]:
+                          - generic [ref=f68e846]:
+                            - generic [ref=f68e847]: Cadena de token de acceso
+                            - textbox "Cadena de token de acceso" [disabled] [ref=f68e858]: ⚠ Not generated yet
+                          - button "Generar token" [ref=f68e859] [cursor=pointer]
+                  - separator [ref=f68e865]
+                  - listitem [ref=f68e866]:
+                    - button "Envía un mensaje desde tu número de prueba Completado" [expanded] [ref=f68e867] [cursor=pointer]:
+                      - listitem [ref=f68e871]:
+                        - generic [ref=f68e878]:
+                          - heading "Envía un mensaje desde tu número de prueba" [level=4] [ref=f68e879]
+                          - generic [ref=f68e880]: Completado
+                    - region [ref=f68e883]:
+                      - generic [ref=f68e888]:
+                        - generic [ref=f68e889]:
+                          - text: Usa aquí tu número de prueba. Podrás configurar tu número real y probarlo en
+                          - 'link "Paso 2: Configuración de producción." [ref=f68e890] [cursor=pointer]':
+                            - /url: https://developers.facebook.com/apps/1060916226527875/whatsapp-business/wa-configurations-v2/?business_id=1391570916488004
+                        - generic [ref=f68e897]:
+                          - generic [ref=f68e898]:
+                            - generic [ref=f68e899]:
+                              - heading "Tu número de prueba" [level=4] [ref=f68e902]
+                              - generic [ref=f68e904]:
+                                - generic [ref=f68e905]: De
+                                - combobox "De +1-555-674-5476" [disabled] [ref=f68e912]:
+                                  - generic [ref=f68e913]: +1-555-674-5476
+                            - generic [ref=f68e924]:
+                              - heading "Destinatario" [level=4] [ref=f68e927]
+                              - generic [ref=f68e930]:
+                                - generic [ref=f68e931]: Para
+                                - combobox "Para Selecciona un número de destinatario" [ref=f68e941] [cursor=pointer]:
+                                  - generic [ref=f68e942]: Selecciona un número de destinatario
+                            - generic [ref=f68e951]:
+                              - heading "Mensaje" [level=4] [ref=f68e954]
+                              - generic [ref=f68e956]:
+                                - generic [ref=f68e957]: Confirmación del pedido
+                                - combobox "Confirmación del pedido Confirmación del pedido" [ref=f68e967] [cursor=pointer]:
+                                  - generic [ref=f68e968]: Confirmación del pedido
+                            - generic [ref=f68e979]:
+                              - button "Enviar mensaje" [disabled] [ref=f68e980]
+                              - link "Ejecutar en Postman" [disabled] [ref=f68e986]
+                          - generic [ref=f68e998]:
+                            - code [ref=f68e1001]:
+                              - generic [ref=f68e1002]:
+                                - generic [ref=f68e1005]: 
+                                - generic [aria-hidden] [ref=f68e1028]:
+                                  - generic [ref=f68e1029]: "curl -i -X POST `"
+                                  - generic [ref=f68e1031]: "https://graph.facebook.com/v25.0/1311430818719322/messages `"
+                                  - generic [ref=f68e1033]: "-H 'Authorization: Bearer ' `"
+                                  - generic [ref=f68e1035]: "-H 'Content-Type: application/json' `"
+                                  - generic [ref=f68e1037]: "-d '{ \\\"messaging_product\\\": \\\"whatsapp\\\","
+                                  - generic [ref=f68e1039]: "\\\"to\\\": \\\"\\\","
+                                  - generic [ref=f68e1041]: "\\\"type\\\": \\\"template\\\","
+                                  - generic [ref=f68e1043]: "\\\"template\\\": { \\\"name\\\": \\\"jaspers_market_order_confirmation_v1\\\","
+                                  - generic [ref=f68e1045]: "\\\"language\\\": { \\\"code\\\": \\\"en_US\\\" },"
+                                  - generic [ref=f68e1047]: "\\\"components\\\": [{ \\\"type\\\": \\\"body\\\", \\\"parameters\\\": [{ \\\"type\\\": \\\"text\\\", \\\"text\\\": \\\"John Doe\\\" }, { \\\"type\\\": \\\"text\\\", \\\"text\\\": \\\"123456\\\" }, { \\\"type\\\": \\\"text\\\", \\\"text\\\": \\\"Sep 5, 2026\\\" }] }] } }'"
+                                - textbox "Editor content;Press Alt+F1 for Accessibility Options." [ref=f68e1050]: "curl -i -X POST ` https://graph.facebook.com/v25.0/1311430818719322/messages ` -H 'Authorization: Bearer ' ` -H 'Content-Type: application/json' ` -d '{ \\\"messaging_product\\\": \\\"whatsapp\\\", \\\"to\\\": \\\"\\\", \\\"type\\\": \\\"template\\\", \\\"template\\\": { \\\"name\\\": \\\"jaspers_market_order_confirmation_v1\\\", \\\"language\\\": { \\\"code\\\": \\\"en_US\\\" }, \\\"components\\\": [{ \\\"type\\\": \\\"body\\\", \\\"parameters\\\": [{ \\\"type\\\": \\\"text\\\", \\\"text\\\": \\\"John Doe\\\" }, { \\\"type\\\": \\\"te"
+                            - button "Copiar comando cURL para enviar mensaje" [disabled] [ref=f68e1052]
+                  - separator [ref=f68e1059]
+                  - listitem [ref=f68e1060]:
+                    - button [expanded] [ref=f68e1061] [cursor=pointer]:
+                      - listitem [ref=f68e1065]:
+                        - heading "Revisa los webhooks de prueba" [level=4] [ref=f68e1068]
+                    - region [ref=f68e1071]:
+                      - grid "7. Consulta los eventos del webhook" [ref=f68e1081]:
+                        - rowgroup [ref=f68e1082]:
+                          - row [ref=f68e1083]:
+                            - columnheader [ref=f68e1084]:
+                              - heading "Marca de tiempo" [level=4] [ref=f68e1088]
+                            - columnheader [ref=f68e1089]:
+                              - heading "Campo de webhook" [level=4] [ref=f68e1093]
+                            - columnheader [ref=f68e1094]:
+                              - heading "Carga útil" [level=4] [ref=f68e1098]
+                        - rowgroup [ref=f68e1099]:
+                          - row [ref=f68e1100]:
+                            - gridcell "5/9/2026, 03:02:08" [ref=f68e1101]
+                            - gridcell "messages" [ref=f68e1107]
+                            - gridcell [ref=f68e1113]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1116] [cursor=pointer]':
+                                - generic [ref=f68e1117]: ▶
+                                - generic [ref=f68e1118]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1122]:
+                            - gridcell "5/9/2026, 02:53:37" [ref=f68e1123]
+                            - gridcell "messages" [ref=f68e1129]
+                            - gridcell [ref=f68e1135]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1138] [cursor=pointer]':
+                                - generic [ref=f68e1139]: ▶
+                                - generic [ref=f68e1140]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1144]:
+                            - gridcell "5/9/2026, 02:31:33" [ref=f68e1145]
+                            - gridcell "messages" [ref=f68e1151]
+                            - gridcell [ref=f68e1157]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1160] [cursor=pointer]':
+                                - generic [ref=f68e1161]: ▶
+                                - generic [ref=f68e1162]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1166]:
+                            - gridcell "5/9/2026, 01:27:27" [ref=f68e1167]
+                            - gridcell "messages" [ref=f68e1173]
+                            - gridcell [ref=f68e1179]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1182] [cursor=pointer]':
+                                - generic [ref=f68e1183]: ▶
+                                - generic [ref=f68e1184]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1188]:
+                            - gridcell "5/9/2026, 01:27:25" [ref=f68e1189]
+                            - gridcell "messages" [ref=f68e1195]
+                            - gridcell [ref=f68e1201]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1204] [cursor=pointer]':
+                                - generic [ref=f68e1205]: ▶
+                                - generic [ref=f68e1206]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1210]:
+                            - gridcell "5/9/2026, 01:27:25" [ref=f68e1211]
+                            - gridcell "messages" [ref=f68e1217]
+                            - gridcell [ref=f68e1223]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1226] [cursor=pointer]':
+                                - generic [ref=f68e1227]: ▶
+                                - generic [ref=f68e1228]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1232]:
+                            - gridcell "5/9/2026, 01:27:25" [ref=f68e1233]
+                            - gridcell "messages" [ref=f68e1239]
+                            - gridcell [ref=f68e1245]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1248] [cursor=pointer]':
+                                - generic [ref=f68e1249]: ▶
+                                - generic [ref=f68e1250]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1254]:
+                            - gridcell "5/9/2026, 01:24:00" [ref=f68e1255]
+                            - gridcell "messages" [ref=f68e1261]
+                            - gridcell [ref=f68e1267]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1270] [cursor=pointer]':
+                                - generic [ref=f68e1271]: ▶
+                                - generic [ref=f68e1272]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1276]:
+                            - gridcell "5/9/2026, 01:23:07" [ref=f68e1277]
+                            - gridcell "messages" [ref=f68e1283]
+                            - gridcell [ref=f68e1289]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1292] [cursor=pointer]':
+                                - generic [ref=f68e1293]: ▶
+                                - generic [ref=f68e1294]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1298]:
+                            - gridcell "29/8/2026, 02:10:33" [ref=f68e1299]
+                            - gridcell "messages" [ref=f68e1305]
+                            - gridcell [ref=f68e1311]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1314] [cursor=pointer]':
+                                - generic [ref=f68e1315]: ▶
+                                - generic [ref=f68e1316]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1320]:
+                            - gridcell "29/8/2026, 01:49:55" [ref=f68e1321]
+                            - gridcell "messages" [ref=f68e1327]
+                            - gridcell [ref=f68e1333]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1336] [cursor=pointer]':
+                                - generic [ref=f68e1337]: ▶
+                                - generic [ref=f68e1338]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1342]:
+                            - gridcell "29/8/2026, 01:39:43" [ref=f68e1343]
+                            - gridcell "messages" [ref=f68e1349]
+                            - gridcell [ref=f68e1355]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1358] [cursor=pointer]':
+                                - generic [ref=f68e1359]: ▶
+                                - generic [ref=f68e1360]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1364]:
+                            - gridcell "29/8/2026, 01:24:19" [ref=f68e1365]
+                            - gridcell "messages" [ref=f68e1371]
+                            - gridcell [ref=f68e1377]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1380] [cursor=pointer]':
+                                - generic [ref=f68e1381]: ▶
+                                - generic [ref=f68e1382]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1386]:
+                            - gridcell "29/8/2026, 12:20:29" [ref=f68e1387]
+                            - gridcell "messages" [ref=f68e1393]
+                            - gridcell [ref=f68e1399]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1402] [cursor=pointer]':
+                                - generic [ref=f68e1403]: ▶
+                                - generic [ref=f68e1404]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1408]:
+                            - gridcell "29/8/2026, 12:10:16" [ref=f68e1409]
+                            - gridcell "messages" [ref=f68e1415]
+                            - gridcell [ref=f68e1421]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1424] [cursor=pointer]':
+                                - generic [ref=f68e1425]: ▶
+                                - generic [ref=f68e1426]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1430]:
+                            - gridcell "28/8/2026, 11:45:10" [ref=f68e1431]
+                            - gridcell "messages" [ref=f68e1437]
+                            - gridcell [ref=f68e1443]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1446] [cursor=pointer]':
+                                - generic [ref=f68e1447]: ▶
+                                - generic [ref=f68e1448]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1452]:
+                            - gridcell "28/8/2026, 10:31:48" [ref=f68e1453]
+                            - gridcell "messages" [ref=f68e1459]
+                            - gridcell [ref=f68e1465]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1468] [cursor=pointer]':
+                                - generic [ref=f68e1469]: ▶
+                                - generic [ref=f68e1470]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1474]:
+                            - gridcell "28/8/2026, 10:31:44" [ref=f68e1475]
+                            - gridcell "messages" [ref=f68e1481]
+                            - gridcell [ref=f68e1487]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1490] [cursor=pointer]':
+                                - generic [ref=f68e1491]: ▶
+                                - generic [ref=f68e1492]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1496]:
+                            - gridcell "28/8/2026, 10:31:44" [ref=f68e1497]
+                            - gridcell "messages" [ref=f68e1503]
+                            - gridcell [ref=f68e1509]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1512] [cursor=pointer]':
+                                - generic [ref=f68e1513]: ▶
+                                - generic [ref=f68e1514]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+                          - row [ref=f68e1518]:
+                            - gridcell "28/8/2026, 10:31:44" [ref=f68e1519]
+                            - gridcell "messages" [ref=f68e1525]
+                            - gridcell [ref=f68e1531]:
+                              - 'button "▶ {\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..." [ref=f68e1534] [cursor=pointer]':
+                                - generic [ref=f68e1535]: ▶
+                                - generic [ref=f68e1536]: "{\"object\":\"whatsapp_business_account\",\"entry\":[{\"id\":\"1093680006598302\",\"changes..."
+              - generic [ref=f68e1545]:
+                - 'heading "Siguiente: Paso 2. Configuración de producción" [level=3] [ref=f68e1548]'
+                - link "Continuar" [ref=f68e1549] [cursor=pointer]:
+                  - /url: https://developers.facebook.com/apps/1060916226527875/whatsapp-business/wa-configurations-v2/?business_id=1391570916488004&use_case_enum=WHATSAPP_BUSINESS_MESSAGING
+  - generic [aria-hidden] [ref=f68e744]:
+    - separator [ref=f68e745]
+    - generic [ref=f68e746]:
+      - generic [ref=f68e747]: Asistente para desarrolladores
+      - generic [ref=f68e750]:
+        - button [ref=f68e752] [cursor=pointer]
+        - button [ref=f68e756] [cursor=pointer]
+    - generic [ref=f68e759]: Iniciando chat…
+  - generic [ref=f68e1554]:
+    - alert
+    - alert
+    - complementary
+    - complementary

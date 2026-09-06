@@ -1,0 +1,499 @@
+- generic [ref=f8e10]:
+  - navigation "Principal" [ref=f8e12]:
+    - generic [ref=f8e19]:
+      - generic [ref=f8e21]:
+        - button "Abrir menú de navegación para celulares" [ref=f8e23] [cursor=pointer]
+        - link "Inicio de Meta" [ref=f8e28] [cursor=pointer]:
+          - /url: https://developers.facebook.com/
+          - img "Logotipo de navegación" [ref=f8e29]
+      - generic [ref=f8e32]:
+        - link "Login" [ref=f8e33] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fdocumentation%2Fbusiness-messaging%2Fwhatsapp%2Faccess-tokens
+        - button [ref=f8e34] [cursor=pointer]:
+          - img "Buscar" [ref=f8e35]
+  - generic [ref=f8e42]:
+    - navigation [ref=f8e43]:
+      - generic [ref=f8e44]:
+        - generic [ref=f8e45]:
+          - generic [ref=f8e46]: Plataforma de WhatsApp Business
+          - generic [ref=f8e47]:
+            - button "Dropdown" [ref=f8e49] [cursor=pointer]:
+              - generic [ref=f8e50]: Business Messaging
+            - button "Dropdown" [ref=f8e56] [cursor=pointer]:
+              - generic [ref=f8e57]: WhatsApp Business Platform
+            - textbox "Filtrar" [ref=f8e63]
+        - generic [ref=f8e65]:
+          - generic "Plataforma de WhatsApp Business" [ref=f8e66]:
+            - link "Plataforma de WhatsApp Business" [ref=f8e67] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/overview/
+          - generic [ref=f8e71]:
+            - generic "Información general" [ref=f8e72]:
+              - link "Información general" [ref=f8e73] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f8e81]:
+              - generic "Información sobre la plataforma" [ref=f8e82]:
+                - link "Información sobre la plataforma" [ref=f8e83] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/about-the-platform/
+              - generic "Tokens de acceso" [ref=f8e87]:
+                - link "Tokens de acceso" [ref=f8e88] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/access-tokens/
+              - generic "Permisos" [ref=f8e92]:
+                - link "Permisos" [ref=f8e93] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/permissions/
+              - generic "Precios" [ref=f8e98]:
+                - link "Precios" [ref=f8e99] [cursor=pointer]:
+                  - /url: "#"
+          - generic "Primeros pasos" [ref=f8e106]:
+            - link "Primeros pasos" [ref=f8e107] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/get-started/
+          - generic "Mensajes de marketing" [ref=f8e112]:
+            - link "Mensajes de marketing" [ref=f8e113] [cursor=pointer]:
+              - /url: "#"
+          - generic "Registro en la app" [ref=f8e120]:
+            - link "Registro en la app" [ref=f8e121] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/in-app-signup/
+          - generic "Mensajes de utilidad" [ref=f8e126]:
+            - link "Mensajes de utilidad" [ref=f8e127] [cursor=pointer]:
+              - /url: "#"
+          - generic "Mensajes de autenticación" [ref=f8e135]:
+            - link "Mensajes de autenticación" [ref=f8e136] [cursor=pointer]:
+              - /url: "#"
+          - generic "Mensajes de servicio" [ref=f8e144]:
+            - link "Mensajes de servicio" [ref=f8e145] [cursor=pointer]:
+              - /url: "#"
+          - generic "Llamadas" [ref=f8e153]:
+            - link "Llamadas" [ref=f8e154] [cursor=pointer]:
+              - /url: "#"
+          - generic "Grupos" [ref=f8e162]:
+            - link "Grupos" [ref=f8e163] [cursor=pointer]:
+              - /url: "#"
+          - generic "Catálogos" [ref=f8e171]:
+            - link "Catálogos" [ref=f8e172] [cursor=pointer]:
+              - /url: "#"
+          - generic "Socios" [ref=f8e180]:
+            - link "Socios" [ref=f8e181] [cursor=pointer]:
+              - /url: "#"
+          - generic "Webhooks" [ref=f8e189]:
+            - link "Webhooks" [ref=f8e190] [cursor=pointer]:
+              - /url: "#"
+          - generic "Aspectos básicos de las plantillas" [ref=f8e198]:
+            - link "Aspectos básicos de las plantillas" [ref=f8e199] [cursor=pointer]:
+              - /url: "#"
+          - generic "Características de mensajes" [ref=f8e207]:
+            - link "Características de mensajes" [ref=f8e208] [cursor=pointer]:
+              - /url: "#"
+          - generic "Activos de la cuenta" [ref=f8e216]:
+            - link "Activos de la cuenta" [ref=f8e217] [cursor=pointer]:
+              - /url: "#"
+          - generic "Análisis" [ref=f8e224]:
+            - link "Análisis" [ref=f8e225] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/analytics/
+          - generic "Anuncios de clic a WhatsApp" [ref=f8e230]:
+            - link "Anuncios de clic a WhatsApp" [ref=f8e231] [cursor=pointer]:
+              - /url: "#"
+          - generic "Pagos" [ref=f8e239]:
+            - link "Pagos" [ref=f8e240] [cursor=pointer]:
+              - /url: "#"
+          - generic "Política de datos, privacidad y &amp;" [ref=f8e248]:
+            - link "Política de datos, privacidad y &amp;" [ref=f8e249] [cursor=pointer]:
+              - /url: "#"
+          - generic "Ayuda" [ref=f8e257]:
+            - link "Ayuda" [ref=f8e258] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f8e265]:
+            - separator [ref=f8e266]
+            - generic [ref=f8e267]: Recursos
+          - generic "Referencia de la API" [ref=f8e269]:
+            - link "Referencia de la API" [ref=f8e270] [cursor=pointer]:
+              - /url: "#"
+          - generic "Registro de cambios" [ref=f8e277]:
+            - link "Registro de cambios" [ref=f8e278] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/changelog/
+          - generic "Códigos de error" [ref=f8e282]:
+            - link "Códigos de error" [ref=f8e283] [cursor=pointer]:
+              - /url: /documentation/business-messaging/whatsapp/support/error-codes
+    - generic [ref=f8e288]:
+      - main [ref=f8e289]:
+        - generic [ref=f8e290]:
+          - navigation "Breadcrumbs" [ref=f8e292]:
+            - list [ref=f8e293]:
+              - listitem [ref=f8e294]:
+                - link "Documentos" [ref=f8e296] [cursor=pointer]:
+                  - /url: /docs
+              - listitem [ref=f8e301]:
+                - link "Información general" [ref=f8e303] [cursor=pointer]:
+                  - /url: /documentation/business-messaging/whatsapp/overview
+              - listitem [ref=f8e308]:
+                - generic [ref=f8e309]: Guía de tokens de acceso
+          - article [ref=f8e312]:
+            - heading "Guía de tokens de acceso" [level=1] [ref=f8e313]
+            - generic [ref=f8e314]: "Updated: 30 jun 2026"
+            - generic [ref=f8e318]:
+              - button "Copiar para LLM" [ref=f8e320] [cursor=pointer]
+              - link "Ver como Markdown" [ref=f8e327] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/access-tokens.md
+            - generic [ref=f8e333]:
+              - text: La plataforma admite los siguientes tipos de token de acceso. El tipo que uses depende de quién utiliza tu app y de si eres un
+              - link "socio" [ref=f8e334] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/solution-providers/overview
+              - text: .
+            - list [ref=f8e335]:
+              - listitem [ref=f8e337]:
+                - text: Si eres un
+                - strong [ref=f8e338]: desarrollador directo
+                - text: ", es decir, si solo tu empresa o tú accederán a tus datos, usa un"
+                - link "token de acceso de usuario del sistema" [ref=f8e339] [cursor=pointer]:
+                  - /url: "#system-user-access-tokens"
+                - text: .
+              - listitem [ref=f8e341]:
+                - text: Si eres un
+                - strong [ref=f8e342]: proveedor de tecnología
+                - text: ", usa un"
+                - link "token de acceso de usuario del sistema de integración comercial" [ref=f8e343] [cursor=pointer]:
+                  - /url: "#business-integration-system-user-access-tokens"
+                - text: .
+              - listitem [ref=f8e345]:
+                - text: Si eres un
+                - strong [ref=f8e346]: socio de soluciones
+                - text: ", usa"
+                - link "tokens de acceso de usuario del sistema" [ref=f8e347] [cursor=pointer]:
+                  - /url: "#system-user-access-tokens"
+                - text: para compartir tu línea de crédito con los clientes nuevos que se registren y
+                - link "tokens de acceso de usuario del sistema de integración comercial" [ref=f8e348] [cursor=pointer]:
+                  - /url: "#business-integration-system-user-access-tokens"
+                - text: en el resto de los casos.
+            - generic [ref=f8e351]:
+              - heading "Token de acceso de usuario del sistema" [level=2] [ref=f8e352]
+              - button [ref=f8e353] [cursor=pointer]
+            - generic [ref=f8e357]: Los tokens de acceso de usuario del sistema ("tokens del sistema") te representan a ti, a tu empresa u organización, o a personas que pertenecen a estas. La ventaja principal de estos tokens es que tienen una larga duración y pueden representar servicios automatizados dentro de tu empresa, que no requieren entradas del usuario.
+            - generic [ref=f8e358]:
+              - text: Los tokens del sistema dependen de los usuarios del sistema. La mayoría de los puntos de conexión verifican si el usuario que identificó el token tiene acceso al recurso solicitado. Si el usuario no tiene acceso al recurso, el sistema rechazará la solicitud con el código de error
+              - link [ref=f8e359] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/support/error-codes
+                - code [ref=f8e360]: "200"
+              - text: (no debe confundirse con el código de estado HTTP
+              - code [ref=f8e361]: "200"
+              - text: ).
+            - generic [ref=f8e362]:
+              - text: Los usuarios del sistema pueden ser
+              - link "administradores" [ref=f8e363] [cursor=pointer]:
+                - /url: "#admin-system-users"
+              - text: o
+              - link "empleados" [ref=f8e364] [cursor=pointer]:
+                - /url: "#employee-system-users"
+              - text: .
+            - generic [ref=f8e367]:
+              - heading "Usuarios administradores del sistema" [level=3] [ref=f8e368]
+              - button [ref=f8e369] [cursor=pointer]
+            - generic [ref=f8e373]: De manera predeterminada, los usuarios administradores del sistema tienen acceso total a todas las cuentas de WhatsApp Business (WABA) y sus activos, ya sean propios o compartidos contigo o con tu portfolio comercial.
+            - generic [ref=f8e374]: Los usuarios administradores del sistema son útiles si tu app necesita acceso a todos los activos del portfolio comercial, dado que no es necesario otorgar manualmente acceso a cada activo comercial cuando se crea o se comparte con tu portfolio comercial.
+            - generic [ref=f8e375]:
+              - text: Ten en cuenta que puedes anular el acceso predeterminado de un usuario administrador del sistema a los activos comerciales si otorgas acceso parcial a cada WABA. Consulta
+              - link "Acceso a activos comerciales" [ref=f8e376] [cursor=pointer]:
+                - /url: "#business-asset-access"
+              - text: para aprender a configurar y anular el acceso.
+            - generic [ref=f8e379]:
+              - heading "Usuarios empleados del sistema" [level=3] [ref=f8e380]
+              - button [ref=f8e381] [cursor=pointer]
+            - generic [ref=f8e385]: Los usuarios empleados del sistema deben obtener acceso a determinadas WABA que son propiedad de tu portfolio comercial o que se comparten con este. Si tu app solo necesita acceso a algunas de tus WABA, un usuario empleado del sistema es suficiente.
+            - generic [ref=f8e386]:
+              - text: Una vez que lo crees, deberás otorgar
+              - link "acceso a activos comerciales" [ref=f8e387] [cursor=pointer]:
+                - /url: "#business-asset-access"
+              - strong [ref=f8e388]: total
+              - text: o
+              - strong [ref=f8e389]: parcial
+              - text: a cada WABA a la que el usuario del sistema necesite acceder.
+            - generic [ref=f8e392]:
+              - heading "Generar tokens de acceso de usuario del sistema" [level=3] [ref=f8e393]
+              - button [ref=f8e394] [cursor=pointer]
+            - generic [ref=f8e398]:
+              - text: Para generar un token del sistema, accede al panel
+              - link [ref=f8e399] [cursor=pointer]:
+                - /url: https://business.facebook.com/settings/
+                - strong [ref=f8e400]: Configuración del negocio
+                - generic [ref=f8e401]:
+                  - text: ⁠
+                  - img "El enlace se abre en una pestaña o ventana nueva" [ref=f8e402]
+              - text: y haz clic en
+              - strong [ref=f8e405]: Usuarios del sistema
+              - text: ":"
+            - img "Business settings panel showing System Users option" [ref=f8e407] [cursor=pointer]
+            - generic [ref=f8e408]:
+              - text: Haz clic en el botón
+              - strong [ref=f8e409]: +Agregar
+              - text: y, cuando aparezca la ventana
+              - strong [ref=f8e410]: Crear usuario del sistema
+              - text: ", ingresa un nombre de usuario del sistema y asígnale el rol"
+              - strong [ref=f8e411]: Administrador
+              - text: o
+              - strong [ref=f8e412]: Empleado
+              - text: ":"
+            - img "Create system user dialog with name field and role selector" [ref=f8e414] [cursor=pointer]
+            - generic [ref=f8e415]: "Una vez que hayas creado el usuario administrador del sistema, este aparecerá en la lista de usuarios del sistema. Haz clic en el nombre del usuario del sistema para mostrar el panel superpuesto de asignación de activos:"
+            - img "System users list showing asset assignment overlay" [ref=f8e417] [cursor=pointer]
+            - generic [ref=f8e418]:
+              - text: Haz clic en el botón
+              - strong [ref=f8e419]: Asignar activos
+              - text: para mostrar la ventana
+              - strong [ref=f8e420]: Seleccionar activos y asignar permisos
+              - text: ":"
+            - img "Select assets and assign permissions dialog" [ref=f8e422] [cursor=pointer]
+            - generic [ref=f8e423]:
+              - text: Selecciona tu app y otórgale a tu usuario del sistema el permiso
+              - strong [ref=f8e424]: Administrar app
+              - text: . Luego, haz clic en el botón
+              - strong [ref=f8e425]: Asignar activos
+              - text: para confirmar y cerrar la ventana.
+            - generic [ref=f8e426]:
+              - text: Una vez de regreso en el panel
+              - strong [ref=f8e427]: Usuarios del sistema
+              - text: ", vuelve a cargar la página para confirmar que a tu usuario del sistema se le haya concedido el permiso"
+              - strong [ref=f8e428]: Control total
+              - text: "de tu app. Es posible que se demore un poco la concesión de los permisos, así que vuelve a cargar la página si tu app no aparece como un activo asignado. Cuando el activo se haya asignado, debería tener el siguiente aspecto:"
+            - img "System user with full control of app displayed" [ref=f8e430] [cursor=pointer]
+            - generic [ref=f8e431]:
+              - text: Cuando veas que a tu usuario del sistema se le otorgó el control total de tu app, en el panel superpuesto de asignación de activos, haz clic en el botón
+              - strong [ref=f8e432]: Generar token
+              - text: ". En la ventana que aparece, selecciona tu app, elige una preferencia de caducidad del token y asigna a tu app estos tres permisos de la API Graph:"
+            - list [ref=f8e433]:
+              - listitem [ref=f8e435]:
+                - code [ref=f8e436]: business_management
+              - listitem [ref=f8e438]:
+                - code [ref=f8e439]: whatsapp_business_management
+              - listitem [ref=f8e441]:
+                - code [ref=f8e442]: whatsapp_business_messaging
+            - generic [ref=f8e443]:
+              - text: Puedes buscar
+              - code [ref=f8e444]: business
+              - text: "para encontrar estos permisos rápidamente:"
+            - img "Token generation dialog showing business permissions search" [ref=f8e446] [cursor=pointer]
+            - generic [ref=f8e447]:
+              - text: Haz clic en el botón
+              - strong [ref=f8e448]: Generar token
+              - text: y copia el token cuando aparezca.
+            - generic [ref=f8e451]:
+              - heading "Tokens de acceso del usuario del sistema de integración comercial" [level=2] [ref=f8e452]
+              - button [ref=f8e453] [cursor=pointer]
+            - generic [ref=f8e457]: Los tokens de acceso de usuario del sistema de integración comercial ("tokens de empresa") se extienden a clientes individuales registrados y deben ser usados por los proveedores de tecnología y socios de soluciones cuando acceden a los datos de los clientes registrados.
+            - generic [ref=f8e458]: Estos tokens son útiles para las apps que realizan acciones programáticas y automatizadas en las WABA del cliente, ya que no se basan en entradas de los usuarios de la app ni es necesario volver a autenticarlos en el futuro.
+            - generic [ref=f8e459]: Para generar un token de acceso de usuario del sistema de integración comercial, debes implementar el registro insertado (configurado con el inicio de sesión con Facebook para empresas) e intercambiar el código que se devuelve cuando un cliente completa el proceso.
+            - generic [ref=f8e460]:
+              - text: Consulta
+              - link "Registro insertado" [ref=f8e461] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/embedded-signup/overview
+              - text: "y"
+              - link "Tokens de acceso de usuario del sistema de integración comercial" [ref=f8e462] [cursor=pointer]:
+                - /url: /documentation/facebook-login/facebook-login-for-business#business-integration-system-user-access-tokens
+              - text: para obtener más información sobre estos tokens y cómo se generan.
+            - generic [ref=f8e465]:
+              - heading "Tokens de acceso de usuario" [level=2] [ref=f8e466]
+              - button [ref=f8e467] [cursor=pointer]
+            - generic [ref=f8e471]:
+              - text: Si bien todos los desarrolladores de apps admiten y pueden usar los tokens de acceso de usuario, por lo general, solo se utilizan al usar por primera vez el panel de apps para
+              - link "enviar tu primer mensaje de prueba" [ref=f8e472] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/get-started
+              - text: . Sin embargo, cuando desarrolles tu app, cambiarás a un token de acceso de usuario del sistema (y tal vez a un token de acceso de usuario del sistema de integración comercial, si eres proveedor de tecnología o socio). Esto se debe a que los tokens de acceso de usuario caducan rápidamente, por lo que tienes que generar uno nuevo cada pocas horas.
+            - generic [ref=f8e473]: "Hay varias maneras de generar un token de acceso de usuario:"
+            - list [ref=f8e474]:
+              - listitem [ref=f8e476]:
+                - text: Accede al
+                - strong [ref=f8e477]: Panel de apps
+                - text: ">"
+                - strong [ref=f8e478]: WhatsApp
+                - text: ">"
+                - strong [ref=f8e479]: Configuración de API
+                - text: . Este panel genera un nuevo token de acceso de usuario cada vez que lo visitas. El token se extiende automáticamente a tu usuario, ya que inicias sesión con tu cuenta de desarrollador cuando accedes al panel.
+              - listitem [ref=f8e481]:
+                - text: Usa el
+                - link "explorador de la API Graph" [ref=f8e482] [cursor=pointer]:
+                  - /url: /tools/explorer
+                - text: .
+              - listitem [ref=f8e484]:
+                - text: Implementa el
+                - link "inicio de sesión con Facebook" [ref=f8e485] [cursor=pointer]:
+                  - /url: /documentation/facebook-login
+                - text: .
+            - generic [ref=f8e488]:
+              - heading "Usar tokens en solicitudes" [level=2] [ref=f8e489]
+              - button [ref=f8e490] [cursor=pointer]
+            - generic [ref=f8e494]:
+              - text: Cuando realices solicitudes a la API, incluye tu token en un encabezado de solicitud de autorización, precedido por
+              - code [ref=f8e495]: Bearer
+              - text: ". Por ejemplo:"
+            - generic [ref=f8e496]:
+              - code [ref=f8e498]: "curl 'https://graph.facebook.com/v26.0/102290129340398/message_templates' \\ -H 'Authorization: Bearer EAAJB...'"
+              - button [ref=f8e499] [cursor=pointer]
+            - generic [ref=f8e504]:
+              - heading "Formato del token" [level=2] [ref=f8e505]
+              - button [ref=f8e506] [cursor=pointer]
+            - generic [ref=f8e510]: "Los tokens de acceso son cadenas opacas. Un token completo tiene este aspecto:"
+            - generic [ref=f8e511]:
+              - code [ref=f8e513]: EAAJBsbCmS80BO4hZBf5xYKFaFW7kVMNxAWzIInZB7q1PuZCLiEqKh3gZDZD
+              - button [ref=f8e514] [cursor=pointer]
+            - generic [ref=f8e517]: Los tokens pueden variar en cuanto a su longitud, y su estructura interna y características pueden cambiar con el tiempo. No analices ni decodifiques un token de acceso o hagas suposiciones sobre su formato; trátalo como una cadena opaca. Utiliza un tipo de datos de duración variable sin un tamaño máximo específico para almacenar tokens de acceso.
+            - generic [ref=f8e520]:
+              - heading "Acceso a activos comerciales" [level=2] [ref=f8e521]
+              - button [ref=f8e522] [cursor=pointer]
+            - generic [ref=f8e526]:
+              - text: Después de crear un usuario del sistema, debes configurar los niveles de acceso a los activos comerciales. Muchos puntos de conexión requieren que el usuario del sistema cuyo token se incluye en las solicitudes a la API también obtenga acceso a activos comerciales
+              - strong [ref=f8e527]: parcial
+              - text: o
+              - strong [ref=f8e528]: total
+              - text: a la WABA respecto de la que se hace la consulta (o a sus activos). Si el usuario del sistema no tiene este acceso, estos puntos de conexión devuelven el código de error
+              - link [ref=f8e529] [cursor=pointer]:
+                - /url: /documentation/business-messaging/whatsapp/support/error-codes
+                - code [ref=f8e530]: "200"
+              - text: (no debe confundirse con el código de estado HTTP
+              - code [ref=f8e531]: "200"
+              - text: ).
+            - generic [ref=f8e532]:
+              - text: Ten en cuenta que, si configuras como
+              - strong [ref=f8e533]: parcial
+              - text: el acceso a activos comerciales de un usuario del sistema en una WABA, puedes restringir el acceso a ciertos activos o acciones en la WABA. Por ejemplo, si tienes una empresa grande y quieres que solo un departamento determinado tenga acceso de lectura a la plantilla y los datos de números de teléfono del negocio de una WABA, puedes crear un usuario del sistema para ese departamento y configurar el acceso granular solo de visualización de esos datos.
+            - generic [ref=f8e534]: "Para configurar el acceso a los activos comerciales en una WABA, sigue estos pasos:"
+            - list [ref=f8e535]:
+              - listitem [ref=f8e537]:
+                - text: Inicia sesión en
+                - link [ref=f8e538] [cursor=pointer]:
+                  - /url: https://business.facebook.com
+                  - text: Meta Business Suite
+                  - generic [ref=f8e539]:
+                    - text: ⁠
+                    - img "El enlace se abre en una pestaña o ventana nueva" [ref=f8e540]
+                - text: .
+              - listitem [ref=f8e544]:
+                - text: Busca tu portfolio comercial en el menú desplegable de la parte superior de la página y haz clic en el ícono de
+                - strong [ref=f8e545]: configuración
+                - text: (engranaje).
+              - listitem [ref=f8e547]:
+                - text: Ve a
+                - strong [ref=f8e548]: Cuentas
+                - text: ">"
+                - strong [ref=f8e549]: Cuentas de WhatsApp
+                - text: .
+              - listitem [ref=f8e551]: Selecciona la WABA adecuada.
+              - listitem [ref=f8e553]:
+                - text: Selecciona la pestaña
+                - strong [ref=f8e554]: Acceso a la cuenta de WhatsApp
+                - text: .
+              - listitem [ref=f8e556]:
+                - text: Haz clic en el botón
+                - strong [ref=f8e557]: +Agregar personas
+                - text: .
+              - listitem [ref=f8e559]: Selecciona el usuario del sistema adecuado y asigna los niveles de acceso que correspondan en la WABA.
+            - img "WhatsApp Account Access tab with Add people button" [ref=f8e561] [cursor=pointer]
+      - complementary [ref=f8e562]:
+        - generic [ref=f8e564]:
+          - generic [ref=f8e565]: EN ESTA PÁGINA
+          - button "Token de acceso de usuario del sistema" [ref=f8e567] [cursor=pointer]
+          - button "Usuarios administradores del sistema" [ref=f8e570] [cursor=pointer]
+          - button "Usuarios empleados del sistema" [ref=f8e573] [cursor=pointer]
+          - button "Generar tokens de acceso de usuario del sistema" [ref=f8e576] [cursor=pointer]
+          - button "Tokens de acceso del usuario del sistema de integración comercial" [ref=f8e579] [cursor=pointer]
+          - button "Tokens de acceso de usuario" [ref=f8e582] [cursor=pointer]
+          - button "Usar tokens en solicitudes" [ref=f8e585] [cursor=pointer]
+          - button "Formato del token" [ref=f8e588] [cursor=pointer]
+          - button "Acceso a activos comerciales" [ref=f8e591] [cursor=pointer]
+  - generic [ref=f8e593]:
+    - separator [ref=f8e594]
+    - contentinfo [ref=f8e595]:
+      - generic [ref=f8e596]:
+        - separator [ref=f8e597]
+        - generic [ref=f8e599]:
+          - generic [ref=f8e601]:
+            - generic [ref=f8e603]:
+              - img "Meta" [ref=f8e605]
+              - list [ref=f8e607]:
+                - listitem:
+                  - link "Facebook":
+                    - /url: https://www.facebook.com/MetaforDevelopers
+                    - img "Facebook"
+                - listitem:
+                  - link "Instagram":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmetafordevelopers%2F&h=AUAehY4WZ7fgMzhMadm6ZDhvjTJ8QZf-Bwzy_VJqhF2X3HXHrTMoZyoih9pgvPWPh22Zmqu-h2IutktJHK8MMcQFxFxSrRoH3bk3XgT1LvQEJYElp-e5L_gMWFj_v0LwYVSBYdgs1xSuskyNIWIJyA
+                    - img "Instagram"
+                - listitem:
+                  - link "X":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2Fmetafordevs&h=AUAehY4WZ7fgMzhMadm6ZDhvjTJ8QZf-Bwzy_VJqhF2X3HXHrTMoZyoih9pgvPWPh22Zmqu-h2IutktJHK8MMcQFxFxSrRoH3bk3XgT1LvQEJYElp-e5L_gMWFj_v0LwYVSBYdgs1xSuskyNIWIJyA
+                    - img "X"
+                - listitem:
+                  - link "LinkedIn":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fshowcase%2Fmeta-for-developers%2F&h=AUAehY4WZ7fgMzhMadm6ZDhvjTJ8QZf-Bwzy_VJqhF2X3HXHrTMoZyoih9pgvPWPh22Zmqu-h2IutktJHK8MMcQFxFxSrRoH3bk3XgT1LvQEJYElp-e5L_gMWFj_v0LwYVSBYdgs1xSuskyNIWIJyA
+                    - img "LinkedIn"
+                - listitem:
+                  - link "YouTube":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2FMetaDevelopers%2F&h=AUAehY4WZ7fgMzhMadm6ZDhvjTJ8QZf-Bwzy_VJqhF2X3HXHrTMoZyoih9pgvPWPh22Zmqu-h2IutktJHK8MMcQFxFxSrRoH3bk3XgT1LvQEJYElp-e5L_gMWFj_v0LwYVSBYdgs1xSuskyNIWIJyA
+                    - img "YouTube"
+            - generic [ref=f8e609]:
+              - generic [ref=f8e612]:
+                - heading "Crear con Meta" [level=2] [ref=f8e613]
+                - list [ref=f8e615]:
+                  - listitem [ref=f8e616]:
+                    - link "Inteligencia artificial" [ref=f8e618] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fai%2F&h=AUAehY4WZ7fgMzhMadm6ZDhvjTJ8QZf-Bwzy_VJqhF2X3HXHrTMoZyoih9pgvPWPh22Zmqu-h2IutktJHK8MMcQFxFxSrRoH3bk3XgT1LvQEJYElp-e5L_gMWFj_v0LwYVSBYdgs1xSuskyNIWIJyA
+                  - listitem [ref=f8e619]:
+                    - link "Meta Horizon" [ref=f8e621] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fhorizon%2F&h=AUAehY4WZ7fgMzhMadm6ZDhvjTJ8QZf-Bwzy_VJqhF2X3HXHrTMoZyoih9pgvPWPh22Zmqu-h2IutktJHK8MMcQFxFxSrRoH3bk3XgT1LvQEJYElp-e5L_gMWFj_v0LwYVSBYdgs1xSuskyNIWIJyA
+                  - listitem [ref=f8e622]:
+                    - link "Tecnologías sociales" [ref=f8e624] [cursor=pointer]:
+                      - /url: /social-technologies/
+              - generic [ref=f8e627]:
+                - heading "Noticias" [level=2] [ref=f8e628]
+                - list [ref=f8e630]:
+                  - listitem [ref=f8e631]:
+                    - link "Meta for Developers" [ref=f8e633] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fblog%2F&h=AUAehY4WZ7fgMzhMadm6ZDhvjTJ8QZf-Bwzy_VJqhF2X3HXHrTMoZyoih9pgvPWPh22Zmqu-h2IutktJHK8MMcQFxFxSrRoH3bk3XgT1LvQEJYElp-e5L_gMWFj_v0LwYVSBYdgs1xSuskyNIWIJyA
+                  - listitem [ref=f8e634]:
+                    - link "Blog" [ref=f8e636] [cursor=pointer]:
+                      - /url: /blog/
+                  - listitem [ref=f8e637]:
+                    - link "Historias de éxito" [ref=f8e639] [cursor=pointer]:
+                      - /url: /success-stories/
+              - generic [ref=f8e642]:
+                - heading "Ayuda" [level=2] [ref=f8e643]
+                - list [ref=f8e645]:
+                  - listitem [ref=f8e646]:
+                    - link "Ayuda para desarrolladores" [ref=f8e648] [cursor=pointer]:
+                      - /url: /support/
+                  - listitem [ref=f8e649]:
+                    - link "Herramienta de errores" [ref=f8e651] [cursor=pointer]:
+                      - /url: /support/bugs/
+                  - listitem [ref=f8e652]:
+                    - link "Estado de la plataforma" [ref=f8e654] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmetastatus.com%2F&h=AUAehY4WZ7fgMzhMadm6ZDhvjTJ8QZf-Bwzy_VJqhF2X3HXHrTMoZyoih9pgvPWPh22Zmqu-h2IutktJHK8MMcQFxFxSrRoH3bk3XgT1LvQEJYElp-e5L_gMWFj_v0LwYVSBYdgs1xSuskyNIWIJyA
+                  - listitem [ref=f8e655]:
+                    - link "Foro de la comunidad de desarrolladores" [ref=f8e657] [cursor=pointer]:
+                      - /url: https://www.facebook.com/groups/fbdevelopers/
+                  - listitem [ref=f8e658]:
+                    - link "Reportar un incidente" [ref=f8e660] [cursor=pointer]:
+                      - /url: /incident/report/
+              - generic [ref=f8e663]:
+                - heading "Acerca de nosotros" [level=2] [ref=f8e664]
+                - list [ref=f8e666]:
+                  - listitem [ref=f8e667]:
+                    - link "Información" [ref=f8e669] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.fb.com%2F&h=AUAehY4WZ7fgMzhMadm6ZDhvjTJ8QZf-Bwzy_VJqhF2X3HXHrTMoZyoih9pgvPWPh22Zmqu-h2IutktJHK8MMcQFxFxSrRoH3bk3XgT1LvQEJYElp-e5L_gMWFj_v0LwYVSBYdgs1xSuskyNIWIJyA
+                  - listitem [ref=f8e670]:
+                    - link "Empleos" [ref=f8e672] [cursor=pointer]:
+                      - /url: https://www.facebook.com/careers
+              - generic [ref=f8e675]:
+                - heading "Condiciones y políticas" [level=2] [ref=f8e676]
+                - list [ref=f8e678]:
+                  - listitem [ref=f8e679]:
+                    - link "Iniciativas de plataforma responsable" [ref=f8e681] [cursor=pointer]:
+                      - /url: /products/responsible-platform-initiatives/
+                  - listitem [ref=f8e682]:
+                    - link "Condiciones de la plataforma" [ref=f8e684] [cursor=pointer]:
+                      - /url: /terms/dfc_platform_terms/
+                  - listitem [ref=f8e685]:
+                    - link "Políticas para desarrolladores" [ref=f8e687] [cursor=pointer]:
+                      - /url: /devpolicy/
+                  - listitem [ref=f8e688]:
+                    - link "Política de privacidad" [ref=f8e690] [cursor=pointer]:
+                      - /url: https://www.facebook.com/about/privacy
+                  - listitem [ref=f8e691]:
+                    - link "Cookies" [ref=f8e693] [cursor=pointer]:
+                      - /url: https://www.facebook.com/help/cookies
+          - button "Cambiar idioma" [ref=f8e698] [cursor=pointer]:
+            - generic [ref=f8e699]: Español

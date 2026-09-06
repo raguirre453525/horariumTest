@@ -1,0 +1,613 @@
+- generic [ref=f3e11]:
+  - navigation "Main" [ref=f3e13]:
+    - generic [ref=f3e20]:
+      - generic [ref=f3e22]:
+        - button "Open mobile navigation menu" [ref=f3e24] [cursor=pointer]
+        - link "Meta home" [ref=f3e29] [cursor=pointer]:
+          - /url: https://developers.facebook.com/
+          - img "Nav Logo" [ref=f3e30]
+      - generic [ref=f3e33]:
+        - link "Login" [ref=f3e34] [cursor=pointer]:
+          - /url: https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fdevelopers.facebook.com%2Fdocumentation%2Fmcp%2Fdevtools-mcp%3Flocale%3Den_US
+        - button [ref=f3e35] [cursor=pointer]:
+          - img "Search" [ref=f3e36]
+  - generic [ref=f3e43]:
+    - navigation [ref=f3e44]:
+      - generic [ref=f3e45]:
+        - generic [ref=f3e46]:
+          - generic [ref=f3e47]: MCP
+          - textbox "Filter" [ref=f3e50]
+        - generic [ref=f3e52]:
+          - generic "MCP" [ref=f3e53]:
+            - link "MCP" [ref=f3e54] [cursor=pointer]:
+              - /url: /documentation/mcp
+          - generic "Meta Social Technologies MCP" [ref=f3e58]:
+            - link "Meta Social Technologies MCP" [ref=f3e59] [cursor=pointer]:
+              - /url: /documentation/mcp/devtools-mcp
+    - generic [ref=f3e64]:
+      - main [ref=f3e65]:
+        - generic [ref=f3e66]:
+          - navigation "Breadcrumbs" [ref=f3e68]:
+            - list [ref=f3e69]:
+              - listitem [ref=f3e70]:
+                - link "Docs" [ref=f3e72] [cursor=pointer]:
+                  - /url: /docs
+              - listitem [ref=f3e77]:
+                - link "Overview" [ref=f3e79] [cursor=pointer]:
+                  - /url: /documentation/mcp
+              - listitem [ref=f3e84]:
+                - generic [ref=f3e85]: Meta Social Technologies MCP
+          - article [ref=f3e88]:
+            - heading "Meta Social Technologies MCP" [level=1] [ref=f3e89]
+            - generic [ref=f3e90]: "Updated: Jun 12, 2026"
+            - generic [ref=f3e94]:
+              - button "Copy for LLM" [ref=f3e96] [cursor=pointer]
+              - link "View as Markdown" [ref=f3e103] [cursor=pointer]:
+                - /url: /documentation/mcp/devtools-mcp.md
+            - generic [ref=f3e109]: For developers building apps and integrations on the Meta Social Technologies Developer Platform (developers.facebook.com) — the Meta Social Technologies MCP server helps you manage the Meta apps and integrations you build there. It gives your AI agent and IDE assistant a single entry point for that day-to-day work. It enables an agent to read your app configuration, monitor API health, check App Review status, configure webhook subscriptions, look up the API changelog, and search developer documentation.
+            - generic [ref=f3e112]:
+              - strong [ref=f3e113]: "Note:"
+              - text: Meta Social Technologies MCP was formerly known as Meta Developer Tools MCP. The server endpoint and the
+              - code [ref=f3e114]: devtools_
+              - text: tool name prefix are unchanged, so existing client configurations keep working. The server is rolling out gradually and may not be available to everyone yet.
+            - generic [ref=f3e117]:
+              - heading "Overview" [level=2] [ref=f3e118]
+              - button [ref=f3e119] [cursor=pointer]
+            - generic [ref=f3e123]: "The following table summarizes the server details:"
+            - table [ref=f3e125]:
+              - rowgroup [ref=f3e126]:
+                - row [ref=f3e127]:
+                  - columnheader "Attribute" [ref=f3e128]
+                  - columnheader "Value" [ref=f3e129]
+              - rowgroup [ref=f3e130]:
+                - row [ref=f3e131]:
+                  - cell "Server name" [ref=f3e132]
+                  - cell [ref=f3e134]:
+                    - code [ref=f3e136]: Meta Social Technologies
+                - row [ref=f3e137]:
+                  - cell "Transport" [ref=f3e138]
+                  - cell "Streamable HTTP" [ref=f3e140]
+                - row [ref=f3e142]:
+                  - cell "Endpoint" [ref=f3e143]
+                  - cell [ref=f3e145]:
+                    - code [ref=f3e147]: https://mcp.facebook.com/devtools
+                - row [ref=f3e148]:
+                  - cell "Authentication" [ref=f3e149]
+                  - cell "Meta developer account sign-in (OAuth)" [ref=f3e151]
+                - row [ref=f3e153]:
+                  - cell "Status" [ref=f3e154]
+                  - cell "Beta - interface and tool set may change" [ref=f3e156]
+            - generic [ref=f3e160]:
+              - heading "Set up your IDE or agent client" [level=2] [ref=f3e161]
+              - button [ref=f3e162] [cursor=pointer]
+            - generic [ref=f3e166]:
+              - text: The Meta Social Technologies MCP server is a
+              - strong [ref=f3e167]: remote
+              - text: server. Clients that support remote MCP servers can connect to the endpoint directly. For clients that only support local (stdio) servers, use the
+              - link [ref=f3e168] [cursor=pointer]:
+                - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fmcp-remote&h=AUCZytv_7Oc11BtJ6_KNhoBvw4wudSPOGbGPmL0rIy68JLRcxfhybcIAz3drbum7NdYs1VhfL_NvWKe76aEZ5JJpl9cDLkH8Y-RC0qN2IZRumAAJjWYqC9o8s17h1PYTiFx3ZZjJADPLozjslqChtw
+                - code [ref=f3e169]: mcp-remote
+                - generic [ref=f3e170]:
+                  - text: ⁠
+                  - img "This link opens in a new tab or window" [ref=f3e171]
+              - text: bridge, which proxies the remote server over stdio.
+            - generic [ref=f3e174]:
+              - text: Configure your client using one of the sections below, then complete the
+              - link "OAuth sign-in" [ref=f3e175] [cursor=pointer]:
+                - /url: "#oauth-sign-in"
+              - text: to authenticate. Client-specific authentication steps are noted where they apply.
+            - generic [ref=f3e178]:
+              - heading "Claude Code and Desktop" [level=3] [ref=f3e179]
+              - button [ref=f3e180] [cursor=pointer]
+            - generic [ref=f3e184]:
+              - strong [ref=f3e185]: Claude Code
+              - text: "— run the following command to add the server:"
+            - generic [ref=f3e186]:
+              - code [ref=f3e188]: claude mcp add --transport http meta_social_technologies https://mcp.facebook.com/devtools
+              - button [ref=f3e189] [cursor=pointer]
+            - generic [ref=f3e192]:
+              - text: Then run
+              - code [ref=f3e193]: /mcp
+              - text: in a session and select
+              - strong [ref=f3e194]: meta_social_technologies
+              - text: to authenticate.
+            - generic [ref=f3e195]:
+              - strong [ref=f3e196]: Claude Desktop
+              - text: — open
+              - strong [ref=f3e197]: Settings
+              - text: ">"
+              - strong [ref=f3e198]: Connectors
+              - text: ">"
+              - strong [ref=f3e199]: Add custom connector
+              - text: ", then set:"
+            - list [ref=f3e200]:
+              - listitem [ref=f3e202]:
+                - strong [ref=f3e203]: Name
+                - text: ":"
+                - code [ref=f3e204]: Meta Social Technologies
+              - listitem [ref=f3e206]:
+                - strong [ref=f3e207]: URL
+                - text: ":"
+                - code [ref=f3e208]: https://mcp.facebook.com/devtools
+            - generic [ref=f3e211]:
+              - heading "OpenAI Codex App and ChatGPT" [level=3] [ref=f3e212]
+              - button [ref=f3e213] [cursor=pointer]
+            - generic [ref=f3e217]:
+              - strong [ref=f3e218]: Codex App
+              - text: — open
+              - strong [ref=f3e219]: Settings
+              - text: (the gear icon, bottom left) >
+              - strong [ref=f3e220]: MCP Servers
+              - text: ">"
+              - strong [ref=f3e221]: Add servers
+              - text: ", choose"
+              - strong [ref=f3e222]: Streamable HTTP
+              - text: ", then set:"
+            - list [ref=f3e223]:
+              - listitem [ref=f3e225]:
+                - strong [ref=f3e226]: Name
+                - text: ":"
+                - code [ref=f3e227]: Meta Social Technologies
+              - listitem [ref=f3e229]:
+                - strong [ref=f3e230]: URL
+                - text: ":"
+                - code [ref=f3e231]: https://mcp.facebook.com/devtools
+              - listitem [ref=f3e233]:
+                - strong [ref=f3e234]: Authentication
+                - text: ":"
+                - strong [ref=f3e235]: OAuth
+            - generic [ref=f3e236]:
+              - text: Click
+              - strong [ref=f3e237]: Authenticate
+              - text: and complete the
+              - link "OAuth sign-in" [ref=f3e238] [cursor=pointer]:
+                - /url: "#oauth-sign-in"
+              - text: .
+            - generic [ref=f3e239]:
+              - text: Restart the Codex App and verify that the new server entry appears in the
+              - code [ref=f3e240]: ~/.codex/config.toml
+              - text: file.
+            - generic [ref=f3e241]:
+              - strong [ref=f3e242]: ChatGPT
+              - text: — enable Developer Mode under
+              - strong [ref=f3e243]: Settings
+              - text: ">"
+              - strong [ref=f3e244]: Connectors
+              - text: ">"
+              - strong [ref=f3e245]: Advanced settings
+              - text: ", then go to"
+              - strong [ref=f3e246]: Settings
+              - text: ">"
+              - strong [ref=f3e247]: Connectors
+              - text: "and create a connector with:"
+            - list [ref=f3e248]:
+              - listitem [ref=f3e250]:
+                - strong [ref=f3e251]: Name
+                - text: ":"
+                - code [ref=f3e252]: Meta Social Technologies
+              - listitem [ref=f3e254]:
+                - strong [ref=f3e255]: URL
+                - text: ":"
+                - code [ref=f3e256]: https://mcp.facebook.com/devtools
+              - listitem [ref=f3e258]:
+                - strong [ref=f3e259]: Authentication
+                - text: ":"
+                - strong [ref=f3e260]: OAuth
+            - generic [ref=f3e261]: Meta Social Technologies appears in the composer’s Developer mode menu during conversations.
+            - generic [ref=f3e264]:
+              - heading "Cursor" [level=3] [ref=f3e265]
+              - button [ref=f3e266] [cursor=pointer]
+            - generic [ref=f3e270]:
+              - text: Cursor reads MCP servers from
+              - code [ref=f3e271]: mcp.json
+              - text: —
+              - code [ref=f3e272]: ~/.cursor/mcp.json
+              - text: for all projects, or
+              - code [ref=f3e273]: .cursor/mcp.json
+              - text: for a single project. The Cursor app and the Cursor CLI share this file.
+            - generic [ref=f3e274]:
+              - text: Add the server to
+              - code [ref=f3e275]: mcp.json
+              - text: ":"
+            - generic [ref=f3e276]:
+              - generic [ref=f3e277]: "{ \"mcpServers\": { \"Meta Social Technologies\": { \"url\": \"https://mcp.facebook.com/devtools\", \"type\": \"http\" } } }"
+              - button [ref=f3e280] [cursor=pointer]
+            - generic [ref=f3e283]:
+              - text: "You can also add it from the app: open"
+              - strong [ref=f3e284]: Settings
+              - text: ">"
+              - strong [ref=f3e285]: Tools & Integrations
+              - text: ">"
+              - strong [ref=f3e286]: New MCP Server
+              - text: ", which opens"
+              - code [ref=f3e287]: mcp.json
+              - text: for you to paste the entry above.
+            - generic [ref=f3e288]:
+              - text: After saving, Cursor lists
+              - strong [ref=f3e289]: Meta Social Technologies
+              - text: under
+              - strong [ref=f3e290]: Tools & Integrations
+              - text: with a
+              - strong [ref=f3e291]: Needs login
+              - text: action. Click it to start the
+              - link "OAuth sign-in" [ref=f3e292] [cursor=pointer]:
+                - /url: "#oauth-sign-in"
+              - text: .
+            - generic [ref=f3e293]:
+              - text: In the Cursor CLI, MCP uses the same
+              - code [ref=f3e294]: mcp.json
+              - text: configuration. If a server requires OAuth, Cursor prompts you to authenticate interactively the first time the server is used.
+            - generic [ref=f3e297]:
+              - heading "OAuth sign-in" [level=2] [ref=f3e298]
+              - button [ref=f3e299] [cursor=pointer]
+            - generic [ref=f3e303]:
+              - text: The Meta Social Technologies MCP server authenticates with your Meta developer account over OAuth, so the same sign-in flow works with every client. You no longer need to add an App ID or App Secret to your client config. To authenticate, connect the server, sign in, and choose which apps to grant access to, as described in
+              - link "Sign-in flow" [ref=f3e304] [cursor=pointer]:
+                - /url: "#sign-in-flow"
+              - text: .
+            - generic [ref=f3e307]:
+              - heading "Sign-in flow" [level=3] [ref=f3e308]
+              - button [ref=f3e309] [cursor=pointer]
+            - generic [ref=f3e313]:
+              - text: After you add the server to your client (see
+              - link "Set up your IDE or agent client" [ref=f3e314] [cursor=pointer]:
+                - /url: "#set-up-your-ide-or-agent-client"
+              - text: "):"
+            - list [ref=f3e315]:
+              - listitem [ref=f3e317]:
+                - strong [ref=f3e318]: Start the connection.
+                - text: Many clients begin the OAuth flow automatically when the server is added. Others require you to click
+                - strong [ref=f3e319]: Connect
+                - text: or
+                - strong [ref=f3e320]: Authenticate
+                - text: first. For example, run
+                - code [ref=f3e321]: /mcp
+                - text: in Claude Code and select
+                - strong [ref=f3e322]: Authenticate
+                - text: ", or click"
+                - strong [ref=f3e323]: Authenticate
+                - text: in a desktop client.
+              - listitem [ref=f3e325]:
+                - strong [ref=f3e326]: Sign in.
+                - text: Your browser opens to sign in with your Meta account. If it doesn’t open automatically, copy the link your client prints and open it manually.
+              - listitem [ref=f3e328]:
+                - strong [ref=f3e329]: Grant access.
+                - text: On the consent screen, select the apps you want the server to access.
+              - listitem [ref=f3e331]:
+                - strong [ref=f3e332]: Confirm.
+                - text: Return to your client and
+                - link "verify your connection" [ref=f3e333] [cursor=pointer]:
+                  - /url: "#verify-your-connection"
+                - text: .
+            - generic [ref=f3e334]: You’ll need to complete the sign-in flow again when you restart the client.
+            - generic [ref=f3e337]:
+              - heading "Scopes" [level=3] [ref=f3e338]
+              - button [ref=f3e339] [cursor=pointer]
+            - generic [ref=f3e343]: Each connected app supports two scopes, which you set per app in your Business Integrations settings.
+            - table [ref=f3e345]:
+              - rowgroup [ref=f3e346]:
+                - row [ref=f3e347]:
+                  - columnheader "Scope" [ref=f3e348]
+                  - columnheader "Access" [ref=f3e349]
+              - rowgroup [ref=f3e350]:
+                - row [ref=f3e351]:
+                  - cell [ref=f3e352]:
+                    - strong [ref=f3e354]: Read
+                  - 'cell "Read-only access to everything the server exposes: app configuration and settings, App Review status, compliance status, API usage and health, and webhook topics and subscriptions." [ref=f3e355]'
+                - row [ref=f3e357]:
+                  - cell [ref=f3e358]:
+                    - strong [ref=f3e360]: Manage
+                  - cell "Everything in Read, plus write access to create, update, and delete webhook subscriptions. Webhook management is the only write capability." [ref=f3e361]
+            - generic [ref=f3e363]:
+              - text: You can manage the scopes or revoke access at any time at
+              - link [ref=f3e364] [cursor=pointer]:
+                - /url: https://www.facebook.com
+                - text: facebook.com
+                - generic [ref=f3e365]:
+                  - text: ⁠
+                  - img "This link opens in a new tab or window" [ref=f3e366]
+              - text: ">"
+              - strong [ref=f3e369]: Settings
+              - text: ">"
+              - strong [ref=f3e370]: Business Integrations
+              - text: .
+            - generic [ref=f3e373]:
+              - heading "Troubleshooting" [level=3] [ref=f3e374]
+              - button [ref=f3e375] [cursor=pointer]
+            - generic [ref=f3e379]: "The following table describes common error messages:"
+            - table [ref=f3e381]:
+              - rowgroup [ref=f3e382]:
+                - row [ref=f3e383]:
+                  - columnheader "Message" [ref=f3e384]
+                  - columnheader "What it means" [ref=f3e385]
+              - rowgroup [ref=f3e386]:
+                - row [ref=f3e387]:
+                  - cell "“It looks like this app isn’t available”" [ref=f3e388]
+                  - cell "Your account doesn’t have approved access yet." [ref=f3e390]
+                - row [ref=f3e392]:
+                  - cell "“Facebook login is currently unavailable for this app”" [ref=f3e393]
+                  - cell "Your MCP client may not be supported yet." [ref=f3e395]
+            - generic [ref=f3e399]:
+              - heading "Verify your connection" [level=3] [ref=f3e400]
+              - button [ref=f3e401] [cursor=pointer]
+            - generic [ref=f3e405]: "After adding the server, confirm your agent can see the tools:"
+            - list [ref=f3e406]:
+              - listitem [ref=f3e408]: Restart the IDE or agent client.
+              - listitem [ref=f3e410]:
+                - text: Ask the agent to list the tools it has from the
+                - code [ref=f3e411]: meta social technologies
+                - text: server. You should see the 10 tools listed below.
+              - listitem [ref=f3e413]:
+                - text: Run a low-risk read tool. For example,
+                - code [ref=f3e414]: devtools_app_list
+                - text: to list your apps, or
+                - code [ref=f3e415]: devtools_api_changelog
+                - text: to look up available changelog products.
+            - generic [ref=f3e416]: If the agent reports no tools or an authentication error, re-check the endpoint URL and confirm you completed the sign-in flow.
+            - generic [ref=f3e419]:
+              - heading "Tools" [level=2] [ref=f3e420]
+              - button [ref=f3e421] [cursor=pointer]
+            - generic [ref=f3e425]:
+              - text: The Meta Social Technologies MCP exposes 10 tools. Each tool is namespaced with the
+              - code [ref=f3e426]: devtools_
+              - text: prefix. Most app-scoped tools take an
+              - code [ref=f3e427]: app_id
+              - text: and require the
+              - strong [ref=f3e428]: Read
+              - text: or
+              - strong [ref=f3e429]: Manage
+              - text: scope; the changelog and documentation-search tools work without app-scoped permissions.
+            - generic [ref=f3e432]:
+              - heading [level=3] [ref=f3e433]:
+                - code [ref=f3e434]: devtools_discovery
+              - button [ref=f3e435] [cursor=pointer]
+            - generic [ref=f3e439]: Search Meta developer documentation for API guides, references, and tutorials. Use this when an agent needs to find the right doc to answer a how-to question or ground its next step. Works without app-scoped permissions.
+            - generic [ref=f3e440]:
+              - strong [ref=f3e441]: "Actions:"
+              - code [ref=f3e442]: search_docs
+            - generic [ref=f3e443]:
+              - strong [ref=f3e444]: "Example prompt:"
+              - text: “Search the Meta developer docs for how to set up WhatsApp Cloud API webhooks.”
+            - generic [ref=f3e447]:
+              - heading [level=3] [ref=f3e448]:
+                - code [ref=f3e449]: devtools_app_list
+              - button [ref=f3e450] [cursor=pointer]
+            - generic [ref=f3e454]:
+              - text: List the Meta apps you can access through the Meta Social Technologies MCP server. Returns the apps where you hold a developer, admin, or tester role and have granted the server access, along with the permissions you granted (read or manage) and your role on each app. Supports pagination. Use this first to discover the
+              - code [ref=f3e455]: app_id
+              - text: values the other tools need.
+            - generic [ref=f3e456]:
+              - strong [ref=f3e457]: "Actions:"
+              - code [ref=f3e458]: list
+            - generic [ref=f3e459]:
+              - strong [ref=f3e460]: "Example prompt:"
+              - text: “List all the Meta apps I have access to.”
+            - generic [ref=f3e463]:
+              - heading [level=3] [ref=f3e464]:
+                - code [ref=f3e465]: devtools_app
+              - button [ref=f3e466] [cursor=pointer]
+            - generic [ref=f3e470]: Inspect the settings, permissions, and configuration of a Meta app. Use this when an agent needs to know how an app is set up; its basic and advanced settings, security configuration, platform restrictions, or data protection officer details.
+            - generic [ref=f3e471]:
+              - strong [ref=f3e472]: "Actions:"
+              - code [ref=f3e473]: basic_settings
+              - text: ","
+              - code [ref=f3e474]: advanced_settings
+              - text: ","
+              - code [ref=f3e475]: security
+              - text: ","
+              - code [ref=f3e476]: restrictions
+              - text: ","
+              - code [ref=f3e477]: data_protection_officer
+            - generic [ref=f3e478]:
+              - strong [ref=f3e479]: "Example prompt:"
+              - text: “Show the basic settings and security configuration for app 1234567890.”
+            - generic [ref=f3e482]:
+              - heading [level=3] [ref=f3e483]:
+                - code [ref=f3e484]: devtools_app_review
+              - button [ref=f3e485] [cursor=pointer]
+            - generic [ref=f3e489]: Check App Review for the permissions and features your app requests. Use this when an agent needs to look up the status of a review, see what an app is approved for, or understand what’s required to submit.
+            - generic [ref=f3e490]:
+              - strong [ref=f3e491]: "Actions:"
+              - code [ref=f3e492]: status
+              - text: ","
+              - code [ref=f3e493]: history
+              - text: ","
+              - code [ref=f3e494]: privileges
+              - text: ","
+              - code [ref=f3e495]: requirements
+            - generic [ref=f3e496]:
+              - strong [ref=f3e497]: "Example prompt:"
+              - text: “What’s the App Review status for app 1234567890, and which permissions is it approved for?”
+            - generic [ref=f3e500]:
+              - heading [level=3] [ref=f3e501]:
+                - code [ref=f3e502]: devtools_compliance
+              - button [ref=f3e503] [cursor=pointer]
+            - generic [ref=f3e507]: Check the compliance status of a Meta app, open required actions, violations, and recommendations. Use this when an agent needs to confirm an app is in good standing before launching a feature or submitting for review.
+            - generic [ref=f3e508]:
+              - strong [ref=f3e509]: "Actions:"
+              - code [ref=f3e510]: status
+            - generic [ref=f3e511]:
+              - strong [ref=f3e512]: "Example prompt:"
+              - text: “Check whether app 1234567890 has any open compliance actions or violations.”
+            - generic [ref=f3e515]:
+              - heading [level=3] [ref=f3e516]:
+                - code [ref=f3e517]: devtools_api_usage
+              - button [ref=f3e518] [cursor=pointer]
+            - generic [ref=f3e522]: Monitor API health for a Meta app so an agent has operational visibility into an integration. Use this to see whether an app is approaching its rate limits, how much call volume it’s driving, and which APIs it depends on are deprecated.
+            - generic [ref=f3e523]:
+              - strong [ref=f3e524]: "Actions:"
+              - code [ref=f3e525]: rate_limits
+              - text: ","
+              - code [ref=f3e526]: call_volume
+              - text: ","
+              - code [ref=f3e527]: deprecations
+            - generic [ref=f3e528]:
+              - strong [ref=f3e529]: "Example prompt:"
+              - text: “Is app 1234567890 close to any rate limits, and are there deprecations I should plan for?”
+            - generic [ref=f3e532]:
+              - heading [level=3] [ref=f3e533]:
+                - code [ref=f3e534]: devtools_webhook_list
+              - button [ref=f3e535] [cursor=pointer]
+            - generic [ref=f3e539]: List the webhook topics available to a Meta app and the subscriptions currently configured on it, including the subscribed fields. Use this to see what an app can subscribe to and what it’s already receiving.
+            - generic [ref=f3e540]:
+              - strong [ref=f3e541]: "Actions:"
+              - code [ref=f3e542]: list_topics
+              - text: ","
+              - code [ref=f3e543]: list_subscriptions
+            - generic [ref=f3e544]:
+              - strong [ref=f3e545]: "Example prompt:"
+              - text: “List the webhook topics and current subscriptions for app 1234567890.”
+            - generic [ref=f3e548]:
+              - heading [level=3] [ref=f3e549]:
+                - code [ref=f3e550]: devtools_webhook_manage
+              - button [ref=f3e551] [cursor=pointer]
+            - generic [ref=f3e555]:
+              - text: Create, update, and delete webhook subscriptions on a Meta app. Use this when an agent is wiring an app to receive updates from a Meta product (for example, Messenger Platform message events or WhatsApp Cloud API events). Subscribing requires a live HTTPS callback URL that passes Meta’s verification. Requires the
+              - strong [ref=f3e556]: Manage
+              - text: scope.
+            - generic [ref=f3e557]:
+              - strong [ref=f3e558]: "Actions:"
+              - code [ref=f3e559]: subscribe
+              - text: ","
+              - code [ref=f3e560]: unsubscribe
+              - text: ","
+              - code [ref=f3e561]: update_fields
+            - generic [ref=f3e562]:
+              - strong [ref=f3e563]: "Example prompt:"
+              - text: “Subscribe app 1234567890 to the page topic for the feed and messages fields, using https://example.com/webhook as the callback URL.”
+            - generic [ref=f3e566]:
+              - heading [level=3] [ref=f3e567]:
+                - code [ref=f3e568]: devtools_webhook_test
+              - button [ref=f3e569] [cursor=pointer]
+            - generic [ref=f3e573]: Send a test payload to a webhook subscription so you can verify the receiving endpoint is reachable and handles the event correctly. Use this during initial integration and after callback-URL changes. The field must belong to an active subscription on the topic. List subscriptions first to find valid topic and field combinations.
+            - generic [ref=f3e574]:
+              - strong [ref=f3e575]: "Actions:"
+              - code [ref=f3e576]: test_send
+            - generic [ref=f3e577]:
+              - strong [ref=f3e578]: "Example prompt:"
+              - text: “Send a test event to the messages field on the page topic for app 1234567890.”
+            - generic [ref=f3e581]:
+              - heading [level=3] [ref=f3e582]:
+                - code [ref=f3e583]: devtools_api_changelog
+              - button [ref=f3e584] [cursor=pointer]
+            - generic [ref=f3e588]: Find Meta platform changelog products and their public changelog and RSS URLs, so an agent can point a developer to “what changed recently?” without browsing manually. Works without app-scoped permissions.
+            - generic [ref=f3e589]:
+              - strong [ref=f3e590]: "Actions:"
+              - code [ref=f3e591]: list_products
+              - text: ","
+              - code [ref=f3e592]: get_changelog_url
+              - text: ","
+              - code [ref=f3e593]: get_rss_url
+            - generic [ref=f3e594]:
+              - strong [ref=f3e595]: "Example prompt:"
+              - text: “What changelog products are available, and what’s the RSS feed URL for business messaging?”
+            - generic [ref=f3e598]:
+              - heading "Related" [level=2] [ref=f3e599]
+              - button [ref=f3e600] [cursor=pointer]
+            - list [ref=f3e604]:
+              - listitem [ref=f3e606]:
+                - link "MCP overview" [ref=f3e607] [cursor=pointer]:
+                  - /url: /documentation/mcp
+      - complementary [ref=f3e608]
+  - generic [ref=f3e610]:
+    - separator [aria-hidden] [ref=f3e611]
+    - contentinfo [ref=f3e612]:
+      - generic [ref=f3e613]:
+        - separator [aria-hidden] [ref=f3e614]
+        - generic [ref=f3e616]:
+          - generic [ref=f3e618]:
+            - generic [ref=f3e620]:
+              - img "Meta" [ref=f3e622]
+              - list [ref=f3e624]:
+                - listitem:
+                  - link "Facebook":
+                    - /url: https://www.facebook.com/MetaforDevelopers
+                    - img "Facebook"
+                - listitem:
+                  - link "Instagram":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmetafordevelopers%2F&h=AUCZytv_7Oc11BtJ6_KNhoBvw4wudSPOGbGPmL0rIy68JLRcxfhybcIAz3drbum7NdYs1VhfL_NvWKe76aEZ5JJpl9cDLkH8Y-RC0qN2IZRumAAJjWYqC9o8s17h1PYTiFx3ZZjJADPLozjslqChtw
+                    - img "Instagram"
+                - listitem:
+                  - link "X":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2Fmetafordevs&h=AUCZytv_7Oc11BtJ6_KNhoBvw4wudSPOGbGPmL0rIy68JLRcxfhybcIAz3drbum7NdYs1VhfL_NvWKe76aEZ5JJpl9cDLkH8Y-RC0qN2IZRumAAJjWYqC9o8s17h1PYTiFx3ZZjJADPLozjslqChtw
+                    - img "X"
+                - listitem:
+                  - link "LinkedIn":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fshowcase%2Fmeta-for-developers%2F&h=AUCZytv_7Oc11BtJ6_KNhoBvw4wudSPOGbGPmL0rIy68JLRcxfhybcIAz3drbum7NdYs1VhfL_NvWKe76aEZ5JJpl9cDLkH8Y-RC0qN2IZRumAAJjWYqC9o8s17h1PYTiFx3ZZjJADPLozjslqChtw
+                    - img "LinkedIn"
+                - listitem:
+                  - link "YouTube":
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2FMetaDevelopers%2F&h=AUCZytv_7Oc11BtJ6_KNhoBvw4wudSPOGbGPmL0rIy68JLRcxfhybcIAz3drbum7NdYs1VhfL_NvWKe76aEZ5JJpl9cDLkH8Y-RC0qN2IZRumAAJjWYqC9o8s17h1PYTiFx3ZZjJADPLozjslqChtw
+                    - img "YouTube"
+            - generic [ref=f3e626]:
+              - generic [ref=f3e629]:
+                - heading "Crear con Meta" [level=2] [ref=f3e630]
+                - list [ref=f3e632]:
+                  - listitem [ref=f3e633]:
+                    - link "Inteligencia artificial" [ref=f3e635] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fai%2F&h=AUCZytv_7Oc11BtJ6_KNhoBvw4wudSPOGbGPmL0rIy68JLRcxfhybcIAz3drbum7NdYs1VhfL_NvWKe76aEZ5JJpl9cDLkH8Y-RC0qN2IZRumAAJjWYqC9o8s17h1PYTiFx3ZZjJADPLozjslqChtw
+                  - listitem [ref=f3e636]:
+                    - link "Meta Horizon" [ref=f3e638] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fhorizon%2F&h=AUCZytv_7Oc11BtJ6_KNhoBvw4wudSPOGbGPmL0rIy68JLRcxfhybcIAz3drbum7NdYs1VhfL_NvWKe76aEZ5JJpl9cDLkH8Y-RC0qN2IZRumAAJjWYqC9o8s17h1PYTiFx3ZZjJADPLozjslqChtw
+                  - listitem [ref=f3e639]:
+                    - link "Tecnologías sociales" [ref=f3e641] [cursor=pointer]:
+                      - /url: /social-technologies/
+              - generic [ref=f3e644]:
+                - heading "Noticias" [level=2] [ref=f3e645]
+                - list [ref=f3e647]:
+                  - listitem [ref=f3e648]:
+                    - link "Meta for Developers" [ref=f3e650] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.meta.com%2Fblog%2F&h=AUCZytv_7Oc11BtJ6_KNhoBvw4wudSPOGbGPmL0rIy68JLRcxfhybcIAz3drbum7NdYs1VhfL_NvWKe76aEZ5JJpl9cDLkH8Y-RC0qN2IZRumAAJjWYqC9o8s17h1PYTiFx3ZZjJADPLozjslqChtw
+                  - listitem [ref=f3e651]:
+                    - link "Blog" [ref=f3e653] [cursor=pointer]:
+                      - /url: /blog/
+                  - listitem [ref=f3e654]:
+                    - link "Historias de éxito" [ref=f3e656] [cursor=pointer]:
+                      - /url: /success-stories/
+              - generic [ref=f3e659]:
+                - heading "Ayuda" [level=2] [ref=f3e660]
+                - list [ref=f3e662]:
+                  - listitem [ref=f3e663]:
+                    - link "Ayuda para desarrolladores" [ref=f3e665] [cursor=pointer]:
+                      - /url: /support/
+                  - listitem [ref=f3e666]:
+                    - link "Herramienta de errores" [ref=f3e668] [cursor=pointer]:
+                      - /url: /support/bugs/
+                  - listitem [ref=f3e669]:
+                    - link "Estado de la plataforma" [ref=f3e671] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmetastatus.com%2F&h=AUCZytv_7Oc11BtJ6_KNhoBvw4wudSPOGbGPmL0rIy68JLRcxfhybcIAz3drbum7NdYs1VhfL_NvWKe76aEZ5JJpl9cDLkH8Y-RC0qN2IZRumAAJjWYqC9o8s17h1PYTiFx3ZZjJADPLozjslqChtw
+                  - listitem [ref=f3e672]:
+                    - link "Foro de la comunidad de desarrolladores" [ref=f3e674] [cursor=pointer]:
+                      - /url: https://www.facebook.com/groups/fbdevelopers/
+                  - listitem [ref=f3e675]:
+                    - link "Reportar un incidente" [ref=f3e677] [cursor=pointer]:
+                      - /url: /incident/report/
+              - generic [ref=f3e680]:
+                - heading "Acerca de nosotros" [level=2] [ref=f3e681]
+                - list [ref=f3e683]:
+                  - listitem [ref=f3e684]:
+                    - link "Información" [ref=f3e686] [cursor=pointer]:
+                      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.fb.com%2F&h=AUCZytv_7Oc11BtJ6_KNhoBvw4wudSPOGbGPmL0rIy68JLRcxfhybcIAz3drbum7NdYs1VhfL_NvWKe76aEZ5JJpl9cDLkH8Y-RC0qN2IZRumAAJjWYqC9o8s17h1PYTiFx3ZZjJADPLozjslqChtw
+                  - listitem [ref=f3e687]:
+                    - link "Empleos" [ref=f3e689] [cursor=pointer]:
+                      - /url: https://www.facebook.com/careers
+              - generic [ref=f3e692]:
+                - heading "Condiciones y políticas" [level=2] [ref=f3e693]
+                - list [ref=f3e695]:
+                  - listitem [ref=f3e696]:
+                    - link "Iniciativas de plataforma responsable" [ref=f3e698] [cursor=pointer]:
+                      - /url: /products/responsible-platform-initiatives/
+                  - listitem [ref=f3e699]:
+                    - link "Condiciones de la plataforma" [ref=f3e701] [cursor=pointer]:
+                      - /url: /terms/dfc_platform_terms/
+                  - listitem [ref=f3e702]:
+                    - link "Políticas para desarrolladores" [ref=f3e704] [cursor=pointer]:
+                      - /url: /devpolicy/
+                  - listitem [ref=f3e705]:
+                    - link "Política de privacidad" [ref=f3e707] [cursor=pointer]:
+                      - /url: https://www.facebook.com/about/privacy
+                  - listitem [ref=f3e708]:
+                    - link "Cookies" [ref=f3e710] [cursor=pointer]:
+                      - /url: https://www.facebook.com/help/cookies
+          - button "Change language" [ref=f3e715] [cursor=pointer]:
+            - generic [ref=f3e716]: Español
