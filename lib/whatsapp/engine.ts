@@ -6,7 +6,7 @@ import { getWhatsappConfig } from "@/lib/whatsapp/config";
 import { isDateInCurrentWeek } from "@/lib/whatsapp/dates";
 import { detectLocalDraft, isFallbackText } from "@/lib/whatsapp/intent";
 import { LINK_INSTRUCTIONS, HELP_TEXT, FALLBACK_TEXT, formatConfirmSummary, ambiguousChoices } from "@/lib/whatsapp/format";
-import { getIdentityByPhone, upsertIdentity, findValidChallengeByHash, findValidChallengeByUserId, markChallengeUsed, getConversation, upsertConversation, setPending, clearPending, isExpired } from "@/lib/whatsapp/store";
+import { getIdentityByPhone, upsertIdentity, findValidChallengeByHash, findValidChallengeByUserId, markChallengeUsed, getConversation, getMessageHistory, upsertConversation, setPending, clearPending, isExpired } from "@/lib/whatsapp/store";
 import { scheduleSessions as localScheduleSessions, subjects as localSubjects } from "@/lib/schedule-data";
 
 type EngineResult = { reply: string; handled: boolean };
@@ -205,7 +205,8 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
       if (linkRes) return linkRes;
     }
     // if message looks like linking attempt, try deepseek draft link
-    const draft = (await callDeepseekDraft(text)) ?? detectLocalDraft(text, getWhatsappConfig().timezone);
+    const history = await getMessageHistory(waId, providerMessageId);
+    const draft = (await callDeepseekDraft(text, undefined, history)) ?? detectLocalDraft(text, getWhatsappConfig().timezone);
     if (draft && draft.intent === "link") {
       const code = String((draft.payload as Record<string, unknown>)?.code ?? trimmed).trim();
       const linkRes2 = await tryLink(waId, code);
@@ -262,7 +263,8 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   if (local) rawDraft = local;
   else {
     const hint = await buildCandidateHint(svc, userId);
-    rawDraft = await callDeepseekDraft(text, hint);
+    const history = await getMessageHistory(waId, providerMessageId);
+    rawDraft = await callDeepseekDraft(text, hint, history);
   }
 
   if (!rawDraft) {

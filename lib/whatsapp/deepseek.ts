@@ -24,7 +24,16 @@ Ejemplos payload:
  events.create: {"title":"...","type":"parcial","date":"2026-08-30","time":"18:00","subject_code":"ASI","description":null,"event_type":"individual"}
 Responde SOLO JSON válido, sin texto adicional.`;
 
-export async function callDeepseekDraft(userText: string, contextHint?: string): Promise<BotDraft | null> {
+export type DeepseekHistoryMessage = {
+  role: "user" | "assistant";
+  content: string;
+};
+
+export async function callDeepseekDraft(
+  userText: string,
+  contextHint?: string,
+  history: DeepseekHistoryMessage[] = [],
+): Promise<BotDraft | null> {
   const cfg = getWhatsappConfig();
   if (!cfg.deepseekApiKey) return null;
   try {
@@ -32,6 +41,7 @@ export async function callDeepseekDraft(userText: string, contextHint?: string):
       model: cfg.deepseekModel,
       messages: [
         { role: "system", content: SYSTEM_PROMPT + (contextHint ? `\nContexto: ${contextHint}` : "") },
+        ...history.slice(-5).map(({ role, content }) => ({ role, content: content.slice(0, 500) })),
         { role: "user", content: userText.slice(0, 2000) },
       ],
       temperature: 0.2,

@@ -130,6 +130,28 @@ export async function insertOutboundMessage(
   });
 }
 
+export type WhatsappHistoryMessage = {
+  role: "user" | "assistant";
+  content: string;
+};
+
+export async function getMessageHistory(waId: string, excludeProviderMessageId?: string): Promise<WhatsappHistoryMessage[]> {
+  const s = service();
+  let query = s
+    .from("whatsapp_messages")
+    .select("direction, body")
+    .eq("wa_id", waId);
+  if (excludeProviderMessageId) query = query.neq("provider_message_id", excludeProviderMessageId);
+  const { data } = await query.order("created_at", { ascending: false }).limit(5);
+  return ((data ?? []) as Array<{ direction: "inbound" | "outbound"; body: string | null }>)
+    .slice()
+    .reverse()
+    .map(({ direction, body }) => ({
+      role: direction === "inbound" ? "user" : "assistant",
+      content: String(body ?? "").slice(0, 500),
+    }));
+}
+
 // conversation state
 export type ConversationState = {
   wa_id: string;
