@@ -169,7 +169,11 @@ export type ConversationState = {
 
 export async function getConversation(waId: string): Promise<ConversationState | null> {
   const s = service();
-  const { data } = await s.from("whatsapp_conversations").select("*").eq("wa_id", waId).maybeSingle();
+  // Newest-first with limit 1 (never maybeSingle): duplicate rows for the
+  // same wa_id have been observed in production, and maybeSingle() returns
+  // null when >1 row matches — which silently erased the pending confirmation
+  // every turn and caused the endless propose→SI→fallback loop.
+  const { data } = await s.from("whatsapp_conversations").select("*").eq("wa_id", waId).order("updated_at", { ascending: false }).limit(1).maybeSingle();
   return (data as ConversationState | null) ?? null;
 }
 
@@ -198,6 +202,24 @@ export async function upsertConversation(waId: string, patch: Partial<Conversati
     .update({ ...patch, updated_at: new Date().toISOString() })
     .eq("wa_id", waId);
   if (error) throw error;
+  await mergeDuplicateConversations(waId);
+}
+
+// Self-healing: if duplicate rows exist for a wa_id (race between concurrent
+// webhook deliveries, or legacy rows in another phone format), collapse them
+// into the newest row so pending confirmations can never vanish again.
+async function mergeDuplicateConversations(waId: string): Promise<void> {
+  const s = service();
+  const { data } = await s.from("whatsapp_conversations").select("wa_id").eq("wa_id", waId);
+  const rows = (data ?? []) as Array<{ wa_id: string }>;
+  if (rows.length <= 1) return;
+  console.warn("[whatsapp] merging duplicate conversation rows", { count: rows.length });
+  const keeper = await getConversation(waId);
+  await s.from("whatsapp_conversations").delete().eq("wa_id", waId);
+  if (keeper) {
+    const { error } = await s.from("whatsapp_conversations").insert({ ...keeper });
+    if (error) throw error;
+  }
 }
 
 export async function clearPending(waId: string) {

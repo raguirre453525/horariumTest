@@ -217,7 +217,11 @@ import { POST } from "@/app/api/whatsapp/webhook/route";
 // trying chat. These flags reproduce each draft failure mode.
 let draftFailure: null | "http" | "garbage" | "throw" = null;
 let chatFailure = false;
+let groqFailure = false;
 let lastChatSystemPrompt = "";
+let hosts: string[] = [];
+let lastDraftBody: { max_tokens?: unknown } | null = null;
+let lastChatBody: { max_tokens?: unknown } | null = null;
 
 const envKeys = [
   "NEXT_PUBLIC_SUPABASE_URL",
@@ -228,14 +232,20 @@ const envKeys = [
   "WHATSAPP_GRAPH_VERSION",
   "DEEPSEEK_API_KEY",
   "DEEPSEEK_BASE_URL",
+  "GROQ_API_KEY",
+  "GROQ_BASE_URL",
+  "GROQ_MODEL",
 ];
 
 const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
   const url = String(input);
-  if (url.includes("api.deepseek.com")) {
-    const body = JSON.parse(String(init?.body)) as { response_format?: unknown; messages: Array<{ content: string }> };
+  if (url.includes("api.deepseek.com") || url.includes("api.groq.com")) {
+    hosts.push(url.includes("api.groq.com") ? "groq" : "deepseek");
+    if (url.includes("api.groq.com") && groqFailure) return new Response("Server error", { status: 500 });
+    const body = JSON.parse(String(init?.body)) as { response_format?: unknown; max_tokens?: unknown; messages: Array<{ content: string }> };
     const text = body.messages.at(-1)?.content ?? "";
     if (body.response_format) {
+      lastDraftBody = body;
       if (draftFailure === "http") return new Response("Unauthorized", { status: 401 });
       if (draftFailure === "garbage") {
         return new Response(JSON.stringify({ choices: [{ message: { content: "hola, ¿qué tal todo por ahí?" } }] }), { status: 200 });
@@ -249,6 +259,13 @@ const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => 
         const eventId = String(database.rows("academic_events")[0]?.id ?? "missing-event");
         return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ intent: "events.cancel", payload: { event_ids: [eventId] } }) } }] }), { status: 200 });
       }
+      if (text === "pero creame el evento") {
+        // Screenshot-loop re-affirmation: the drafter (LLM in prod, mock here)
+        // resolves the pending action to the SAME intent/payload so the engine
+        // executes it instead of stacking a duplicate proposal. Fixed date
+        // matches "miercoles" under the 2026-09-06 fake clock used below.
+        return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ intent: "events.create", payload: { title: "Tarea", type: "tarea", date: "2026-09-09", time: null, subject_code: null, description: null, event_type: "individual" } }) } }] }), { status: 200 });
+      }
       const readDrafts: Record<string, string> = {
         "que eventos tengo para la semana que viene?": JSON.stringify({ intent: "read_events", payload: { filter: "semana que viene" } }),
         "pero si tengo 2 eventos para la semana que viene": JSON.stringify({ intent: "read_events", payload: { filter: "__week__" } }),
@@ -261,6 +278,7 @@ const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => 
       return new Response(JSON.stringify({ choices: [{ message: { content: '{"intent":"unknown"}' } }] }), { status: 200 });
     }
     if (chatFailure) return new Response("Server error", { status: 500 });
+    lastChatBody = body;
     lastChatSystemPrompt = body.messages[0]?.content ?? "";
     const replies: Record<string, string> = {
       hola: "¡Hola! Qué bueno leerte 😊",
@@ -269,6 +287,7 @@ const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => 
       "solo te salude": "¡Qué lindo saludo! Estoy bien y listo para ayudarte 😊",
       "¿cómo estás?": "¡Muy bien, gracias! ¿Qué necesitás hoy? 😊",
       "¿por qué no me editaste el evento que acababas de crear?": "Tenés razón: no tomé tu pedido. Decime la nueva fecha y te pido SI o NO 🙂",
+      "necesito que me avises": "Dale, te aviso media hora antes del evento. ¿Va?",
     };
     return new Response(replies[text] ?? "¡Te escucho! 😊", { status: 200, headers: { "Content-Type": "text/plain" } });
   }
@@ -320,11 +339,18 @@ describe("WhatsApp conversation through the webhook", () => {
     database.reset();
     draftFailure = null;
     chatFailure = false;
+    groqFailure = false;
     lastChatSystemPrompt = "";
+    hosts = [];
+    lastDraftBody = null;
+    lastChatBody = null;
     vi.stubGlobal("fetch", fetchMock);
     for (const key of envKeys) process.env[key] = key === "DEEPSEEK_BASE_URL" ? "https://api.deepseek.com" : "test-value";
     process.env.WHATSAPP_APP_SECRET = "app-secret";
     process.env.WHATSAPP_PHONE_NUMBER_ID = "phone-number";
+    // Groq chain disabled by default so the 212 pre-existing tests keep
+    // exercising the DeepSeek path; the new provider tests opt in.
+    process.env.GROQ_API_KEY = "";
   });
 
   afterEach(() => {
@@ -559,5 +585,90 @@ describe("WhatsApp conversation through the webhook", () => {
     const turn = await sendTurn("???", "provider-gibberish");
 
     expect(turn.reply).toBe(FALLBACK_TEXT);
+  });
+
+  it("heals duplicate conversation rows and still executes SI", async () => {
+    // Legacy duplicates (same wa_id twice) used to make getConversation read a
+    // stale row, so every turn re-proposed and SI never executed.
+    database.rows("whatsapp_conversations").push(
+      { wa_id: "wa-1", user_id: "user-1", pending_operation: null, pending_expires_at: null, updated_at: "2020-01-01T00:00:00.000Z" },
+      { wa_id: "wa-1", user_id: "user-1", pending_operation: null, pending_expires_at: null, updated_at: "2020-01-02T00:00:00.000Z" },
+    );
+
+    const proposal = await sendTurn("agendame una tarea para el miercoles", "provider-dupe-propose");
+    expect(proposal.reply).toContain("Respondé SI");
+    expect(database.rows("whatsapp_conversations")).toHaveLength(1);
+
+    const done = await sendTurn("SI", "provider-dupe-confirm");
+    expect(done.reply).toBe("✅ Evento agendado.");
+    expect(database.rows("academic_events")).toHaveLength(1);
+  });
+
+  it("executes a re-affirmed action instead of stacking a duplicate proposal", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-09-06T15:00:00.000Z"));
+
+    const proposal = await sendTurn("agendame una tarea para el miercoles", "provider-reaffirm-propose");
+    expect(proposal.reply).toContain("Respondé SI");
+    expect(proposal.reply).toContain("miércoles 9 de septiembre");
+
+    // "pero creame el evento" is not SI, but it asks for the same action that
+    // is already pending → the screenshot loop used to re-propose here.
+    const done = await sendTurn("pero creame el evento", "provider-reaffirm-repeat");
+    expect(done.reply).toBe("✅ Evento agendado.");
+    expect(done.reply).not.toContain("Respondé SI");
+    expect(database.rows("academic_events")).toHaveLength(1);
+  });
+
+  it("accepts colloquial dale and mejor no as confirmation answers", async () => {
+    const proposal = await sendTurn("agendame una tarea para el miercoles", "provider-colloquial-propose");
+    expect(proposal.reply).toContain("Respondé SI");
+
+    const done = await sendTurn("dale", "provider-colloquial-yes");
+    expect(done.reply).toBe("✅ Evento agendado.");
+
+    await sendTurn("agendame una tarea para el miercoles", "provider-colloquial-propose-2");
+    const cancelled = await sendTurn("mejor no", "provider-colloquial-no");
+    expect(cancelled.reply).toBe("Listo, cancelé la operación. No cambié nada 🙂.");
+    expect(database.rows("academic_events")).toHaveLength(1);
+  });
+
+  it("blocks chat replies that promise reminders the bot cannot send", async () => {
+    const turn = await sendTurn("necesito que me avises", "provider-reminder-hallucination");
+
+    expect(turn.reply).not.toContain("media hora");
+    expect(turn.reply).toBe("Te sigo, pero necesito un poco más de detalle. ¿Querés consultar tus horarios, apuntes o eventos? 🙂");
+  });
+
+  it("treats a third-party announcement as a create, not as a read", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-09-06T15:00:00.000Z"));
+
+    // Screenshot bug: "nos avisan que ... hay una tarea" was read as a query
+    // ("No tenés eventos...") instead of proposing to save the news.
+    const turn = await sendTurn("bien, ahora nos avisan que el miercoles hay una tarea del tp2", "provider-announcement");
+
+    expect(turn.reply).toContain("Respondé SI");
+    expect(turn.reply).toContain("miércoles 9 de septiembre");
+    expect(turn.reply).not.toContain("No tenés eventos");
+  });
+
+  it("tries Groq first and falls back to DeepSeek, capping output tokens", async () => {
+    process.env.GROQ_API_KEY = "groq-test";
+    process.env.GROQ_BASE_URL = "https://api.groq.com/openai/v1";
+    process.env.GROQ_MODEL = "llama-3.3-70b-versatile";
+
+    const viaGroq = await sendTurn("hola", "provider-groq-hola");
+    expect(viaGroq.reply).toBe("¡Hola! Qué bueno leerte 😊");
+    expect(hosts[0]).toBe("groq");
+    expect(lastChatBody?.max_tokens).toBe(250);
+
+    groqFailure = true;
+    const viaDeepseek = await sendTurn("hola", "provider-groq-fallback");
+    expect(viaDeepseek.reply).toBe("¡Hola! Qué bueno leerte 😊");
+    expect(hosts).toContain("deepseek");
+
+    await sendTurn("agendame una tarea para el miercoles", "provider-groq-draft-cap");
+    expect(lastDraftBody?.max_tokens).toBe(400);
   });
 });

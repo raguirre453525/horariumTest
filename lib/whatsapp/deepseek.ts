@@ -18,7 +18,10 @@ Intents válidos:
 - events.create/edit/update/cancel/toggle_complete
 - link, help, unknown
 
-Consultas: "cuándo curso", horarios, profesor o docente usan read_schedule; "mostrame mis materias" usa read_subjects; "cada materia" en horarios usa {"all_subjects":true}; cualquier consulta de eventos usa read_events.
+ Consultas: "cuándo curso", horarios, profesor o docente usan read_schedule; "mostrame mis materias" usa read_subjects; "cada materia" en horarios usa {"all_subjects":true}; cualquier consulta de eventos usa read_events.
+
+ Anuncios declarativos también son acciones: "nos avisaron que el miércoles hay una tarea del TP2", "hay parcial de redes el martes" o "me dieron entrega para el viernes" usan events.create con la fecha correspondiente — nunca read_events. Solo usá read_events cuando la persona pregunta qué tiene ("qué tengo el miércoles", "mostrame mis eventos").
+ Si el contexto incluye una acción pendiente de confirmación y el mensaje la reafirma ("crealo", "guardalo", "hacelo", "de una", u otra formulación del mismo pedido), devolvé el MISMO intent y payload para que se ejecute. Si pide algo distinto, actuá sobre lo nuevo.
 
 Formato exacto: {"intent":"...","payload":{...}}. Responde SOLO JSON válido, sin explicación ni texto adicional.`;
 
@@ -26,7 +29,7 @@ const CHAT_SYSTEM_PROMPT = `Sos el asistente de Horarium y respondés como un co
 
 Conversá como una persona, no como un bot de menú. Contestá en 1 a 3 líneas, sin JSON ni listas de capacidades salvo que te pregunten qué podés hacer. Usá la historia reciente para responder y para resolver referencias como "ambos", "los dos", "todo", "ese", "el primero" o "el del martes" contra los eventos o apuntes recién mencionados.
 
-Si el mensaje expresa una acción que el router no pudo estructurar, explicá qué entendiste y hacé una pregunta concreta sobre el siguiente paso. Podés proponer una acción futura —por ejemplo, "¿Querés que los cancele? Decime SI y lo hago"—, pero nunca digas ni insinúes que ya agendaste, creaste, editaste, moviste, cancelaste, guardaste, archivaste, eliminaste o completaste algo: las mutaciones solo existen después de una confirmación SI y una operación real. Nunca propongas un borrado permanente: si piden borrar o eliminar, ofrecé cancelar (se puede revertir) y aclará que el borrado definitivo lo hace un admin.
+ Si el mensaje expresa una acción que el router no pudo estructurar, explicá qué entendiste y hacé una pregunta concreta sobre el siguiente paso. Podés proponer una acción futura —por ejemplo, "¿Querés que los cancele? Decime SI y lo hago"—, pero nunca digas ni insinúes que ya agendaste, creaste, editaste, moviste, cancelaste, guardaste, archivaste, eliminaste o completaste algo: las mutaciones solo existen después de una confirmación SI y una operación real. Tampoco prometas hacerlo "ya mismo" ni en futuro ("te lo agendo", "te lo creo", "te lo guardo"): si hay una propuesta pendiente, dirigí a la persona a responder SI o NO a esa propuesta. Nunca ofrezcas recordatorios, avisos ni notificaciones antes de un evento: esa función no existe. Nunca propongas un borrado permanente: si piden borrar o eliminar, ofrecé cancelar (se puede revertir) y aclará que el borrado definitivo lo hace un admin.
 
 No inventes datos académicos. No muestres IDs, códigos internos, fechas ISO ni estados técnicos como pending, completed o cancelled. Formateá fechas de manera natural, por ejemplo "martes 8 de septiembre". Los saludos reciben un saludo cálido; una pregunta formada solo por "?" después de un mensaje del bot recibe una aclaración breve. Si preguntan por una mutación anterior, reconocé la confusión y ofrecé el próximo paso concreto sin afirmar que ocurrió.`;
 
@@ -35,115 +38,156 @@ export type DeepseekHistoryMessage = {
   content: string;
 };
 
+type LlmProvider = { name: string; baseUrl: string; apiKey: string; model: string };
+
+// Provider chain: Groq first (fast, free tier), DeepSeek as fallback.
+// Both expose an OpenAI-compatible /chat/completions endpoint, so the call
+// shape is identical. Research note: Groq free tier is 30 RPM / 1K RPD per
+// model — plenty for a single-user bot, but the fallback keeps the bot alive
+// if the key is missing or Groq rate-limits.
+function llmProviders(): LlmProvider[] {
+  const cfg = getWhatsappConfig();
+  const chain: LlmProvider[] = [];
+  if (cfg.groqApiKey) chain.push({ name: "groq", baseUrl: cfg.groqBaseUrl, apiKey: cfg.groqApiKey, model: cfg.groqModel });
+  if (cfg.deepseekApiKey) chain.push({ name: "deepseek", baseUrl: cfg.deepseekBaseUrl, apiKey: cfg.deepseekApiKey, model: cfg.deepseekModel });
+  return chain;
+}
+
+async function postChatCompletion(
+  provider: LlmProvider,
+  body: Record<string, unknown>,
+  timeoutMs: number,
+): Promise<{ ok: true; text: string; json: unknown | null } | { ok: false; stage: string; status?: number }> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const res = await fetch(`${provider.baseUrl}/chat/completions`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${provider.apiKey}`,
+      },
+      body: JSON.stringify(body),
+      signal: controller.signal,
+    });
+    if (!res.ok) return { ok: false, stage: "http", status: res.status };
+    // Read text first (single body read), then parse. Minimal test doubles
+    // that only expose .json() are supported via the fallback branch.
+    const text = typeof res.text === "function" ? await res.text() : "";
+    if (text) {
+      try {
+        return { ok: true, text, json: JSON.parse(text) as unknown };
+      } catch {
+        // Some compatible endpoints return the assistant text directly.
+        return { ok: true, text, json: null };
+      }
+    }
+    const json = await res.json().catch(() => null);
+    return { ok: true, text: typeof json === "string" ? json : "", json };
+  } catch {
+    return { ok: false, stage: "fetch" };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function historyMessages(history: DeepseekHistoryMessage[]) {
+  return history.slice(-5).map(({ role, content }) => ({ role, content: content.slice(0, 500) }));
+}
+
 export async function callDeepseekDraft(
   userText: string,
   contextHint?: string,
   history: DeepseekHistoryMessage[] = [],
 ): Promise<BotDraft | null> {
-  const cfg = getWhatsappConfig();
-  if (!cfg.deepseekApiKey) {
+  const chain = llmProviders();
+  if (chain.length === 0) {
     console.warn("[whatsapp] draft skipped", { stage: "no-key" });
     return null;
   }
-  const fail = (stage: string, status?: number) => {
-    console.warn("[whatsapp] draft failed", status === undefined ? { stage } : { stage, status });
+  const fail = (provider: string, stage: string, status?: number) => {
+    console.warn("[whatsapp] draft failed", status === undefined ? { provider, stage } : { provider, stage, status });
     return null;
   };
-  try {
+  for (const provider of chain) {
     const body = {
-      model: cfg.deepseekModel,
+      model: provider.model,
       messages: [
         { role: "system", content: SYSTEM_PROMPT + (contextHint ? `\nContexto: ${contextHint}` : "") },
-        ...history.slice(-5).map(({ role, content }) => ({ role, content: content.slice(0, 500) })),
+        ...historyMessages(history),
         { role: "user", content: userText.slice(0, 2000) },
       ],
       temperature: 0.2,
       stream: false,
+      // Token guard: drafts are small JSON objects (~100 tokens). Without a
+      // cap the model can ramble and we pay full output price for text we
+      // discard on parse. 400 leaves wide margin for valid payloads.
+      max_tokens: 400,
       response_format: { type: "json_object" },
     };
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 8000);
-    let res: Response;
-    try {
-      res = await fetch(`${cfg.deepseekBaseUrl}/chat/completions`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${cfg.deepseekApiKey}`,
-        },
-        body: JSON.stringify(body),
-        signal: controller.signal,
-      });
-    } finally {
-      clearTimeout(timeout);
+    const res = await postChatCompletion(provider, body, 8000);
+    if (!res.ok) {
+      fail(provider.name, res.stage, res.status);
+      continue;
     }
-    if (!res.ok) return fail("http", res.status);
-    const json = (await res.json()) as {
+    const json = res.json as {
       choices?: Array<{ message?: { content?: string; tool_calls?: Array<{ function?: { arguments?: string } }> } }>;
-    };
-    const content = json.choices?.[0]?.message?.content ?? json.choices?.[0]?.message?.tool_calls?.[0]?.function?.arguments ?? "";
-    if (!content) return fail("empty");
+    } | null;
+    const content = json?.choices?.[0]?.message?.content ?? json?.choices?.[0]?.message?.tool_calls?.[0]?.function?.arguments ?? "";
+    if (!content) {
+      fail(provider.name, "empty");
+      continue;
+    }
     try {
       return JSON.parse(content) as BotDraft;
     } catch {
-      return fail("parse");
+      fail(provider.name, "parse");
+      continue;
     }
-  } catch {
-    return fail("fetch");
   }
+  return null;
 }
 
 export async function callDeepseekChat(userText: string, history: DeepseekHistoryMessage[] = [], contextHint?: string): Promise<string | null> {
-  const cfg = getWhatsappConfig();
-  const fail = () => {
-    console.warn("[whatsapp] DeepSeek chat failed", { inputLength: userText.length });
+  const chain = llmProviders();
+  const fail = (provider?: string) => {
+    console.warn("[whatsapp] DeepSeek chat failed", { provider: provider ?? "none", inputLength: userText.length });
     return null;
   };
-  if (!cfg.deepseekApiKey) return fail();
-  try {
+  if (chain.length === 0) return fail();
+  for (const provider of chain) {
     const body = {
-      model: cfg.deepseekModel,
+      model: provider.model,
       messages: [
         { role: "system", content: CHAT_SYSTEM_PROMPT + (contextHint ? `\n\n${contextHint}` : "") },
-        ...history.slice(-5).map(({ role, content }) => ({ role, content: content.slice(0, 500) })),
+        ...historyMessages(history),
         { role: "user", content: userText.slice(0, 2000) },
       ],
       temperature: 0.7,
       stream: false,
+      // Token guard: chat replies are 1-3 lines by contract (~120 tokens).
+      // The old code truncated client-side AFTER paying for the full
+      // generation — this cap stops the meter at the source.
+      max_tokens: 250,
     };
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 8000);
-    let res: Response;
-    try {
-      res = await fetch(`${cfg.deepseekBaseUrl}/chat/completions`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${cfg.deepseekApiKey}`,
-        },
-        body: JSON.stringify(body),
-        signal: controller.signal,
-      });
-    } finally {
-      clearTimeout(timeout);
+    const res = await postChatCompletion(provider, body, 8000);
+    if (!res.ok) {
+      fail(provider.name);
+      continue;
     }
-    if (!res.ok) return fail();
-    const raw = typeof res.text === "function" ? await res.text() : JSON.stringify(await res.json()) ?? "";
-    let content = raw;
-    try {
-      const parsed = JSON.parse(raw) as unknown;
-      if (typeof parsed === "string") content = parsed;
-      else if (parsed && typeof parsed === "object") {
-        const candidate = (parsed as { choices?: Array<{ message?: { content?: string } }> }).choices?.[0]?.message?.content;
-        content = typeof candidate === "string" ? candidate : "";
-      } else content = "";
-    } catch {
-      // Some compatible endpoints return the assistant text directly.
-    }
+    // Prefer the standard choices envelope; use the raw body only when the
+    // endpoint returned plain text instead of JSON (res.json === null).
+    let content = "";
+    const json = res.json as { choices?: Array<{ message?: { content?: string } }> } | null;
+    const candidate = json?.choices?.[0]?.message?.content;
+    if (typeof candidate === "string" && candidate.trim()) content = candidate;
+    else if (json === null) content = res.text;
     const trimmed = content.trim();
-    if (!trimmed) return fail();
+    if (!trimmed) {
+      fail(provider.name);
+      continue;
+    }
     return trimmed.split(/\r?\n/).slice(0, 2).join("\n").slice(0, 1000) || null;
-  } catch {
-    return fail();
   }
+  return null;
 }

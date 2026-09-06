@@ -11,10 +11,35 @@ import { scheduleSessions as localScheduleSessions, subjects as localSubjects } 
 
 type EngineResult = { reply: string; handled: boolean };
 
+function normalizeConfirmText(t: string): string {
+  return t
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[.,!¡?¿;:'"()]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// Colloquial SI/NO vocabulary. Matching is EXACT against the whole normalized
+// message, so longer texts containing "no" ("el del jueves no, solo el del
+// martes") can never false-positive — those fall through to the draft, which
+// now receives the pending summary and resolves them.
+const YES_PHRASES = new Set([
+  "si", "sip", "sale", "dale", "de una", "deuna", "ok", "okay", "okey",
+  "confirmar", "confirmo", "confirmado", "hacelo", "de acuerdo",
+  "claro que si", "por supuesto", "obvio",
+]);
+const NO_PHRASES = new Set([
+  "no", "nop", "non", "nah", "cancelar", "cancelo", "cancela",
+  "mejor no", "mejor dejalo", "olvidalo", "olvidate", "dejalo",
+  "dejalo asi", "no gracias", "ni ahi",
+]);
+
 function isConfirmText(t: string): "yes" | "no" | null {
-  const v = t.trim().toLowerCase();
-  if (["si", "sí", "confirmar", "confirmo", "yes"].includes(v)) return "yes";
-  if (["no", "cancelar", "cancelo"].includes(v)) return "no";
+  const v = normalizeConfirmText(t);
+  if (YES_PHRASES.has(v)) return "yes";
+  if (NO_PHRASES.has(v)) return "no";
   return null;
 }
 
@@ -30,7 +55,18 @@ function isSafeChatReply(reply: string): boolean {
   const value = reply.trim();
   if (!value || /\b(?:pending|completed|cancelled|event_id|subject_code)\b|\b(?:id|uuid)\s*[=:]/i.test(value)) return false;
   if (/^(?:✅\s*)?(?:agend|anot|guard|registr|crea|creé|cread|edit|mov|cambi|cancel|elimin|borr|archiv|actualiz|marc|complet)[a-záéíóúüñ]*/i.test(value)) return false;
-  return !/\b(?:ya|listo|perfecto|he|hice|acabo de|terminé|termino|quedó|quedaron|fue|fueron)\b.{0,40}\b(?:agend|anot|guard|registr|crea|creé|cread|edit|mov|cambi|cancel|elimin|borr|archiv|actualiz|marc|complet)[a-záéíóúüñ]*/i.test(value);
+  if (/\b(?:ya|listo|perfecto|he|hice|acabo de|terminé|termino|quedó|quedaron|fue|fueron)\b.{0,40}\b(?:agend|anot|guard|registr|crea|creé|cread|edit|mov|cambi|cancel|elimin|borr|archiv|actualiz|marc|complet)[a-záéíóúüñ]*/i.test(value)) return false;
+  // Deterministic output guardrail: chat must never promise an action in
+  // future tense ("te lo agendo", "te aviso media hora antes") — reminders
+  // don't exist and chat cannot execute anything. Blocked replies fall back
+  // to the recovery message instead of hallucinating.
+  if (/\bte\s+(?:lo|la|los|las)\s+(?:agend|anot|guard|registr|cre[a-záéíóúüñ]*|edit|muev|cambi|cancel|archiv|actualiz|mar[cq]|complet)[a-záéíóúüñ]*/i.test(value)) return false;
+  if (/\bte\s+aviso\b/i.test(value)) return false;
+  if (/\bya\s+mismo\b/i.test(value)) return false;
+  if (/\bmedia\s+hora\s+antes\b/i.test(value)) return false;
+  if (/\bquer[eé]s\s+que\s+te\s+avis/i.test(value)) return false;
+  if (/\brecordatori[oa]s?\b/i.test(value)) return false;
+  return true;
 }
 
 type EventReference = Record<string, unknown> & { id: string; title: string; date: string };
@@ -138,14 +174,70 @@ function chatRecoveryReply(events: EventReference[]): string {
   return "Te sigo, pero necesito un poco más de detalle. ¿Querés consultar tus horarios, apuntes o eventos? 🙂";
 }
 
-async function chatOrFallback(text: string, history: DeepseekHistoryMessage[], events: EventReference[] = []): Promise<EngineResult> {
-  const hints = [lastMutationSummary(history), eventContextHint(events)].filter((hint): hint is string => Boolean(hint));
+async function chatOrFallback(text: string, history: DeepseekHistoryMessage[], events: EventReference[] = [], pendingHint?: string): Promise<EngineResult> {
+  const hints = [lastMutationSummary(history), eventContextHint(events), pendingHint].filter((hint): hint is string => Boolean(hint));
   const contextHint = hints.join("\n\n");
   const chatReply = contextHint
     ? await callDeepseekChat(text, history, contextHint).catch(() => null)
     : await callDeepseekChat(text, history).catch(() => null);
   if (chatReply && isSafeChatReply(chatReply)) return { reply: chatReply, handled: true };
   return { reply: !text.trim() || isFallbackText(text) ? FALLBACK_TEXT : chatRecoveryReply(events), handled: true };
+}
+
+// Compact factual description of the pending confirmation for LLM hints.
+// No IDs or technical states — just what the user was asked to confirm.
+function pendingOperationSummary(op: { kind: string; payload: Record<string, unknown> }): string {
+  const p = op.payload;
+  const str = (key: string) => String(p[key] ?? "").trim();
+  const when = typeof p.date === "string" && p.date ? ` para el ${formatNaturalDate(String(p.date))}` : "";
+  switch (op.kind) {
+    case "create_event":
+      return `Acción pendiente de confirmación: crear el evento "${str("title")}"${when}.`;
+    case "edit_event":
+      return `Acción pendiente de confirmación: editar un evento${when}.`;
+    case "cancel_event":
+      return `Acción pendiente de confirmación: cancelar un evento.`;
+    case "cancel_events": {
+      const count = Array.isArray(p.event_ids) ? p.event_ids.length : 0;
+      return `Acción pendiente de confirmación: cancelar ${count} evento(s).`;
+    }
+    case "toggle_complete":
+      return `Acción pendiente de confirmación: cambiar el completado de un evento.`;
+    case "create_note":
+      return `Acción pendiente de confirmación: guardar el apunte "${str("title")}".`;
+    case "edit_note":
+      return `Acción pendiente de confirmación: editar un apunte.`;
+    case "archive_note":
+      return `Acción pendiente de confirmación: archivar un apunte.`;
+    case "unarchive_note":
+      return `Acción pendiente de confirmación: reactivar un apunte.`;
+    case "delete_note":
+      return `Acción pendiente de confirmación: eliminar un apunte.`;
+    default:
+      return `Acción pendiente de confirmación (${op.kind}).`;
+  }
+}
+
+// Volatile enrichment keys (owner re-checks, derived flags) must not break
+// the re-affirmation comparison: the user re-sending the same request has to
+// match the stored pending even though one side carries enrichments.
+const VOLATILE_PENDING_KEYS = new Set(["event_type", "currently_completed"]);
+
+function stablePendingPayload(payload: Record<string, unknown>): string {
+  const entries = Object.entries(payload)
+    .filter(([key]) => !key.startsWith("_") && !VOLATILE_PENDING_KEYS.has(key))
+    .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0));
+  return JSON.stringify(entries);
+}
+
+// State-machine transition: the user re-affirming the exact pending action
+// ("pero creame el evento", "guardamelo") IS the confirmation — execute it
+// instead of proposing a duplicate pending.
+function isSamePendingAction(
+  existing: { kind: string; payload: Record<string, unknown> },
+  next: { kind: string; payload: Record<string, unknown> },
+): boolean {
+  return existing.kind === next.kind && stablePendingPayload(existing.payload) === stablePendingPayload(next.payload);
 }
 
 async function enrichEventEditConfirmation(payload: Record<string, unknown>, userId: string, svc: ReturnType<typeof getServiceClient>) {
@@ -334,9 +426,11 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
 
   // 1. handle deterministic confirmation first (must not be reinterpreted by DeepSeek)
   const confirm = isConfirmText(text);
+  let expiredPendingCleared = false;
   if (convo?.pending_operation && convo.pending_expires_at) {
     if (isExpired(convo.pending_expires_at)) {
       await clearPending(waId);
+      expiredPendingCleared = true;
       // fall through to normal handling
     } else if (confirm) {
       const op = convo.pending_operation as { kind: string; payload: Record<string, unknown> };
@@ -476,6 +570,23 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   }
 
   // 5. normal flow: get draft via DeepSeek or local (with owned candidate hint for edits)
+  // The still-valid pending (if any) is shared with both LLM legs: the draft
+  // uses it to resolve re-affirmations to the SAME action, and chat uses it
+  // to point at SI/NO instead of inventing outcomes.
+  const existingPending = ((): { kind: string; payload: Record<string, unknown> } | null => {
+    if (expiredPendingCleared || confirm) return null;
+    const raw = convo?.pending_operation as { kind: string; payload: Record<string, unknown> } | null;
+    if (!raw || typeof raw.kind !== "string" || !raw.payload || typeof raw.payload !== "object") return null;
+    if (!convo?.pending_expires_at || isExpired(convo.pending_expires_at)) return null;
+    return raw;
+  })();
+  const pendingSummary = existingPending ? pendingOperationSummary(existingPending) : null;
+  const pendingDraftHint = pendingSummary
+    ? `${pendingSummary} Si el usuario la reafirma ("crealo", "guardalo", "hacelo", "de una", u otra formulación del mismo pedido), devolvé el MISMO intent y payload.`
+    : null;
+  const pendingChatHint = pendingSummary
+    ? `${pendingSummary} Dirigí al usuario a responder SI o NO a esa propuesta; nunca la ejecutes con palabras.`
+    : null;
   let rawDraft: { intent: string; payload?: Record<string, unknown> } | null = null;
   const timeZone = getWhatsappConfig().timezone;
   const history = await getMessageHistory(waId, providerMessageId);
@@ -488,7 +599,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   if (local) rawDraft = local;
   else {
     const candidateHint = await buildCandidateHint(svc, userId);
-    const hint = [candidateHint, eventContextHint(recentEvents)].filter((part): part is string => Boolean(part)).join("\n");
+    const hint = [candidateHint, eventContextHint(recentEvents), pendingDraftHint].filter((part): part is string => Boolean(part)).join("\n");
     rawDraft = await callDeepseekDraft(text, hint || undefined, history);
   }
 
@@ -499,13 +610,13 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
       const lines = subjects.map((s) => `• ${s.name}`).join("\n");
       return { reply: `📚 Estas son tus materias:\n${lines}`, handled: true };
     }
-    return chatOrFallback(text, history, recentEvents);
+    return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined);
   }
 
   rawDraft = normalizeReadDraft(rawDraft, text, priorEventScope, timeZone);
   const validated = validateDraft(rawDraft as unknown as import("@/lib/whatsapp/validators").BotDraft);
   if (!validated) {
-    return chatOrFallback(text, history, recentEvents);
+    return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined);
   }
 
   // handle link inside authenticated flow
@@ -518,7 +629,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     return { reply: HELP_TEXT, handled: true };
   }
   if (validated.kind === "unknown") {
-    return chatOrFallback(text, history, recentEvents);
+    return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined);
   }
 
   // read operations: execute directly, no confirmation
@@ -586,6 +697,15 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
 
   // store pending (use enriched payload for toggle_complete so confirmation warns correctly)
   const pendingToStore = pendingKind === "toggle_complete" ? payloadForConfirm : pendingPayload;
+  // Re-affirmation is confirmation: if the new action is identical to the
+  // still-valid pending, the user is saying "yes, that one" — execute it
+  // instead of stacking a duplicate proposal (the screenshot loop).
+  if (existingPending && isSamePendingAction(existingPending, { kind: pendingKind, payload: pendingToStore })) {
+    const result = await executePending({ kind: pendingKind, payload: pendingToStore }, waId, userId, svc);
+    await clearPending(waId);
+    if (pendingKind === "cancel_events") await rememberEventContext(waId, []);
+    return { reply: result, handled: true };
+  }
   await setPending(waId, { kind: pendingKind, payload: pendingToStore }, providerMessageId);
   const summary = formatConfirmSummary(pendingKind, pendingToStore);
   return { reply: summary, handled: true };

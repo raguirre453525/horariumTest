@@ -88,6 +88,10 @@ export function isEventReadRequest(text: string, hasPreviousRange = false): bool
   const normalized = normalizeText(text);
   if (!normalized) return false;
   if (/\b(?:agend\w*|anot\w*|apunt\w*|registr\w*|cre\w*|nuevo|nueva)\b/.test(normalized)) return false;
+  // Announcements are not queries: "nos avisaron que el miércoles hay una
+  // tarea" reports news (→ events.create), it doesn't ask what's scheduled.
+  // Third-party notice verbs disqualify the read interpretation.
+  if (/\b(?:avis\w+|dijeron|dicen|dijo|confirmaron|pusieron|pasaron|dieron|comentaron|contaron)\b/.test(normalized)) return false;
   if (/\bque\b.*\b(?:tengo|hay)\b/.test(normalized)) return true;
   if (/\b(?:tengo|hay)\b.*\b(?:evento|eventos)\b/.test(normalized)) return true;
   if (/\b(?:mis eventos|proximos eventos|ver eventos|lista de eventos)\b/.test(normalized)) return true;
