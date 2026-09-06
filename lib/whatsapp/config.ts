@@ -12,7 +12,7 @@ export function getWhatsappConfig() {
     deepseekModel: process.env.DEEPSEEK_MODEL ?? "deepseek-v4-flash",
     groqApiKey: process.env.GROQ_API_KEY ?? "",
     groqBaseUrl: (process.env.GROQ_BASE_URL ?? "https://api.groq.com/openai/v1").replace(/\/$/, ""),
-    groqModel: process.env.GROQ_MODEL ?? "openai/gpt-oss-120b",
+    groqModel: process.env.GROQ_MODEL ?? "llama-3.1-8b-instant",
     timezone: process.env.HORARIUM_TIMEZONE ?? "America/Argentina/Tucuman",
   };
 }
