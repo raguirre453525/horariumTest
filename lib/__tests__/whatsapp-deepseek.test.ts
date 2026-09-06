@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { callDeepseekDraft } from "@/lib/whatsapp/deepseek";
+import { callDeepseekChat, callDeepseekDraft } from "@/lib/whatsapp/deepseek";
 
 describe("callDeepseekDraft conversation history", () => {
   const fetchMock = vi.fn();
@@ -31,5 +31,20 @@ describe("callDeepseekDraft conversation history", () => {
     const body = JSON.parse(String(request.body)) as { messages: Array<{ role: string; content: string }> };
     expect(body.messages.slice(1, -1)).toEqual(history.slice(1).map(({ role, content }) => ({ role, content: content.slice(0, 500) })));
     expect(body.messages.at(-1)).toEqual({ role: "user", content: "current" });
+  });
+
+  it("uses a free-text request for chat replies", async () => {
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ choices: [{ message: { content: "¡Hola! 😊" } }] }),
+    });
+
+    await callDeepseekChat("hola", [{ role: "user", content: "buenas" }]);
+
+    const request = fetchMock.mock.calls[0]?.[1] as RequestInit;
+    const body = JSON.parse(String(request.body)) as { messages: Array<{ role: string; content: string }>; response_format?: unknown };
+    expect(body.response_format).toBeUndefined();
+    expect(body.messages[0]?.content).toContain("compañero de cursada");
+    expect(body.messages.at(-1)).toEqual({ role: "user", content: "hola" });
   });
 });

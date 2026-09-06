@@ -1,7 +1,7 @@
 import "server-only";
 import { getServiceClient } from "@/lib/supabase-server";
 import { validateDraft, EVENT_TYPES } from "@/lib/whatsapp/validators";
-import { callDeepseekDraft } from "@/lib/whatsapp/deepseek";
+import { callDeepseekChat, callDeepseekDraft, type DeepseekHistoryMessage } from "@/lib/whatsapp/deepseek";
 import { getWhatsappConfig } from "@/lib/whatsapp/config";
 import { isDateInCurrentWeek } from "@/lib/whatsapp/dates";
 import { detectLocalDraft, isFallbackText } from "@/lib/whatsapp/intent";
@@ -24,6 +24,11 @@ function isNumericChoice(t: string): number | null {
   const n = parseInt(v, 10);
   if (n < 1 || n > 10) return null;
   return n;
+}
+
+function isSafeChatReply(reply: string): boolean {
+  const value = reply.trim();
+  return Boolean(value) && !/\b(?:ya|listo)\b.{0,30}\b(?:agend|anot|guard|registr|cre|edit|cancel|elimin|archiv|actualiz)[a-záéíóúüñ]*/i.test(value);
 }
 
 async function readSubjects(svc: ReturnType<typeof getServiceClient>) {
@@ -260,10 +265,11 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   // 5. normal flow: get draft via DeepSeek or local (with owned candidate hint for edits)
   let rawDraft: { intent: string; payload?: Record<string, unknown> } | null = null;
   const local = detectLocalDraft(text, getWhatsappConfig().timezone);
+  let history: DeepseekHistoryMessage[] = [];
   if (local) rawDraft = local;
   else {
     const hint = await buildCandidateHint(svc, userId);
-    const history = await getMessageHistory(waId, providerMessageId);
+    history = await getMessageHistory(waId, providerMessageId);
     rawDraft = await callDeepseekDraft(text, hint, history);
   }
 
@@ -292,6 +298,8 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     return { reply: HELP_TEXT, handled: true };
   }
   if (validated.kind === "unknown") {
+    const chatReply = await callDeepseekChat(text, history).catch(() => null);
+    if (chatReply && isSafeChatReply(chatReply)) return { reply: chatReply, handled: true };
     return { reply: FALLBACK_TEXT, handled: true };
   }
 

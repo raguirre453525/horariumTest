@@ -24,6 +24,11 @@ Ejemplos payload:
  events.create: {"title":"...","type":"parcial","date":"2026-08-30","time":"18:00","subject_code":"ASI","description":null,"event_type":"individual"}
 Responde SOLO JSON válido, sin texto adicional.`;
 
+const CHAT_SYSTEM_PROMPT = `Eres asistente de Horarium y respondés como un compañero de cursada, en español rioplatense, con calidez y naturalidad.
+Contestá en 1 o 2 líneas breves e incluí algún emoji. No uses JSON.
+Este mensaje es solo conversacional: nunca ejecutes ni prometas mutaciones. No digas que agendaste, creaste, editaste, cancelaste, guardaste o eliminaste algo; esas afirmaciones solo corresponden después de una operación real y confirmada.
+No inventes datos académicos. Si te preguntan qué podés hacer, mencioná brevemente materias, horarios, apuntes y eventos.`;
+
 export type DeepseekHistoryMessage = {
   role: "user" | "assistant";
   content: string;
@@ -71,6 +76,45 @@ export async function callDeepseekDraft(
     if (!content) return null;
     const parsed = JSON.parse(content) as BotDraft;
     return parsed;
+  } catch {
+    return null;
+  }
+}
+
+export async function callDeepseekChat(userText: string, history: DeepseekHistoryMessage[] = []): Promise<string | null> {
+  const cfg = getWhatsappConfig();
+  if (!cfg.deepseekApiKey) return null;
+  try {
+    const body = {
+      model: cfg.deepseekModel,
+      messages: [
+        { role: "system", content: CHAT_SYSTEM_PROMPT },
+        ...history.slice(-5).map(({ role, content }) => ({ role, content: content.slice(0, 500) })),
+        { role: "user", content: userText.slice(0, 2000) },
+      ],
+      temperature: 0.7,
+    };
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+    let res: Response;
+    try {
+      res = await fetch(`${cfg.deepseekBaseUrl}/chat/completions`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${cfg.deepseekApiKey}`,
+        },
+        body: JSON.stringify(body),
+        signal: controller.signal,
+      });
+    } finally {
+      clearTimeout(timeout);
+    }
+    if (!res.ok) return null;
+    const json = (await res.json()) as { choices?: Array<{ message?: { content?: string } }> };
+    const content = json.choices?.[0]?.message?.content?.trim() ?? "";
+    if (!content) return null;
+    return content.split(/\r?\n/).slice(0, 2).join("\n").slice(0, 1000) || null;
   } catch {
     return null;
   }
