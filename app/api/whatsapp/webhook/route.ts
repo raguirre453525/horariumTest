@@ -1,6 +1,7 @@
 import "server-only";
 import { verifyHmacSha256 } from "@/lib/whatsapp/hmac";
 import { parseWhatsappPayload } from "@/lib/whatsapp/parse";
+import { downloadWhatsappAudio, transcribeWhatsappAudio } from "@/lib/whatsapp/audio";
 import { sendWhatsappText } from "@/lib/whatsapp/send";
 import { handleWhatsappMessage } from "@/lib/whatsapp/engine";
 import { isDuplicateProviderMessage, insertInboundMessage, insertOutboundMessage } from "@/lib/whatsapp/store";
@@ -96,9 +97,32 @@ export async function POST(req: Request) {
     }
     if (duplicate) continue;
 
+    // Audio messages: transcribe to text BEFORE anything else. The engine
+    // stays text-only (thin orchestrator); transcription is transport.
+    // A failed transcription never reaches the engine — reply honestly.
+    let inboundText = msg.text;
+    let audioErrorReply: string | null = null;
+    if (msg.audio) {
+      const dl = await downloadWhatsappAudio(msg.audio, msg.phoneNumberId);
+      if (!dl.ok) {
+        console.warn("[whatsapp] audio download failed", { code: dl.code });
+        inboundText = "(nota de voz sin transcripción)";
+        audioErrorReply = "No pude descargar tu audio 😕. Probá mandarlo de nuevo en un ratito.";
+      } else {
+        const tr = await transcribeWhatsappAudio(dl.bytes, dl.mimeType);
+        if (!tr.ok) {
+          console.warn("[whatsapp] audio transcription failed", { code: tr.code });
+          inboundText = "(nota de voz sin transcripción)";
+          audioErrorReply = "Te escuché pero no pude entender el audio 😕. ¿Me lo escribís?";
+        } else {
+          inboundText = tr.text;
+        }
+      }
+    }
+
     let inserted = false;
     try {
-      inserted = await insertInboundMessage(msg.waId, msg.providerMessageId, msg.text, null);
+      inserted = await insertInboundMessage(msg.waId, msg.providerMessageId, inboundText, null);
     } catch (e) {
       console.error("[whatsapp] insert inbound error", e);
       return new Response("Retry", { status: 500 });
@@ -106,12 +130,16 @@ export async function POST(req: Request) {
     if (!inserted) continue; // duplicate via unique constraint
 
     let reply = "";
-    try {
-      const res = await handleWhatsappMessage(msg.waId, msg.text, msg.providerMessageId);
-      reply = res.reply;
-    } catch (e) {
-      reply = "Uy, tuve un problema procesando eso 😕. Probá de nuevo en unos minutos.";
-      console.error("[whatsapp] engine error", e);
+    if (audioErrorReply) {
+      reply = audioErrorReply;
+    } else {
+      try {
+        const res = await handleWhatsappMessage(msg.waId, inboundText, msg.providerMessageId);
+        reply = res.reply;
+      } catch (e) {
+        reply = "Uy, tuve un problema procesando eso 😕. Probá de nuevo en unos minutos.";
+        console.error("[whatsapp] engine error", e);
+      }
     }
 
     if (reply) {

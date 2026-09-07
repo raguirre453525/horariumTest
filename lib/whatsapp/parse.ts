@@ -4,6 +4,7 @@ export type ParsedInbound = {
   text: string;
   timestamp: string;
   phoneNumberId: string | null;
+  audio?: { mediaId: string; mimeType?: string; voice?: boolean; url?: string };
 };
 
 type RawPayload = {
@@ -15,7 +16,7 @@ type RawPayload = {
         messaging_product?: string;
         metadata?: { phone_number_id?: string };
         contacts?: Array<{ wa_id?: string }>;
-        messages?: Array<{ from?: string; id?: string; timestamp?: string; type?: string; text?: { body?: string } }>;
+        messages?: Array<{ from?: string; id?: string; timestamp?: string; type?: string; text?: { body?: string }; audio?: { id?: string; mime_type?: string; voice?: boolean; url?: string } }>;
         statuses?: unknown[];
       };
     }>;
@@ -42,12 +43,34 @@ export function parseWhatsappPayload(raw: string): ParsedInbound[] {
       const phoneNumberId = val.metadata?.phone_number_id ?? null;
       const msgs = val.messages ?? [];
       for (const m of msgs) {
-        if (m.type !== "text") continue;
-        const body = m.text?.body;
-        if (typeof body !== "string") continue;
         const waId = typeof m.from === "string" ? m.from : "";
         const id = typeof m.id === "string" ? m.id : "";
         if (!waId || !id) continue;
+        const timestamp = typeof m.timestamp === "string" ? m.timestamp : String(Date.now());
+        if (m.type === "audio") {
+          // voice notes and audio files: keep the media reference, transcription
+          // happens upstream (route) before the engine ever sees text
+          const mediaId = typeof m.audio?.id === "string" ? m.audio.id : "";
+          if (!mediaId) continue;
+          out.push({
+            waId,
+            providerMessageId: id,
+            text: "",
+            timestamp,
+            phoneNumberId,
+            audio: {
+              mediaId,
+              mimeType: typeof m.audio?.mime_type === "string" ? m.audio.mime_type : undefined,
+              voice: typeof m.audio?.voice === "boolean" ? m.audio.voice : undefined,
+              // Meta rolls out an embedded download URL gradually; prefer it when present
+              url: typeof m.audio?.url === "string" ? m.audio.url : undefined,
+            },
+          });
+          continue;
+        }
+        if (m.type !== "text") continue;
+        const body = m.text?.body;
+        if (typeof body !== "string") continue;
         const trimmed = body.trim();
         if (!trimmed) continue;
         // bounded: limit text length 2000

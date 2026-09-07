@@ -13,6 +13,9 @@ export function getWhatsappConfig() {
     groqApiKey: process.env.GROQ_API_KEY ?? "",
     groqBaseUrl: (process.env.GROQ_BASE_URL ?? "https://api.groq.com/openai/v1").replace(/\/$/, ""),
     groqModel: process.env.GROQ_MODEL ?? "openai/gpt-oss-120b",
+    // Speech-to-text for voice notes (Groq-hosted Whisper, multilingual).
+    // Turbo is transcription-only, which is all we use (no /translations call).
+    groqSttModel: process.env.GROQ_STT_MODEL ?? "whisper-large-v3-turbo",
     timezone: process.env.HORARIUM_TIMEZONE ?? "America/Argentina/Tucuman",
   };
 }
