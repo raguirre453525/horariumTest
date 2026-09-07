@@ -29,10 +29,12 @@ function normalizeConfirmText(t: string): string {
     .trim();
 }
 
-// Colloquial SI/NO vocabulary. Matching is EXACT against the whole normalized
-// message, so longer texts containing "no" ("el del jueves no, solo el del
-// martes") can never false-positive — those fall through to the draft, which
-// now receives the pending summary and resolves them.
+// Colloquial SI/NO vocabulary. YES matching is EXACT against the whole
+// normalized message, so longer texts containing "si" fall through to the
+// draft. NO also matches when it LEADS a longer message (splitLeadingNo):
+// "no, quiero que edites..." must cancel the live proposal instead of
+// reaching the draft, where the leading "no," chokes the model into unknown
+// and the stale pending gets executed by the next SI as a duplicate.
 const YES_PHRASES = new Set([
   "si", "sip", "sale", "dale", "de una", "deuna", "ok", "okay", "okey",
   "confirmar", "confirmo", "confirmado", "hacelo", "de acuerdo",
@@ -48,6 +50,41 @@ function isConfirmText(t: string): "yes" | "no" | null {
   const v = normalizeConfirmText(t);
   if (YES_PHRASES.has(v)) return "yes";
   if (NO_PHRASES.has(v)) return "no";
+  return null;
+}
+
+// A message that LEADS with a decline ("no, quiero que edites...", "no quiero
+// eso") declines any live proposal AND keeps talking. Returns "" for an exact
+// NO (old path), the remainder text when NO leads a longer message, or null
+// when the message doesn't start with a decline. Word-boundary guarded so
+// "noviembre"/"nota"/"noche" never match. YES stays exact-only: "si, ..." is
+// rare and executing-then-acting on the rest would double-act.
+function escapeRegExp(s: string) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+export function splitLeadingNo(t: string): string | null {
+  const v = normalizeConfirmText(t);
+  if (NO_PHRASES.has(v)) return "";
+  const phrases = [...NO_PHRASES].sort((a, b) => b.length - a.length);
+  for (const p of phrases) {
+    if (!v.startsWith(p)) continue;
+    if (!/^[\s,;:!?—.\-]/.test(v.slice(p.length))) continue;
+    // Detection runs on normalized text, but the remainder is sliced from the
+    // RAW message so casing, accents and inner punctuation reach the LLM intact.
+    const rawPattern = p
+      .split(" ")
+      .map(escapeRegExp)
+      .join("\\s+")
+      .replace(/a/g, "[aá]")
+      .replace(/e/g, "[eé]")
+      .replace(/i/g, "[ií]")
+      .replace(/o/g, "[oó]")
+      .replace(/u/g, "[uúü]");
+    const m = new RegExp(`^\\s*${rawPattern}`, "i").exec(t);
+    if (!m) continue;
+    return t.slice(m[0].length).replace(/^[\s,;:!?—.\-]+/, "");
+  }
   return null;
 }
 
@@ -296,6 +333,21 @@ async function buildCandidateHint(svc: ReturnType<typeof getServiceClient>, user
   }
 }
 
+// Subject catalog for the draft: the model can't guess exact subject codes,
+// so without this it omits subject_code and events get saved with no subject
+// even when the person named one ("para la materia de programación").
+// Small table — one cheap read per draft turn.
+async function buildSubjectHint(svc: ReturnType<typeof getServiceClient>): Promise<string | null> {
+  try {
+    const subjects = await readSubjects(svc);
+    if (!subjects || subjects.length === 0) return null;
+    const catalog = subjects.slice(0, 40).map((s) => `${s.code} → ${s.name}`).join(" | ");
+    return `Materias válidas (código exacto → nombre): ${catalog}. Si la persona nombra una materia, copiá su código exacto en subject_code. Si no nombra ninguna, omití subject_code.`;
+  } catch {
+    return null;
+  }
+}
+
 async function ownedEventReferences(svc: ReturnType<typeof getServiceClient>, userId: string, ids: string[]): Promise<EventReference[] | null> {
   const uniqueIds = [...new Set(ids.map((id) => id.trim()).filter(Boolean))].slice(0, 10);
   if (!userId || uniqueIds.length === 0) return null;
@@ -355,7 +407,17 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   const convo = await getConversation(waId);
 
   // 1. handle deterministic confirmation first (must not be reinterpreted by DeepSeek)
-  const confirm = isConfirmText(text);
+  // A leading NO with more text ("no, quiero que edites...") declines any
+  // live proposal and the remainder is handled as a fresh message below.
+  let msgText = text;
+  const leadingNoRemainder = splitLeadingNo(text);
+  if (leadingNoRemainder !== null && leadingNoRemainder.length > 0) {
+    if (convo?.pending_operation && convo.pending_expires_at && !isExpired(convo.pending_expires_at)) {
+      await clearPending(waId);
+    }
+    msgText = leadingNoRemainder;
+  }
+  const confirm = isConfirmText(msgText);
   let expiredPendingCleared = false;
   if (convo?.pending_operation && convo.pending_expires_at) {
     if (isExpired(convo.pending_expires_at)) {
@@ -394,7 +456,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   }
 
   // 2. handle numeric choice for ambiguous selection
-  const choice = isNumericChoice(text);
+  const choice = isNumericChoice(msgText);
   if (choice && convo?.last_ambiguous) {
     const amb = convo.last_ambiguous as { kind: string; items: Array<Record<string, unknown>> };
     const idx = choice - 1;
@@ -449,14 +511,14 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   // 3. if not linked, only allow linking instructions or code
   if (!userId) {
     // try code directly even without DeepSeek
-    const trimmed = text.trim();
+    const trimmed = msgText.trim();
     if (/^\d{6}$/.test(trimmed) || trimmed.length >= 4) {
       const linkRes = await tryLink(waId, trimmed);
       if (linkRes) return linkRes;
     }
     // if message looks like linking attempt, try deepseek draft link
     const history = await getMessageHistory(waId, providerMessageId);
-    const draft = await callDeepseekDraft(text, undefined, history);
+    const draft = await callDeepseekDraft(msgText, undefined, history);
     if (draft && draft.intent === "link") {
       const code = String((draft.payload as Record<string, unknown>)?.code ?? trimmed).trim();
       const linkRes2 = await tryLink(waId, code);
@@ -470,7 +532,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     await upsertConversation(waId, { user_id: userId });
   }
 
-  if (!text.trim() || (isFallbackText(text) && text.trim() !== "?")) {
+  if (!msgText.trim() || (isFallbackText(msgText) && msgText.trim() !== "?")) {
     return { reply: FALLBACK_TEXT, handled: true };
   }
 
@@ -503,7 +565,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     } else if (confirm === "no") {
       await upsertConversation(waId, { awaiting_relink: false, relink_target_user_id: null, relink_challenge_id: null, relink_expires_at: null });
       return { reply: "Dale, cancelé la reasociación. Tu número sigue con la cuenta anterior.", handled: true };
-    } else if (confirm === null && text.trim().length > 1) {
+    } else if (confirm === null && msgText.trim().length > 1) {
       // not a confirmation, ignore and prompt
       return { reply: "Tu número ya está vinculado a otra cuenta. Respondé SI para pasarlo a esta cuenta o NO para dejarlo como está.", handled: true };
     }
@@ -533,21 +595,22 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   const recentEvents = storedEventContext(convo?.last_ambiguous);
   const priorEventScope = previousEventScope(history, timeZone);
   const candidateHint = await buildCandidateHint(svc, userId);
-  const hint = [candidateHint, eventContextHint(recentEvents), pendingDraftHint].filter((part): part is string => Boolean(part)).join("\n");
+  const subjectHint = await buildSubjectHint(svc);
+  const hint = [candidateHint, subjectHint, eventContextHint(recentEvents), pendingDraftHint].filter((part): part is string => Boolean(part)).join("\n");
   const failureCodes: string[] = [];
-  rawDraft = await callDeepseekDraft(text, hint || undefined, history, failureCodes);
+  rawDraft = await callDeepseekDraft(msgText, hint || undefined, history, failureCodes);
 
   if (!rawDraft) {
     console.warn("[whatsapp] draft failed, falling back to chat", { failureCodes });
-    return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined, failureCodes);
+    return chatOrFallback(msgText, history, recentEvents, pendingChatHint ?? undefined, failureCodes);
   }
 
-  rawDraft = normalizeReadDraft(rawDraft, text, priorEventScope, timeZone);
+  rawDraft = normalizeReadDraft(rawDraft, msgText, priorEventScope, timeZone);
   const validated = validateDraft(rawDraft as unknown as import("@/lib/whatsapp/validators").BotDraft);
   if (!validated) {
     const rejected = rawDraft as { intent?: string; payload?: unknown } | null;
     console.warn("[whatsapp] draft invalid, falling back to chat", { intent: rejected?.intent, payload: JSON.stringify(rejected?.payload)?.slice(0, 500), failureCodes });
-    return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined, failureCodes);
+    return chatOrFallback(msgText, history, recentEvents, pendingChatHint ?? undefined, failureCodes);
   }
 
   // handle link inside authenticated flow
@@ -561,7 +624,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   }
   if (validated.kind === "unknown") {
     console.warn("[whatsapp] draft unknown, falling back to chat", { intent: rawDraft.intent, failureCodes });
-    return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined, failureCodes);
+    return chatOrFallback(msgText, history, recentEvents, pendingChatHint ?? undefined, failureCodes);
   }
 
   // read operations: execute directly, no confirmation

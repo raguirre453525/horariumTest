@@ -90,7 +90,7 @@ describe("WhatsApp conversational fallback", () => {
     const result = await handleWhatsappMessage("wa-1", "ayuda", "provider-help");
 
     expect(result).toEqual({ reply: HELP_TEXT, handled: true });
-    expect(mocks.callDeepseekDraft).toHaveBeenCalledWith("ayuda", undefined, history, expect.any(Array));
+    expect(mocks.callDeepseekDraft).toHaveBeenCalledWith("ayuda", expect.stringContaining("Materias válidas"), history, expect.any(Array));
     expect(mocks.callDeepseekChat).not.toHaveBeenCalled();
   });
 

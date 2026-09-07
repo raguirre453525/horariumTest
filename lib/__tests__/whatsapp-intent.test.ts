@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { isDateInCurrentWeek, resolveEventDateRange, resolveNaturalDate } from "@/lib/whatsapp/dates";
+import { splitLeadingNo } from "@/lib/whatsapp/engine";
 import { FALLBACK_TEXT, formatConfirmSummary } from "@/lib/whatsapp/format";
 
 const TIME_ZONE = "America/Argentina/Tucuman";
@@ -27,5 +28,19 @@ describe("WhatsApp dates and confirmation formatting", () => {
     expect(resolveEventDateRange("el jueves", now, TIME_ZONE)).toEqual({ from: "2026-09-10", to: "2026-09-10" });
     expect(resolveEventDateRange("del 7/9/2026 al 13/9/2026", now, TIME_ZONE)).toEqual({ from: "2026-09-07", to: "2026-09-13" });
     expect(resolveEventDateRange("y el jueves", now, TIME_ZONE, { from: "2026-09-07", to: "2026-09-13" })).toEqual({ from: "2026-09-10", to: "2026-09-10" });
+  });
+
+  it("splits a leading NO from the rest of the message", () => {
+    expect(splitLeadingNo("no")).toBe("");
+    expect(splitLeadingNo("No, gracias")).toBe("");
+    expect(splitLeadingNo("no, quiero que edites el evento que ya esta creado")).toBe("quiero que edites el evento que ya esta creado");
+    expect(splitLeadingNo("No quiero eso, cambialo")).toBe("quiero eso, cambialo");
+    expect(splitLeadingNo("NO, QUIERO que lo EDITES")).toBe("QUIERO que lo EDITES");
+    expect(splitLeadingNo("mejor no, dejalo para mañana")).toBe("dejalo para mañana");
+    expect(splitLeadingNo("noviembre")).toBeNull();
+    expect(splitLeadingNo("nota del parcial")).toBeNull();
+    expect(splitLeadingNo("noche de cine")).toBeNull();
+    expect(splitLeadingNo("quiero agendar algo")).toBeNull();
+    expect(splitLeadingNo("si")).toBeNull();
   });
 });

@@ -9,6 +9,7 @@ Reglas prioritarias:
 - Si una referencia no es inequívoca, devolvé intent "unknown". Nunca inventes IDs, materias ni fechas; para note_id, event_id y event_ids usá solamente IDs del contexto de candidatos.
 - "borrar", "eliminar" o "cancelar" eventos usa events.cancel con payload {"event_ids":["..."]}. El bot SOLO cancela: es reversible, los eventos quedan guardados como cancelados. El borrado permanente es solo de admin y no tiene intent — nunca generes ni propongas JSON para borrar. Requiere confirmación posterior; no lo ejecutes desde este JSON.
 - Reprogramar no es crear: "pasar", "mover", "cambiar", "adelantar", "postergar" o "reprogramar" algo recién mencionado usa events.edit/update_event con el event_id correcto y modifica solo la fecha u hora nueva.
+- Completar o corregir tampoco es crear: si la persona pide agregar o cambiar un dato (materia, hora, título, fecha) de un evento ya mencionado o recién creado, es events.edit/update_event con ese event_id, NUNCA un create nuevo.
 - Usá events.create únicamente para un evento nuevo. No dupliques un evento recién mencionado salvo que la persona pida explícitamente crear/agendar otro.
 - Las fechas relativas, días, meses y rangos deben conservar exactamente el alcance pedido. El backend normaliza las fechas; nunca reemplaces una semana futura por la actual.
 

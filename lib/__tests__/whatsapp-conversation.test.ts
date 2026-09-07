@@ -219,6 +219,7 @@ let draftFailure: null | "http" | "garbage" | "throw" = null;
 let chatFailure = false;
 let groqFailure = false;
 let lastChatSystemPrompt = "";
+let lastDraftSystemPrompt = "";
 let hosts: string[] = [];
 let lastDraftBody: { max_tokens?: unknown } | null = null;
 let lastChatBody: { max_tokens?: unknown } | null = null;
@@ -246,6 +247,7 @@ const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => 
     const text = body.messages.at(-1)?.content ?? "";
     if (body.response_format) {
       lastDraftBody = body;
+      lastDraftSystemPrompt = body.messages[0]?.content ?? "";
       if (draftFailure === "http") return new Response("Unauthorized", { status: 401 });
       if (draftFailure === "garbage") {
         return new Response(JSON.stringify({ choices: [{ message: { content: "hola, ¿qué tal todo por ahí?" } }] }), { status: 200 });
@@ -254,6 +256,12 @@ const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => 
       if (text === "me pasaron el parcial para el jueves") {
         const eventId = String(database.rows("academic_events")[0]?.id ?? "missing-event");
         return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ intent: "update_event", payload: { event_id: eventId, date: "2026-09-10" } }) } }] }), { status: 200 });
+      }
+      if (text === "quiero que edites el evento que ya esta creado") {
+        // Screenshot regression: "no, quiero que edites..." must cancel the live
+        // create pending and draft THIS remainder as an edit — never a duplicate.
+        const eventId = String(database.rows("academic_events")[0]?.id ?? "missing-event");
+        return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ intent: "update_event", payload: { event_id: eventId, subject_code: "RED" } }) } }] }), { status: 200 });
       }
       if (text === "el del jueves no, solo el del martes") {
         const eventId = String(database.rows("academic_events")[0]?.id ?? "missing-event");
@@ -361,6 +369,7 @@ describe("WhatsApp conversation through the webhook", () => {
     chatFailure = false;
     groqFailure = false;
     lastChatSystemPrompt = "";
+    lastDraftSystemPrompt = "";
     hosts = [];
     lastDraftBody = null;
     lastChatBody = null;
@@ -468,6 +477,44 @@ describe("WhatsApp conversation through the webhook", () => {
     expect(updated.reply).toBe("✅ Evento actualizado.");
     expect(database.rows("academic_events")).toHaveLength(1);
     expect(database.rows("academic_events")[0]).toMatchObject({ date: "2026-09-10", title: "Parcial de redes" });
+  });
+
+  it("cancels a stale create pending on a leading NO and edits instead of duplicating", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-09-06T15:00:00.000Z"));
+
+    const create = await sendTurn("agendame una tarea para el miercoles", "provider-noedit-create");
+    expect(create.reply).toContain("Respondé SI");
+    const created = await sendTurn("SI", "provider-noedit-create-confirm");
+    expect(created.reply).toBe("✅ Evento agendado.");
+    expect(database.rows("academic_events")).toHaveLength(1);
+
+    // A second create proposal goes live (stale pending for the next turn).
+    const duplicate = await sendTurn("bien, ahora nos avisan que el miercoles hay una tarea del tp2", "provider-noedit-dup");
+    expect(duplicate.reply).toContain("Voy a agendar");
+    expect(database.rows("academic_events")).toHaveLength(1);
+
+    // "no, quiero que edites..." must cancel that pending and draft the
+    // remainder as an edit — the old code fell to chat and the next SI
+    // executed the stale create as a duplicate.
+    const editProposal = await sendTurn("no, quiero que edites el evento que ya esta creado", "provider-noedit-edit");
+    expect(editProposal.reply).toContain("Voy a editar");
+    expect(editProposal.reply).not.toContain("Voy a agendar");
+    expect(database.rows("academic_events")).toHaveLength(1);
+
+    const edited = await sendTurn("SI", "provider-noedit-edit-confirm");
+    expect(edited.reply).toBe("✅ Evento actualizado.");
+    expect(database.rows("academic_events")).toHaveLength(1);
+    expect(database.rows("academic_events")[0]).toMatchObject({ subject_id: "subject-red" });
+  });
+
+  it("sends the subject catalog to the draft so named subjects resolve to codes", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-09-06T15:00:00.000Z"));
+
+    await sendTurn("agendame una tarea para el miercoles", "provider-subjects-hint");
+    expect(lastDraftSystemPrompt).toContain("Materias válidas");
+    expect(lastDraftSystemPrompt).toContain("RED → Redes");
   });
 
   it("reproduces the reported next-week read and follow-up failures", async () => {
