@@ -690,4 +690,31 @@ describe("WhatsApp conversation through the webhook", () => {
     await sendTurn("agendame una tarea para el miercoles", "provider-groq-draft-cap");
     expect(lastDraftBody?.max_tokens).toBe(1500);
   });
+
+  it("answers a bare SI with no pending deterministically instead of hallucinating a write", async () => {
+    // Screenshot bug: chat authored counterfeit "Decime SI" proposals and then
+    // claimed "quedó creado" for an event that was never stored. A SI with no
+    // valid pending must never reach the LLM.
+    const turn = await sendTurn("si", "provider-si-no-pending");
+
+    expect(turn.reply).toContain("No tengo ninguna propuesta pendiente");
+    expect(turn.reply).not.toContain("quedó creado");
+    expect(turn.reply).not.toContain("agendado");
+    expect(database.rows("academic_events")).toHaveLength(0);
+  });
+
+  it("tells an expired SI the proposal lapsed instead of executing or inventing", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-09-06T15:00:00.000Z"));
+
+    const proposal = await sendTurn("quiero agendar un parcial de REDES el 30/09/2026", "provider-expired-propose");
+    expect(proposal.reply).toContain("Respondé SI");
+
+    vi.setSystemTime(new Date("2026-09-06T15:11:00.000Z"));
+    const late = await sendTurn("SI", "provider-expired-confirm");
+
+    expect(late.reply).toContain("venció");
+    expect(late.reply).not.toContain("quedó creado");
+    expect(database.rows("academic_events")).toHaveLength(0);
+  });
 });

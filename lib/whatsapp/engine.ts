@@ -379,6 +379,20 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     }
   }
 
+  // SI/NO are reserved for real pending proposals. A bare SI/NO with no valid
+  // pending must NEVER reach the LLM: chat authors counterfeit proposals
+  // ("Decime SI y lo agendo") and hallucinates completed writes for events
+  // that were never stored. Answer deterministically instead.
+  // (awaiting_relink owns its SI/NO step below — don't shadow it.)
+  if (confirm && !convo?.awaiting_relink) {
+    return {
+      reply: expiredPendingCleared
+        ? "Esa propuesta venció (duran 10 minutos 🙂). Decime de nuevo qué querés agendar, guardar o cambiar y lo preparamos."
+        : "No tengo ninguna propuesta pendiente 🙈. Decime qué querés agendar, guardar o cambiar y lo preparamos.",
+      handled: true,
+    };
+  }
+
   // 2. handle numeric choice for ambiguous selection
   const choice = isNumericChoice(text);
   if (choice && convo?.last_ambiguous) {
@@ -524,12 +538,14 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   rawDraft = await callDeepseekDraft(text, hint || undefined, history, failureCodes);
 
   if (!rawDraft) {
+    console.warn("[whatsapp] draft failed, falling back to chat", { failureCodes });
     return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined, failureCodes);
   }
 
   rawDraft = normalizeReadDraft(rawDraft, text, priorEventScope, timeZone);
   const validated = validateDraft(rawDraft as unknown as import("@/lib/whatsapp/validators").BotDraft);
   if (!validated) {
+    console.warn("[whatsapp] draft invalid, falling back to chat", { intent: (rawDraft as { intent?: string } | null)?.intent, failureCodes });
     return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined, failureCodes);
   }
 
@@ -543,6 +559,7 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
     return { reply: HELP_TEXT, handled: true };
   }
   if (validated.kind === "unknown") {
+    console.warn("[whatsapp] draft unknown, falling back to chat", { intent: rawDraft.intent, failureCodes });
     return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined, failureCodes);
   }
 
