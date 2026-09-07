@@ -545,7 +545,8 @@ export async function handleWhatsappMessage(waId: string, text: string, provider
   rawDraft = normalizeReadDraft(rawDraft, text, priorEventScope, timeZone);
   const validated = validateDraft(rawDraft as unknown as import("@/lib/whatsapp/validators").BotDraft);
   if (!validated) {
-    console.warn("[whatsapp] draft invalid, falling back to chat", { intent: (rawDraft as { intent?: string } | null)?.intent, failureCodes });
+    const rejected = rawDraft as { intent?: string; payload?: unknown } | null;
+    console.warn("[whatsapp] draft invalid, falling back to chat", { intent: rejected?.intent, payload: JSON.stringify(rejected?.payload)?.slice(0, 500), failureCodes });
     return chatOrFallback(text, history, recentEvents, pendingChatHint ?? undefined, failureCodes);
   }
 

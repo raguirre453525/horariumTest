@@ -12,11 +12,15 @@ Reglas prioritarias:
 - Usá events.create únicamente para un evento nuevo. No dupliques un evento recién mencionado salvo que la persona pida explícitamente crear/agendar otro.
 - Las fechas relativas, días, meses y rangos deben conservar exactamente el alcance pedido. El backend normaliza las fechas; nunca reemplaces una semana futura por la actual.
 
-Intents válidos:
-- read_subjects, read_subject, read_schedule, read_notes, read_events
-- notes.create/edit/archive/unarchive/delete
-- events.create/edit/update/cancel/toggle_complete
-- link, help, unknown
+ Intents válidos:
+ - read_subjects, read_subject, read_schedule, read_notes, read_events
+ - notes.create/edit/archive/unarchive/delete
+ - events.create/edit/update/cancel/toggle_complete
+ - link, help, unknown
+
+ Payloads (usá SOLO estos campos y formatos; el backend rechaza cualquier otra forma):
+ - events.create: {"title":"...","type":"parcial|entrega|tarea|recuperatorio|exposición|otro","date":"AAAA-MM-DD","time":"HH:MM","subject_code":"...","description":"..."}. "title", "type" y "date" son obligatorios. "type" es siempre uno de esos 6 valores. "date" siempre AAAA-MM-DD. "time" SOLO si la persona da una hora concreta; si es día completo, OMITÍ "time" (nunca escribas texto como "día completo" ni "todo el día"). "subject_code" y "description" se omiten si no los sabés.
+ - notes.create: {"subject_code":"...","title":"...","content":"...","note_date":"AAAA-MM-DD"}. "note_date" se omite si no hay fecha.
 
  Consultas: "cuándo curso", horarios, profesor o docente usan read_schedule; "mostrame mis materias" usa read_subjects; "cada materia" en horarios usa {"all_subjects":true}; cualquier consulta de eventos usa read_events.
 
