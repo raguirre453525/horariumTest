@@ -43,4 +43,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# local-only artifacts (never commit)
+.playwright-mcp/
+skills-lock.json
+supabase/.temp
+.agents/skills/
+.atl/
+.codegraph/
+.cortexkit/
+
 .vercel
