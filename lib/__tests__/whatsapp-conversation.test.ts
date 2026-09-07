@@ -680,7 +680,7 @@ describe("WhatsApp conversation through the webhook", () => {
     const viaGroq = await sendTurn("hola", "provider-groq-hola");
     expect(viaGroq.reply).toBe("¡Hola! Qué bueno leerte 😊");
     expect(hosts[0]).toBe("groq");
-    expect(lastChatBody?.max_tokens).toBe(250);
+    expect(lastChatBody?.max_tokens).toBe(800);
 
     groqFailure = true;
     const viaDeepseek = await sendTurn("hola", "provider-groq-fallback");
@@ -688,6 +688,6 @@ describe("WhatsApp conversation through the webhook", () => {
     expect(hosts).toContain("deepseek");
 
     await sendTurn("agendame una tarea para el miercoles", "provider-groq-draft-cap");
-    expect(lastDraftBody?.max_tokens).toBe(400);
+    expect(lastDraftBody?.max_tokens).toBe(1500);
   });
 });

@@ -132,8 +132,9 @@ export async function callDeepseekDraft(
       stream: false,
       // Token guard: drafts are small JSON objects (~100 tokens). Without a
       // cap the model can ramble and we pay full output price for text we
-      // discard on parse. 400 leaves wide margin for valid payloads.
-      max_tokens: 400,
+      // discard on parse. 1500 because reasoning models think before answering
+      // and that thinking consumes the same output budget; 400 starved them.
+      max_tokens: 1500,
       response_format: { type: "json_object" },
     };
     const res = await postChatCompletion(provider, body, 8000);
@@ -178,7 +179,7 @@ export async function callDeepseekChat(userText: string, history: DeepseekHistor
       // Token guard: chat replies are 1-3 lines by contract (~120 tokens).
       // The old code truncated client-side AFTER paying for the full
       // generation — this cap stops the meter at the source.
-      max_tokens: 250,
+      max_tokens: 800,
     };
     const res = await postChatCompletion(provider, body, 8000);
     if (!res.ok) {
